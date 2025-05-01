@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 **RandomForestSpecCheck: A Permutation-Based Random Forest Diagnostic for LMMs** 03/2025 
 <br>
-Developed a novel diagnostic method for detecting model misspecification in linear mixed models using random forests and permutation testing. Applied to simulated and real-world data to evaluate performance under various violations of model assumptions.
+Developed a novel diagnostic method for detecting model misspecification in linear mixed models (LMMs) using random forests and permutation testing. Applied to simulated and real-world data to evaluate performance under various violations of model assumptions.
 <br>
 
 **A Conformal Prediction Framework for Multi-Label Movie Genre Classification** 03/2025 
