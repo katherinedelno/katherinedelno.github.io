@@ -3,14 +3,14 @@ layout: page
 title: Experience
 permalink: /experience/
 ---
-**Mentor for Statistics \& Probability Association Directed Reading Program** 2024
+**Mentor for Statistics & Probability Association Directed Reading Program** 2024
 
-University of Washington | Seattle, WA
+University of Washington — Seattle, WA
 
 Designed and led a one-on-one short course on statistical learning, covering topics including linear regression, classification methods, resampling techniques, and regularization. Created all course materials and lectures, guided the student through weekly discussions, and provided ongoing feedback and support to deepen their understanding throughout the quarter.
 <br><br>
 
-**Graduate Teaching Assistant for Department of Mathematics \& Statistics** 2022
+**Graduate Teaching Assistant for Department of Mathematics & Statistics** 2022
 
 University of Nevada — Reno, NV
 
