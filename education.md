@@ -11,3 +11,4 @@ Completed advanced coursework in statistical inference, probability theory, regr
 **B.S. Mathematics, University of Nevada** 2022
 
 Completed coursework in calculus, linear algebra, real analysis, probability, and mathematical statistics, with a specialization in statistical methods and data analysis. Developed a strong foundation in statistical modeling, inference, regression analysis, and introductory machine learning concepts. Gained experience with statistical computing using R and Python.
+
