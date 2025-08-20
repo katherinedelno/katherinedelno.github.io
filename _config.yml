@@ -21,7 +21,7 @@
 # Site settings
 title: ""
 description: ""
-url: # leave blank for local dev; set to your production URL, e.g. https://katherinedelno.github.io
+url: https://katherinedelno.github.io
 baseurl: ""            # if you host under a subdirectory, put it here (e.g. "/blog")
 author: ""
 
