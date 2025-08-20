@@ -19,10 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 # Site settings
-title: "Katherine Delno"
-description: "Last updated: Aug 2025"
+title: ""
+description: ""
 url: # leave blank for local dev; set to your production URL, e.g. https://katherinedelno.github.io
 baseurl: ""            # if you host under a subdirectory, put it here (e.g. "/blog")
+author: ""
 
 # Theme & plugins
 theme: minima
