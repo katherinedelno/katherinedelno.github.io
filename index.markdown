@@ -12,3 +12,7 @@ This site showcases my selected [projects](/projects), [experience](/experience)
 I’m currently volunteering with the Global Council for Responsible AI (GCRAI). I also occasionally offer one-on-one tutoring in AP Statistics and introductory statistics; inquiries welcome. Alongside this, I’m actively pursuing data science and machine learning roles.
 
 Feel free to [download my resume](/assets/resume-delno-katherine.pdf) or [connect with me on LinkedIn](https://www.linkedin.com/in/katherinedelno/).
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="katherinedelno" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/katherinedelno?trk=profile-badge">Katherine Delno</a></div>
+              
