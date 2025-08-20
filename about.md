@@ -7,12 +7,18 @@ permalink: /about/
 <div style="display: flex; align-items: flex-start; gap: 20px;">
 
   <p>
-I recently graduated from the University of Washington with my Master's in Statistics and am actively seeking data science or statistics roles in the Bay Area. My graduate education provided a rigorous foundation in statistical inference, modeling, and machine learning. Some of the projects I've worked on include building predictive models and conducting simulation studies in R and Python, using BERT for NLP-based text classification tasks, applying conformal prediction for reliable uncertainty quantification, and developing a novel random forest-based method to detect model misspecification in linear mixed models. Through my experience as a teaching assistant for introductory statistics and as a mentor in statistical learning, I’ve honed my ability to clearly communicate complex concepts. I look forward to applying my analytical skills and passion for solving statistical and machine learning problems in a collaborative environment.
+    I’m Katherine Delno, a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently volunteering with the Global Council for Responsible AI (GCRAI), supporting executive leadership and early framework efforts, and I’m exploring data scientist and machine learning roles where I can contribute that same rigor and clarity.
   </p>
 
-  <img src="/assets/img/headshot.JPG" alt="Headshot" style="width: 200px; border-radius: 50%; flex-shrink: 0;">
+  <img src="/assets/img/headshot.JPG" alt="Headshot"
+       style="width: 200px; border-radius: 50%; flex-shrink: 0;"
+       loading="lazy" decoding="async">
 
 </div>
 
-Outside of statistics and data science, I’m currently living in Seattle following the completion of my graduate degree. In my free time, I enjoy baking, refining my espresso setup, ceramics, and spending time with my cat, [Blue](/assets/img/blue.jpeg). I have a deep appreciation for intentional, atmospheric design, whether in interior spaces, clothing, or the small arrangements of everyday life. I’m drawn to quiet balance and subtle pattern, both in the visual rhythms of the world around me and in the quiet logic that gives them form.
-
+<p>
+  Outside of work, you can find me in Seattle, usually baking, tuning my espresso setup, making ceramics, or hanging out with my cat, Blue
+  <img src="/assets/img/blue.jpeg" alt="Blue the cat"
+       style="height:1.1em; width:auto; vertical-align:-2px; border-radius:3px; margin-left:4px;"
+       loading="lazy" decoding="async">.
+</p>
