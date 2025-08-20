@@ -3,6 +3,8 @@ layout: page
 title: Home
 permalink: /
 ---
+<style>.page-heading{display:none}</style>
+# Hi, there.
 
 My name is [Katherine Delno](/about). I'm a recent M.S. Statistics graduate from the University of Washington. I build clean, reproducible workflows in Python/R and translate results clearly for non-technical audiences.
 This site showcases my selected [projects](/projects), [experience](/experience), and [academic background](/education).
