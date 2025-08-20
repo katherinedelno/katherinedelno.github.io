@@ -33,6 +33,7 @@ plugins:
 # Top‐nav links
 # (Minima will pick these up automatically if you list them here)
 header_pages:
+  - index.md
   - about.md
   - education.md
   - experience.md

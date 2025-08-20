@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Hi, there.
+layout: default
+title: Home
 permalink: /
 ---
 
