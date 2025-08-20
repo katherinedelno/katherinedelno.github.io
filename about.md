@@ -35,18 +35,6 @@ permalink: /about/
   .lb-close { position:absolute; inset:0; cursor:zoom-out; }
 </style>
 
-<!-- LinkedIn badge script (include once on the page) -->
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-<!-- The badge itself -->
-<div class="badge-base LI-profile-badge"
-     data-locale="en_US"
-     data-size="medium"
-     data-theme="light"
-     data-type="VERTICAL"
-     data-vanity="katherinedelno"
-     data-version="v1"
-     style="margin-top:12px;">
-  <a class="badge-base__link LI-simple-link"
-     href="https://www.linkedin.com/in/katherinedelno?trk=profile-badge">Katherine Delno</a>
-</div>
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="katherinedelno" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/katherinedelno?trk=profile-badge">Katherine Delno</a></div>
+              
