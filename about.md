@@ -16,7 +16,7 @@ permalink: /about/
 </div>
 
 <p>
-  Outside of work, you can find me in Seattle, usually baking, tuning my espresso setup, making ceramics, or hanging out with my cat,
+  Outside of work, you can find me in Seattle, usually baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat,
   <a href="#blue-photo">Blue</a>.
 </p>
 
