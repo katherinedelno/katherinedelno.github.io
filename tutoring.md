@@ -19,7 +19,7 @@ These sessions are proactive and pre-planned around the AP curriculum, class pac
 - Requires substantial preparation outside of sessions to create lectures, select topics, and source materials
 - Best for students new to AP coursework or who benefit from consistent structure
 - Designed to ensure the student can both solve problems and clearly explain reasoning in the style required to earn maximum points on the AP exam
-- Billed in 30-minute increments; sessions may be combined with office hour sessions as needed
+- Billed in 30-minute increments; sessions may be combined with office hour sessions
 - Please allow 24-48 hours’ notice so materials can be prepared
 <br><br>
 
@@ -33,7 +33,7 @@ These sessions are reactive and driven by the student’s questions or homework 
 - Gaps are addressed only if the student identifies them
 - Little preparation required from the tutor before each session
 - Best for highly self-motivated students who can identify their own gaps
-- Billed in 30-minute increments; sessions may be combined with structured teaching sessions as needed
+- Billed in 30-minute increments; sessions may be combined with structured teaching sessions
 - Same-day scheduling may be available (subject to availability)
 <br><br>
 
@@ -52,11 +52,11 @@ These sessions are reactive and driven by the student’s questions or homework 
 - For structured sessions, please allow 24-48 hours for materials prep  
 - Option to mix structured teaching and office hours formats as needed  
 - 24-hour cancellation requested
-- Meetings held on Zoom; handouts from structured sessions are provided as PDFs
+- Meetings held virtually on Zoom; handouts from structured sessions are provided as PDFs
 <br><br>
 
 #### **Contact & Booking**
-Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested or want to learn more. Please reach out early, as I have limited availability.
+Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested! Please note I have limited availability.
 <br><br>
 
 #### **FAQs**
