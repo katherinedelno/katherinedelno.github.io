@@ -5,10 +5,9 @@ permalink: /tutoring/
 ---
 **Snapshot**  
 Structured Teaching ($120/hr) · Office Hours ($70/hr) · 30-min billing  
+<br>
 
-<br><br>
-
-#### Structured Teaching — $120/hr
+#### **Structured Teaching — $120/hr**
 Proactive, planned instruction aligned to the AP curriculum and your class pacing.
 
 - Short, targeted mini-lesson on upcoming or difficult topics  
@@ -19,9 +18,8 @@ Proactive, planned instruction aligned to the AP curriculum and your class pacin
 
 *Great for: students new to AP coursework or anyone aiming for a 4 or 5 on the AP exam.*
 
-<br><br>
 
-#### Office Hours — $70/hr
+#### **Office Hours — $70/hr**
 Reactive, student-led time for homework, study, and test prep.
 
 - Bring questions or current assignments  
@@ -30,8 +28,7 @@ Reactive, student-led time for homework, study, and test prep.
 - Same-day scheduling may be available (subject to availability)
 
 *Great for: quick help before quizzes/tests and targeted refreshers.*
-
-<br><br>
+<br>
 
 #### How we’ll work together
 1) Reach out with your class, schedule, and goals.  
@@ -39,8 +36,7 @@ Reactive, student-led time for homework, study, and test prep.
 3) Plan aligned to your pacing guide and upcoming assessments.  
 4) Meet weekly or as needed; mix formats anytime.  
 5) Each session ends with quick next steps and what to review.
-
-<br><br>
+<br>
 
 #### Policies & logistics
 - Billing in 30-minute increments (e.g., 45 minutes = 0.75 hours)  
@@ -71,7 +67,7 @@ Yes, I can work with any student in statistics!
 <br><br>
 
 #### Contact & Booking
-Please send me an email at delnokatherine@gmail.com if you are interested and want to learn more.
+Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested and want to learn more.
 
 <br><br>
 
