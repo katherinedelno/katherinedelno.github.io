@@ -4,27 +4,34 @@ title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
 #### **Tutoring Formats**
-**Structured Teaching — $120/hr**
-Proactive, planned instruction aligned to the AP curriculum and your class pacing.
+**Structured Teaching — $120/hr**<br>
+Structured Teaching Sessions are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. 
 
-- Short, targeted mini-lesson on upcoming or difficult topics  
-- Guided notes to keep and review  
-- Targeted practice set with full solutions  
-- AP-specific vocabulary and exam-style reasoning  
-- Immediate feedback while practicing
+- Sessions are pre-planned around the AP curriculum, class pacing, and anticipated challenges
+- Includes short, targeted mini-lessons on upcoming or difficult topics, plus AP exam strategies
+- Includes guided notes and a targeted practice set (with solutions) that the student keeps
+- Integrates AP-specific vocabulary and exam-style reasoning
+- Provides guided practice with AP-style questions and immediate feedback
+- Tutor proactively identifies gaps before they cause issues
+- Requires substantial preparation outside of sessions to create lectures, select topics, and source materials
+- Best for students new to AP coursework or who benefit from consistent structure
+- Designed to ensure the student can both solve problems and clearly explain reasoning in the style required to earn maximum points on the AP exam
+- Billed in 30-minute increments; sessions may be combined with office hour sessions as needed
+- Please allow 24-48 hours’ notice so materials can be prepared
+<br><br>
 
-*Great for: students new to AP coursework or anyone aiming for a 4-5 on the AP exam.*
-<br>
+**Office Hours — $70/hr**<br>
+Office Hour Sessions are reactive and driven by the student’s questions or homework needs. They provide support as issues arise but do not follow a planned sequence or long-term instructional strategy. This style of session is more in line with traditional tutoring. 
 
-**Office Hours — $70/hr**
-Reactive, student-led time for homework, study, and test prep.
-
-- Bring questions or current assignments  
-- Work from your teacher’s materials  
-- Concepts explained as needed; minimal long-term sequencing  
+- No set agenda; student brings questions or homework problems to discuss
+- No prepared handouts; we work from the student’s materials
+- Concepts explained only as needed with minimal sequencing or long-term planning
+- Practice happens only if the student brings problems to work on 
+- Gaps are addressed only if the student identifies them
+- Little preparation required from the tutor before each session
+- Best for highly self-motivated students who can identify their own gaps
+- Billed in 30-minute increments; sessions may be combined with structured teaching sessions as needed
 - Same-day scheduling may be available (subject to availability)
-
-*Great for: quick help before quizzes/tests and targeted refreshers.*
 <br><br>
 
 #### **How we’ll work together**
