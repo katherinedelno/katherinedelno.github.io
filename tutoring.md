@@ -80,6 +80,8 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 
 **Do you offer group sessions?**<br>My default is one-on-one for the best outcomes. Limited small-group options may be available if students are in the same class and pace.
 
+**What is your teaching background?**<br>I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno). I am a former TA for undergraduate introductory statistics (i.e., the college equivalent of AP Statistics) where I led weekly discussion and problem-solving sections for 100+ students, ran exam reviews, and emphasized clear, rubric-aligned statistical reasoning. I have also served as a graduate mentor for the University of Washington’s Statistics & Probability Association Directed Reading Program, where I designed and taught a one-on-one short course in statistical learning. Through these experiences, I’ve developed a strong ability to translate complex statistical ideas into clear, step-by-step explanations with guided practice—connecting intuition to formulas, spotlighting common pitfalls, and modeling AP-style reasoning so students can justify answers the way graders expect. Alongside applied teaching, I bring a strong theoretical foundation in probability and statistical inference, which I use to explain why methods work and to coach the precise, justification-focused writing AP graders reward.
+
 **Do you work with non-AP statistics?**<br>Yes, I can work with any student of statistics!
 <br><br>
 
