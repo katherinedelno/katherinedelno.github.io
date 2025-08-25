@@ -3,11 +3,8 @@ layout: page
 title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
-**Snapshot**  
-Structured Teaching ($120/hr) · Office Hours ($70/hr) · 30-min billing  
-<br>
-
-#### **Structured Teaching — $120/hr**
+#### **Tutoring Formats**
+**Structured Teaching — $120/hr**
 Proactive, planned instruction aligned to the AP curriculum and your class pacing.
 
 - Short, targeted mini-lesson on upcoming or difficult topics  
@@ -19,7 +16,7 @@ Proactive, planned instruction aligned to the AP curriculum and your class pacin
 *Great for: students new to AP coursework or anyone aiming for a 4-5 on the AP exam.*
 <br>
 
-#### **Office Hours — $70/hr**
+**Office Hours — $70/hr**
 Reactive, student-led time for homework, study, and test prep.
 
 - Bring questions or current assignments  
@@ -32,7 +29,7 @@ Reactive, student-led time for homework, study, and test prep.
 
 #### **How we’ll work together**
 1) Reach out with your class, schedule, and goals.  
-2) 10–15 min fit check to pick cadence and format.  
+2) 10-15 min fit check to pick cadence and format.  
 3) Plan aligned to your pacing guide and upcoming assessments.  
 4) Meet weekly or as needed; mix formats anytime.  
 5) Each session ends with quick next steps and what to review.
