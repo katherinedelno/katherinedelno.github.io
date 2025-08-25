@@ -4,11 +4,11 @@ title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
 #### **Tutoring Formats**
-Two ways to work together: *Office hour sessions* offer reactive, as-needed support for current assignments, quizzes, and tests. *Structured teaching sessions* are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
+Two ways to work together: *Office hours sessions* offer reactive, as-needed support for current assignments, quizzes, and tests. *Structured teaching sessions* are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
 <br><br>
 
 **Structured Teaching Session — $120/hr**<br>
-Structured Teaching Sessions are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. 
+These sessions are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. 
 
 - Sessions are pre-planned around the AP curriculum, class pacing, and anticipated challenges
 - Includes short, targeted mini-lessons on upcoming or difficult topics, plus AP exam strategies
@@ -24,7 +24,7 @@ Structured Teaching Sessions are proactive and pre-planned around the AP curricu
 <br><br>
 
 **Office Hours Session — $70/hr**<br>
-Office Hours Sessions are reactive and driven by the student’s questions or homework needs. They provide support as issues arise but do not follow a planned sequence or long-term instructional strategy. This style of session is more in line with traditional tutoring. 
+These sessions are reactive and driven by the student’s questions or homework needs. They provide support as issues arise but do not follow a planned sequence or long-term instructional strategy. This style of session is more in line with traditional tutoring. 
 
 - No set agenda; student brings questions or homework problems to discuss
 - No prepared handouts; we work from the student’s materials
