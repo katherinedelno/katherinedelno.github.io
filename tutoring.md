@@ -3,14 +3,8 @@ layout: page
 title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
-
-**AP Statistics Tutoring — Seattle & Online**  
-One-on-one, AP-aligned support. In person (Seattle) or Zoom.
-
 **Snapshot**  
 Structured Teaching ($120/hr) · Office Hours ($70/hr) · 30-min billing  
-Structured includes mini-lesson, guided notes, and a targeted practice set with solutions.  
-Please allow 24–48 hours’ notice for Structured prep.
 
 <br><br>
 
@@ -23,7 +17,7 @@ Proactive, planned instruction aligned to the AP curriculum and your class pacin
 - AP-specific vocabulary and exam-style reasoning  
 - Immediate feedback while practicing
 
-*Great for: students new to AP coursework or anyone aiming for a 4–5.*
+*Great for: students new to AP coursework or anyone aiming for a 4 or 5 on the AP exam.*
 
 <br><br>
 
@@ -50,40 +44,34 @@ Reactive, student-led time for homework, study, and test prep.
 
 #### Policies & logistics
 - Billing in 30-minute increments (e.g., 45 minutes = 0.75 hours)  
-- For Structured sessions, please allow 24–48 hours for materials prep  
-- Mix Structured and Office Hours as needed  
+- For structured sessions, please allow 24-48 hours for materials prep  
+- Option to mix structured teaching and office hours formats as needed  
 - 24-hour cancellation requested (late cancellations/no-shows may be billed a 30-minute minimum)  
-- In person (Seattle) or online (Zoom); handouts provided as PDFs
+- Meetings held on Zoom; handouts provided as PDFs
 
 <br><br>
 
 #### FAQ
-**What’s the difference between Structured and Office Hours?**  
+**What’s the difference between structured teaching and office hours formats?**  
 Structured is proactive with prepared materials; Office Hours is reactive and driven by your questions.
 
 **Do you provide practice and solutions?**  
-Yes—Structured includes a targeted practice set with full solutions.
+Yes, structured teaching sessions include a targeted practice set with full solutions.
 
 **Can I switch formats later?**  
-Yes—many students do weekly Structured and add Office Hours before tests.
+Yes, it is fine to start out in one format and adjust formats as needed. It is also fine to mix formats in one session (e.g., 30-minutes of structured teaching followed by 30 mimutes of office hours).
 
 **Do you help with AP exam prep?**  
-Yes—mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing.
+Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
 
 **Do you work with non-AP statistics?**  
-Yes—foundations and honors-level statistics.
+Yes, I can work with any student in statistics!
+
 
 <br><br>
 
-#### About Katherine
-M.S. in Statistics (University of Washington). Former TA for introductory statistics and one-on-one mentor in statistical learning. Clear explanations, sequenced examples, and guided practice to help students justify reasoning the way AP graders expect.
-
-<br><br>
-
-#### Contact & booking
-Email: YOUR_EMAIL_HERE  
-Phone (optional): YOUR_PHONE_HERE  
-Schedule: ADD_CALENDLY_OR_FORM_LINK
+#### Contact & Booking
+Please send me an email at delnokatherine@gmail.com if you are interested and want to learn more.
 
 <br><br>
 
