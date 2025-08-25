@@ -4,6 +4,9 @@ title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
 #### **Tutoring Formats**
+Two ways to work together: **Office Hours** offer reactive, as-needed support for current assignments, quizzes, and tests. **Structured Teaching** is proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning—built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
+<br>
+
 **Structured Teaching — $120/hr**<br>
 Structured Teaching Sessions are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. 
 
