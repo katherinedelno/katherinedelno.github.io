@@ -55,6 +55,10 @@ Office Hours Sessions are reactive and driven by the student’s questions or ho
 - Meetings held on Zoom; handouts from structured sessions are provided as PDFs
 <br><br>
 
+#### **Contact & Booking**
+Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested or want to learn more. PLease reach out early, as I have limited availability.
+<br><br>
+
 #### **FAQs**
 **What’s the main differences between structured teaching and office hours formats?**<br>  
 Structured teaching is proactive, planned one-on-one instruction with mini-lessons, guided notes, and targeted practice aligned to your syllabus and the AP rubric. Office hours are reactive sessions focused on your current questions, homework, and upcoming tests.
@@ -68,10 +72,10 @@ Yes, it is fine to start out in one format and adjust formats as needed. It is a
 **Do you help with AP exam prep?**<br>
 Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
 
-**When should we start if the AP exam is months away?**
+**When should we start if the AP exam is months away?**<br>
 Earlier is better. Structured teaching builds skills over time; starting well before major tests avoids cramming and reduces stress—and, crucially, lets us set strong foundations in core concepts, notation, and AP-style reasoning so later units build smoothly.
 
-**What technology do I need for online sessions?**<br>  
+**What technology do I need for online sessions?**
 Zoom, a stable connection, and your class materials. I teach using an iPad with screen-sharing, so you see me work problems and annotate in real time—just like a classroom whiteboard. A notebook and a graphing calculator (e.g., TI-84) are recommended.
 
 **Do you guarantee a specific score?**<br>
@@ -86,12 +90,8 @@ Upon request, I can send brief progress notes (key wins, upcoming targets) after
 **Do you offer group sessions?**<br>
 My default is one-on-one for the best outcomes. Limited small-group options may be available if students are in the same class and pace.
 
-**Do you work with non-AP statistics?**<br>  
+**Do you work with non-AP statistics?**
 Yes, I can work with any student of statistics!
-<br><br>
-
-#### **Contact & Booking**
-Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested or want to learn more. PLease reach out early, as I have limited availability. 
 <br><br>
 
 <small>AP® is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this tutoring service.</small>
