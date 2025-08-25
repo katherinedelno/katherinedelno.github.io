@@ -60,38 +60,27 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 <br><br>
 
 #### **FAQs**
-**What’s the main differences between structured teaching and office hours formats?**<br>  
-Structured teaching is proactive, planned one-on-one instruction with mini-lessons, guided notes, and targeted practice aligned to your syllabus and the AP rubric. Office hours are reactive sessions focused on your current questions, homework, and upcoming tests.
+**What’s the main differences between structured teaching and office hours formats?**<br>Structured teaching is proactive, planned one-on-one instruction with mini-lessons, guided notes, and targeted practice aligned to your syllabus and the AP rubric. Office hours are reactive sessions focused on your current questions, homework, and upcoming tests.
 
-**Do you provide practice and solutions?**<br>  
-Yes, structured teaching sessions include a targeted practice set with full solutions.
+**Do you provide practice and solutions?**<br>Yes, structured teaching sessions include a targeted practice set with full solutions.
 
-**Can I switch formats later?**<br>  
-Yes, it is fine to start out in one format and adjust formats as needed. It is also fine to mix formats in one session (e.g., 30-minutes of structured teaching followed by 30 mimutes of office hours).
+**Can I switch formats later?**<br>Yes, it is fine to start out in one format and adjust formats as needed. It is also fine to mix formats in one session (e.g., 30-minutes of structured teaching followed by 30 mimutes of office hours).
 
-**Do you help with AP exam prep?**<br>
-Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
+**Do you help with AP exam prep?**<br>Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
 
-**When should we start if the AP exam is months away?**<br>
-Earlier is better. Structured teaching builds skills over time; starting well before major tests avoids cramming and reduces stress—and, crucially, lets us set strong foundations in core concepts, notation, and AP-style reasoning so later units build smoothly.
+**When should we start if the AP exam is months away?**<br>Earlier is better. Structured teaching builds skills over time; starting well before major tests avoids cramming and reduces stress—and, crucially, lets us set strong foundations in core concepts, notation, and AP-style reasoning so later units build smoothly.
 
-**What technology do I need for online sessions?**
-Zoom, a stable connection, and your class materials. I teach using an iPad with screen-sharing, so you see me work problems and annotate in real time—just like a classroom whiteboard. A notebook and a graphing calculator (e.g., TI-84) are recommended.
+**What technology do I need for online sessions?**<br>Zoom, a stable connection, and your class materials. I teach using an iPad with screen-sharing, so you see me work problems and annotate in real time—just like a classroom whiteboard. A notebook and a graphing calculator (e.g., TI-84) are recommended.
 
-**Do you guarantee a specific score?**<br>
-No. I focus on building skills, AP-style reasoning, and consistent study habits that historically improve outcomes.
+**Do you guarantee a specific score?**<br>No. I focus on building skills, AP-style reasoning, and consistent study habits that historically improve outcomes.
 
-**Can a parent/guardian sit in on the first session?**<br>
-If helpful, yes. After that, most students prefer one-on-one time, with parents receiving brief updates as needed.
+**Can a parent/guardian sit in on the first session?**<br>If helpful, yes. After that, most students prefer one-on-one time, with parents receiving brief updates as needed.
 
-**How do parents stay in the loop?**<br>
-Upon request, I can send brief progress notes (key wins, upcoming targets) after structured teaching sessions or milestone assessments.
+**How do parents stay in the loop?**<br>Upon request, I can send brief progress notes (key wins, upcoming targets) after structured teaching sessions or milestone assessments.
 
-**Do you offer group sessions?**<br>
-My default is one-on-one for the best outcomes. Limited small-group options may be available if students are in the same class and pace.
+**Do you offer group sessions?**<br>My default is one-on-one for the best outcomes. Limited small-group options may be available if students are in the same class and pace.
 
-**Do you work with non-AP statistics?**
-Yes, I can work with any student of statistics!
+**Do you work with non-AP statistics?**<br>Yes, I can work with any student of statistics!
 <br><br>
 
 <small>AP® is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this tutoring service.</small>
