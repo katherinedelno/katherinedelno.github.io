@@ -4,7 +4,7 @@ title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
 #### **Tutoring Formats**
-Two ways to work together: **Office Hours** offer reactive, as-needed support for current assignments, quizzes, and tests. **Structured Teaching** is proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning—built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
+Two ways to work together: *Office hour sessions* offer reactive, as-needed support for current assignments, quizzes, and tests. *Structured teaching sessions* are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
 <br><br>
 
 **Structured Teaching Session — $120/hr**<br>
@@ -56,7 +56,7 @@ Office Hours Sessions are reactive and driven by the student’s questions or ho
 <br><br>
 
 #### **Contact & Booking**
-Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested or want to learn more. PLease reach out early, as I have limited availability.
+Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested or want to learn more. Please reach out early, as I have limited availability.
 <br><br>
 
 #### **FAQs**

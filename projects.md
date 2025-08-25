@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Projects
+title: Recent Projects
 permalink: /projects/
 ---
 **RandomForestSpecCheck: A Permutation-Based Random Forest Diagnostic for LMMs** 03/2025 
