@@ -8,7 +8,7 @@ I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematic
 <br><br>
 
 #### **Tutoring Formats**
-There are two ways we can work together: *Office hours sessions* offer reactive, as-needed support for current assignments, quizzes, and tests. *Structured teaching sessions* are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
+There are two ways we can work together: Office hours sessions offer reactive, as-needed support for current assignments, quizzes, and tests. Structured teaching sessions are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
 <br><br>
 
 **Structured Teaching Session — $120/hr**<br>
