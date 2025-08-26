@@ -24,7 +24,7 @@ These sessions are proactive and pre-planned around the AP curriculum, class pac
 - Best for students new to AP coursework or who benefit from consistent structure
 - Designed to ensure the student can both solve problems and clearly explain reasoning in the style required to earn maximum points on the AP exam
 - Billed in 30-minute increments; sessions may be combined with office hour sessions
-- Please allow 24-48 hours’ notice so materials can be prepared
+- Please allow 24-48 hours' notice so materials can be sourced and prepared
 <br><br>
 
 **Office Hours Session — $70/hr**<br>
@@ -41,7 +41,7 @@ These sessions are reactive and driven by the student’s questions or homework 
 - Same-day scheduling may be available (subject to availability)
 <br><br>
 
-#### **How we’ll work together**
+#### **How we'll work together**
 
 1. Reach out with your class, schedule, and goals.  
 2. Schedule a 10-15 min meet-and-greet to pick cadence and format.  
@@ -51,7 +51,7 @@ These sessions are reactive and driven by the student’s questions or homework 
 <br><br>
 
 #### **Policies & Logistics**
-- Billing in 30-minute increments (e.g., 30 minutes = 0.5 hours, 60 minutes = 1.0 hours)  
+- Billing in 30-minute increments (e.g., 30 minutes = 0.5 hours)  
 - Invoices sent via email on the 1st and 15th of each month
 - For structured sessions, please allow 24-48 hours for materials prep  
 - Option to mix structured teaching and office hours formats as needed  
@@ -64,7 +64,7 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 <br><br>
 
 #### **FAQs**
-**What’s the main differences between structured teaching and office hours formats?**<br>Structured teaching is proactive, planned one-on-one instruction with mini-lessons, guided notes, and targeted practice aligned to your syllabus and the AP rubric. Office hours are reactive sessions focused on your current questions, homework, and upcoming tests.
+**What’s the main difference between the structured teaching and office hours format?**<br>Structured teaching is proactive, planned one-on-one instruction with mini-lessons, guided notes, and targeted practice aligned to your syllabus and the AP rubric. Office hours are reactive sessions focused on your current questions, homework, and upcoming tests.
 
 **Do you provide practice and solutions?**<br>Yes, structured teaching sessions include a targeted practice set with full solutions.
 
