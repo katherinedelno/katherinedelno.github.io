@@ -20,7 +20,7 @@ These sessions are proactive and pre-planned around the AP curriculum, class pac
 - Integrates AP-specific vocabulary and exam-style reasoning
 - Provides guided practice with AP-style questions and immediate feedback
 - Tutor proactively identifies gaps before they cause issues
-- Requires substantial preparation outside of sessions to create lectures, select topics, and source materials
+- Requires preparation outside of sessions to create lectures, select topics, and source materials
 - Best for students new to AP coursework or who benefit from consistent structure
 - Designed to ensure the student can both solve problems and clearly explain reasoning in the style required to earn maximum points on the AP exam
 - Billed in 30-minute increments; sessions may be combined with office hour sessions
