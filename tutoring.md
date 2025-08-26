@@ -3,7 +3,7 @@ layout: page
 title: AP Statistics Tutoring
 permalink: /tutoring/
 ---
-####**My Background and Teaching Approach**
+####**My Background & Teaching Approach**
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno). As a former TA for college-level introductory statistics (i.e., the equivalent of AP Statistics), I led weekly discussion and problem-solving sections for 100+ students, ran exam reviews, and emphasized clear, rubric-aligned reasoning. I also mentored through UW's Statistics & Probability Association Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Through these experiences, I've developed a strong ability to translate complex statistical concepts into clear, step-by-step explanations with guided practice, connecting intuition to formulas, highlighting common pitfalls, and modeling the justification. Underpinning this is a strong theoretical foundation in probability and statistical inference, which I use to explain not just how methods work, but *why*, so students build durable understanding, not just procedures.
 <br><br>
 
