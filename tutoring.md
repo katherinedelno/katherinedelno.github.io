@@ -7,56 +7,34 @@ permalink: /tutoring/
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno). As a former TA for college-level introductory statistics (i.e., the equivalent of AP Statistics), I led weekly discussion and problem-solving sections for 100+ students, ran exam reviews, and emphasized clear, rubric-aligned reasoning. I also mentored through UW's Statistics & Probability Association Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Through these experiences, I've developed a strong ability to translate complex statistical concepts into clear, step-by-step explanations with guided practice, connecting intuition to formulas, highlighting common pitfalls, and modeling the justification. Underpinning this is a strong theoretical foundation in probability and statistical inference, which I use to explain not just how methods work, but *why*, so students build durable understanding, not just procedures.
 <br><br>
 
-#### **Tutoring Formats**
-There are two ways we can work together: Office hours sessions offer reactive, as-needed support for current assignments, quizzes, and tests. Structured teaching sessions offer proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
+#### **Tutoring Format**
+The tutoring services I offer are slightly different than traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer. This requires the student to identify their own gaps in knowledge, which is often challenging for students. The services I provide are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
 <br><br>
 
-**Structured Teaching Session — $120/hr**<br>
-These sessions are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. 
+**Private Lesson — $100/hr**<br>
+These lessons are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. Each private lesson includes these three components:
 
-- Sessions are pre-planned around the AP curriculum, class pacing, and anticipated challenges
-- Includes short, targeted mini-lessons on upcoming or difficult topics, plus AP exam strategies
-- Includes guided notes and a targeted practice set (with solutions) that the student keeps
-- Integrates AP-specific vocabulary and exam-style reasoning
-- Provides guided practice with AP-style questions and immediate feedback
-- Tutor proactively identifies gaps before they cause issues
-- Requires preparation outside of sessions to create lectures, select topics, and source materials
-- Best for students new to AP coursework or who benefit from consistent structure
-- Designed to ensure the student can both solve problems and clearly explain reasoning in the style required to earn maximum points on the AP exam
-- Billed in 30-minute increments; sessions may be combined with office hour sessions
-- Please allow 24-48 hours' notice so materials can be sourced and prepared
-<br><br>
+- **Lecture.** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.
+- **Instructor-led problem-solving.** The instructor works multiple exemplar problems, modeling setup (identify parameter, hypotheses, conditions), method choice, calculator steps (e.g., TI-84), mechanics, and a conclusion in context. Instructor calls out rubric-earning statements, shows common mistakes and how to self-check (units, direction, reasonableness), and, when useful, contrast an alternative approach so the student sees why the chosen method fits.
+_ **Student practice with instructor support.** The student solve similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
 
-**Office Hours Session — $70/hr**<br>
-These sessions are reactive and driven by the student’s questions or homework needs. They provide support as issues arise but do not follow a planned sequence or long-term instructional strategy. This style of session is more in line with traditional tutoring. 
+Each session's lecture notes, worked examples with solutions, and practice problems with solutions are provided as PDFs after each lesson for the student to keep.
 
-- No set agenda; student brings questions or homework problems to discuss
-- No prepared handouts; we work from the student’s materials
-- Concepts explained only as needed with minimal sequencing or long-term planning
-- Practice happens only if the student brings problems to work on 
-- Gaps are addressed only if the student identifies them
-- Little preparation required from the tutor before each session
-- Best for highly self-motivated students who can identify their own gaps
-- Billed in 30-minute increments; sessions may be combined with structured teaching sessions
-- Same-day scheduling may be available (subject to availability)
-<br><br>
 
 #### **How we'll work together**
 
-1. Reach out with your class, schedule, and goals.  
-2. Schedule a 10-15 min meet-and-greet to pick cadence and format.  
-3. Plan aligned to your pacing guide and upcoming assessments.  
-4. Meet weekly or as needed; mix formats anytime.  
-5. Each session ends with quick next steps and what to review.
+1. Parent(s) or student reach out with class, schedule, and goals.  
+2. Schedule a 10-15 minute virtual meet-and-greet with parent(s) and student.
+3. Create a plan aligned to the student's needs.
 <br><br>
 
 #### **Policies & Logistics**
-- Billing in 30-minute increments (e.g., 30 minutes = 0.5 hours)  
-- Invoices sent via email on the 1st and 15th of each month
-- For structured sessions, please allow 24-48 hours for materials prep  
-- Option to mix structured teaching and office hours formats as needed  
-- 24-hour cancellation requested
-- Meetings held virtually on Zoom; handouts from structured sessions are provided as PDFs
+- Standard session is 1-hour; may be shortened or extended in 30-minute increments 
+- For students that are on a weekly schedule, invoices are sent via email on the 1st of each monht
+- For students that are on an as-needed schedule, invoices are sent via email after each session
+- Please schedule with at least **48 hours' of notice** to allow for custom materials prep   
+- 24-hour cancellation requested; no cancellation fee if rescheduled 
+- Meetings held virtually on Zoom; lesson handouts provided as PDFs
 <br><br>
 
 #### **Contact & Booking**
@@ -72,7 +50,7 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 
 **Do you help with AP exam prep?**<br>Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
 
-**When should we start if the AP exam is months away?**<br>Earlier is better. Structured teaching builds skills over time; starting well before major tests avoids cramming and reduces stress—and, crucially, lets us set strong foundations in core concepts, notation, and AP-style reasoning so later units build smoothly.
+**When should we start if the AP exam is months away?**<br>Earlier is better. Private lessons build skills over time; starting well before major tests avoids cramming and reduces stress, and, crucially, lets us set strong foundations in core concepts, notation, and AP-style reasoning so later units build smoothly.
 
 **What technology do I need for online sessions?**<br>Zoom, a stable connection, and your class materials. I teach using an iPad with screen-sharing, so you see me work problems and annotate in real time—just like a classroom whiteboard. A notebook and a graphing calculator (e.g., TI-84) are recommended.
 
