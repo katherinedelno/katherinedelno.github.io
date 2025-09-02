@@ -19,7 +19,7 @@ These lessons are proactive and pre-planned around the AP curriculum, class paci
 _ **Student practice with instructor support.** The student solve similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
 
 Each session's lecture notes, worked examples with solutions, and practice problems with solutions are provided as PDFs after each lesson for the student to keep.
-
+<br><br>
 
 #### **How we'll work together**
 
