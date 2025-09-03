@@ -43,6 +43,8 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 <br><br>
 
 #### **FAQs**
+**Do you offer in-person private lessons?**<br>Online is my default, but limited in-person sessions within Seattle may be available on a case-by-case at a premium rate (subject to availability).
+
 **Do you provide practice and solutions?**<br>Yes, structured teaching sessions include a targeted practice set with full solutions.
 
 **Do you help with AP exam prep?**<br>Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
