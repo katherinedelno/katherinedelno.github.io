@@ -16,16 +16,17 @@ These lessons are proactive and pre-planned around the AP curriculum, class paci
 
 - **Lecture.** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.
 - **Instructor-led problem-solving.** The instructor works multiple exemplar problems, modeling setup (identify parameter, hypotheses, conditions), method choice, calculator steps (e.g., TI-84), mechanics, and a conclusion in context. Instructor calls out rubric-earning statements, shows common mistakes and how to self-check (units, direction, reasonableness), and, when useful, contrast an alternative approach so the student sees why the chosen method fits.
-_ **Student practice with instructor support.** The student solve similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
+- **Student practice with instructor support.** The student solve similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
 
 Each session's lecture notes, worked examples with solutions, and practice problems with solutions are provided as PDFs after each lesson for the student to keep.
 <br><br>
 
 #### **How we'll work together**
 
-1. Parent(s) or student reach out with class, schedule, and goals.  
+1. Parent(s) and/or student reach out with class, schedule, and goals.  
 2. Schedule a 10-15 minute virtual meet-and-greet with parent(s) and student.
 3. Create a plan aligned to the student's needs.
+4. For each lesson, the student notifies me of the target topic at least 48 hours in advance; we confirm and schedule the session and repeat.
 <br><br>
 
 #### **Policies & Logistics**
@@ -42,11 +43,7 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 <br><br>
 
 #### **FAQs**
-**What’s the main difference between the structured teaching and office hours format?**<br>Structured teaching is proactive, planned one-on-one instruction with mini-lessons, guided notes, and targeted practice aligned to your syllabus and the AP rubric. Office hours are reactive sessions focused on your current questions, homework, and upcoming tests.
-
 **Do you provide practice and solutions?**<br>Yes, structured teaching sessions include a targeted practice set with full solutions.
-
-**Can I switch formats later?**<br>Yes, it is fine to start out in one format and adjust formats as needed. It is also fine to mix formats in one session (e.g., 30-minutes of structured teaching followed by 30 mimutes of office hours).
 
 **Do you help with AP exam prep?**<br>Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
 
