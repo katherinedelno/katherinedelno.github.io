@@ -16,7 +16,7 @@ These lessons are proactive and pre-planned around the AP curriculum, class paci
 
 - **Lecture.** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
 - **Instructor-led problem-solving.** The instructor works multiple exemplar problems, modeling setup (identify parameter, hypotheses, conditions), method choice, calculator steps (e.g., TI-84), mechanics, and a conclusion in context. Instructor calls out rubric-earning statements, shows common mistakes and how to self-check (units, direction, reasonableness), and, when useful, contrast an alternative approach so the student sees why the chosen method fits.<br>
-- **Student practice with instructor support.** The student solve similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
+- **Student practice with instructor support.** The student solves similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
 
 Each session's lecture notes, worked examples with solutions, and practice problems with solutions are provided as PDFs after each lesson for the student to keep.
 <br><br>
@@ -31,7 +31,7 @@ Each session's lecture notes, worked examples with solutions, and practice probl
 
 #### **Policies & Logistics**
 - Standard session is 1-hour; may be shortened or extended in 30-minute increments 
-- For students that are on a weekly schedule, invoices are sent via email on the 1st of each monht
+- For students that are on a weekly schedule, invoices are sent via email on the 1st of every month
 - For students that are on an as-needed schedule, invoices are sent via email after each session
 - Please schedule with at least **48 hours' of notice** to allow for custom materials prep   
 - 24-hour cancellation requested; no cancellation fee if rescheduled 
@@ -61,7 +61,7 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 
 **Do you offer group sessions?**<br>My default is one-on-one for the best outcomes. Limited small-group options may be available if students are in the same class and pace.
 
-**Do you work with non-AP statistics?**<br>Yes, I can work with any student of statistics!
+**Could you support students taking AP Calculus?**<br>Possibly, please reach out if you're interested!
 <br><br>
 
 <small>AP® is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this tutoring service.</small>
