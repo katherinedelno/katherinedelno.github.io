@@ -50,4 +50,13 @@ Outside of work, you can find me in Seattle, usually baking, tuning my espresso 
     .intro { flex-direction: column; }
     .headshot { margin-top: 8px; }
   }
+/* Ensure hero photo isn't dimmed by theme rules */
+.headshot,
+a img.headshot {
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+  box-shadow: none;   /* in case a theme adds an inner shadow */
+}
 </style>
