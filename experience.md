@@ -6,7 +6,7 @@ permalink: /experience/
 **Private Tutor** 2025-Present<br>
 Self-Employed – Remote 
 
-Currently tutor students in AP Statistics in a proactive, instructor-led format. I plan and teach mini-lessons aligned to class pacing, open with concise lecture to formalize definitions and workflows, model exemplar solutions with AP-rubric reasoning, and guide live student practice with targeted feedback. Each session includes custom handouts, worked examples, and a practice set. I run quick diagnostics, set clear goals, share brief parent updates as needed, and teach on Zoom using a digital whiteboard to mirror a classroom experience.
+Deliver proactive, one-on-one instruction aligned to student needs and classroom pacing. Plan and teach mini-lessons that formalize definitions, notation, and analysis workflows; model exemplar solutions using AP-rubric reasoning; and lead guided practice with targeted feedback. Design custom handouts, worked examples, and practice sets. Conduct quick diagnostics to target instruction, set concrete goals with the student, provide brief parent updates as needed, and teach both remotely and in-person with a digital whiteboard to mirror classroom structure.
 <br><br>
 
 
