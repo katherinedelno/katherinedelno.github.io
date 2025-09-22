@@ -3,10 +3,10 @@ layout: page
 title: Experience
 permalink: /experience/
 ---
-**Volunteer** Current<br>
-Global Council for Responsible AI — Remote
+**Private Tutor** 2025-Present<br>
+Self-Employed – Remote 
 
-Early-stage volunteer supporting the executive leadership team.  Additional details forthcoming as work progresses.
+Currently tutor students in AP Statistics in a proactive, instructor-led format. I plan and teach mini-lessons aligned to class pacing, open with concise lecture to formalize definitions and workflows, model exemplar solutions with AP-rubric reasoning, and guide live student practice with targeted feedback. Each session includes custom handouts, worked examples, and a practice set. I run quick diagnostics, set clear goals, share brief parent updates as needed, and teach on Zoom using a digital whiteboard to mirror a classroom experience.
 <br><br>
 
 
