@@ -7,27 +7,16 @@ permalink: /
 <style>
   .page-heading{display:none}
 
-  /* Title + first paragraph + photo */
-  .hero { margin-bottom: 8px; }
-  .hero h1 { margin: 0 0 .5rem; }
+  /* Put the image only beside the first paragraph */
+  .intro { margin-bottom: 16px; }
 
-  .lede-row {
-    display: flex;
-    align-items: center;      /* centers photo vertically to the first paragraph */
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .lede {
-    flex: 1;
-    min-width: 280px;
-    max-width: 72ch;
-    margin: 0;                /* true centering against this paragraph */
-  }
   .headshot {
+    float: right;                 /* sit next to paragraph 1 */
     width: 200px; height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0;
+    margin: .25rem 0 .5rem 24px;  /* space from the paragraph */
+    shape-outside: circle(50%);   /* nicer wrap around the circle */
 
     /* prevent theme dimming */
     opacity: 1 !important;
@@ -37,6 +26,9 @@ permalink: /
     box-shadow: none;
   }
 
+  /* Start paragraph 2 below the floated image */
+  .intro-text p:nth-of-type(2) { clear: both; }
+
   /* Lightbox */
   .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6);
               align-items:center; justify-content:center; padding:24px; z-index:9999; }
@@ -45,30 +37,28 @@ permalink: /
                   box-shadow:0 10px 30px rgba(0,0,0,.35); }
   .lb-close { position:absolute; inset:0; cursor:zoom-out; }
 
+  /* Mobile: stack image above text, no float */
   @media (max-width:700px){
-    .lede-row { flex-direction: column; align-items: flex-start; }
-    .headshot { margin-top: 8px; }
+    .headshot { float:none; display:block; margin: 8px auto 12px; }
+    .intro-text p:nth-of-type(2) { clear: none; }
   }
 </style>
 
-<div class="hero">
-  <h1>Hi, my name is Katherine</h1>
+<div class="intro">
+  <div class="intro-text" markdown="1">
+# Hi, my name is Katherine
 
-  <!-- First paragraph + photo side-by-side -->
-  <div class="lede-row" markdown="1">
-    <p class="lede">
-      I’m a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently exploring data scientist and machine learning roles where I can contribute that same rigor and clarity. See my [recent projects](/projects/), [work experience](/experience/), and [academic background](/education/). Feel free to download my [resume](/assets/resume.pdf) or connect with me on [LinkedIn](https://www.linkedin.com/in/katherinedelno).
-    </p>
+<img src="/assets/img/headshot.JPG"
+     alt="Katherine Delno headshot"
+     class="headshot"
+     width="200" height="200"
+     loading="lazy" decoding="async">
 
-    <img src="/assets/img/headshot.JPG"
-         alt="Katherine Delno headshot"
-         class="headshot"
-         width="200" height="200"
-         loading="lazy" decoding="async">
-  </div>
-</div>
+I’m a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently exploring data scientist and machine learning roles where I can contribute that same rigor and clarity. See my [recent projects](/projects/), [work experience](/experience/), and [academic background](/education/). Feel free to download my [resume](/assets/resume.pdf) or connect with me on [LinkedIn](https://www.linkedin.com/in/katherinedelno).
 
 In parallel, I keep a small teaching practice: instructor-led one-on-one AP Statistics tutoring with limited availability. Click [here](/tutoring/) for more details.
+  </div>
+</div>
 
 Outside of work, you can find me in Seattle, usually baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat, [Blue](#blue-photo).
 
