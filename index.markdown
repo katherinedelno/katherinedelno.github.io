@@ -6,9 +6,15 @@ permalink: /
 <style>.page-heading{display:none}</style>
 # Hi, there.
 
-My name is [Katherine Delno](/about). I'm a recent M.S. Statistics graduate from the University of Washington. I build clean, reproducible workflows in Python/R and translate results clearly for non-technical audiences.
-This site showcases my selected [projects](/projects), [experience](/experience), and [academic background](/education).
+I’m Katherine Delno, an M.S. in Statistics graduate from the University of Washington. I build clean, reproducible data science workflows in Python/R and explain results clearly to non-technical partners. This site highlights selected projects, experience, and academic work.
 
-I'm actively pursuing data science and machine learning roles. I also occasionally offer [one-on-one tutoring in AP Statistics](/tutoring); inquiries welcome.
+I’m currently exploring roles in data science and applied statistics. 
+[View projects](/projects/) • [Download resume](/assets/resume.pdf) • [LinkedIn](https://www.linkedin.com/in/katherinedelno)
 
-Feel free to [download my resume](/assets/resume-delno-katherine.pdf) or [connect with me on LinkedIn](https://www.linkedin.com/in/katherinedelno/). I can be reached by email [here](mailto:delnokatherine@gmail.com). 
+For students and parents: I have limited availability for instructor-led one-on-one AP Statistics tutoring delivered over Zoom. 
+[Learn about tutoring](/tutoring/) 
+
+
+
+
+
