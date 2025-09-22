@@ -30,7 +30,14 @@ Outside of work, you can find me in Seattle, usually baking, tuning my espresso 
 <style>
   .intro { display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; margin-bottom:16px; }
   .intro-text { order: 1; flex: 1; min-width: 280px; max-width: 72ch; }
-  .headshot { order: 2; width:200px; height:200px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+  .intro-text h1 { margin: 0 0 .5rem; }        /* tighten space under the H1 */
+
+  /* Nudge photo down so it lines up with paragraph 1 */
+  .headshot {
+    order: 2;
+    width:200px; height:200px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    margin-top: clamp(16px, 2.6rem, 48px);      /* adjust this value to taste */
+  }
 
   /* Lightbox (unchanged) */
   .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6);
@@ -41,6 +48,6 @@ Outside of work, you can find me in Seattle, usually baking, tuning my espresso 
 
   @media (max-width: 700px) {
     .intro { flex-direction: column; }
-    .headshot { order: 2; margin-top: 8px; }
+    .headshot { margin-top: 8px; }
   }
 </style>
