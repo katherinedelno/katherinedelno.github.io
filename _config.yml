@@ -34,7 +34,7 @@ plugins:
 # (Minima will pick these up automatically if you list them here)
 header_pages:
   - index.markdown
-  - about.md
+#  - about.md
   - education.md
   - experience.md
   - projects.md
