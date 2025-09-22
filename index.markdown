@@ -4,13 +4,11 @@ title: Home
 permalink: /
 ---
 <style>.page-heading{display:none}</style>
-# Hi, there.
+# Hi, my name is Katherine
 
-My name is Katherine, a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently exploring data scientist and machine learning roles where I can contribute that same rigor and clarity. 
-<br>
-[Projects](/projects/) • [Experience](/experience/) • [Education](/education/) • [Resume](/assets/resume.pdf) • [LinkedIn](https://www.linkedin.com/in/katherinedelno)
+I'm a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently exploring data scientist and machine learning roles where I can contribute that same rigor and clarity. See my [projects](/projects/), [experience](/experience/), and [education](/education/). Feel free to download my [resume](/assets/resume.pdf) or connect with me on [LinkedIn](https://www.linkedin.com/in/katherinedelno). 
 
-In parallel, I keep a small teaching practice: instructor-led one-on-one AP Statistics tutoring (limited availability). [Details](/tutoring/).
+In parallel, I keep a small teaching practice: instructor-led one-on-one AP Statistics tutoring (limited availability). See additional details [here](/tutoring/).
 
   </p>
 
