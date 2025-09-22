@@ -19,7 +19,6 @@ I’m a statistician by training (M.S., University of Washington) who enjoys tur
 In parallel, I keep a small teaching practice: instructor-led one-on-one AP Statistics tutoring with limited availability. Click [here](/tutoring/) for more details.
   </div>
 </div>
-
 Outside of work, you can find me in Seattle, usually baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat, [Blue](#blue-photo).
 
 <!-- Lightbox -->
