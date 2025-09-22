@@ -6,7 +6,7 @@ permalink: /experience/
 **Private Tutor** 2025-Present<br>
 Self-Employed – Remote 
 
-Deliver proactive, one-on-one instruction aligned to student needs and classroom pacing. Plan and teach mini-lessons that formalize definitions, notation, and analysis workflows; model exemplar solutions using AP-rubric reasoning; and lead guided practice with targeted feedback. Design custom handouts, worked examples, and practice sets. Conduct quick diagnostics to target instruction, set concrete goals with the student, provide brief parent updates as needed, and teach both remotely and in-person with a digital whiteboard to mirror classroom structure.
+Deliver structured one-on-one instruction aligned to student needs and classroom pacing. Plan and teach mini-lessons that formalize definitions, notation, and analysis workflows; model exemplar solutions using AP-rubric reasoning; and lead guided practice with targeted feedback. Design custom handouts, worked examples, and practice sets. Conduct quick diagnostics to target instruction, set concrete goals with the student, and provide brief parent updates as needed. Emphasize clear reasoning, reproducible steps, and succinct communication.
 <br><br>
 
 
