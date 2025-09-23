@@ -47,7 +47,7 @@ permalink: /
 </style>
 
 <div class="hero">
-  <h1>Hi, my name is Katherine</h1>
+  <h1>Hi, my name is Katherine. Nice to meet you.</h1>
 
   <div class="intro-grid">
     <p>
