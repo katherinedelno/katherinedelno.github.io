@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AP Statistics Tutoring
+title: Quantitative Boutique: Premium One-on-One Statistics Teaching
 permalink: /tutoring/
 ---
 #### **My Background & Teaching Approach**
@@ -11,14 +11,14 @@ I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematic
 The tutoring services I offer are slightly different than traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer. This requires the student to identify their own gaps in knowledge, which is often challenging for students. The services I provide are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
 <br><br>
 
-**Private Lesson — $100/hr**<br>
+**Private Lesson — $140/hr**<br>
 These lessons are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style of session is more in line with private, one-on-one teaching. Each private lesson includes these three components:
 
-- **Lecture.** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
-- **Instructor-led problem-solving.** The instructor works multiple exemplar problems, modeling setup (identify parameter, hypotheses, conditions), method choice, calculator steps (e.g., TI-84), mechanics, and a conclusion in context. Instructor calls out rubric-earning statements, shows common mistakes and how to self-check (units, direction, reasonableness), and, when useful, contrast an alternative approach so the student sees why the chosen method fits.<br>
-- **Student practice with instructor support.** The student solves similar problems live while I step in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
+- **Lecture (10-15 minutes).** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
+- **Instructor-led problem-solving (0-10 minutes).** If the student prefers, the instructor works a few exemplar problems, modeling setup (e.g., identify parameter, hypotheses, conditions), method choice, calculator steps (e.g., TI-84), mechanics, and a conclusion in context. Instructor calls out rubric-earning statements, shows common mistakes and how to self-check (units, direction, reasonableness), and, when useful, contrast an alternative approach so the student sees why the chosen method fits.<br>
+- **Student practice with instructor support (35-50 minutes).** The student solves similar problems live while the instructor steps in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in mathematics and statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.
 
-Each session's lecture notes, worked examples with solutions, and practice problems with solutions are provided as PDFs after each lesson for the student to keep.
+Each session's lecture notes, worked examples with solutions, and practice problems with solutions are provided as PDFs after each lesson for the student to keep via DropBox file sharing.
 <br><br>
 
 #### **How we'll work together**
@@ -30,12 +30,12 @@ Each session's lecture notes, worked examples with solutions, and practice probl
 <br><br>
 
 #### **Policies & Logistics**
-- Standard session is 1-hour; may be shortened or extended in 30-minute increments 
+- Standard session is 1-hour; may be extended in 30-minute increments 
 - For students that are on a weekly schedule, invoices are sent via email on the 1st of every month
 - For students that are on an as-needed schedule, invoices are sent via email after each session
 - Please schedule with at least **48 hours' of notice** to allow for custom materials prep   
-- 24-hour cancellation requested; no cancellation fee if rescheduled 
-- Meetings held virtually on Zoom; lesson handouts provided as PDFs
+- 24-hour cancellation requested; no cancellation fee if rescheduled within the same week
+- Meetings held virtually on Zoom; lesson handouts provided as PDFs via DropBox sharing
 <br><br>
 
 #### **Contact & Booking**
@@ -43,9 +43,7 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 <br><br>
 
 #### **FAQs**
-**Do you offer in-person private lessons?**<br>Online is my default, but limited in-person sessions within Seattle may be available on a case-by-case at a premium rate (subject to availability).
-
-**Do you provide practice and solutions?**<br>Yes, structured teaching sessions include a targeted practice set with full solutions.
+**Do you offer in-person private lessons?**<br>Online is my default for time efficiency, but limited in-person sessions within Seattle may be available on a case-by-case at a premium rate and subject to availability.
 
 **Do you help with AP exam prep?**<br>Yes, mock FRQs, multiple-choice review, timing strategies, and rubric-aligned writing will be integrated into structured teaching sessions.
 
@@ -55,9 +53,7 @@ Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested
 
 **Do you guarantee a specific score?**<br>No. I focus on building skills, AP-style reasoning, and consistent study habits that historically improve outcomes.
 
-**Can a parent/guardian sit in on the first session?**<br>If helpful, yes. After that, most students prefer one-on-one time, with parents receiving brief updates as needed.
-
-**How do parents stay in the loop?**<br>Upon request, I can send brief progress notes (key wins, upcoming targets) after structured teaching sessions or milestone assessments.
+**How do parents stay in the loop?**<br>Upon request, I can send brief progress notes after sessions or milestone assessments.
 
 **Do you offer group sessions?**<br>My default is one-on-one for the best outcomes. Limited small-group options may be available if students are in the same class and pace.
 
