@@ -39,7 +39,7 @@ Each session's lecture notes, worked examples with solutions, and practice probl
 <br><br>
 
 #### **Contact & Booking**
-Please [send me an email](mailto:delnokatherine@gmail.com) if you are interested! Please note I have limited availability.
+Email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) to request a spot. Please note there is limited availability.
 <br><br>
 
 #### **FAQs**

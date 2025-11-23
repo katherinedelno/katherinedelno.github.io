@@ -47,14 +47,20 @@ permalink: /
 </style>
 
 <div class="hero">
-  <h1>Hi, my name is Katherine. Nice to meet you.</h1>
+  <h1>Hi, I’m Katherine. I run a quantitative teaching boutique.</h1>
 
   <div class="intro-grid">
     <p>
-      I’m a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently exploring data scientist and machine learning roles where I can contribute that same rigor and clarity. See my
+      I’m a statistician by training (M.S. in Statistics, University of Washington) who now focuses on private,   one-on-one statistics instruction for high school and early college students. I specialize in AP Statistics and introductory statistics, blending strong theoretical grounding with clear, step-by-step teaching and custom materials.
+      <p>
+      Through my boutique teaching practice, I help students build real statistical understanding and exam-ready reasoning, not just get through tonight's homework. If you’re a parent or student looking for structured, instructor-led support in AP Statistics, you can learn more about my approach and rates on my <a href="/tutoring/">AP Statistics tutoring page</a>.
+      <p>
+      Alongside teaching, I maintain an active interest in applied statistics, data science, and machine learning. I enjoy turning careful analysis into decisions people can actually use, building clear, reproducible workflows in Python and R, and communicating results in plain language so collaborators don’t need a stats background to act. I'm open to select full-time roles where I can bring that same rigor and clarity to an applied setting.
+     <p>
+     You can explore my
       <a href="/projects/">recent projects</a>, <a href="/experience/">work experience</a>, and
-      <a href="/education/">academic background</a>. Feel free to download my
-      <a href="/assets/resume.pdf">resume</a> or connect with me on
+      <a href="/education/">academic background</a>, or download my
+      <a href="/assets/resume.pdf">resume</a> and
       <a href="https://www.linkedin.com/in/katherinedelno">LinkedIn</a>.
     </p>
 
@@ -67,12 +73,7 @@ permalink: /
 </div>
 
 <p>
-  In parallel, I keep a small teaching practice: instructor-led one-on-one AP Statistics tutoring with limited availability. Click
-  <a href="/tutoring/">here</a> for more details.
-</p>
-
-<p>
-  Outside of work, you can find me in Seattle, usually baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat,
+  I'm based in Seattle, WA. Outside of work, you'll usually find me baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat,
   <a href="#blue-photo">Blue</a>.
 </p>
 
