@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Quantitative Boutique: Premium One-on-One Statistics Teaching
+title: Premium One-on-One Statistics Teaching
 permalink: /tutoring/
 ---
 #### **My Background & Teaching Approach**
