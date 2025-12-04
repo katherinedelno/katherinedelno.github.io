@@ -8,9 +8,7 @@ I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematic
 <br><br>
 
 #### **Private Lesson — $140/hr**
-The tutoring services I offer are slightly different than traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer. This requires the student to identify their own gaps in knowledge, which is often challenging for students. The services I provide are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
-<br> 
-These lessons are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style is in line with private, one-on-one teaching. Each private lesson includes these three components:
+The tutoring services I offer are slightly different from traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer, which requires the student to identify their own gaps in knowledge, which is a challenging task even for strong students. In contrast, these lessons are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, all pre-planned around the AP curriculum, class pacing, and anticipated challenges. The goal is to stay ahead of class pacing, close gaps early, build exam-ready habits, and help students master AP-specific language and reasoning. Each private lesson includes:
 
 - **Mini Lecture (10-15 minutes).** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
 - **Guided Problem Solving (45-50 minutes).** The student solves similar problems live while the instructor steps in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in mathematics and statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.<br>
@@ -18,7 +16,7 @@ These lessons are proactive and pre-planned around the AP curriculum, class paci
 For 60-minute lessons, we may instead use a single “exit ticket” problem at the end of the session so as to keep most of the time focused on guided practice while still giving the student one fully independent check-in.
 <br><br>
 
-##### **Optional Add-On: Custom Problem Sets & Written Feedback**
+#### **Optional Add-On: Custom Problem Sets & Written Feedback**
 Many students benefit from structured practice and accountability between lessons. For families who want this, I offer custom problem sets aligned with each session and written feedback on the student’s work. This includes:
 
 - A short, targeted assignment between sessions of 3-8 problems;
@@ -40,29 +38,29 @@ Every session is taught from materials **custom-designed for that student**: lec
 4. **Standing schedule & weekly topic check-in.** We set a regular lesson time. At least 48 hours before each session, the student sends the current or upcoming class topic and 2-3 representative homework or review problems they find challenging. I then prepare custom notes, examples, and practice around that material. If no specific topic is sent, I continue along the AP-aligned plan based on the syllabus and the student’s recent work, staying slightly ahead of class where possible.
 <br><br>
 
-#### **Policies & Logistics**
+### **Policies & Logistics**
 
-##### **Session length & format**
+#### **Session length & format**
 - Standard session length is **60 minutes**.  
 - Sessions may be extended in **30-minute increments**, as scheduling permits.  
 - Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz when appropriate.  
 - All meetings are held **virtually via Zoom**.
 - Limited **in-person** sessions within Seattle may be available on a **case-by-case at a premium rate** and subject to availability.
-
-##### **Scheduling, rescheduling, & cancellations**
+<br>
+#### **Scheduling, rescheduling, & cancellations**
 - Students are strongly encouraged to reserve a **standing weekly lesson time** to ensure continuity and priority scheduling.  
 - At least **48 hours before each session**, the student sends the current or upcoming class topic and 2–3 representative homework or review problems they find challenging so I can prepare custom materials.  
 - As-needed sessions are available **when my schedule allows**, but weekly students receive priority for time slots.  
 - At least **24 hours’ notice** is requested for cancellations or rescheduling.  
 - If a session is **canceled with less than 24 hours’ notice but rescheduled within the same week**, there is **no cancellation fee**, subject to availability.  
 - If a session is **canceled with less than 24 hours’ notice and not rescheduled within the same week**, **50% of the session fee is billed** to account for time spent preparing custom materials.
-
-##### **Billing**
+<br>
+#### **Billing**
 - For students on a **weekly schedule**, invoices are emailed on the **1st of each month** for the prior month’s lessons.  
 - For students on an **as-needed schedule**, invoices are emailed **after each session**.  
 - Payment details and due dates are included on each invoice.
-
-##### **Materials & file sharing**
+<br>
+#### **Materials & file sharing**
 - Lesson handouts, lecture notes, worked examples, practice problems, and any end-of-session quizzes are provided as **PDFs** after each session.  
 - All files are shared via a **dedicated Dropbox folder** accessible to the instructor, student, and parents (if desired). 
 
