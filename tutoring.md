@@ -3,15 +3,13 @@ layout: page
 title: Premium One-on-One Statistics Teaching
 permalink: /tutoring/
 ---
-#### **My Background & Teaching Approach**
+### **My Background & Teaching Approach**
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno). As a former TA for college-level introductory statistics (i.e., the equivalent of AP Statistics), I led weekly discussion and problem-solving sections for 100+ students, ran exam reviews, and emphasized clear, rubric-aligned reasoning. I also mentored through UW's Statistics & Probability Association Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Through these experiences, I've developed a strong ability to translate complex statistical concepts into clear, step-by-step explanations with guided practice, connecting intuition to formulas, highlighting common pitfalls, and modeling the justification. Underpinning this is a strong theoretical foundation in probability and statistical inference, which I use to explain not just how methods work, but **why**, so students build durable understanding, not just procedures.
 <br><br>
 
-#### **Tutoring Format**
-The tutoring services I offer are slightly different than traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer. This requires the student to identify their own gaps in knowledge, which is often challenging for students. The services I provide are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
-<br><br>
-
 #### **Private Lesson — $140/hr**
+The tutoring services I offer are slightly different than traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer. This requires the student to identify their own gaps in knowledge, which is often challenging for students. The services I provide are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, specifically built to stay ahead of class pacing, close gaps early, and build exam-ready habits.
+<br> 
 These lessons are proactive and pre-planned around the AP curriculum, class pacing, and anticipated challenges. They focus on building skills, mastering AP-specific language, and reinforcing concepts before gaps form. This style is in line with private, one-on-one teaching. Each private lesson includes these three components:
 
 - **Mini Lecture (10-15 minutes).** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
