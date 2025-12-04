@@ -18,7 +18,7 @@ These lessons are proactive and pre-planned around the AP curriculum, class paci
 For 60-minute lessons, we may instead use a single “exit ticket” problem at the end of the session so as to keep most of the time focused on guided practice while still giving the student one fully independent check-in.
 <br><br>
 
-###### **Optional Add-On: Custom Problem Sets & Written Feedback**
+##### **Optional Add-On: Custom Problem Sets & Written Feedback**
 Many students benefit from structured practice and accountability between lessons. For families who want this, I offer custom problem sets aligned with each session and written feedback on the student’s work. This includes:
 
 - A short, targeted assignment between sessions of 3-8 problems;
@@ -28,11 +28,11 @@ Many students benefit from structured practice and accountability between lesson
 Because this requires additional time outside of our meetings, custom homework design and grading are billed separately from the lesson itself, typically $70 per full assignment (a 5–8 problem set with grading and brief written comments). Light homework suggestions from existing materials are always included at no extra charge.
 <br><br>
 
-##### **File Sharing
+#### **File Sharing**
 Every session is taught from materials **custom-designed for that student**: lecture notes, worked examples, practice problems, and any end-of-session quiz. After each lesson, the exact documents used in session are provided to the student as PDFs to keep and reuse. Students are encouraged to print these packets and refer back to them frequently as a personalized notebook. All files are organized and shared via a dedicated Dropbox folder shared between the instructor, student, and parents (if desired).
 <br><br>
 
-##### **How we'll work together**
+#### **How we'll work together**
 
 1. **Initial contact.** Parent(s) and student reach out with basic information about the course and general scheduling constraints.
 2. **10-15 minute virtual or in-person meet-and-greet.** We talk through goals, prior experience, and what’s been challenging so far. This is also a chance to confirm fit and answer any questions about how I teach.
@@ -42,7 +42,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 
 #### **Policies & Logistics**
 
-##### **Session length & format **
+##### **Session length & format**
 - Standard session length is **60 minutes**.  
 - Sessions may be extended in **30-minute increments**, as scheduling permits.  
 - Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz when appropriate.  
@@ -68,7 +68,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 
 <br><br>
 
-#### **Contacg & Booking**
+#### **Contact & Booking**
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
 <br><br>
 
