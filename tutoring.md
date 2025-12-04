@@ -10,9 +10,11 @@ I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematic
 #### **Private Lesson — $140/hr**
 The tutoring services I offer are slightly different from traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer, which requires the student to identify their own gaps in knowledge, which is a challenging task even for strong students. In contrast, these lessons are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, all pre-planned around the AP curriculum, class pacing, and anticipated challenges. The goal is to stay ahead of class pacing, close gaps early, build exam-ready habits, and help students master AP-specific language and reasoning. Each private lesson includes:
 
-**Mini Lecture (10-15 minutes).** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
-**Guided Problem Solving (45-50 minutes).** The student solves similar problems live while the instructor steps in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in mathematics and statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.<br>
-**End-of-Session Quiz (optional, but highly recommended).** In 90-minute sessions or longer, we reserve the last 15-20 minutes for a brief quiz. The student independently solves 2-3 problems directly tied to that session’s topic under light time pressure, without instructor prompts. Once the student is finished, we go over their work together, noting what was done correctly, where reasoning or notation drifted from AP expectations, and how to tighten justifications. This creates an authentic, low-stakes exam experience and a clear snapshot of progress.
+- **Mini Lecture (10-15 minutes).** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
+
+- **Guided Problem Solving (45-50 minutes).** The student solves similar problems live while the instructor steps in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in mathematics and statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.<br>
+
+- **End-of-Session Quiz (optional, but highly recommended).** In 90-minute sessions or longer, we reserve the last 15-20 minutes for a brief quiz. The student independently solves 2-3 problems directly tied to that session’s topic under light time pressure, without instructor prompts. Once the student is finished, we go over their work together, noting what was done correctly, where reasoning or notation drifted from AP expectations, and how to tighten justifications. This creates an authentic, low-stakes exam experience and a clear snapshot of progress.
 For 60-minute lessons, we may instead use a single “exit ticket” problem at the end of the session so as to keep most of the time focused on guided practice while still giving the student one fully independent check-in.
 <br><br>
 
@@ -47,6 +49,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 - All meetings are held **virtually via Zoom**.
 - Limited **in-person** sessions within Seattle may be available on a **case-by-case at a premium rate** and subject to availability.
 <br>
+
 #### **Scheduling, rescheduling, & cancellations**
 - Students are strongly encouraged to reserve a **standing weekly lesson time** to ensure continuity and priority scheduling.  
 - At least **48 hours before each session**, the student sends the current or upcoming class topic and 2–3 representative homework or review problems they find challenging so I can prepare custom materials.  
@@ -55,11 +58,13 @@ Every session is taught from materials **custom-designed for that student**: lec
 - If a session is **canceled with less than 24 hours’ notice but rescheduled within the same week**, there is **no cancellation fee**, subject to availability.  
 - If a session is **canceled with less than 24 hours’ notice and not rescheduled within the same week**, **50% of the session fee is billed** to account for time spent preparing custom materials.
 <br>
+
 #### **Billing**
 - For students on a **weekly schedule**, invoices are emailed on the **1st of each month** for the prior month’s lessons.  
 - For students on an **as-needed schedule**, invoices are emailed **after each session**.  
 - Payment details and due dates are included on each invoice.
 <br>
+
 #### **Materials & file sharing**
 - Lesson handouts, lecture notes, worked examples, practice problems, and any end-of-session quizzes are provided as **PDFs** after each session.  
 - All files are shared via a **dedicated Dropbox folder** accessible to the instructor, student, and parents (if desired). 
