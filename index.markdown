@@ -77,7 +77,7 @@ permalink: /
         You can explore my <a href="/projects/">recent projects</a>,
         <a href="/experience/">work experience</a>, and
         <a href="/education/">academic background</a>, or download my
-        <a href="/assets/resume.pdf">resume</a> and connected with me on 
+        <a href="/assets/resume.pdf">resume</a> and connect with me on 
         <a href="https://www.linkedin.com/in/katherinedelno">LinkedIn</a>.
       </p>
     </div>
