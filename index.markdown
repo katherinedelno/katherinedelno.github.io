@@ -62,7 +62,7 @@ permalink: /
         Through my boutique teaching practice, I help students build real statistical understanding and
         exam-ready reasoning, not just get through tonight's homework. If you’re a parent or student looking
         for structured, instructor-led support in AP Statistics, you can learn more about my approach and
-        rates on my <a href="/tutoring/">premium one-on-one statistics tutoring page</a>.
+        rates on my <a href="/tutoring/">premium one-on-one statistics instruction page</a>.
       </p>
 
       <p>

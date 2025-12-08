@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Premium One-on-One Statistics Teaching
+title: Premium One-on-One Statistics Instruction
 permalink: /tutoring/
 ---
 ### **My Background & Teaching Approach**
