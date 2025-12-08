@@ -70,11 +70,11 @@ Every session is taught from materials **custom-designed for that student**: lec
 
 <br><br>
 
-#### Contact & Booking
+### **Contact & Booking**
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
 <br><br><br>
 
-#### **FAQs**
+### **FAQs**
 **Do you offer in-person private lessons?**<br>Online is my default for time efficiency, but limited in-person sessions within Seattle may be available on a case-by-case at a premium rate and subject to availability.
 
 **Do you offer any reduced rates?**<br>I know that high-quality, specialized instruction is a meaningful investment. I maintain a small number of reduced-rate spots each year for families with demonstrated financial need. If cost is a barrier, please contact me to see whether one of these spots is available or to discuss what might be possible.
