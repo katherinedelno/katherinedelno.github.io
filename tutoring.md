@@ -43,9 +43,8 @@ Every session is taught from materials **custom-designed for that student**: lec
 ### **Policies & Logistics**
 
 #### Session length & format
-- Standard session length is **60 minutes**.  
-- Sessions may be extended in **30-minute increments**, as scheduling permits.  
-- Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz when appropriate.  
+- Standard session length is **60 minutes**; sessions may be extended in **30-minute increments**, as scheduling permits.  
+- Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz.  
 - All meetings are held **virtually via Zoom**.
 - Limited **in-person sessions** within Seattle may be available on a case-by-case at a premium rate and subject to availability.
 <br><br>
