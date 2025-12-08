@@ -18,7 +18,7 @@ The tutoring services I offer are slightly different from traditional tutoring. 
 For 60-minute lessons, we may instead use a single “exit ticket” problem at the end of the session so as to keep most of the time focused on guided practice while still giving the student one fully independent check-in.
 <br><br>
 
-#### **Optional Add-On: Custom Problem Sets & Written Feedback**
+#### Optional Add-On: Custom Problem Sets & Written Feedback
 Many students benefit from structured practice and accountability between lessons. For families who want this, I offer custom problem sets aligned with each session and written feedback on the student’s work. This includes:
 
 - A short, targeted assignment between sessions of 3-8 problems;
@@ -28,7 +28,7 @@ Many students benefit from structured practice and accountability between lesson
 Because this requires additional time outside of our meetings, custom problem set design and grading are billed separately from the lesson itself, typically billed at half my hourly-rate, or $70 per full assignment. This includes 5-8 problems with grading and brief written comments. Light problem suggestions from existing materials are always included during sessions at no extra charge, but often it requires structured and designed problem sets with accountability for the student to fully benefit.
 <br><br>
 
-#### **File Sharing**
+#### File Sharing
 Every session is taught from materials **custom-designed for that student**: lecture notes, worked examples, practice problems, and any end-of-session quiz. After each lesson, the exact documents used in session are provided to the student as PDFs to keep and reuse. Students are encouraged to print these packets and refer back to them frequently as a personalized notebook. All files are organized and shared via a dedicated Dropbox folder shared between the instructor, student, and parents (if desired).
 <br><br>
 
