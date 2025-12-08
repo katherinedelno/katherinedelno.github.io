@@ -30,15 +30,15 @@ Because this requires additional time outside of our meetings, custom problem se
 
 #### File Sharing
 Every session is taught from materials **custom-designed for that student**: lecture notes, worked examples, practice problems, and any end-of-session quiz. After each lesson, the exact documents used in session are provided to the student as PDFs to keep and reuse. Students are encouraged to print these packets and refer back to them frequently as a personalized notebook. All files are organized and shared via a dedicated Dropbox folder shared between the instructor, student, and parents (if desired).
-<br><br>
+<br><br><br>
 
-#### **How we'll work together**
+### **How we'll work together**
 
 1. **Initial contact.** Parent(s) and student reach out with basic information about the course and general scheduling constraints.
 2. **10-15 minute virtual or in-person meet-and-greet.** We talk through goals, prior experience, and what’s been challenging so far. This is also a chance to confirm fit and answer any questions about how I teach.
 3. **Course snapshot & planning.** The student/parent shares the class syllabus, grading policies, and a few recent assignments or tests (photos or PDFs are fine). I use these to map the course’s pacing onto the AP curriculum, identify early trouble spots, and build a plan tailored to the student.
 4. **Standing schedule & weekly topic check-in.** We set a regular lesson time. At least 48 hours before each session, the student sends the current or upcoming class topic and 2-3 representative homework or review problems they find challenging. I then prepare custom notes, examples, and practice around that material. If no specific topic is sent, I continue along the AP-aligned plan based on the syllabus and the student’s recent work, staying slightly ahead of class where possible.
-<br><br>
+<br><br><br>
 
 ### **Policies & Logistics**
 
@@ -67,8 +67,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 #### Materials & file sharing
 - Lesson handouts, lecture notes, worked examples, practice problems, and any end-of-session quizzes are provided as **PDFs** after each session.  
 - All files are shared via a **dedicated Dropbox folder** accessible to the instructor, student, and parents (if desired). 
-
-<br><br>
+<br><br><br>
 
 ### **Contact & Booking**
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
