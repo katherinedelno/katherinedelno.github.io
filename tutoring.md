@@ -47,7 +47,7 @@ If you’re interested in working together, please email me at [delnokatherine@g
 ### **Policies & Logistics**
 
 #### Session length & format
-- Standard session length is **60 minutes**; sessions may be extended in **30-minute increments**, as scheduling permits.  
+- Standard session length is **60 minutes**; sessions may be extended in 30-minute increments, as scheduling permits.  
 - Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz.  
 - All meetings are held **virtually via Zoom**.
 - Limited **in-person sessions** within Seattle may be available on a case-by-case at a premium rate and subject to availability.
@@ -63,8 +63,8 @@ If you’re interested in working together, please email me at [delnokatherine@g
 <br><br>
 
 #### Billing
-- For students on a **weekly schedule**, invoices are emailed on the **1st of each month** for the prior month’s lessons.  
-- For students on an **as-needed schedule**, invoices are emailed **after each session**.  
+- For students on a weekly schedule, invoices are emailed on the **1st of each month** for the prior month’s lessons.  
+- For students on an as-needed schedule, invoices are emailed after each session.  
 - Payment details and due dates are included on each invoice.
 <br><br>
 
