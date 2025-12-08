@@ -40,6 +40,10 @@ Every session is taught from materials **custom-designed for that student**: lec
 4. **Standing schedule & weekly topic check-in.** We set a regular lesson time. At least 48 hours before each session, the student sends the current or upcoming class topic and 2-3 representative homework or review problems they find challenging. I then prepare custom notes, examples, and practice around that material. If no specific topic is sent, I continue along the AP-aligned plan based on the syllabus and the student’s recent work, staying slightly ahead of class where possible.
 <br><br><br>
 
+### **Contact & Booking**
+If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
+<br><br><br>
+
 ### **Policies & Logistics**
 
 #### Session length & format
@@ -67,10 +71,6 @@ Every session is taught from materials **custom-designed for that student**: lec
 #### Materials & file sharing
 - Lesson handouts, lecture notes, worked examples, practice problems, and any end-of-session quizzes are provided as **PDFs** after each session.  
 - All files are shared via a **dedicated Dropbox folder** accessible to the instructor, student, and parents (if desired). 
-<br><br><br>
-
-### **Contact & Booking**
-If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
 <br><br><br>
 
 ### **FAQs**
