@@ -48,7 +48,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 - Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz when appropriate.  
 - All meetings are held **virtually via Zoom**.
 - Limited **in-person sessions** within Seattle may be available on a case-by-case at a premium rate and subject to availability.
-<br>
+<br><br>
 
 #### **Scheduling, rescheduling, & cancellations**
 - Students are strongly encouraged to reserve a **standing weekly lesson time** to ensure continuity and priority scheduling.  
@@ -57,13 +57,13 @@ Every session is taught from materials **custom-designed for that student**: lec
 - At least **24 hours’ notice** is requested for cancellations or rescheduling.  
 - If a session is canceled with less than 24 hours’ notice but rescheduled within the same week, there is no cancellation fee, subject to availability.  
 - If a session is canceled with less than 24 hours’ notice and not rescheduled within the same week, 50% of the session fee is billed to account for time spent preparing custom materials.
-<br>
+<br><br>
 
 #### **Billing**
 - For students on a **weekly schedule**, invoices are emailed on the **1st of each month** for the prior month’s lessons.  
 - For students on an **as-needed schedule**, invoices are emailed **after each session**.  
 - Payment details and due dates are included on each invoice.
-<br>
+<br><br>
 
 #### **Materials & file sharing**
 - Lesson handouts, lecture notes, worked examples, practice problems, and any end-of-session quizzes are provided as **PDFs** after each session.  
@@ -73,7 +73,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 
 #### **Contact & Booking**
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
-<br><br>
+<br><br><br>
 
 #### **FAQs**
 **Do you offer in-person private lessons?**<br>Online is my default for time efficiency, but limited in-person sessions within Seattle may be available on a case-by-case at a premium rate and subject to availability.
