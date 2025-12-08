@@ -47,16 +47,16 @@ Every session is taught from materials **custom-designed for that student**: lec
 - Sessions may be extended in **30-minute increments**, as scheduling permits.  
 - Many students find **90-minute lessons** to be the “sweet spot” for balancing brief lecture, guided practice, and an end-of-session quiz when appropriate.  
 - All meetings are held **virtually via Zoom**.
-- Limited **in-person** sessions within Seattle may be available on a **case-by-case at a premium rate** and subject to availability.
+- Limited **in-person sessions** within Seattle may be available on a case-by-case at a premium rate and subject to availability.
 <br>
 
 #### **Scheduling, rescheduling, & cancellations**
 - Students are strongly encouraged to reserve a **standing weekly lesson time** to ensure continuity and priority scheduling.  
 - At least **48 hours before each session**, the student sends the current or upcoming class topic and 2–3 representative homework or review problems they find challenging so I can prepare custom materials.  
-- As-needed sessions are available **when my schedule allows**, but weekly students receive priority for time slots.  
+- As-needed sessions are available when my schedule allows, but weekly students receive priority for time slots.  
 - At least **24 hours’ notice** is requested for cancellations or rescheduling.  
-- If a session is **canceled with less than 24 hours’ notice but rescheduled within the same week**, there is **no cancellation fee**, subject to availability.  
-- If a session is **canceled with less than 24 hours’ notice and not rescheduled within the same week**, **50% of the session fee is billed** to account for time spent preparing custom materials.
+- If a session is canceled with less than 24 hours’ notice but rescheduled within the same week, there is no cancellation fee, subject to availability.  
+- If a session is canceled with less than 24 hours’ notice and not rescheduled within the same week, 50% of the session fee is billed to account for time spent preparing custom materials.
 <br>
 
 #### **Billing**
