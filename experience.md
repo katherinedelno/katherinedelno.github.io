@@ -3,9 +3,9 @@ layout: page
 title: Experience
 permalink: /experience/
 ---
-**Private Tutor** 2025-Present<br>
+**Private Statistics Instructor** 2025-Present<br>
 
-Deliver structured one-on-one instruction aligned to student needs and classroom pacing. Plan and teach mini-lessons that formalize definitions, notation, and analysis workflows; model exemplar solutions using AP-rubric reasoning; and lead guided practice with targeted feedback. Design custom handouts, worked examples, and practice sets. Conduct quick diagnostics to target instruction, set concrete goals with the student, and provide brief parent updates as needed. Emphasize clear reasoning, reproducible steps, and succinct communication.
+Provide premium one-on-one statistics instruction to high school and early college students, with a focus on AP Statistics and introductory university-level material. Design and deliver structured mini-lectures, custom handouts, targeted problem sets, and rubric-aligned practice to build conceptual understanding, notation fluency, and exam-style reasoning. Assess student work with detailed written and verbal feedback, tracking progress over time and adapting pacing and content to address individual learning needs.
 <br><br>
 
 
