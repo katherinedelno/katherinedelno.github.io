@@ -7,7 +7,7 @@ permalink: /tutoring/
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno). As a former TA for college-level introductory statistics (i.e., the equivalent of AP Statistics), I led weekly discussion and problem-solving sections for 100+ students, ran exam reviews, and emphasized clear, rubric-aligned reasoning. I also mentored through UW's Statistics & Probability Association Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Through these experiences, I've developed a strong ability to translate complex statistical concepts into clear, step-by-step explanations with guided practice, connecting intuition to formulas, highlighting common pitfalls, and modeling the justification. Underpinning this is a strong theoretical foundation in probability and statistical inference, which I use to explain not just how methods work, but **why**, so students build durable understanding, not just procedures.
 <br><br>
 
-#### **Private Lesson — $110/hr**
+#### **Private Lesson — $120/hr**
 The tutoring services I offer are slightly different from traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer, which requires the student to identify their own gaps in knowledge, which is a challenging task even for strong students. In contrast, these lessons are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, all pre-planned around the AP curriculum, class pacing, and anticipated challenges. The goal is to stay ahead of class pacing, close gaps early, build exam-ready habits, and help students master AP-specific language and reasoning. Each private lesson includes:
 
 - **Mini Lecture (10-15 minutes).** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
@@ -25,7 +25,7 @@ Many students benefit from structured practice and accountability between lesson
 - Clear expectations on how and when to submit work;
 - Graded feedback highlighting strengths, common errors, and how to polish AP-style justification. 
 
-Because this requires additional time outside of our meetings, custom problem set design and grading are billed separately from the lesson itself, typically billed at half my hourly-rate, or $70 per full assignment. This includes 5-8 problems with grading and brief written comments. Light problem suggestions from existing materials are always included during sessions at no extra charge, but often it requires structured and designed problem sets with accountability for the student to fully benefit.
+Because this requires additional time outside of our meetings, custom problem set design and grading are billed separately from the lesson itself, typically billed at half my hourly-rate. This includes 5-8 problems, custom-designed to the student, with grading and brief written comments. Light problem suggestions from existing materials are always included during sessions at no extra charge, but often it requires structured and designed problem sets with accountability for the student to fully benefit.
 <br><br>
 
 #### File Sharing
