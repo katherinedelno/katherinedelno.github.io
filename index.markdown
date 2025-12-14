@@ -47,7 +47,7 @@ permalink: /
 </style>
 
 <div class="hero">
-  <h1>Hi, I’m Katherine. I run a quantitative teaching boutique.</h1>
+  <h1>Hi, I’m Katherine.</h1>
 
   <div class="intro-grid">
     <div>
