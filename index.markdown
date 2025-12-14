@@ -83,7 +83,7 @@ permalink: /
     </div>
 
     <img
-      src="/assets/img/headshot.JPG"
+      src="/assets/img/headshot.jpeg"
       alt="Katherine Delno headshot"
       class="headshot"
       width="200"
