@@ -9,7 +9,7 @@ permalink: /about/
     I’m Katherine, a statistician by training (M.S., University of Washington) who enjoys turning careful analysis into decisions people can actually use. I build clear, reproducible workflows in Python and R and translate results into plain language so collaborators don’t need a stats background to act. I care about honest uncertainty and work that others can re-run and trust. I’m currently volunteering with the Global Council for Responsible AI (GCRAI), supporting executive leadership and early framework efforts, and I’m exploring data scientist and machine-learning roles where I can contribute that same rigor and clarity.
   </p>
 
-  <img src="/assets/img/headshot.jpeg" alt="Headshot"
+  <img src="/assets/img/headshot.jpg" alt="Headshot"
        style="width:200px; height:200px; border-radius:50%; object-fit:cover; flex-shrink:0;"
        loading="lazy" decoding="async">
 
