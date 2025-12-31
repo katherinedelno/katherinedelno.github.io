@@ -41,7 +41,7 @@ Every session is taught from materials **custom-designed for that student**: lec
 <br><br><br>
 
 ### **Contact & Booking**
-If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) with a brief note about the course, school, and your preferred days/times. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
+If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
 
 <!-- Calendly popup text/button begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
