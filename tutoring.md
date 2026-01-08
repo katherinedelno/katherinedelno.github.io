@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Premium One-on-One Statistics Instruction
+title: One-on-One Statistics Instruction
 permalink: /tutoring/
 ---
 
