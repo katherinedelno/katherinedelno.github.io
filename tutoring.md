@@ -7,8 +7,12 @@ permalink: /tutoring/
 #### **Overview**
 I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning.
 
+<br>
+
 #### **My Background & Teaching Approach**
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with a strong theoretical foundation in probability and statistical inference. As a graduate teaching assistant for college-level introductory statistics, I led weekly discussion sections and supported large-course instruction, emphasizing clear, rubric-aligned reasoning. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. These experiences have sharpened my ability to translate technical ideas into precise, step-by-step explanations that connect intuition to formulas, highlight assumptions and common pitfalls, and model high-quality statistical justification.
+
+<br>
 
 #### **Private Lesson — $120/hr**
 The tutoring services I offer are slightly different from traditional tutoring. Traditional tutoring is often reactive, student-led, question-and-answer, which requires the student to identify their own gaps in knowledge, which is a challenging task even for strong students. In contrast, these lessons are proactive, one-on-one instruction with planned mini-lessons, custom handouts, targeted practice with solutions, and rubric-aligned AP reasoning, all pre-planned around the AP curriculum, class pacing, and anticipated challenges. The goal is to stay ahead of class pacing, close gaps early, build exam-ready habits, and help students master AP-specific language and reasoning. Each private lesson includes:
