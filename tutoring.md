@@ -24,7 +24,7 @@ Sessions are structured and instructor-led, typically combining brief concept re
 - **End-of-Session Quiz.** In longer sessions, we reserve the final minutes for a short independent check-in (2–4 problems) to measure retention under light time pressure and identify what to tighten next.
 <br><br>
 
-### **Contact & Booking**
+#### **Next Steps**
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
 
 <!-- Calendly popup text/button begin -->
