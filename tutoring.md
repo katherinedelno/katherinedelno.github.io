@@ -4,17 +4,17 @@ title: One-on-One Statistics Instruction
 permalink: /tutoring/
 ---
 
-**Overview**
+**Overview**<br>
 I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning.
 
 <br>
 
-**My Background & Teaching Approach**
+**My Background & Teaching Approach**<br>
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for college-level introductory statistics, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and guiding a one-on-one introduction to statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
 
 <br>
 
-**Private Lesson — $120/hr**
+**Private Lesson — $120/hr**<br>
 Sessions are structured and instructor-led, typically combining brief concept review, targeted guided practice, and an independent check-in problem when appropriate. Materials are tailored to the student’s course pacing and goals. Each private lesson includes:
 
 - **Mini Lecture.** A brief, high-signal review of the topic’s key definitions, notation, and conditions, plus the standard workflow and justification structure used on assessments.<br>
@@ -24,7 +24,7 @@ Sessions are structured and instructor-led, typically combining brief concept re
 - **End-of-Session Quiz.** In longer sessions, we reserve the final minutes for a short independent check-in (2–4 problems) to measure retention under light time pressure and identify what to tighten next.
 <br><br>
 
-**Next Steps**
+**Next Steps**<br>
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
 
 <!-- Calendly popup text/button begin -->
