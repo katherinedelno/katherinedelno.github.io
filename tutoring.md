@@ -10,18 +10,18 @@ I provide one-on-one statistics instruction for motivated high school and early 
 <br>
 
 #### **My Background & Teaching Approach**
-I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with a strong theoretical foundation in probability and statistical inference. As a graduate teaching assistant for college-level introductory statistics, I led weekly discussion sections and supported large-course instruction, emphasizing clear, rubric-aligned reasoning. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. These experiences have sharpened my ability to translate technical ideas into precise, step-by-step explanations that connect intuition to formulas, highlight assumptions and common pitfalls, and model high-quality statistical justification.
+I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for college-level introductory statistics, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and guiding a one-on-one introduction to statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
 
 <br>
 
 #### **Private Lesson — $120/hr**
 Sessions are structured and instructor-led, typically combining brief concept review, targeted guided practice, and an independent check-in problem when appropriate. Materials are tailored to the student’s course pacing and goals. Each private lesson includes:
 
-- **Mini Lecture.** Concise exposition of the topic establishing formal definitions, notation, and requisite conditions, and outlining the standard analytical workflow and justification structure. A brief canonical example fixes ideas before moving to worked examples and practice.<br>
+- **Mini Lecture.** A brief, high-signal review of the topic’s key definitions, notation, and conditions, plus the standard workflow and justification structure used on assessments.<br>
 
-- **Guided Problem Solving.** The student solves similar problems live while the instructor steps in where needed, asking targeted questions, correcting course, and reinforcing rubric-aligned reasoning. This phase is essential in mathematics and statistics: doing the work yourself strengthens concept-to-notation links, exposes misconceptions instantly, and builds independent problem-solving. The student leaves able to show each step and justify conclusions in AP style.<br>
+- **Guided Problem Solving.** The student works representative problems live while I provide targeted prompts and corrections to reinforce correct method selection and rubric-aligned reasoning..<br>
 
-- **End-of-Session Quiz.** In 90-minute sessions or longer, we reserve the last 10-15 minutes for a brief quiz. The student independently solves 3-4 problems directly tied to that session’s topic under light time pressure, without instructor prompts. Once the student is finished, we go over their work together, noting what was done correctly, where reasoning or notation drifted from AP expectations, and how to tighten justifications. This creates an authentic, low-stakes exam experience and a clear snapshot of progress.
+- **End-of-Session Quiz.** In longer sessions, we reserve the final minutes for a short independent check-in (2–4 problems) to measure retention under light time pressure and identify what to tighten next.
 <br><br>
 
 ### **Contact & Booking**
