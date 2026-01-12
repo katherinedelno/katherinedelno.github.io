@@ -17,7 +17,7 @@ I primarily support AP Statistics and college-level introductory statistics. Iâ€
 <br>
 
 **Packages**<br>
-I take a structured, high-support approach that builds both skill and confidence. Sessions are designed like a mini-class: clear instruction, guided problem-solving, and independent checks to reinforce mastery. My **base rate is $120/hour**, and the packages below make weekly support simple and predictable; choose Standard Weekly for focused instruction, or Premium Course Support for a full feedback loop and structure between sessions.
+I take a structured, high-support approach that builds both skill and confidence. Sessions are designed like a mini-class: clear instruction, guided problem-solving, and independent checks to reinforce mastery. My base rate is $120/hour, and the packages below make weekly support simple and predictable; choose Standard Weekly for focused instruction, or Premium Course Support for a full feedback loop and structure between sessions.
 <br>
 
 **Standard Weekly â€” $680/month (4 sessions)**<br>
