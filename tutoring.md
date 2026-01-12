@@ -47,7 +47,6 @@ This option is for students who want flexible, as-needed help with specific ques
 - **Student-led agenda.** The student brings questions, class notes, homework, quizzes, or review topics, and we work through them efficiently with an emphasis on correct method selection, clear setup, and strong explanations.<br>
 - **Live problem-solving and explanation coaching.** I help the student identify the right procedure, check conditions, set up the work correctly, and write rubric-aligned conclusions.<br>
 - **Course-aligned support.** We focus on what the student is currently doing in class or what’s coming up on an assessment.<br>
-- **Materials.** Students should send relevant materials (photos/PDFs of notes, homework, or review guides) at least 24 hours in advance when possible, so we can start quickly and use time well.<br>
 - **Best fit:** Students who want flexible, as-needed help and can bring specific questions/materials to drive the session rather than needing a structured weekly program with instructor-led teaching, assigned practice, and between-session support.
 <br><br>
 
@@ -69,5 +68,6 @@ If you’re interested in working together, please email me at [delnokatherine@g
 **Academic Progress & No Guaranteed Outcomes**<br>
 My goal is to help students build durable understanding, stronger problem-solving habits, and clearer statistical communication—skills that often translate into improved performance over time. I provide high-quality instruction, targeted practice, and actionable feedback aligned with the student’s course expectations and goals.<br><br>
 That said, I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on many factors outside my control, including the student’s consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, pacing, and test-day conditions.<br><br>
-By enrolling, families are purchasing instructional time and academic coaching—not a promised outcome. I’m always happy to discuss goals up front, share what I’m observing, and adjust our approach as we learn what helps the student most.
+By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome. I’m always happy to discuss goals up front, share what I’m observing, and adjust our approach as we learn what helps the student most.<br>
+
 <small>AP® is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this tutoring service.</small>
