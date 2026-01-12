@@ -25,12 +25,12 @@ I take a structured, high-support approach that builds both skill and confidence
 
 **Standard Weekly — $680/month (4 sessions)**<br>
 - **Weekly 90-minute sessions.** Sessions are structured and instructor-led, typically combining brief concept review, targeted guided practice, and an independent check-in problem. Materials are tailored to the student’s course pacing and goals.<br>
-- **Mini Lecture.** A brief, high-signal review of the topic’s key definitions, notation, and conditions, plus the standard workflow and justification structure used on assessments.<br>
-- **Guided Problem Solving.** The student works representative problems live while I provide targeted prompts and corrections to reinforce correct method selection and rubric-aligned reasoning.<br>
-- **End-of-Session Quiz.** The final 10–15 minutes of each session is reserved for a short independent check-in (2–4 problems) to measure retention under light time pressure and identify what to tighten next.<br>
+  - **Mini-lecture.** A brief, high-signal review of the topic’s key definitions, notation, and conditions, plus the standard workflow and justification structure used on assessments.<br>
+  - **Guided problem-solving.** The student works representative problems live while I provide targeted prompts and corrections to reinforce correct method selection and rubric-aligned reasoning.<br>
+  - **End-of-session quiz.** The final 10–15 minutes of each session is reserved for a short independent check-in (2–4 problems) to measure retention under light time pressure and identify what to tighten next.<br>
 - **Session notes and solutions.** After each session, I upload a printable set of notes to the student’s shared Dropbox folder, including the mini-lecture summary, guided problem-solving (with solutions), and the end-of-session quiz (with solutions), so they can review and reference everything between meetings.<br>
 - **TI-84 Plus CE integration.** I teach students how to use the TI-84 Plus CE efficiently for AP Statistics—especially key statistics and probability functions—so they can handle complex calculations confidently and avoid avoidable test-day mistakes.<br>
-- **Best fit.** Students who mainly need clear instruction and guided practice, and can follow through on practice independently.
+- **Best fit:** Students who mainly need clear instruction and guided practice, and can follow through on practice independently.
 
 <br>
 
@@ -41,7 +41,7 @@ Includes everything in Standard Weekly, plus:
 - **Method summary sheet updates.** We maintain a running “method sheet” that summarizes when to use each procedure, the key conditions to check, and the standard justification/interpretation wording. It’s designed for quick review before quizzes/tests and to reduce repeat mistakes.<br>
 - **Between-session support.** I’m available for quick questions or clarifications on weekdays between sessions so the student doesn’t get stuck and lose momentum. Weekend messages are welcome too, but may have longer response times.<br>
 - **Monthly parent update.** Once per month, parents can choose a 20-minute virtual check-in (meeting or call) or a brief written progress note covering what we’ve worked on, current strengths/weak spots, and next steps.<br>
-- **Best fit.** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
+- **Best fit:** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
 
 <br>
 
