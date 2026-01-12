@@ -14,7 +14,6 @@ I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematic
 
 **Who This Is For**<br>
 I primarily support AP Statistics and college-level introductory statistics. I’m a strong fit for students who want proactive, structured support, and who need to improve method selection, notation, and written explanations.
-
 <br>
 
 **Packages**<br>
