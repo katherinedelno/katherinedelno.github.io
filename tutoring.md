@@ -6,21 +6,19 @@ permalink: /tutoring/
 
 **Overview**<br>
 I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning.
-
 <br>
 
 **My Background & Teaching Approach**<br>
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for large introductory statistics courses, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
-
 <br>
 
 **Who This Is For**<br>
 I primarily support AP Statistics and college-level introductory statistics. I’m a strong fit for students who want proactive, structured support, and who need to improve method selection, notation, and written explanations.
+
 <br>
 
 **Packages**<br>
 I take a structured, high-support approach that builds both skill and confidence. Sessions are designed like a mini-class: clear instruction, guided problem-solving, and independent checks to reinforce mastery. My **base rate is $120/hour**, and the packages below make weekly support simple and predictable; choose Standard Weekly for focused instruction, or Premium Course Support for a full feedback loop and structure between sessions.
-
 <br>
 
 **Standard Weekly — $680/month (4 sessions)**<br>
@@ -31,7 +29,6 @@ I take a structured, high-support approach that builds both skill and confidence
 - **Session notes and solutions.** After each session, I upload a printable set of notes to the student’s shared Dropbox folder, including the mini-lecture summary, guided problem-solving (with solutions), and the end-of-session quiz (with solutions), so they can review and reference everything between meetings.<br>
 - **TI-84 Plus CE integration.** I teach students how to use the TI-84 Plus CE efficiently for AP Statistics—especially key statistics and probability functions—so they can handle complex calculations confidently and avoid avoidable test-day mistakes.<br>
 - **Best fit:** Students who mainly need clear instruction and guided practice, and can follow through on practice independently.
-
 <br>
 
 **Premium Course Support — $880/month (4 sessions)**<br>
@@ -42,16 +39,20 @@ Includes everything in Standard Weekly, plus:
 - **Between-session support.** I’m available for quick questions or clarifications on weekdays between sessions so the student doesn’t get stuck and lose momentum. Weekend messages are welcome too, but may have longer response times.<br>
 - **Monthly parent update.** Once per month, parents can choose a 20-minute virtual check-in (meeting or call) or a brief written progress note covering what we’ve worked on, current strengths/weak spots, and next steps.<br>
 - **Best fit:** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
-
 <br>
 
-**Private Lesson — $120/hr**<br>
-For families who prefer flexibility (as-needed sessions rather than a weekly plan). Sessions are structured and instructor-led, and can be scheduled as availability allows.
+**Traditional Tutoring (Student-Led) — $90/hr**<br>
+This option is for students who want flexible, as-needed help with specific questions (homework, quiz/test review, or a topic they’re currently covering). Sessions are student-led rather than a fully structured weekly program.
 
+- **Student-led agenda.** The student brings questions, class notes, homework, quizzes, or review topics, and we work through them efficiently with an emphasis on correct method selection, clear setup, and strong explanations.<br>
+- **Live problem-solving and explanation coaching.** I help the student identify the right procedure, check conditions, set up the work correctly, and write rubric-aligned conclusions.<br>
+- **Course-aligned support.** We focus on what the student is currently doing in class or what’s coming up on an assessment.<br>
+- **Materials.** Students should send relevant materials (photos/PDFs of notes, homework, or review guides) at least 24 hours in advance when possible, so we can start quickly and use time well.<br>
+- **Best fit:** Students who want flexible, as-needed help and can bring specific questions/materials to drive the session rather than needing a structured weekly program with instructor-led teaching, assigned practice, and between-session support.
 <br><br>
 
 **Next Steps**<br>
-If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early, especially if you’re hoping to reserve a weekly spot.
+If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early. Additional details will be provided upon meeting.
 
 <!-- Calendly popup text/button begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -65,4 +66,8 @@ If you’re interested in working together, please email me at [delnokatherine@g
 <!-- Calendly popup text/button end -->
 <br><br><br>
 
+**Academic Progress & No Guaranteed Outcomes**<br>
+My goal is to help students build durable understanding, stronger problem-solving habits, and clearer statistical communication—skills that often translate into improved performance over time. I provide high-quality instruction, targeted practice, and actionable feedback aligned with the student’s course expectations and goals.<br><br>
+That said, I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on many factors outside my control, including the student’s consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, pacing, and test-day conditions.<br><br>
+By enrolling, families are purchasing instructional time and academic coaching—not a promised outcome. I’m always happy to discuss goals up front, share what I’m observing, and adjust our approach as we learn what helps the student most.
 <small>AP® is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this tutoring service.</small>
