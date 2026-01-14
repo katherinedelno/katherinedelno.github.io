@@ -16,7 +16,7 @@ I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematic
 I primarily support AP Statistics and college-level introductory statistics. I’m a strong fit for students who want proactive, structured support, and who need to improve method selection, notation, and written explanations.
 <br>
 
-**Packages**<br>
+**Course Support Options**<br>
 My default approach is a structured weekly program that functions more like a mini-class than drop-in homework help. Each session includes clear instruction, guided practice, and an independent check so students build reliable method selection and strong statistical writing rather than only working through individual problems.
 
 Choose Structured Course Support for consistent instruction and comprehensive session notes. Choose Premium Course Support if the student benefits from a fuller feedback loop, including assigned practice, accountability, and between-session support, especially when the class moves quickly or instruction is unclear. All sessions are billed monthly. 
