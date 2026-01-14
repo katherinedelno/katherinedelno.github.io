@@ -53,13 +53,12 @@ For students who are generally self-directed and want occasional help with speci
 - **Not ideal for ongoing skill-building.** If a student needs consistent structure, assigned practice, accountability, or their course instruction/pacing makes it hard to learn the material cleanly, Structured Course Support or Premium Course Support is typically the better fit and produces more reliable progress.
 - **Best fit:** Self-directed students who come prepared with specific questions and do not need weekly structure, assigned practice, or between-session feedback.
 <br><br>
-<!-- Technology (place below the three service options) -->
-<div style="display:flex; gap:18px; align-items:flex-start; margin-top:18px;">
-  <img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 260px; width: 35%; height: auto; border-radius: 10px;">
-  <p style="margin:0;">
-    **Technology:**<br>All sessions are held via Zoom. During meetings, I teach using an iPad-based digital whiteboard (live handwriting and annotation), so students can see the full setup, reasoning, and notation step by step. Each student also has a shared Dropbox folder where I upload session notes and materials for organized review between meetings. Students should plan to join from a location with stable internet and have a TI-84 Plus CE and a way to take notes; I also encourage printing the session notes for quick reference before quizzes and tests.
-  </p>
-</div>
+
+**Technology**<br>
+All sessions are held via Zoom. During meetings, I teach using an iPad-based digital whiteboard (live handwriting and annotation, see gif below), so students can see the full setup, reasoning, and notation step by step. Each student also has a shared Dropbox folder where I upload session notes and materials for organized review between meetings. Students should plan to join from a location with stable internet and have a TI-84 Plus CE and a way to take notes; I also encourage printing the session notes for quick reference before quizzes and tests.
+<br>
+<img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 40%; height: auto;">
+<br><br>
 
 **Next Steps**<br>
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early. Additional details will be provided upon meeting.
