@@ -7,6 +7,8 @@ permalink: /tutoring/
 **Overview**<br>
 I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning. Sessions are held over Zoom; materials and notes are shared through a private Dropbox folder.
 <br>
+<img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 50%; height: auto;">
+<br>
 
 **My Background & Teaching Approach**<br>
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for large introductory statistics courses, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
@@ -51,6 +53,13 @@ For students who are generally self-directed and want occasional help with speci
 - **Not ideal for ongoing skill-building.** If a student needs consistent structure, assigned practice, accountability, or their course instruction/pacing makes it hard to learn the material cleanly, Structured Course Support or Premium Course Support is typically the better fit and produces more reliable progress.
 - **Best fit:** Self-directed students who come prepared with specific questions and do not need weekly structure, assigned practice, or between-session feedback.
 <br><br>
+<!-- Technology (place below the three service options) -->
+<div style="display:flex; gap:18px; align-items:flex-start; margin-top:18px;">
+  <img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 260px; width: 35%; height: auto; border-radius: 10px;">
+  <p style="margin:0;">
+    **Technology:**<br>All sessions are held via Zoom. During meetings, I teach using an iPad-based digital whiteboard (live handwriting and annotation), so students can see the full setup, reasoning, and notation step by step. Each student also has a shared Dropbox folder where I upload session notes and materials for organized review between meetings. Students should plan to join from a location with stable internet and have a TI-84 Plus CE and a way to take notes; I also encourage printing the session notes for quick reference before quizzes and tests.
+  </p>
+</div>
 
 **Next Steps**<br>
 If you’re interested in working together, please email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. Availability is limited, so I recommend reaching out early. Additional details will be provided upon meeting.
@@ -66,8 +75,6 @@ If you’re interested in working together, please email me at [delnokatherine@g
 </a>
 <!-- Calendly popup text/button end -->
 <br><br><br>
-
-<img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 100%; height: auto;">
 
 **Academic Progress & No Guaranteed Outcomes**<br>
 My goal is to help students build durable understanding, stronger problem-solving habits, and clearer statistical communication—skills that often translate into improved performance over time. I provide high-quality instruction, targeted practice, and actionable feedback aligned with the student’s course expectations and goals.<br><br>
