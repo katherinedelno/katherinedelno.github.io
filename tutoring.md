@@ -5,7 +5,7 @@ permalink: /tutoring/
 ---
 
 **Overview**<br>
-I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning. **Sessions are held over Zoom; materials and notes are shared through a private Dropbox folder.**
+I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning. Sessions are held over Zoom; materials and notes are shared through a private Dropbox folder.
 <br>
 
 **My Background & Teaching Approach**<br>
@@ -41,7 +41,7 @@ Includes everything in Structured Course Support, plus:
 - **Best fit:** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
 <br>
 
-**As-Needed Support (Limited) — $90/hr**<br>
+**As-Needed Support (Limited availability) — $90/hr**<br>
 For students who are generally self-directed and want occasional help with specific questions (homework, quiz/test review, or a topic currently being covered). This format is student-led rather than a structured weekly program.
 
 - **Best for targeted questions.** Students come prepared with specific problems and attempted work, so we can use time efficiently and focus on clarifying method selection and improving setup and explanations.<br>
