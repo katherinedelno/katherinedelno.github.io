@@ -6,9 +6,6 @@ permalink: /tutoring/
 
 **Overview**<br>
 I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning. Sessions are held over Zoom; materials and notes are shared through a private Dropbox folder.
-<br>
-<img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 50%; height: auto;">
-<br>
 
 **My Background & Teaching Approach**<br>
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for large introductory statistics courses, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
