@@ -17,36 +17,40 @@ I primarily support AP Statistics and college-level introductory statistics. I�
 <br>
 
 **Packages**<br>
-I take a structured, high-support approach that builds both skill and confidence. Sessions are designed like a mini-class: clear instruction, guided problem-solving, and independent checks to reinforce mastery. My base rate is $120/hour, and the packages below make weekly support simple and predictable; choose Standard Weekly for focused instruction, or Premium Course Support for a full feedback loop and structure between sessions.
+My default approach is a structured weekly program that functions more like a mini-class than drop-in homework help. Each session includes clear instruction, guided practice, and an independent check so students build reliable method selection and strong statistical writing rather than only working through individual problems.
+
+Choose Structured Course Support for consistent instruction and comprehensive session notes. Choose Premium Course Support if the student benefits from a fuller feedback loop, including assigned practice, accountability, and between-session support, especially when the class moves quickly or instruction is unclear. All sessions are billed monthly. 
 <br>
 
-**Standard Weekly — $680/month (4 sessions)**<br>
-- **Weekly 90-minute sessions.** Sessions are structured and instructor-led, typically combining brief concept review, targeted guided practice, and an independent check-in problem. Materials are tailored to the student’s course pacing and goals.<br>
+**Structured Course Support — $180/week**<br>
+- **Weekly 90-minute sessions** Sessions are structured and instructor-led, typically combining a brief review of key definitions and conditions, targeted guided practice on representative problems, and a short independent check-in at the end. Materials are aligned with the student’s course pacing and customized to the specific skill gaps and recurring errors I observe.<br>
   - **Mini-lecture.** A brief, high-signal review of the topic’s key definitions, notation, and conditions, plus the standard workflow and justification structure used on assessments.<br>
   - **Guided problem-solving.** The student works representative problems live while I provide targeted prompts and corrections to reinforce correct method selection and rubric-aligned reasoning.<br>
-  - **End-of-session quiz.** The final 10–15 minutes of each session is reserved for a short independent check-in (2–4 problems) to measure retention under light time pressure and identify what to tighten next.<br>
+  - **End-of-session quiz.** The final 10–15 minutes of each session is reserved for a short independent check-in (2-4 problems) to measure retention under light time pressure and identify what to tighten next.<br>
 - **Session notes and solutions.** After each session, I upload a printable set of notes to the student’s shared Dropbox folder, including the mini-lecture summary, guided problem-solving (with solutions), and the end-of-session quiz (with solutions), so they can review and reference everything between meetings.<br>
 - **TI-84 Plus CE integration.** I teach students how to use the TI-84 Plus CE efficiently for AP Statistics—especially key statistics and probability functions—so they can handle complex calculations confidently and avoid avoidable test-day mistakes.<br>
-- **Best fit:** Students who mainly need clear instruction and guided practice, and can follow through on practice independently.
+**Best fit:** Students who mainly need clear instruction and guided practice, and can follow through on practice independently.
 <br>
 
-**Premium Course Support — $880/month (4 sessions)**<br>
-Includes everything in Standard Weekly, plus:
+**Premium Course Support — $220/week**<br>
+Includes everything in Structured Course Support, plus:
 
-- **Weekly assigned problem sets.** Short, targeted practice sets (typically 4–6 problems) chosen to reinforce the exact skills we covered and expose common AP-style traps are assigned weekly. The student submits their solutions by an agreed-upon deadline; I review their work and give feedback on method choice, setup, and interpretation so we can correct patterns quickly and make the next session more efficient.<br>
-- **Method summary sheet updates.** We maintain a running “method sheet” that summarizes when to use each procedure, the key conditions to check, and the standard justification/interpretation wording. It’s designed for quick review before quizzes/tests and to reduce repeat mistakes.<br>
+- **Weekly assigned problem sets.** Short, targeted practice sets (typically 6-10 problems) chosen to reinforce the exact skills we covered and expose common AP-style traps are assigned weekly. The student submits their solutions by an agreed-upon deadline; I review their work and give feedback on method choice, setup, and interpretation so we can correct patterns quickly and make the next session more efficient.<br>
 - **Between-session support.** I’m available for quick questions or clarifications on weekdays between sessions so the student doesn’t get stuck and lose momentum. Weekend messages are welcome too, but may have longer response times.<br>
+- **Method summary sheet updates.** We maintain a running “method sheet” that summarizes when to use each procedure, the key conditions to check, and the standard justification/interpretation wording. It’s designed for quick review before quizzes/tests and to reduce repeat mistakes.<br>
 - **Monthly parent update.** Once per month, parents can choose a 20-minute virtual check-in (meeting or call) or a brief written progress note covering what we’ve worked on, current strengths/weak spots, and next steps.<br>
-- **Best fit:** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
+**Best fit:** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
 <br>
 
-**Traditional Tutoring (Student-Led) — $90/hr**<br>
-This option is for students who want flexible, as-needed help with specific questions (homework, quiz/test review, or a topic they’re currently covering). Sessions are student-led rather than a fully structured weekly program.
+**As-Needed Support (Student-led) — $90/hr**<br>
+For students who are generally self-directed and want occasional help with specific questions (homework, quiz/test review, or a topic currently being covered). This format is student-led rather than a structured weekly program.
 
-- **Student-led agenda.** The student brings questions, class notes, homework, quizzes, or review topics, and we work through them efficiently with an emphasis on correct method selection, clear setup, and strong explanations.<br>
-- **Live problem-solving and explanation coaching.** I help the student identify the right procedure, check conditions, set up the work correctly, and write rubric-aligned conclusions.<br>
-- **Course-aligned support.** We focus on what the student is currently doing in class or what’s coming up on an assessment.<br>
-- **Best fit:** Students who want flexible, as-needed help and can bring specific questions/materials to drive the session rather than needing a structured weekly program with instructor-led teaching, assigned practice, and between-session support.
+- **Limited availability.** As-needed sessions are offered selectively and may not be available every week, especially near major exam dates.<br>
+- **Best for targeted questions.** Most effective when the student comes prepared with specific problems and attempted work.<br>
+- **Student-led agenda.** We use the session to confirm the correct method, check conditions, set up the calculator steps, and produce rubric-aligned conclusions. 
+- **Explanation and setup coaching.** Emphasis on correct procedure selection, conditions, calculator execution, and rubric-aligned conclusions.<br>
+- **Not ideal for ongoing skill-building.** If a student needs consistent structure, assigned practice, accountability, or their course instruction/pacing makes it hard to learn the material cleanly, Structured Course Support or Premium Course Support is typically the better fit and produces more reliable progress.
+**Best fit:** Self-directed students who come prepared with specific questions and do not need weekly structure, assigned practice, or between-session feedback.
 <br><br>
 
 **Next Steps**<br>
