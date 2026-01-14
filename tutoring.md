@@ -47,7 +47,7 @@ For students who are generally self-directed and want occasional help with speci
 - **Student-led agenda.** We use the session to confirm the correct method, check conditions, set up the calculator steps, and produce rubric-aligned conclusions.<br>
 - **Explanation and setup coaching.** Emphasis on correct procedure selection, conditions, calculator execution, and rubric-aligned conclusions.<br>
 - **Limited availability.** As-needed sessions are offered selectively and may not be available every week, especially near major exam dates.<br>
-- **Not ideal for ongoing skill-building.** If a student needs consistent structure, assigned practice, accountability, or their course instruction/pacing makes it hard to learn the material cleanly, Structured Course Support or Premium Course Support is typically the better fit and produces more reliable progress.
+- **Not ideal for ongoing skill-building.** If a student needs consistent instruction, guidance, independent checks, assigned practice, or accountability, or their course instruction/pacing makes it hard to learn the material cleanly, Structured Course Support or Premium Course Support is typically the better fit and will likely produce better results.
 - **Best fit:** Self-directed students who come prepared with specific questions and do not need weekly structure, assigned practice, or between-session feedback.
 <br><br>
 
