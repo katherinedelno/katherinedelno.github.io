@@ -43,13 +43,13 @@ Includes everything in Structured Course Support, plus:
 - Best fit for students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
 <br>
 
-**As-Needed Support (Student-led) — $90/hr**<br>
+**As-Needed Support (Limited) — $90/hr**<br>
 For students who are generally self-directed and want occasional help with specific questions (homework, quiz/test review, or a topic currently being covered). This format is student-led rather than a structured weekly program.
 
-- **Limited availability.** As-needed sessions are offered selectively and may not be available every week, especially near major exam dates.<br>
-- **Best for targeted questions.** Most effective when the student comes prepared with specific problems and attempted work.<br>
+- **Best for targeted questions.** Students come prepared with specific problems and attempted work, so we can use time efficiently and focus on clarifying method selection and improving setup and explanations.<br>
 - **Student-led agenda.** We use the session to confirm the correct method, check conditions, set up the calculator steps, and produce rubric-aligned conclusions. 
 - **Explanation and setup coaching.** Emphasis on correct procedure selection, conditions, calculator execution, and rubric-aligned conclusions.<br>
+- - **Limited availability.** As-needed sessions are offered selectively and may not be available every week, especially near major exam dates.<br>
 - **Not ideal for ongoing skill-building.** If a student needs consistent structure, assigned practice, accountability, or their course instruction/pacing makes it hard to learn the material cleanly, Structured Course Support or Premium Course Support is typically the better fit and produces more reliable progress.
 - Best fit for self-directed students who come prepared with specific questions and do not need weekly structure, assigned practice, or between-session feedback.
 <br><br>
