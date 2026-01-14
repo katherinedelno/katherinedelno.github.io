@@ -57,7 +57,9 @@ For students who are generally self-directed and want occasional help with speci
 **Technology**<br>
 All sessions are held via Zoom. During meetings, I teach using an iPad-based digital whiteboard (live handwriting and annotation, see gif below), so students can see the full setup, reasoning, and notation step by step. Each student also has a shared Dropbox folder where I upload session notes and materials for organized review between meetings. Students should plan to join from a location with stable internet and have a TI-84 Plus CE and a way to take notes; I also encourage printing the session notes for quick reference before quizzes and tests.
 <br>
-<img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 40%; height: auto;">
+<div style="text-align:center;">
+  <img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 60%; height: auto; display: inline-block;">
+</div>
 <br><br>
 
 **Next Steps**<br>
