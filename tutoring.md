@@ -67,6 +67,8 @@ If you’re interested in working together, please email me at [delnokatherine@g
 <!-- Calendly popup text/button end -->
 <br><br><br>
 
+<img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 100%; height: auto;">
+
 **Academic Progress & No Guaranteed Outcomes**<br>
 My goal is to help students build durable understanding, stronger problem-solving habits, and clearer statistical communication—skills that often translate into improved performance over time. I provide high-quality instruction, targeted practice, and actionable feedback aligned with the student’s course expectations and goals.<br><br>
 That said, I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on many factors outside my control, including the student’s consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, pacing, and test-day conditions.<br><br>
