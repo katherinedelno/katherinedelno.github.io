@@ -8,8 +8,14 @@ permalink: /tutoring/
 I provide one-on-one AP Statistics instruction for
 high school students, with structured, AP-aligned teaching and emphasis on reliable procedure selection, sound reasoning, and clear written conclusions. Meetings are held over Zoom; notes and materials are provided through a shared private folder.
 
-**My Background & Teaching Approach**<br>
-I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for large introductory statistics courses, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
+**My Background**<br>
+I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno, with formal training in probability, statistical inference, and regression modeling. My graduate training at UW provides a rigorous theoretical foundation that carries through my instruction, from correct procedure selection to well-justified conclusions. I’ve taught statistics in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and supported students in producing clear, defensible statistical reasoning. I also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.
+<br>
+
+**My Teaching Approach**<br>
+My instruction is structured and methodical: I teach students to translate prompts into the correct procedure, verify conditions with precision, and write conclusions that are both correct and well-justified. Rather than relying on shortcuts, we focus on understanding why methods work and how to communicate solutions in a way that matches AP expectations.
+
+I’m equally attentive to the learning environment. Many capable students lose points not from lack of intelligence, but from uncertainty—second-guessing, disorganized work, or anxiety under time pressure. In sessions, I aim to create a calm, low-pressure space where questions are treated seriously, mistakes are handled constructively, and confidence is built alongside skill.
 <br>
 
 **Who This Is For**<br>
