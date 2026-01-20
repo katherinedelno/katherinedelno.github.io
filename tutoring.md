@@ -1,6 +1,6 @@
 ---
 layout: page
-title: One-on-One AP Statistics Instruction
+title: Private Statistics Instruction
 permalink: /tutoring/
 ---
 
