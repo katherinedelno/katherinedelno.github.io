@@ -1,22 +1,23 @@
 ---
 layout: page
-title: Premium One-on-One Statistics Instruction
+title: One-on-One AP Statistics Instruction
 permalink: /tutoring/
 ---
 
 **Overview**<br>
-I provide one-on-one statistics instruction for motivated high school and early college students, with a focus on AP Statistics and introductory statistics. Sessions are structured, instructor-led, and designed to build durable statistical reasoning. Sessions are held over Zoom; materials and notes are shared through a private Dropbox folder.
+I provide one-on-one AP Statistics instruction for
+high school students, with structured, AP-aligned teaching and emphasis on reliable procedure selection, sound reasoning, and clear written conclusions. Meetings are held over Zoom; notes and materials are provided through a shared private folder.
 
 **My Background & Teaching Approach**<br>
 I hold an M.S. in Statistics (University of Washington) and a B.S. in Mathematics (University of Nevada, Reno), with formal training in probability, statistical inference, and regression modeling. I previously served as a graduate teaching assistant for large introductory statistics courses, leading weekly discussion sections and supporting large-course instruction with an emphasis on clear reasoning and correct statistical communication. I have also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. Across these roles, I focus on helping students connect intuition to formal methods, state assumptions explicitly, and produce precise, well-justified solutions.
 <br>
 
 **Who This Is For**<br>
-I primarily support AP Statistics and college-level introductory statistics. I’m a strong fit for students who want proactive, structured support, and who need to improve method selection, notation, and written explanations.
+I primarily support AP Statistics students seeking structured, AP-aligned instruction. I’m a strong fit for students who want to strengthen statistical reasoning, setup, interpretation, and written communication.
 <br>
 
 **Course Support Options**<br>
-My default approach is a structured weekly program that functions more like a mini-class than drop-in homework help. Each session includes clear instruction, guided practice, and an independent check so students build reliable method selection and strong statistical writing rather than only working through individual problems. Choose **Structured Course Support** for consistent instruction and comprehensive session notes. Choose **Premium Course Support** if the student benefits from a fuller feedback loop, including assigned practice, accountability, and between-session support, especially when the class moves quickly or instruction is unclear. All sessions are billed monthly; invoices are sent on the 1st of each month.
+My default approach is a structured weekly program that functions like a mini-class. Each session includes clear instruction, guided practice, and an independent check so students build reliable method selection and strong statistical writing rather than only working through individual problems. Choose **Structured Course Support** for consistent instruction and comprehensive session notes. Choose **Premium Course Support** if the student benefits from a fuller feedback loop, including assigned practice, accountability, and between-session support, especially when the class moves quickly or instruction is unclear. All sessions are billed monthly; invoices are sent on the 1st of each month.
 <br>
 
 **Structured Course Support — $180/week**<br>
@@ -24,8 +25,8 @@ Weekly instruction and organized notes; ideal for students who want consistent t
 - **Weekly 90-minute structured sessions.** Sessions are pre-planned and instructor-led, typically combining a brief review of key definitions and conditions, targeted guided practice on representative problems, and a short independent check-in at the end. Materials are aligned with the student’s course pacing and customized to the specific skill gaps and recurring errors I observe.<br>
   - **Mini-lecture.** A brief, high-signal review of the topic’s key definitions, notation, and conditions, plus the standard workflow and justification structure used on assessments.<br>
   - **Guided problem-solving.** The student works representative problems live while I provide targeted prompts and corrections to reinforce correct method selection and rubric-aligned reasoning.<br>
-  - **End-of-session quiz.** The final 10-15 minutes are a short independent check-in (2-4 AP-style problems), followed by a quick review together to confirm what’s correct, fix errors, and clarify any sticking points.<br>
-- **Session notes and solutions.** After each session, I upload a printable set of notes to the student’s shared Dropbox folder, including the mini-lecture summary, guided problem-solving (with solutions), and the end-of-session quiz (with solutions), so they can review and reference everything between meetings.<br>
+  - **End-of-session quiz.** The final 10-15 minutes are a short independent quiz, followed by a quick review together to confirm what’s correct, fix errors, and clarify any sticking points.<br>
+- **Session notes and solutions.** After each session, I upload a printable set of notes to the student’s shared Dropbox folder, including the mini-lecture summary, guided problem-solving (with solutions), and the end-of-session quiz (with solutions), so students can review and reference everything between meetings.<br>
 - **TI-84 Plus CE integration.** I teach students how to use the TI-84 Plus CE efficiently for AP Statistics—especially key statistics and probability functions—so they can handle complex calculations confidently and avoid avoidable test-day mistakes.<br>
 - **Best fit:** Students who mainly need clear instruction and guided practice, and can follow through on practice independently.
 <br>
@@ -52,7 +53,12 @@ For students who are generally self-directed and want occasional help with speci
 <br><br>
 
 **Technology**<br>
-All sessions are held via Zoom. During meetings, I teach using an iPad-based digital whiteboard (live handwriting and annotation, see gif below), so students can see the full setup, reasoning, and notation step by step. Each student also has a shared Dropbox folder where I upload session notes and materials for organized review between meetings. Students should plan to join from a location with stable internet and have a TI-84 Plus CE and a way to take notes; I also encourage printing the session notes for quick reference before quizzes and tests.
+
+- **Zoom-based sessions.** All instruction is delivered live over Zoom.
+- **Digital whiteboard.** I teach with live handwriting and annotation so students can follow setup, reasoning, and notation step by step.
+- **Shared materials folder.** Each student has a private Dropbox folder where I upload session notes and materials for organized review between meetings; parents may be added upon request.
+- **Student setup.** Students should join from a quiet location with stable internet, have a calculator (best results with a TI-84 Plus CE), and a consistent note-taking method.
+- **Printable notes.** I recommend printing session notes for quick reference before quizzes and tests.
 <br>
 <div style="text-align:center;">
   <img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 60%; height: auto; display: inline-block;">
