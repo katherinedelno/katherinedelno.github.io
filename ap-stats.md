@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Private Statistics Instruction
-permalink: /tutoring/
+permalink: /ap-stats/
 ---
 
 **Overview**<br>

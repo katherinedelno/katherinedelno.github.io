@@ -61,7 +61,7 @@ permalink: /
       <p>
         In addition to my training in statistics, I’ve built hands-on teaching experience through one-on-one     instruction and mentoring in AP Statistics and introductory statistics. I enjoy translating technical ideas into clear explanations and structured practice that helps learners build real confidence. If you’re a parent or student looking
         for structured, instructor-led support in AP Statistics, you can learn more about my approach and
-        rates on my <a href="/tutoring/">premium one-on-one statistics instruction page</a>.
+        rates on my <a href="/ap-stats/">premium one-on-one statistics instruction page</a>.
       </p>
 
       <p>
