@@ -61,11 +61,12 @@ permalink: /
       <p>
         In addition to my training in statistics, I’ve built hands-on teaching experience through one-on-one     instruction and mentoring in AP Statistics and introductory statistics. I enjoy translating technical ideas into clear explanations and structured practice that helps learners build real confidence. If you’re a parent or student looking
         for structured, instructor-led support in AP Statistics, you can learn more about my approach and
-        rates on my <a href="/ap-stats/">private statistics instruction page</a>.
+        rates on my <a href="/ap-stats/">private AP Statistics instruction page</a>.
       </p>
 
       <p>
-Alongside teaching, I maintain an active interest in applied statistics, data science, and machine learning. I enjoy building clear, reproducible workflows in Python and R and translating analysis into plain-language recommendations. In addition to instruction, I occasionally support small analytics and statistical consulting engagements.
+Alongside teaching, I maintain an active interest in applied statistics, data science, and machine learning. I enjoy building clear, reproducible workflows in Python and R and translating analysis into plain-language recommendations. Outside of instruction, I occasionally support small analytics and statistical consulting engagements.
+
       </p>
 
       <p>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Private Statistics Instruction
+title: Private AP Statistics Instruction
 permalink: /ap-stats/
 ---
 
