@@ -16,7 +16,7 @@ I hold an M.S. in Statistics from the University of Washington and a B.S. in Mat
 **My Teaching Approach**<br>
 My instruction is structured and methodical: I teach students to translate prompts into the correct procedure, verify conditions with precision, and write conclusions that are both correct and well-justified. Rather than relying on shortcuts, we focus on understanding why methods work and how to communicate solutions in a way that matches AP expectations.
 
-I’m equally attentive to the learning environment. Many capable students lose points not from lack of intelligence, but from uncertainty—second-guessing, disorganized work, or anxiety under time pressure. In sessions, I aim to create a calm, low-pressure space where questions are treated seriously, mistakes are handled constructively, and confidence is built alongside skill.
+I’m equally attentive to the learning environment. Many capable students lose points not from lack of intelligence, but from uncertainty (e.g., second-guessing, disorganized work, anxiety under time pressure). In sessions, I aim to create a calm, low-pressure space where questions are treated seriously, mistakes are handled constructively, and confidence is built alongside skill.
 <br><br>
 
 **Who This Is For**<br>
