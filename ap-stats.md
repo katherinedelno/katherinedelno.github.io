@@ -7,23 +7,24 @@ permalink: /ap-stats/
 **Overview**<br>
 I provide one-on-one AP Statistics instruction for
 high school students, with structured, AP-aligned teaching and emphasis on reliable procedure selection, sound reasoning, and clear written conclusions. Meetings are held over Zoom; notes and materials are provided through a shared private folder.
+<br><br>
 
 **My Background**<br>
 I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno, with formal training in probability, statistical inference, and regression modeling. My graduate training at UW provides a rigorous theoretical foundation that carries through my instruction, from correct procedure selection to well-justified conclusions. I’ve taught statistics in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and supported students in producing clear, defensible statistical reasoning. I also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.
-<br>
+<br><br>
 
 **My Teaching Approach**<br>
 My instruction is structured and methodical: I teach students to translate prompts into the correct procedure, verify conditions with precision, and write conclusions that are both correct and well-justified. Rather than relying on shortcuts, we focus on understanding why methods work and how to communicate solutions in a way that matches AP expectations.
 
 I’m equally attentive to the learning environment. Many capable students lose points not from lack of intelligence, but from uncertainty—second-guessing, disorganized work, or anxiety under time pressure. In sessions, I aim to create a calm, low-pressure space where questions are treated seriously, mistakes are handled constructively, and confidence is built alongside skill.
-<br>
+<br><br>
 
 **Who This Is For**<br>
 I primarily support AP Statistics students seeking structured, AP-aligned instruction. I’m a strong fit for students who want to strengthen statistical reasoning, setup, interpretation, and written communication.
-<br>
+<br><br>
 
 **Course Support Options**<br>
-My default approach is a structured weekly program that functions like a mini-class. Each session includes clear instruction, guided practice, and an independent check so students build reliable method selection and strong statistical writing rather than only working through individual problems. Choose **Structured Course Support** for consistent instruction and comprehensive session notes. Choose **Premium Course Support** if the student benefits from a fuller feedback loop, including assigned practice, accountability, and between-session support, especially when the class moves quickly or instruction is unclear. All sessions are billed monthly; invoices are sent on the 1st of each month.
+My default approach is a structured weekly program that functions like a mini-class. Each session includes clear instruction, guided practice, and an independent check so students build reliable method selection and strong statistical writing rather than only working through individual problems. Choose Structured Course Support for consistent instruction and comprehensive session notes. Choose Premium Course Support if the student benefits from a fuller feedback loop, including assigned practice, accountability, and between-session support, especially when the class moves quickly or instruction is unclear. All sessions are billed monthly; invoices are sent on the 1st of each month.
 <br>
 
 **Structured Course Support — $180/week**<br>
