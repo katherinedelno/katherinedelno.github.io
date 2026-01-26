@@ -56,7 +56,7 @@ For students who are generally self-directed and want occasional support with sp
 <br><br>
 
 **Technology**<br>
-
+For best results, sessions follow a consistent virtual setup that supports step-by-step instruction, clear notation, and organized materials.<br>
 - **Zoom-based sessions** delivered live.
 - **Digital whiteboard** with live handwriting and annotation for step-by-step setup and reasoning.
 - **Private shared folder** (Dropbox) for session notes and materials; parents may be added upon request.
