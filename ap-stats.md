@@ -48,7 +48,7 @@ Includes everything in Structured Course Support, plus:
 - **Best fit:** Students who need clear instruction and guided practice, as well as accountability, feedback loops, and structure between sessions.
 <br>
 
-**As-Needed Support (Limited availability) — $90/hr**<br>
+**As-Needed Support (Limited availability) — $120/hr**<br>
 For students who are generally self-directed and want occasional help with specific questions (homework, quiz/test review, or a topic currently being covered). This format is student-led rather than a structured weekly program.
 
 - **Best for targeted questions.** Students come prepared with specific problems and attempted work, so we can use time efficiently and focus on clarifying method selection and improving setup and explanations.<br>
