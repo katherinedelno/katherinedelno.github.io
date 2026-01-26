@@ -52,7 +52,7 @@ permalink: /
   <div class="intro-grid">
     <div>
       <p>
-        I’m a statistician by training (M.S. in Statistics, University of Washington) who now focuses on
+        I’m a statistician by training (M.S. Statistics, University of Washington) who now focuses on
         private, one-on-one statistics instruction for high school and early college students. I specialize
         in AP Statistics and introductory statistics, blending strong theoretical grounding with clear,
         step-by-step teaching and custom materials.
@@ -61,15 +61,11 @@ permalink: /
       <p>
         In addition to my training in statistics, I’ve built hands-on teaching experience through one-on-one     instruction and mentoring in AP Statistics and introductory statistics. I enjoy translating technical ideas into clear explanations and structured practice that helps learners build real confidence. If you’re a parent or student looking
         for structured, instructor-led support in AP Statistics, you can learn more about my approach and
-        rates on my <a href="/ap-stats/">premium one-on-one statistics instruction page</a>.
+        rates on my <a href="/ap-stats/">private statistics instruction page</a>.
       </p>
 
       <p>
-        Alongside teaching, I maintain an active interest in applied statistics, data science, and machine
-        learning. I enjoy turning careful analysis into decisions people can actually use, building clear,
-        reproducible workflows in Python and R, and communicating results in plain language so collaborators
-        don’t need a stats background to act. I'm open to select full-time roles where I can bring that same
-        rigor and clarity to an applied setting.
+Alongside teaching, I maintain an active interest in applied statistics, data science, and machine learning. I enjoy building clear, reproducible workflows in Python and R and translating analysis into plain-language recommendations. In addition to instruction, I occasionally support small analytics and statistical consulting engagements.
       </p>
 
       <p>
