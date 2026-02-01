@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Private AP® Statistics Instruction
+title: Private AP Statistics Instruction
 permalink: /ap-stats/
 ---
 
 **Overview**<br>
-I provide one-on-one AP Statistics instruction for high school students. Sessions are structured and AP-aligned, with emphasis on correct procedure selection, careful condition checks, and clear, rubric-appropriate written conclusions. Meetings are held over Zoom. Notes and materials are organized in a private shared folder.
+I provide one-on-one AP Statistics instruction for high school students. Sessions are structured and AP-aligned, with emphasis on correct procedure selection, careful condition checks, and clear, rubric-appropriate written conclusions. This is private instruction that complements classroom teaching and focuses on statistical reasoning and AP-style writing.
 <br><br>
 
 **My Background**<br>
