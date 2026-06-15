@@ -1,94 +1,369 @@
 ---
 layout: page
-title: Private AP Statistics Instruction
+title: Private Instruction
 permalink: /ap-stats/
 ---
 
-**Overview**<br>
-I provide one-on-one AP Statistics instruction for high school students. Sessions are structured and AP-aligned, with emphasis on correct procedure selection, careful condition checks, and clear, rubric-appropriate written conclusions. This is private instruction that complements classroom teaching and focuses on statistical reasoning and AP-style writing.
-<br><br>
+<style>
+  /* ---- Scoped styling for the Private Instruction page ---- */
+  .page-heading { display:none; }
 
-**My Background**<br>
-I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno, with formal training in probability, statistical inference, and regression modeling. My graduate training at UW provides a rigorous theoretical foundation that carries through my instruction, from correct procedure selection to well-justified conclusions. I’ve taught statistics in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and supported students in producing clear, defensible statistical reasoning. I also mentored through UW’s Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.
-<br><br>
+  .pi {
+    --ink:#1a1a1a;
+    --muted:#5b6168;
+    --line:#e7e7e3;
+    --accent:#1f2a44;
+    --accent-soft:#eef1f6;
+    --card:#fbfbfa;
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .pi p { max-width:74ch; }
 
-**My Teaching Approach**<br>
-My instruction is structured and methodical. I teach students how to translate prompts into the appropriate procedure, verify assumptions and conditions precisely, and communicate results using language consistent with AP expectations. The goal is not only to obtain correct answers, but to build reliable habits of setup, justification, interpretation, and statistical writing.
+  .pi .label {
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--accent);
+    margin:0 0 .5rem;
+  }
 
-I’m equally attentive to the learning environment. Many capable students lose points due to uncertainty under time pressure, disorganized work, or inconsistent written communication. Sessions are designed to be calm and focused: questions are taken seriously, mistakes are handled constructively, and confidence is built alongside skill.
-<br><br>
+  .pi-hero { margin:0 0 2.5rem; }
+  .pi-hero h1 { font-size:2.1rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.01em; }
+  .pi-hero .tagline { font-size:1.12rem; color:var(--muted); max-width:64ch; margin:0; }
 
-**Who This Is For**<br>
-I primarily support AP Statistics students who want structured, AP-aligned instruction and clearer statistical communication. This is a good fit for students who want to improve method selection, setup, interpretation, and rubric-aligned writing.
-<br><br>
+  .pi-section { margin:2.6rem 0; padding-top:2.2rem; border-top:1px solid var(--line); }
+  .pi-section:first-of-type { border-top:none; padding-top:0; }
+  .pi-section h2 { font-size:1.35rem; margin:0 0 1rem; letter-spacing:-.01em; }
 
-**Course Support Options**<br>
-My default model is a structured weekly program that functions like a mini-class: direct instruction, guided practice, and an independent check to confirm the student can execute without prompts. All sessions are billed monthly; invoices are sent on the 1st of each month.
-<br>
+  /* Course cards */
+  .pi-courses { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:1.2rem; }
+  .pi-course {
+    border:1px solid var(--line); border-radius:14px; padding:20px 20px 22px;
+    background:var(--card);
+  }
+  .pi-course h3 { margin:0 0 .35rem; font-size:1.05rem; }
+  .pi-course p { font-size:.94rem; color:var(--muted); margin:0; }
 
-**Structured Course Support — $180/week**<br>
-Weekly instruction with organized session notes. Appropriate for students who want consistent teaching and guided practice without between-session coaching.<br>
-- **Weekly 90-minute structured sessions (pre-planned and instructor-led)** aligned with the student’s course pacing and customized to the specific skill gaps and recurring errors I observe. Each session includes:<br>
-  - **Mini-lesson** on definitions, conditions, and the standard AP workflow/justification structure.<br>
-  - **Guided problem-solving** on representative AP-style problems with targeted prompts and corrections.<br>
-  - **End-of-session quiz** in the final 10-15 minutes of each session, followed by a quick review together to confirm what’s correct, fix errors, and clarify any sticking points.<br>
-- **Session notes and solutions** uploaded after each meeting (mini-lesson summary, worked problems, and independent check solutions) so students can review and reference everything between meetings.<br>
-- **TI-84 Plus CE integration** so students learn to accurately and efficiently use key statistics and probability functions so they can handle complex calculations confidently and avoid avoidable test-day mistakes.<br>
-- **Best fit:** Students who mainly need clear instruction and guided practice and can follow through on practice independently.
-<br>
+  /* Approach steps */
+  .pi-steps { display:grid; grid-template-columns:repeat(2,1fr); gap:14px 28px; margin-top:1.1rem; }
+  .pi-step { display:flex; gap:14px; align-items:flex-start; }
+  .pi-step .num {
+    flex:0 0 auto; width:30px; height:30px; border-radius:50%;
+    background:var(--accent); color:#fff; font-size:.85rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .pi-step h4 { margin:.15rem 0 .2rem; font-size:1rem; }
+  .pi-step p { margin:0; font-size:.92rem; color:var(--muted); }
 
-**Premium Course Support — $220/week**<br>
-Includes everything in Structured Course Support, plus a fuller feedback loop between sessions.<br>
-- **Weekly assigned problem sets (typically 6-10 problems)** selected to reinforce the exact skills we covered and expose common AP-style traps. 
-- **Written feedback** on method choice, setup, interpretation, and statistical communication.<br>
-- **Between-session support** for brief questions or clarifications on weekdays between sessions so the student doesn’t get stuck and lose momentum. Weekend messages are welcome too, but may have longer response times.<br>
-- **Living "method sheet"** that summarizes when to use each procedure, key conditions, and standard wording for justification/interpretation.<br>
-- **Monthly parent update (optional)** via a 20-minute virtual check-in (meeting or call) or a brief written progress note covering what we’ve worked on, current strengths/weak spots, and next steps.<br>
-- **Best fit:** Students who benefit from accountability, structured practice, and feedback between sessions, especially when the course moves quickly or expectations are unclear.
-<br>
+  /* Testimonials */
+  .pi-quotes { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:1.2rem; }
+  .pi-quote {
+    border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:12px; padding:22px 24px; background:#fff;
+  }
+  .pi-quote p { font-size:.96rem; margin:0 0 .9rem; }
+  .pi-quote .who { font-size:.84rem; color:var(--muted); font-weight:600; letter-spacing:.02em; }
 
-**As-Needed Support (limited availability) — $120/hr**<br>
-For students who are generally self-directed and want occasional support with specific questions (homework, quiz/test review, or a current topic). This format is student-led rather than a weekly instructional program.<r>
-- **Targeted problem support** based on the student's attempted work.<br>
-- **Correct procedure selection and clean setup** including condition checks, calculator steps, and rubric-aligned conclusions.<br>
-- **Not ideal for ongoing skill-building** when a student needs regular instruction, independent checks, assigned practice, or accountability.
-- **Best fit:** Self-directed students who come prepared with specific questions and do not need weekly structure.
-<br><br>
+  /* Pricing */
+  .pi-pricing { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:1.2rem; }
+  .pi-price {
+    position:relative; border:1px solid var(--line); border-radius:16px;
+    padding:26px 24px; background:var(--card);
+  }
+  .pi-price.featured { border:1.5px solid var(--accent); background:#fff; box-shadow:0 6px 22px rgba(31,42,68,.07); }
+  .pi-price .pill {
+    position:absolute; top:-12px; left:24px; background:var(--accent); color:#fff;
+    font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    padding:5px 11px; border-radius:999px;
+  }
+  .pi-price h3 { margin:.2rem 0 .15rem; font-size:1.08rem; }
+  .pi-price .amt { font-size:1.9rem; font-weight:700; letter-spacing:-.02em; }
+  .pi-price .amt span { font-size:.95rem; font-weight:500; color:var(--muted); }
+  .pi-price .note { font-size:.9rem; color:var(--muted); margin:.5rem 0 0; }
 
-**Technology**<br>
-For best results, sessions follow a consistent virtual setup that supports step-by-step instruction, clear notation, and organized materials.<br>
-- **Zoom-based sessions** delivered live.
-- **Digital whiteboard** with live handwriting and annotation for step-by-step setup and reasoning.
-- **Private shared folder** (Dropbox) for session notes and materials; parents may be added upon request.
-- **Student setup** should include a quiet location, stable internet, a TI-84 Plus CE (recommended), and a consistent note-taking method.
-<br>
-<div style="text-align:center;">
-  <img src="/assets/gifs/demo.gif" alt="Demo animation" style="max-width: 700px; width: 60%; height: auto; display: inline-block;">
+  .pi-billing {
+    margin-top:1.3rem; padding:16px 20px; background:var(--accent-soft);
+    border-radius:12px; font-size:.93rem; color:var(--ink);
+  }
+  .pi-billing strong { color:var(--accent); }
+
+  /* Feature / tech lists */
+  .pi-list { list-style:none; padding:0; margin:1rem 0 0; }
+  .pi-list li { position:relative; padding:0 0 .55rem 1.4rem; font-size:.95rem; color:var(--ink); }
+  .pi-list li::before {
+    content:""; position:absolute; left:0; top:.55em;
+    width:7px; height:7px; border-radius:50%; background:var(--accent);
+  }
+  .pi-list li b { font-weight:600; }
+
+  /* CTA */
+  .pi-cta { text-align:center; margin:2.6rem 0 1rem; padding:2.4rem 1rem; background:var(--accent-soft); border-radius:16px; }
+  .pi-cta h2 { border:none; margin:0 0 .5rem; }
+  .pi-cta p { margin:0 auto 1.3rem; color:var(--muted); max-width:52ch; }
+  .pi-btn {
+    display:inline-block; background:var(--accent); color:#fff !important;
+    padding:13px 26px; border-radius:10px; text-decoration:none; font-weight:600;
+    border:1px solid var(--accent); transition:opacity .15s ease;
+  }
+  .pi-btn:hover { opacity:.9; }
+  .pi-cta .email { display:block; margin-top:1rem; font-size:.92rem; color:var(--muted); }
+
+  .pi-fine { margin-top:2.4rem; padding-top:1.6rem; border-top:1px solid var(--line); }
+  .pi-fine p { font-size:.9rem; color:var(--muted); }
+  .pi-fine .label { color:var(--muted); }
+
+  /* FAQ accordion */
+  .pi-faq { margin-top:1.1rem; }
+  .pi-faq details { border-bottom:1px solid var(--line); padding:15px 0; }
+  .pi-faq details:first-of-type { border-top:1px solid var(--line); }
+  .pi-faq summary {
+    cursor:pointer; font-weight:600; font-size:1rem; list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .pi-faq summary::-webkit-details-marker { display:none; }
+  .pi-faq summary::after { content:"+"; color:var(--accent); font-weight:400; font-size:1.35rem; line-height:1; }
+  .pi-faq details[open] summary::after { content:"\2212"; }
+  .pi-faq details p { margin:.7rem 0 0; color:var(--muted); font-size:.95rem; max-width:70ch; }
+
+  /* Highlight callout */
+  .pi-callout {
+    margin-top:1.2rem; padding:20px 24px; border:1px solid var(--line);
+    border-left:3px solid var(--accent); border-radius:12px; background:var(--card);
+  }
+  .pi-callout p { margin:0; }
+
+  @media (max-width:720px){
+    .pi-courses, .pi-steps, .pi-quotes, .pi-pricing { grid-template-columns:1fr; }
+    .pi-hero h1 { font-size:1.7rem; }
+  }
+</style>
+
+<div class="pi" markdown="0">
+
+  <div class="pi-hero">
+    <h1>Private Instruction</h1>
+    <p class="tagline">One-on-one instruction in AP Statistics, AP Calculus, and Precalculus. Structured, rigorous, and AP-aligned.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="pi-section">
+    <p class="label">Overview</p>
+    <p>I provide structured, one-on-one instruction for high school students in AP and precollege mathematics. Each session functions like a focused mini-class: direct instruction, guided practice, and an independent check to confirm the student can execute on their own. The emphasis is on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work. These are the habits that earn credit on the AP exam and in the classroom.</p>
+  </div>
+
+  <!-- COURSES -->
+  <div class="pi-section">
+    <p class="label">Courses</p>
+    <h2>What I teach</h2>
+    <div class="pi-courses">
+      <div class="pi-course">
+        <h3>AP Statistics</h3>
+        <p>Procedure selection, condition checks, inference, and rubric-aligned statistical writing, with confident TI-84 use.</p>
+      </div>
+      <div class="pi-course">
+        <h3>AP Calculus (AB/BC)</h3>
+        <p>Limits, derivatives, integrals, and applications, with precise notation and AP free-response justification.</p>
+      </div>
+      <div class="pi-course">
+        <h3>Precalculus</h3>
+        <p>Functions, trigonometry, and analytic foundations that prepare students to succeed in AP Calculus.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">Additional courses are added each year. If you don't see your course listed, please get in touch to discuss fit.</p>
+  </div>
+
+  <!-- BACKGROUND -->
+  <div class="pi-section">
+    <p class="label">Background</p>
+    <h2>Who you're working with</h2>
+    <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>, with formal training in probability, statistical inference, regression, and the analytic foundations underlying calculus. My graduate training provides a rigorous theoretical foundation that carries through every session, from correct procedure selection to well-justified conclusions.</p>
+    <p>I've taught in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and helped students produce clear, defensible reasoning. I also mentored through UW's Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.</p>
+  </div>
+
+  <!-- APPROACH -->
+  <div class="pi-section">
+    <p class="label">Approach</p>
+    <h2>What a session looks like</h2>
+    <p>Sessions are pre-planned and instructor-led, aligned to the student's course pacing and customized to the specific skill gaps and recurring errors I observe.</p>
+    <div class="pi-steps">
+      <div class="pi-step">
+        <div class="num">1</div>
+        <div>
+          <h4>Direct instruction</h4>
+          <p>Clear instruction on the key definitions, conditions, and the standard AP workflow and justification structure for the topic.</p>
+        </div>
+      </div>
+      <div class="pi-step">
+        <div class="num">2</div>
+        <div>
+          <h4>Guided problem-solving</h4>
+          <p>Representative AP-style problems worked together, with targeted prompts and corrections to build reliable habits.</p>
+        </div>
+      </div>
+      <div class="pi-step">
+        <div class="num">3</div>
+        <div>
+          <h4>Independent check</h4>
+          <p>A short end-of-session quiz to confirm the student can execute without prompts, followed by a quick review together.</p>
+        </div>
+      </div>
+      <div class="pi-step">
+        <div class="num">4</div>
+        <div>
+          <h4>Notes &amp; solutions</h4>
+          <p>A summary, worked problems, and solutions uploaded after each meeting so the student can review between sessions.</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.3rem;">I'm equally attentive to the learning environment. Many capable students lose points to uncertainty under time pressure, disorganized work, or inconsistent written communication. Sessions are calm and focused: questions are taken seriously, mistakes are handled constructively, and confidence is built alongside skill.</p>
+  </div>
+
+  <!-- MATERIALS -->
+  <div class="pi-section">
+    <p class="label">Materials</p>
+    <h2>Lessons built for your student, not pulled off a shelf</h2>
+    <p>Each topic comes with a complete lesson set that I write myself, kept consistent in structure and formatting from one lesson to the next so students always know where to look. Sessions are individualized: the material is shaped around the student's course pacing and the specific gaps and recurring errors I observe.</p>
+    <p style="margin-top:1.1rem;font-weight:600;">Each lesson set includes:</p>
+    <ul class="pi-list">
+      <li><b>A condensed summary</b> of the essential formulas, definitions, and ideas.</li>
+      <li><b>A full lecture</b> that teaches the topic in depth.</li>
+      <li><b>Guided problems</b> worked with clear, AP-aligned solutions.</li>
+      <li><b>A short quiz</b> to confirm independent understanding.</li>
+      <li><b>A homework assignment</b> with complete, separate solutions.</li>
+    </ul>
+    <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
+  </div>
+
+  <!-- AP EXAM PREP -->
+  <div class="pi-section">
+    <p class="label">AP exam preparation</p>
+    <h2>A focused shift before the exam</h2>
+    <p>In the final one to two months before the AP exam, sessions transition into dedicated exam preparation. We move from new material toward timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear.</p>
+    <div class="pi-callout">
+      <p>All exam-preparation materials are provided as part of this phase, at no cost beyond regular session time.</p>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="pi-section">
+    <p class="label">Testimonials</p>
+    <h2>What families say</h2>
+    <div class="pi-quotes">
+      <div class="pi-quote">
+        <p>&ldquo;Katherine is an attentive, thoughtful, and highly effective tutor. She helped my daughter build both confidence and understanding in AP Statistics, making challenging material feel approachable. Her follow-up was exceptional; she regularly checked in and ensured nothing fell through the cracks. I highly recommend Katherine to any family looking for a knowledgeable, supportive, and dedicated tutor.&rdquo;</p>
+        <span class="who">Parent of 2025 AP Statistics student</span>
+      </div>
+      <div class="pi-quote">
+        <p>&ldquo;Katherine worked closely with us to understand our child's challenges and develop approaches for her specific needs. She was flexible and adaptive, and not only increased our child's understanding but helped her gain the self-confidence needed to really deepen her comprehension and growth.&rdquo;</p>
+        <span class="who">Parent of 2025 AP Statistics student</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pi-section">
+    <p class="label">Pricing</p>
+    <h2>Hourly, with one rate for every course</h2>
+    <p>No packages or long-term commitment; you book the sessions you need. I recommend a <b>weekly 90-minute session</b>. Ninety minutes gives us enough time to teach the topic, practice it together, and leave room for an independent check.</p>
+    <div class="pi-pricing">
+      <div class="pi-price featured">
+        <span class="pill">Recommended</span>
+        <h3>90-minute session</h3>
+        <div class="amt">$180<span> / session</span></div>
+        <p class="note">$120/hr. The format I recommend for consistent weekly progress.</p>
+      </div>
+      <div class="pi-price">
+        <h3>60-minute session</h3>
+        <div class="amt">$130<span> / session</span></div>
+        <p class="note">Best for targeted help, test review, or self-directed students who come with specific questions.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;font-weight:600;">Every session includes:</p>
+    <ul class="pi-list">
+      <li><b>Pre-planned, instructor-led teaching</b> aligned to your student's course and pacing.</li>
+      <li><b>Session notes and full solutions</b> uploaded after each meeting for review.</li>
+      <li><b>Calculator integration</b> (TI-84 Plus CE) so students avoid avoidable test-day mistakes.</li>
+      <li><b>AP-aligned writing</b> focus on setup, justification, and interpretation.</li>
+    </ul>
+
+    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
+    <ul class="pi-list">
+      <li>Weekly assigned problem sets with written feedback on method, setup, and communication.</li>
+      <li>Brief weekday messaging so students don't get stuck and lose momentum.</li>
+      <li>A living &ldquo;method sheet&rdquo; and optional monthly parent check-ins.</li>
+    </ul>
+
+    <div class="pi-billing">
+      <strong>Billing:</strong> Sessions are billed monthly, with invoices sent on the 1st. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist.
+    </div>
+  </div>
+
+  <!-- TECHNOLOGY -->
+  <div class="pi-section">
+    <p class="label">How it works</p>
+    <h2>Technology &amp; setup</h2>
+    <ul class="pi-list">
+      <li><b>Zoom-based sessions</b> delivered live.</li>
+      <li><b>Digital whiteboard</b> with live handwriting and annotation for step-by-step setup and reasoning.</li>
+      <li><b>Private shared folder</b> (Dropbox) for session notes and materials; parents may be added on request.</li>
+      <li><b>Student setup:</b> a quiet location, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent note-taking method.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="pi-section">
+    <p class="label">Questions</p>
+    <h2>Frequently asked</h2>
+    <div class="pi-faq">
+      <details>
+        <summary>Are sessions online or in person?</summary>
+        <p>Sessions are conducted live over Zoom with a digital whiteboard for step-by-step work. This lets me support students wherever they are while keeping all notes and materials organized in one shared folder.</p>
+      </details>
+      <details>
+        <summary>How do you align with my student's class?</summary>
+        <p>I follow your student's course pacing and tailor each session to their current topics, assignments, and the specific errors I observe, so our work reinforces what is happening in the classroom rather than running parallel to it.</p>
+      </details>
+      <details>
+        <summary>What happens before the AP exam?</summary>
+        <p>In the final one to two months, sessions shift into focused exam preparation with timed practice, full free-response and multiple-choice work, and targeted review. All preparation materials are included.</p>
+      </details>
+      <details>
+        <summary>What if we need to reschedule?</summary>
+        <p>Occasional schedule changes are normal. I ask for reasonable notice when possible and do my best to accommodate.</p>
+      </details>
+      <details>
+        <summary>Is the between-session support required?</summary>
+        <p>No. It is an optional monthly add-on for families who want assigned practice, written feedback, and weekday support between sessions. Many students do well with the weekly session alone.</p>
+      </details>
+      <details>
+        <summary>What does my student need to get started?</summary>
+        <p>A quiet space, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent note-taking method.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="pi-cta">
+    <h2>Getting started</h2>
+    <p>Schedule a 15-minute meet-and-greet. After we talk, I'll recommend the best fit for your student and share scheduling details.</p>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <a href="https://calendly.com/katherinedelno" class="pi-btn"
+       onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">
+      Book a meet-and-greet
+    </a>
+    <span class="email">Or email me at <a href="mailto:delnokatherine@gmail.com">delnokatherine@gmail.com</a></span>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="pi-fine">
+    <p class="label">Academic progress &amp; no guaranteed outcomes</p>
+    <p>My goal is to help students build durable understanding, stronger problem-solving habits, and clearer written communication through structured instruction, targeted practice, and actionable feedback aligned with AP expectations.</p>
+    <p>I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student's consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, and test-day conditions. By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome.</p>
+    <p><small>AP&reg; is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this private instruction service.</small></p>
+  </div>
+
 </div>
-<br><br>
-
-**Next Steps**<br>
-If you’d like to discuss fit, you can email me at [delnokatherine@gmail.com](mailto:delnokatherine@gmail.com) or schedule a 15-minute meet-and-greet using the link below. After the initial conversation, I’ll recommend the most appropriate support option and share scheduling details.
-
-I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist. 
-
-<!-- Calendly popup text/button begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<a href=""
-   onclick="Calendly.initPopupWidget({url: 'https://calendly.com/katherinedelno'});return false;"
-   style="display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid currentColor;">
-  Book a meet-and-greet
-</a>
-<!-- Calendly popup text/button end -->
-<br><br><br>
-
-**Academic Progress & No Guaranteed Outcomes**<br>
-My goal is to help students build durable understanding, stronger problem-solving habits, and clearer statistical communication. I provide structured instruction, targeted practice, and actionable feedback aligned with AP expectations and the student’s course pacing.
-
-I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student’s consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, pacing, and test-day conditions.
-
-By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome. I’m happy to discuss goals up front and adjust our approach as we learn what supports the student most effectively.<br>
-
-<small>AP® is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this private instruction service.</small>

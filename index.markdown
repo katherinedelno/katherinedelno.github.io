@@ -6,97 +6,82 @@ permalink: /
 
 <style>
   .page-heading{display:none}
+  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
+  .pg p{max-width:74ch}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
 
-  /* Title + first paragraph + photo */
-  .hero { margin-bottom: 8px; }
-  .hero h1 { margin: 0 0 .75rem; }
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;column-gap:32px;align-items:center;margin-bottom:.5rem}
+  .hero-grid h1{font-size:2.2rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:-.01em}
+  .hero-grid .tagline{font-size:1.12rem;color:var(--muted);margin:0 0 1rem;max-width:60ch}
+  .hero-grid p{margin:0 0 .85rem}
+  .headshot{width:210px;height:210px;border-radius:50%;object-fit:cover;opacity:1 !important;filter:none !important;-webkit-filter:none !important;mix-blend-mode:normal !important}
 
-  .intro-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 200px; /* text | photo */
-    column-gap: 24px;
-    align-items: center;                         /* centers photo to paragraph */
-  }
-  .intro-grid p { margin: 0 0 0.75rem; max-width: 72ch; }
+  .pg-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
+  .pg-btn:hover{opacity:.9}
 
-  .headshot {
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    /* prevent theme dimming */
-    opacity: 1 !important;
-    filter: none !important;
-    -webkit-filter: none !important;
-    mix-blend-mode: normal !important;
-    box-shadow: none;
-  }
+  .pg-section{margin:2.6rem 0;padding-top:2.2rem;border-top:1px solid var(--line)}
+  .pg-section h2{font-size:1.3rem;margin:0 0 1rem;letter-spacing:-.01em}
+  .pg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:1.1rem}
+  .pg-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--card)}
+  .pg-card h3{margin:0 0 .35rem;font-size:1.05rem}
+  .pg-card p{margin:0;font-size:.94rem;color:var(--muted)}
+  .pg-links{font-size:.96rem}
+  .pg-personal{margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
 
-  /* Lightbox */
-  .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6);
-              align-items:center; justify-content:center; padding:24px; z-index:9999; }
-  .lightbox:target { display:flex; }
-  .lightbox img { max-width:720px; max-height:85vh; border-radius:12px;
-                  box-shadow:0 10px 30px rgba(0,0,0,.35); }
-  .lb-close { position:absolute; inset:0; cursor:zoom-out; }
+  .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:24px;z-index:9999}
+  .lightbox:target{display:flex}
+  .lightbox img{max-width:720px;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .lb-close{position:absolute;inset:0;cursor:zoom-out}
 
-  /* Mobile: stack nicely */
   @media (max-width:700px){
-    .intro-grid { grid-template-columns: 1fr; row-gap: 8px; }
-    .headshot { justify-self: start; }
+    .hero-grid{grid-template-columns:1fr;row-gap:18px}
+    .hero-grid h1{font-size:1.8rem}
+    .headshot{width:160px;height:160px;justify-self:start}
+    .pg-cards{grid-template-columns:1fr}
   }
 </style>
 
-<div class="hero">
-  <h1>Hi, I’m Katherine.</h1>
+<div class="pg" markdown="0">
 
-  <div class="intro-grid">
+  <div class="hero-grid">
     <div>
-      <p>
-        I’m a statistician by training (M.S. Statistics, University of Washington) who now focuses on
-        private, one-on-one statistics instruction for high school and early college students. I specialize
-        in AP Statistics and introductory statistics, blending strong theoretical grounding with clear,
-        step-by-step teaching and custom materials.
-      </p>
-
-      <p>
-        In addition to my training in statistics, I’ve built hands-on teaching experience through one-on-one     instruction and mentoring in AP Statistics and introductory statistics. I enjoy translating technical ideas into clear explanations and structured practice that helps learners build real confidence. If you’re a parent or student looking
-        for structured, instructor-led support in AP Statistics, you can learn more about my approach and
-        rates on my <a href="/ap-stats/">private AP Statistics instruction page</a>.
-      </p>
-
-      <p>
-Alongside teaching, I maintain an active interest in applied statistics, data science, and machine learning. I enjoy building clear, reproducible workflows in Python and R and translating analysis into plain-language recommendations. Outside of instruction, I occasionally support small analytics and statistical consulting engagements.
-
-      </p>
-
-      <p>
-        You can explore my <a href="/projects/">recent projects</a>,
-        <a href="/experience/">work experience</a>, and
-        <a href="/education/">academic background</a>, or download my
-        <a href="/assets/resume.pdf">resume</a> and  
-        <a href="https://www.linkedin.com/in/katherinedelno">connect with me on LinkedIn</a>.
-      </p>
+      <p class="label">Private Instruction</p>
+      <h1>Hi, I'm Katherine.</h1>
+      <p class="tagline">I provide private, one-on-one instruction in AP Statistics, AP Calculus, and Precalculus.</p>
+      <p>I run a private instruction practice focused entirely on one-on-one teaching for high school and early college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
+      <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with both rigor and clarity.</p>
+      <a href="/ap-stats/" class="pg-btn">Explore private instruction</a>
     </div>
-
-    <img
-      src="/assets/img/headshot.jpeg"
-      alt="Katherine Delno headshot"
-      class="headshot"
-      width="200"
-      height="200"
-      loading="lazy"
-      decoding="async"
-    >
+    <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="210" height="210" loading="lazy" decoding="async">
   </div>
-</div>
 
-<p>
-  I'm based in Seattle, WA. Outside of work, you'll usually find me baking, tuning my espresso setup,
-  collecting ceramics, or hanging out with my cat, <a href="#blue-photo">Blue</a>.
-</p>
+  <div class="pg-section">
+    <p class="label">Courses</p>
+    <h2>What I teach</h2>
+    <div class="pg-cards">
+      <div class="pg-card"><h3>AP Statistics</h3><p>Procedure selection, condition checks, inference, and rubric-aligned statistical writing.</p></div>
+      <div class="pg-card"><h3>AP Calculus (AB/BC)</h3><p>Limits, derivatives, integrals, and applications, with precise notation and AP justification.</p></div>
+      <div class="pg-card"><h3>Precalculus</h3><p>Functions, trigonometry, and the analytic foundations for success in AP Calculus.</p></div>
+    </div>
+  </div>
 
-<!-- Lightbox -->
-<div id="blue-photo" class="lightbox" aria-hidden="true">
-  <a href="#" class="lb-close" aria-label="Close"></a>
-  <img src="/assets/img/blue.jpeg" alt="Blue the cat">
+  <div class="pg-section">
+    <p class="label">The practice</p>
+    <h2>A focused, individualized approach</h2>
+    <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. You can read more about my approach, structure, and rates on the <a href="/ap-stats/">private instruction page</a>.</p>
+  </div>
+
+  <div class="pg-section">
+    <p class="label">Background</p>
+    <h2>Training and experience</h2>
+    <p class="pg-links">Learn more about my <a href="/experience/">teaching experience</a> and <a href="/education/">academic training</a>, or explore a selection of my <a href="/projects/">statistical work</a>. When you're ready, the best first step is to <a href="/ap-stats/">schedule a meet-and-greet</a>.</p>
+  </div>
+
+  <p class="pg-personal">I'm based in Seattle, WA. Outside of work, you'll usually find me baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat, <a href="#blue-photo">Blue</a>.</p>
+
+  <div id="blue-photo" class="lightbox" aria-hidden="true">
+    <a href="#" class="lb-close" aria-label="Close"></a>
+    <img src="/assets/img/blue.jpeg" alt="Blue the cat">
+  </div>
+
 </div>
