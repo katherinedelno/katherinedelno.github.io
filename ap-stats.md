@@ -5,9 +5,10 @@ permalink: /ap-stats/
 ---
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   /* ---- Scoped styling for the Private Instruction page ---- */
   .page-heading, .post-header { display:none; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+  body { font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
 
   .pi {
     --ink:#1a1a1a;
@@ -31,7 +32,7 @@ permalink: /ap-stats/
   }
 
   .pi-hero { margin:0 0 2.5rem; }
-  .pi-hero h1 { font-size:2.1rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.01em; }
+  .pi-hero h1 { font-size:2.1rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.02em; font-weight:900; }
   .pi-hero .tagline { font-size:1.12rem; color:var(--muted); max-width:64ch; margin:0; }
 
   .pi-section { margin:2.6rem 0; padding-top:2.2rem; border-top:1px solid var(--line); }
@@ -232,7 +233,7 @@ permalink: /ap-stats/
       <li><b>A full lecture</b> that teaches the topic in depth.</li>
       <li><b>Guided problems</b> worked with clear, AP-aligned solutions.</li>
       <li><b>A short quiz</b> to confirm independent understanding.</li>
-      <li><b>A homework assignment</b> with complete, separate solutions.</li>
+      <li><b>A homework assignment</b> with complete, separate solutions, included with the optional between-session support add-on.</li>
     </ul>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
   </div>
@@ -292,9 +293,10 @@ permalink: /ap-stats/
 
     <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
     <ul class="pi-list">
-      <li>Weekly assigned problem sets with written feedback on method, setup, and communication.</li>
-      <li>Brief weekday messaging so students don't get stuck and lose momentum.</li>
-      <li>A living &ldquo;method sheet&rdquo; and optional monthly parent check-ins.</li>
+      <li><b>Weekly assigned problem sets</b> with written feedback on method, setup, and communication, giving the student extra accountability to keep practicing between sessions.</li>
+      <li><b>Generous between-session availability</b> on weekdays and weekends for questions and clarifications, so students never stay stuck for long and keep their momentum.</li>
+      <li><b>Additional cheat sheets and study resources</b> to keep and reference throughout the year.</li>
+      <li><b>Monthly parent check-ins</b> by email or call to review progress, strengths, and next steps.</li>
     </ul>
 
     <div class="pi-billing">
@@ -344,6 +346,14 @@ permalink: /ap-stats/
         <p>A quiet space, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent note-taking method.</p>
       </details>
     </div>
+  </div>
+
+  <!-- AVAILABILITY -->
+  <div class="pi-section">
+    <p class="label">Availability</p>
+    <h2>Scheduling and getting started</h2>
+    <p>I'm based in the Pacific time zone and regularly work with students in other time zones; we will find a weekly slot that fits your schedule.</p>
+    <p>Weekly slots are limited and tend to fill quickly, so it is best to secure a place on the roster early. If you can, reach out a few weeks before the course begins. Starting early lets us prepare materials, get ahead of the pacing, and settle into a consistent weekly cadence from the very first session.</p>
   </div>
 
   <!-- CTA -->

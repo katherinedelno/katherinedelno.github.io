@@ -5,13 +5,14 @@ permalink: /education/
 ---
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   .page-heading,.post-header{display:none}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
   .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
-  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.01em}
+  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:900}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
   .pg-section{margin:2.4rem 0;padding-top:2.1rem;border-top:1px solid var(--line)}
   .pg-section:first-of-type{border-top:none;padding-top:0}

@@ -5,14 +5,15 @@ permalink: /
 ---
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   .page-heading,.post-header{display:none}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
   .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
 
   .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;column-gap:32px;align-items:center;margin-bottom:.5rem}
-  .hero-grid h1{font-size:2.2rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:-.01em}
+  .hero-grid h1{font-size:2.2rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:-.02em;font-weight:900}
   .hero-grid .tagline{font-size:1.12rem;color:var(--muted);margin:0 0 1rem;max-width:60ch}
   .hero-grid p{margin:0 0 .85rem}
   .headshot{width:210px;height:210px;border-radius:50%;object-fit:cover;opacity:1 !important;filter:none !important;-webkit-filter:none !important;mix-blend-mode:normal !important}
@@ -48,7 +49,7 @@ permalink: /
     <div>
       <p class="label">Private Instruction</p>
       <h1>Hi, I'm Katherine.</h1>
-      <p class="tagline">I provide private, one-on-one instruction in AP Statistics, AP Calculus, and Precalculus.</p>
+      <p class="tagline">One-on-one instruction, built around how each student learns.</p>
       <p>I run a private instruction practice focused entirely on one-on-one teaching for high school and early college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
       <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with both rigor and clarity.</p>
       <a href="/ap-stats/" class="pg-btn">Explore private instruction</a>
@@ -78,7 +79,11 @@ permalink: /
     <p class="pg-links">Learn more about my <a href="/experience/">teaching experience</a> and <a href="/education/">academic training</a>, or explore a selection of my <a href="/projects/">statistical work</a>. When you're ready, the best first step is to <a href="/ap-stats/">schedule a meet-and-greet</a>.</p>
   </div>
 
-  <p class="pg-personal">I'm based in Seattle, WA. Outside of work, you'll usually find me baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat, <a href="#blue-photo">Blue</a>.</p>
+  <div class="pg-section">
+    <p class="label">A little about me</p>
+    <h2>Beyond teaching</h2>
+    <p>I'm based in Seattle, WA. Outside of work, you'll usually find me baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat, <a href="#blue-photo">Blue</a>.</p>
+  </div>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">
     <a href="#" class="lb-close" aria-label="Close"></a>
