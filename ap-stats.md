@@ -6,7 +6,8 @@ permalink: /ap-stats/
 
 <style>
   /* ---- Scoped styling for the Private Instruction page ---- */
-  .page-heading { display:none; }
+  .page-heading, .post-header { display:none; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
 
   .pi {
     --ink:#1a1a1a;
