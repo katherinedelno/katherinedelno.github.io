@@ -13,7 +13,7 @@ permalink: /
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
 
   .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;column-gap:32px;align-items:center;margin-bottom:.5rem}
-  .hero-grid h1{font-size:2.2rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:-.02em;font-weight:900}
+  .hero-grid h1{font-size:2.2rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:-.02em;font-weight:700}
   .hero-grid .tagline{font-size:1.12rem;color:var(--muted);margin:0 0 1rem;max-width:60ch}
   .hero-grid p{margin:0 0 .85rem}
   .headshot{width:210px;height:210px;border-radius:50%;object-fit:cover;opacity:1 !important;filter:none !important;-webkit-filter:none !important;mix-blend-mode:normal !important}
@@ -48,10 +48,9 @@ permalink: /
   <div class="hero-grid">
     <div>
       <p class="label">Private Instruction</p>
-      <h1>Hi, I'm Katherine.</h1>
-      <p class="tagline">One-on-one instruction, built around how each student learns.</p>
+      <h1>Hi, I'm Katherine</h1>
       <p>I run a private instruction practice focused entirely on one-on-one teaching for high school and early college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
-      <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with both rigor and clarity.</p>
+      <p>I'm a statistician and mathematician by training, with an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. That foundation lets me teach these subjects with both rigor and clarity.</p>
       <a href="/ap-stats/" class="pg-btn">Explore private instruction</a>
     </div>
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="210" height="210" loading="lazy" decoding="async">

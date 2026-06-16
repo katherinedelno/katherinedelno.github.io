@@ -12,7 +12,7 @@ permalink: /education/
   .pg p{max-width:74ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
-  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:900}
+  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
   .pg-section{margin:2.4rem 0;padding-top:2.1rem;border-top:1px solid var(--line)}
   .pg-section:first-of-type{border-top:none;padding-top:0}
@@ -31,45 +31,63 @@ permalink: /education/
   <div class="pg-hero">
     <p class="label">Education</p>
     <h1>Academic training</h1>
-    <p class="tagline">The foundation of how I teach. Graduate and undergraduate degrees in statistics and mathematics, with coursework spanning the full range of topics my students encounter and extending well beyond them.</p>
+    <p class="tagline">The foundation of how I teach. <b>Graduate and undergraduate degrees in statistics and mathematics</b>, with coursework spanning the full range of topics my students encounter and extending well beyond them.</p>
   </div>
 
   <div class="pg-section">
     <h2>M.S. Statistics: Advanced Methods &amp; Data Analysis</h2>
     <p class="meta">University of Washington &middot; 2025</p>
-    <p>Rigorous graduate training in statistical inference, probability theory, regression modeling, generalized linear models, machine learning, and natural language processing, with strong skills in predictive modeling, simulation studies, and uncertainty quantification using R and Python.</p>
+    <p>Rigorous graduate training in modern statistical methodology, theory, and computation. My coursework covered the full theoretical inference sequence, regression methods for both independent and dependent (correlated) data, the design and analysis of experiments, categorical data analysis, and statistical computing, alongside an applied biostatistics sequence and a capstone in applied statistics. This is the foundation behind the predictive modeling, simulation, and uncertainty quantification in my research, carried out in R and Python.</p>
     <div class="pg-callout">
       <p>The University of Washington's Department of Statistics is ranked <b>#6 in the nation</b> in the U.S. News &amp; World Report 2026 Best Graduate Statistics Programs.</p>
     </div>
     <p class="pg-sub">Selected coursework</p>
     <div class="pg-tags">
       <span>Statistical Inference I &amp; II</span>
+      <span>Regression Methods for Independent &amp; Dependent Data</span>
+      <span>Applied Regression</span>
       <span>Design &amp; Analysis of Experiments</span>
       <span>Categorical Data Analysis</span>
       <span>Statistical Computing</span>
-      <span>Multivariate Data Analysis</span>
-      <span>Applied Regression</span>
-      <span>Causal Inference in Biomedical Studies</span>
-      <span>Advanced Regression Methods</span>
       <span>Applied Biostatistics I &amp; II</span>
+      <span>Causal Inference in Biomedical Studies</span>
+      <span>Applied Statistics Capstone</span>
+      <span>Independent Research</span>
     </div>
   </div>
 
   <div class="pg-section">
-    <h2>B.S. Mathematics</h2>
-    <p class="meta">University of Nevada, Reno &middot; 2022</p>
-    <p>A strong foundation in calculus, linear algebra, real analysis, probability, and mathematical statistics, with a specialization in statistical methods and data analysis, and experience in statistical computing using R and Python.</p>
-    <p class="pg-sub">Selected coursework</p>
+    <h2>B.S. Mathematics &amp; Statistics</h2>
+    <p class="meta">University of Nevada, Reno &middot; 2021 &middot; Minor in Civil Engineering</p>
+    <p>A double major in mathematics and statistics built on a deeply proof-based core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression and linear models, categorical data analysis, and statistical computing.</p>
+    <p class="pg-sub">Mathematics &amp; statistics</p>
     <div class="pg-tags">
       <span>Calculus I, II &amp; III</span>
       <span>Differential Equations</span>
+      <span>Partial Differential Equations</span>
       <span>Linear Algebra</span>
       <span>Real Analysis I &amp; II</span>
-      <span>Proof-Writing</span>
+      <span>Proof Writing</span>
       <span>Numerical Methods</span>
-      <span>Statistical Computing</span>
+      <span>Mathematical Modeling</span>
+      <span>Probability</span>
       <span>Statistical Theory</span>
-      <span>Probability Theory</span>
+      <span>Regression &amp; Linear Models</span>
+      <span>Categorical Data Analysis</span>
+      <span>Statistical Computing</span>
+      <span>Computer Science I &amp; II</span>
+    </div>
+    <p class="pg-sub">Sciences &amp; engineering</p>
+    <div class="pg-tags">
+      <span>General Chemistry I &amp; II</span>
+      <span>Organic Chemistry</span>
+      <span>Calculus-Based Physics I &amp; II</span>
+      <span>General Biology</span>
+      <span>Engineering Statics</span>
+      <span>Fluid Dynamics</span>
+    </div>
+    <div class="pg-callout">
+      <p>I began university as an engineering major, which gave me a broad STEM foundation across the physical and life sciences and engineering, in addition to my mathematics and statistics core. That range helps me connect ideas across subjects and meet students wherever their coursework sits.</p>
     </div>
   </div>
 

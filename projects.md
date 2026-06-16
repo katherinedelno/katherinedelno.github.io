@@ -12,7 +12,7 @@ permalink: /projects/
   .pg p{max-width:74ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
-  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:900}
+  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
 
   /* Featured project */
@@ -90,7 +90,6 @@ permalink: /projects/
         <p>Produced calibrated genre sets that balance coverage against set size, capturing nearly all true genres while controlling overprediction.</p>
       </div>
     </div>
-    <span class="pg-result">Kaggle public score: 0.78252</span>
     <div class="pg-tags"><span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>DistilBERT</span><span>Conformal Prediction</span><span>NLP</span></div>
   </div>
 
@@ -112,7 +111,6 @@ permalink: /projects/
         <p>BERT Base generalized best across more than 20,000 recipes, outperforming the larger variants on held-out test data.</p>
       </div>
     </div>
-    <span class="pg-result">Best model Kaggle public score: 0.86908</span>
     <div class="pg-tags"><span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>BERT</span><span>RoBERTa</span><span>NLP</span></div>
   </div>
 

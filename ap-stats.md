@@ -32,7 +32,7 @@ permalink: /ap-stats/
   }
 
   .pi-hero { margin:0 0 2.5rem; }
-  .pi-hero h1 { font-size:2.1rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.02em; font-weight:900; }
+  .pi-hero h1 { font-size:2.1rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.02em; font-weight:700; }
   .pi-hero .tagline { font-size:1.12rem; color:var(--muted); max-width:64ch; margin:0; }
 
   .pi-section { margin:2.6rem 0; padding-top:2.2rem; border-top:1px solid var(--line); }

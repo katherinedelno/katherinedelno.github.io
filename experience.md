@@ -12,7 +12,7 @@ permalink: /experience/
   .pg p{max-width:74ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
-  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:900}
+  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
   .pg-timeline{margin-top:1.4rem;border-left:2px solid var(--line);padding-left:26px}
   .pg-entry{position:relative;padding-bottom:2rem}
@@ -41,7 +41,7 @@ permalink: /experience/
       <p class="date">2025 &ndash; Present</p>
       <h3>Private Instruction Practice <span class="badge">Current</span></h3>
       <p class="org">Independent &middot; Remote</p>
-      <p>I run a private instruction practice for high school and early college students, teaching AP Statistics, AP Calculus, and Precalculus. I design and deliver structured lessons, custom materials, and rubric-aligned practice that build conceptual understanding, notation fluency, and exam-style reasoning. I assess each student's work with detailed written and verbal feedback, tracking progress over time and adapting pacing and content to their individual needs.</p>
+      <p>I run a private instruction practice for high school and early college students, teaching <b>AP Statistics, AP Calculus, and Precalculus</b>. I design and deliver structured lessons, custom materials, and rubric-aligned practice that build conceptual understanding, notation fluency, and exam-style reasoning. I assess each student's work with detailed written and verbal feedback, tracking progress over time and adapting pacing and content to their individual needs.</p>
     </div>
 
     <div class="pg-entry">
