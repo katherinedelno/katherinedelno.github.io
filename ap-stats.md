@@ -146,14 +146,14 @@ permalink: /ap-stats/
 <div class="pi" markdown="0">
 
   <div class="pi-hero">
-    <h1>Private Instruction</h1>
-    <p class="tagline">One-on-one instruction in AP Statistics, AP Calculus, and Precalculus. Structured, rigorous, and AP-aligned.</p>
+    <h1>Private Mathematics &amp; Statistics Instruction</h1>
+    <p class="tagline">Structured, one-on-one instruction in mathematics and statistics. AP-focused, with support for non-AP and college-level coursework as well.</p>
   </div>
 
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
-    <p>I provide structured, one-on-one instruction for high school students in AP and precollege mathematics. Each session functions like a focused mini-class: direct instruction, guided practice, and an independent check to confirm the student can execute on their own. The emphasis is on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work. These are the habits that earn credit on the AP exam and in the classroom.</p>
+    <p>I provide structured, one-on-one instruction in mathematics and statistics for high school and college students. Each session functions like a focused mini-class: direct instruction, guided practice, and an independent check to confirm the student can execute on their own. The emphasis is on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work. These are the habits that earn credit on the AP exam and in the classroom.</p>
   </div>
 
   <!-- COURSES -->
@@ -170,11 +170,11 @@ permalink: /ap-stats/
         <p>Limits, derivatives, integrals, and applications, with precise notation and AP free-response justification.</p>
       </div>
       <div class="pi-course">
-        <h3>Precalculus</h3>
-        <p>Functions, trigonometry, and analytic foundations that prepare students to succeed in AP Calculus.</p>
+        <h3>AP Precalculus</h3>
+        <p>Functions, trigonometry, and analytic foundations that prepare students for AP Calculus and college math.</p>
       </div>
     </div>
-    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">Additional courses are added each year. If you don't see your course listed, please get in touch to discuss fit.</p>
+    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP courses are my focus, but I also support students in non-AP and college-level mathematics and statistics. These are my current offerings and I add courses each year, so if you don't see your course listed, please get in touch to discuss fit.</p>
   </div>
 
   <!-- BACKGROUND -->

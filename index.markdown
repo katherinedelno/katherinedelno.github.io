@@ -48,7 +48,7 @@ permalink: /
 
   <div class="hero-grid">
     <div>
-      <p class="label">Private Instruction</p>
+      <p class="label">Private Mathematics &amp; Statistics Instructor</p>
       <h1>Hi, I'm Katherine</h1>
       <p>I run a private instruction practice focused entirely on one-on-one teaching for high school and early college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
       <p>I'm a statistician and mathematician by training, with an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. That foundation lets me teach these subjects with both rigor and clarity.</p>
@@ -63,8 +63,9 @@ permalink: /
     <div class="pg-cards">
       <div class="pg-card"><h3>AP Statistics</h3><p>Procedure selection, condition checks, inference, and rubric-aligned statistical writing.</p></div>
       <div class="pg-card"><h3>AP Calculus (AB/BC)</h3><p>Limits, derivatives, integrals, and applications, with precise notation and AP justification.</p></div>
-      <div class="pg-card"><h3>Precalculus</h3><p>Functions, trigonometry, and the analytic foundations for success in AP Calculus.</p></div>
+      <div class="pg-card"><h3>AP Precalculus</h3><p>Functions, trigonometry, and the analytic foundations for AP Calculus and college math.</p></div>
     </div>
+    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP courses are my focus, and I also support students in non-AP and college-level coursework.</p>
   </div>
 
   <div class="pg-section">
