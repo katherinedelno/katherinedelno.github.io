@@ -42,7 +42,7 @@ permalink: /experience/
       <p class="date">2025 &ndash; Present</p>
       <h3>Private Mathematics &amp; Statistics Instructor <span class="badge">Current</span></h3>
       <p class="org">Independent &middot; Remote</p>
-      <p>I run a private instruction practice for high school and early college students, teaching <b>AP Statistics, AP Calculus, and Precalculus</b>. I design and deliver structured lessons, custom materials, and rubric-aligned practice that build conceptual understanding, notation fluency, and exam-style reasoning. I assess each student's work with detailed written and verbal feedback, tracking progress over time and adapting pacing and content to their individual needs.</p>
+      <p>I run a private instruction practice teaching mathematics and statistics to high school and college students, with a focus on AP coursework. I design and deliver structured lessons, custom materials, and rubric-aligned practice that build conceptual understanding, notation fluency, and exam-style reasoning. I assess each student's work with detailed written and verbal feedback, tracking progress over time and adapting pacing and content to their individual needs.</p>
     </div>
 
     <div class="pg-entry">
