@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Private Instruction
-permalink: /ap-stats/
+permalink: /private-instruction/
 ---
 
 <style>

@@ -50,9 +50,9 @@ permalink: /
     <div>
       <p class="label">Private Mathematics &amp; Statistics Instructor</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I run a private instruction practice focused entirely on one-on-one teaching for high school and early college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
-      <p>I'm a statistician and mathematician by training, with an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. That foundation lets me teach these subjects with both rigor and clarity.</p>
-      <a href="/ap-stats/" class="pg-btn">Explore private instruction</a>
+      <p>I run a private instruction practice focused entirely on one-on-one teaching in mathematics and statistics, working with high school and college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
+      <p>I'm a statistician and mathematician by training, with an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. That foundation lets me teach these subjects with real depth, rigor, and clarity, and AP coursework is where I focus most of my work.</p>
+      <a href="/private-instruction/" class="pg-btn">Explore private instruction</a>
     </div>
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="210" height="210" loading="lazy" decoding="async">
   </div>
@@ -71,13 +71,13 @@ permalink: /
   <div class="pg-section">
     <p class="label">The practice</p>
     <h2>A focused, individualized approach</h2>
-    <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. You can read more about my approach, structure, and rates on the <a href="/ap-stats/">private instruction page</a>.</p>
+    <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. You can read more about my approach, structure, and rates on the <a href="/private-instruction/">private instruction page</a>.</p>
   </div>
 
   <div class="pg-section">
     <p class="label">Background</p>
     <h2>Training and experience</h2>
-    <p class="pg-links">Learn more about my <a href="/experience/">teaching experience</a> and <a href="/education/">academic training</a>, or explore a selection of my <a href="/projects/">statistical work</a>. When you're ready, the best first step is to <a href="/ap-stats/">schedule a meet-and-greet</a>.</p>
+    <p class="pg-links">Learn more about my <a href="/experience/">teaching experience</a> and <a href="/education/">academic training</a>, or explore a selection of my <a href="/projects/">statistical work</a>. When you're ready, the best first step is to <a href="/private-instruction/">schedule a meet-and-greet</a>.</p>
   </div>
 
   <div class="pg-section">
