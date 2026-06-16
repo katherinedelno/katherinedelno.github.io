@@ -10,6 +10,7 @@ permalink: /education/
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
   .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
+  .pg h1,.pg h2,.pg h3,.pg h4,.pg b{font-weight:700}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
   .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
@@ -57,9 +58,9 @@ permalink: /education/
   </div>
 
   <div class="pg-section">
-    <h2>B.S. Mathematics &amp; Statistics</h2>
-    <p class="meta">University of Nevada, Reno &middot; 2021 &middot; Minor in Civil Engineering</p>
-    <p>A double major in mathematics and statistics built on a deeply proof-based core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression and linear models, categorical data analysis, and statistical computing.</p>
+    <h2>B.S. Mathematics</h2>
+    <p class="meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
+    <p>A mathematics degree with a specialization in statistics, built on a deeply proof-based core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression and linear models, categorical data analysis, and statistical computing.</p>
     <p class="pg-sub">Mathematics &amp; statistics</p>
     <div class="pg-tags">
       <span>Calculus I, II &amp; III</span>
@@ -67,7 +68,7 @@ permalink: /education/
       <span>Partial Differential Equations</span>
       <span>Linear Algebra</span>
       <span>Real Analysis I &amp; II</span>
-      <span>Proof Writing</span>
+      <span>Proof Writing for Mathematics &amp; Statistics</span>
       <span>Numerical Methods</span>
       <span>Mathematical Modeling</span>
       <span>Probability</span>

@@ -21,6 +21,7 @@ permalink: /ap-stats/
     line-height:1.6;
   }
   .pi p { max-width:74ch; }
+  .pi h1, .pi h2, .pi h3, .pi h4, .pi b { font-weight:700; }
 
   .pi .label {
     text-transform:uppercase;
