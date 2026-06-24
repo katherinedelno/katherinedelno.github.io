@@ -177,6 +177,19 @@ permalink: /private-instruction/
     <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP courses are my focus, but I also support students in non-AP and college-level mathematics and statistics. These are my current offerings and I add courses each year, so if you don't see your course listed, please get in touch to discuss fit.</p>
   </div>
 
+  <!-- WEBINARS -->
+  <div class="pi-section">
+    <p class="label">Free webinars</p>
+    <h2>Succeeding in your course: free 45-minute webinars</h2>
+    <p>This August I'm hosting free 45-minute webinars on how to succeed in each course, with a separate session for AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Webinars run in early and late August; exact dates are announced soon. Register now and I'll send you the details.</p>
+    <ul class="pi-list">
+      <li><b>AP Statistics</b></li>
+      <li><b>AP Calculus (AB/BC)</b></li>
+      <li><b>AP Precalculus</b></li>
+    </ul>
+    <a href="REPLACE_WITH_YOUR_FORM_LINK" class="pi-btn" style="margin-top:1rem;">Register for a webinar</a>
+  </div>
+
   <!-- BACKGROUND -->
   <div class="pi-section">
     <p class="label">Background</p>
@@ -189,20 +202,20 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Approach</p>
     <h2>What a session looks like</h2>
-    <p>Sessions are pre-planned and instructor-led, aligned to the student's course pacing and customized to the specific skill gaps and recurring errors I observe.</p>
+    <p>Every session is built around the student, not a fixed script. Most of our time is spent solving problems together, and the teaching is calibrated to exactly what the student needs that day. Students are welcome to send specific problems, homework, or upcoming topics at least 24 hours in advance, and I'll build the session around them.</p>
     <div class="pi-steps">
       <div class="pi-step">
         <div class="num">1</div>
         <div>
-          <h4>Direct instruction</h4>
-          <p>Clear instruction on the key definitions, conditions, and the standard AP workflow and justification structure for the topic.</p>
+          <h4>Targeted teaching</h4>
+          <p>Calibrated to the moment: a condensed review of the essentials when a student just needs a refresher, or a full lecture that rebuilds the foundation when a topic isn't sticking.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">2</div>
         <div>
           <h4>Guided problem-solving</h4>
-          <p>Representative AP-style problems worked together, with targeted prompts and corrections to build reliable habits.</p>
+          <p>Where most of the session goes: working through AP-style problems and the student's own questions together, with targeted prompts and corrections that build reliable habits.</p>
         </div>
       </div>
       <div class="pi-step">
@@ -237,6 +250,9 @@ permalink: /private-instruction/
       <li><b>A homework assignment</b> with complete, separate solutions, included with the optional between-session support add-on.</li>
     </ul>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
+    <div class="pi-callout">
+      <p><b>Optional printed binder, $50 per semester.</b> For students on a full-semester weekly cadence, I can print, bind, and ship a complete copy of our lessons and resources, with the problem sets left blank so the student fills them in as we work through them together. Everything stays organized in one place, with room to take notes during each session, so there is no scrambling and nothing scattered across loose pages.</p>
+    </div>
   </div>
 
   <!-- AP EXAM PREP -->
