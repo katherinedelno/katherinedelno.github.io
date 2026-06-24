@@ -181,13 +181,13 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Free webinars</p>
     <h2>Succeeding in your course: free 45-minute webinars</h2>
-    <p>This August I'm hosting free 45-minute webinars on how to succeed in each course, with a separate session for AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Webinars run in early and late August; exact dates are announced soon. Register now and I'll send you the details.</p>
+    <p>This summer I'm hosting free 45-minute webinars on how to succeed in each course, with a separate session for AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Webinars run in early August and again in late August or early September; exact dates are announced soon. Register now and I'll send you the details.</p>
     <ul class="pi-list">
       <li><b>AP Statistics</b></li>
       <li><b>AP Calculus (AB/BC)</b></li>
       <li><b>AP Precalculus</b></li>
     </ul>
-    <a href="REPLACE_WITH_YOUR_FORM_LINK" class="pi-btn" style="margin-top:1rem;">Register for a webinar</a>
+    <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
 
   <!-- BACKGROUND -->
@@ -245,8 +245,9 @@ permalink: /private-instruction/
     <ul class="pi-list">
       <li><b>A condensed lecture</b> for a quick review of the key definitions, equations, and theorems.</li>
       <li><b>A full lecture</b> for students who need to rebuild their foundation in the topic.</li>
-      <li><b>A guided problem-solving section</b>, where we spend most of the session working through problems together and I prompt the student to reason through each step, correcting course as needed.</li>
-      <li><b>An independent practice section</b>, a few problems the student works on their own to confirm they can execute without prompts.</li>
+      <li><b>Model problems</b>, where I work through a few examples step by step to show the approach in action.</li>
+      <li><b>Guided problem-solving</b>, the heart of each session: we work through problems together while I coach the student, ask guiding questions, and help them reason their way to the answer.</li>
+      <li><b>Independent practice</b>, a few problems the student works on their own to confirm they can execute without prompts.</li>
       <li><b>A condensed one-page summary</b> of the topic for quick reference.</li>
     </ul>
     <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
