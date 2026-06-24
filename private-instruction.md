@@ -221,8 +221,8 @@ permalink: /private-instruction/
       <div class="pi-step">
         <div class="num">3</div>
         <div>
-          <h4>Independent check</h4>
-          <p>A short end-of-session quiz to confirm the student can execute without prompts, followed by a quick review together.</p>
+          <h4>Independent practice</h4>
+          <p>A few problems the student works on their own to confirm they can execute without prompts, followed by a quick review together.</p>
         </div>
       </div>
       <div class="pi-step">
@@ -241,14 +241,15 @@ permalink: /private-instruction/
     <p class="label">Materials</p>
     <h2>Lessons built for your student, not pulled off a shelf</h2>
     <p>Each topic comes with a complete lesson set that I write myself, kept consistent in structure and formatting from one lesson to the next so students always know where to look. Sessions are individualized: the material is shaped around the student's course pacing and the specific gaps and recurring errors I observe.</p>
-    <p style="margin-top:1.1rem;font-weight:600;">Each lesson set includes:</p>
+    <p style="margin-top:1.1rem;font-weight:600;">Each lesson includes:</p>
     <ul class="pi-list">
-      <li><b>A condensed summary</b> of the essential formulas, definitions, and ideas.</li>
-      <li><b>A full lecture</b> that teaches the topic in depth.</li>
-      <li><b>Guided problems</b> worked with clear, AP-aligned solutions.</li>
-      <li><b>A short quiz</b> to confirm independent understanding.</li>
-      <li><b>A homework assignment</b> with complete, separate solutions, included with the optional between-session support add-on.</li>
+      <li><b>A condensed lecture</b> for a quick review of the key definitions, equations, and theorems.</li>
+      <li><b>A full lecture</b> for students who need to rebuild their foundation in the topic.</li>
+      <li><b>A guided problem-solving section</b>, where we spend most of the session working through problems together and I prompt the student to reason through each step, correcting course as needed.</li>
+      <li><b>An independent practice section</b>, a few problems the student works on their own to confirm they can execute without prompts.</li>
+      <li><b>A condensed one-page summary</b> of the topic for quick reference.</li>
     </ul>
+    <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
     <div class="pi-callout">
       <p><b>Optional printed binder, $50 per semester.</b> For students on a full-semester weekly cadence, I can print, bind, and ship a complete copy of our lessons and resources, with the problem sets left blank so the student fills them in as we work through them together. Everything stays organized in one place, with room to take notes during each session, so there is no scrambling and nothing scattered across loose pages.</p>
