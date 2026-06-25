@@ -19,16 +19,18 @@
 # in the templates via {{ site.myvariable }}.
 
 # Site settings
-title: ""
-description: ""
+title: "Katherine Delno"
+description: "Katherine Delno provides private mathematics and statistics instruction, one-on-one teaching in AP Statistics, AP Calculus, and AP Precalculus. M.S. Statistics, University of Washington."
 url: https://katherinedelno.github.io
 baseurl: ""            # if you host under a subdirectory, put it here (e.g. "/blog")
-author: ""
+author: "Katherine Delno"
 
 # Theme & plugins
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Top‐nav links
 # (Minima will pick these up automatically if you list them here)
