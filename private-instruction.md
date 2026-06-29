@@ -137,28 +137,27 @@ permalink: /private-instruction/
   }
   .pi-callout p { margin:0; }
 
-  /* Materials preview gallery */
-  .pi-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:1.3rem; }
-  .pi-gallery figure { margin:0; }
-  .pi-gallery a.thumb {
-    display:block; height:230px; overflow:hidden; border:1px solid var(--line);
-    border-radius:10px; background:#fff; box-shadow:0 2px 10px rgba(31,42,68,.06);
-    transition:box-shadow .15s ease, transform .15s ease;
+  /* Sample-lesson preview cards (link to real PDFs) */
+  .pi-samples { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:1.3rem; }
+  .pi-sample {
+    display:grid; grid-template-columns:124px 1fr; gap:20px; align-items:center;
+    border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card);
   }
-  .pi-gallery a.thumb:hover { box-shadow:0 9px 24px rgba(31,42,68,.14); transform:translateY(-2px); }
-  .pi-gallery a.thumb img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
-  .pi-gallery figcaption { margin-top:.55rem; font-size:.82rem; color:var(--muted); text-align:center; }
-  .pi-gallery-note { margin-top:.9rem; font-size:.86rem; color:var(--muted); text-align:center; }
-
-  /* Lightbox for full-page previews */
-  .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.72); align-items:center; justify-content:center; padding:24px; z-index:9999; }
-  .lightbox:target { display:flex; }
-  .lightbox img { max-width:820px; max-height:88vh; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.4); }
-  .lb-close { position:absolute; inset:0; cursor:zoom-out; }
+  .pi-sample-thumb {
+    display:block; border:1px solid var(--line); border-radius:7px; overflow:hidden;
+    box-shadow:0 5px 16px rgba(31,42,68,.12); transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .pi-sample-thumb:hover { box-shadow:0 10px 26px rgba(31,42,68,.18); transform:translateY(-2px); }
+  .pi-sample-thumb img { display:block; width:100%; height:auto; }
+  .pi-sample-body .course { font-size:.74rem; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin:0 0 .3rem; }
+  .pi-sample-body h4 { margin:0 0 .35rem; font-size:1.02rem; line-height:1.25; }
+  .pi-sample-body p { margin:0 0 .7rem; font-size:.88rem; color:var(--muted); }
+  .pi-sample-link { font-size:.9rem; font-weight:600; color:var(--accent); text-decoration:none; }
+  .pi-sample-link:hover { text-decoration:underline; }
 
   @media (max-width:720px){
     .pi-courses, .pi-steps, .pi-quotes, .pi-pricing { grid-template-columns:1fr; }
-    .pi-gallery { grid-template-columns:repeat(2,1fr); }
+    .pi-samples { grid-template-columns:1fr; }
     .pi-hero h1 { font-size:1.7rem; }
   }
 </style>
@@ -277,31 +276,32 @@ permalink: /private-instruction/
     <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
 
-    <p style="margin-top:1.6rem;font-weight:600;">A look at the materials</p>
-    <div class="pi-gallery">
-      <figure>
-        <a class="thumb" href="#prev-1"><img src="/assets/img/previews/preview-calc-module-goals.png" alt="Opening page of an AP Calculus lesson listing the learning goals" loading="lazy" decoding="async"></a>
-        <figcaption>Lesson opener &amp; learning goals</figcaption>
-      </figure>
-      <figure>
-        <a class="thumb" href="#prev-2"><img src="/assets/img/previews/preview-calc-model-problem.png" alt="A fully worked AP Calculus model problem with a graph and solution" loading="lazy" decoding="async"></a>
-        <figcaption>Worked model problem</figcaption>
-      </figure>
-      <figure>
-        <a class="thumb" href="#prev-3"><img src="/assets/img/previews/preview-calc-cheatsheet.png" alt="First page of the AP Calculus master cheat sheet" loading="lazy" decoding="async"></a>
-        <figcaption>Master cheat sheet &middot; Calculus</figcaption>
-      </figure>
-      <figure>
-        <a class="thumb" href="#prev-4"><img src="/assets/img/previews/preview-stats-cheatsheet.png" alt="First page of the AP Statistics master cheat sheet" loading="lazy" decoding="async"></a>
-        <figcaption>Master cheat sheet &middot; Statistics</figcaption>
-      </figure>
+    <p style="margin-top:1.6rem;font-weight:600;">See a real lesson</p>
+    <p style="margin-top:.2rem;">These are complete student-copy lessons, exactly as a student receives them. Each opens as a full PDF &mdash; the same materials we work through together in session.</p>
+    <div class="pi-samples">
+      <div class="pi-sample">
+        <a class="pi-sample-thumb" href="/assets/samples/ap-calculus-ab-sample-lesson.pdf" target="_blank" rel="noopener">
+          <img src="/assets/img/previews/sample-lesson-cover.png" alt="First page of the sample AP Calculus AB lesson" loading="lazy" decoding="async">
+        </a>
+        <div class="pi-sample-body">
+          <p class="course">AP Calculus AB</p>
+          <h4>Module 5B &mdash; First Derivative Analysis</h4>
+          <p>A complete lesson: lecture, model problems, guided practice, and independent work.</p>
+          <a class="pi-sample-link" href="/assets/samples/ap-calculus-ab-sample-lesson.pdf" target="_blank" rel="noopener">View the full lesson (PDF) &rarr;</a>
+        </div>
+      </div>
+      <div class="pi-sample">
+        <a class="pi-sample-thumb" href="/assets/samples/ap-statistics-sample-lesson.pdf" target="_blank" rel="noopener">
+          <img src="/assets/img/previews/sample-lesson-stats-cover.png" alt="First page of the sample AP Statistics lesson" loading="lazy" decoding="async">
+        </a>
+        <div class="pi-sample-body">
+          <p class="course">AP Statistics</p>
+          <h4>Module 3E &mdash; Chi-Square Inference</h4>
+          <p>A complete lesson: lecture, model problems, guided practice, and independent work.</p>
+          <a class="pi-sample-link" href="/assets/samples/ap-statistics-sample-lesson.pdf" target="_blank" rel="noopener">View the full lesson (PDF) &rarr;</a>
+        </div>
+      </div>
     </div>
-    <p class="pi-gallery-note">Actual pages from my materials. Click any page to view it full size.</p>
-
-    <div id="prev-1" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-calc-module-goals.png" alt="AP Calculus lesson opener, full page"></div>
-    <div id="prev-2" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-calc-model-problem.png" alt="Worked AP Calculus model problem, full page"></div>
-    <div id="prev-3" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-calc-cheatsheet.png" alt="AP Calculus master cheat sheet, full page"></div>
-    <div id="prev-4" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-stats-cheatsheet.png" alt="AP Statistics master cheat sheet, full page"></div>
 
     <div class="pi-callout" style="margin-top:1.6rem;">
       <p><b>Optional printed binder, $50 per semester.</b> For students on a full-semester weekly cadence, I can print, bind, and ship a complete copy of our lessons and resources, with the problem sets left blank so the student fills them in as we work through them together. Everything stays organized in one place, with room to take notes during each session, so there is no scrambling and nothing scattered across loose pages.</p>
@@ -338,13 +338,13 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Pricing</p>
     <h2>Hourly, with one rate for every course</h2>
-    <p>No packages or long-term commitment; you book the sessions you need. I recommend a <b>weekly 90-minute session</b>. Ninety minutes gives us enough time to teach the topic, practice it together, and leave room for an independent check.</p>
+    <p>No packages or long-term commitment; you book the sessions you need. Sessions start at a 60-minute minimum and are booked in 30-minute increments, so we can size each meeting to the work at hand. I recommend a <b>weekly 90-minute session</b>: ninety minutes gives us enough time to teach the topic, practice it together, and leave room for an independent check.</p>
     <div class="pi-pricing">
       <div class="pi-price featured">
         <span class="pill">Recommended</span>
         <h3>90-minute session</h3>
         <div class="amt">$180<span> / session</span></div>
-        <p class="note">$120/hr. The format I recommend for consistent weekly progress.</p>
+        <p class="note">Room to teach the topic, work through it together, and finish with an independent check — the cadence I recommend for steady weekly progress.</p>
       </div>
       <div class="pi-price">
         <h3>60-minute session</h3>
@@ -425,7 +425,7 @@ permalink: /private-instruction/
     <p>I'm based in the Pacific time zone and regularly work with students in other time zones; we will find a weekly slot that fits your schedule.</p>
     <p>Weekly slots are limited and tend to fill quickly, so it is best to secure a place on the roster early. I take only a small number of students each academic year, and once the roster is full I keep a short waitlist.</p>
     <div class="pi-callout">
-      <p><b>The strongest results start at the beginning of the course.</b> I most want to work with students from week one, building each topic correctly the first time, before small gaps quietly compound into the ones that cost points later. Students who join mid-semester are absolutely welcome and can make real gains, but we then spend our first sessions closing gaps before we can get ahead of new material. Reserving a spot before the term begins lets us prepare, stay ahead of your class's pacing, and settle into a steady weekly rhythm from the very first week.</p>
+      <p><b>The strongest results start at the beginning of the course.</b> The ideal time to begin is the first weeks of the term, while each topic can be built correctly the first time, before small gaps quietly compound into the ones that cost points later. Students who join mid-semester are very welcome and can make real gains; we simply spend our early sessions closing those gaps before we get ahead of new material. Reserving a spot before the term begins lets us prepare, stay ahead of your class's pacing, and settle into a steady weekly rhythm from the very first week.</p>
     </div>
   </div>
 
