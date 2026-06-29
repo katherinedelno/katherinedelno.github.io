@@ -40,7 +40,7 @@ permalink: /education/
     <p class="meta">University of Washington &middot; 2025</p>
     <p>Rigorous graduate training in modern statistical methodology, theory, and computation. My coursework covered the full theoretical inference sequence, regression methods for both independent and dependent (correlated) data, the design and analysis of experiments, categorical data analysis, and statistical computing, alongside an applied biostatistics sequence and a capstone in applied statistics. This is the foundation behind the predictive modeling, simulation, and uncertainty quantification in my research, carried out in R and Python.</p>
     <div class="pg-callout">
-<p>The University of Washington's Department of Statistics ranks <b>#6 in the nation</b>, at a university ranked <b>#3 among U.S. public universities</b> (U.S. News, 2026).</p>
+      <p>The University of Washington ranks <b>#3 among U.S. public universities</b>, with its Department of Statistics ranking <b>#6 in the nation</b> (U.S. News, 2026).</p>
     </div>
     <p class="pg-sub">Selected coursework</p>
     <div class="pg-tags">
