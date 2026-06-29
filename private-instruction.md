@@ -280,14 +280,14 @@ permalink: /private-instruction/
     <p style="margin-top:.2rem;">These are complete student-copy lessons, exactly as a student receives them. Each opens as a full PDF &mdash; the same materials we work through together in session.</p>
     <div class="pi-samples">
       <div class="pi-sample">
-        <a class="pi-sample-thumb" href="/assets/samples/ap-calculus-ab-sample-lesson.pdf" target="_blank" rel="noopener">
-          <img src="/assets/img/previews/sample-lesson-cover.png" alt="First page of the sample AP Calculus AB lesson" loading="lazy" decoding="async">
+        <a class="pi-sample-thumb" href="/assets/samples/ap-calculus-bc-sample-lesson.pdf" target="_blank" rel="noopener">
+          <img src="/assets/img/previews/sample-lesson-calc-cover.png" alt="First page of the sample AP Calculus BC lesson" loading="lazy" decoding="async">
         </a>
         <div class="pi-sample-body">
-          <p class="course">AP Calculus AB</p>
-          <h4>Module 5B &mdash; First Derivative Analysis</h4>
+          <p class="course">AP Calculus BC</p>
+          <h4>Module 4C &mdash; Linearization &amp; L'Hospital's Rule</h4>
           <p>A complete lesson: lecture, model problems, guided practice, and independent work.</p>
-          <a class="pi-sample-link" href="/assets/samples/ap-calculus-ab-sample-lesson.pdf" target="_blank" rel="noopener">View the full lesson (PDF) &rarr;</a>
+          <a class="pi-sample-link" href="/assets/samples/ap-calculus-bc-sample-lesson.pdf" target="_blank" rel="noopener">View the full lesson (PDF) &rarr;</a>
         </div>
       </div>
       <div class="pi-sample">

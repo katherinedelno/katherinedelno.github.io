@@ -31,6 +31,16 @@ permalink: /
   .pg-links{font-size:.96rem}
   .pg-personal{margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
 
+  .pg-note{margin-top:1.1rem;padding:20px 24px;background:var(--accent-soft);border-radius:12px}
+  .pg-note p{margin:0;max-width:none}
+  .pg-note .pg-btn{margin-top:1rem}
+  .pg-quote{margin-top:1.2rem;border-left:3px solid var(--accent);padding:2px 0 2px 18px}
+  .pg-quote p{margin:0 0 .45rem;font-size:1rem;font-style:italic}
+  .pg-quote .who{font-size:.84rem;color:var(--muted);font-weight:600}
+  .pg-cta{text-align:center;margin:2.8rem 0 .5rem;padding:2.4rem 1rem;background:var(--accent-soft);border-radius:16px}
+  .pg-cta h2{margin:0 0 .5rem}
+  .pg-cta p{margin:0 auto 1.3rem;color:var(--muted);max-width:54ch}
+
   .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:24px;z-index:9999}
   .lightbox:target{display:flex}
   .lightbox img{max-width:720px;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
@@ -69,9 +79,23 @@ permalink: /
   </div>
 
   <div class="pg-section">
+    <p class="label">Free this summer</p>
+    <h2>Webinars on succeeding in each course</h2>
+    <p>Before the school year begins, I'm hosting free 45-minute webinars on how to do well in AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Everyone who registers also receives my master cheat sheet for that course, free to keep whether or not you attend live.</p>
+    <div class="pg-note">
+      <p>Webinars run in early August and again in late August or early September. Register now and I'll send the details.</p>
+      <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pg-btn" target="_blank" rel="noopener">Register for a free webinar</a>
+    </div>
+  </div>
+
+  <div class="pg-section">
     <p class="label">The practice</p>
     <h2>A focused, individualized approach</h2>
     <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. The strongest results come when we start at the beginning of the course, so spots are best reserved before the term begins. You can read more about my approach, structure, and rates on the <a href="/private-instruction/">private instruction page</a>.</p>
+    <div class="pg-quote">
+      <p>&ldquo;Katherine is an attentive, thoughtful, and highly effective tutor. She helped my daughter build both confidence and understanding, making challenging material feel approachable.&rdquo;</p>
+      <span class="who">Parent of 2025 AP Statistics student</span>
+    </div>
   </div>
 
   <div class="pg-section">
@@ -84,6 +108,12 @@ permalink: /
     <p class="label">A little about me</p>
     <h2>Beyond teaching</h2>
     <p>I'm based in Seattle, WA. Outside of work, you'll usually find me baking, tuning my espresso setup, collecting ceramics, or hanging out with my cat, <a href="#blue-photo">Blue</a>.</p>
+  </div>
+
+  <div class="pg-cta">
+    <h2>Work with me this year</h2>
+    <p>I take a limited number of students each academic year, and spots are best reserved before the term begins. The best first step is a short, no-pressure meet-and-greet.</p>
+    <a href="/private-instruction/" class="pg-btn">Get started</a>
   </div>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">
