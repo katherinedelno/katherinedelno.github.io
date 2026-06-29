@@ -50,7 +50,7 @@ permalink: /
     <div>
       <p class="label">Private Mathematics &amp; Statistics Instructor</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I run a private instruction practice focused entirely on one-on-one teaching in mathematics and statistics, working with high school and college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and custom materials I write myself.</p>
+      <p>I run a private instruction practice focused entirely on one-on-one teaching in mathematics and statistics, working with high school and college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and a complete curriculum I write myself.</p>
       <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with real depth, rigor, and clarity, and AP coursework is where I focus most of my work.</p>
       <a href="/private-instruction/" class="pg-btn">Explore private instruction</a>
     </div>
@@ -71,7 +71,7 @@ permalink: /
   <div class="pg-section">
     <p class="label">The practice</p>
     <h2>A focused, individualized approach</h2>
-    <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. You can read more about my approach, structure, and rates on the <a href="/private-instruction/">private instruction page</a>.</p>
+    <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. The strongest results come when we start at the beginning of the course, so spots are best reserved before the term begins. You can read more about my approach, structure, and rates on the <a href="/private-instruction/">private instruction page</a>.</p>
   </div>
 
   <div class="pg-section">

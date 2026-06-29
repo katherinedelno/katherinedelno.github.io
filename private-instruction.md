@@ -137,8 +137,28 @@ permalink: /private-instruction/
   }
   .pi-callout p { margin:0; }
 
+  /* Materials preview gallery */
+  .pi-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:1.3rem; }
+  .pi-gallery figure { margin:0; }
+  .pi-gallery a.thumb {
+    display:block; height:230px; overflow:hidden; border:1px solid var(--line);
+    border-radius:10px; background:#fff; box-shadow:0 2px 10px rgba(31,42,68,.06);
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .pi-gallery a.thumb:hover { box-shadow:0 9px 24px rgba(31,42,68,.14); transform:translateY(-2px); }
+  .pi-gallery a.thumb img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
+  .pi-gallery figcaption { margin-top:.55rem; font-size:.82rem; color:var(--muted); text-align:center; }
+  .pi-gallery-note { margin-top:.9rem; font-size:.86rem; color:var(--muted); text-align:center; }
+
+  /* Lightbox for full-page previews */
+  .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.72); align-items:center; justify-content:center; padding:24px; z-index:9999; }
+  .lightbox:target { display:flex; }
+  .lightbox img { max-width:820px; max-height:88vh; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  .lb-close { position:absolute; inset:0; cursor:zoom-out; }
+
   @media (max-width:720px){
     .pi-courses, .pi-steps, .pi-quotes, .pi-pricing { grid-template-columns:1fr; }
+    .pi-gallery { grid-template-columns:repeat(2,1fr); }
     .pi-hero h1 { font-size:1.7rem; }
   }
 </style>
@@ -187,7 +207,10 @@ permalink: /private-instruction/
       <li><b>AP Calculus (AB/BC)</b></li>
       <li><b>AP Precalculus</b></li>
     </ul>
-    <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1rem;" target="_blank" rel="noopener">Register for a webinar</a>
+    <div class="pi-callout">
+      <p><b>Free for everyone who registers:</b> my master cheat sheet for that course &mdash; a concise, one-page-per-theme reference to the definitions, formulas, and procedures for the whole year. It's yours to keep whether or not you attend live, so register even if you can't make the date.</p>
+    </div>
+    <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.2rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
 
   <!-- BACKGROUND -->
@@ -240,7 +263,8 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Materials</p>
     <h2>Lessons built for your student, not pulled off a shelf</h2>
-    <p>Each topic comes with a complete lesson set that I write myself, kept consistent in structure and formatting from one lesson to the next so students always know where to look. Sessions are individualized: the material is shaped around the student's course pacing and the specific gaps and recurring errors I observe.</p>
+    <p>I teach from a complete curriculum I have written and typeset myself: a full set of lessons covering every topic in the course, plus reference sheets, procedure guides, and practice banks, all built to the same exacting standard. This is not a binder of worksheets pulled off a shelf. It is a coherent body of material I maintain and refine each year, and it is what lets every session move quickly and stay rigorous.</p>
+    <p>Each lesson is kept consistent in structure and formatting from one topic to the next, so students always know where to look. Sessions stay individualized: the material is shaped around the student's course pacing and the specific gaps and recurring errors I observe.</p>
     <p style="margin-top:1.1rem;font-weight:600;">Each lesson includes:</p>
     <ul class="pi-list">
       <li><b>A condensed lecture</b> for a quick review of the key definitions, equations, and theorems.</li>
@@ -252,7 +276,34 @@ permalink: /private-instruction/
     </ul>
     <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
-    <div class="pi-callout">
+
+    <p style="margin-top:1.6rem;font-weight:600;">A look at the materials</p>
+    <div class="pi-gallery">
+      <figure>
+        <a class="thumb" href="#prev-1"><img src="/assets/img/previews/preview-calc-module-goals.png" alt="Opening page of an AP Calculus lesson listing the learning goals" loading="lazy" decoding="async"></a>
+        <figcaption>Lesson opener &amp; learning goals</figcaption>
+      </figure>
+      <figure>
+        <a class="thumb" href="#prev-2"><img src="/assets/img/previews/preview-calc-model-problem.png" alt="A fully worked AP Calculus model problem with a graph and solution" loading="lazy" decoding="async"></a>
+        <figcaption>Worked model problem</figcaption>
+      </figure>
+      <figure>
+        <a class="thumb" href="#prev-3"><img src="/assets/img/previews/preview-calc-cheatsheet.png" alt="First page of the AP Calculus master cheat sheet" loading="lazy" decoding="async"></a>
+        <figcaption>Master cheat sheet &middot; Calculus</figcaption>
+      </figure>
+      <figure>
+        <a class="thumb" href="#prev-4"><img src="/assets/img/previews/preview-stats-cheatsheet.png" alt="First page of the AP Statistics master cheat sheet" loading="lazy" decoding="async"></a>
+        <figcaption>Master cheat sheet &middot; Statistics</figcaption>
+      </figure>
+    </div>
+    <p class="pi-gallery-note">Actual pages from my materials. Click any page to view it full size.</p>
+
+    <div id="prev-1" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-calc-module-goals.png" alt="AP Calculus lesson opener, full page"></div>
+    <div id="prev-2" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-calc-model-problem.png" alt="Worked AP Calculus model problem, full page"></div>
+    <div id="prev-3" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-calc-cheatsheet.png" alt="AP Calculus master cheat sheet, full page"></div>
+    <div id="prev-4" class="lightbox" aria-hidden="true"><a href="#" class="lb-close" aria-label="Close"></a><img src="/assets/img/previews/preview-stats-cheatsheet.png" alt="AP Statistics master cheat sheet, full page"></div>
+
+    <div class="pi-callout" style="margin-top:1.6rem;">
       <p><b>Optional printed binder, $50 per semester.</b> For students on a full-semester weekly cadence, I can print, bind, and ship a complete copy of our lessons and resources, with the problem sets left blank so the student fills them in as we work through them together. Everything stays organized in one place, with room to take notes during each session, so there is no scrambling and nothing scattered across loose pages.</p>
     </div>
   </div>
@@ -372,7 +423,10 @@ permalink: /private-instruction/
     <p class="label">Availability</p>
     <h2>Scheduling and getting started</h2>
     <p>I'm based in the Pacific time zone and regularly work with students in other time zones; we will find a weekly slot that fits your schedule.</p>
-    <p>Weekly slots are limited and tend to fill quickly, so it is best to secure a place on the roster early. If you can, reach out a few weeks before the course begins. Starting early lets us prepare materials, get ahead of the pacing, and settle into a consistent weekly cadence from the very first session.</p>
+    <p>Weekly slots are limited and tend to fill quickly, so it is best to secure a place on the roster early. I take only a small number of students each academic year, and once the roster is full I keep a short waitlist.</p>
+    <div class="pi-callout">
+      <p><b>The strongest results start at the beginning of the course.</b> I most want to work with students from week one, building each topic correctly the first time, before small gaps quietly compound into the ones that cost points later. Students who join mid-semester are absolutely welcome and can make real gains, but we then spend our first sessions closing gaps before we can get ahead of new material. Reserving a spot before the term begins lets us prepare, stay ahead of your class's pacing, and settle into a steady weekly rhythm from the very first week.</p>
+    </div>
   </div>
 
   <!-- CTA -->
