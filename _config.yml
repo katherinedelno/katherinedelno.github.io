@@ -21,7 +21,7 @@
 # Site settings
 title: "Katherine Delno"
 description: "Katherine Delno provides private mathematics and statistics instruction, one-on-one teaching in AP Statistics, AP Calculus, and AP Precalculus. M.S. Statistics, University of Washington."
-url: https://katherinedelno.github.io
+url: https://katherinedelno.com
 baseurl: ""            # if you host under a subdirectory, put it here (e.g. "/blog")
 author: "Katherine Delno"
 
