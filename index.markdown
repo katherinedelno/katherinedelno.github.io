@@ -90,7 +90,7 @@ permalink: /
   <div class="pg-section">
     <p class="label">Free this summer</p>
     <h2>Webinars on succeeding in each course</h2>
-    <p>Before the school year begins, I'm hosting free 45-minute webinars on how to do well in AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Everyone who registers also receives my master cheat sheet for that course, free to keep whether or not you attend live.</p>
+    <p>Before the school year begins, I'm hosting free 45-minute webinars on how to do well in AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Everyone who registers also receives my getting-started guide for that course &mdash; how to begin the year on the right foot, from mindset and study habits to the technical setup and exam structure &mdash; free to keep whether or not you attend live.</p>
     <div class="pg-note">
       <p>Webinars run in early August and again in late August or early September. Register now and I'll send the details.</p>
       <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pg-btn" target="_blank" rel="noopener">Register for a free webinar</a>

@@ -210,7 +210,7 @@ permalink: /private-instruction/
       <li><b>AP Precalculus</b></li>
     </ul>
     <div class="pi-callout">
-      <p><b>Free for everyone who registers:</b> my master cheat sheet for that course &mdash; a concise, one-page-per-theme reference to the definitions, formulas, and procedures for the whole year. It's yours to keep whether or not you attend live, so register even if you can't make the date.</p>
+      <p><b>Free for everyone who registers:</b> my getting-started guide for that course &mdash; how to begin the year on the right foot, covering the mindset and habits that work, the technical setup (calculator, notation, and how the course and exam are structured), and the common early mistakes to avoid. It's yours to keep whether or not you attend live, so register even if you can't make the date.</p>
     </div>
     <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.2rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
