@@ -8,35 +8,35 @@ permalink: /projects/
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#959386;--accent-soft:#cac9c3;--accent-ink:#57554C;--card:#fbfbfa;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#595850;--accent-soft:#dfdfdb;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg h1,.pg h2,.pg h3,.pg h4,.pg b{font-weight:700}
-  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent-ink);margin:0 0 .5rem}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
   .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
 
   /* Featured project */
   .pg-feature{position:relative;border:1.5px solid var(--accent);border-radius:16px;padding:30px 30px 28px;background:#fff;box-shadow:0 6px 22px rgba(31,42,68,.08);margin-top:20px}
-  .pg-feature .pill{position:absolute;top:-12px;left:28px;background:var(--accent);color:var(--ink);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
-  .pg-feature .date{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+  .pg-feature .pill{position:absolute;top:-12px;left:28px;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .pg-feature .date{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
   .pg-feature h3{margin:.35rem 0 .2rem;font-size:1.28rem;line-height:1.25;letter-spacing:-.01em}
   .pg-feature .author{font-size:.9rem;color:var(--muted);margin:0 0 .9rem}
   .pg-feature p{font-size:.96rem}
   .pg-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:1.4rem 0 .4rem;padding:1.3rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .pg-breakdown h4{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-ink);margin:0 0 .35rem}
+  .pg-breakdown h4{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin:0 0 .35rem}
   .pg-breakdown p{font-size:.88rem;color:var(--muted);margin:0;max-width:none}
 
   /* Standard project cards */
   .pg-project{border:1px solid var(--line);border-radius:14px;padding:24px 26px;background:var(--card);margin-top:18px}
-  .pg-project .date{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+  .pg-project .date{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
   .pg-project h3{margin:.3rem 0 .15rem;font-size:1.14rem;line-height:1.3;letter-spacing:-.01em}
   .pg-project .author{font-size:.88rem;color:var(--muted);margin:0 0 .7rem}
   .pg-project p{margin:0;font-size:.95rem}
-  .pg-result{display:inline-block;margin-top:.9rem;font-size:.88rem;background:var(--accent-soft);color:var(--accent-ink);padding:6px 12px;border-radius:8px;font-weight:600}
+  .pg-result{display:inline-block;margin-top:.9rem;font-size:.88rem;background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:8px;font-weight:600}
 
   .pg-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
-  .pg-tags span{font-size:.78rem;background:#fff;border:1px solid var(--line);color:var(--accent-ink);padding:5px 11px;border-radius:999px}
+  .pg-tags span{font-size:.78rem;background:#fff;border:1px solid var(--line);color:var(--accent);padding:5px 11px;border-radius:999px}
   .pg-feature .pg-tags span{background:var(--accent-soft);border-color:transparent}
 
   @media (max-width:720px){.pg-hero h1{font-size:1.7rem}.pg-feature,.pg-project{padding:22px}.pg-breakdown{grid-template-columns:1fr;gap:14px}}
