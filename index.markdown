@@ -26,6 +26,11 @@ permalink: /
   .pg-btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .pg-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 .9rem}
   .pg-cta-email{margin:.2rem auto 0;font-size:.95rem;color:var(--muted)}
+  .hero-teach-label{font-weight:700;color:var(--ink);margin:.2rem 0 .45rem !important}
+  .hero-teach{list-style:none;padding:0;margin:0 0 .4rem;display:flex;flex-direction:column;gap:.32rem}
+  .hero-teach li{position:relative;padding-left:1.15rem;font-weight:600;color:var(--ink);font-size:1.02rem}
+  .hero-teach li::before{content:"";position:absolute;left:0;top:.52em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+  .hero-teach-note{font-size:.92rem;color:var(--muted);margin:.15rem 0 1.1rem !important}
 
   .pg-section{margin:2.6rem 0;padding-top:2.2rem;border-top:1px solid var(--line)}
   .pg-section h2{font-size:1.3rem;margin:0 0 1rem;letter-spacing:-.01em}
@@ -67,23 +72,19 @@ permalink: /
       <h1>Hi, I'm Katherine</h1>
       <p>I run a private instruction practice focused entirely on one-on-one teaching in mathematics and statistics, working with high school and college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and a complete curriculum I write myself.</p>
       <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with real depth, rigor, and clarity, and AP coursework is where I focus most of my work.</p>
+      <p class="hero-teach-label">Courses I teach</p>
+      <ul class="hero-teach">
+        <li>AP Statistics</li>
+        <li>AP Calculus (AB/BC)</li>
+        <li>AP Precalculus</li>
+      </ul>
+      <p class="hero-teach-note">I also support non-AP and college-level math and statistics.</p>
       <div class="pg-btn-row">
         <a href="/private-instruction/" class="pg-btn">Explore private instruction</a>
         <a href="mailto:hi@katherinedelno.com" class="pg-btn-outline">Email me</a>
       </div>
     </div>
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="210" height="210" loading="lazy" decoding="async">
-  </div>
-
-  <div class="pg-section">
-    <p class="label">Courses</p>
-    <h2>What I teach</h2>
-    <div class="pg-cards">
-      <div class="pg-card"><h3>AP Statistics</h3><p>Procedure selection, condition checks, inference, and rubric-aligned statistical writing.</p></div>
-      <div class="pg-card"><h3>AP Calculus (AB/BC)</h3><p>Limits, derivatives, integrals, and applications, with precise notation and AP justification.</p></div>
-      <div class="pg-card"><h3>AP Precalculus</h3><p>Functions, trigonometry, and the analytic foundations for AP Calculus and college math.</p></div>
-    </div>
-    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP courses are my focus, and I also support students in non-AP and college-level coursework.</p>
   </div>
 
   <div class="pg-section">
