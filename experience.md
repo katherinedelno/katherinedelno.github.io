@@ -8,10 +8,10 @@ permalink: /experience/
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#959386;--accent-soft:#cac9c3;--accent-ink:#57554C;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg h1,.pg h2,.pg h3,.pg h4,.pg b{font-weight:700}
-  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent-ink);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
   .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
@@ -19,12 +19,12 @@ permalink: /experience/
   .pg-entry{position:relative;padding-bottom:2rem}
   .pg-entry:last-child{padding-bottom:0}
   .pg-entry::before{content:"";position:absolute;left:-33px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px #fff}
-  .pg-entry .date{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .pg-entry .date{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
   .pg-entry h3{margin:.25rem 0 .1rem;font-size:1.12rem}
   .pg-entry .org{font-size:.92rem;color:var(--muted);margin:0 0 .6rem}
   .pg-entry p{margin:0;font-size:.95rem}
   .pg-entry.current::before{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-  .pg-entry.current h3 .badge{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 9px;border-radius:999px;margin-left:10px;vertical-align:middle}
+  .pg-entry.current h3 .badge{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--accent);padding:3px 9px;border-radius:999px;margin-left:10px;vertical-align:middle}
   @media (max-width:720px){.pg-hero h1{font-size:1.7rem}}
 </style>
 

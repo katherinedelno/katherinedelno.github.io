@@ -8,10 +8,10 @@ permalink: /
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#959386;--accent-soft:#cac9c3;--accent-ink:#57554C;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg h1,.pg h2,.pg h3,.pg h4,.pg b{font-weight:700}
-  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent-ink);margin:0 0 .5rem}
 
   .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;column-gap:32px;align-items:center;margin-bottom:.5rem}
   .hero-grid h1{font-size:2.2rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:-.02em;font-weight:700}
@@ -19,9 +19,9 @@ permalink: /
   .hero-grid p{margin:0 0 .85rem}
   .headshot{width:210px;height:210px;border-radius:50%;object-fit:cover;opacity:1 !important;filter:none !important;-webkit-filter:none !important;mix-blend-mode:normal !important}
 
-  .pg-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
+  .pg-btn{display:inline-block;background:var(--accent);color:var(--ink) !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
   .pg-btn:hover{opacity:.9}
-  .pg-btn-outline{display:inline-block;background:transparent;color:var(--accent) !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
+  .pg-btn-outline{display:inline-block;background:transparent;color:var(--accent-ink) !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
   .pg-btn-outline:hover{background:var(--accent-soft)}
   .pg-btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .pg-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 .9rem}

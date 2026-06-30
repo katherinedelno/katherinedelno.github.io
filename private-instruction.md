@@ -14,8 +14,9 @@ permalink: /private-instruction/
     --ink:#1a1a1a;
     --muted:#5b6168;
     --line:#e7e7e3;
-    --accent:#1f2a44;
-    --accent-soft:#eef1f6;
+    --accent:#959386;
+    --accent-soft:#cac9c3;
+    --accent-ink:#57554C;
     --card:#fbfbfa;
     color:var(--ink);
     line-height:1.6;
@@ -28,7 +29,7 @@ permalink: /private-instruction/
     letter-spacing:.14em;
     font-size:.72rem;
     font-weight:700;
-    color:var(--accent);
+    color:var(--accent-ink);
     margin:0 0 .5rem;
   }
 
@@ -54,7 +55,7 @@ permalink: /private-instruction/
   .pi-step { display:flex; gap:14px; align-items:flex-start; }
   .pi-step .num {
     flex:0 0 auto; width:30px; height:30px; border-radius:50%;
-    background:var(--accent); color:#fff; font-size:.85rem; font-weight:700;
+    background:var(--accent); color:var(--ink); font-size:.85rem; font-weight:700;
     display:flex; align-items:center; justify-content:center;
   }
   .pi-step h4 { margin:.15rem 0 .2rem; font-size:1rem; }
@@ -77,7 +78,7 @@ permalink: /private-instruction/
   }
   .pi-price.featured { border:1.5px solid var(--accent); background:#fff; box-shadow:0 6px 22px rgba(31,42,68,.07); }
   .pi-price .pill {
-    position:absolute; top:-12px; left:24px; background:var(--accent); color:#fff;
+    position:absolute; top:-12px; left:24px; background:var(--accent); color:var(--ink);
     font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
     padding:5px 11px; border-radius:999px;
   }
@@ -90,7 +91,7 @@ permalink: /private-instruction/
     margin-top:1.3rem; padding:16px 20px; background:var(--accent-soft);
     border-radius:12px; font-size:.93rem; color:var(--ink);
   }
-  .pi-billing strong { color:var(--accent); }
+  .pi-billing strong { color:var(--accent-ink); }
 
   /* Feature / tech lists */
   .pi-list { list-style:none; padding:0; margin:1rem 0 0; }
@@ -106,12 +107,12 @@ permalink: /private-instruction/
   .pi-cta h2 { border:none; margin:0 0 .5rem; }
   .pi-cta p { margin:0 auto 1.3rem; color:var(--muted); max-width:52ch; }
   .pi-btn {
-    display:inline-block; background:var(--accent); color:#fff !important;
+    display:inline-block; background:var(--accent); color:var(--ink) !important;
     padding:13px 26px; border-radius:10px; text-decoration:none; font-weight:600;
     border:1px solid var(--accent); transition:opacity .15s ease;
   }
   .pi-btn:hover { opacity:.9; }
-  .pi-btn-outline { background:transparent; color:var(--accent) !important; }
+  .pi-btn-outline { background:transparent; color:var(--accent-ink) !important; }
   .pi-btn-outline:hover { background:#fff; opacity:1; }
   .pi-cta-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
   .pi-cta .email { display:block; margin-top:1rem; font-size:.92rem; color:var(--muted); }
@@ -129,7 +130,7 @@ permalink: /private-instruction/
     display:flex; justify-content:space-between; align-items:center; gap:16px;
   }
   .pi-faq summary::-webkit-details-marker { display:none; }
-  .pi-faq summary::after { content:"+"; color:var(--accent); font-weight:400; font-size:1.35rem; line-height:1; }
+  .pi-faq summary::after { content:"+"; color:var(--accent-ink); font-weight:400; font-size:1.35rem; line-height:1; }
   .pi-faq details[open] summary::after { content:"\2212"; }
   .pi-faq details p { margin:.7rem 0 0; color:var(--muted); font-size:.95rem; max-width:70ch; }
 
@@ -152,10 +153,10 @@ permalink: /private-instruction/
   }
   .pi-sample-thumb:hover { box-shadow:0 10px 26px rgba(31,42,68,.18); transform:translateY(-2px); }
   .pi-sample-thumb img { display:block; width:100%; height:auto; }
-  .pi-sample-body .course { font-size:.74rem; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin:0 0 .3rem; }
+  .pi-sample-body .course { font-size:.74rem; color:var(--accent-ink); font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin:0 0 .3rem; }
   .pi-sample-body h4 { margin:0 0 .35rem; font-size:1.02rem; line-height:1.25; }
   .pi-sample-body p { margin:0 0 .7rem; font-size:.88rem; color:var(--muted); }
-  .pi-sample-link { font-size:.9rem; font-weight:600; color:var(--accent); text-decoration:none; }
+  .pi-sample-link { font-size:.9rem; font-weight:600; color:var(--accent-ink); text-decoration:none; }
   .pi-sample-link:hover { text-decoration:underline; }
 
   @media (max-width:720px){
@@ -364,7 +365,7 @@ permalink: /private-instruction/
       <li><b>AP-aligned writing</b> focus on setup, justification, and interpretation.</li>
     </ul>
 
-    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
+    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent-ink);">$200/month ($50/week)</span></p>
     <ul class="pi-list">
       <li><b>Weekly assigned problem sets</b> with written feedback on method, setup, and communication, giving the student extra accountability to keep practicing between sessions.</li>
       <li><b>Generous between-session availability</b> on weekdays and weekends for questions and clarifications, so students never stay stuck for long and keep their momentum.</li>

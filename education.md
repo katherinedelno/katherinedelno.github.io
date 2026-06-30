@@ -8,10 +8,10 @@ permalink: /education/
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#1f2a44;--accent-soft:#eef1f6;--card:#fbfbfa;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#959386;--accent-soft:#cac9c3;--accent-ink:#57554C;--card:#fbfbfa;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg h1,.pg h2,.pg h3,.pg h4,.pg b{font-weight:700}
-  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent-ink);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
   .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
   .pg-hero .tagline{font-size:1.12rem;color:var(--muted);max-width:64ch;margin:0}
@@ -21,7 +21,7 @@ permalink: /education/
   .pg-section .meta{font-size:.9rem;color:var(--muted);margin:0 0 .9rem;font-weight:600;letter-spacing:.02em}
   .pg-sub{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:1.2rem 0 .2rem}
   .pg-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:.7rem}
-  .pg-tags span{font-size:.82rem;background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:999px}
+  .pg-tags span{font-size:.82rem;background:var(--accent-soft);color:var(--accent-ink);padding:6px 12px;border-radius:999px}
   .pg-callout{margin-top:1.3rem;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;background:var(--card)}
   .pg-callout p{margin:0;font-size:.95rem}
   @media (max-width:720px){.pg-hero h1{font-size:1.7rem}}
