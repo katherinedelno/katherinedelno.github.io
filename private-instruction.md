@@ -439,7 +439,7 @@ permalink: /private-instruction/
        onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">
       Book a meet-and-greet
     </a>
-    <span class="email">Or email me at <a href="mailto:delnokatherine@gmail.com">delnokatherine@gmail.com</a></span>
+    <span class="email">Or email me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
   </div>
 
   <!-- DISCLAIMER -->
