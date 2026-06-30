@@ -111,6 +111,9 @@ permalink: /private-instruction/
     border:1px solid var(--accent); transition:opacity .15s ease;
   }
   .pi-btn:hover { opacity:.9; }
+  .pi-btn-outline { background:transparent; color:var(--accent) !important; }
+  .pi-btn-outline:hover { background:#fff; opacity:1; }
+  .pi-cta-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
   .pi-cta .email { display:block; margin-top:1rem; font-size:.92rem; color:var(--muted); }
 
   .pi-fine { margin-top:2.4rem; padding-top:1.6rem; border-top:1px solid var(--line); }
@@ -432,14 +435,15 @@ permalink: /private-instruction/
   <!-- CTA -->
   <div class="pi-cta">
     <h2>Getting started</h2>
-    <p>Schedule a 15-minute meet-and-greet. After we talk, I'll recommend the best fit for your student and share scheduling details.</p>
+    <p>Two easy ways to begin — send me a quick email with your question, or book a free 15-minute meet-and-greet. After we talk, I'll recommend the best fit for your student.</p>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <a href="https://calendly.com/katherinedelno" class="pi-btn"
-       onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">
-      Book a meet-and-greet
-    </a>
-    <span class="email">Or email me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
+    <div class="pi-cta-actions">
+      <a href="mailto:hi@katherinedelno.com" class="pi-btn">Email me</a>
+      <a href="https://calendly.com/katherinedelno" class="pi-btn pi-btn-outline"
+         onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">Book a meet-and-greet</a>
+    </div>
+    <span class="email">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
   </div>
 
   <!-- DISCLAIMER -->

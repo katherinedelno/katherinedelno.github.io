@@ -21,6 +21,11 @@ permalink: /
 
   .pg-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
   .pg-btn:hover{opacity:.9}
+  .pg-btn-outline{display:inline-block;background:transparent;color:var(--accent) !important;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);margin-top:.4rem}
+  .pg-btn-outline:hover{background:var(--accent-soft)}
+  .pg-btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .pg-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 .9rem}
+  .pg-cta-email{margin:.2rem auto 0;font-size:.95rem;color:var(--muted)}
 
   .pg-section{margin:2.6rem 0;padding-top:2.2rem;border-top:1px solid var(--line)}
   .pg-section h2{font-size:1.3rem;margin:0 0 1rem;letter-spacing:-.01em}
@@ -62,7 +67,10 @@ permalink: /
       <h1>Hi, I'm Katherine</h1>
       <p>I run a private instruction practice focused entirely on one-on-one teaching in mathematics and statistics, working with high school and college students. Each session is structured and instructor-led, built around clear teaching, guided practice, and a complete curriculum I write myself.</p>
       <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with real depth, rigor, and clarity, and AP coursework is where I focus most of my work.</p>
-      <a href="/private-instruction/" class="pg-btn">Explore private instruction</a>
+      <div class="pg-btn-row">
+        <a href="/private-instruction/" class="pg-btn">Explore private instruction</a>
+        <a href="mailto:hi@katherinedelno.com" class="pg-btn-outline">Email me</a>
+      </div>
     </div>
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="210" height="210" loading="lazy" decoding="async">
   </div>
@@ -101,7 +109,7 @@ permalink: /
   <div class="pg-section">
     <p class="label">Background</p>
     <h2>Training and experience</h2>
-    <p class="pg-links">Learn more about my <a href="/experience/">teaching experience</a> and <a href="/education/">academic training</a>, or explore a selection of my <a href="/projects/">statistical work</a>. When you're ready, the best first step is to <a href="/private-instruction/">schedule a meet-and-greet</a>.</p>
+    <p class="pg-links">Learn more about my <a href="/experience/">teaching experience</a> and <a href="/education/">academic training</a>, or explore a selection of my <a href="/projects/">statistical work</a>. When you're ready, head to <a href="/private-instruction/">private instruction</a> or <a href="mailto:hi@katherinedelno.com">email me</a>.</p>
   </div>
 
   <div class="pg-section">
@@ -111,9 +119,13 @@ permalink: /
   </div>
 
   <div class="pg-cta">
-    <h2>Work with me this year</h2>
-    <p>I take a limited number of students each academic year, and spots are best reserved before the term begins. The best first step is a short, no-pressure meet-and-greet.</p>
-    <a href="/private-instruction/" class="pg-btn">Get started</a>
+    <h2>Ready to talk?</h2>
+    <p>The <strong>Private Instruction</strong> page has everything in detail — my approach, session structure, rates, and FAQ. Or send a quick email and I'll get right back to you. I take a limited number of students each year, so reaching out early is best.</p>
+    <div class="pg-cta-actions">
+      <a href="/private-instruction/" class="pg-btn">See private instruction &amp; rates</a>
+      <a href="mailto:hi@katherinedelno.com" class="pg-btn-outline">Email me directly</a>
+    </div>
+    <p class="pg-cta-email">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></p>
   </div>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">
