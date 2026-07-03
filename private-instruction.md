@@ -280,7 +280,7 @@ permalink: /private-instruction/
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
 
     <p style="margin-top:1.6rem;font-weight:600;">A look at my materials</p>
-    <p style="margin-top:.2rem;">Every lesson, reference sheet, and problem set is written and typeset by me to the same standard. Here is the opening page of two module lessons from my curriculum.</p>
+    <p style="margin-top:.2rem;">Every lesson, reference sheet, and problem set is written and typeset by me to the same standard. Below are the opening pages of two module lessons; the complete versions are part of what enrolled students receive.</p>
     <div class="pi-samples">
       <div class="pi-sample">
         <div class="pi-sample-thumb">
@@ -450,7 +450,7 @@ permalink: /private-instruction/
     <p>My goal is to help students build durable understanding, stronger problem-solving habits, and clearer written communication through structured instruction, targeted practice, and actionable feedback aligned with AP expectations.</p>
     <p>I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student's consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, and test-day conditions. By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome.</p>
     <p class="label" style="margin-top:1.4rem;">Accessibility</p>
-    <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements. Some downloadable materials, such as PDF lessons and reference sheets, may not yet be fully optimized for assistive technology. If you have any difficulty accessing content on this site, or if you need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I will work with you promptly to provide the information or assistance you need.</p>
+    <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements. If you have any difficulty accessing content on this site, or if you need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I will work with you promptly to provide the information or assistance you need.</p>
     <p><small>AP&reg; is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this private instruction service.</small></p>
   </div>
 
