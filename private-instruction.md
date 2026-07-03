@@ -7,6 +7,7 @@ permalink: /private-instruction/
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
   /* ---- Scoped styling for the Private Instruction page ---- */
+  .site-header .site-title { display:none; }
   .page-heading, .post-header { display:none; }
   body { font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
 

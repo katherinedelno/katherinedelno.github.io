@@ -6,6 +6,7 @@ permalink: /
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
+  .site-header .site-title{display:none}
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
   .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#595850;--accent-soft:#dfdfdb;--card:#fbfbfa;color:var(--ink);line-height:1.6}
