@@ -141,7 +141,7 @@ permalink: /private-instruction/
   }
   .pi-callout p { margin:0; }
 
-  /* Sample-lesson preview cards (link to real PDFs) */
+  /* Sample-lesson preview cards (static first-page images, not downloadable) */
   .pi-samples { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:1.3rem; }
   .pi-sample {
     display:grid; grid-template-columns:124px 1fr; gap:20px; align-items:center;
@@ -149,9 +149,8 @@ permalink: /private-instruction/
   }
   .pi-sample-thumb {
     display:block; border:1px solid var(--line); border-radius:7px; overflow:hidden;
-    box-shadow:0 5px 16px rgba(31,42,68,.12); transition:box-shadow .15s ease, transform .15s ease;
+    box-shadow:0 5px 16px rgba(31,42,68,.12);
   }
-  .pi-sample-thumb:hover { box-shadow:0 10px 26px rgba(31,42,68,.18); transform:translateY(-2px); }
   .pi-sample-thumb img { display:block; width:100%; height:auto; }
   .pi-sample-body .course { font-size:.74rem; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin:0 0 .3rem; }
   .pi-sample-body h4 { margin:0 0 .35rem; font-size:1.02rem; line-height:1.25; }
@@ -280,29 +279,27 @@ permalink: /private-instruction/
     <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
 
-    <p style="margin-top:1.6rem;font-weight:600;">See a real lesson</p>
-    <p style="margin-top:.2rem;">These are complete student-copy lessons, exactly as a student receives them. Each opens as a full PDF &mdash; the same materials we work through together in session.</p>
+    <p style="margin-top:1.6rem;font-weight:600;">A look at my materials</p>
+    <p style="margin-top:.2rem;">Every lesson, reference sheet, and problem set is written and typeset by me to the same standard. Here is the opening page of two module lessons from my curriculum.</p>
     <div class="pi-samples">
       <div class="pi-sample">
-        <a class="pi-sample-thumb" href="/assets/samples/ap-calculus-bc-sample-lesson.pdf" target="_blank" rel="noopener">
-          <img src="/assets/img/previews/sample-lesson-calc-cover.png" alt="First page of the sample AP Calculus BC lesson" loading="lazy" decoding="async">
-        </a>
+        <div class="pi-sample-thumb">
+          <img src="/assets/img/previews/sample-lesson-calc-cover.png" alt="Opening page of an AP Calculus BC lesson" loading="lazy" decoding="async">
+        </div>
         <div class="pi-sample-body">
           <p class="course">AP Calculus BC</p>
           <h4>Module 4C &mdash; Linearization &amp; L'Hospital's Rule</h4>
-          <p>A complete lesson: lecture, model problems, guided practice, and independent work.</p>
-          <a class="pi-sample-link" href="/assets/samples/ap-calculus-bc-sample-lesson.pdf" target="_blank" rel="noopener">View the full lesson (PDF) &rarr;</a>
+          <p>One of the complete lessons in my custom curriculum &mdash; lecture, model problems, guided practice, and independent work.</p>
         </div>
       </div>
       <div class="pi-sample">
-        <a class="pi-sample-thumb" href="/assets/samples/ap-statistics-sample-lesson.pdf" target="_blank" rel="noopener">
-          <img src="/assets/img/previews/sample-lesson-stats-cover.png" alt="First page of the sample AP Statistics lesson" loading="lazy" decoding="async">
-        </a>
+        <div class="pi-sample-thumb">
+          <img src="/assets/img/previews/sample-lesson-stats-cover.png" alt="Opening page of an AP Statistics lesson" loading="lazy" decoding="async">
+        </div>
         <div class="pi-sample-body">
           <p class="course">AP Statistics</p>
           <h4>Module 3E &mdash; Chi-Square Inference</h4>
-          <p>A complete lesson: lecture, model problems, guided practice, and independent work.</p>
-          <a class="pi-sample-link" href="/assets/samples/ap-statistics-sample-lesson.pdf" target="_blank" rel="noopener">View the full lesson (PDF) &rarr;</a>
+          <p>One of the complete lessons in my custom curriculum &mdash; lecture, model problems, guided practice, and independent work.</p>
         </div>
       </div>
     </div>
