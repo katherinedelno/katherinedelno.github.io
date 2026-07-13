@@ -170,13 +170,13 @@ permalink: /private-instruction/
 
   <div class="pi-hero">
     <h1>Private Mathematics &amp; Statistics Instruction</h1>
-    <p class="tagline">One-on-one instruction in mathematics and statistics, built around guided problem-solving and tailored to each student. AP-focused, with support for non-AP and college-level coursework as well.</p>
+    <p class="tagline">Structured, one-on-one instruction in mathematics and statistics, centered on guided problem-solving and tailored to each student. AP-focused, with support for non-AP and college-level coursework as well.</p>
   </div>
 
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
-    <p>I provide one-on-one instruction in mathematics and statistics for high school and college students, and it is far more interactive than a lecture. Most of our time is spent solving problems together, with me coaching, asking questions, and correcting course while the student does the thinking. How much I teach is dialed up or down to what each topic and student need, and you're welcome to send specific problems, homework, or upcoming topics in advance so we cover exactly what matters most. Sessions are structured when that helps and flexible throughout, always keeping the focus on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work, the habits that earn credit on the AP exam and in the classroom.</p>
+    <p>I provide structured, one-on-one instruction in mathematics and statistics for high school and college students. Sessions are individualized and centered on guided problem-solving: we work through problems together, with as much direct teaching as each topic calls for, and an independent check to confirm the student can execute on their own. The emphasis stays on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work, the habits that earn credit on the AP exam and in the classroom.</p>
   </div>
 
   <!-- COURSES -->
@@ -227,7 +227,7 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Approach</p>
     <h2>What a session looks like</h2>
-    <p>Every session is built around the student, not a fixed script. Most of our time is spent solving problems together, and the teaching is calibrated to exactly what the student needs that day. Students are welcome to send specific problems, homework, or upcoming topics at least 24 hours in advance, and I'll build the session around them. Whether your student needs a topic taught from the ground up or simply wants a knowledgeable person to work through problems and homework alongside them, we start from where they are.</p>
+    <p>Every session is built around the student, not a fixed script. Most of our time is spent solving problems together, and the teaching is calibrated to exactly what the student needs that day. Students are welcome to send specific problems, homework, or upcoming topics at least 24 hours in advance, and I'll build the session around them.</p>
     <div class="pi-steps">
       <div class="pi-step">
         <div class="num">1</div>
