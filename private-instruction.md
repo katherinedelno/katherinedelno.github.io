@@ -22,7 +22,8 @@ permalink: /private-instruction/
     line-height:1.6;
   }
   .pi p { max-width:74ch; }
-  .pi h1, .pi h2, .pi h3, .pi h4, .pi b { font-weight:700; }
+  .pi h1, .pi h2, .pi h3, .pi h4 { font-weight:700; }
+  .pi b, .pi strong { font-weight:600; }
 
   .pi .label {
     text-transform:uppercase;
