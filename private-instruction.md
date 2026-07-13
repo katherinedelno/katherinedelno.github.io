@@ -279,6 +279,10 @@ permalink: /private-instruction/
     <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
 
+    <div class="pi-callout" style="margin-top:1.4rem;">
+      <p><b>Bring the problems you want to cover.</b> Alongside the prepared lesson, students are welcome to send me specific problems, homework questions, or upcoming topics at least 24 hours before a session, and I'll build them into that day's plan. Every session stays shaped around what the student needs and asks for.</p>
+    </div>
+
     <p style="margin-top:1.6rem;font-weight:600;">A look at my materials</p>
     <p style="margin-top:.2rem;">Every lesson, reference sheet, and problem set is written and typeset by me to the same standard. Below are the opening pages of two module lessons; the complete versions are part of what enrolled students receive.</p>
     <div class="pi-samples">
