@@ -170,7 +170,6 @@ permalink: /private-instruction/
 
   <div class="pi-hero">
     <h1>Private Mathematics &amp; Statistics Instruction</h1>
-    <p class="tagline">Structured, one-on-one instruction in mathematics and statistics, centered on guided problem-solving and tailored to each student. AP-focused, with support for non-AP and college-level coursework as well.</p>
   </div>
 
   <!-- OVERVIEW -->

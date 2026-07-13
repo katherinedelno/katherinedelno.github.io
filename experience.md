@@ -35,7 +35,7 @@ permalink: /experience/
   <div class="pg-hero">
     <p class="label">Experience</p>
     <h1>Teaching experience</h1>
-    <p class="tagline">My teaching is grounded in years of one-on-one and university-level instruction. My current work, and full focus, is the private instruction practice below.</p>
+    <p>My teaching is grounded in years of one-on-one and university-level instruction. My current work, and full focus, is the private instruction practice below.</p>
   </div>
 
   <div class="pg-timeline">

@@ -34,7 +34,7 @@ permalink: /education/
   <div class="pg-hero">
     <p class="label">Education</p>
     <h1>Academic training</h1>
-    <p class="tagline">The foundation of how I teach. <b>Graduate and undergraduate degrees in statistics and mathematics</b>, with coursework spanning the full range of topics my students encounter and extending well beyond them.</p>
+    <p>The foundation of how I teach. <b>Graduate and undergraduate degrees in statistics and mathematics</b>, with coursework spanning the full range of topics my students encounter and extending well beyond them.</p>
   </div>
 
   <div class="pg-section">

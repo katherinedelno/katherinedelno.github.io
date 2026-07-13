@@ -49,7 +49,7 @@ permalink: /projects/
   <div class="pg-hero">
     <p class="label">Projects</p>
     <h1>Statistical work</h1>
-    <p class="tagline">Alongside teaching, my graduate training included substantial applied and methodological work in statistics and machine learning. These projects reflect the depth of training that informs my instruction, particularly in AP Statistics.</p>
+    <p>Alongside teaching, my graduate training included substantial applied and methodological work in statistics and machine learning. These projects reflect the depth of training that informs my instruction, particularly in AP Statistics.</p>
   </div>
 
   <div class="pg-feature">
