@@ -203,14 +203,13 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Free webinars</p>
     <h2>Succeeding in your course: free 45-minute webinars</h2>
-    <p>This summer I'm hosting free 45-minute webinars on how to succeed in each course, with a separate session for AP Statistics, AP Calculus (AB/BC), and AP Precalculus. Webinars run in early August and again in late August or early September; exact dates are announced soon. Register now and I'll send you the details.</p>
+    <p>This summer I'm hosting two free 45-minute webinars on how to succeed in the year ahead:</p>
     <ul class="pi-list">
-      <li><b>AP Statistics</b></li>
-      <li><b>AP Calculus (AB/BC)</b></li>
-      <li><b>AP Precalculus</b></li>
+      <li><b>AP Statistics</b> &mdash; Tuesday, August 25, 5:30 p.m. Pacific</li>
+      <li><b>AP Calculus (AB/BC)</b> &mdash; Thursday, August 27, 5:30 p.m. Pacific</li>
     </ul>
     <div class="pi-callout">
-      <p><b>Free for everyone who registers:</b> my getting-started guide for that course &mdash; how to begin the year on the right foot, covering the mindset and habits that work, the technical setup (calculator, notation, and how the course and exam are structured), and the common early mistakes to avoid. It's yours to keep whether or not you attend live, so register even if you can't make the date.</p>
+      <p><b>Free for everyone who registers:</b> my getting-started guide for that course &mdash; how to begin the year on the right foot, covering the mindset and habits that work, the technical setup (calculator, notation, and how the course and exam are structured), and the common early mistakes to avoid. It's yours to keep whether or not you attend live. Studying <b>AP Precalculus</b>? You're welcome to register as well &mdash; I'll send you the AP Precalculus getting-started guide, with a live session available by request.</p>
     </div>
     <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.2rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
