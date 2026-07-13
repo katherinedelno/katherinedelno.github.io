@@ -90,7 +90,7 @@ permalink: /
   <div class="pg-section">
     <p class="label">Free this summer</p>
     <h2>Webinars on succeeding in each course</h2>
-    <p>Before the school year begins, I'm hosting two free 45-minute webinars on how to start the year strong &mdash; one for <b>AP Statistics on Tuesday, August 25</b>, and one for <b>AP Calculus (AB/BC) on Thursday, August 27</b>, both at <b>5:30 p.m. Pacific</b>. Everyone who registers also receives my getting-started guide for that course &mdash; how to begin the year on the right foot, from mindset and study habits to the technical setup and exam structure &mdash; free to keep whether or not you attend live. Studying AP Precalculus? Register as well and I'll send you the Precalc getting-started guide.</p>
+    <p>Before the school year begins, I'm hosting two free 45-minute webinars on how to start the year strong: one for <b>AP Statistics on Tuesday, August 25</b>, and one for <b>AP Calculus (AB/BC) on Thursday, August 27</b>, both at <b>5:30 p.m. Pacific</b>. Everyone who registers also receives my getting-started guide for that course. It covers how to begin the year on the right foot, from mindset and study habits to the technical setup and exam structure, and it's free to keep whether or not you attend live. Studying AP Precalculus? Register as well and I'll send you the Precalc getting-started guide.</p>
     <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pg-btn" style="margin-top:1.1rem;" target="_blank" rel="noopener">Register for a free webinar</a>
   </div>
 
@@ -118,7 +118,7 @@ permalink: /
 
   <div class="pg-cta">
     <h2>Ready to talk?</h2>
-    <p>The <strong>Private Instruction</strong> page has everything in detail — my approach, session structure, rates, and FAQ. Or send a quick email and I'll get right back to you. I take a limited number of students each year, so reaching out early is best.</p>
+    <p>The <strong>Private Instruction</strong> page has everything in detail: my approach, session structure, rates, and FAQ. Or send a quick email and I'll get right back to you. I take a limited number of students each year, so reaching out early is best.</p>
     <div class="pg-cta-actions">
       <a href="/private-instruction/" class="pg-btn">See private instruction &amp; rates</a>
       <a href="mailto:hi@katherinedelno.com" class="pg-btn-outline">Email me directly</a>

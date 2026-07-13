@@ -205,11 +205,11 @@ permalink: /private-instruction/
     <h2>Succeeding in your course: free 45-minute webinars</h2>
     <p>This summer I'm hosting two free 45-minute webinars on how to succeed in the year ahead:</p>
     <ul class="pi-list">
-      <li><b>AP Statistics</b> &mdash; Tuesday, August 25, 5:30 p.m. Pacific</li>
-      <li><b>AP Calculus (AB/BC)</b> &mdash; Thursday, August 27, 5:30 p.m. Pacific</li>
+      <li><b>AP Statistics</b>: Tuesday, August 25, 5:30 p.m. Pacific</li>
+      <li><b>AP Calculus (AB/BC)</b>: Thursday, August 27, 5:30 p.m. Pacific</li>
     </ul>
     <div class="pi-callout">
-      <p><b>Free for everyone who registers:</b> my getting-started guide for that course &mdash; how to begin the year on the right foot, covering the mindset and habits that work, the technical setup (calculator, notation, and how the course and exam are structured), and the common early mistakes to avoid. It's yours to keep whether or not you attend live. Studying <b>AP Precalculus</b>? You're welcome to register as well &mdash; I'll send you the AP Precalculus getting-started guide, with a live session available by request.</p>
+      <p><b>Free for everyone who registers:</b> my getting-started guide for that course. It covers how to begin the year on the right foot: the mindset and habits that work, the technical setup (calculator, notation, and how the course and exam are structured), and the common early mistakes to avoid. It's yours to keep whether or not you attend live. Studying <b>AP Precalculus</b>? You're welcome to register as well, and I'll send you the AP Precalculus getting-started guide, with a live session available by request.</p>
     </div>
     <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.2rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
@@ -287,8 +287,8 @@ permalink: /private-instruction/
         </div>
         <div class="pi-sample-body">
           <p class="course">AP Calculus BC</p>
-          <h4>Module 4C &mdash; Linearization &amp; L'Hospital's Rule</h4>
-          <p>One of the complete lessons in my custom curriculum &mdash; lecture, model problems, guided practice, and independent work.</p>
+          <h4>Module 4C: Linearization &amp; L'Hospital's Rule</h4>
+          <p>One of the complete lessons in my custom curriculum: lecture, model problems, guided practice, and independent work.</p>
         </div>
       </div>
       <div class="pi-sample">
@@ -297,8 +297,8 @@ permalink: /private-instruction/
         </div>
         <div class="pi-sample-body">
           <p class="course">AP Statistics</p>
-          <h4>Module 3E &mdash; Chi-Square Inference</h4>
-          <p>One of the complete lessons in my custom curriculum &mdash; lecture, model problems, guided practice, and independent work.</p>
+          <h4>Module 3E: Chi-Square Inference</h4>
+          <p>One of the complete lessons in my custom curriculum: lecture, model problems, guided practice, and independent work.</p>
         </div>
       </div>
     </div>
@@ -344,7 +344,7 @@ permalink: /private-instruction/
         <span class="pill">Recommended</span>
         <h3>90-minute session</h3>
         <div class="amt">$180<span> / session</span></div>
-        <p class="note">Room to teach the topic, work through it together, and finish with an independent check — the cadence I recommend for steady weekly progress.</p>
+        <p class="note">Room to teach the topic, work through it together, and finish with an independent check. This is the cadence I recommend for steady weekly progress.</p>
       </div>
       <div class="pi-price">
         <h3>60-minute session</h3>
@@ -432,7 +432,7 @@ permalink: /private-instruction/
   <!-- CTA -->
   <div class="pi-cta">
     <h2>Getting started</h2>
-    <p>Two easy ways to begin — send me a quick email with your question, or book a free 15-minute meet-and-greet. After we talk, I'll recommend the best fit for your student.</p>
+    <p>Two easy ways to begin: send me a quick email with your question, or book a free 15-minute meet-and-greet. After we talk, I'll recommend the best fit for your student.</p>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <div class="pi-cta-actions">
