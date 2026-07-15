@@ -175,7 +175,7 @@ permalink: /private-instruction/
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
-    <p>I provide structured, one-on-one instruction in mathematics and statistics for high school and college students. Sessions are individualized and centered on guided problem-solving: we work through problems together, with as much direct teaching as each topic calls for, and an independent check to confirm the student can execute on their own. The emphasis stays on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work, the habits that earn credit on the AP exam and in the classroom.</p>
+    <p>I provide structured, one-on-one instruction in mathematics and statistics for high school and college students. The work is built around how each student thinks: we solve problems together so I can see the reasoning as it unfolds, I teach to exactly what that reveals, and the student then works independently to confirm the skill holds. Structured, not scripted. The emphasis stays on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work, the habits that earn credit on the AP exam and in the classroom.</p>
   </div>
 
   <!-- COURSES -->
@@ -222,6 +222,21 @@ permalink: /private-instruction/
     <p>I've taught in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and helped students produce clear, defensible reasoning. I also mentored through UW's Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.</p>
   </div>
 
+  <!-- WHAT I PAY ATTENTION TO -->
+  <div class="pi-section">
+    <p class="label">Diagnosis</p>
+    <h2>The mistake behind the mistake</h2>
+    <p>A wrong answer rarely tells the whole story. Two students can miss the same problem for completely different reasons, and the way a student sets a problem up often tells me more than the answer does. So while we work, I'm paying attention to more than whether the final number is right:</p>
+    <ul class="pi-list">
+      <li><b>How the problem gets set up</b>, and whether the student chose the right procedure for the right reason.</li>
+      <li><b>Notation and justification</b>, where capable students quietly lose credit they have actually earned.</li>
+      <li><b>Where the hesitation is</b>, which usually marks the line between what is secure and what only looks secure.</li>
+      <li><b>Which errors repeat</b>, and whether a new mistake is really an old misconception resurfacing.</li>
+      <li><b>What happens once the prompts stop</b>, the truest test of whether the learning has held.</li>
+    </ul>
+    <p style="margin-top:1.1rem;">From that, I can tell whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and each of those calls for a different response. A missed problem isn't a verdict. It's information about what we work on next.</p>
+  </div>
+
   <!-- APPROACH -->
   <div class="pi-section">
     <p class="label">Approach</p>
@@ -232,40 +247,48 @@ permalink: /private-instruction/
         <div class="num">1</div>
         <div>
           <h4>Targeted teaching</h4>
-          <p>Calibrated to the moment: a condensed review of the essentials when a student just needs a refresher, or a full lecture that rebuilds the foundation when a topic isn't sticking.</p>
+          <p>First I decide how much teaching the student actually needs: a few minutes of review when it is just a refresher, or a full rebuild when a topic isn't sticking. Some things need a quick correction; others need to be retaught from the ground up.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">2</div>
         <div>
           <h4>Guided problem-solving</h4>
-          <p>Where most of the session goes: working through AP-style problems and the student's own questions together, with targeted prompts and corrections that build reliable habits.</p>
+          <p>Where most of the session goes, and where I watch the reasoning most closely. We work through AP-style problems and the student's own questions together, and I intervene precisely, correcting the setup rather than just the answer and adjusting the support as the work tells me to.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">3</div>
         <div>
           <h4>Independent practice</h4>
-          <p>A few problems the student works on their own to confirm they can execute without prompts, followed by a quick review together.</p>
+          <p>Then I step back. The student works a few problems alone, because the goal isn't a solution that made sense while I was talking; it's reasoning the student can produce when the help is gone. We review together afterward.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">4</div>
         <div>
           <h4>Notes &amp; solutions</h4>
-          <p>A summary, worked problems, and solutions uploaded after each meeting so the student can review between sessions.</p>
+          <p>A summary, worked problems, and solutions uploaded after each meeting, so the work is there to return to and each session builds on the last rather than starting from zero.</p>
         </div>
       </div>
     </div>
     <p style="margin-top:1.3rem;">I'm equally attentive to the learning environment. Many capable students lose points to uncertainty under time pressure, disorganized work, or inconsistent written communication. Sessions are calm and focused: questions are taken seriously, mistakes are handled constructively, and confidence is built alongside skill.</p>
   </div>
 
+  <!-- CONTINUITY -->
+  <div class="pi-section">
+    <p class="label">Over time</p>
+    <h2>Each session informs the next</h2>
+    <p>The value compounds. Because I work with a small roster and keep detailed notes, I am not meeting your student fresh each week. I remember what caused trouble last month, notice when an old error resurfaces in a new topic, and can tell the difference between a student who is rushing and one who is genuinely confused.</p>
+    <p>Over a term, I track what is becoming secure, what still needs attention, and whether the student is growing less dependent on prompting, and I shape the pacing, explanations, and practice around what I see. That accumulating picture of how a particular student works is the part of the instruction that can't be handed off or generated on demand.</p>
+  </div>
+
   <!-- MATERIALS -->
   <div class="pi-section">
     <p class="label">Materials</p>
-    <h2>Lessons built for your student, not pulled off a shelf</h2>
-    <p>I teach from a complete curriculum I have written and typeset myself: a full set of lessons covering every topic in the course, plus reference sheets, procedure guides, and practice banks, all built to the same exacting standard. This is not a binder of worksheets pulled off a shelf. It is a coherent body of material I maintain and refine each year, and it is what lets every session move quickly and stay rigorous.</p>
-    <p>Each lesson is kept consistent in structure and formatting from one topic to the next, so students always know where to look. Sessions stay individualized: the material is shaped around the student's course pacing and the specific gaps and recurring errors I observe.</p>
+    <h2>Individualized does not mean improvised</h2>
+    <p>Because I have already built the course, I don't have to choose between preparation and flexibility. I teach from a complete curriculum I have written and typeset myself, with every topic supported by multiple levels of explanation, model problems, guided work, independent practice, and reference material. That structure is what lets me respond to what a student needs in the moment without losing the larger arc of the course.</p>
+    <p>The curriculum gives us structure; the student's work decides where we actually spend our time. Every lesson keeps the same consistent format, so students always know where to look, and I draw the right level of explanation or practice as the specific gaps and recurring errors surface.</p>
     <p style="margin-top:1.1rem;font-weight:600;">Each lesson includes:</p>
     <ul class="pi-list">
       <li><b>A condensed lecture</b> for a quick review of the key definitions, equations, and theorems.</li>
@@ -316,7 +339,7 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">AP exam preparation</p>
     <h2>A focused shift before the exam</h2>
-    <p>In the final one to two months before the AP exam, sessions transition into dedicated exam preparation. We move from new material toward timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear.</p>
+    <p>In the final one to two months before the AP exam, sessions transition into dedicated exam preparation. We move from new material toward timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear. The focus shifts to transfer: performing accurately under timed, independent conditions, which is the real test of whether the learning holds.</p>
     <div class="pi-callout">
       <p>All exam-preparation materials are provided as part of this phase, at no cost beyond regular session time.</p>
     </div>
@@ -357,7 +380,8 @@ permalink: /private-instruction/
       </div>
     </div>
 
-    <p style="margin-top:1.5rem;font-weight:600;">Every session includes:</p>
+    <p style="margin-top:1.5rem;">The rate reflects the preparation around each session as much as the hour itself: planning around your student's course, the materials, the notes and solutions afterward, and the continuity carried from one week to the next.</p>
+    <p style="margin-top:1.1rem;font-weight:600;">Every session includes:</p>
     <ul class="pi-list">
       <li><b>Pre-planned, instructor-led teaching</b> aligned to your student's course and pacing.</li>
       <li><b>Session notes and full solutions</b> uploaded after each meeting for review.</li>
@@ -366,6 +390,7 @@ permalink: /private-instruction/
     </ul>
 
     <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
+    <p style="margin-top:.5rem;font-size:.95rem;color:var(--muted);">For families who want the learning to stay active between meetings: continuity, accountability, and a feedback loop so a misunderstanding doesn't sit untouched for a week.</p>
     <ul class="pi-list">
       <li><b>Weekly assigned problem sets</b> with written feedback on method, setup, and communication, giving the student extra accountability to keep practicing between sessions.</li>
       <li><b>Generous between-session availability</b> on weekdays and weekends for questions and clarifications, so students never stay stuck for long and keep their momentum.</li>
@@ -396,12 +421,28 @@ permalink: /private-instruction/
     <h2>Frequently asked</h2>
     <div class="pi-faq">
       <details>
+        <summary>How is this different from homework help?</summary>
+        <p>Homework help is organized around tonight's assignment; my work is organized around your student. Rather than walk through whatever problem is due, I watch how they reason, find what is actually getting in the way, teach to that, and make sure they can do it without me. The aim is a student who needs less help over time, not more.</p>
+      </details>
+      <details>
+        <summary>What if my student understands an explanation but can't do the problems alone?</summary>
+        <p>This is one of the most common reasons families reach out, and it is exactly what the structure is built for. Following an explanation and producing the reasoning yourself are different skills. Every session ends with the student working independently, so we find out what actually holds without prompts and rebuild whatever doesn't.</p>
+      </details>
+      <details>
+        <summary>How do you know what my student needs to work on?</summary>
+        <p>From watching them work. The setup, the notation, where they hesitate, and which errors repeat tell me whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and my notes carry that from week to week so the picture sharpens over time.</p>
+      </details>
+      <details>
+        <summary>Why do you recommend a consistent weekly schedule?</summary>
+        <p>Consistency is what lets the work compound. A steady weekly rhythm keeps us ahead of the class's pacing, lets me catch small gaps before they turn into costly ones, and means each session builds on the last instead of starting over.</p>
+      </details>
+      <details>
         <summary>Are sessions online or in person?</summary>
         <p>Sessions are conducted live over Zoom with a digital whiteboard for step-by-step work. This lets me support students wherever they are while keeping all notes and materials organized in one shared folder.</p>
       </details>
       <details>
         <summary>How do you align with my student's class?</summary>
-        <p>I follow your student's course pacing and tailor each session to their current topics, assignments, and the specific errors I observe, so our work reinforces what is happening in the classroom rather than running parallel to it.</p>
+        <p>I follow your student's course pacing and build each session around their current topics, assignments, and the specific errors I observe, so our work reinforces what is happening in the classroom rather than running parallel to it.</p>
       </details>
       <details>
         <summary>What happens before the AP exam?</summary>

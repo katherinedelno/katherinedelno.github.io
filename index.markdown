@@ -72,8 +72,8 @@ permalink: /
     <div>
       <p class="label">Private Mathematics &amp; Statistics Instructor</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I run a private instruction practice focused entirely on one-on-one work in mathematics and statistics with high school and college students. Each session is structured yet individualized, centered on guided problem-solving and supported by a complete curriculum I write myself.</p>
-      <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That foundation lets me teach these subjects with real depth, rigor, and clarity, and AP coursework is where I focus most of my work.</p>
+      <p>I run a private instruction practice focused entirely on one-on-one work in mathematics and statistics with high school and college students. My work centers on how each student actually thinks: I watch closely while they solve problems, find what is really getting in the way, and teach until they can reason through it on their own. Structured, not scripted.</p>
+      <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That depth is what lets me see the structure underneath a problem, tell a careless slip apart from a real gap, and teach with precision rather than from a script. AP coursework is where I focus most of my work.</p>
       <p class="hero-teach-label">Courses I teach</p>
       <ul class="hero-teach">
         <li>AP Statistics</li>
@@ -89,6 +89,13 @@ permalink: /
   </div>
 
   <div class="pg-section">
+    <p class="label">The difference</p>
+    <h2>More than getting unstuck</h2>
+    <p>A clear explanation is easy to find. Harder to find is someone who watches how your student works, notices the mistake behind the mistake, and adjusts the teaching in real time based on what they see. That is the center of my practice.</p>
+    <p>We work through problems together so I can follow the reasoning as it unfolds: the setup, the notation, where they hesitate, which errors keep returning. Then I step back and let the student work on their own, because understanding isn't following along while I explain. It's producing the reasoning when the help is gone.</p>
+  </div>
+
+  <div class="pg-section">
     <p class="label">Free this summer</p>
     <h2>Webinars on succeeding in each course</h2>
     <p>Before the school year begins, I'm hosting two free 45-minute webinars on how to start the year strong: one for <b>AP Statistics on Tuesday, August 25</b>, and one for <b>AP Calculus (AB/BC) on Thursday, August 27</b>, both at <b>5:30 p.m. Pacific</b>. Everyone who registers also receives my getting-started guide for that course. It covers how to begin the year on the right foot, from mindset and study habits to the technical setup and exam structure, and it's free to keep whether or not you attend live. Studying AP Precalculus? Register as well and I'll send you the Precalc getting-started guide.</p>
@@ -97,8 +104,8 @@ permalink: /
 
   <div class="pg-section">
     <p class="label">The practice</p>
-    <h2>A focused, individualized approach</h2>
-    <p>This practice is my full focus. I take a limited number of students each academic year so that every session is well-prepared and individualized, and so each family receives consistent attention throughout the year. The strongest results come when we start at the beginning of the course, so spots are best reserved before the term begins. You can read more about my approach, structure, and rates on the <a href="/private-instruction/">private instruction page</a>.</p>
+    <h2>Why I keep the roster small</h2>
+    <p>I take a limited number of students each academic year because good instruction depends on attention before, during, and after each session, and on carrying what I learn from one week into the next. Over time I come to know the patterns in a student's work: where they rush, what they forget, which errors return. The instruction gets more precise the longer we work together. The strongest results come when we start at the beginning of the course, so spots are best reserved before the term begins. You can read more about my approach, structure, and rates on the <a href="/private-instruction/">private instruction page</a>.</p>
     <div class="pg-quote">
       <p>&ldquo;Katherine is an attentive, thoughtful, and highly effective tutor. She helped my daughter build both confidence and understanding, making challenging material feel approachable.&rdquo;</p>
       <span class="who">Parent of 2025 AP Statistics student</span>

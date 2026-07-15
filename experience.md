@@ -44,7 +44,7 @@ permalink: /experience/
       <p class="date">2025 &ndash; Present</p>
       <h3>Private Mathematics &amp; Statistics Instructor <span class="badge">Current</span></h3>
       <p class="org">Independent &middot; Remote</p>
-      <p>I run a private instruction practice teaching mathematics and statistics to high school and college students, with a focus on AP coursework. I design and deliver structured lessons, custom materials, and rubric-aligned practice that build conceptual understanding, notation fluency, and exam-style reasoning. I assess each student's work with detailed written and verbal feedback, tracking progress over time and adapting pacing and content to their individual needs.</p>
+      <p>I run a private instruction practice teaching mathematics and statistics to high school and college students, with a focus on AP coursework. Each session is built around how the student actually reasons: I watch closely as they work, diagnose whether a difficulty is conceptual, procedural, or a matter of execution, and adjust the teaching to what I see. I assess not only whether a student reaches the correct answer but how they get there, using recurring patterns in their work to shape pacing, explanation, and practice over time. A complete curriculum I write myself and detailed written and verbal feedback sit behind the work, so each session builds on the last.</p>
     </div>
 
     <div class="pg-entry">
