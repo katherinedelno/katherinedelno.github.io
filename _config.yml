@@ -25,6 +25,10 @@ url: https://katherinedelno.com
 baseurl: ""            # if you host under a subdirectory, put it here (e.g. "/blog")
 author: "Katherine Delno"
 
+# Cloudflare Web Analytics: paste the beacon token from your Cloudflare
+# dashboard between the quotes to turn on analytics site-wide. Leave empty to disable.
+cloudflare_analytics: ""
+
 # Theme & plugins
 theme: minima
 plugins:
@@ -41,6 +45,7 @@ header_pages:
   - education.md
   - experience.md
   - projects.md
+  - resources.md
 
 
 # Exclude from processing.
