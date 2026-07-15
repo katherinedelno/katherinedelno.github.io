@@ -9,6 +9,15 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
 
+  <style>
+    .pg .label, .pi .label { display:flex; align-items:center; }
+    .pg .label::before, .pi .label::before {
+      content:""; flex:0 0 auto; width:18px; height:2px;
+      background:var(--accent); margin-right:11px;
+    }
+    .pi-fine .label::before { display:none; }
+  </style>
+
   {%- if site.cloudflare_analytics and site.cloudflare_analytics != "" -%}
   <!-- Cloudflare Web Analytics — manual snippet. Leave the token empty in _config.yml
        if you're using Cloudflare's automatic injection (proxied domain). -->

@@ -9,7 +9,7 @@ permalink: /projects/
   .site-header .site-title{display:none}
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#181b21;--muted:#565e69;--line:#e4e6eb;--accent:#343d4a;--accent-soft:#e5e8ee;--card:#f9fafb;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg h1,.pg h2,.pg h3,.pg h4{font-weight:700}
   .pg b,.pg strong{font-weight:600}

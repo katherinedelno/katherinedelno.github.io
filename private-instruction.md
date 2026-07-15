@@ -12,12 +12,12 @@ permalink: /private-instruction/
   body { font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
 
   .pi {
-    --ink:#181b21;
-    --muted:#565e69;
-    --line:#e4e6eb;
-    --accent:#343d4a;
-    --accent-soft:#e5e8ee;
-    --card:#f9fafb;
+    --ink:#1f1f1f;
+    --muted:#5c5c5c;
+    --line:#e6e6e6;
+    --accent:#2b2b2b;
+    --accent-soft:#f0f0f0;
+    --card:#fbfbfb;
     color:var(--ink);
     line-height:1.6;
   }
@@ -45,7 +45,8 @@ permalink: /private-instruction/
   /* Course cards */
   .pi-courses { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:1.2rem; }
   .pi-course {
-    border:1px solid var(--line); border-radius:14px; padding:20px 20px 22px;
+    border:1px solid var(--line); border-top:3px solid var(--accent);
+    border-radius:3px 3px 14px 14px; padding:20px 20px 22px;
     background:var(--card);
   }
   .pi-course h3 { margin:0 0 .35rem; font-size:1.05rem; }

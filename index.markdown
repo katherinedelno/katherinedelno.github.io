@@ -9,7 +9,7 @@ permalink: /
   .site-header .site-title{display:none}
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#181b21;--muted:#565e69;--line:#e4e6eb;--accent:#343d4a;--accent-soft:#e5e8ee;--card:#f9fafb;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg h1,.pg h2,.pg h3,.pg h4{font-weight:700}
   .pg b,.pg strong{font-weight:600}
@@ -37,7 +37,7 @@ permalink: /
   .pg-section{margin:2.6rem 0;padding-top:2.2rem;border-top:1px solid var(--line)}
   .pg-section h2{font-size:1.3rem;margin:0 0 1rem;letter-spacing:-.01em}
   .pg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:1.1rem}
-  .pg-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--card)}
+  .pg-card{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:3px 3px 14px 14px;padding:20px;background:var(--card)}
   .pg-card h3{margin:0 0 .35rem;font-size:1.05rem}
   .pg-card p{margin:0;font-size:.94rem;color:var(--muted)}
   .pg-links{font-size:.96rem}
