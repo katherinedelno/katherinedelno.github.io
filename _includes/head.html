@@ -22,6 +22,16 @@
     .pi-fine .label::before { display:none; }
   </style>
 
+  {%- if page.math -%}
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']], processEscapes: true },
+      TeX: { extensions: ["AMSmath.js","AMSsymbols.js"] }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML"></script>
+  {%- endif -%}
+
   {%- if site.cloudflare_analytics and site.cloudflare_analytics != "" -%}
   <!-- Cloudflare Web Analytics — manual snippet. Leave the token empty in _config.yml
        if you're using Cloudflare's automatic injection (proxied domain). -->
