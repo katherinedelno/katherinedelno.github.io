@@ -4,11 +4,16 @@ title: "Which chi-square test? Independence or homogeneity"
 date: 2026-07-15
 description: "With goodness-of-fit removed from the revised AP Statistics course, the chi-square decision comes down to independence versus homogeneity. Here is how to tell them apart and the conditions to check."
 read_time: "5 min read"
+math: true
 ---
 
 Starting with the revised AP Statistics course, the College Board removed the chi-square goodness-of-fit test. That actually simplifies a question students used to find confusing. The chi-square procedures you will use on the exam now all involve two-way tables, so the real decision is between just two tests: the test for independence and the test for homogeneity.
 
-They are easy to mix up, because they use the same statistic (the sum of (observed minus expected) squared, divided by expected) and the same degrees of freedom, (rows minus 1) times (columns minus 1). What separates them is the question being asked and, above all, how the data were collected.
+They are easy to mix up, because they use the same statistic,
+
+$$\chi^2 = \sum \frac{(O - E)^2}{E},$$
+
+and the same degrees of freedom, $$(r-1)(c-1)$$, where $$r$$ and $$c$$ are the number of rows and columns. What separates them is the question being asked and, above all, how the data were collected.
 
 ## Test for independence
 
@@ -35,12 +40,12 @@ The table looks the same either way, and the computation is identical. The only 
 Both tests share the same three conditions, and all three are easy points to lose:
 
 - **Random**: the data come from a random sample or a randomized experiment.
-- **Expected counts of at least 5**: and this means expected counts, not observed. Checking the observed counts is one of the most common errors I see.
-- **Independent observations**: including the 10 percent condition when sampling without replacement.
+- **Expected counts of at least 5**: every expected count must satisfy $$E \geq 5$$, and this means expected counts, not observed. Checking the observed counts is one of the most common errors I see.
+- **Independent observations**: including the 10% condition when sampling without replacement.
 
 ## Finish the conclusion properly
 
-State the test statistic, the degrees of freedom, and the P-value, then compare the P-value to your significance level and write a conclusion in context that refers back to the alternative hypothesis. A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
+State the test statistic, the degrees of freedom, and the $$P$$-value, then compare the $$P$$-value to your significance level $$\alpha$$ and write a conclusion in context that refers back to the alternative hypothesis. A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
 
 <div class="article-note" markdown="1">
 If you have older review books that still include a goodness-of-fit test for a single categorical variable, that is the piece no longer part of the course. It remains a valid statistical idea, but it will not appear on the current AP exam. The real goal, either way, is being able to look at an unfamiliar problem under time pressure, decide which test it calls for, and justify that choice on your own.
