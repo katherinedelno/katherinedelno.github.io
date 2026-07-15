@@ -12,12 +12,12 @@ permalink: /private-instruction/
   body { font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
 
   .pi {
-    --ink:#1a1a1a;
-    --muted:#5b6168;
-    --line:#e7e7e3;
-    --accent:#595850;
-    --accent-soft:#dfdfdb;
-    --card:#fbfbfa;
+    --ink:#181b21;
+    --muted:#565e69;
+    --line:#e4e6eb;
+    --accent:#343d4a;
+    --accent-soft:#e5e8ee;
+    --card:#f9fafb;
     color:var(--ink);
     line-height:1.6;
   }
@@ -320,10 +320,6 @@ permalink: /private-instruction/
           <p>One of the complete lessons in my custom curriculum: lecture, model problems, guided practice, and independent work.</p>
         </div>
       </div>
-    </div>
-
-    <div class="pi-callout" style="margin-top:1.6rem;">
-      <p><b>Optional printed binder, $50 per semester.</b> For students on a full-semester weekly cadence, I can print, bind, and ship a complete copy of our lessons and resources, with the problem sets left blank so the student fills them in as we work through them together. Everything stays organized in one place, with room to take notes during each session, so there is no scrambling and nothing scattered across loose pages.</p>
     </div>
   </div>
 

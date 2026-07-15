@@ -8,7 +8,7 @@ permalink: /resources/
   .site-header .site-title{display:none}
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1a1a1a;--muted:#5b6168;--line:#e7e7e3;--accent:#595850;--accent-soft:#dfdfdb;--card:#fbfbfa;color:var(--ink);line-height:1.6}
+  .pg{--ink:#181b21;--muted:#565e69;--line:#e4e6eb;--accent:#343d4a;--accent-soft:#e5e8ee;--card:#f9fafb;color:var(--ink);line-height:1.6}
   .pg p{max-width:74ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .5rem}
   .pg-hero{margin:0 0 2.4rem}
