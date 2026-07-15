@@ -22,6 +22,14 @@ Two or more separate samples, one categorical variable. Here you have distinct g
 
 Because the arithmetic is identical, students often guess between the two. Do not guess, read the design. **One sample cross-classified two ways is a test for independence. Several separate groups compared on one variable is a test for homogeneity.** The way the data were gathered decides the test, not the way the table looks on the page.
 
+## A quick example of each
+
+Say you want to know whether study method is related to how students do in a course. If you take one class of 40 students and record, for each student, both their main study method (alone or in a group) and whether they earned an A, you have one sample split by two questions. That is a test for independence.
+
+Now suppose instead you take 40 students who study alone and a separate 40 who study in groups, and record each student's grade. Those are two groups collected separately and compared on one variable. That is a test for homogeneity.
+
+The table looks the same either way, and the computation is identical. The only difference is that in the first case one group was classified by two questions, and in the second, two groups were each asked one.
+
 ## Check the conditions before you compute
 
 Both tests share the same three conditions, and all three are easy points to lose:

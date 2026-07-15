@@ -24,6 +24,8 @@ Every indefinite integral gets a `+ C`. It looks small, but on a problem that as
 
 One of the most common notation errors is stringing together things that aren't actually equal, such as writing a function and its derivative joined by an equals sign as you differentiate. Each line you write should be a true statement on its own. If you wouldn't defend it as an equation, it shouldn't have an equals sign in it.
 
+For example, under time pressure a student who knows the calculus might write `x² = 2x = 6` to mean "the derivative of *x*² at 3 is 6." Read literally, though, *x*² does not equal `2x`, and `2x` does not equal 6. Written so that every line is true: `f(x) = x²`, so `f '(x) = 2x`, and `f '(3) = 6`. Same answer, but now each statement holds and the reasoning is visible, which is what earns the point.
+
 ## Justify in words, not just symbols
 
 When a problem asks you to justify, a sign chart by itself is not a justification; the sentence is. Write it out: "*f* is increasing on this interval **because** *f '(x) > 0* there." When a result depends on a theorem, name it: "**by the Fundamental Theorem of Calculus**," or "the **Mean Value Theorem** guarantees it," and confirm the hypotheses the theorem requires, such as continuity or differentiability.
