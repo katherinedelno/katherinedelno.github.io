@@ -175,7 +175,7 @@ permalink: /private-instruction/
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
-    <p>I provide structured, one-on-one instruction in mathematics and statistics for high school and college students. The work is built around how each student thinks: we solve problems together so I can see the reasoning as it unfolds, I teach to exactly what that reveals, and the student then works independently to confirm the skill holds. Structured, not scripted. The emphasis stays on correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work, the habits that earn credit on the AP exam and in the classroom.</p>
+    <p>I work privately with a small number of high school and college students across the full arc of a math or statistics course, not just the difficult night before a test. Instruction is live, one-on-one, and planned around each student's actual class, pacing, and the specific things getting in their way. The focus stays on what earns credit on the AP exam and in the classroom: correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work. What follows is how that works in practice.</p>
   </div>
 
   <!-- COURSES -->
@@ -254,7 +254,7 @@ permalink: /private-instruction/
         <div class="num">2</div>
         <div>
           <h4>Guided problem-solving</h4>
-          <p>Where most of the session goes, and where I watch the reasoning most closely. We work through AP-style problems and the student's own questions together, and I intervene precisely, correcting the setup rather than just the answer and adjusting the support as the work tells me to.</p>
+          <p>Where most of the learning happens. Working through problems together is how the student builds real, durable skill, and it is also where I can follow the reasoning most closely. We take on AP-style problems and the student's own questions, and I coach in real time, correcting the setup rather than just the answer and adjusting the support as the work tells me to.</p>
         </div>
       </div>
       <div class="pi-step">
@@ -289,16 +289,8 @@ permalink: /private-instruction/
     <h2>Individualized does not mean improvised</h2>
     <p>Because I have already built the course, I don't have to choose between preparation and flexibility. I teach from a complete curriculum I have written and typeset myself, with every topic supported by multiple levels of explanation, model problems, guided work, independent practice, and reference material. That structure is what lets me respond to what a student needs in the moment without losing the larger arc of the course.</p>
     <p>The curriculum gives us structure; the student's work decides where we actually spend our time. Every lesson keeps the same consistent format, so students always know where to look, and I draw the right level of explanation or practice as the specific gaps and recurring errors surface.</p>
-    <p style="margin-top:1.1rem;font-weight:600;">Each lesson includes:</p>
-    <ul class="pi-list">
-      <li><b>A condensed lecture</b> for a quick review of the key definitions, equations, and theorems.</li>
-      <li><b>A full lecture</b> for students who need to rebuild their foundation in the topic.</li>
-      <li><b>Model problems</b>, where I work through a few examples step by step to show the approach in action.</li>
-      <li><b>Guided problem-solving</b>, the heart of each session: we work through problems together while I coach the student, ask guiding questions, and help them reason their way to the answer.</li>
-      <li><b>Independent practice</b>, a few problems the student works on their own to confirm they can execute without prompts.</li>
-      <li><b>A condensed one-page summary</b> of the topic for quick reference.</li>
-    </ul>
-    <p style="margin-top:1.1rem;">All of these materials are shared with the student after each session. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
+    <p style="margin-top:1.1rem;">For every topic, I keep a complete lesson on hand: a condensed review and a full lecture, worked model problems, guided and independent practice, and a one-page summary. It holds everything we might need on that topic, and we draw on whatever part serves the student that day. Most sessions don't move through all of it; the lesson is a resource to pull from, not a fixed agenda.</p>
+    <p style="margin-top:1.1rem;">Whatever we use is shared with the student afterward. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
     <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
 
     <div class="pi-callout" style="margin-top:1.4rem;">

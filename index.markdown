@@ -72,7 +72,7 @@ permalink: /
     <div>
       <p class="label">Private Mathematics &amp; Statistics Instructor</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I run a private instruction practice focused entirely on one-on-one work in mathematics and statistics with high school and college students. My work centers on how each student actually thinks: I watch closely while they solve problems, find what is really getting in the way, and teach until they can reason through it on their own. Structured, not scripted.</p>
+      <p>I run a private instruction practice focused entirely on one-on-one work in mathematics and statistics with high school and college students. My work centers on how each student actually thinks: I watch closely while they solve problems, find what is really getting in the way, and teach until they can reason through it on their own.</p>
       <p>I'm a statistician and mathematician by training, with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. That depth is what lets me see the structure underneath a problem, tell a careless slip apart from a real gap, and teach with precision rather than from a script. AP coursework is where I focus most of my work.</p>
       <p class="hero-teach-label">Courses I teach</p>
       <ul class="hero-teach">

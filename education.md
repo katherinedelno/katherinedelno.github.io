@@ -34,7 +34,7 @@ permalink: /education/
   <div class="pg-hero">
     <p class="label">Education</p>
     <h1>Academic training</h1>
-    <p>The foundation of how I teach. <b>Graduate and undergraduate degrees in statistics and mathematics</b>, with coursework spanning the full range of topics my students encounter and extending well beyond them. That depth is not here to impress; it is what lets me see the structure underneath a problem, trace an error to its real source, and explain a topic more than one way when the first explanation doesn't land.</p>
+    <p>The foundation of how I teach. <b>Graduate and undergraduate degrees in statistics and mathematics</b>, with coursework spanning the full range of topics my students encounter and extending well beyond them. What matters isn't the coursework itself but the judgment it builds: seeing the structure underneath a problem, tracing an error to its real source, and explaining a topic more than one way when the first explanation doesn't land.</p>
   </div>
 
   <div class="pg-section">
