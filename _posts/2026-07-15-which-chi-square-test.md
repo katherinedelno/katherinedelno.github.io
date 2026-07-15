@@ -1,43 +1,39 @@
 ---
 layout: post
-title: "Which chi-square test? A short guide to choosing the right one"
+title: "Which chi-square test? Independence or homogeneity"
 date: 2026-07-15
-description: "Goodness-of-fit, independence, or homogeneity — how to tell which chi-square procedure a problem calls for, and the conditions to check before you run it."
+description: "With goodness-of-fit removed from the revised AP Statistics course, the chi-square decision comes down to independence versus homogeneity. Here is how to tell them apart and the conditions to check."
 read_time: "5 min read"
 ---
 
-On the AP Statistics exam, students rarely lose chi-square points because they can't compute the statistic. They lose them because they run the wrong test, or skip the conditions that justify running it at all. All three chi-square procedures use the same arithmetic — the sum of (observed − expected)² divided by expected — but they answer different questions, and the exam expects you to recognize which question you are being asked.
+Starting with the revised AP Statistics course, the College Board removed the chi-square goodness-of-fit test. That actually simplifies a question students used to find confusing. The chi-square procedures you will use on the exam now all involve two-way tables, so the real decision is between just two tests: the test for independence and the test for homogeneity.
 
-Here is the distinction, in the order I teach it.
-
-## Goodness-of-fit
-
-One categorical variable, one sample. You have a claimed distribution — a spinner is fair, blood types follow certain percentages, customers arrive evenly across weekdays — and you are testing whether your observed counts are consistent with it. The expected counts come from the claim (the total times each claimed proportion). Degrees of freedom are the number of categories minus one.
+They are easy to mix up, because they use the same statistic (the sum of (observed minus expected) squared, divided by expected) and the same degrees of freedom, (rows minus 1) times (columns minus 1). What separates them is the question being asked and, above all, how the data were collected.
 
 ## Test for independence
 
-One sample, two categorical variables recorded on each individual. You take a single group of people and classify each one two ways — say, grade level and preferred study method — and ask whether the two variables are associated. The data live in a two-way table, and the degrees of freedom are (rows − 1) × (columns − 1).
+One sample, two categorical variables. You take a single group of individuals and classify each one two ways, then ask whether the two variables are associated. For example, you survey one group of students and record both their grade level and their preferred study method, and ask whether study method is related to grade level.
 
 ## Test for homogeneity
 
-Two or more separate samples, one categorical variable. Here you have distinct groups collected independently — seniors and juniors surveyed separately, three schools sampled on their own — and you ask whether those groups share the same distribution of one variable. The table and the degrees-of-freedom formula are identical to the independence test; only the question and the data collection differ.
+Two or more separate samples, one categorical variable. Here you have distinct groups collected independently, and you ask whether they share the same distribution of a single variable. For example, you survey seniors and juniors separately and compare how each group's study methods are distributed.
 
 ## The tell is in how the data were collected
 
-Independence and homogeneity produce the same numbers, so students often guess between them. Don't guess — read the design. **One sample cross-classified two ways points to independence. Several samples compared on one variable points to homogeneity. A single sample checked against a target distribution is goodness-of-fit.** The way the data were gathered decides the test, not the way the table looks.
+Because the arithmetic is identical, students often guess between the two. Do not guess, read the design. **One sample cross-classified two ways is a test for independence. Several separate groups compared on one variable is a test for homogeneity.** The way the data were gathered decides the test, not the way the table looks on the page.
 
 ## Check the conditions before you compute
 
-All three tests share the same three conditions, and all three are easy points to lose:
+Both tests share the same three conditions, and all three are easy points to lose:
 
-- **Random** — the data come from a random sample or a randomized experiment.
-- **Expected counts of at least 5** — and this means *expected*, not observed. Checking the observed counts is one of the most common errors I see.
-- **Independent observations** — including the 10% condition when sampling without replacement.
+- **Random**: the data come from a random sample or a randomized experiment.
+- **Expected counts of at least 5**: and this means expected counts, not observed. Checking the observed counts is one of the most common errors I see.
+- **Independent observations**: including the 10 percent condition when sampling without replacement.
 
-## And finish the conclusion properly
+## Finish the conclusion properly
 
-State the test statistic, degrees of freedom, and P-value, then compare the P-value to your significance level and write a conclusion *in context* that refers back to the alternative hypothesis. A conclusion that never mentions the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
+State the test statistic, the degrees of freedom, and the P-value, then compare the P-value to your significance level and write a conclusion in context that refers back to the alternative hypothesis. A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
 
 <div class="article-note" markdown="1">
-The real goal isn't memorizing three recipes — it's being able to look at an unfamiliar problem under time pressure, decide which test it calls for, and justify that choice on your own. That judgment is what the exam is actually measuring, and it's what we build session by session.
+If you have older review books that still include a goodness-of-fit test for a single categorical variable, that is the piece no longer part of the course. It remains a valid statistical idea, but it will not appear on the current AP exam. The real goal, either way, is being able to look at an unfamiliar problem under time pressure, decide which test it calls for, and justify that choice on your own.
 </div>

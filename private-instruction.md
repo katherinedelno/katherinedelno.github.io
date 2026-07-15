@@ -288,40 +288,14 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Materials</p>
     <h2>Individualized does not mean improvised</h2>
-    <p>Because I have already built the course, I don't have to choose between preparation and flexibility. I teach from a complete curriculum I have written and typeset myself, with every topic supported by multiple levels of explanation, model problems, guided work, independent practice, and reference material. That structure is what lets me respond to what a student needs in the moment without losing the larger arc of the course.</p>
-    <p>The curriculum gives us structure; the student's work decides where we actually spend our time. Every lesson keeps the same consistent format, so students always know where to look, and I draw the right level of explanation or practice as the specific gaps and recurring errors surface.</p>
-    <p style="margin-top:1.1rem;">For every topic, I keep a complete lesson on hand: a condensed review and a full lecture, worked model problems, guided and independent practice, and a one-page summary. It holds everything we might need on that topic, and we draw on whatever part serves the student that day. Most sessions don't move through all of it; the lesson is a resource to pull from, not a fixed agenda.</p>
+    <p>Because I've already built the course, I don't have to choose between preparation and flexibility. Every topic already has clear explanations, worked examples, and practice ready to draw on, so we spend our time on what your student actually needs instead of building from scratch each week.</p>
+    <p>The curriculum keeps us organized; the student's work decides where we spend our time. Most sessions don't move through a whole lesson; it's a resource to pull from, shaped around the gaps and recurring errors I see.</p>
     <p style="margin-top:1.1rem;">Whatever we use is shared with the student afterward. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
-    <p style="margin-top:1.1rem;">I also provide supplemental study materials as they are useful, such as reference sheets and procedure guides that students can keep and return to throughout the year.</p>
 
     <div class="pi-callout" style="margin-top:1.4rem;">
       <p><b>Bring the problems you want to cover.</b> Alongside the prepared lesson, students are welcome to send me specific problems, homework questions, or upcoming topics at least 24 hours before a session, and I'll build them into that day's plan. Every session stays shaped around what the student needs and asks for.</p>
     </div>
 
-    <p style="margin-top:1.6rem;font-weight:600;">A look at my materials</p>
-    <p style="margin-top:.2rem;">Every lesson, reference sheet, and problem set is written and typeset by me to the same standard. Below are the opening pages of two module lessons; the complete versions are part of what enrolled students receive.</p>
-    <div class="pi-samples">
-      <div class="pi-sample">
-        <div class="pi-sample-thumb">
-          <img src="/assets/img/previews/sample-lesson-calc-cover.png" alt="Opening page of an AP Calculus BC lesson" loading="lazy" decoding="async">
-        </div>
-        <div class="pi-sample-body">
-          <p class="course">AP Calculus BC</p>
-          <h4>Module 4C: Linearization &amp; L'Hospital's Rule</h4>
-          <p>One of the complete lessons in my custom curriculum: lecture, model problems, guided practice, and independent work.</p>
-        </div>
-      </div>
-      <div class="pi-sample">
-        <div class="pi-sample-thumb">
-          <img src="/assets/img/previews/sample-lesson-stats-cover.png" alt="Opening page of an AP Statistics lesson" loading="lazy" decoding="async">
-        </div>
-        <div class="pi-sample-body">
-          <p class="course">AP Statistics</p>
-          <h4>Module 3E: Chi-Square Inference</h4>
-          <p>One of the complete lessons in my custom curriculum: lecture, model problems, guided practice, and independent work.</p>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- AP EXAM PREP -->
@@ -396,11 +370,14 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">How it works</p>
     <h2>Technology &amp; setup</h2>
+    <p>Sessions are built to feel like working side by side, with everything we write kept organized and easy to return to.</p>
     <ul class="pi-list">
-      <li><b>Zoom-based sessions</b> delivered live.</li>
-      <li><b>Digital whiteboard</b> with live handwriting and annotation for step-by-step setup and reasoning.</li>
-      <li><b>Private shared folder</b> (Dropbox) for session notes and materials; parents may be added on request.</li>
-      <li><b>Student setup:</b> a quiet location, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent note-taking method.</li>
+      <li><b>Live Zoom sessions</b> with a shared digital whiteboard, where I write out each setup and every step of the reasoning by hand, just as we would on paper.</li>
+      <li><b>Real-time annotation</b> on the student's own problems and homework, so they watch the work build up rather than passively following slides.</li>
+      <li><b>Notes and full solutions</b> uploaded to a private shared folder (Dropbox) after each meeting, so nothing is lost and everything stays in one place; parents may be added on request.</li>
+      <li><b>Calculator integration</b> (TI-84 Plus CE) walked through on screen, so the student learns the exact keystrokes that prevent avoidable test-day mistakes.</li>
+      <li><b>Flexible across time zones:</b> I'm based in the Pacific time zone and regularly work with students elsewhere, and we'll find a weekly time that fits.</li>
+      <li><b>A simple student setup:</b> a quiet space, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent way to take notes.</li>
     </ul>
   </div>
 

@@ -12,27 +12,28 @@ permalink: /resources/
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .7rem}
 
   .pg-hero{margin:0 0 1rem;max-width:60ch}
-  .pg-hero h1{font-size:2.5rem;line-height:1.1;margin:0 0 .9rem;letter-spacing:-.03em;font-weight:700}
-  .pg-hero p{font-size:1.14rem;color:var(--muted);line-height:1.55;margin:0}
+  .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
+  .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.55;margin:0}
 
-  .res-list{margin-top:2.6rem;border-top:1px solid var(--ink)}
-  .res-item{display:block;padding:26px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
-  .res-item:hover .res-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-  .res-item:hover .res-more{opacity:1}
-  .res-date{display:block;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 .6rem}
-  .res-title{display:block;font-size:1.5rem;font-weight:700;letter-spacing:-.02em;line-height:1.18;margin:0 0 .55rem}
-  .res-desc{display:block;font-size:1rem;color:var(--muted);max-width:68ch;line-height:1.55}
-  .res-more{display:inline-block;margin-top:.85rem;font-size:.82rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);opacity:.75;transition:opacity .15s ease}
+  .res-list{margin-top:2.4rem;border-top:1px solid var(--line)}
+  .pg .res-item{display:block;padding:24px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+  .pg .res-item .res-title{color:var(--ink)}
+  .pg .res-item:hover .res-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .pg .res-item:hover .res-more{opacity:1}
+  .res-date{display:block;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 .5rem}
+  .res-title{display:block;font-size:1.3rem;font-weight:700;letter-spacing:-.015em;line-height:1.22;margin:0 0 .45rem}
+  .res-desc{display:block;font-size:.98rem;color:var(--muted);max-width:68ch;line-height:1.55}
+  .res-more{display:inline-block;margin-top:.75rem;font-size:.74rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);opacity:.7;transition:opacity .15s ease}
 
-  @media (max-width:720px){.pg-hero h1{font-size:1.95rem}.res-title{font-size:1.28rem}}
+  @media (max-width:720px){.pg-hero h1{font-size:1.7rem}.res-title{font-size:1.18rem}}
 </style>
 
 <div class="pg" markdown="0">
 
   <div class="pg-hero">
     <p class="label">Writing</p>
-    <h1>Notes on doing mathematics well</h1>
-    <p>Occasional pieces on the reasoning, notation, and habits that separate understanding a topic from executing it under exam pressure &mdash; the same things I work on with students.</p>
+    <h1>Notes on studying mathematics and statistics</h1>
+    <p>Occasional pieces on the reasoning, notation, and habits that separate understanding a topic from executing it under exam pressure, the same things I work on with students.</p>
   </div>
 
   <div class="res-list">
