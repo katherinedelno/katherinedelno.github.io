@@ -29,6 +29,11 @@ author: "Katherine Delno"
 # dashboard between the quotes to turn on analytics site-wide. Leave empty to disable.
 cloudflare_analytics: ""
 
+# Serif typography test. Set to true to preview the site in Libertinus Serif
+# (matching the redesigned course materials); set to false to revert instantly
+# to the current Hanken Grotesk look. Nothing else needs to change.
+use_serif: true
+
 # Theme & plugins
 theme: minima
 plugins:

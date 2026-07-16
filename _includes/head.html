@@ -22,6 +22,20 @@
     .pi-fine .label::before { display:none; }
   </style>
 
+  {%- if site.use_serif -%}
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    body, .pg, .pi,
+    .site-header, .site-footer, .site-nav, .site-title, .page-link,
+    .pg h1, .pg h2, .pg h3, .pg h4, .pi h1, .pi h2, .pi h3, .pi h4,
+    .article-head h1, .article-body h2, .article-body h3,
+    .res-title, .pg-hero h1, .pi-hero h1 {
+      font-family: 'Libertinus Serif', 'EB Garamond', Georgia, 'Times New Roman', serif;
+    }
+    .pg p, .pi p, .article-body p, .res-desc { font-size: 1.06rem; line-height: 1.72; }
+  </style>
+  {%- endif -%}
+
   {%- if page.math -%}
   <script>
     window.MathJax = {
