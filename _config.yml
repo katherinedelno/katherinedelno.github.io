@@ -32,7 +32,7 @@ cloudflare_analytics: ""
 # Serif typography test. Set to true to preview the site in Libertinus Serif
 # (matching the redesigned course materials); set to false to revert instantly
 # to the current Hanken Grotesk look. Nothing else needs to change.
-use_serif: true
+use_serif: false
 
 # Theme & plugins
 theme: minima
