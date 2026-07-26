@@ -9,23 +9,23 @@ read_time: "9 min read"
 math: true
 ---
 
-The Fundamental Theorem of Calculus is the most important sentence in the course, and it is routinely memorized without ever being *seen*. Students learn to compute $$\int_1^4 x^2\,dx$$ by antidifferentiating and subtracting, which works, but hides the remarkable thing the theorem actually says: **accumulating a quantity and differentiating are inverse operations.** Area, of all things, undoes the derivative.
+The Fundamental Theorem of Calculus is the most important sentence in the course, and it is routinely memorized without ever being seen. Students learn to compute $$\int_1^4 x^2\,dx$$ by antidifferentiating and subtracting, which works, but it hides the remarkable thing the theorem actually says: accumulating a quantity and differentiating are inverse operations. Area, of all things, undoes the derivative.
 
-This piece builds the theorem the way I build it with students: start with a machine that measures area, discover that the machine has a derivative, and then notice — with some astonishment — whose derivative it is.
+This piece builds the theorem the way I build it with students. Start with a machine that measures area, discover that the machine has a derivative, and then notice whose derivative it is.
 
 ## A function that measures area
 
-Take any continuous function $$f$$. Don't antidifferentiate it; just *watch* it. Define a new function by asking, at each input $$x$$, "how much area has the graph of $$f$$ swept out so far?"
+Take any continuous function $$f$$. Do not antidifferentiate it; just watch it. Define a new function by asking, at each input $$x$$, how much area the graph of $$f$$ has swept out so far:
 
 $$A(x) = \int_0^x f(t)\,dt.$$
 
-Two notational points that matter on the exam. First, the variable inside is $$t$$, not $$x$$ — $$x$$ is busy being the upper limit, and using it twice in two roles is exactly the kind of ambiguity graders penalize. Second, $$A$$ is a genuine function: feed it an input, it returns a number. $$A(2)$$ is the signed area from $$0$$ to $$2$$. $$A(0)$$ is $$0$$, because no ground has been covered yet.
+Two notational points matter here, on the exam as much as in theory. First, the variable inside is $$t$$, not $$x$$. The letter $$x$$ is busy serving as the upper limit, and using it in two roles at once is exactly the kind of ambiguity graders penalize. Second, $$A$$ is a genuine function: feed it an input and it returns a number. $$A(2)$$ is the signed area from $$0$$ to $$2$$, and $$A(0) = 0$$, because no ground has been covered yet.
 
-"Signed" is doing real work in that sentence. Where $$f$$ is negative, the region between the graph and the axis counts *against* the total. The accumulation function goes down when the curve is below the axis. Hold that thought — it is about to become the whole theorem.
+The word "signed" is doing real work in that sentence. Where $$f$$ is negative, the region between the graph and the axis counts against the total, so the accumulation function goes down while the curve is below the axis. Hold that thought, because it is about to become the whole theorem.
 
 ## Watching the accumulation happen
 
-The picture below shows a function $$f$$ (top) and its accumulation function $$A$$ (bottom) being drawn in real time as $$x$$ sweeps to the right. Drag the slider and watch both panels at once.
+The picture below shows a function $$f$$ (top) and its accumulation function $$A$$ (bottom) being traced out as $$x$$ sweeps to the right. Drag the slider and watch both panels at once.
 
 <div class="viz" markdown="0">
   <canvas id="ftc-top" width="700" height="230"></canvas>
@@ -35,7 +35,7 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
     <input type="range" id="ftc-x" min="0" max="1000" value="430">
     <span class="viz-value" id="ftc-read"></span>
   </div>
-  <p class="viz-caption"><strong>Top:</strong> the rate function <em>f</em>, with the region from 0 to <em>x</em> shaded — dark where it counts positively, light where it counts negatively. <strong>Bottom:</strong> the accumulation function <em>A</em>(<em>x</em>), traced as far as the sweep has gone, with its tangent line drawn at the leading point. Watch three things: <em>A</em> rises while <em>f</em> is above the axis and falls while <em>f</em> is below; <em>A</em> peaks at the exact moment <em>f</em> crosses zero; and the slope of the tangent always matches the height of <em>f</em> in the top panel. That last observation <em>is</em> the Fundamental Theorem.</p>
+  <p class="viz-caption"><strong>Top:</strong> the rate function <em>f</em>, with the region from 0 to <em>x</em> shaded: dark where it counts positively, light where it counts negatively. <strong>Bottom:</strong> the accumulation function <em>A</em>(<em>x</em>), traced as far as the sweep has gone, with its tangent line drawn at the leading point. Watch three things. <em>A</em> rises while <em>f</em> is above the axis and falls while <em>f</em> is below. <em>A</em> peaks at the exact moment <em>f</em> crosses zero. And the slope of the tangent always matches the height of <em>f</em> in the top panel. That last observation is the Fundamental Theorem.</p>
 </div>
 
 <script>
@@ -112,15 +112,15 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
 
 ## Why the slope of A is the height of f
 
-Here is the argument, and it fits in a paragraph. Ask how fast $$A$$ is growing at some moment $$x$$. Push the sweep line a tiny step $$h$$ further. The new area picked up, $$A(x+h) - A(x)$$, is a sliver — nearly a rectangle with width $$h$$ and height $$f(x)$$, because over a tiny interval a continuous function barely moves. So
+Here is the argument, and it fits in a paragraph. Ask how fast $$A$$ is growing at some moment $$x$$. Push the sweep line a small step $$h$$ further. The new area picked up, $$A(x+h) - A(x)$$, is a thin sliver, very nearly a rectangle with width $$h$$ and height $$f(x)$$, because a continuous function barely moves over a small interval. So
 
 $$\frac{A(x+h) - A(x)}{h} \approx \frac{f(x)\cdot h}{h} = f(x),$$
 
-and the approximation sharpens to equality as $$h \to 0$$ (that is what continuity of $$f$$ buys, via the Squeeze Theorem, since the sliver's height is trapped between the min and max of $$f$$ on the tiny interval). But the left side is the definition of the derivative. Conclusion:
+and the approximation sharpens to equality as $$h \to 0$$. Continuity of $$f$$ is what pays for that last step, via the Squeeze Theorem, since the sliver's height is trapped between the minimum and maximum of $$f$$ on the small interval. But the left side is the definition of the derivative of $$A$$. The conclusion:
 
 $$A'(x) = f(x).$$
 
-That is the **first part of the Fundamental Theorem**: every continuous function has an antiderivative, namely its own accumulation function. The rate at which area accumulates under a curve *is the height of the curve*. Once you see it in the animation — tall curve, steep accumulation; curve below the axis, falling accumulation — it stops being a formula and becomes something closer to obvious.
+That is the first part of the Fundamental Theorem: every continuous function has an antiderivative, namely its own accumulation function. The rate at which area accumulates under a curve is the height of the curve. Once you see it in the animation, with a tall curve producing a steep accumulation and a below-axis curve producing a falling one, it stops being a formula and becomes something close to obvious.
 
 ## The evaluation shortcut is a corollary
 
@@ -128,30 +128,30 @@ The version everyone uses,
 
 $$\int_a^b f(x)\,dx = F(b) - F(a) \quad\text{where } F' = f,$$
 
-falls out almost immediately. The accumulation function $$A$$ is *an* antiderivative of $$f$$; your $$F$$ is another. Two antiderivatives of the same function differ by a constant (a Mean Value Theorem fact — a function with zero derivative is constant), so $$F = A + C$$. Then
+follows almost immediately. The accumulation function $$A$$ is an antiderivative of $$f$$, and your $$F$$ is another. Two antiderivatives of the same function differ by a constant, which is a Mean Value Theorem fact: a function with zero derivative is constant. So $$F = A + C$$, and
 
 $$F(b) - F(a) = \big(A(b) + C\big) - \big(A(a) + C\big) = A(b) - A(a) = \int_a^b f(t)\,dt,$$
 
-since $$A(a)$$ subtracts off the area before $$a$$. The constant cancels — which is also why the $$+C$$ never matters in a definite integral. The everyday computation is a corollary of the deeper statement, not the theorem itself.
+since $$A(a)$$ subtracts off the area before $$a$$. The constant cancels, which is also why the $$+C$$ never matters in a definite integral. The everyday computation is a corollary of the deeper statement, not the theorem itself.
 
 ## What this looks like on the exam
 
 The FTC appears on the free-response section in three reliable costumes.
 
-**Costume 1: the defined accumulation function.** You're given a graph of $$f$$ and the definition $$g(x) = \int_2^x f(t)\,dt$$, then asked for $$g(0)$$, $$g'(3)$$, $$g''(3)$$. Translate once and everything follows: $$g' = f$$ and $$g'' = f'$$. So $$g'(3)$$ is the *height* of the given graph at 3, and $$g''(3)$$ is its *slope* there. For $$g(0) = \int_2^0 f(t)\,dt = -\int_0^2 f(t)\,dt$$, reverse the limits and read the geometric area off the graph, minding signs. Every question about $$g$$ is a question about the picture of $$f$$.
+**The defined accumulation function.** You are given a graph of $$f$$ and the definition $$g(x) = \int_2^x f(t)\,dt$$, then asked for $$g(0)$$, $$g'(3)$$, and $$g''(3)$$. Translate once and everything follows: $$g' = f$$ and $$g'' = f'$$. So $$g'(3)$$ is the height of the given graph at 3, and $$g''(3)$$ is its slope there. For $$g(0) = \int_2^0 f(t)\,dt = -\int_0^2 f(t)\,dt$$, reverse the limits and read the geometric area off the graph, minding signs. Every question about $$g$$ is a question about the picture of $$f$$.
 
-**Costume 2: the chain-rule hybrid.** If the upper limit is a function of $$x$$,
+**The chain-rule hybrid.** If the upper limit is a function of $$x$$, the FTC peels off the integral and the chain rule handles the inner function:
 
-$$\frac{d}{dx}\int_0^{x^2} \cos(t)\,dt = \cos\!\left(x^2\right)\cdot 2x,$$
+$$\frac{d}{dx}\int_0^{x^2} \cos(t)\,dt = \cos\!\left(x^2\right)\cdot 2x.$$
 
-— FTC to peel off the integral, chain rule for the inner function. Substitute into the integrand, multiply by the derivative of the limit.
+Substitute into the integrand, then multiply by the derivative of the limit.
 
-**Costume 3: net change.** Since a rate's accumulation is total change, $$f(b) = f(a) + \int_a^b f'(t)\,dt$$. This is the workhorse of every in-context FRQ: final amount equals starting amount plus accumulated rate. When a water tank starts at 30 gallons and water flows at rate $$R(t)$$, the amount at time 6 is $$30 + \int_0^6 R(t)\,dt$$ — no antiderivative formula needed, and on a calculator section, none wanted.
+**Net change.** Since accumulating a rate gives total change, $$f(b) = f(a) + \int_a^b f'(t)\,dt$$. This is the workhorse of every in-context FRQ: final amount equals starting amount plus accumulated rate. When a tank starts with 30 gallons and water flows in at rate $$R(t)$$, the amount at time 6 is $$30 + \int_0^6 R(t)\,dt$$. No antiderivative formula is needed, and on a calculator section, none is wanted.
 
 ## The sentence worth remembering
 
-Differentiation asks: *at this instant, how fast?* Integration asks: *in total, how much?* The Fundamental Theorem says these two questions are inverses of each other — that "how much, so far" is itself a quantity whose "how fast" is the original function. Newton and Leibniz are credited with calculus not because they computed areas (Archimedes did that) or slopes (Fermat did that), but because they saw that the two computations were secretly one.
+Differentiation asks how fast something is changing at this instant. Integration asks how much has accumulated in total. The Fundamental Theorem says these two questions are inverses of each other: "how much so far" is itself a quantity whose "how fast" is the original function. Newton and Leibniz are credited with calculus not because they computed areas (Archimedes did that) or slopes (Fermat did that), but because they saw that the two computations were secretly one.
 
 <div class="article-note" markdown="1">
-A good self-test: sketch any $$f$$ you like, then — without computing a single antiderivative — sketch $$A(x) = \int_0^x f$$. Mark where $$A$$ rises, falls, peaks, and bends. If you can do that from the picture alone, you understand the theorem; the algebra is just bookkeeping.
+A good self-test: sketch any $$f$$ you like, then, without computing a single antiderivative, sketch $$A(x) = \int_0^x f$$. Mark where $$A$$ rises, falls, peaks, and bends. If you can do that from the picture alone, you understand the theorem. The algebra is just bookkeeping.
 </div>

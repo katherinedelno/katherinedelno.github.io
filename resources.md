@@ -47,6 +47,7 @@ permalink: /resources/
     <button class="res-filter is-active" data-course="all">All</button>
     <button class="res-filter" data-course="AP Calculus AB">AP Calculus AB</button>
     <button class="res-filter" data-course="AP Calculus BC">AP Calculus BC</button>
+    <button class="res-filter" data-course="AP Precalculus">AP Precalculus</button>
     <button class="res-filter" data-course="AP Statistics">AP Statistics</button>
   </div>
 

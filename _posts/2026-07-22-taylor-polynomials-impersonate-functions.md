@@ -2,36 +2,36 @@
 layout: post
 title: "Taylor polynomials: teaching a polynomial to impersonate a function"
 date: 2026-07-22
-description: "The whole of Unit 10 in one idea: match enough derivatives at a point and a polynomial becomes indistinguishable from the function — nearby. Watch the impersonation improve degree by degree, and see exactly where it fails."
+description: "The idea behind all of Unit 10: match enough derivatives at a point and a polynomial becomes indistinguishable from the function nearby. Watch the approximation improve degree by degree, and see where it stops working."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
 ---
 
-Here is the idea behind the entire second half of BC, stated in one sentence: **polynomials are the functions we can actually compute, so we teach one to impersonate the function we care about.** Everything else — Maclaurin series, error bounds, radius of convergence — is the theory of how good that impersonation is and where it works.
+The second half of BC rests on one idea. Polynomials are the functions we can actually compute, so we build a polynomial that behaves like the function we care about. Everything else in the unit, from Maclaurin series to error bounds to the radius of convergence, is the theory of how good that approximation is and where it holds.
 
-## The impersonation strategy
+## The matching strategy
 
 How do you make a polynomial behave like $$\sin x$$ near $$x = 0$$? Force it to agree with $$\sin x$$ on everything a derivative can measure at that point.
 
-- Agree on the **value**: $$p(0) = \sin 0 = 0$$.
-- Agree on the **slope**: $$p'(0) = \cos 0 = 1$$.
-- Agree on the **concavity**: $$p''(0) = -\sin 0 = 0$$.
-- Agree on the third derivative: $$p'''(0) = -\cos 0 = -1$$. And so on.
+- Agree on the value: $$p(0) = \sin 0 = 0$$.
+- Agree on the slope: $$p'(0) = \cos 0 = 1$$.
+- Agree on the concavity: $$p''(0) = -\sin 0 = 0$$.
+- Agree on the third derivative: $$p'''(0) = -\cos 0 = -1$$, and so on.
 
-A degree-$$n$$ polynomial has $$n+1$$ coefficients — that's $$n+1$$ dials to turn, enough to match $$n+1$$ derivatives. Turning the dials gives the **Taylor polynomial**:
+A polynomial of degree $$n$$ has $$n+1$$ coefficients, which is enough freedom to match $$n+1$$ derivatives. Carrying out the matching produces the Taylor polynomial:
 
 $$T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(0)}{k!}\,x^k.$$
 
-The $$k!$$ in the denominator is not decoration: differentiating $$x^k$$ exactly $$k$$ times produces $$k!$$, so dividing by it in advance is what makes the $$k$$-th derivative of $$T_n$$ land exactly on $$f^{(k)}(0)$$. For sine, the even derivatives all vanish at 0 and the odd ones alternate between $$1$$ and $$-1$$:
+The $$k!$$ in the denominator has a job. Differentiating $$x^k$$ exactly $$k$$ times produces a factor of $$k!$$, so dividing by it in advance is what makes the $$k$$-th derivative of $$T_n$$ land exactly on $$f^{(k)}(0)$$. For sine, the even derivatives all vanish at 0 and the odd ones alternate between $$1$$ and $$-1$$, which gives
 
 $$T_n(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$$
 
-$$T_1(x) = x$$ is an old friend — it's the tangent line, and "$$\sin x \approx x$$ for small $$x$$" is exactly the degree-1 impersonation. Every higher degree is the same move with more dials.
+The first of these, $$T_1(x) = x$$, is an old friend: it is the tangent line, and the familiar fact that $$\sin x \approx x$$ for small $$x$$ is the degree-1 case of this whole construction. Each higher degree is the same move with more derivatives matched.
 
-## Watch the impersonation improve
+## Watch the approximation improve
 
-The canvas below shows $$\sin x$$ in light gray and its Taylor polynomial in black. Drag the slider.
+The graph below shows $$\sin x$$ in light gray and its Taylor polynomial in black. Drag the slider to raise the degree.
 
 <div class="viz" markdown="0">
   <canvas id="tay-cv" width="700" height="300"></canvas>
@@ -40,7 +40,7 @@ The canvas below shows $$\sin x$$ in light gray and its Taylor polynomial in bla
     <input type="range" id="tay-n" min="0" max="6" step="1" value="1">
     <span class="viz-value" id="tay-read"></span>
   </div>
-  <p class="viz-caption">Two things to watch. Near the center, each new degree snaps the polynomial onto the curve for another stretch — by degree 7 the impersonation is essentially perfect on a full period. Far from the center, every polynomial eventually tears away and flies off to ±∞, because that is what polynomials do. A Taylor polynomial is a <em>local</em> impersonation: flawless where it's anchored, hopeless far away, and the whole game is knowing the size of "where it's anchored."</p>
+  <p class="viz-caption">Two things to watch. Near the center, each new degree fits the polynomial to the curve for another stretch; by degree 7 the match is essentially perfect across a full period. Far from the center, every polynomial eventually pulls away and heads to plus or minus infinity, because that is what polynomials do. A Taylor polynomial is a local approximation: excellent where it is anchored, useless far away. Much of the unit comes down to knowing the size of "where it is anchored."</p>
 </div>
 
 <script>
@@ -87,40 +87,40 @@ The canvas below shows $$\sin x$$ in light gray and its Taylor polynomial in bla
 })();
 </script>
 
-## How wrong is the impersonation? Two rulers
+## Measuring the error
 
-BC gives you two instruments for measuring the gap $$\left|f(x) - T_n(x)\right|$$, and knowing which one a problem wants is half the battle.
+BC gives you two instruments for measuring the gap between $$f(x)$$ and $$T_n(x)$$, and knowing which one a problem wants is half the battle.
 
-**Ruler 1 — the alternating series error bound.** If, at your particular $$x$$, the series alternates with terms shrinking in size, the truncation error is at most the first term you left out. Approximate $$\sin(0.5)$$ by $$T_3 = 0.5 - \tfrac{0.5^3}{6} \approx 0.479$$; the error is at most the next term, $$\tfrac{0.5^5}{120} \approx 0.00026$$. Cheap and astonishingly tight.
+**The alternating series error bound.** If, at your particular $$x$$, the series alternates with terms shrinking in size, the truncation error is at most the first term you left out. Approximate $$\sin(0.5)$$ by $$T_3 = 0.5 - \tfrac{0.5^3}{6} \approx 0.479$$; the error is at most the next term, $$\tfrac{0.5^5}{120} \approx 0.00026$$. The bound costs almost nothing to compute and is remarkably tight.
 
-**Ruler 2 — the Lagrange error bound.** In general,
+**The Lagrange error bound.** In general,
 
-$$\left|f(x) - T_n(x)\right| \;\le\; \frac{M}{(n+1)!}\,|x - c|^{\,n+1},$$
+$$\left\vert f(x) - T_n(x)\right\vert \;\le\; \frac{M}{(n+1)!}\,\vert x - c\vert^{\,n+1},$$
 
-where $$M$$ bounds the *next* derivative, $$\left|f^{(n+1)}\right|$$, between the center $$c$$ and $$x$$. Read it as a story: the error is controlled by the first derivative you *failed* to match — the first dial you didn't get to turn — scaled by how far you've wandered from the anchor point ($$|x-c|^{n+1}$$) and tamed by the factorial. The factorial is why the impersonation improves so fast: $$(n+1)!$$ grows quicker than any power, so for functions like sine (all derivatives bounded by 1) the bound collapses to zero at every single $$x$$. That is the precise sense in which $$\sin x$$ *equals* its series everywhere.
+where $$M$$ bounds the next derivative, $$\left\vert f^{(n+1)}\right\vert$$, between the center $$c$$ and $$x$$. It helps to read the formula as a sentence: the error is controlled by the first derivative you failed to match, scaled by how far you have moved from the center, and divided down by the factorial. The factorial is why the approximation improves so quickly. Since $$(n+1)!$$ grows faster than any power, and every derivative of sine is bounded by 1, the bound goes to zero at every single $$x$$. That is the precise sense in which $$\sin x$$ equals its series everywhere.
 
-## Where impersonations fail: the invisible wall
+## Where the approximation fails
 
-Sine is the best-case client. Now try $$\ln(1+x)$$:
+Sine is the best possible case. Now consider $$\ln(1+x)$$:
 
 $$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots$$
 
-This series only converges for $$-1 < x \le 1$$. No matter how many terms you take, at $$x = 1.2$$ the polynomials don't settle down — they oscillate with growing violence. The impersonation has a **radius of convergence** of exactly 1, and there's a good reason for the wall's location: $$\ln(1+x)$$ itself blows up at $$x = -1$$. The polynomial impersonators, anchored at 0, can feel that singularity a distance 1 away, and the damage is symmetric — the series fails at $$x = -1$$ *and* beyond $$x = +1$$, even though $$\ln(1+x)$$ is perfectly healthy at $$x = 2$$. A power series always works on an interval centered at its anchor, with a radius set by the distance to the nearest trouble.
+This series converges only for $$-1 < x \le 1$$. No matter how many terms you take, at $$x = 1.2$$ the polynomials never settle down; they oscillate more and more violently. The series has a radius of convergence of exactly 1, and the location of the wall is not an accident. The function $$\ln(1+x)$$ itself blows up at $$x = -1$$. A power series centered at 0 can only work out to the nearest point of trouble, and the damage is symmetric: the series fails at $$x = -1$$ and also beyond $$x = +1$$, even though $$\ln(1+x)$$ is perfectly well behaved at $$x = 2$$. A power series always converges on an interval centered at its anchor point, with a radius set by the distance to the nearest singularity.
 
-That's the mental model behind the exam's interval-of-convergence routine: ratio test to find the radius (the wall's distance), then hand-check each endpoint (the wall itself), where the ratio test goes silent and a numeric series test — often the alternating series test on one end, harmonic divergence on the other — settles the boundary. For $$\ln(1+x)$$ the interval comes out $$(-1, 1]$$: divergent at $$-1$$, conditionally convergent at $$1$$.
+This is the reasoning behind the exam's interval-of-convergence routine. The ratio test finds the radius, which is the distance to the wall. Then each endpoint must be checked by hand, because the ratio test returns $$L = 1$$ there and has nothing to say. The endpoint checks are ordinary numeric series tests. For $$\ln(1+x)$$ the interval comes out to $$(-1, 1]$$: divergent at $$-1$$ (harmonic series), conditionally convergent at $$1$$ (alternating harmonic series).
 
 ## What BC actually asks
 
-Nearly every Taylor FRQ is assembled from five moves, and all five are visible from the impersonation idea:
+Nearly every Taylor free-response question is assembled from five moves, and all five come straight from the ideas above.
 
-1. **Build terms** from given derivative values with $$\tfrac{f^{(k)}(c)}{k!}$$ — turning the dials by hand.
-2. **Manipulate a known series** — substitute $$-x^2$$ for $$u$$ in $$e^u$$, multiply by $$x$$, differentiate or integrate term by term. (Impersonators compose: the series for $$e^{-x^2}$$, key to statistics, is one substitution away, even though the function has no elementary antiderivative.)
-3. **Approximate a value** with the first few terms.
-4. **Bound the error** with the right ruler.
-5. **Find where the impersonation holds** — radius and interval of convergence.
+1. Build terms from given derivative values using $$\tfrac{f^{(k)}(c)}{k!}$$.
+2. Manipulate a known series: substitute $$-x^2$$ for $$u$$ in the series for $$e^u$$, multiply by $$x$$, or differentiate and integrate term by term. Series compose well. The series for $$e^{-x^2}$$, which matters in statistics, is one substitution away, even though the function has no elementary antiderivative.
+3. Approximate a value with the first few terms.
+4. Bound the error with the appropriate bound.
+5. Find where the series converges, meaning the radius and the interval.
 
-If you can narrate *why* each move works in impersonation language — matching dials, feeling for the nearest wall, measuring the first unmatched term — the unit stops being twelve formulas and becomes one idea with twelve outfits.
+If you can explain why each move works in the language of matching derivatives and distance to the nearest wall, the unit stops being twelve separate formulas and becomes one idea used twelve ways.
 
 <div class="article-note" markdown="1">
-A puzzle to take with you: the function $$\tfrac{1}{1+x^2}$$ is smooth and perfectly finite for every real $$x$$ — no blow-up anywhere on the real line. Yet its Maclaurin series $$1 - x^2 + x^4 - \cdots$$ stubbornly refuses to converge past $$|x| = 1$$. Where's the wall? (Hint: try $$x = i$$. The nearest trouble isn't always on the real line — a fact that delighted mathematicians into inventing complex analysis.)
+A puzzle to take with you: the function $$\tfrac{1}{1+x^2}$$ is smooth and finite for every real $$x$$, with no blow-up anywhere on the real line. Yet its Maclaurin series $$1 - x^2 + x^4 - \cdots$$ refuses to converge past $$\vert x\vert = 1$$. Where is the wall? Hint: try $$x = i$$. The nearest trouble is not always on the real line, a fact that helped push mathematicians toward inventing complex analysis.
 </div>

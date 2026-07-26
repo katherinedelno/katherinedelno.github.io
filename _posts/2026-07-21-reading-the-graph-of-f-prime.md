@@ -9,30 +9,30 @@ read_time: "8 min read"
 math: true
 ---
 
-Every AP Calculus exam contains some version of this question: *the figure shows the graph of $$f'$$, the derivative of $$f$$* — followed by questions about $$f$$ itself. It is one of the most-missed problem types in the course, and almost every miss traces back to a single cause: at some point, the student's eyes started treating the picture as the graph of $$f$$.
+Every AP Calculus exam contains some version of this question: *the figure shows the graph of $$f'$$, the derivative of $$f$$*, followed by questions about $$f$$ itself. It is one of the most-missed problem types in the course, and almost every miss traces back to a single cause. At some point, the student's eyes start treating the picture as the graph of $$f$$.
 
-The picture is not $$f$$. The picture is a *report about* $$f$$, written in a different language, and answering the questions means translating.
+The picture is not $$f$$. The picture is a report about $$f$$, written in a different language, and answering the questions means translating.
 
 ## The translation table
 
-Everything on this problem type follows from two facts — the sign of $$f'$$ controls the direction of $$f$$, and the slope of $$f'$$ controls the concavity of $$f$$:
+Everything on this problem type follows from two facts: the sign of $$f'$$ controls the direction of $$f$$, and the slope of $$f'$$ controls the concavity of $$f$$.
 
 | You see on the graph of $$f'$$... | You conclude about $$f$$... |
 |---|---|
 | $$f'$$ above the $$x$$-axis | $$f$$ is increasing |
 | $$f'$$ below the $$x$$-axis | $$f$$ is decreasing |
-| $$f'$$ crosses zero, + to − | $$f$$ has a relative **maximum** there |
-| $$f'$$ crosses zero, − to + | $$f$$ has a relative **minimum** there |
-| $$f'$$ is decreasing (its slope is negative) | $$f$$ is **concave down** |
-| $$f'$$ is increasing (its slope is positive) | $$f$$ is **concave up** |
-| $$f'$$ turns around (its max or min) | $$f$$ has a **point of inflection** |
+| $$f'$$ crosses zero, positive to negative | $$f$$ has a relative **maximum** there |
+| $$f'$$ crosses zero, negative to positive | $$f$$ has a relative **minimum** there |
+| $$f'$$ is decreasing | $$f$$ is **concave down** |
+| $$f'$$ is increasing | $$f$$ is **concave up** |
+| $$f'$$ turns around (its own max or min) | $$f$$ has a **point of inflection** |
 | area trapped between $$f'$$ and the axis | **total change** in $$f$$ (signed) |
 
-Notice what's *not* in the table: the height of a bump on the graph, the location of its peaks. Those features of $$f'$$ answer questions about $$f''$$ and concavity — not about where $$f$$ is largest.
+Notice what is not in the table: the height of a bump on the graph, or the location of its peaks. Those features of $$f'$$ answer questions about concavity and $$f''$$, not questions about where $$f$$ is largest.
 
 ## A worked example
 
-The graph below shows $$f'$$ (not $$f$$!) on the interval $$[0, 8]$$: line segments from $$(0,3)$$ down through $$(2,0)$$ to $$(4,-3)$$, then back up through $$(6,0)$$ to $$(8,3)$$.
+The graph below shows $$f'$$ (not $$f$$) on the interval $$[0, 8]$$: line segments from $$(0,3)$$ down through $$(2,0)$$ to $$(4,-3)$$, then back up through $$(6,0)$$ to $$(8,3)$$.
 
 <div class="viz" markdown="0">
 <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph of f prime: piecewise linear, starting at (0,3), decreasing to (4,-3), increasing to (8,3)">
@@ -60,35 +60,35 @@ The graph below shows $$f'$$ (not $$f$$!) on the interval $$[0, 8]$$: line segme
     <text x="600" y="60" font-weight="700" fill="#1f1f1f" font-style="italic">y = f ′(x)</text>
   </g>
 </svg>
-<p class="viz-caption">The graph of the <em>derivative</em>. Filled dots: where f ′ crosses zero (candidates for extremes of f). Open dot: where f ′ itself bottoms out (a point of inflection of f — not a minimum of f).</p>
+<p class="viz-caption">The graph of the <em>derivative</em>. Filled dots: where f ′ crosses zero, the candidates for extremes of f. Open dot: where f ′ itself bottoms out, which is a point of inflection of f, not a minimum of f.</p>
 </div>
 
-**Where is $$f$$ increasing?** Wherever $$f'$$ is positive — read heights, not direction: on $$(0,2)$$ and $$(6,8)$$. It makes no difference that $$f'$$ is *falling* on $$(0,2)$$; it is positive there, so $$f$$ rises.
+**Where is $$f$$ increasing?** Wherever $$f'$$ is positive. Read heights, not direction: $$f$$ increases on $$(0,2)$$ and $$(6,8)$$. It makes no difference that $$f'$$ is falling on $$(0,2)$$; it is positive there, so $$f$$ rises.
 
-**Where does $$f$$ have a relative maximum?** At $$x = 2$$, because $$f'$$ changes from positive to negative there. That sentence — sign change, with direction, at the point — is the full justification, and the exam wants exactly that sentence. At $$x = 6$$ the sign change runs − to +, so $$f$$ has a relative *minimum* there.
+**Where does $$f$$ have a relative maximum?** At $$x = 2$$, because $$f'$$ changes from positive to negative there. That sentence, naming the sign change with its direction at the point, is the full justification, and the exam wants exactly that sentence. At $$x = 6$$ the sign change runs negative to positive, so $$f$$ has a relative minimum there.
 
-**Where is $$f$$ concave down?** Wherever $$f'$$ is decreasing: on $$(0,4)$$. Concave up where $$f'$$ increases: on $$(4,8)$$. The point of inflection sits at $$x = 4$$ — the open dot, where $$f'$$ turns around. Justification: "$$f''$$ changes sign at $$x=4$$, since $$f'$$ changes from decreasing to increasing there."
+**Where is $$f$$ concave down?** Wherever $$f'$$ is decreasing, which is $$(0,4)$$. It is concave up where $$f'$$ increases, on $$(4,8)$$. The point of inflection sits at $$x = 4$$, the open dot, where $$f'$$ turns around. The justification: $$f''$$ changes sign at $$x = 4$$, since $$f'$$ changes from decreasing to increasing there.
 
-**If $$f(0) = 1$$, what is $$f(8)$$?** Use the FTC to accumulate the graph's signed areas. Triangles: from 0 to 2, area $$\tfrac12(2)(3) = 3$$ above the axis; from 2 to 6, area $$\tfrac12(4)(3) = 6$$ below (counts as $$-6$$); from 6 to 8, $$+3$$ again. So
+**If $$f(0) = 1$$, what is $$f(8)$$?** Use the Fundamental Theorem to accumulate the graph's signed areas. The triangles: from 0 to 2, area $$\tfrac12(2)(3) = 3$$ above the axis; from 2 to 6, area $$\tfrac12(4)(3) = 6$$ below the axis, which counts as $$-6$$; from 6 to 8, another $$+3$$. So
 
 $$f(8) = f(0) + \int_0^8 f'(x)\,dx = 1 + 3 - 6 + 3 = 1.$$
 
-The function ends exactly where it started — it climbed, fell further, and climbed back. Everything about $$f$$ was recoverable from a picture of $$f'$$ and one starting value.
+The function ends exactly where it started. It climbed, fell further, and climbed back. Everything about $$f$$ was recoverable from a picture of $$f'$$ and one starting value.
 
-**Bonus: where does $$f$$ attain its absolute minimum on $$[0,8]$$?** Candidates are the endpoints and the − to + crossing at $$x=6$$. Running totals of accumulated area: $$f(0)=1$$, $$f(2) = 4$$, $$f(6) = -2$$, $$f(8) = 1$$. The absolute minimum is $$f(6) = -2$$. Notice the reasoning never once needed a formula for $$f$$.
+**Where does $$f$$ attain its absolute minimum on $$[0,8]$$?** The candidates are the endpoints and the negative-to-positive crossing at $$x = 6$$. Running totals of accumulated area give $$f(0)=1$$, $$f(2) = 4$$, $$f(6) = -2$$, and $$f(8) = 1$$. The absolute minimum is $$f(6) = -2$$. Notice that the reasoning never needed a formula for $$f$$.
 
 ## The three traps
 
-**Trap 1: treating the picture as $$f$$.** The most tempting wrong answer in the example above is "$$f$$ has a minimum at $$x = 4$$" — because that's where the *picture* has a minimum. But the picture is $$f'$$, and the minimum of $$f'$$ is where $$f$$ bends, not where it bottoms. Whenever you feel the pull to describe what the graph is doing, stop and ask: *am I reporting the height of this graph, or its shape?* Questions about $$f$$'s direction and extremes use only heights (signs). Questions about $$f$$'s concavity use only shape (slopes).
+**Trap 1: treating the picture as $$f$$.** The most tempting wrong answer in the example above is "$$f$$ has a minimum at $$x = 4$$," because that is where the picture has a minimum. But the picture is $$f'$$, and the minimum of $$f'$$ is where $$f$$ bends, not where it bottoms out. Whenever you feel the pull to describe what the drawn graph is doing, stop and ask whether you are reporting the height of the graph or its shape. Questions about the direction and extremes of $$f$$ use only heights, meaning signs. Questions about the concavity of $$f$$ use only shape, meaning slopes.
 
-**Trap 2: "$$f'$$ is zero, so there's an extreme."** Zero isn't enough — the sign must actually *change*. If $$f'$$ touches zero and bounces back up (imagine the graph dipping to the axis at a point and rising again), $$f$$ merely pauses; it never turns. The exam plants this regularly. The justification sentence protects you: if you can't truthfully write "changes from positive to negative," there is no maximum.
+**Trap 2: "$$f'$$ is zero, so there is an extreme."** Zero is not enough; the sign must actually change. If $$f'$$ touches zero and bounces back up, picture the graph dipping to the axis at a single point and rising again, then $$f$$ merely pauses and never turns. The exam plants this regularly. The justification sentence protects you: if you cannot truthfully write "changes from positive to negative," there is no maximum.
 
-**Trap 3: answering about the wrong function.** After five minutes inside a problem, "where is the function increasing?" gets silently answered about $$f'$$ — where the *drawn graph* rises. Anchor yourself by labeling every conclusion as you go: writing the letter $$f$$ or $$f'$$ in front of each fact is a two-second habit that catches the swap while it's still cheap to fix.
+**Trap 3: answering about the wrong function.** After five minutes inside a problem, "where is the function increasing?" quietly gets answered about $$f'$$, that is, about where the drawn graph rises. Anchor yourself by labeling every conclusion as you go. Writing the letter $$f$$ or $$f'$$ in front of each fact is a two-second habit that catches the swap while it is still cheap to fix.
 
 ## Why the exam loves this question
 
-It can't be done by memorized procedure. There is no formula to differentiate, nothing to plug in — just a picture and the definitions. That makes it the purest test of whether the chain *sign of derivative → behavior of function* actually lives in your head. Master the translation table plus its justification sentences, and this becomes one of the most predictable point-earners on the exam; graders ask for the same three sentences every single year.
+It cannot be done by memorized procedure. There is no formula to differentiate and nothing to plug in, just a picture and the definitions. That makes it the purest test of whether the chain from sign of derivative to behavior of function actually lives in your head. Master the translation table and its justification sentences, and this becomes one of the most predictable point-earners on the exam. Graders ask for the same three sentences every year.
 
 <div class="article-note" markdown="1">
-Self-test: sketch any wavy $$f'$$ you like, then narrate $$f$$'s biography from birth to death — rises here, peaks there, bends at this point, bottoms out there — with a justification for each claim. If a friend can sketch a plausible $$f$$ from your narration alone, you've won.
+A self-test: sketch any wavy $$f'$$ you like, then narrate the story of $$f$$ from left to right. It rises here, peaks there, bends at this point, bottoms out over there, with a justification for each claim. If a friend can sketch a plausible $$f$$ from your narration alone, you have won.
 </div>
