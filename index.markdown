@@ -13,11 +13,9 @@ permalink: /
   .pg p{max-width:66ch}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .6rem}
 
-  .hero{margin:1.2rem 0 0}
-  .hero h1{font-size:2.5rem;line-height:1.1;margin:0 0 .9rem;letter-spacing:-.025em;font-weight:700;max-width:20ch}
-  .hero .lede{font-size:1.14rem;color:var(--muted);margin:0 0 1.4rem;max-width:56ch}
-  .hero-courses{list-style:none;padding:0;margin:0 0 1.6rem;display:flex;gap:10px;flex-wrap:wrap}
-  .hero-courses li{border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-weight:600;font-size:.95rem}
+  .hero{margin:1.6rem 0 0}
+  .hero h1{font-size:2.5rem;line-height:1.1;margin:0 0 1rem;letter-spacing:-.025em;font-weight:700;max-width:20ch}
+  .hero .lede{font-size:1.02rem;color:var(--muted);margin:0 0 1.6rem;max-width:60ch;line-height:1.7}
   .pg-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600}
   .pg-btn:hover{opacity:.88}
   .btn-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
@@ -39,14 +37,8 @@ permalink: /
 <div class="pg" markdown="0">
 
   <div class="hero">
-    <p class="label">Private Mathematics &amp; Statistics Instruction</p>
     <h1>One-on-one instruction, built around how your student thinks</h1>
-    <p class="lede">I'm Katherine Delno, a statistician and mathematician who teaches high school and college students one-on-one. I watch closely while a student works, find what is actually getting in the way, and teach until they can reason through it on their own.</p>
-    <ul class="hero-courses">
-      <li>AP Statistics</li>
-      <li>AP Calculus AB/BC</li>
-      <li>AP Precalculus</li>
-    </ul>
+    <p class="lede">I'm Katherine Delno. I trained as a statistician and mathematician, with an M.S. in Statistics from the University of Washington, and teaching one-on-one is now my full-time work: <b>AP&nbsp;Statistics</b>, <b>AP&nbsp;Calculus&nbsp;AB/BC</b>, and <b>AP&nbsp;Precalculus</b>, along with other high school and college math and statistics courses. I teach from a curriculum I wrote myself, and I plan each session around the student in front of me: what their class is doing, what their work shows, and what they need next.</p>
     <div class="btn-row">
       <a href="/private-instruction/" class="pg-btn">Private instruction &amp; rates</a>
       <span class="quiet">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
