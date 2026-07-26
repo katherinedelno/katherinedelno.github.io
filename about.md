@@ -63,63 +63,67 @@ permalink: /about/
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
   </div>
 
-  <div class="about-section">
+  <div class="about-section" id="training">
+    <style>
+      .cw-details{margin-top:.9rem;max-width:74ch}
+      .cw-details summary{cursor:pointer;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none;display:flex;align-items:center;gap:8px}
+      .cw-details summary::-webkit-details-marker{display:none}
+      .cw-details summary::after{content:"+";font-size:1rem;font-weight:400;color:var(--muted)}
+      .cw-details[open] summary::after{content:"\2212"}
+      .cw-details .pg-tags{margin-top:.8rem}
+      .deg-meta{font-size:.9rem;color:var(--muted);margin:0 0 .8rem;font-weight:600;letter-spacing:.02em}
+    </style>
     <p class="label">Education</p>
     <h2>Academic training</h2>
-    <p>The foundation of how I teach: graduate and undergraduate degrees in statistics and mathematics, with coursework spanning the full range of topics my students encounter and extending well beyond them. What matters isn't the coursework itself but the judgment it builds: seeing the structure underneath a problem, tracing an error to its real source, and explaining a topic more than one way when the first explanation doesn't land.</p>
+    <p>Graduate and undergraduate degrees in statistics and mathematics, with coursework spanning everything my students study and a great deal beyond it. The coursework matters less than the judgment it builds: seeing the structure underneath a problem, tracing an error to its source, and explaining a topic a second way when the first doesn't land.</p>
 
     <h3>M.S. Statistics: Advanced Methods &amp; Data Analysis</h3>
-    <p class="meta">University of Washington &middot; 2025</p>
-    <p>Rigorous graduate training in modern statistical methodology, theory, and computation. My coursework covered the full theoretical inference sequence, regression methods for both independent and dependent (correlated) data, the design and analysis of experiments, categorical data analysis, and statistical computing, alongside an applied biostatistics sequence and a capstone in applied statistics. This is the foundation behind the predictive modeling, simulation, and uncertainty quantification in my research, carried out in R and Python.</p>
-    <div class="pg-callout">
-      <p>The University of Washington ranks <b>#3 among U.S. public universities</b>, with its Department of Statistics ranking <b>#6 in the nation</b> (U.S. News, 2026).</p>
-    </div>
-    <p class="pg-sub">Selected coursework</p>
-    <div class="pg-tags">
-      <span>Statistical Inference I &amp; II</span>
-      <span>Regression Methods for Independent &amp; Dependent Data</span>
-      <span>Applied Regression</span>
-      <span>Design &amp; Analysis of Experiments</span>
-      <span>Categorical Data Analysis</span>
-      <span>Statistical Computing</span>
-      <span>Applied Biostatistics I &amp; II</span>
-      <span>Causal Inference in Biomedical Studies</span>
-      <span>Applied Statistics Capstone</span>
-      <span>Independent Research</span>
-    </div>
+    <p class="deg-meta">University of Washington &middot; 2025 &middot; Statistics ranked #6 nationally, UW #3 among U.S. public universities (U.S. News, 2026)</p>
+    <p>Graduate training in statistical methodology, theory, and computation: the full theoretical inference sequence, regression for independent and correlated data, the design and analysis of experiments, categorical data analysis, and statistical computing, alongside applied biostatistics and a capstone in applied statistics, carried out in R and Python.</p>
+    <details class="cw-details">
+      <summary>Graduate coursework</summary>
+      <div class="pg-tags">
+        <span>Statistical Inference I &amp; II</span>
+        <span>Regression Methods for Independent &amp; Dependent Data</span>
+        <span>Applied Regression</span>
+        <span>Design &amp; Analysis of Experiments</span>
+        <span>Categorical Data Analysis</span>
+        <span>Statistical Computing</span>
+        <span>Applied Biostatistics I &amp; II</span>
+        <span>Causal Inference in Biomedical Studies</span>
+        <span>Applied Statistics Capstone</span>
+        <span>Independent Research</span>
+      </div>
+    </details>
 
     <h3 style="margin-top:2.2rem;">B.S. Mathematics</h3>
-    <p class="meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
-    <p>A mathematics degree with a specialization in statistics, built on a deeply proof-based core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression and linear models, categorical data analysis, and statistical computing.</p>
-    <p class="pg-sub">Mathematics &amp; statistics</p>
-    <div class="pg-tags">
-      <span>Calculus I, II &amp; III</span>
-      <span>Differential Equations</span>
-      <span>Partial Differential Equations</span>
-      <span>Linear Algebra</span>
-      <span>Real Analysis I &amp; II</span>
-      <span>Proof Writing for Mathematics &amp; Statistics</span>
-      <span>Numerical Methods</span>
-      <span>Mathematical Modeling</span>
-      <span>Probability</span>
-      <span>Statistical Theory</span>
-      <span>Regression &amp; Linear Models</span>
-      <span>Categorical Data Analysis</span>
-      <span>Statistical Computing</span>
-      <span>Computer Science I &amp; II</span>
-    </div>
-    <p class="pg-sub">Sciences &amp; engineering</p>
-    <div class="pg-tags">
-      <span>General Chemistry I &amp; II</span>
-      <span>Organic Chemistry</span>
-      <span>Calculus-Based Physics I &amp; II</span>
-      <span>General Biology</span>
-      <span>Engineering Statics</span>
-      <span>Fluid Dynamics</span>
-    </div>
-    <div class="pg-callout">
-      <p>I began university as an engineering major, which gave me a broad STEM foundation across the physical and life sciences and engineering, in addition to my mathematics and statistics core. That range helps me connect ideas across subjects and meet students wherever their coursework sits.</p>
-    </div>
+    <p class="deg-meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
+    <p>A proof-based mathematics core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression, and computing. I began university in engineering, which left me with a broad foundation across the physical sciences as well; it helps me meet students wherever their coursework sits.</p>
+    <details class="cw-details">
+      <summary>Undergraduate coursework</summary>
+      <div class="pg-tags">
+        <span>Calculus I, II &amp; III</span>
+        <span>Differential Equations</span>
+        <span>Partial Differential Equations</span>
+        <span>Linear Algebra</span>
+        <span>Real Analysis I &amp; II</span>
+        <span>Proof Writing for Mathematics &amp; Statistics</span>
+        <span>Numerical Methods</span>
+        <span>Mathematical Modeling</span>
+        <span>Probability</span>
+        <span>Statistical Theory</span>
+        <span>Regression &amp; Linear Models</span>
+        <span>Categorical Data Analysis</span>
+        <span>Statistical Computing</span>
+        <span>Computer Science I &amp; II</span>
+        <span>General Chemistry I &amp; II</span>
+        <span>Organic Chemistry</span>
+        <span>Calculus-Based Physics I &amp; II</span>
+        <span>General Biology</span>
+        <span>Engineering Statics</span>
+        <span>Fluid Dynamics</span>
+      </div>
+    </details>
   </div>
 
   <div class="about-section">

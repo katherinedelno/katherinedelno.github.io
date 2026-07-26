@@ -4,6 +4,7 @@ title: "After AP Statistics: the upper division"
 date: 2026-07-25
 description: "Probability theory, Bayesian inference, regression at scale, and randomness with memory. The discipline past the AP course, with a thousand random walks."
 course: "AP Statistics"
+section: beyond
 read_time: "8 min read"
 math: true
 ---

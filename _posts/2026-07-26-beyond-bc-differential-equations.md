@@ -4,6 +4,7 @@ title: "After BC: differential equations"
 date: 2026-07-26
 description: "Laws of nature specify change and leave the rest to be deduced. Systems, qualitative analysis, and an epidemic to steer."
 course: "AP Calculus BC"
+section: beyond
 read_time: "8 min read"
 math: true
 ---

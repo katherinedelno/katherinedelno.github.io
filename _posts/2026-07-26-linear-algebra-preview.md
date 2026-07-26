@@ -5,6 +5,7 @@ date: 2026-07-26
 description: "Matrices as motions of space, determinants as area, eigenvectors as the directions that matter. The college course beneath nearly everything quantitative."
 course: "All courses"
 courses: [AP Calculus BC, AP Precalculus, AP Statistics]
+section: beyond
 read_time: "8 min read"
 math: true
 ---

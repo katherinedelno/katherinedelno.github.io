@@ -197,21 +197,28 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Courses</p>
     <h2>What I teach</h2>
-    <div class="pi-courses">
-      <div class="pi-course">
+    <style>
+      .pi-courselist{margin:1.2rem 0 0;border-top:1px solid var(--line)}
+      .pi-courselist .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 2px;border-bottom:1px solid var(--line)}
+      .pi-courselist .row h3{margin:0;font-size:1.02rem}
+      .pi-courselist .row p{margin:0;font-size:.95rem;color:var(--muted);max-width:60ch}
+      @media (max-width:720px){.pi-courselist .row{grid-template-columns:1fr;gap:6px}}
+    </style>
+    <div class="pi-courselist">
+      <div class="row">
         <h3>AP Statistics</h3>
-        <p>Procedure selection, condition checks, inference, and rubric-aligned statistical writing, with confident TI-84 use.</p>
+        <p>The reasoning of uncertainty: study design, probability, and inference, together with the statistical writing the exam grades as strictly as the arithmetic. Named procedures, checked conditions, conclusions in context.</p>
       </div>
-      <div class="pi-course">
-        <h3>AP Calculus (AB/BC)</h3>
-        <p>Limits, derivatives, integrals, and applications, with precise notation and AP free-response justification.</p>
+      <div class="row">
+        <h3>AP Calculus AB &amp; BC</h3>
+        <p>Limits, derivatives, integrals, and their applications, taught with the notation and justification that free-response scoring demands. For BC, the full second half as well: series, parametric and polar curves, and the further techniques of integration.</p>
       </div>
-      <div class="pi-course">
+      <div class="row">
         <h3>AP Precalculus</h3>
-        <p>Functions, trigonometry, and analytic foundations that prepare students for AP Calculus and college math.</p>
+        <p>The function families, trigonometry, and analytic groundwork on which calculus stands. Taught as genuine preparation for what follows, not merely as a prerequisite to pass through.</p>
       </div>
     </div>
-    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP courses are my focus, but I also support students in non-AP and college-level mathematics and statistics. These are my current offerings and I add courses each year, so if you don't see your course listed, please get in touch to discuss fit.</p>
+    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP coursework is the center of the practice, but I also work with students in non-AP and college-level mathematics and statistics. If your course is not listed, write and we will discuss fit.</p>
   </div>
 
   <!-- WEBINARS -->
@@ -234,7 +241,7 @@ permalink: /private-instruction/
     <p class="label">Background</p>
     <h2>Who you're working with</h2>
     <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>, with formal training in probability, statistical inference, regression, and the analytic foundations underlying calculus. My graduate training provides a rigorous theoretical foundation that carries through every session, from correct procedure selection to well-justified conclusions.</p>
-    <p>I've taught in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and helped students produce clear, defensible reasoning. I also mentored through UW's Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.</p>
+    <p>I've taught in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and helped students produce clear, defensible reasoning. I also mentored through UW's Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. The complete record, degrees, coursework, and teaching history, is under <a href="/about/#training">academic training</a> on the about page.</p>
   </div>
 
   <!-- HOW I TEACH -->
@@ -308,7 +315,8 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">AP exam preparation</p>
     <h2>A focused shift before the exam</h2>
-    <p>In the final one to two months before the AP exam, sessions transition into dedicated exam preparation. We move from new material toward timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear. The focus shifts to transfer: performing accurately under timed, independent conditions, which is the real test of whether the learning holds.</p>
+    <p>Everything in the course is built with two ends in mind from the first session: succeeding in the AP class itself, and succeeding on the AP exam in May. The notation, the justification habits, and the rubric-aligned writing we practice all year are the exam's own standards, so exam preparation is never a separate project bolted on at the end.</p>
+    <p>In the final one to two months, sessions then shift entirely to exam preparation: timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear. The focus becomes transfer, performing accurately under timed, independent conditions, which is the real test of whether the learning holds.</p>
     <div class="pi-callout">
       <p>All exam-preparation materials are provided as part of this phase, at no cost beyond regular session time.</p>
     </div>
