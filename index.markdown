@@ -24,6 +24,8 @@ permalink: /
   .btn-row .quiet{font-size:.97rem;color:var(--muted)}
   .btn-row .quiet a{color:var(--ink)}
 
+  .pg h1,.pg h2,.pg h3{font-weight:700}
+  .pg b,.pg strong{font-weight:600}
   .pg-section{margin:3rem 0 0;padding-top:2.2rem;border-top:1px solid var(--line)}
   .pg-section h2{font-size:1.28rem;margin:0 0 .8rem;letter-spacing:-.01em}
   .pg-close{margin:3rem 0 1rem;padding-top:2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.98rem}
@@ -59,7 +61,7 @@ permalink: /
 
   <div class="pg-section">
     <h2>Free webinars this August</h2>
-    <p>Before the school year starts, I'm giving two free 45-minute sessions on beginning the year well: AP&nbsp;Statistics on Tuesday, August&nbsp;25, and AP&nbsp;Calculus on Thursday, August&nbsp;27, both at 5:30&nbsp;p.m. Pacific. Everyone who registers gets my getting-started guide for their course, whether or not they attend live.</p>
+    <p>Before the school year starts, I'm giving two free 45-minute sessions on beginning the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Everyone who registers gets my getting-started guide for their course, whether or not they attend live.</p>
     <p style="margin-top:1rem;"><a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pg-btn" target="_blank" rel="noopener">Register</a></p>
   </div>
 

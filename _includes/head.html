@@ -20,6 +20,40 @@
       background:var(--accent); margin-right:11px;
     }
     .pi-fine .label::before { display:none; }
+
+    /* Content links: always visibly underlined (nav links, buttons, and cards excluded) */
+    .pg p a:not(.pg-btn):not(.pg-btn-outline),
+    .pg li a,
+    .pi p a:not(.pi-btn):not(.pi-btn-outline),
+    .pi li a,
+    .article-body a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #9a9a97;
+    }
+    .pg p a:hover, .pi p a:hover, .article-body a:hover { text-decoration-color: #1f1f1f; }
+
+    /* Mobile: show nav links directly instead of hiding them behind the hamburger icon */
+    @media screen and (max-width: 600px) {
+      .site-nav {
+        position: static !important; float: none !important;
+        background: transparent !important; border: none !important;
+        text-align: left !important;
+      }
+      .site-nav .nav-trigger, .site-nav label[for="nav-trigger"], .site-nav .menu-icon { display: none !important; }
+      .site-nav .trigger {
+        display: flex !important; flex-wrap: wrap; gap: 2px 6px;
+        padding: 6px 0 2px !important; clear: none !important;
+      }
+      .site-nav .page-link {
+        display: inline-block !important; margin: 0 !important;
+        padding: 6px 11px !important; font-size: .92rem; font-weight: 600;
+        color: #1f1f1f; border: 1px solid #e6e6e6; border-radius: 999px;
+      }
+      .site-header { min-height: 0; }
+      .site-header .wrapper { padding-top: 4px; padding-bottom: 4px; }
+    }
   </style>
 
   {%- if site.use_serif -%}
