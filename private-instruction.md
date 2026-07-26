@@ -187,9 +187,8 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Courses</p>
     <style>
-      .pi-courselist{margin:1.2rem 0 0;border-top:1px solid var(--line)}
-      .pi-courselist .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 2px;border-bottom:1px solid var(--line)}
-      .pi-courselist .row:last-child{border-bottom:none}
+      .pi-courselist{margin:1.2rem 0 0}
+      .pi-courselist .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:16px 2px}
       .pi-courselist .row h3{margin:0;font-size:1.02rem}
       .pi-courselist .row p{margin:0;font-size:.95rem;color:var(--muted);max-width:60ch}
       @media (max-width:720px){.pi-courselist .row{grid-template-columns:1fr;gap:6px}}
