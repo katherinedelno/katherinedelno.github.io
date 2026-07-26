@@ -349,7 +349,7 @@ permalink: /private-instruction/
       <li><b>AP-aligned writing</b> focus on setup, justification, and interpretation.</li>
     </ul>
 
-    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
+    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$300/month ($75/week)</span></p>
     <p style="margin-top:.5rem;font-size:.95rem;color:var(--muted);">For families who want the learning to stay active between meetings: continuity, accountability, and a feedback loop so a misunderstanding doesn't sit untouched for a week.</p>
     <ul class="pi-list">
       <li><b>Weekly assigned problem sets</b> with written feedback on method, setup, and communication, giving the student extra accountability to keep practicing between sessions.</li>
