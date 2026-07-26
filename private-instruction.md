@@ -78,7 +78,7 @@ permalink: /private-instruction/
     position:relative; border:1px solid var(--line); border-radius:16px;
     padding:26px 24px; background:var(--card);
   }
-  .pi-price.featured { border:1.5px solid var(--accent); background:#fff; box-shadow:0 6px 22px rgba(31,42,68,.07); }
+  .pi-price.featured { border:1.5px solid var(--accent); background:#fff; }
   .pi-price .pill {
     position:absolute; top:-12px; left:24px; background:var(--accent); color:#fff;
     font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
@@ -173,6 +173,20 @@ permalink: /private-instruction/
     <h1>Private Mathematics &amp; Statistics Instruction</h1>
   </div>
 
+  <style>
+    .pi-jump{position:sticky;top:0;z-index:50;display:flex;gap:4px;flex-wrap:wrap;background:#fff;padding:10px 0;margin:0 0 .4rem;border-bottom:1px solid var(--line)}
+    .pi-jump a{font-size:.86rem;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px}
+    .pi-jump a:hover{background:var(--accent-soft);color:var(--ink)}
+    .pi-section{scroll-margin-top:64px}
+  </style>
+  <nav class="pi-jump" aria-label="Page sections">
+    <a href="#approach">How I teach</a>
+    <a href="#materials">Materials</a>
+    <a href="#rates">Rates</a>
+    <a href="#faq">FAQ</a>
+    <a href="#start">Getting started</a>
+  </nav>
+
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
@@ -223,9 +237,9 @@ permalink: /private-instruction/
     <p>I've taught in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and helped students produce clear, defensible reasoning. I also mentored through UW's Directed Reading Program, designing and teaching a one-on-one short course in statistical learning.</p>
   </div>
 
-  <!-- WHAT I PAY ATTENTION TO -->
-  <div class="pi-section">
-    <p class="label">Diagnosis</p>
+  <!-- HOW I TEACH -->
+  <div class="pi-section" id="approach">
+    <p class="label">How I teach</p>
     <h2>The mistake behind the mistake</h2>
     <p>A wrong answer rarely tells the whole story. Two students can miss the same problem for completely different reasons, and the way a student sets a problem up often tells me more than the answer does. So while we work, I'm paying attention to more than whether the final number is right:</p>
     <ul class="pi-list">
@@ -235,13 +249,9 @@ permalink: /private-instruction/
       <li><b>Which errors repeat</b>, and whether a new mistake is really an old misconception resurfacing.</li>
       <li><b>What happens once the prompts stop</b>, the truest test of whether the learning has held.</li>
     </ul>
-    <p style="margin-top:1.1rem;">From that, I can tell whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and each of those calls for a different response. A missed problem isn't a verdict. It's information about what we work on next.</p>
-  </div>
+    <p style="margin-top:1.1rem;">From that, I can tell whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and each of those calls for a different response. A missed problem isn't a verdict; it's information about what we work on next.</p>
 
-  <!-- APPROACH -->
-  <div class="pi-section">
-    <p class="label">Approach</p>
-    <h2>What a session looks like</h2>
+    <h3 style="margin:2.4rem 0 .5rem;font-size:1.08rem;">What a session looks like</h3>
     <p>Every session is built around the student, not a fixed script. Most of our time is spent solving problems together, and the teaching is calibrated to exactly what the student needs that day. Students are welcome to send specific problems, homework, or upcoming topics at least 24 hours in advance, and I'll build the session around them.</p>
     <div class="pi-steps">
       <div class="pi-step">
@@ -274,20 +284,16 @@ permalink: /private-instruction/
       </div>
     </div>
     <p style="margin-top:1.3rem;">I'm equally attentive to the learning environment. Many capable students lose points to uncertainty under time pressure, disorganized work, or inconsistent written communication. Sessions are calm and focused: questions are taken seriously, mistakes are handled constructively, and confidence is built alongside skill.</p>
-  </div>
 
-  <!-- CONTINUITY -->
-  <div class="pi-section">
-    <p class="label">Over time</p>
-    <h2>Each session informs the next</h2>
-    <p>The value compounds. Because I work with a small roster and keep detailed notes, I am not meeting your student fresh each week. I remember what caused trouble last month, notice when an old error resurfaces in a new topic, and can tell the difference between a student who is rushing and one who is genuinely confused.</p>
+    <h3 style="margin:2.4rem 0 .5rem;font-size:1.08rem;">Each session informs the next</h3>
+    <p>Because I work with a small roster and keep detailed notes, I am not meeting your student fresh each week. I remember what caused trouble last month, notice when an old error resurfaces in a new topic, and can tell the difference between a student who is rushing and one who is genuinely confused.</p>
     <p>Over a term, I track what is becoming secure, what still needs attention, and whether the student is growing less dependent on prompting, and I shape the pacing, explanations, and practice around what I see. That accumulating picture of how a particular student works is the part of the instruction that can't be handed off or generated on demand.</p>
   </div>
 
   <!-- MATERIALS -->
-  <div class="pi-section">
+  <div class="pi-section" id="materials">
     <p class="label">Materials</p>
-    <h2>Individualized does not mean improvised</h2>
+    <h2>A full curriculum, ready before we start</h2>
     <p>Because I've already built the course, I don't have to choose between preparation and flexibility. Every topic already has clear explanations, worked examples, and practice ready to draw on, so we spend our time on what your student actually needs instead of building from scratch each week.</p>
     <p>The curriculum keeps us organized; the student's work decides where we spend our time. Most sessions don't move through a whole lesson; it's a resource to pull from, shaped around the gaps and recurring errors I see.</p>
     <p style="margin-top:1.1rem;">Whatever we use is shared with the student afterward. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
@@ -325,7 +331,7 @@ permalink: /private-instruction/
   </div>
 
   <!-- PRICING -->
-  <div class="pi-section">
+  <div class="pi-section" id="rates">
     <p class="label">Pricing</p>
     <h2>Hourly, with one rate for every course</h2>
     <p>No packages or long-term commitment; you book the sessions you need. Sessions start at a 60-minute minimum and are booked in 30-minute increments, so we can size each meeting to the work at hand. I recommend a <b>weekly 90-minute session</b>: ninety minutes gives us enough time to teach the topic, practice it together, and leave room for an independent check.</p>
@@ -382,7 +388,7 @@ permalink: /private-instruction/
   </div>
 
   <!-- FAQ -->
-  <div class="pi-section">
+  <div class="pi-section" id="faq">
     <p class="label">Questions</p>
     <h2>Frequently asked</h2>
     <div class="pi-faq">
@@ -430,7 +436,7 @@ permalink: /private-instruction/
   </div>
 
   <!-- AVAILABILITY -->
-  <div class="pi-section">
+  <div class="pi-section" id="start">
     <p class="label">Availability</p>
     <h2>Scheduling and getting started</h2>
     <p>I'm based in the Pacific time zone and regularly work with students in other time zones; we will find a weekly slot that fits your schedule.</p>

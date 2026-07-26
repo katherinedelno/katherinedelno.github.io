@@ -26,6 +26,59 @@ What makes this genuinely strange is how slowly the divergence happens. The sum 
 
 The boundary here is razor thin. Raise the exponent by any amount at all and the sum tames itself: $$\sum \tfrac{1}{n^{1.0001}}$$ converges. The sharp cutoff at $$p = 1$$ in the p-series test is not bureaucratic tidiness. It marks a real cliff edge, and the harmonic series sits exactly on the lip.
 
+You can watch both behaviors at once. The picture below plots partial sums: the harmonic series climbing without a ceiling, and its sign-alternating twin (the subject of the next section) settling onto $$\ln 2$$.
+
+<div class="viz" markdown="0">
+  <canvas id="hs-cv" width="700" height="280"></canvas>
+  <div class="viz-controls">
+    <label for="hs-n">Terms</label>
+    <input type="range" id="hs-n" min="2" max="400" step="1" value="30">
+    <span class="viz-value" id="hs-read"></span>
+  </div>
+  <p class="viz-caption">Dark curve: harmonic partial sums, still climbing at 400 terms and never stopping, though ever more slowly (the growth is logarithmic). Light curve with the dashed target: the alternating harmonic series, hopping left and right in shrinking steps and trapping ln 2 between consecutive hops. Same ingredients, opposite fates. The gap between each light hop and the dashed line is smaller than the next term, which is the alternating series error bound drawn in the air.</p>
+</div>
+
+<script>
+(function(){
+  var cv = document.getElementById('hs-cv'), c = cv.getContext('2d');
+  var slider = document.getElementById('hs-n'), read = document.getElementById('hs-read');
+  var W = cv.width, H = cv.height, pad = 36;
+  var YMAX = 7;
+  function px(i, n){ return pad + (W - 2*pad)*i/n; }
+  function py(v){ return H - pad - (H - 2*pad)*v/YMAX; }
+  function draw(){
+    var n = +slider.value;
+    c.clearRect(0, 0, W, H);
+    c.strokeStyle = '#e0e0e0'; c.lineWidth = 1;
+    c.beginPath(); c.moveTo(pad, py(0)); c.lineTo(W - pad, py(0)); c.stroke();
+    var ln2 = Math.log(2);
+    c.strokeStyle = '#8a8a8a'; c.setLineDash([4,4]);
+    c.beginPath(); c.moveTo(pad, py(ln2)); c.lineTo(W - pad, py(ln2)); c.stroke();
+    c.setLineDash([]);
+    c.fillStyle = '#5c5c5c'; c.font = '700 12px Hanken Grotesk, sans-serif';
+    c.fillText('ln 2', W - pad - 28, py(ln2) - 6);
+    var hSum = 0, aSum = 0, k;
+    c.strokeStyle = '#b9b9b6'; c.lineWidth = 1.6; c.beginPath();
+    for(k = 1; k <= n; k++){
+      aSum += (k % 2 ? 1 : -1)/k;
+      var Y = py(aSum);
+      k === 1 ? c.moveTo(px(k, n), Y) : c.lineTo(px(k, n), Y);
+    }
+    c.stroke();
+    c.strokeStyle = '#1f1f1f'; c.lineWidth = 2; c.beginPath();
+    for(k = 1; k <= n; k++){
+      hSum += 1/k;
+      var Y2 = py(Math.min(hSum, YMAX + 0.5));
+      k === 1 ? c.moveTo(px(k, n), Y2) : c.lineTo(px(k, n), Y2);
+    }
+    c.stroke();
+    read.textContent = 'harmonic: ' + hSum.toFixed(3) + '   alternating: ' + aSum.toFixed(3);
+  }
+  slider.addEventListener('input', draw);
+  draw();
+})();
+</script>
+
 ## Surprise 2: alternate the signs, and order suddenly matters
 
 Flip every other sign and the harmonic series calms down completely:

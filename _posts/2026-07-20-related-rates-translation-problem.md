@@ -47,6 +47,53 @@ $$2(5)(2) + 2(12)\,\frac{dy}{dt} = 0 \quad\Longrightarrow\quad \frac{dy}{dt} = -
 
 The top is sliding down at $$\tfrac{5}{6}$$ ft/s. The negative sign is not a blemish to erase. It answers the question "which direction," and the final sentence should say so.
 
+There is one more thing worth seeing here, because it surprises almost everyone. The base slides at a *constant* 2 ft/s, but the top does not fall at a constant rate. Drag the slider and watch.
+
+<div class="viz" markdown="0">
+  <canvas id="lad-cv" width="700" height="300"></canvas>
+  <div class="viz-controls">
+    <label for="lad-x">Base distance</label>
+    <input type="range" id="lad-x" min="10" max="125" step="1" value="50">
+    <span class="viz-value" id="lad-read"></span>
+  </div>
+  <p class="viz-caption">The base moves at a steady 2 ft/s, yet the top's speed changes with position: gentle when the ladder is steep, violent as it flattens out. That is the whole point of related rates. The relationship between the rates depends on where you are, which is why the snapshot values must wait until after the differentiation. Note what happens to dy/dt as x approaches 13: the formula sends the top's speed toward infinity, a sign the model (a top that never leaves the wall) is breaking down, and a good example of interrogating a model's domain.</p>
+</div>
+
+<script>
+(function(){
+  var cv = document.getElementById('lad-cv'), c = cv.getContext('2d');
+  var slider = document.getElementById('lad-x'), read = document.getElementById('lad-read');
+  var W = cv.width, H = cv.height;
+  var SC = 17, OX = 60, OY = H - 40;
+  function draw(){
+    var x = slider.value/10, y = Math.sqrt(169 - x*x);
+    var dydt = -(x*2)/y;
+    c.clearRect(0, 0, W, H);
+    // wall and ground
+    c.strokeStyle = '#9a9a97'; c.lineWidth = 2;
+    c.beginPath(); c.moveTo(OX, OY); c.lineTo(OX + 15*SC, OY); c.stroke();
+    c.beginPath(); c.moveTo(OX, OY); c.lineTo(OX, OY - 14*SC); c.stroke();
+    // ladder
+    c.strokeStyle = '#1f1f1f'; c.lineWidth = 4; c.lineCap = 'round';
+    c.beginPath(); c.moveTo(OX + x*SC, OY); c.lineTo(OX, OY - y*SC); c.stroke();
+    c.lineCap = 'butt';
+    // base arrow (constant)
+    c.strokeStyle = '#6b6b6b'; c.lineWidth = 2;
+    c.beginPath(); c.moveTo(OX + x*SC, OY + 16); c.lineTo(OX + x*SC + 34, OY + 16); c.stroke();
+    c.beginPath(); c.moveTo(OX + x*SC + 34, OY + 16); c.lineTo(OX + x*SC + 27, OY + 12); c.moveTo(OX + x*SC + 34, OY + 16); c.lineTo(OX + x*SC + 27, OY + 20); c.stroke();
+    // top arrow (scaled by |dy/dt|)
+    var alen = Math.min(Math.abs(dydt)*16, 90);
+    c.beginPath(); c.moveTo(OX - 16, OY - y*SC); c.lineTo(OX - 16, OY - y*SC + alen); c.stroke();
+    c.beginPath(); c.moveTo(OX - 16, OY - y*SC + alen); c.lineTo(OX - 20, OY - y*SC + alen - 7); c.moveTo(OX - 16, OY - y*SC + alen); c.lineTo(OX - 12, OY - y*SC + alen - 7); c.stroke();
+    c.fillStyle = '#5c5c5c'; c.font = '700 13px Hanken Grotesk, sans-serif';
+    c.fillText('2 ft/s (constant)', OX + x*SC + 42, OY + 20);
+    read.textContent = 'x = ' + x.toFixed(1) + ' ft,  y = ' + y.toFixed(2) + ' ft,  dy/dt = ' + dydt.toFixed(2) + ' ft/s';
+  }
+  slider.addEventListener('input', draw);
+  draw();
+})();
+</script>
+
 ## Example 2: the draining cone
 
 *An inverted conical tank has radius 6 m and height 12 m. Water drains at 3 m³/min. How fast is the water level falling when the water is 4 m deep?*
