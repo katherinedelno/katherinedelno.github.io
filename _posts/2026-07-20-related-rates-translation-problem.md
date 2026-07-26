@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Related rates is a translation problem"
+title: "Related rates, done in order"
 date: 2026-07-20
-description: "Students don't struggle with the calculus in related rates. They struggle with the setup. A five-step translation routine, three fully worked examples, and the one mistake that sinks more solutions than any other."
+description: "The difficulty is the translation, not the calculus. A five-step routine, three worked examples, and the substitution error that undoes most solutions."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"

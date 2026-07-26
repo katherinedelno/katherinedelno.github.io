@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Riemann sums: watching the rectangles win"
+title: "Riemann sums, before the shortcut"
 date: 2026-07-25
-description: "The definite integral is defined as a limit of rectangle sums. Slide the number of rectangles and watch the approximation close in on the exact area, then see why left and right sums bracket the truth."
+description: "The definite integral is defined by rectangles. Watching the definition converge, and why left and right sums bracket the truth."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "6 min read"

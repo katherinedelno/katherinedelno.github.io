@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "How to read the graph of f′ without tricking yourself"
+title: "Reading the graph of f′"
 date: 2026-07-21
-description: "The most-missed question type in AP Calculus hands you the derivative's graph and asks about the function. Here is the translation table, a worked example on a real graph, and the three traps the exam sets every year."
+description: "The exam's favorite question hands you the derivative and asks about the function. The translation table, a worked example, and the three standing traps."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"

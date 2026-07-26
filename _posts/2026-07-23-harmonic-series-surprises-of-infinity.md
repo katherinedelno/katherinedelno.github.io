@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The harmonic series diverges, and other honest surprises of infinity"
+title: "The harmonic series, and other surprises of infinity"
 date: 2026-07-23
-description: "A series whose terms vanish can still blow up, and a convergent series can change its sum if you shuffle it. The strangest true facts in BC, with proofs you can actually follow."
+description: "A series whose terms vanish may still diverge; a convergent sum may depend on the order of its terms. Three true results that sound false, with proofs."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true

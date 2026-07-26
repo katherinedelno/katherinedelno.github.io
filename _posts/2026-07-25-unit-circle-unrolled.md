@@ -2,7 +2,7 @@
 layout: post
 title: "The unit circle, unrolled"
 date: 2026-07-25
-description: "The sine graph is not a new object to memorize. It is the unit circle's height, recorded while the angle turns. Drag the angle and watch the circle write the wave."
+description: "The sine curve is the circle's height, recorded as the angle turns. Every feature of the wave, read directly from the circle."
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true

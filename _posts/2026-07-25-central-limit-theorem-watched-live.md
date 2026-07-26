@@ -2,7 +2,7 @@
 layout: post
 title: "The Central Limit Theorem, watched live"
 date: 2026-07-25
-description: "Start with a lopsided population, take samples, and watch the distribution of sample means organize itself into a bell. A simulator you can run, and the reason the theorem carries half of AP Statistics."
+description: "Draw samples from a lopsided population and watch their means organize into a bell. What the theorem claims, and what it does not."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true

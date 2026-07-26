@@ -39,8 +39,8 @@ permalink: /resources/
 
   <div class="pg-hero">
     <p class="label">Writing</p>
-    <h1>Notes on studying mathematics and statistics</h1>
-    <p>Occasional pieces on the reasoning, notation, and habits that separate understanding a topic from executing it under exam pressure, the same things I work on with students.</p>
+    <h1>Notes on mathematics and statistics</h1>
+    <p>Occasional writing for students: the reasoning beneath the courses, the habits that produce clean work under pressure, and previews of what waits past the AP curriculum. Written for the students I teach, and open to anyone.</p>
   </div>
 
   <div class="res-filters" role="tablist" aria-label="Filter by course">

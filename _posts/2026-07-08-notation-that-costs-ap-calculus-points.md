@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The notation that quietly costs AP Calculus points"
+title: "Notation, and the points it quietly costs"
 date: 2026-07-08
-description: "Strong calculus students often lose free-response points on notation and justification rather than on ideas. Here are the habits that keep the credit you've earned, with the exact sentences graders are looking for."
+description: "Most lost free-response points are lost in the writing, not the mathematics. The conventions that protect earned credit, with examples of each."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"

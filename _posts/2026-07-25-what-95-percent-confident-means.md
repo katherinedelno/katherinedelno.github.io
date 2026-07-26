@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "What \"95% confident\" actually means"
+title: "What “95% confident” means"
 date: 2026-07-25
-description: "A confidence level is not the probability that your interval is right. It is a statement about the method, and the cleanest way to see the difference is to build a hundred intervals and count."
+description: "A confidence level describes the method, not the interval. One hundred simulated studies make the distinction visible."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true

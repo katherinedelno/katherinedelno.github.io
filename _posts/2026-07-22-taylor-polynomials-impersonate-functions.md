@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Taylor polynomials: teaching a polynomial to impersonate a function"
+title: "Taylor polynomials, and the art of approximation"
 date: 2026-07-22
-description: "The idea behind all of Unit 10: match enough derivatives at a point and a polynomial becomes indistinguishable from the function nearby. Watch the approximation improve degree by degree, and see where it stops working."
+description: "Match enough derivatives and a polynomial becomes indistinguishable from the function, near its center. Where the approximation holds, where it fails, and why."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true

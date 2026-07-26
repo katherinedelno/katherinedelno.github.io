@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Euler's method: step size is everything"
+title: "Euler's method, step by step"
 date: 2026-07-25
-description: "Euler's method walks along tangent lines. Shrink the step size and watch the broken-line path bend toward the true solution, then see why the method consistently undershoots a concave-up curve."
+description: "The method walks along tangent lines. What the step size buys, why the path undershoots a concave-up solution, and what the exam asks of both."
 course: "AP Calculus BC"
 read_time: "6 min read"
 math: true

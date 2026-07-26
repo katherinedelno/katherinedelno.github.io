@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Transformations: four dials, one graph"
+title: "Transformations, in four numbers"
 date: 2026-07-25
-description: "Every transformation problem in the course is the same four numbers doing the same four jobs. Turn the dials on a live graph and watch which number does what, including the two that behave backward."
+description: "Every transformation question is the same four parameters doing the same four jobs, two of them in reverse. With the dials to prove it."
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true

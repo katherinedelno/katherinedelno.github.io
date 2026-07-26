@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Beyond BC: a preview of multivariable calculus"
+title: "After BC: multivariable calculus"
 date: 2026-07-25
-description: "Everything in BC lives on a curve. Add one more variable and functions become landscapes, derivatives become compass directions, and integrals fill volumes. A tour of what waits in Calculus 3, with a surface you can spin."
+description: "Functions become landscapes, derivatives become directions, integrals fill volumes. A preview of the course that follows, with a surface to turn."
 course: "AP Calculus BC"
 read_time: "8 min read"
 math: true

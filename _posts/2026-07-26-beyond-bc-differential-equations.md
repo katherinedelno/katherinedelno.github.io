@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Beyond BC: differential equations, where calculus meets the world"
+title: "After BC: differential equations"
 date: 2026-07-26
-description: "BC teaches you to solve dy/dx = ky and to walk Euler steps. The college course behind those two ideas models springs, planets, and epidemics. A preview, with an outbreak you can steer."
+description: "Laws of nature specify change and leave the rest to be deduced. Systems, qualitative analysis, and an epidemic to steer."
 course: "AP Calculus BC"
 read_time: "8 min read"
 math: true

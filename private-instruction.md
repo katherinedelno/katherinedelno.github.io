@@ -190,7 +190,7 @@ permalink: /private-instruction/
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
-    <p>I work privately with a small number of high school and college students across the full arc of a math or statistics course, not just the difficult night before a test. Instruction is live, one-on-one, and planned around each student's actual class, pacing, and the specific things getting in their way. The focus stays on what earns credit on the AP exam and in the classroom: correct setup, precise notation, well-justified reasoning, and clear, rubric-aligned written work. What follows is how that works in practice.</p>
+    <p>I work privately with a small number of high school and college students, across the full arc of a mathematics or statistics course rather than the difficult night before a test. Instruction is live and one-on-one, planned around the student's actual class, its pacing, and whatever is specifically in the way. The standard throughout is the one the AP exam and good mathematics share: correct setup, precise notation, and reasoning a reader can follow. What follows is how that works in practice.</p>
   </div>
 
   <!-- COURSES -->
@@ -449,7 +449,7 @@ permalink: /private-instruction/
   <!-- CTA -->
   <div class="pi-cta">
     <h2>Getting started</h2>
-    <p>Two easy ways to begin: send me a quick email with your question, or book a free 15-minute meet-and-greet. After we talk, I'll recommend the best fit for your student.</p>
+    <p>Write to me with your question, or book a free 15-minute introduction. After we speak, I will suggest the arrangement that fits your student.</p>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <div class="pi-cta-actions">

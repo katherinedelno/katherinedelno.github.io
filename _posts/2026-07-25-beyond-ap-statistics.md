@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Beyond AP Statistics: a preview of the upper division"
+title: "After AP Statistics: the upper division"
 date: 2026-07-25
-description: "AP Statistics hands you the recipes. Upper-division courses show you the kitchen: probability theory, Bayesian reasoning, regression that learns, and randomness with memory. A tour of what comes next, with a thousand random walks to watch."
+description: "Probability theory, Bayesian inference, regression at scale, and randomness with memory. The discipline past the AP course, with a thousand random walks."
 course: "AP Statistics"
 read_time: "8 min read"
 math: true

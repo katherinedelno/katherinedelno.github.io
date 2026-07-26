@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Linear algebra: the course everything else is secretly using"
+title: "Linear algebra, the second pillar"
 date: 2026-07-26
-description: "After calculus, the next pillar of college mathematics is linear algebra: matrices as motions of space, determinants as area, eigenvectors as the directions that matter. A preview with a plane you can warp."
+description: "Matrices as motions of space, determinants as area, eigenvectors as the directions that matter. The college course beneath nearly everything quantitative."
 course: "All courses"
 courses: [AP Calculus BC, AP Precalculus, AP Statistics]
 read_time: "8 min read"

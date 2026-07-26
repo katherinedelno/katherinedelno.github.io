@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Three problems where probability beats intuition"
+title: "Probability against intuition"
 date: 2026-07-26
-description: "The Monty Hall problem, the birthday paradox, and Simpson's paradox: three famous cases where careful conditional reasoning wins and gut feeling loses. With a game-show simulator to settle the argument."
+description: "Monty Hall, the birthday problem, and Simpson's paradox: three places where computed probability corrects the felt kind."
 course: "AP Statistics"
 read_time: "8 min read"
 math: true
