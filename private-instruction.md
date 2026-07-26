@@ -38,7 +38,7 @@ permalink: /private-instruction/
   .pi-hero h1 { font-size:2.1rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.02em; font-weight:700; }
   .pi-hero .tagline { font-size:1.12rem; color:var(--muted); max-width:64ch; margin:0; }
 
-  .pi-section { margin:2.6rem 0; padding-top:2.2rem; border-top:1px solid var(--line); }
+  .pi-section { margin:3.4rem 0; padding-top:2.8rem; border-top:1px solid var(--line); }
   .pi-section:first-of-type { border-top:none; padding-top:0; }
   .pi-section h2 { font-size:1.35rem; margin:0 0 1rem; letter-spacing:-.01em; }
 
@@ -56,19 +56,15 @@ permalink: /private-instruction/
   .pi-steps { display:grid; grid-template-columns:repeat(2,1fr); gap:14px 28px; margin-top:1.1rem; }
   .pi-step { display:flex; gap:14px; align-items:flex-start; }
   .pi-step .num {
-    flex:0 0 auto; width:30px; height:30px; border-radius:50%;
-    background:var(--accent); color:#fff; font-size:.85rem; font-weight:700;
-    display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto; min-width:1.5em; padding-top:.28rem;
+    color:var(--muted); font-size:.92rem; font-weight:700;
   }
   .pi-step h4 { margin:.15rem 0 .2rem; font-size:1rem; }
   .pi-step p { margin:0; font-size:.92rem; color:var(--muted); }
 
   /* Testimonials */
-  .pi-quotes { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:1.2rem; }
-  .pi-quote {
-    border:1px solid var(--line); border-left:3px solid var(--accent);
-    border-radius:12px; padding:22px 24px; background:#fff;
-  }
+  .pi-quotes { display:grid; grid-template-columns:repeat(2,1fr); gap:28px 40px; margin-top:1.3rem; }
+  .pi-quote { border-left:1px solid var(--ink); padding:4px 0 4px 22px; }
   .pi-quote p { font-size:.96rem; margin:0 0 .9rem; }
   .pi-quote .who { font-size:.84rem; color:var(--muted); font-weight:600; letter-spacing:.02em; }
 
@@ -88,12 +84,6 @@ permalink: /private-instruction/
   .pi-price .amt { font-size:1.9rem; font-weight:700; letter-spacing:-.02em; }
   .pi-price .amt span { font-size:.95rem; font-weight:500; color:var(--muted); }
   .pi-price .note { font-size:.9rem; color:var(--muted); margin:.5rem 0 0; }
-
-  .pi-billing {
-    margin-top:1.3rem; padding:16px 20px; background:var(--accent-soft);
-    border-radius:12px; font-size:.93rem; color:var(--ink);
-  }
-  .pi-billing strong { color:var(--accent); }
 
   /* Feature / tech lists */
   .pi-list { list-style:none; padding:0; margin:1rem 0 0; }
@@ -224,20 +214,12 @@ permalink: /private-instruction/
   <!-- WEBINARS -->
   <div class="pi-section">
     <p class="label">Free webinars</p>
-    <h2>Succeeding in your course: free 45-minute webinars</h2>
-    <p>This summer I'm giving two free 45-minute sessions on how to succeed in the year ahead:</p>
-    <div class="pi-courselist" style="margin-top:1rem">
-      <div class="row">
-        <h3>AP Statistics</h3>
-        <p><b>Tuesday, August 25</b>, 5:30 p.m. Pacific</p>
-      </div>
-      <div class="row">
-        <h3>AP Calculus AB &amp; BC</h3>
-        <p><b>Thursday, August 27</b>, 5:30 p.m. Pacific</p>
-      </div>
-    </div>
-    <p style="margin-top:1.4rem;">Everyone who registers receives my getting-started guide for their course, whether or not they attend live. It covers the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding. Students in <b>AP Precalculus</b> are welcome to register as well; I'll send the AP Precalculus guide, with a live session available by request.</p>
-    <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.2rem;" target="_blank" rel="noopener">Register for a webinar</a>
+    <h2>Two free sessions this August</h2>
+    <p>Before the school year begins, I'm giving two free 45-minute sessions on how to start the year well. Everyone who registers receives my getting-started guide for their course, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
+    <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
+    <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
+    <p style="margin-top:1.5rem;font-size:.93rem;color:var(--muted);">Students in AP Precalculus are welcome to register as well; I'll send the AP Precalculus guide, with a live session available by request.</p>
+    <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.3rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
 
   <!-- BACKGROUND -->
@@ -266,28 +248,28 @@ permalink: /private-instruction/
     <p>Every session is built around the student, not a fixed script. Most of our time is spent solving problems together, and the teaching is calibrated to exactly what the student needs that day. Students are welcome to send specific problems, homework, or upcoming topics at least 24 hours in advance, and I'll build the session around them.</p>
     <div class="pi-steps">
       <div class="pi-step">
-        <div class="num">1</div>
+        <div class="num">1.</div>
         <div>
           <h4>Targeted teaching</h4>
           <p>First I decide how much teaching the student actually needs: a few minutes of review when it is just a refresher, or a full rebuild when a topic isn't sticking. Some things need a quick correction; others need to be retaught from the ground up.</p>
         </div>
       </div>
       <div class="pi-step">
-        <div class="num">2</div>
+        <div class="num">2.</div>
         <div>
           <h4>Guided problem-solving</h4>
           <p>Where most of the learning happens. Working through problems together is how the student builds real, durable skill, and it is also where I can follow the reasoning most closely. We take on AP-style problems and the student's own questions, and I coach in real time, correcting the setup rather than just the answer and adjusting the support as the work tells me to.</p>
         </div>
       </div>
       <div class="pi-step">
-        <div class="num">3</div>
+        <div class="num">3.</div>
         <div>
           <h4>Independent practice</h4>
           <p>Then I step back. The student works a few problems alone, because the goal isn't a solution that made sense while I was talking; it's reasoning the student can produce when the help is gone. We review together afterward.</p>
         </div>
       </div>
       <div class="pi-step">
-        <div class="num">4</div>
+        <div class="num">4.</div>
         <div>
           <h4>Notes &amp; solutions</h4>
           <p>A summary, worked problems, and solutions uploaded after each meeting, so the work is there to return to and each session builds on the last rather than starting from zero.</p>
@@ -376,9 +358,7 @@ permalink: /private-instruction/
       <li><b>Monthly parent check-ins</b> by email or call to review progress, strengths, and next steps.</li>
     </ul>
 
-    <div class="pi-billing">
-      <strong>Billing:</strong> Sessions are billed monthly, with invoices sent on the 1st. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist.
-    </div>
+    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed monthly, with invoices sent on the 1st. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist.</p>
   </div>
 
   <!-- TECHNOLOGY -->
