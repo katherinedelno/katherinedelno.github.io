@@ -3,6 +3,7 @@ layout: post
 title: "Writing parameters in AP Statistics"
 date: 2026-07-14
 description: "Defining the parameter is where a lot of inference answers quietly go wrong. Here is a clean way to write parameters and hypotheses, with a worked example for every procedure."
+course: "AP Statistics"
 read_time: "6 min read"
 math: true
 ---

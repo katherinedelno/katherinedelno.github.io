@@ -3,6 +3,7 @@ layout: post
 title: "Which chi-square test? Independence or homogeneity"
 date: 2026-07-15
 description: "With goodness-of-fit removed from the revised AP Statistics course, the chi-square decision comes down to independence versus homogeneity. Here is how to tell them apart and the conditions to check."
+course: "AP Statistics"
 read_time: "5 min read"
 math: true
 ---

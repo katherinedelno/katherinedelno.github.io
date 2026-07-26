@@ -12,6 +12,15 @@ layout: default
   .article-head{margin:0 0 2.2rem;padding-bottom:1.7rem;border-bottom:1px solid var(--ink)}
   .article-head h1{font-size:2.5rem;line-height:1.1;margin:0 0 .7rem;letter-spacing:-.03em;font-weight:700}
   .article-meta{font-size:.72rem;color:var(--muted);margin:0;text-transform:uppercase;letter-spacing:.13em;font-weight:700}
+  .article-meta .article-course{color:var(--accent)}
+
+  .viz{margin:1.8rem 0;padding:22px 22px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+  .viz canvas{display:block;width:100%;height:auto;border-radius:6px}
+  .viz .viz-caption{font-size:.86rem;color:var(--muted);margin:.8rem 0 0;line-height:1.5}
+  .viz .viz-controls{display:flex;align-items:center;gap:14px;margin:.9rem 0 0;flex-wrap:wrap}
+  .viz .viz-controls label{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .viz input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
+  .viz .viz-value{font-size:.9rem;font-weight:700;min-width:6.5ch;color:var(--ink)}
 
   .article-body{max-width:70ch}
   .article-body h2{font-size:1.32rem;margin:2.2rem 0 .7rem;letter-spacing:-.01em;font-weight:700}
@@ -24,6 +33,10 @@ layout: default
   .article-body blockquote{margin:1.4rem 0;padding:2px 0 2px 18px;border-left:3px solid var(--accent);color:var(--muted);font-style:italic}
   .article-body code{background:var(--accent-soft);padding:1px 6px;border-radius:5px;font-size:.92em}
   .article-body hr{border:none;border-top:1px solid var(--line);margin:2rem 0}
+  .article-body table{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.95rem}
+  .article-body th{text-align:left;font-weight:700;padding:9px 12px;border-bottom:2px solid var(--ink)}
+  .article-body td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .article-body tr:last-child td{border-bottom:none}
 
   .article-note{margin-top:2.4rem;padding:20px 24px;background:var(--accent-soft);border-radius:12px;font-size:.95rem}
   .article-note p{margin:0}
@@ -36,7 +49,7 @@ layout: default
   <div class="article-head">
     <p class="label">Resources</p>
     <h1>{{ page.title }}</h1>
-    <p class="article-meta">{{ page.date | date: "%B %-d, %Y" }}{% if page.read_time %} &middot; {{ page.read_time }}{% endif %}</p>
+    <p class="article-meta">{% if page.course %}<span class="article-course">{{ page.course }}</span> &middot; {% endif %}{{ page.date | date: "%B %-d, %Y" }}{% if page.read_time %} &middot; {{ page.read_time }}{% endif %}</p>
   </div>
 
   <div class="article-body">
