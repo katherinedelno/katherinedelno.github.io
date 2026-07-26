@@ -174,10 +174,10 @@ permalink: /private-instruction/
   </div>
 
   <style>
-    .pi-jump{position:sticky;top:0;z-index:50;display:flex;gap:4px;flex-wrap:wrap;background:#fff;padding:10px 0;margin:0 0 .4rem;border-bottom:1px solid var(--line)}
-    .pi-jump a{font-size:.86rem;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px}
-    .pi-jump a:hover{background:var(--accent-soft);color:var(--ink)}
-    .pi-section{scroll-margin-top:64px}
+    .pi-jump{display:flex;gap:8px 24px;flex-wrap:wrap;margin:-1rem 0 .2rem}
+    .pi-jump a{font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+    .pi-jump a:hover{color:var(--ink)}
+    .pi-section{scroll-margin-top:24px}
   </style>
   <nav class="pi-jump" aria-label="Page sections">
     <a href="#approach">How I teach</a>
@@ -218,7 +218,6 @@ permalink: /private-instruction/
         <p>The function families, trigonometry, and analytic groundwork on which calculus stands. Taught as genuine preparation for what follows, not merely as a prerequisite to pass through.</p>
       </div>
     </div>
-    <p style="margin-top:1.1rem;font-size:.92rem;color:var(--muted);">AP coursework is the center of the practice, but I also work with students in non-AP and college-level mathematics and statistics. If your course is not listed, write and we will discuss fit.</p>
   </div>
 
   <!-- WEBINARS -->
@@ -423,6 +422,10 @@ permalink: /private-instruction/
       <details>
         <summary>How do you align with my student's class?</summary>
         <p>I follow your student's course pacing and build each session around their current topics, assignments, and the specific errors I observe, so our work reinforces what is happening in the classroom rather than running parallel to it.</p>
+      </details>
+      <details>
+        <summary>Do you teach courses beyond the three listed?</summary>
+        <p>Yes. AP coursework is the center of the practice, but I also work with students in non-AP and college-level mathematics and statistics. If your course is not listed, write and we will discuss fit.</p>
       </details>
       <details>
         <summary>What happens before the AP exam?</summary>

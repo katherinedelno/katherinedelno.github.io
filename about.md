@@ -79,7 +79,7 @@ permalink: /about/
 
     <h3>M.S. Statistics: Advanced Methods &amp; Data Analysis</h3>
     <p class="deg-meta">University of Washington &middot; 2025 &middot; Statistics ranked #6 nationally, UW #3 among U.S. public universities (U.S. News, 2026)</p>
-    <p>Graduate training in statistical methodology, theory, and computation: the full theoretical inference sequence, regression for independent and correlated data, the design and analysis of experiments, categorical data analysis, and statistical computing, alongside applied biostatistics and a capstone in applied statistics, carried out in R and Python.</p>
+    <p>Rigorous graduate training in statistical theory, methodology, and computation. The core was the full theoretical inference sequence, where the estimators, tests, and intervals of applied statistics are derived and proved rather than taken on faith, alongside regression for independent and correlated data, the design and analysis of experiments, categorical data analysis, and statistical computing, with applied biostatistics and a capstone in applied statistics carried out in R and Python.</p>
     <details class="cw-details">
       <summary>Graduate coursework</summary>
       <div class="pg-tags">
@@ -98,7 +98,7 @@ permalink: /about/
 
     <h3 style="margin-top:2.2rem;">B.S. Mathematics</h3>
     <p class="deg-meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
-    <p>A proof-based mathematics core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression, and computing. I began university in engineering, which left me with a broad foundation across the physical sciences as well; it helps me meet students wherever their coursework sits.</p>
+    <p>A deeply proof-based mathematics core: the full calculus sequence, linear algebra, differential equations, and numerical methods, together with two semesters of real analysis, where calculus itself is rebuilt from rigorous foundations, and formal training in proof writing. This was paired with statistics coursework in probability, statistical theory, regression, and computing. I began university in engineering, which left me with a broad foundation across the physical sciences as well; it helps me meet students wherever their coursework sits.</p>
     <details class="cw-details">
       <summary>Undergraduate coursework</summary>
       <div class="pg-tags">
@@ -155,8 +155,42 @@ permalink: /about/
       </div>
 
     </div>
+  </div>
 
-    <p style="margin-top:1.6rem;">A selection of my statistical work is under <a href="/projects/">projects</a>.</p>
+  <div class="about-section" id="work">
+    <style>
+      .work-item{margin-top:1.7rem;max-width:74ch}
+      .work-item h3{font-size:1.05rem;margin:0 0 .1rem}
+      .work-item .deg-meta{margin:0 0 .5rem}
+      .work-item p{margin:0;font-size:.95rem}
+    </style>
+    <p class="label">Research</p>
+    <h2>Statistical work</h2>
+    <p>Alongside teaching, my graduate work included independent methodological research and applied projects in statistics and machine learning. It is the depth behind the instruction, particularly in AP Statistics.</p>
+
+    <div class="work-item">
+      <h3>A permutation-based random forest diagnostic for linear mixed models</h3>
+      <p class="deg-meta">Independent research &middot; Sole author &middot; 2025</p>
+      <p>A nonparametric diagnostic I designed for detecting misspecification in linear mixed models, where standard residual plots and information criteria often miss subtle violations. A random forest measures leftover structure in the model's residuals, and a permutation test that respects the clustered design supplies the null distribution, without assuming normality. Across 5,400 simulated datasets spanning 54 misspecification scenarios, the method held false-positive rates near 1&ndash;3% at a 5% level while reaching 80&ndash;100% power against large mean-structure departures, and it correctly cleared well-specified models fit to the Framingham Heart Study. Packaged as an R function.</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Conformal prediction for multi-label genre classification</h3>
+      <p class="deg-meta">Project lead &middot; 2025</p>
+      <p>Paired a fine-tuned DistilBERT with conformal prediction to assign calibrated sets of genre labels to films, targeting at least 90% coverage on held-out data. The framework generalizes to other multi-label problems, such as medical tagging and document classification.</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Fine-tuning BERT models for recipe classification</h3>
+      <p class="deg-meta">Project lead &middot; 2025</p>
+      <p>Compared fine-tuned BERT Base, BERT Large, and RoBERTa on a specialized text-classification task across more than 20,000 recipes, tuning each for generalization; the smallest model held up best on unseen data.</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Causal analysis of food insecurity and type 2 diabetes</h3>
+      <p class="deg-meta">Project lead &middot; 2024</p>
+      <p>Estimated the effect of food insecurity on type 2 diabetes across three NHANES cycles using augmented inverse probability weighting, a doubly robust estimator. The substantive finding was null; the contribution is a careful account of what cross-sectional survey data can and cannot support causally.</p>
+    </div>
   </div>
 
   <div class="about-section">

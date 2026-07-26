@@ -58,7 +58,7 @@ permalink: /
   </div>
 
   <div class="pg-close">
-    <p>Writing for students is collected under <a href="/resources/">resources</a>; a selection of statistical work is under <a href="/projects/">projects</a>. The roster for the academic year is small, and it fills. Families considering the fall are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
+    <p>Writing for students is collected under <a href="/resources/">resources</a>; my background and statistical work are under <a href="/about/">about</a>. The roster for the academic year is small, and it fills. Families considering the fall are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
   </div>
 
 </div>
