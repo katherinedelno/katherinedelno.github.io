@@ -186,7 +186,6 @@ permalink: /private-instruction/
   <!-- COURSES -->
   <div class="pi-section">
     <p class="label">Courses</p>
-    <h2>What I teach</h2>
     <style>
       .pi-courselist{margin:1.2rem 0 0;border-top:1px solid var(--line)}
       .pi-courselist .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 2px;border-bottom:1px solid var(--line)}

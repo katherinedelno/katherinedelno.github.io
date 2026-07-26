@@ -41,8 +41,9 @@ permalink: /about/
 
   .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:24px;z-index:9999}
   .lightbox:target{display:flex}
-  .lightbox img{max-width:720px;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .lightbox img{max-width:min(720px,90vw);max-height:75vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);pointer-events:none}
   .lb-close{position:absolute;inset:0;cursor:zoom-out}
+  .lb-x{position:absolute;top:14px;right:16px;z-index:2;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;line-height:1;text-decoration:none}
 
   @media (max-width:700px){
     .about-grid{grid-template-columns:1fr;row-gap:20px}
@@ -205,6 +206,7 @@ permalink: /about/
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">
     <a href="#" class="lb-close" aria-label="Close"></a>
+    <a href="#" class="lb-x" aria-label="Close">&times;</a>
     <img src="/assets/img/blue.jpeg" alt="Blue the cat">
   </div>
 
