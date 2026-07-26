@@ -200,6 +200,7 @@ permalink: /private-instruction/
     <style>
       .pi-courselist{margin:1.2rem 0 0;border-top:1px solid var(--line)}
       .pi-courselist .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 2px;border-bottom:1px solid var(--line)}
+      .pi-courselist .row:last-child{border-bottom:none}
       .pi-courselist .row h3{margin:0;font-size:1.02rem}
       .pi-courselist .row p{margin:0;font-size:.95rem;color:var(--muted);max-width:60ch}
       @media (max-width:720px){.pi-courselist .row{grid-template-columns:1fr;gap:6px}}
@@ -224,14 +225,18 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Free webinars</p>
     <h2>Succeeding in your course: free 45-minute webinars</h2>
-    <p>This summer I'm hosting two free 45-minute webinars on how to succeed in the year ahead:</p>
-    <ul class="pi-list">
-      <li><b>AP Statistics</b>: Tuesday, August 25, 5:30 p.m. Pacific</li>
-      <li><b>AP Calculus (AB/BC)</b>: Thursday, August 27, 5:30 p.m. Pacific</li>
-    </ul>
-    <div class="pi-callout">
-      <p><b>Free for everyone who registers:</b> my getting-started guide for that course. It covers how to begin the year on the right foot: the mindset and habits that work, the technical setup (calculator, notation, and how the course and exam are structured), and the common early mistakes to avoid. It's yours to keep whether or not you attend live. Studying <b>AP Precalculus</b>? You're welcome to register as well, and I'll send you the AP Precalculus getting-started guide, with a live session available by request.</p>
+    <p>This summer I'm giving two free 45-minute sessions on how to succeed in the year ahead:</p>
+    <div class="pi-courselist" style="margin-top:1rem">
+      <div class="row">
+        <h3>AP Statistics</h3>
+        <p><b>Tuesday, August 25</b>, 5:30 p.m. Pacific</p>
+      </div>
+      <div class="row">
+        <h3>AP Calculus AB &amp; BC</h3>
+        <p><b>Thursday, August 27</b>, 5:30 p.m. Pacific</p>
+      </div>
     </div>
+    <p style="margin-top:1.4rem;">Everyone who registers receives my getting-started guide for their course, whether or not they attend live. It covers the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding. Students in <b>AP Precalculus</b> are welcome to register as well; I'll send the AP Precalculus guide, with a live session available by request.</p>
     <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.2rem;" target="_blank" rel="noopener">Register for a webinar</a>
   </div>
 
@@ -315,10 +320,7 @@ permalink: /private-instruction/
     <p class="label">AP exam preparation</p>
     <h2>A focused shift before the exam</h2>
     <p>Everything in the course is built with two ends in mind from the first session: succeeding in the AP class itself, and succeeding on the AP exam in May. The notation, the justification habits, and the rubric-aligned writing we practice all year are the exam's own standards, so exam preparation is never a separate project bolted on at the end.</p>
-    <p>In the final one to two months, sessions then shift entirely to exam preparation: timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear. The focus becomes transfer, performing accurately under timed, independent conditions, which is the real test of whether the learning holds.</p>
-    <div class="pi-callout">
-      <p>All exam-preparation materials are provided as part of this phase, at no cost beyond regular session time.</p>
-    </div>
+    <p>In the final one to two months, sessions then shift entirely to exam preparation: timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear. The focus becomes transfer, performing accurately under timed, independent conditions, which is the real test of whether the learning holds. All exam-preparation materials are provided as part of this phase, at no cost beyond regular session time.</p>
   </div>
 
   <!-- TESTIMONIALS -->
@@ -452,9 +454,7 @@ permalink: /private-instruction/
     <h2>Scheduling and getting started</h2>
     <p>I'm based in the Pacific time zone and regularly work with students in other time zones; we will find a weekly slot that fits your schedule.</p>
     <p>Weekly slots are limited and tend to fill quickly, so it is best to secure a place on the roster early. I take only a small number of students each academic year, and once the roster is full I keep a short waitlist.</p>
-    <div class="pi-callout">
-      <p><b>The strongest results start at the beginning of the course.</b> The ideal time to begin is the first weeks of the term, while each topic can be built correctly the first time, before small gaps quietly compound into the ones that cost points later. Students who join mid-semester are very welcome and can make real gains; we simply spend our early sessions closing those gaps before we get ahead of new material. Reserving a spot before the term begins lets us prepare, stay ahead of your class's pacing, and settle into a steady weekly rhythm from the very first week.</p>
-    </div>
+    <p><b>The strongest results start at the beginning of the course.</b> The ideal time to begin is the first weeks of the term, while each topic can be built correctly the first time, before small gaps quietly compound into the ones that cost points later. Students who join mid-semester are very welcome and can make real gains; we simply spend our early sessions closing those gaps before we get ahead of new material. Reserving a spot before the term begins lets us prepare, stay ahead of your class's pacing, and settle into a steady weekly rhythm from the very first week.</p>
   </div>
 
   <!-- CTA -->

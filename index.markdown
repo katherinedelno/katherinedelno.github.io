@@ -30,7 +30,7 @@ permalink: /
   .pg-close a{color:var(--ink)}
 
   @media (max-width:700px){
-    .hero h1{font-size:1.9rem}
+    .hero h1{font-size:2.4rem;line-height:1.1}
   }
 </style>
 
