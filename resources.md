@@ -43,65 +43,50 @@ permalink: /resources/
     <p>Occasional writing for students: the reasoning beneath the courses, the habits that produce clean work under pressure, and previews of what waits past the AP curriculum. Written for the students I teach, and open to anyone.</p>
   </div>
 
-  <style>
-    .res-group{margin-top:2.6rem}
-    .res-group-title{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);margin:0 0 .1rem;padding-bottom:.7rem;border-bottom:1px solid var(--ink)}
-  </style>
-
-  <div class="res-group">
-    <p class="res-group-title">AP Calculus</p>
-    <div class="res-list" style="margin-top:0;border-top:none">
-      {% for post in site.posts %}{% if post.course contains "AP Calculus" and post.section != "beyond" %}
-      <a class="res-item" href="{{ post.url | relative_url }}">
-        <span class="res-date"><span class="res-course">{{ post.course }}</span><span class="res-sep">&bull;</span>{{ post.date | date: "%B %Y" }}</span>
-        <span class="res-title">{{ post.title }}</span>
-        {% if post.description %}<span class="res-desc">{{ post.description }}</span>{% endif %}
-        <span class="res-more">Read &rarr;</span>
-      </a>
-      {% endif %}{% endfor %}
-    </div>
+  <div class="res-filters" role="tablist" aria-label="Filter articles by course">
+    <button type="button" class="res-filter is-active" data-filter="all">All</button>
+    <button type="button" class="res-filter" data-filter="calculus">AP Calculus</button>
+    <button type="button" class="res-filter" data-filter="precalculus">AP Precalculus</button>
+    <button type="button" class="res-filter" data-filter="statistics">AP Statistics</button>
+    <button type="button" class="res-filter" data-filter="beyond">After the AP course</button>
   </div>
 
-  <div class="res-group">
-    <p class="res-group-title">AP Precalculus</p>
-    <div class="res-list" style="margin-top:0;border-top:none">
-      {% for post in site.posts %}{% if post.course == "AP Precalculus" and post.section != "beyond" %}
-      <a class="res-item" href="{{ post.url | relative_url }}">
-        <span class="res-date"><span class="res-course">{{ post.course }}</span><span class="res-sep">&bull;</span>{{ post.date | date: "%B %Y" }}</span>
-        <span class="res-title">{{ post.title }}</span>
-        {% if post.description %}<span class="res-desc">{{ post.description }}</span>{% endif %}
-        <span class="res-more">Read &rarr;</span>
-      </a>
-      {% endif %}{% endfor %}
-    </div>
+  <div class="res-list">
+    {% for post in site.posts %}
+    <a class="res-item" href="{{ post.url | relative_url }}" data-course="{{ post.course }}" data-section="{{ post.section | default: 'core' }}">
+      <span class="res-date"><span class="res-course">{{ post.course }}</span><span class="res-sep">&bull;</span>{{ post.date | date: "%B %Y" }}</span>
+      <span class="res-title">{{ post.title }}</span>
+      {% if post.description %}<span class="res-desc">{{ post.description }}</span>{% endif %}
+      <span class="res-more">Read &rarr;</span>
+    </a>
+    {% endfor %}
   </div>
 
-  <div class="res-group">
-    <p class="res-group-title">AP Statistics</p>
-    <div class="res-list" style="margin-top:0;border-top:none">
-      {% for post in site.posts %}{% if post.course == "AP Statistics" and post.section != "beyond" %}
-      <a class="res-item" href="{{ post.url | relative_url }}">
-        <span class="res-date"><span class="res-course">{{ post.course }}</span><span class="res-sep">&bull;</span>{{ post.date | date: "%B %Y" }}</span>
-        <span class="res-title">{{ post.title }}</span>
-        {% if post.description %}<span class="res-desc">{{ post.description }}</span>{% endif %}
-        <span class="res-more">Read &rarr;</span>
-      </a>
-      {% endif %}{% endfor %}
-    </div>
-  </div>
-
-  <div class="res-group">
-    <p class="res-group-title">After the AP course</p>
-    <div class="res-list" style="margin-top:0;border-top:none">
-      {% for post in site.posts %}{% if post.section == "beyond" %}
-      <a class="res-item" href="{{ post.url | relative_url }}">
-        <span class="res-date"><span class="res-course">{{ post.course }}</span><span class="res-sep">&bull;</span>{{ post.date | date: "%B %Y" }}</span>
-        <span class="res-title">{{ post.title }}</span>
-        {% if post.description %}<span class="res-desc">{{ post.description }}</span>{% endif %}
-        <span class="res-more">Read &rarr;</span>
-      </a>
-      {% endif %}{% endfor %}
-    </div>
-  </div>
+  <script>
+  (function(){
+    var chips = document.querySelectorAll('.res-filter');
+    var items = document.querySelectorAll('.res-item');
+    function apply(filter){
+      items.forEach(function(it){
+        var course = it.getAttribute('data-course') || '';
+        var section = it.getAttribute('data-section') || 'core';
+        var show;
+        if(filter === 'all'){ show = true; }
+        else if(filter === 'beyond'){ show = section === 'beyond'; }
+        else if(filter === 'calculus'){ show = section !== 'beyond' && course.indexOf('AP Calculus') !== -1; }
+        else if(filter === 'precalculus'){ show = section !== 'beyond' && course === 'AP Precalculus'; }
+        else if(filter === 'statistics'){ show = section !== 'beyond' && course === 'AP Statistics'; }
+        it.style.display = show ? '' : 'none';
+      });
+    }
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('is-active'); });
+        chip.classList.add('is-active');
+        apply(chip.getAttribute('data-filter'));
+      });
+    });
+  })();
+  </script>
 
 </div>

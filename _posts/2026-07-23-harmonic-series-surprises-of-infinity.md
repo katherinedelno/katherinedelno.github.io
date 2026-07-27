@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The harmonic series, and other surprises of infinity"
+title: "The harmonic series and conditional convergence"
 date: 2026-07-23
-description: "A series whose terms vanish may still diverge; a convergent sum may depend on the order of its terms. Three true results that sound false, with proofs."
+description: "A series whose terms vanish may nonetheless diverge, and a convergent sum may depend on the order of its terms. Three true results that sound false, each with its reasoning."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true

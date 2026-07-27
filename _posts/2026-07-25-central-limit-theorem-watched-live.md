@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The Central Limit Theorem, watched live"
+title: "The Central Limit Theorem in simulation"
 date: 2026-07-25
-description: "Draw samples from a lopsided population and watch their means organize into a bell. What the theorem claims, and what it does not."
+description: "Samples drawn from a heavily skewed population produce means that organize themselves into a normal curve. A simulation makes visible what the theorem claims, and what it does not."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true

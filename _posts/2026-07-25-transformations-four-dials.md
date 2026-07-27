@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Transformations, in four numbers"
+title: "The four parameters of transformation"
 date: 2026-07-25
-description: "Every transformation question is the same four parameters doing the same four jobs, two of them in reverse. With the dials to prove it."
+description: "Every transformation question involves the same four parameters performing the same four roles, two of them in reverse. An interactive set of dials makes the structure visible."
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true

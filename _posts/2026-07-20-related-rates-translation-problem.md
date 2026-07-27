@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Related rates, done in order"
+title: "A procedure for related rates"
 date: 2026-07-20
-description: "The difficulty is the translation, not the calculus. A five-step routine, three worked examples, and the substitution error that undoes most solutions."
+description: "The difficulty in related rates lies in the translation rather than the calculus. This article develops a five-step routine through three worked examples, including the substitution error that undoes many solutions."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"

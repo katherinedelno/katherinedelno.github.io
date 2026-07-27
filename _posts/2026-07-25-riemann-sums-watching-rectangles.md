@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Riemann sums, before the shortcut"
+title: "Riemann sums and the definition of the integral"
 date: 2026-07-25
-description: "The definite integral is defined by rectangles. Watching the definition converge, and why left and right sums bracket the truth."
+description: "The definite integral is defined by rectangles. This article watches the definition converge, and explains why left and right sums bracket the true value."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "6 min read"

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "What “95% confident” means"
+title: "The meaning of 95% confidence"
 date: 2026-07-25
-description: "A confidence level describes the method, not the interval. One hundred simulated studies make the distinction visible."
+description: "A confidence level describes the method rather than any single interval. One hundred simulated studies make the distinction visible."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true

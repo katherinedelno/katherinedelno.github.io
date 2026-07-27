@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The unit circle, unrolled"
+title: "The unit circle and the sine curve"
 date: 2026-07-25
-description: "The sine curve is the circle's height, recorded as the angle turns. Every feature of the wave, read directly from the circle."
+description: "The sine curve records the circle's height as the angle turns, and every feature of the wave can be read directly from the circle. An animation traces the correspondence."
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true

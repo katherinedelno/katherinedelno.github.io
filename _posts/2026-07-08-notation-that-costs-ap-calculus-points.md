@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Notation, and the points it quietly costs"
+title: "Notation in AP Calculus"
 date: 2026-07-08
-description: "Most lost free-response points are lost in the writing, not the mathematics. The conventions that protect earned credit, with examples of each."
+description: "Most lost free-response points are lost in the writing rather than the mathematics. This article sets out the conventions that protect earned credit, with examples of each."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"

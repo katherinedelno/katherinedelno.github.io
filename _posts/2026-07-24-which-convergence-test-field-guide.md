@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Which convergence test? A field guide"
+title: "Choosing a convergence test"
 date: 2026-07-24
-description: "Choosing the test is most of the problem. The decision sequence, what each test can and cannot conclude, and the traps set for each."
+description: "Selecting the test is most of the problem. This article presents the decision sequence, what each test can and cannot conclude, and the traps set for each."
 course: "AP Calculus BC"
 read_time: "7 min read"
 math: true

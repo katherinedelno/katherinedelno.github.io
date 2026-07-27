@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Linear algebra, the second pillar"
+title: "A preview of linear algebra"
 date: 2026-07-26
-description: "Matrices as motions of space, determinants as area, eigenvectors as the directions that matter. The college course beneath nearly everything quantitative."
+description: "Matrices as motions of space, determinants as areas, eigenvectors as the directions that matter. An introduction to the college course beneath nearly everything quantitative."
 course: "All courses"
 courses: [AP Calculus BC, AP Precalculus, AP Statistics]
 section: beyond

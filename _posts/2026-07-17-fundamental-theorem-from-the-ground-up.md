@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The Fundamental Theorem of Calculus, from first principles"
+title: "The Fundamental Theorem of Calculus from first principles"
 date: 2026-07-17
-description: "Why an area function has a derivative, and why that derivative is the curve itself. With a moving picture of the theorem at work."
+description: "An account of why an area function has a derivative, and of why that derivative recovers the original curve, with a dynamic illustration of the theorem at work."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "9 min read"

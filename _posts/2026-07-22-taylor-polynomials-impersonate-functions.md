@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Taylor polynomials, and the art of approximation"
+title: "Approximation by Taylor polynomials"
 date: 2026-07-22
-description: "Match enough derivatives and a polynomial becomes indistinguishable from the function, near its center. Where the approximation holds, where it fails, and why."
+description: "A polynomial that matches enough derivatives becomes locally indistinguishable from the function it imitates. This article examines where the approximation holds, where it fails, and how the error is measured."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true

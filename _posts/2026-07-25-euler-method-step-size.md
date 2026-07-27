@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Euler's method, step by step"
+title: "Euler's method and the effect of step size"
 date: 2026-07-25
-description: "The method walks along tangent lines. What the step size buys, why the path undershoots a concave-up solution, and what the exam asks of both."
+description: "The method advances along tangent lines. This article examines what a smaller step purchases, why the path undershoots a concave-up solution, and what the exam asks of the technique."
 course: "AP Calculus BC"
 read_time: "6 min read"
 math: true
