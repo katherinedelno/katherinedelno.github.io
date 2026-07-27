@@ -58,8 +58,8 @@ permalink: /about/
     <div>
       <p class="label">About</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I teach mathematics and statistics one-on-one, mostly AP Statistics, AP Calculus, and AP Precalculus. Before this was a practice, it was the part of every job I liked best: sitting next to someone, watching how they think through a problem, and figuring out what would actually help. I eventually decided to make that the whole job.</p>
-      <p>What I care about in teaching is the distance between following an explanation and producing the reasoning yourself. Most of my students are capable people who understand things in class and then get stuck alone at the desk. Closing that gap, patiently and without drama, is the work.</p>
+      <p>I teach mathematics and statistics one-on-one, in AP Statistics, AP Calculus, and AP Precalculus. I came to the subject by an unusual road. Mathematics did not come easily to me; in my early schooling I struggled with it deeply and for years, and I remember with precision what it is to sit before a problem that will not open. I went on to earn a degree in mathematics and a graduate degree in statistics, and the distance between those two facts is the foundation of my work as a teacher.</p>
+      <p>Because I have been the struggling student, I do not regard difficulty as a verdict. I regard it as information, a marker of the precise place where understanding stops, which is usually earlier and more particular than the student supposes. The work of each session is to locate that place, to rebuild from it, and to remain until the reasoning is the student's to carry alone.</p>
     </div>
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
   </div>
