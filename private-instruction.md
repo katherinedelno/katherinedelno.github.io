@@ -413,7 +413,7 @@ permalink: /private-instruction/
       </details>
       <details>
         <summary>What if we need to reschedule?</summary>
-        <p>Occasional schedule changes are normal. I ask for reasonable notice when possible and do my best to accommodate.</p>
+        <p>Occasional schedule changes are normal. I ask for at least 24 hours' notice and do my best to accommodate; the full policy is set out under <a href="/policies/">policies</a>.</p>
       </details>
       <details>
         <summary>Is the between-session support required?</summary>
@@ -454,6 +454,7 @@ permalink: /private-instruction/
     <p class="label">Academic progress &amp; no guaranteed outcomes</p>
     <p>My goal is to help students build durable understanding, stronger problem-solving habits, and clearer written communication through structured instruction, targeted practice, and actionable feedback aligned with AP expectations.</p>
     <p>I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student's consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, and test-day conditions. By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome.</p>
+    <p>The complete policies — academic outcomes, scheduling and cancellations, billing, communication, and how families acknowledge them — are set out plainly under <a href="/policies/">policies</a>.</p>
     <p class="label" style="margin-top:1.4rem;">Accessibility</p>
     <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements. If you have any difficulty accessing content on this site, or if you need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I will work with you promptly to provide the information or assistance you need.</p>
     <p><small>AP&reg; is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this private instruction service.</small></p>
