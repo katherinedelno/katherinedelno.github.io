@@ -4,7 +4,7 @@ title: "The harmonic series and conditional convergence"
 date: 2026-07-23
 description: "A series whose terms vanish may nonetheless diverge, and a convergent sum may depend on the order of its terms. Three true results that sound false, each with its reasoning."
 course: "AP Calculus BC"
-read_time: "9 min read"
+read_time: "11 min read"
 math: true
 kind: foundations
 sequence: 8

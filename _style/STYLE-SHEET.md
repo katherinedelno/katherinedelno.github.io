@@ -27,6 +27,7 @@ is published.
 | `assets/` | Fonts, images, résumé. **No JavaScript or CSS assets for posts** — every interactive is inline in its post. |
 | `_data/` | Does not exist. |
 | `.github/workflows/featured-description-check.yml` | Warns (never fails) when a `featured` article's `description` falls outside 90–200 characters. |
+| `_style/` | This style sheet and `read-time.py`. Underscore-prefixed, so never published. |
 
 ### Front matter
 
@@ -55,7 +56,7 @@ blurb: "Run a hundred studies and count which intervals capture the truth"
 | `course` | `AP Calculus AB`, `AP Calculus BC`, `AP Calculus AB & BC`, `AP Statistics`, `AP Precalculus`, `All courses` | Drives banding and the article-header eyebrow. |
 | `courses` | List, e.g. `[AP Calculus AB, AP Calculus BC]` | On 6 posts. **Read by no template.** Vestigial. |
 | `section` | `beyond` | On 5 posts. **Read by no template.** `kind: beyond` is what actually bands an article. Vestigial. |
-| `read_time` | `"5 min read"` … `"9 min read"` | No formula in evidence: implied reading speeds run 47–144 wpm. See the note under Length. |
+| `read_time` | `"5 min read"` … `"11 min read"` | Computed, not judged. Run `python3 _style/read-time.py --write`. Formula under Length. |
 | `math` | `true` | On all 30. Gates the MathJax script. |
 | `kind` | `mechanics`, `foundations`, `beyond` | Renders as the eyebrow "Mechanical" / "Foundations" / nothing. `beyond` also moves the article into the "Looking ahead" band. |
 | `sequence` | Integer | Sort order **within a band**, not within a course. Gaps are tolerated; duplicates within one band produce an arbitrary order. |
@@ -169,9 +170,29 @@ A caption is 39–117 words when present, median 89; the closing note is 45–95
 **Target: 750–950 words total.** Below 650 the article reads thin; above 1150 only the
 harmonic series has earned it. Write to the argument, then check against the range.
 
-`read_time` has no formula behind it — implied speeds range from 47 to 144 wpm.
-**Open question for Katherine: how is this number set?** Absent an answer, the working
-rule is total words ÷ 110, rounded to the nearest minute, floored at 5.
+### `read_time`
+
+Computed, never judged by eye. As of 2026-07-30:
+
+```
+minutes   = words/130 + 0.30·display_equations + 1.0·has_interactive
+                      + 0.05·table_rows
+read_time = max(5, round(minutes))
+```
+
+130 wpm rather than the 200–250 of ordinary prose, because these articles are read slowly
+and re-read; 18 seconds to absorb a display equation and tie it back to the sentence that
+introduced it; a full minute for an interactive, since the prose instructs the reader to
+operate it; three seconds a table row. Inline mathematics stays inside the word count,
+where it behaves like a word.
+
+Run `python3 _style/read-time.py` to report, `--write` to apply. The script is the
+authority; do not hand-set the field. Current spread: 5–11 minutes, median 7.
+
+One trap the script documents: strip `$$…$$` mathematics **before** stripping HTML tags.
+The other order lets a `<` inside mathematics — `L < 1`, `p > 1` — match the tag regex and
+swallow everything up to the next `>`. That error understated three articles by several
+hundred words apiece.
 
 ### Section structure
 
@@ -555,13 +576,35 @@ Second person was deliberately **not** retrofitted. The July 8 article still run
 uses of "you" per 1000 words; it is a mechanics article about what the reader writes on the
 exam, where the style sheet permits it.
 
+## Standing decisions for the article program
+
+Recorded as they are made, so later sessions do not reopen them.
+
+| Date | Decision |
+|---|---|
+| 2026-07-30 | Cross-references are inline prose links on a noun phrase. No signposting. |
+| 2026-07-30 | Voice targets the late corpus: third person, "you" only at the interactive and in exam procedure. |
+| 2026-07-30 | A closing `article-note` is required on every article. |
+| 2026-07-30 | No bold outside structural run-in labels. Terms of art take italics. |
+| 2026-07-30 | `read_time` is computed by `_style/read-time.py`, never set by hand. |
+| 2026-07-30 | 7B, the distribution explorer, ships as a post like any other, not a standalone page. It therefore needs the full front matter set, a `sequence`, and a card on the resources index. |
+
+Placements that need no renumbering, because they fall into existing `sequence` gaps:
+
+- **7A**, the p-value article → AP Statistics **11**, between "Writing parameters" (10) and
+  "Which chi-square test" (12).
+- **7C**, sampling and bias → AP Statistics **3**, after "Simpson's paradox" (2).
+- **7B**, the distribution explorer → AP Statistics **6** or **8**, both open. 8 sits it
+  beside "The Central Limit Theorem in simulation" (7) and "The meaning of 95% confidence"
+  (9), which is where a distribution tool is most wanted.
+
+7D is the only tier that forces a renumber, and its complete ordering goes to Katherine for
+approval before any front matter is written.
+
 ## Open questions for Katherine
 
-1. **`read_time`** — no formula is recoverable from the corpus (implied 47–144 wpm). How is
-   it set? Working rule until told otherwise: total words ÷ 110, rounded, floor of 5. The
-   three articles that gained a closing note are now slightly longer than their stated
-   times claim.
-2. **`sequence` gaps** — AP Statistics is missing 3, 6, 8, 11 and AP Calculus is missing 4.
-   Intentional reservations, or drift? This matters before 7D renumbers Calculus.
-3. **Vestigial front matter** — `courses`, `section`, and `interactive` are read by no
+1. **`sequence` gaps** — AP Statistics is missing 3, 6, 8, 11; AP Calculus is missing 4.
+   Intentional reservations, or drift? Not blocking for 7A or 7C, which slot into existing
+   gaps. Blocking for 7D, which adds eighteen articles to a band that currently holds nine.
+2. **Vestigial front matter** — `courses`, `section`, and `interactive` are read by no
    template. Keep writing them for the record, or stop?

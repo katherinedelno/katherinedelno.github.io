@@ -4,7 +4,7 @@ title: "Probability against intuition"
 date: 2026-07-26
 description: "Monty Hall, the birthday problem, and Simpson's paradox: three places where computed probability corrects the felt kind."
 course: "AP Statistics"
-read_time: "8 min read"
+read_time: "9 min read"
 math: true
 kind: beyond
 sequence: 2

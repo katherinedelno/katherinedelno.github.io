@@ -5,7 +5,7 @@ date: 2026-07-25
 description: "Functions become landscapes, derivatives become directions, integrals fill volumes. A preview of the course that follows, with a surface to turn."
 course: "AP Calculus BC"
 section: beyond
-read_time: "8 min read"
+read_time: "9 min read"
 math: true
 kind: beyond
 sequence: 5

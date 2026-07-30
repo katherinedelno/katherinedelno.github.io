@@ -4,7 +4,7 @@ title: "What moves the least-squares line"
 date: 2026-07-30
 description: "A draggable scatterplot with a linked residual plot: outliers, influential points, and why the residual plot catches what r misses."
 course: "AP Statistics"
-read_time: "7 min read"
+read_time: "10 min read"
 math: true
 kind: foundations
 sequence: 1
