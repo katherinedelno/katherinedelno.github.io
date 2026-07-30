@@ -6,6 +6,9 @@ description: "A test that is 99% accurate can produce positives that are usually
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
+kind: foundations
+sequence: 5
+interactive: true
 ---
 
 Here is a question that most people, including most physicians when it was put to them in studies, answer incorrectly. A disease affects 1% of a population. A screening test correctly identifies 99% of the people who have the disease, and correctly clears 95% of the people who do not. A randomly selected person tests positive. What is the probability that they actually have the disease?

@@ -7,6 +7,9 @@ course: "AP Calculus BC"
 section: beyond
 read_time: "8 min read"
 math: true
+kind: beyond
+sequence: 92
+interactive: true
 ---
 
 Most laws of nature do not tell you what happens. They tell you how things are changing, and leave you to work out what happens. Newton's second law relates acceleration, a second derivative, to force. Populations grow in proportion to their size. Heat flows in proportion to temperature differences. Each of these is a differential equation, and the college course by that name is where calculus stops being a subject and starts being the operating system of physics, biology, engineering, and economics.

@@ -6,6 +6,9 @@ description: "The method advances along tangent lines. This article examines wha
 course: "AP Calculus BC"
 read_time: "6 min read"
 math: true
+kind: foundations
+sequence: 7
+interactive: true
 ---
 
 A differential equation tells you the slope of a solution curve at every point, but not the curve itself. Euler's method turns that slope information into a curve the most direct way imaginable: stand at the initial point, walk a short distance along the tangent line, look up the new slope where you land, and repeat. Each step uses the update

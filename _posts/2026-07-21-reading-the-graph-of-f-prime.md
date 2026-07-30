@@ -7,6 +7,9 @@ course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
 math: true
+kind: mechanics
+sequence: 2
+interactive: false
 ---
 
 Every AP Calculus exam contains some version of this question: *the figure shows the graph of $$f'$$, the derivative of $$f$$*, followed by questions about $$f$$ itself. It is one of the most-missed problem types in the course, and almost every miss traces back to a single cause. At some point, the student's eyes start treating the picture as the graph of $$f$$.

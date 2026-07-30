@@ -6,6 +6,9 @@ description: "With goodness-of-fit removed from the revised AP Statistics course
 course: "AP Statistics"
 read_time: "5 min read"
 math: true
+kind: mechanics
+sequence: 12
+interactive: false
 ---
 
 Starting with the revised AP Statistics course, the College Board removed the chi-square goodness-of-fit test. That actually simplifies a question students used to find confusing. The chi-square procedures you will use on the exam now all involve two-way tables, so the real decision is between just two tests: the test for independence and the test for homogeneity.

@@ -6,6 +6,9 @@ description: "Drop needles on a lined floor and count the crossings, and the num
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
+kind: beyond
+sequence: 61
+interactive: true
 ---
 
 In 1777, Georges-Louis Leclerc, Comte de Buffon, posed a question about a parlor game: if a needle is dropped at random onto a floor of parallel boards, what is the probability that it comes to rest crossing one of the cracks? The answer turned out to contain $$\pi$$, which means the game can be run in reverse. Drop many needles, count how often they cross a line, and the count estimates $$\pi$$ itself, extracted from randomness by nothing more than arithmetic.

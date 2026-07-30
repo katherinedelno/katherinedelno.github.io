@@ -6,6 +6,9 @@ description: "A series whose terms vanish may nonetheless diverge, and a converg
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
+kind: foundations
+sequence: 8
+interactive: true
 ---
 
 Unit 10 is where calculus stops feeling like a faster version of algebra and starts producing results that sound false. This piece collects three of the best examples, each one a true statement that reads like a mistake, together with real proofs rather than incantations. If infinite series ever feel like a list of arbitrary rules, this is the antidote. The rules exist because infinity really does behave this strangely.

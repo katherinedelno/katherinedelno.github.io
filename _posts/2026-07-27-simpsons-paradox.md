@@ -6,6 +6,9 @@ description: "A treatment can be superior in every subgroup and inferior overall
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
+kind: foundations
+sequence: 2
+interactive: true
 ---
 
 In 1986, researchers compared two treatments for kidney stones using the records of a British hospital group. Open surgery succeeded in 78% of its cases; the newer, less invasive procedure succeeded in 83%. The natural reading is that the newer procedure is better, and the natural reading is wrong. Split the patients by stone size and open surgery wins among small stones, 93% to 87%, and wins again among large stones, 73% to 69%. The treatment that is better for every patient is worse on paper.

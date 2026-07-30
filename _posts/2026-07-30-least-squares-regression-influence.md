@@ -6,6 +6,9 @@ description: "A draggable scatterplot with a linked residual plot: outliers, inf
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
+kind: foundations
+sequence: 1
+interactive: true
 ---
 
 (placeholder — opening: the line every calculator produces, and the two questions the exam actually asks about it: what the numbers mean, and which points are responsible for them)

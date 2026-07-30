@@ -6,6 +6,9 @@ description: "Defining the parameter is where a lot of inference answers quietly
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
+kind: mechanics
+sequence: 10
+interactive: false
 ---
 
 Almost every inference problem in AP Statistics starts by defining a parameter, and it is one of the most common places to lose easy points. The good news is that the fix is a habit, not a new idea. Once you are clear on what a parameter is and how to write one, hypotheses and confidence intervals stop feeling like guesswork.

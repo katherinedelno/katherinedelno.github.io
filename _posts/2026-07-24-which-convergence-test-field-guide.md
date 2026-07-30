@@ -6,6 +6,9 @@ description: "Selecting the test is most of the problem. This article presents t
 course: "AP Calculus BC"
 read_time: "7 min read"
 math: true
+kind: mechanics
+sequence: 9
+interactive: false
 ---
 
 Students usually learn the convergence tests as a heap: seven tools, each with its own hypotheses and conclusion, in no particular order. Then a series appears on the page and the heap offers no advice about where to start. It helps to stop thinking of the tests as a toolbox and start thinking of them as a field guide. Series have visible features, and the features tell you which test to run. Worked in order, the first step that fits is almost always the intended test.

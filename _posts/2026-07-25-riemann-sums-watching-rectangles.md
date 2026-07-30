@@ -7,6 +7,9 @@ course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "6 min read"
 math: true
+kind: foundations
+sequence: 5
+interactive: true
 ---
 
 Before the Fundamental Theorem gives you a shortcut, the definite integral has a definition, and the definition is rectangles. To estimate the area under a curve, slice the interval into $$n$$ pieces, stand a rectangle on each piece, and add up the rectangle areas. The definite integral is what those sums approach as the slicing gets finer:

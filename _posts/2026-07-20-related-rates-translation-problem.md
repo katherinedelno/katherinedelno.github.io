@@ -7,6 +7,9 @@ course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
 math: true
+kind: mechanics
+sequence: 3
+interactive: true
 ---
 
 Related rates has a reputation it does not deserve. The calculus involved is one move, differentiating both sides with respect to time, and any student who can use the chain rule can do it. What actually goes wrong is the translation: turning a paragraph about a leaking cone or a sliding ladder into an equation worth differentiating. Treat it as a translation problem and the fog lifts.

@@ -6,6 +6,9 @@ description: "Tangent lines turn a guess into a root with astonishing speed, unt
 course: "AP Calculus AB & BC"
 read_time: "7 min read"
 math: true
+kind: beyond
+sequence: 60
+interactive: true
 ---
 
 A tangent line is the best straight substitute for a curve at a point. Newton's method takes that sentence seriously and turns it into an algorithm: to solve $$f(x) = 0$$, make a guess, replace the curve by its tangent line at the guess, and solve the tangent line's root instead, which is easy because lines are easy. The answer becomes the next guess, and the process repeats. Algebraically, one step reads

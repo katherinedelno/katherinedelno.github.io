@@ -6,6 +6,9 @@ description: "Every transformation question involves the same four parameters pe
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true
+kind: foundations
+sequence: 1
+interactive: true
 ---
 
 Every transformation question in AP Precalculus, and later in calculus, is built from one master form:

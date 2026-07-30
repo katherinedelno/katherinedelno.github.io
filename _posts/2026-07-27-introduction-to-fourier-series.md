@@ -8,6 +8,9 @@ courses: [AP Calculus BC, AP Precalculus]
 section: beyond
 read_time: "7 min read"
 math: true
+kind: beyond
+sequence: 96
+interactive: true
 ---
 
 Here is a claim that sounds impossible. Take the most abrupt periodic signal imaginable: a square wave, which sits at $$+1$$, drops instantly to $$-1$$, and repeats forever, all corners and jumps. Joseph Fourier asserted in 1807 that this signal, and essentially any repeating signal, can be built out of nothing but smooth sine waves, provided you are allowed to stack up enough of them. The claim scandalized the leading mathematicians of his day. It also turned out to be true, and the mathematics that grew from it now sits inside every phone call, streaming song, JPEG image, and MRI scan.

@@ -6,6 +6,9 @@ description: "The sine curve records the circle's height as the angle turns, and
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true
+kind: foundations
+sequence: 3
+interactive: true
 ---
 
 Students usually meet the unit circle and the sine graph as two separate things to memorize: a circle full of special angles, and a wavy graph with amplitude and period. They are not two things. The sine graph is what the circle writes down when you track one number, the height of a point traveling around it, while the angle grows. Once you watch the unrolling happen, the graph's features stop being facts and start being consequences.

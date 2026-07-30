@@ -8,7 +8,7 @@ permalink: /resources/
   .site-header .site-title{display:none}
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;color:var(--ink);line-height:1.6}
+  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;--faint:#9a9a97;color:var(--ink);line-height:1.6}
   .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .7rem}
 
   .pg-hero{margin:0 0 1rem;max-width:60ch}
@@ -16,23 +16,40 @@ permalink: /resources/
   .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.55;margin:0}
 
   .res-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.8rem}
+  .res-filters[hidden],.rx-count[hidden]{display:none}
   .res-filter{font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .15s ease}
   .res-filter:hover{border-color:var(--accent);color:var(--accent)}
   .res-filter.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .res-filter:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .rx-count{font-size:.72rem;color:var(--faint);letter-spacing:.06em;margin:.7rem 0 0;min-height:1.2em}
 
-  .res-list{margin-top:1.6rem;border-top:1px solid var(--line)}
-  .pg .res-item{display:block;padding:24px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
-  .pg .res-item .res-title{color:var(--ink)}
-  .pg .res-item:hover .res-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-  .pg .res-item:hover .res-more{opacity:1}
-  .res-date{display:block;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 .5rem}
-  .res-date .res-course{color:var(--accent)}
-  .res-date .res-sep{margin:0 .45em;color:var(--line)}
-  .res-title{display:block;font-size:1.3rem;font-weight:700;letter-spacing:-.015em;line-height:1.22;margin:0 0 .45rem}
-  .res-desc{display:block;font-size:.98rem;color:var(--muted);max-width:68ch;line-height:1.55}
-  .res-more{display:inline-block;margin-top:.75rem;font-size:.74rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);opacity:.7;transition:opacity .15s ease}
-
-  @media (max-width:720px){.pg-hero h1{font-size:1.7rem}.res-title{font-size:1.18rem}}
+  .rx-list{max-width:72ch}
+  .rx-eyebrow{font-size:.594rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .35rem}
+  .rx-dot{color:var(--line)}
+  .rx-title{margin:0 0 .3rem;font-size:1.375rem;font-weight:500;letter-spacing:-.015em;line-height:1.25}
+  .rx-title a{color:var(--ink);text-decoration:none}
+  .rx-title a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--faint)}
+  .rx-title a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .rx-desc{font-size:.875rem;color:var(--muted);line-height:1.6;margin:0;max-width:68ch}
+  .rx-entry{margin:0 0 28px}
+  .rx-featured{margin:2.5rem 0 0}
+  .rx-featured .rx-title{font-size:1.875rem;line-height:1.2}
+  .rx-featured .rx-desc{font-size:1rem}
+  .rx-section{margin-top:64px}
+  .rx-featured + .rx-section{margin-top:44px}
+  .rx-sechead{font-size:.594rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;border-top:1px solid var(--line);padding-top:14px;margin:0 0 26px}
+  @media (prefers-reduced-motion: no-preference){
+    .rx-list{transition:opacity .12s ease}
+  }
+  @media (max-width:480px){
+    .rx-title{font-size:1.1875rem}
+    .rx-featured .rx-title{font-size:1.5625rem}
+    .rx-entry{margin-bottom:19px}
+    .rx-section{margin-top:44px}
+    .rx-featured + .rx-section{margin-top:32px}
+    .rx-sechead{margin-bottom:18px}
+    .pg-hero h1{font-size:1.7rem}
+  }
 </style>
 
 <div class="pg" markdown="0">
@@ -43,49 +60,123 @@ permalink: /resources/
     <p>Occasional writing for students: the reasoning beneath the courses, the habits that produce clean work under pressure, and previews of what waits past the AP curriculum. Written for the students I teach, and open to anyone.</p>
   </div>
 
-  <div class="res-filters" role="tablist" aria-label="Filter articles by course">
-    <button type="button" class="res-filter is-active" data-filter="all">All</button>
-    <button type="button" class="res-filter" data-filter="calculus">AP Calculus</button>
-    <button type="button" class="res-filter" data-filter="precalculus">AP Precalculus</button>
-    <button type="button" class="res-filter" data-filter="statistics">AP Statistics</button>
-    <button type="button" class="res-filter" data-filter="beyond">After the AP course</button>
-  </div>
+  {%- comment -%} exactly one featured article; a second one breaks the build loudly {%- endcomment -%}
+  {%- assign featured_posts = "" | split: "" -%}
+  {%- for p in site.posts -%}
+    {%- if p.featured -%}{%- assign featured_posts = featured_posts | push: p -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if featured_posts.size > 1 -%}
+    {%- include ERROR-more-than-one-featured-article -%}
+  {%- endif -%}
 
-  <div class="res-list">
-    {% for post in site.posts %}
-    <a class="res-item" href="{{ post.url | relative_url }}" data-course="{{ post.course }}" data-section="{{ post.section | default: 'core' }}">
-      <span class="res-date"><span class="res-course">{{ post.course }}</span><span class="res-sep">&bull;</span>{{ post.date | date: "%B %Y" }}</span>
-      <span class="res-title">{{ post.title }}</span>
-      {% if post.description %}<span class="res-desc">{{ post.description }}</span>{% endif %}
-      <span class="res-more">Read &rarr;</span>
-    </a>
-    {% endfor %}
+  <div class="res-filters" role="group" aria-label="Filter articles by course" id="rx-filters" hidden>
+    <button type="button" class="res-filter is-active" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="res-filter" data-filter="calculus" aria-pressed="false">AP Calculus</button>
+    <button type="button" class="res-filter" data-filter="precalculus" aria-pressed="false">AP Precalculus</button>
+    <button type="button" class="res-filter" data-filter="statistics" aria-pressed="false">AP Statistics</button>
+    <button type="button" class="res-filter" data-filter="beyond" aria-pressed="false">Past the course</button>
+  </div>
+  <p class="rx-count" id="rx-count" aria-live="polite" hidden></p>
+
+  <div class="rx-list" id="rx-list">
+
+    {%- assign by_seq = site.posts | sort: "sequence" -%}
+
+    {%- for p in featured_posts -%}
+      {%- include resource-entry.html post=p featured=true -%}
+    {%- endfor -%}
+
+    {%- assign kind_names = "mechanics:Under exam conditions,foundations:The idea underneath,beyond:Past the course" | split: "," -%}
+    {%- for pair in kind_names -%}
+      {%- assign bits = pair | split: ":" -%}
+      {%- assign kind = bits[0] -%}
+    <section class="rx-section" data-kind="{{ kind }}">
+      <h2 class="rx-sechead">{{ bits[1] }}</h2>
+      {%- assign cats = "calculus,precalculus,statistics,cross" | split: "," -%}
+      {%- for cat in cats -%}
+        {%- for p in by_seq -%}
+          {%- if p.kind != kind or p.featured -%}{%- continue -%}{%- endif -%}
+          {%- capture pcat -%}{%- if p.course == "AP Precalculus" -%}precalculus{%- elsif p.course == "AP Statistics" -%}statistics{%- elsif p.course == "All courses" -%}cross{%- else -%}calculus{%- endif -%}{%- endcapture -%}
+          {%- if pcat == cat -%}
+            {%- include resource-entry.html post=p -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </section>
+    {%- endfor -%}
+
   </div>
 
   <script>
   (function(){
-    var chips = document.querySelectorAll('.res-filter');
-    var items = document.querySelectorAll('.res-item');
-    function apply(filter){
-      items.forEach(function(it){
-        var course = it.getAttribute('data-course') || '';
-        var section = it.getAttribute('data-section') || 'core';
-        var show;
-        if(filter === 'all'){ show = true; }
-        else if(filter === 'beyond'){ show = section === 'beyond'; }
-        else if(filter === 'calculus'){ show = section !== 'beyond' && course.indexOf('AP Calculus') !== -1; }
-        else if(filter === 'precalculus'){ show = section !== 'beyond' && course === 'AP Precalculus'; }
-        else if(filter === 'statistics'){ show = section !== 'beyond' && course === 'AP Statistics'; }
-        it.style.display = show ? '' : 'none';
-      });
+    var wrap = document.getElementById('rx-filters');
+    var count = document.getElementById('rx-count');
+    var list = document.getElementById('rx-list');
+    wrap.hidden = false;   // rendered only when it can function
+    count.hidden = false;
+    var chips = wrap.querySelectorAll('.res-filter');
+    var entries = list.querySelectorAll('.rx-entry');
+    var sections = list.querySelectorAll('.rx-section');
+    var valid = ['calculus','precalculus','statistics','beyond'];
+
+    function matches(en, f){
+      if(f === 'all') return true;
+      if(f === 'beyond') return en.getAttribute('data-kind') === 'beyond';
+      var cat = en.getAttribute('data-cat');
+      if(cat === f) return true;
+      if(cat === 'cross'){
+        var courses = en.getAttribute('data-courses') || '';
+        if(f === 'calculus') return courses.indexOf('AP Calculus') !== -1;
+        if(f === 'precalculus') return courses.indexOf('AP Precalculus') !== -1;
+        if(f === 'statistics') return courses.indexOf('AP Statistics') !== -1;
+      }
+      return false;
     }
+
+    function apply(f){
+      list.style.opacity = 0;
+      var shown = 0;
+      entries.forEach(function(en){
+        var show = matches(en, f);
+        en.style.display = show ? '' : 'none';
+        if(show) shown++;
+      });
+      sections.forEach(function(s){
+        var any = false;
+        s.querySelectorAll('.rx-entry').forEach(function(en){
+          if(en.style.display !== 'none') any = true;
+        });
+        s.style.display = any ? '' : 'none';
+      });
+      count.textContent = shown + (shown === 1 ? ' article' : ' articles');
+      chips.forEach(function(c){
+        var on = c.getAttribute('data-filter') === f;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      requestAnimationFrame(function(){ list.style.opacity = 1; });
+    }
+
+    function fromHash(){
+      var h = (location.hash || '').replace('#','');
+      return valid.indexOf(h) !== -1 ? h : 'all';
+    }
+
     chips.forEach(function(chip){
       chip.addEventListener('click', function(){
-        chips.forEach(function(c){ c.classList.remove('is-active'); });
-        chip.classList.add('is-active');
-        apply(chip.getAttribute('data-filter'));
+        var f = chip.getAttribute('data-filter');
+        if(f === 'all'){
+          history.pushState(null, '', location.pathname + location.search);
+          apply('all');
+        } else {
+          location.hash = f;   // hashchange handler applies; back button works
+        }
+        chip.focus();
       });
     });
+    window.addEventListener('hashchange', function(){ apply(fromHash()); });
+    window.addEventListener('popstate', function(){ apply(fromHash()); });
+    apply(fromHash());
   })();
   </script>
 

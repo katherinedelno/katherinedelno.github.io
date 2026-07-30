@@ -6,6 +6,10 @@ description: "A confidence level describes the method rather than any single int
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
+kind: foundations
+sequence: 9
+interactive: true
+featured: true
 ---
 
 The most commonly missed interpretation question in AP Statistics is also the most commonly asked: what does "95% confident" mean? Students want it to mean "there is a 95% chance the true mean is in my interval." It does not mean that, the exam knows students want it to mean that, and the scoring guidelines are written to catch it. The distinction is easier to see than to say, so let's see it first.
