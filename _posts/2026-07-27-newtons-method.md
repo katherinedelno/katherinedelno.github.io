@@ -38,6 +38,8 @@ The curve below is $$f(x) = x^3 - x$$, with roots at $$-1$$, $$0$$, and $$1$$. C
   var cv = document.getElementById('nm-cv'), c = cv.getContext('2d');
   var sl = document.getElementById('nm-x0'), read = document.getElementById('nm-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var XMIN = -2, XMAX = 2, YMIN = -2.2, YMAX = 2.2;
   var AXH = H - 46;
   function px(x){ return (x - XMIN)/(XMAX - XMIN)*W; }

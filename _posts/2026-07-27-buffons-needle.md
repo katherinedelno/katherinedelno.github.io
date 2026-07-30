@@ -48,6 +48,8 @@ The floor below uses that half-spacing needle. Drop them by the hundred and watc
   var cv = document.getElementById('bn-cv'), c = cv.getContext('2d');
   var read = document.getElementById('bn-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var D = 56, L = D/2;
   var drops = 0, hits = 0;
   function lines(){

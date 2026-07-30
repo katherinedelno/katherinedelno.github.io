@@ -37,6 +37,8 @@ The instrument below holds the four subgroup success rates fixed at their publis
   var cv = document.getElementById('sx-cv'), c = cv.getContext('2d');
   var sl = document.getElementById('sx-mix'), read = document.getElementById('sx-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   // published subgroup success rates (Charig et al., 1986)
   var S_SMALL = 0.93, S_LARGE = 0.73;   // open surgery
   var P_SMALL = 0.87, P_LARGE = 0.69;   // percutaneous procedure

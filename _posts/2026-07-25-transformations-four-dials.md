@@ -41,6 +41,8 @@ The gray curve is the parent function $$f(x) = \sin x$$. The black curve is $$g(
   var sh = document.getElementById('tf-h'), sk = document.getElementById('tf-k');
   var read = document.getElementById('tf-read');
   var W = cv.width, H = cv.height, pad = 24;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var X0 = -7, X1 = 7, Y0 = -5, Y1 = 5;
   function px(x){ return pad + (x - X0)/(X1 - X0)*(W - 2*pad); }
   function py(y){ return H - pad - (y - Y0)/(Y1 - Y0)*(H - 2*pad); }

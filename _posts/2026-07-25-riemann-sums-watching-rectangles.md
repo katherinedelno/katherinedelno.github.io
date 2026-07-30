@@ -42,6 +42,8 @@ The curve below is $$f(x) = x^2 + 1$$ on $$[0,3]$$, whose exact area is $$\int_0
   var btnL = document.getElementById('rs-left'), btnR = document.getElementById('rs-right');
   var mode = 'left';
   var W = cv.width, H = cv.height, pad = 34;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var A = 0, B = 3, YMAX = 10.6;
   function f(x){ return x*x + 1; }
   function px(x){ return pad + (x - A)/(B - A)*(W - 2*pad); }

@@ -43,6 +43,8 @@ The events below have fixed probabilities $$P(A) = 0.5$$ and $$P(B) = 0.4$$. The
   var cv = document.getElementById('ie-cv'), c = cv.getContext('2d');
   var sl = document.getElementById('ie-ov'), read = document.getElementById('ie-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var PA = 0.5, PB = 0.4;
   function draw(){
     var ov = sl.value/100;

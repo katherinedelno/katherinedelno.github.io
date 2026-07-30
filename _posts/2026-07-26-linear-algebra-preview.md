@@ -41,6 +41,8 @@ The matrix $$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$ moves every point of
   var sc = document.getElementById('la-c'), sd = document.getElementById('la-d');
   var read = document.getElementById('la-read');
   var W = cv.width, H = cv.height, S = 46;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   function px(x){ return W/2 + x*S; }
   function py(y){ return H/2 - y*S; }
   function draw(){

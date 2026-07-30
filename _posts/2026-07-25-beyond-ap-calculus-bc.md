@@ -35,6 +35,8 @@ The function $$f(x,y) = \sin x \cos y$$ takes a point of the plane and returns a
   var cv = document.getElementById('s3-cv'), c = cv.getContext('2d');
   var slider = document.getElementById('s3-rot');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var N = 28, LO = -3.6, HI = 3.6;
   function f(x, y){ return Math.sin(x)*Math.cos(y); }
   function draw(){

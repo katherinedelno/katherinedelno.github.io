@@ -54,6 +54,8 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
 
   function setup(cv, lo, hi){
     var c = cv.getContext('2d'), W = cv.width, H = cv.height, pad = 34;
+    var d__ = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
     return {
       c:c, W:W, H:H, pad:pad, lo:lo, hi:hi,
       px:function(x){ return pad + (x - X0)/(X1 - X0)*(W - 2*pad); },

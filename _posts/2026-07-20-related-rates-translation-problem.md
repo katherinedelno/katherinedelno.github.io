@@ -68,6 +68,8 @@ There is one more thing worth seeing here, because it surprises almost everyone.
   var cv = document.getElementById('lad-cv'), c = cv.getContext('2d');
   var slider = document.getElementById('lad-x'), read = document.getElementById('lad-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var SC = 17, OX = 60, OY = H - 40;
   function draw(){
     var x = slider.value/10, y = Math.sqrt(169 - x*x);

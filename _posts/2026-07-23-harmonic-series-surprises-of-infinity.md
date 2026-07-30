@@ -47,6 +47,8 @@ You can watch both behaviors at once. The picture below plots partial sums: the 
   var cv = document.getElementById('hs-cv'), c = cv.getContext('2d');
   var slider = document.getElementById('hs-n'), read = document.getElementById('hs-read');
   var W = cv.width, H = cv.height, pad = 36;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var YMAX = 7;
   function px(i, n){ return pad + (W - 2*pad)*i/n; }
   function py(v){ return H - pad - (H - 2*pad)*v/YMAX; }

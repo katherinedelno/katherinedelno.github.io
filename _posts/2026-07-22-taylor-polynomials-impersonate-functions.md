@@ -51,6 +51,8 @@ The graph below shows $$\sin x$$ in light gray and its Taylor polynomial in blac
 (function(){
   var cv = document.getElementById('tay-cv'), slider = document.getElementById('tay-n'), read = document.getElementById('tay-read');
   var c = cv.getContext('2d'), W = cv.width, H = cv.height, pad = 20;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var X0 = -9.4, X1 = 9.4, Y0 = -3.4, Y1 = 3.4;
   function px(x){ return pad + (x - X0)/(X1 - X0)*(W - 2*pad); }
   function py(y){ return H - pad - (y - Y0)/(Y1 - Y0)*(H - 2*pad); }

@@ -40,6 +40,8 @@ If the argument does not convince you, the simulator will. It plays complete gam
   var cv = document.getElementById('mh-cv'), c = cv.getContext('2d');
   var read = document.getElementById('mh-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var stayW = 0, stayN = 0, swW = 0, swN = 0;
   function playGame(switching){
     var car = Math.floor(Math.random()*3);

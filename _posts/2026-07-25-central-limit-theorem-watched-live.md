@@ -38,6 +38,8 @@ The top panel shows the population: a strongly right-skewed distribution of indi
 (function(){
   var popCv = document.getElementById('clt-pop'), mCv = document.getElementById('clt-means');
   var pc = popCv.getContext('2d'), mc = mCv.getContext('2d');
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  [popCv, mCv].forEach(function(k){ k.width *= d__; k.height *= d__; });
   var nSl = document.getElementById('clt-n'), read = document.getElementById('clt-read');
   var LO = 0, HI = 80, BINS = 60;
   // right-skewed population: exponential-like, mean 20, clipped at 80
@@ -47,7 +49,8 @@ The top panel shows the population: a strongly right-skewed distribution of indi
   }
   var means = [];
   function hist(canvas, ctx, data, label, maxBarsNorm){
-    var W = canvas.width, H = canvas.height, pad = 30;
+    var W = canvas.width/d__, H = canvas.height/d__, pad = 30;
+    ctx.setTransform(d__, 0, 0, d__, 0, 0);
     ctx.clearRect(0, 0, W, H);
     ctx.strokeStyle = '#e0e0e0'; ctx.beginPath();
     ctx.moveTo(pad, H - 22); ctx.lineTo(W - pad, H - 22); ctx.stroke();

@@ -41,6 +41,8 @@ The tally below computes first digits for several datasets. The dark bars are th
   var cv = document.getElementById('bf-cv'), c = cv.getContext('2d');
   var read = document.getElementById('bf-read');
   var W = cv.width, H = cv.height, pad = 44;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   function firstDigitFromLog(lg){
     var frac = lg - Math.floor(lg);
     return Math.floor(Math.pow(10, frac));

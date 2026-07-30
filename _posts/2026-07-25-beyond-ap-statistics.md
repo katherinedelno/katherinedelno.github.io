@@ -36,6 +36,8 @@ The best mascot for the course is the **random walk**: flip a coin each second, 
   var cv = document.getElementById('rw-cv'), c = cv.getContext('2d');
   var read = document.getElementById('rw-read');
   var W = cv.width, H = cv.height, STEPS = 300, XEND = 540;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var ends = [], total = 0;
   function py(v){ return H/2 - v*3.2; }
   function drawHist(){

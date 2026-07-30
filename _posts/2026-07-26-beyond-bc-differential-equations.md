@@ -46,6 +46,8 @@ A town of 1{,}000 people starts with 5 infected. Recovery takes about ten days (
   var cv = document.getElementById('sir-cv'), c = cv.getContext('2d');
   var slider = document.getElementById('sir-b'), read = document.getElementById('sir-read');
   var W = cv.width, H = cv.height, pad = 34;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var N = 1000, GAMMA = 0.1, DAYS = 200, DT = 0.25;
   function px(t){ return pad + (t/DAYS)*(W - 2*pad); }
   function py(v){ return H - pad - (v/N)*(H - 2*pad); }

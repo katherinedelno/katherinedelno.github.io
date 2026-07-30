@@ -33,6 +33,8 @@ Each row below is a complete, honest study: a random sample of size 25 drawn fro
   var cv = document.getElementById('ci-cv'), c = cv.getContext('2d');
   var read = document.getElementById('ci-read');
   var W = cv.width, H = cv.height, pad = 40;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var MU = 50, SIGMA = 10, N = 25, Z = 1.96;
   var XLO = 42, XHI = 58;
   function px(x){ return pad + (x - XLO)/(XHI - XLO)*(W - 2*pad); }

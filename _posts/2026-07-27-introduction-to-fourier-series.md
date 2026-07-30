@@ -41,6 +41,8 @@ Each added term is called a harmonic, the same word music uses, and for the same
   var cv = document.getElementById('fs-cv'), c = cv.getContext('2d');
   var sl = document.getElementById('fs-n'), read = document.getElementById('fs-read');
   var W = cv.width, H = cv.height, pad = 16;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var XMIN = -Math.PI*1.5, XMAX = Math.PI*1.5;
   function px(x){ return pad + (x - XMIN)/(XMAX - XMIN)*(W - 2*pad); }
   function py(y){ return H/2 - y*(H/2 - pad)/1.6; }

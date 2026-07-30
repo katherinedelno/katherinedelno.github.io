@@ -37,6 +37,8 @@ The differential equation below is $$\tfrac{dy}{dx} = y$$ with $$y(0) = 1$$, who
   var cv = document.getElementById('eu-cv'), c = cv.getContext('2d');
   var slider = document.getElementById('eu-h'), read = document.getElementById('eu-read');
   var W = cv.width, H = cv.height, pad = 34;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var X1 = 2, YMAX = 8.2;
   function px(x){ return pad + (x/X1)*(W - 2*pad); }
   function py(y){ return H - pad - (y/YMAX)*(H - 2*pad); }

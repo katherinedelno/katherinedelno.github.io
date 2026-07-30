@@ -34,6 +34,8 @@ On the left, a point sits on the unit circle at angle $$\theta$$, measured count
   var cv = document.getElementById('uc-cv'), c = cv.getContext('2d');
   var slider = document.getElementById('uc-th'), read = document.getElementById('uc-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var CX = 110, CY = 130, R = 85;
   var GX0 = 250, GX1 = 680, GY = 130, GR = 85;
   var TMAX = 2*Math.PI;

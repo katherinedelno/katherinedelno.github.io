@@ -46,6 +46,8 @@ The picture below shows a population of 10,000 people. Those with the condition 
   var sp = document.getElementById('br-prev'), ss = document.getElementById('br-sens'), sc = document.getElementById('br-spec');
   var read = document.getElementById('br-read');
   var W = cv.width, H = cv.height;
+  var d__ = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
   var COLS = 125, ROWS = 80, N = COLS*ROWS;
   var cw = W/COLS, ch = H/ROWS;
   function draw(){
