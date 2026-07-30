@@ -9,6 +9,7 @@ math: true
 kind: foundations
 sequence: 1
 interactive: true
+blurb: "Drag one point and watch the line, the residuals, and r respond"
 ---
 
 Press the regression button and every calculator agrees: one line, a slope to six digits, an $$r^2$$ that looks reassuring. The exam is rarely interested in the button. It asks two questions instead: what do the numbers mean, and which points are responsible for them? Both questions have answers you can see. Every point in the scatterplot below can be dragged, and everything that depends on the points moves with them.

@@ -16,39 +16,47 @@ permalink: /resources/
   .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.55;margin:0}
 
   .res-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.8rem}
-  .res-filters[hidden],.rx-count[hidden]{display:none}
+  .res-filters[hidden]{display:none}
   .res-filter{font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .15s ease}
   .res-filter:hover{border-color:var(--accent);color:var(--accent)}
   .res-filter.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
   .res-filter:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .rx-count{font-size:.72rem;color:var(--faint);letter-spacing:.06em;margin:.7rem 0 0;min-height:1.2em}
+  .rxm-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-  .rx-list{max-width:72ch}
-  .rx-eyebrow{font-size:.594rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .35rem}
-  .rx-dot{color:var(--line)}
-  .rx-title{margin:0 0 .3rem;font-size:1.375rem;font-weight:500;letter-spacing:-.015em;line-height:1.25}
-  .rx-title a{color:var(--ink);text-decoration:none}
-  .rx-title a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--faint)}
-  .rx-title a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .rx-desc{font-size:.875rem;color:var(--muted);line-height:1.6;margin:0;max-width:68ch}
-  .rx-entry{margin:0 0 28px}
-  .rx-featured{margin:2.5rem 0 0}
-  .rx-featured .rx-title{font-size:1.875rem;line-height:1.2}
-  .rx-featured .rx-desc{font-size:1rem}
-  .rx-section{margin-top:64px}
-  .rx-featured + .rx-section{margin-top:44px}
-  .rx-sechead{font-size:.594rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;border-top:1px solid var(--line);padding-top:14px;margin:0 0 26px}
-  @media (prefers-reduced-motion: no-preference){
-    .rx-list{transition:opacity .12s ease}
+  .rxm-section{margin-top:96px;scroll-margin-top:24px}
+  .rxm-section:first-of-type{margin-top:56px}
+  .rxm-sechead{border-top:1px solid var(--line);padding-top:18px;margin:0 0 40px;display:flex;align-items:baseline;gap:16px}
+  .rxm-secname{font-size:1.625rem;font-weight:700;letter-spacing:-.02em;margin:0}
+  .rxm-seccount{font-size:.72rem;color:var(--faint);letter-spacing:.06em;margin:0}
+
+  .rxm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pg .rxm-box{grid-column:span 1;display:block;border:1px solid var(--line);border-radius:10px;padding:22px;text-decoration:none;color:var(--ink);background:transparent;transition:border-color .12s ease}
+  .pg .rxm-feat{grid-column:span 2;padding:26px}
+  .pg .rxm-box:hover,.pg .rxm-box:focus-visible{border-color:var(--accent);outline:none}
+  .pg .rxm-box:hover .rxm-title,.pg .rxm-box:focus-visible .rxm-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--faint)}
+  .rxm-eyebrow{font-size:.594rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .55rem}
+  .rxm-eyebrow span+span::before{content:"\00B7";margin:0 .6em;color:var(--line)}
+  .rxm-title{font-size:1.1875rem;font-weight:500;letter-spacing:-.015em;line-height:1.3;margin:0 0 .4rem}
+  .rxm-blurb{font-size:.84375rem;color:var(--muted);line-height:1.55;margin:0}
+  .rxm-feat .rxm-title{font-size:1.6875rem;line-height:1.2}
+  .rxm-feat .rxm-blurb{font-size:.9375rem;max-width:62ch}
+
+  @media (max-width:900px){
+    .rxm-grid{grid-template-columns:repeat(2,1fr)}
+    .pg .rxm-feat{grid-column:1 / -1}
   }
-  @media (max-width:480px){
-    .rx-title{font-size:1.1875rem}
-    .rx-featured .rx-title{font-size:1.5625rem}
-    .rx-entry{margin-bottom:19px}
-    .rx-section{margin-top:44px}
-    .rx-featured + .rx-section{margin-top:32px}
-    .rx-sechead{margin-bottom:18px}
+  @media (max-width:640px){
+    .rxm-grid{grid-template-columns:1fr}
+    .rxm-section{margin-top:64px}
+    .rxm-sechead{margin-bottom:26px}
+    .rxm-secname{font-size:1.375rem}
+    .pg .rxm-box{padding:18px}
+    .rxm-title{font-size:1.0625rem}
+    .rxm-feat .rxm-title{font-size:1.375rem}
     .pg-hero h1{font-size:1.7rem}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pg .rxm-box,.res-filter{transition:none}
   }
 </style>
 
@@ -60,123 +68,96 @@ permalink: /resources/
     <p>Occasional writing for students: the reasoning beneath the courses, the habits that produce clean work under pressure, and previews of what waits past the AP curriculum. Written for the students I teach, and open to anyone.</p>
   </div>
 
-  {%- comment -%} exactly one featured article; a second one breaks the build loudly {%- endcomment -%}
-  {%- assign featured_posts = "" | split: "" -%}
-  {%- for p in site.posts -%}
-    {%- if p.featured -%}{%- assign featured_posts = featured_posts | push: p -%}{%- endif -%}
-  {%- endfor -%}
-  {%- if featured_posts.size > 1 -%}
-    {%- include ERROR-more-than-one-featured-article -%}
-  {%- endif -%}
-
-  <div class="res-filters" role="group" aria-label="Filter articles by course" id="rx-filters" hidden>
-    <button type="button" class="res-filter is-active" data-filter="all" aria-pressed="true">All</button>
-    <button type="button" class="res-filter" data-filter="calculus" aria-pressed="false">AP Calculus</button>
-    <button type="button" class="res-filter" data-filter="precalculus" aria-pressed="false">AP Precalculus</button>
-    <button type="button" class="res-filter" data-filter="statistics" aria-pressed="false">AP Statistics</button>
-    <button type="button" class="res-filter" data-filter="beyond" aria-pressed="false">Past the course</button>
+  <div class="res-filters" role="group" aria-label="Jump to a course section" id="rxm-filters" hidden>
+    <button type="button" class="res-filter is-active" data-target="top" aria-pressed="true">All</button>
+    <button type="button" class="res-filter" data-target="calculus" aria-pressed="false">AP Calculus</button>
+    <button type="button" class="res-filter" data-target="precalculus" aria-pressed="false">AP Precalculus</button>
+    <button type="button" class="res-filter" data-target="statistics" aria-pressed="false">AP Statistics</button>
+    <button type="button" class="res-filter" data-target="past" aria-pressed="false">Past the course</button>
   </div>
-  <p class="rx-count" id="rx-count" aria-live="polite" hidden></p>
+  <p class="rxm-live" aria-live="polite" id="rxm-live"></p>
 
-  <div class="rx-list" id="rx-list">
-
-    {%- assign by_seq = site.posts | sort: "sequence" -%}
-
-    {%- for p in featured_posts -%}
-      {%- include resource-entry.html post=p featured=true -%}
+  {%- assign by_seq = site.posts | sort: "sequence" -%}
+  {%- assign secdefs = "calculus|AP Calculus,precalculus|AP Precalculus,statistics|AP Statistics,past|Past the course" | split: "," -%}
+  {%- for sd in secdefs -%}
+    {%- assign bits = sd | split: "|" -%}
+    {%- assign cat = bits[0] -%}
+    {%- assign items = "" | split: "" -%}
+    {%- for p in by_seq -%}
+      {%- capture pcat -%}{%- if p.kind == "beyond" -%}past{%- elsif p.course == "AP Precalculus" -%}precalculus{%- elsif p.course == "AP Statistics" -%}statistics{%- else -%}calculus{%- endif -%}{%- endcapture -%}
+      {%- if pcat == cat -%}{%- assign items = items | push: p -%}{%- endif -%}
     {%- endfor -%}
-
-    {%- assign kind_names = "mechanics:Under exam conditions,foundations:The idea underneath,beyond:Past the course" | split: "," -%}
-    {%- for pair in kind_names -%}
-      {%- assign bits = pair | split: ":" -%}
-      {%- assign kind = bits[0] -%}
-    <section class="rx-section" data-kind="{{ kind }}">
-      <h2 class="rx-sechead">{{ bits[1] }}</h2>
-      {%- assign cats = "calculus,precalculus,statistics,cross" | split: "," -%}
-      {%- for cat in cats -%}
-        {%- for p in by_seq -%}
-          {%- if p.kind != kind or p.featured -%}{%- continue -%}{%- endif -%}
-          {%- capture pcat -%}{%- if p.course == "AP Precalculus" -%}precalculus{%- elsif p.course == "AP Statistics" -%}statistics{%- elsif p.course == "All courses" -%}cross{%- else -%}calculus{%- endif -%}{%- endcapture -%}
-          {%- if pcat == cat -%}
-            {%- include resource-entry.html post=p -%}
-          {%- endif -%}
-        {%- endfor -%}
+    {%- assign feats = "" | split: "" -%}
+    {%- for p in items -%}
+      {%- if p.featured -%}{%- assign feats = feats | push: p -%}{%- endif -%}
+    {%- endfor -%}
+    {%- comment -%} at most one featured article per section; two break the build loudly {%- endcomment -%}
+    {%- if feats.size > 1 -%}
+      {%- include ERROR-two-featured-articles-in-one-section -%}
+    {%- endif -%}
+  <section class="rxm-section" id="sec-{{ cat }}" data-cat="{{ cat }}" aria-label="{{ bits[1] }}">
+    <div class="rxm-sechead"><h2 class="rxm-secname">{{ bits[1] }}</h2><p class="rxm-seccount">{{ items.size }} articles</p></div>
+    <div class="rxm-grid">
+      {%- for p in feats -%}
+        {%- include resource-entry.html post=p featured=true cat=cat -%}
       {%- endfor -%}
-    </section>
-    {%- endfor -%}
-
-  </div>
+      {%- for p in items -%}
+        {%- unless p.featured -%}
+          {%- include resource-entry.html post=p cat=cat -%}
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </section>
+  {%- endfor -%}
 
   <script>
   (function(){
-    var wrap = document.getElementById('rx-filters');
-    var count = document.getElementById('rx-count');
-    var list = document.getElementById('rx-list');
+    var wrap = document.getElementById('rxm-filters');
     wrap.hidden = false;   // rendered only when it can function
-    count.hidden = false;
     var chips = wrap.querySelectorAll('.res-filter');
-    var entries = list.querySelectorAll('.rx-entry');
-    var sections = list.querySelectorAll('.rx-section');
-    var valid = ['calculus','precalculus','statistics','beyond'];
+    var live = document.getElementById('rxm-live');
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function matches(en, f){
-      if(f === 'all') return true;
-      if(f === 'beyond') return en.getAttribute('data-kind') === 'beyond';
-      var cat = en.getAttribute('data-cat');
-      if(cat === f) return true;
-      if(cat === 'cross'){
-        var courses = en.getAttribute('data-courses') || '';
-        if(f === 'calculus') return courses.indexOf('AP Calculus') !== -1;
-        if(f === 'precalculus') return courses.indexOf('AP Precalculus') !== -1;
-        if(f === 'statistics') return courses.indexOf('AP Statistics') !== -1;
-      }
-      return false;
-    }
-
-    function apply(f){
-      list.style.opacity = 0;
-      var shown = 0;
-      entries.forEach(function(en){
-        var show = matches(en, f);
-        en.style.display = show ? '' : 'none';
-        if(show) shown++;
-      });
-      sections.forEach(function(s){
-        var any = false;
-        s.querySelectorAll('.rx-entry').forEach(function(en){
-          if(en.style.display !== 'none') any = true;
-        });
-        s.style.display = any ? '' : 'none';
-      });
-      count.textContent = shown + (shown === 1 ? ' article' : ' articles');
+    function countOf(t){ return document.querySelectorAll('#sec-' + t + ' .rxm-box').length; }
+    function activate(t){
       chips.forEach(function(c){
-        var on = c.getAttribute('data-filter') === f;
+        var on = c.getAttribute('data-target') === t;
         c.classList.toggle('is-active', on);
         c.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
-      requestAnimationFrame(function(){ list.style.opacity = 1; });
-    }
-
-    function fromHash(){
-      var h = (location.hash || '').replace('#','');
-      return valid.indexOf(h) !== -1 ? h : 'all';
     }
 
     chips.forEach(function(chip){
       chip.addEventListener('click', function(){
-        var f = chip.getAttribute('data-filter');
-        if(f === 'all'){
+        var t = chip.getAttribute('data-target');
+        activate(t);
+        if(t === 'top'){
           history.pushState(null, '', location.pathname + location.search);
-          apply('all');
+          window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+          live.textContent = 'All sections, ' + document.querySelectorAll('.rxm-box').length + ' articles';
         } else {
-          location.hash = f;   // hashchange handler applies; back button works
+          location.hash = 'sec-' + t;   // browser scrolls; back button works
+          live.textContent = chip.textContent + ', ' + countOf(t) + ' articles';
         }
-        chip.focus();
+        chip.focus({ preventScroll: true });   // focus stays on the chip without undoing the jump
       });
     });
-    window.addEventListener('hashchange', function(){ apply(fromHash()); });
-    window.addEventListener('popstate', function(){ apply(fromHash()); });
-    apply(fromHash());
+
+    var m = (location.hash || '').match(/^#sec-(\w+)$/);
+    if(m) activate(m[1]);
+    window.addEventListener('hashchange', function(){
+      var h = (location.hash || '').match(/^#sec-(\w+)$/);
+      activate(h ? h[1] : 'top');
+    });
+
+    // editing aid: warn (only) when a featured description leaves the 90-200 window
+    document.querySelectorAll('.rxm-feat .rxm-blurb').forEach(function(el){
+      var n = el.textContent.trim().length;
+      if(n < 90 || n > 200){
+        var t = el.closest('a').querySelector('.rxm-title').textContent;
+        console.warn('featured description for "' + t + '" is ' + n + ' characters (want roughly 90–200)');
+      }
+    });
   })();
   </script>
 

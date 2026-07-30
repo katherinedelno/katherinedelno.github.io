@@ -9,6 +9,7 @@ math: true
 kind: foundations
 sequence: 10
 interactive: true
+blurb: "Raise the degree and watch the polynomial impersonate the function"
 ---
 
 The second half of BC rests on one idea. Polynomials are the functions we can actually compute, so we build a polynomial that behaves like the function we care about. Everything else in the unit, from Maclaurin series to error bounds to the radius of convergence, is the theory of how good that approximation is and where it holds.

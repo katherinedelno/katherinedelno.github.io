@@ -10,6 +10,7 @@ math: true
 kind: mechanics
 sequence: 2
 interactive: false
+blurb: "The translation table for the exam's favorite question"
 ---
 
 Every AP Calculus exam contains some version of this question: *the figure shows the graph of $$f'$$, the derivative of $$f$$*, followed by questions about $$f$$ itself. It is one of the most-missed problem types in the course, and almost every miss traces back to a single cause. At some point, the student's eyes start treating the picture as the graph of $$f$$.

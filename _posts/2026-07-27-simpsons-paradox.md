@@ -9,6 +9,7 @@ math: true
 kind: foundations
 sequence: 2
 interactive: true
+blurb: "Better in every subgroup, worse overall: the lurking variable at work"
 ---
 
 In 1986, researchers compared two treatments for kidney stones using the records of a British hospital group. Open surgery succeeded in 78% of its cases; the newer, less invasive procedure succeeded in 83%. The natural reading is that the newer procedure is better, and the natural reading is wrong. Split the patients by stone size and open surgery wins among small stones, 93% to 87%, and wins again among large stones, 73% to 69%. The treatment that is better for every patient is worse on paper.

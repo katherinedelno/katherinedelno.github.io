@@ -7,8 +7,9 @@ course: "AP Statistics"
 read_time: "8 min read"
 math: true
 kind: beyond
-sequence: 6
+sequence: 2
 interactive: true
+blurb: "Monty Hall, the birthday problem, and three places intuition is simply wrong"
 ---
 
 Probability is the branch of mathematics most likely to start an argument at dinner. The reason is that human intuition about chance is systematically miscalibrated, and a few famous problems expose the miscalibration so cleanly that they have become classics. Each one below looks like a trick. Each one is actually a fair test of the conditional-probability reasoning from Unit 2, and in each case the AP toolkit gets the right answer while intuition gets the wrong one.

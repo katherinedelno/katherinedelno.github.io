@@ -1,0 +1,35 @@
+name: featured description check
+
+# Warns (never fails) when a featured article's description falls outside
+# roughly 90-200 characters. Too short leaves the featured box hollow;
+# too long stretches its row-mate. Annotations appear on the commit /
+# Actions run. Rotate featured articles freely; this is only a nudge.
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check featured descriptions
+        run: |
+          python3 - << 'EOF'
+          import re, glob
+          for f in sorted(glob.glob('_posts/*.md')):
+              src = open(f, encoding='utf-8').read()
+              parts = src.split('---\n', 2)
+              if len(parts) < 3:
+                  continue
+              fm = parts[1]
+              if not re.search(r'^featured:\s*true\s*$', fm, re.M):
+                  continue
+              m = re.search(r'^description:\s*"(.*)"\s*$', fm, re.M)
+              if not m:
+                  print(f'::warning file={f}::featured article has no description')
+                  continue
+              n = len(m.group(1))
+              if not 90 <= n <= 200:
+                  print(f'::warning file={f}::featured description is {n} characters; the featured box wants roughly 90-200')
+          print('featured description check complete (warnings only, never fails)')
+          EOF

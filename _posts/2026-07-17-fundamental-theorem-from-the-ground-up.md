@@ -10,6 +10,8 @@ math: true
 kind: foundations
 sequence: 6
 interactive: true
+blurb: "Why an area function has a derivative, and why it recovers the curve"
+featured: true
 ---
 
 The Fundamental Theorem of Calculus is the most important sentence in the course, and it is routinely memorized without ever being seen. Students learn to compute $$\int_1^4 x^2\,dx$$ by antidifferentiating and subtracting, which works, but it hides the remarkable thing the theorem actually says: accumulating a quantity and differentiating are inverse operations. Area, of all things, undoes the derivative.

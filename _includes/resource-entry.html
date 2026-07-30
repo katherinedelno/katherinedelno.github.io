@@ -1,7 +1,18 @@
 {%- assign p = include.post -%}
-{%- capture pcat -%}{%- if p.course == "AP Precalculus" -%}precalculus{%- elsif p.course == "AP Statistics" -%}statistics{%- elsif p.course == "All courses" -%}cross{%- else -%}calculus{%- endif -%}{%- endcapture -%}
-<article class="rx-entry{% if include.featured %} rx-featured{% endif %}" data-cat="{{ pcat }}" data-kind="{{ p.kind }}"{% if p.courses %} data-courses="{{ p.courses | join: '|' }}"{% endif %}>
-  <p class="rx-eyebrow">{{ p.course }}{% if p.interactive %} <span class="rx-dot">&middot;</span> interactive{% endif %}</p>
-  {% if include.featured %}<h2 class="rx-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>{% else %}<h3 class="rx-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>{% endif %}
-  {% if p.description %}<p class="rx-desc">{{ p.description }}</p>{% endif %}
-</article>
+{%- capture kindlabel -%}{%- if p.kind == "mechanics" -%}Exam craft{%- elsif p.kind == "foundations" -%}The idea{%- endif -%}{%- endcapture -%}
+{%- capture lv -%}{%- if p.course == "AP Calculus AB & BC" -%}AB &amp; BC{%- elsif p.course == "AP Calculus AB" -%}AB{%- elsif p.course == "AP Calculus BC" -%}BC{%- endif -%}{%- endcapture -%}
+<a class="rxm-box{% if include.featured %} rxm-feat{% endif %}" href="{{ p.url | relative_url }}" aria-labelledby="rxb-{{ p.url | slugify }}">
+  <p class="rxm-eyebrow">
+    {%- if include.cat == "calculus" -%}
+      {%- if lv != "" -%}<span>{{ lv }}</span>{%- endif -%}
+      {%- if kindlabel != "" -%}<span>{{ kindlabel }}</span>{%- endif -%}
+    {%- elsif include.cat == "past" -%}
+      <span>{{ p.course }}</span>
+    {%- else -%}
+      {%- if kindlabel != "" -%}<span>{{ kindlabel }}</span>{%- endif -%}
+    {%- endif -%}
+    {%- if p.interactive -%}<span>interactive</span>{%- endif -%}
+  </p>
+  <p class="rxm-title" id="rxb-{{ p.url | slugify }}">{{ p.title }}</p>
+  <p class="rxm-blurb">{% if include.featured %}{{ p.description }}{% else %}{{ p.blurb }}{% endif %}</p>
+</a>

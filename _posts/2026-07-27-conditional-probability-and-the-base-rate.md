@@ -9,6 +9,7 @@ math: true
 kind: foundations
 sequence: 5
 interactive: true
+blurb: "Why a 99% accurate test can produce positives that are usually wrong"
 ---
 
 Here is a question that most people, including most physicians when it was put to them in studies, answer incorrectly. A disease affects 1% of a population. A screening test correctly identifies 99% of the people who have the disease, and correctly clears 95% of the people who do not. A randomly selected person tests positive. What is the probability that they actually have the disease?
