@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Functions inside functions"
-date: 2026-07-31
+date: 2026-07-30
 description: "Composition runs one function's output into another's input, and the order changes everything. A pipeline to operate, and the skill of reading a composite from the outside in."
 course: "AP Precalculus"
 read_time: "6 min read"
