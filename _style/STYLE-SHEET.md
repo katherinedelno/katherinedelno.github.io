@@ -161,12 +161,16 @@ Measured on prose + caption + closing note, with display and inline mathematics 
 
 | | Minimum | Median | Maximum |
 |---|---|---|---|
-| All 30 articles | 419 | **802** | 1202 |
-| `kind: mechanics` (7) | 419 | 836 | 1096 |
-| `kind: foundations` (14) | 652 | 777 | 1202 |
-| `kind: beyond` (9) | 680 | 967 | 1023 |
+| All 32 articles | 539 | **714** | 1128 |
+| `kind: mechanics` (8) | 539 | 798 | 1041 |
+| `kind: foundations` (15) | 600 | 705 | 1128 |
+| `kind: beyond` (9) | 594 | 883 | 976 |
 
-A caption is 39–117 words when present, median 89; the closing note is 45–95, median 70.
+Body prose alone runs 391–1011, median 561. A caption is 37–113 words when present, median
+89; the closing note is 39–94, median 65.
+
+**Target: 650–950 words total.** Below 600 the page reads thin unless it is carrying a tool;
+above 1100 only the harmonic series and least-squares influence have earned it.
 
 **Target: 750–950 words total.** Below 650 the article reads thin; above 1150 only the
 harmonic series has earned it. Write to the argument, then check against the range.
@@ -550,6 +554,17 @@ counting. Word counts treat the body prose, the `viz-caption`, and the `article-
 three separately-measured components. Sentence segmentation splits on terminal punctuation
 followed by a capital, with mathematics replaced by a placeholder token first, and discards
 fragments under three words.
+
+**Two traps, both of which produced wrong numbers before they were caught:**
+
+1. **Strip `$$…$$` before stripping HTML tags.** A `<` inside mathematics — `L < 1`, `p > 1`
+   — otherwise matches the tag regex and swallows text up to the next `>`. This understated
+   the convergence-test guide by 594 words.
+2. **Remove the `viz` block by matching `<div>` depth, not by a non-greedy `.*?</div>`.**
+   The block contains nested `viz-controls` divs, so a non-greedy match stops at the first
+   inner close and leaves every button label and control caption counted as prose. This
+   inflated every interactive article; the first version of this style sheet reported a
+   median of 802 words against a true 714, and a maximum of 1202 against a true 1128.
 
 Scripts are not committed; they are reproducible from this description.
 

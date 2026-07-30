@@ -205,10 +205,14 @@ common error" to "a standing error," which I can support; the stronger claim I c
    cleaner with a mean, but a student reading alongside the course will meet p-values first
    with $\hat{p}$. The article does not mention units at all, which sidesteps it.
 
-4. **Length.** 1060 words against the style sheet's 750–950 target — comparable to
-   least-squares influence (1104) and below the harmonic series (1202), both of which are
-   dense interactive pieces. Trimmed from 1076; further cuts would come out of the four
-   misreadings, which are the article's substance.
+4. **Length. Corrected 2026-07-30, later the same session.** This ledger first recorded
+   1060 words against a stated corpus median of 802. Both figures were wrong: the measuring
+   script removed the `viz` block with a non-greedy `.*?</div>`, which stops at the first
+   nested `viz-controls` close and leaves every button label counted as prose. Measured
+   properly, by `<div>` depth, this article is **952 words** against a corpus median of
+   **714** and a maximum of 1128. It sits seventh of thirty-two, which is a comfortable
+   place for a dense interactive piece and needs no trimming. The style sheet's length
+   table and measurement notes have been corrected.
 
 5. **A design decision worth recording.** The first design used a sample proportion, which
    matches where the course introduces p-values. I abandoned it: at $n = 50$ the exact
