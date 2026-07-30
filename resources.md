@@ -76,12 +76,12 @@ permalink: /resources/
     <button type="button" class="res-filter" data-target="calculus" aria-pressed="false">AP Calculus</button>
     <button type="button" class="res-filter" data-target="precalculus" aria-pressed="false">AP Precalculus</button>
     <button type="button" class="res-filter" data-target="statistics" aria-pressed="false">AP Statistics</button>
-    <button type="button" class="res-filter" data-target="past" aria-pressed="false">Past the course</button>
+    <button type="button" class="res-filter" data-target="past" aria-pressed="false">Looking ahead</button>
   </div>
   <p class="rxm-live" aria-live="polite" id="rxm-live"></p>
 
   {%- assign by_seq = site.posts | sort: "sequence" -%}
-  {%- assign secdefs = "calculus|AP Calculus,precalculus|AP Precalculus,statistics|AP Statistics,past|Past the course" | split: "," -%}
+  {%- assign secdefs = "calculus|AP Calculus,precalculus|AP Precalculus,statistics|AP Statistics,past|Looking ahead" | split: "," -%}
   {%- for sd in secdefs -%}
     {%- assign bits = sd | split: "|" -%}
     {%- assign cat = bits[0] -%}
