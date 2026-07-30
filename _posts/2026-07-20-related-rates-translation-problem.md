@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "11 min read"
 math: true
 kind: mechanics
-sequence: 3
+sequence: 14
 interactive: true
 blurb: "A five-step routine for the translation, not the calculus"
 ---

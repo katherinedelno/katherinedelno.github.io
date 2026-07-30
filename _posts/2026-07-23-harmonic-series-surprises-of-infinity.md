@@ -7,7 +7,7 @@ course: "AP Calculus BC"
 read_time: "11 min read"
 math: true
 kind: foundations
-sequence: 8
+sequence: 29
 interactive: true
 blurb: "Terms that vanish, sums that diverge, and order that matters"
 ---

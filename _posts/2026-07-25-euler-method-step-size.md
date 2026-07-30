@@ -7,7 +7,7 @@ course: "AP Calculus BC"
 read_time: "6 min read"
 math: true
 kind: foundations
-sequence: 7
+sequence: 25
 interactive: true
 blurb: "What a smaller step purchases, and why the path undershoots a concave-up solution"
 ---

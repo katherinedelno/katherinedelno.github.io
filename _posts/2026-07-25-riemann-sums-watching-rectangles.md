@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "6 min read"
 math: true
 kind: foundations
-sequence: 5
+sequence: 20
 interactive: true
 blurb: "Watch the definition converge, and see why left and right sums bracket it"
 ---
