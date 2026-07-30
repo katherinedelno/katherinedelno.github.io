@@ -4,7 +4,7 @@ title: "The four parameters of transformation"
 date: 2026-07-25
 description: "Every transformation question involves the same four parameters performing the same four roles, two of them in reverse. An interactive set of dials makes the structure visible."
 course: "AP Precalculus"
-read_time: "6 min read"
+read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 1

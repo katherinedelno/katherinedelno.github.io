@@ -4,7 +4,7 @@ title: "Newton's method and its basins of attraction"
 date: 2026-07-27
 description: "Tangent lines turn a guess into a root with astonishing speed, until the starting point crosses an invisible boundary. An iteration to steer, and the fractal structure hiding in it."
 course: "AP Calculus AB & BC"
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: beyond
 sequence: 1

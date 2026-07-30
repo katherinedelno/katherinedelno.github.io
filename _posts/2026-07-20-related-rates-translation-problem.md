@@ -5,7 +5,7 @@ date: 2026-07-20
 description: "The difficulty in related rates lies in the translation rather than the calculus. This article develops a five-step routine through three worked examples, including the substitution error that undoes many solutions."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "11 min read"
 math: true
 kind: mechanics
 sequence: 3

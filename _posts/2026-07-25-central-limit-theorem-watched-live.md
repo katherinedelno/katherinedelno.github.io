@@ -4,7 +4,7 @@ title: "The Central Limit Theorem in simulation"
 date: 2026-07-25
 description: "Samples drawn from a heavily skewed population produce means that organize themselves into a normal curve. A simulation makes visible what the theorem claims, and what it does not."
 course: "AP Statistics"
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 7

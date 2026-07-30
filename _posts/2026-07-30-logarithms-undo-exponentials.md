@@ -4,7 +4,7 @@ title: "Logarithms undo exponentials"
 date: 2026-07-30
 description: "A logarithm is an exponent: the two notations state one fact, the graphs mirror across y = x, and every log law is an exponent law read backward."
 course: "AP Precalculus"
-read_time: "7 min read"
+read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 3

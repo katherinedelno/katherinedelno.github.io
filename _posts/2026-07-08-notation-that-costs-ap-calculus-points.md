@@ -5,7 +5,7 @@ date: 2026-07-08
 description: "Most lost free-response points are lost in the writing rather than the mathematics. This article sets out the conventions that protect earned credit, with examples of each."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "10 min read"
 math: true
 kind: mechanics
 sequence: 1
