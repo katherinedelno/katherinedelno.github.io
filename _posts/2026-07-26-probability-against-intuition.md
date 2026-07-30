@@ -12,7 +12,7 @@ interactive: true
 blurb: "Monty Hall, the birthday problem, and three places intuition is simply wrong"
 ---
 
-Probability is the branch of mathematics most likely to start an argument at dinner. The reason is that human intuition about chance is systematically miscalibrated, and a few famous problems expose the miscalibration so cleanly that they have become classics. Each one below looks like a trick. Each one is actually a fair test of the conditional-probability reasoning from Unit 2, and in each case the AP toolkit gets the right answer while intuition gets the wrong one.
+Probability is the branch of mathematics most likely to start an argument at dinner. The reason is that human intuition about chance is systematically miscalibrated, and a few famous problems expose the miscalibration so cleanly that they have become classics. Each one below looks like a trick. Each one is actually a fair test of the [conditional-probability reasoning from Unit 2](/2026/07/27/conditional-probability-and-the-base-rate.html), and in each case the AP toolkit gets the right answer while intuition gets the wrong one.
 
 ## The Monty Hall problem
 
@@ -104,7 +104,7 @@ A treatment can be better for men, better for women, and worse for people. That 
 | Hospital A | 210 of 300 survive (70%) | 95 of 100 survive (95%) | 305 of 400 (76%) |
 | Hospital B | 30 of 50 survive (60%) | 300 of 350 survive (86%) | 330 of 400 (83%) |
 
-Hospital A wins among severe cases (70% to 60%) and wins among mild cases (95% to 86%), yet loses overall (76% to 83%). Nothing is miscounted. Hospital A's overall rate is dragged down because its caseload is mostly severe patients, whose survival is lower everywhere. The lurking variable, severity, is doing all the work, and the aggregate comparison silently lets it.
+Hospital A wins among severe cases (70% to 60%) and wins among mild cases (95% to 86%), yet loses overall (76% to 83%). Nothing is miscounted. Hospital A's overall rate is dragged down because its caseload is mostly severe patients, whose survival is lower everywhere. The [lurking variable](/2026/07/27/simpsons-paradox.html), severity, is doing all the work, and the aggregate comparison silently lets it.
 
 This is the deepest of the three problems because it is not a puzzle: it happens constantly in real data. A famous case involved graduate admissions at Berkeley in 1973, where the university appeared to favor male applicants overall while most individual departments slightly favored women; the explanation was that women had applied to the most competitive departments. Every observational-study warning in AP Statistics, every "association is not causation," is preparation for recognizing this pattern, and the college subject that studies when aggregation is safe, called causal inference, is one of the liveliest research areas in statistics today.
 

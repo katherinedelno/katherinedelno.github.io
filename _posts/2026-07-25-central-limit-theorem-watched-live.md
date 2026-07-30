@@ -12,7 +12,7 @@ interactive: true
 blurb: "Draw samples from a skewed population and watch the means organize"
 ---
 
-The Central Limit Theorem is the load-bearing wall of inference. Every confidence interval for a mean and every t-test in the course leans on it. Yet the statement sounds like a riddle: take samples from almost any population, however lopsided, and the distribution of the sample means will be approximately normal, with the approximation improving as the sample size grows.
+The Central Limit Theorem is the load-bearing wall of inference. [Every confidence interval for a mean](/2026/07/25/what-95-percent-confident-means.html) and every t-test in the course leans on it. Yet the statement sounds like a riddle: take samples from almost any population, however lopsided, and the distribution of the sample means will be approximately normal, with the approximation improving as the sample size grows.
 
 The best way I know to believe it is to watch it happen.
 

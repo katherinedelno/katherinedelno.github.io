@@ -13,7 +13,7 @@ featured: true
 blurb: "Run a hundred studies and count which intervals capture the truth"
 ---
 
-The most commonly missed interpretation question in AP Statistics is also the most commonly asked: what does "95% confident" mean? Students want it to mean "there is a 95% chance the true mean is in my interval." It does not mean that, the exam knows students want it to mean that, and the scoring guidelines are written to catch it. The distinction is easier to see than to say, so let's see it first.
+The most commonly missed interpretation question in AP Statistics is also the most commonly asked: what does "95% confident" mean? Students want it to mean "there is a 95% chance the true mean is in my interval." It does not mean that, the exam knows students want it to mean that, and the scoring guidelines are written to catch it. The distinction is easier to see than to say, so the simulation comes first.
 
 ## Build a hundred intervals
 
@@ -86,7 +86,7 @@ Each of the following appears on real student papers every year, and each earns 
 
 "95% of the data are in the interval." A confidence interval for a mean estimates where the mean is, not where individual observations fall. In the simulation, the population values spread from roughly 20 to 80, while the intervals are only a few units wide. An interval that contained 95% of individual values would be a different object entirely.
 
-"95% of sample means fall in this interval." Close enough to sound right, and still wrong: the reference distribution of sample means is centered at $$\mu$$, not at your particular $$\bar{x}$$. Your interval is one draw, not the yardstick.
+"95% of sample means fall in this interval." Close enough to sound right, and still wrong: [the reference distribution of sample means](/2026/07/25/central-limit-theorem-watched-live.html) is centered at $$\mu$$, not at your particular $$\bar{x}$$. Your interval is one draw, not the yardstick.
 
 The interpretation that survives grading mentions repeated sampling, attaches the 95% to the method, and states the parameter in context. Three ingredients, one sentence.
 

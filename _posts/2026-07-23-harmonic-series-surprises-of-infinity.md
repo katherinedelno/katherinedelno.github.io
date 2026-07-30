@@ -28,7 +28,7 @@ Every group contributes more than $$\tfrac12$$, and there are infinitely many gr
 
 What makes this genuinely strange is how slowly the divergence happens. The sum of the first $$n$$ terms grows like $$\ln n$$. To push the total past 10 you need about 12,367 terms. To pass 100, you would need more terms than there are atoms in the observable universe. The series diverges in theory and looks convergent on every calculator ever built. This is exactly why the exam insists on tests rather than numerical evidence, and why "the terms go to zero" earns no credit as a justification. The harmonic series is the standing counterexample: the nth-term test can convict a series of divergence, but it can never acquit one into convergence.
 
-The boundary here is razor thin. Raise the exponent by any amount at all and the sum tames itself: $$\sum \tfrac{1}{n^{1.0001}}$$ converges. The sharp cutoff at $$p = 1$$ in the p-series test is not bureaucratic tidiness. It marks a real cliff edge, and the harmonic series sits exactly on the lip.
+The boundary here is razor thin. Raise the exponent by any amount at all and the sum tames itself: $$\sum \tfrac{1}{n^{1.0001}}$$ converges. The sharp cutoff at $$p = 1$$ in the [p-series test](/2026/07/24/which-convergence-test-field-guide.html) is not bureaucratic tidiness. It marks a real cliff edge, and the harmonic series sits exactly on the lip.
 
 You can watch both behaviors at once. The picture below plots partial sums: the harmonic series climbing without a ceiling, and its sign-alternating twin (the subject of the next section) settling onto $$\ln 2$$.
 

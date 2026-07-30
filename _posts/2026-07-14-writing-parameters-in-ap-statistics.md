@@ -12,11 +12,11 @@ interactive: false
 blurb: "A clean way to write parameters and hypotheses for every procedure"
 ---
 
-Almost every inference problem in AP Statistics starts by defining a parameter, and it is one of the most common places to lose easy points. The good news is that the fix is a habit, not a new idea. Once you are clear on what a parameter is and how to write one, hypotheses and confidence intervals stop feeling like guesswork.
+Almost every inference problem in AP Statistics starts by defining a parameter, and it is one of the most common places to lose easy points. The fix is a habit rather than a new idea. Once you are clear on what a parameter is and how to write one, hypotheses and confidence intervals stop feeling like guesswork.
 
 ## A parameter is not a statistic
 
-A **parameter** is a fixed number that describes a whole population. A **statistic** is a number you calculate from a sample. Inference is always about the parameter: you use the statistic you can see to draw a conclusion about the parameter you cannot.
+A *parameter* is a fixed number that describes a whole population. A *statistic* is a number you calculate from a sample. Inference is always about the parameter: you use the statistic you can see to draw a conclusion about the parameter you cannot.
 
 The symbols matter, because using the wrong one changes the meaning:
 
@@ -51,7 +51,7 @@ $$H_0: \mu = 4 \qquad H_a: \mu \neq 4$$
 
 ## Two proportions
 
-You compare the proportion of first-year and second-year students who use the tutoring center, sampling each group separately. Use a **difference of proportions**, and define which group is which:
+You compare the proportion of first-year and second-year students who use the tutoring center, sampling each group separately. Use a *difference of proportions*, and define which group is which:
 
 $$p_1 - p_2, \text{ where } p_1 = \text{true proportion of first-years who use the center, and } p_2 = \text{the same for second-years}$$
 
@@ -69,7 +69,7 @@ $$H_0: \mu_1 - \mu_2 = 0 \qquad H_a: \mu_1 - \mu_2 \neq 0$$
 
 ## Paired data: the one everyone mixes up
 
-If the data are **paired** (each subject measured twice, or matched pairs), you do not have two independent groups. You work with the population of *differences*, and there is just one parameter:
+If the data are *paired* (each subject measured twice, or matched pairs), you do not have two independent groups. You work with the population of *differences*, and there is just one parameter:
 
 $$\mu_d = \text{the true mean difference (after minus before) for the population}$$
 
@@ -79,7 +79,7 @@ For example, if you record each student's score before and after a study worksho
 
 ## For a confidence interval, define the parameter too
 
-The same definitions apply. A confidence interval estimates a parameter, so you still write, for instance, "$$\mu$$ = the true mean wait time for all visits," and then interpret the interval as capturing that $$\mu$$, never as capturing $$\bar{x}$$ or "the sample."
+The same definitions apply. A confidence interval estimates a parameter, so you still write, for instance, "$$\mu$$ = the true mean wait time for all visits," and then [interpret the interval](/2026/07/25/what-95-percent-confident-means.html) as capturing that $$\mu$$, never as capturing $$\bar{x}$$ or "the sample."
 
 ## The mistakes to avoid
 

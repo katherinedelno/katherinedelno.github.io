@@ -16,7 +16,7 @@ Students usually learn the convergence tests as a heap: seven tools, each with i
 
 ## The decision sequence
 
-**Step 0: the divergence check, always first.** Look at the terms. If $$a_n$$ does not approach 0, the series diverges by the nth-term test, and you are done in one line. Try it on $$\sum \tfrac{3n}{n+1}$$: the terms head to 3, not 0, so the series diverges and no further analysis is needed. If the terms do go to 0, the test says nothing at all (the harmonic series is the standing counterexample), and you move on. This test can never prove convergence.
+**Step 0: the divergence check, always first.** Look at the terms. If $$a_n$$ does not approach 0, the series diverges by the nth-term test, and you are done in one line. Try it on $$\sum \tfrac{3n}{n+1}$$: the terms head to 3, not 0, so the series diverges and no further analysis is needed. If the terms do go to 0, the test says nothing at all ([the harmonic series](/2026/07/23/harmonic-series-surprises-of-infinity.html) is the standing counterexample), and you move on. This test can never prove convergence.
 
 **Step 1: check for the two special families.** These have complete, exact theories, so look for them before doing any real work.
 
@@ -35,7 +35,7 @@ $$\sum \frac{2^n}{n!}: \quad \frac{a_{n+1}}{a_n} = \frac{2}{n+1} \to 0 < 1, \tex
 
 ## The three traps
 
-**Trap 1: asking the alternating series test to prove divergence.** The AST has exactly one conclusion available: converges. If its hypotheses fail, the test simply does not apply; it does not declare divergence. The divergence verdict for $$\sum (-1)^n \tfrac{n}{n+1}$$ belongs to the nth-term test, since the terms hover near $$\pm 1$$ and never vanish. Writing "diverges by the AST" attaches a correct conclusion to a test that cannot produce it, and it earns nothing.
+**Trap 1: asking the alternating series test to prove divergence.** The AST has exactly one conclusion available: converges. If its hypotheses fail, the test does not apply; it does not declare divergence. The divergence verdict for $$\sum (-1)^n \tfrac{n}{n+1}$$ belongs to the nth-term test, since the terms hover near $$\pm 1$$ and never vanish. Writing "diverges by the AST" attaches a correct conclusion to a test that cannot produce it, and it earns nothing.
 
 **Trap 2: reading $$L = 1$$ as a verdict.** When the ratio test returns 1, the correct next move is a different test, usually a comparison. Under time pressure it is tempting to convert "inconclusive" into whichever answer you were hoping for. The exam writes distractors for exactly this mistake.
 

@@ -180,7 +180,7 @@ The pipeline below runs live. Choose the two machines, slide the input, and watc
 
 Set the machines to $$g(x) = 2x + 1$$ first and $$f(x) = x^2$$ second, and read the pipeline at $$x = 3$$: the 3 becomes 7, and the 7 becomes 49. That is $$f(g(3)) = (2 \cdot 3 + 1)^2 = 49$$. Now press "swap f and g," so the squaring happens first: 3 becomes 9, and 9 becomes 19. That is $$g(f(3)) = 2 \cdot 3^2 + 1 = 19$$.
 
-Same two machines, same input, different answers — because $$(2x+1)^2$$ and $$2x^2 + 1$$ are simply different functions. Composition is not commutative, and this is the single most common composition error: treating $$f(g(x))$$ and $$g(f(x))$$ as interchangeable because both "use $$f$$ and $$g$$." The graph makes the difference visible faster than the algebra does. Swap the order and the composite's whole shape changes.
+Same two machines, same input, different answers — because $$(2x+1)^2$$ and $$2x^2 + 1$$ are different functions. Composition is not commutative, and this is the single most common composition error: treating $$f(g(x))$$ and $$g(f(x))$$ as interchangeable because both "use $$f$$ and $$g$$." The graph makes the difference visible faster than the algebra does. Swap the order and the composite's whole shape changes.
 
 ## Reading a composite from the outside in
 
@@ -200,4 +200,8 @@ This is the general rule, and it is worth stating carefully: $$x$$ is in the dom
 
 ## Why this skill compounds
 
-Nearly everything built later in precalculus is a composition wearing a disguise. A transformed graph like $$y = \sin(2x - \pi)$$ is a composition; an exponential model like $$A(t) = 50e^{0.03t}$$ is a composition; inverting a function is running a pipeline backward, machine by machine, last one first. And for those continuing on: calculus differentiates composite functions by exactly the outside-in reading practiced here — the students who struggle there are almost never confused about the new rule, only about seeing which function is inside which. Learn to see the seams now and that course gets noticeably easier.
+Nearly everything built later in precalculus is a composition wearing a disguise. [A transformed graph](/2026/07/25/transformations-four-dials.html) like $$y = \sin(2x - \pi)$$ is a composition; [an exponential model](/2026/07/30/logarithms-undo-exponentials.html) like $$A(t) = 50e^{0.03t}$$ is a composition; inverting a function is running a pipeline backward, machine by machine, last one first. And for those continuing on: calculus differentiates composite functions by exactly the outside-in reading practiced here — the students who struggle there are almost never confused about the new rule, only about seeing which function is inside which. Learn to see the seams now and that course gets noticeably easier.
+
+<div class="article-note" markdown="1">
+A self-test at the pipeline: set $$g$$ to $$\sqrt{x}$$ and $$f$$ to $$x^2$$, then press swap and compare the two composites at $$x = -4$$. One returns 4 and the other is undefined, though both simplify to formulas that look harmless, $$x$$ and $$\vert x\vert$$. The order decided which restriction survived, and neither finished formula records it.
+</div>

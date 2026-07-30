@@ -145,7 +145,7 @@ A quick internal checklist before you box an answer:
 - **Does the sign match the story?** A draining tank has negative $$dV/dt$$; a falling ladder top has negative $$dy/dt$$. If your algebra produces a positive rate for a quantity the story says is shrinking, a sign was dropped in translation.
 - **Do the units multiply out?** In $$\tfrac{dV}{dt} = \tfrac{\pi h^2}{4}\,\tfrac{dh}{dt}$$, the right side is m² times m/min, which is m³/min. If the units do not work, the equation is wrong before any numbers enter it.
 - **Did every changing variable get a rate?** Differentiating $$x^2 + y^2 = 169$$ must produce both a $$\tfrac{dx}{dt}$$ and a $$\tfrac{dy}{dt}$$. A missing rate almost always means a variable was accidentally treated as a constant, which is the too-early substitution error in disguise.
-- **Is the final sentence complete?** Value, units, direction: "the depth is decreasing at $$\tfrac{3}{4\pi}$$ meters per minute when $$h = 4$$." On the exam, the interpretation is frequently its own point.
+- **Is the final sentence complete?** Value, units, direction: "the depth is decreasing at $$\tfrac{3}{4\pi}$$ meters per minute when $$h = 4$$." On the exam, [the interpretation](/2026/07/08/notation-that-costs-ap-calculus-points.html) is frequently its own point.
 
 <div class="article-note" markdown="1">
 A diagnostic to try: rework the cone example, but suppose the tank is also being filled at 5 m³/min while draining at 3. Only one thing changes, since $$\tfrac{dV}{dt}$$ becomes $$+2$$, and the entire routine runs identically. When a one-word change in the story changes exactly one number in your setup, the translation is working.
