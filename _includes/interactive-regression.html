@@ -1,0 +1,535 @@
+<div class="viz lsr" markdown="0">
+<style>
+  .lsr .lsr-presets{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+  .lsr canvas{display:block;width:100%;height:auto;border-radius:6px}
+  .lsr .lsr-scatter{touch-action:none;cursor:crosshair;aspect-ratio:700/380}
+  .lsr .lsr-resid{aspect-ratio:700/190;margin-top:6px}
+  .lsr canvas:focus-visible,.lsr button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .lsr .lsr-read{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;background:var(--accent-soft);border-radius:8px;padding:12px 16px;font-size:.86rem;line-height:1.7;margin:.9rem 0 0;color:var(--ink);overflow-x:auto;white-space:pre-wrap}
+  .lsr .lsr-read .lsr-dim{color:var(--muted)}
+  .lsr .lsr-status{font-size:.82rem;color:var(--muted);margin:.55rem 0 0;min-height:1.3em}
+  .lsr .lsr-keys{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
+  .lsr button[disabled]{opacity:.45;cursor:default}
+  .lsr button[disabled]:hover{border-color:var(--line);color:var(--muted)}
+  @media (max-width:480px){.lsr .lsr-read{font-size:.78rem;padding:10px 12px}}
+</style>
+
+  <div class="res-filters lsr-presets" role="group" aria-label="Preset data sets">
+    <button type="button" class="res-filter lsr-preset is-active" data-preset="linear">Linear</button>
+    <button type="button" class="res-filter lsr-preset" data-preset="curved">Curved</button>
+    <button type="button" class="res-filter lsr-preset" data-preset="outlier">One outlier</button>
+    <button type="button" class="res-filter lsr-preset" data-preset="influential">One influential point</button>
+    <button type="button" class="res-filter lsr-preset" data-preset="clusters">Two clusters</button>
+  </div>
+
+  <canvas id="lsr-scatter" class="lsr-scatter" width="700" height="380" tabindex="0"
+    aria-label="Scatterplot with draggable points. Use comma and period to choose a point, arrow keys to move it."></canvas>
+  <canvas id="lsr-resid" class="lsr-resid" width="700" height="190" role="img"
+    aria-label="Residual plot, aligned under the scatterplot."></canvas>
+
+  <div class="viz-controls">
+    <button type="button" class="res-filter" id="lsr-squares" aria-pressed="false">show squares</button>
+    <button type="button" class="res-filter" id="lsr-snap" disabled>snap to least squares</button>
+    <button type="button" class="res-filter" id="lsr-add">add point</button>
+    <button type="button" class="res-filter" id="lsr-remove" disabled>remove selected point</button>
+  </div>
+
+  <div class="lsr-read" id="lsr-read"></div>
+  <p class="lsr-status" id="lsr-status" role="status"></p>
+  <p class="lsr-keys">keyboard: tab to the scatterplot &middot; comma and period choose a point &middot; arrow keys move it &middot; shift-arrows move faster &middot; a adds a point &middot; delete removes it</p>
+  <p class="viz-caption">Drag any point and watch the line, the residual plot, and the statistics respond together. Click empty space to add a point. When a point is selected, the dashed line shows the fit computed without it; the gap between the two lines is that point's influence. The line is drawn gray beyond the range of the data, where it makes no supported prediction.</p>
+
+<script>
+(function(){
+  'use strict';
+
+  // ---------- data ----------
+  var PRESETS = {
+    linear: [[6,24],[14,13],[22,32],[30,24],[38,45],[46,34],[54,55],[62,45],[70,66],[78,55],[86,76],[94,66]],
+    curved: [[3,14],[12,13],[21,13.5],[30,15],[39,18],[48,22],[57,28],[66,37],[75,49],[84,63],[92,79],[98,92]],
+    outlier: [[8,18],[16,22],[24,28],[32,30],[40,38],[48,40],[56,48],[64,52],[72,58],[80,64],[88,70],[50,95]],
+    influential: [[6,22],[11,26],[16,24],[21,30],[26,28],[31,34],[36,31],[41,38],[46,36],[51,42],[95,20]],
+    clusters: [[12,20],[18,30],[24,22],[15,28],[27,32],[21,18],[68,72],[75,62],[82,74],[71,66],[86,64],[78,78]]
+  };
+  var MAXPTS = 40;
+
+  var pts = [];                 // [{x,y}]
+  var sel = null;               // index into pts, or 'h1'/'h2' in squares mode
+  var mode = 'fit';             // 'fit' | 'squares'
+  var hand = null;              // {y1,y2} custom-line handle heights at H1X, H2X
+  var H1X = 8, H2X = 92;
+  var dragging = false;
+  var snapAnim = null;
+
+  // ---------- elements ----------
+  var cvS = document.getElementById('lsr-scatter');
+  var cvR = document.getElementById('lsr-resid');
+  var read = document.getElementById('lsr-read');
+  var status = document.getElementById('lsr-status');
+  var btnSq = document.getElementById('lsr-squares');
+  var btnSnap = document.getElementById('lsr-snap');
+  var btnAdd = document.getElementById('lsr-add');
+  var btnRem = document.getElementById('lsr-remove');
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // logical sizes; buffers are devicePixelRatio-scaled for crisp rendering
+  var SW = 700, SH = 380, RW = 700, RH = 190;
+  var ctxS = cvS.getContext('2d'), ctxR = cvR.getContext('2d');
+  (function crisp(){
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    cvS.width = SW*d; cvS.height = SH*d; ctxS.setTransform(d,0,0,d,0,0);
+    cvR.width = RW*d; cvR.height = RH*d; ctxR.setTransform(d,0,0,d,0,0);
+  })();
+
+  // shared plot rectangle so the two plots' columns align
+  var L = 48, R = 690, ST = 16, SB = 348, RT = 16, RB = 158;
+  function sx(x){ return L + x/100*(R-L); }
+  function sy(y){ return SB - y/100*(SB-ST); }
+
+  var FONT = '11px "Hanken Grotesk",-apple-system,sans-serif';
+  var INK = '#1f1f1f', MUTED = '#5c5c5c', LINE = '#e6e6e6', GRAY = '#c9c9c7', GHOST = '#9a9a97';
+
+  // ---------- math (computed directly) ----------
+  function fit(list){
+    var n = list.length;
+    if(n < 3) return { err: 'few', n: n };
+    var i, sxs=0, sys=0;
+    for(i=0;i<n;i++){ sxs+=list[i].x; sys+=list[i].y; }
+    var xb=sxs/n, yb=sys/n, Sxx=0, Syy=0, Sxy=0;
+    for(i=0;i<n;i++){
+      var dx=list[i].x-xb, dy=list[i].y-yb;
+      Sxx+=dx*dx; Syy+=dy*dy; Sxy+=dx*dy;
+    }
+    if(Sxx === 0) return { err: 'vert', n: n };
+    var b = Sxy/Sxx, a = yb - b*xb;
+    var r = Syy === 0 ? 0 : Sxy/Math.sqrt(Sxx*Syy);
+    var sse = 0;
+    for(i=0;i<n;i++){ var e=list[i].y-(a+b*list[i].x); sse+=e*e; }
+    return { n:n, xb:xb, yb:yb, Sxx:Sxx, a:a, b:b, r:r, r2:r*r,
+             s: Math.sqrt(sse/(n-2)), sse: sse };
+  }
+  function leverage(f, x){ return 1/f.n + (x-f.xb)*(x-f.xb)/f.Sxx; }
+  function customAB(){
+    var b = (hand.y2-hand.y1)/(H2X-H1X);
+    return { a: hand.y1 - b*H1X, b: b };
+  }
+  function sseOf(a, b){
+    var t = 0;
+    for(var i=0;i<pts.length;i++){ var e=pts[i].y-(a+b*pts[i].x); t+=e*e; }
+    return t;
+  }
+
+  function fmt(v, d){
+    if(!isFinite(v)) return '—';
+    var s = v.toFixed(d);
+    return s === '-' + (0).toFixed(d) ? (0).toFixed(d) : s;
+  }
+  function eq(a, b){
+    var sign = b < 0 ? '−' : '+';
+    var ai = (a < 0 && fmt(Math.abs(a),2) !== '0.00' ? '−' : '') + fmt(Math.abs(a),2);
+    return 'ŷ = ' + ai + ' ' + sign + ' ' + fmt(Math.abs(b),3) + 'x';
+  }
+
+  // ---------- drawing ----------
+  function axes(c, top, bot, ylab){
+    c.strokeStyle = LINE; c.lineWidth = 1;
+    c.strokeRect(L+.5, top+.5, R-L, bot-top);
+    c.fillStyle = MUTED; c.font = FONT; c.textAlign = 'center'; c.textBaseline = 'top';
+    for(var x=0; x<=100; x+=20){
+      var px = sx(x);
+      c.beginPath(); c.moveTo(px, bot); c.lineTo(px, bot+4); c.stroke();
+      c.fillText(String(x), px, bot+6);
+    }
+    c.save(); c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+    c.fillText(ylab, L, top-4); c.restore();
+  }
+
+  function drawLine(c, a, b, x0, x1, color, width, dash){
+    if(x1 <= x0) return;
+    c.save();
+    c.beginPath(); c.rect(L, ST, R-L, SB-ST); c.clip();
+    c.strokeStyle = color; c.lineWidth = width;
+    c.setLineDash(dash || []);
+    c.beginPath();
+    c.moveTo(sx(x0), sy(a + b*x0));
+    c.lineTo(sx(x1), sy(a + b*x1));
+    c.stroke();
+    c.restore();
+  }
+
+  function draw(){
+    var c = ctxS;
+    c.clearRect(0, 0, SW, SH);
+    axes(c, ST, SB, 'y');
+    c.fillStyle = MUTED; c.font = FONT; c.textAlign = 'center'; c.textBaseline = 'top';
+    // y tick labels
+    c.textAlign = 'right'; c.textBaseline = 'middle';
+    for(var y=0; y<=100; y+=20) c.fillText(String(y), L-7, sy(y));
+
+    var f = fit(pts);
+    var i, xmin = Infinity, xmax = -Infinity;
+    for(i=0;i<pts.length;i++){ if(pts[i].x<xmin)xmin=pts[i].x; if(pts[i].x>xmax)xmax=pts[i].x; }
+
+    var lineA = null, lineB = null;   // the line residuals are measured against
+    if(mode === 'squares' && hand){
+      var ab = customAB(); lineA = ab.a; lineB = ab.b;
+    } else if(!f.err){
+      lineA = f.a; lineB = f.b;
+    }
+
+    // squares first, under everything
+    if(mode === 'squares' && lineA !== null){
+      var yUnit = (SB-ST)/100;
+      c.save();
+      c.beginPath(); c.rect(L, ST, R-L, SB-ST); c.clip();
+      for(i=0;i<pts.length;i++){
+        var p = pts[i], py = sy(p.y), ly = sy(lineA + lineB*p.x);
+        var side = Math.abs(py - ly);
+        var x0 = sx(p.x), left = x0 + side > R ? x0 - side : x0;
+        c.fillStyle = 'rgba(43,43,43,.10)';
+        c.strokeStyle = 'rgba(43,43,43,.35)';
+        c.lineWidth = 1;
+        c.fillRect(left, Math.min(py,ly), side, side);
+        c.strokeRect(left, Math.min(py,ly), side, side);
+      }
+      c.restore();
+    }
+
+    if(mode === 'fit' && !f.err){
+      // unsupported prediction: gray beyond the data's x-range
+      drawLine(c, f.a, f.b, 0, xmin, GRAY, 2);
+      drawLine(c, f.a, f.b, xmax, 100, GRAY, 2);
+      drawLine(c, f.a, f.b, xmin, xmax, INK, 2);
+      // ghost line: fit without the selected point
+      if(typeof sel === 'number' && pts.length >= 4){
+        var rest = pts.slice(0, sel).concat(pts.slice(sel+1));
+        var g = fit(rest);
+        if(!g.err) drawLine(c, g.a, g.b, 0, 100, GHOST, 2, [7,5]);
+      }
+    }
+    if(mode === 'squares' && lineA !== null){
+      drawLine(c, lineA, lineB, 0, 100, INK, 2);
+      if(!f.err && !nearLS()) drawLine(c, f.a, f.b, 0, 100, GHOST, 1.5, [7,5]);
+    }
+
+    // points
+    for(i=0;i<pts.length;i++){
+      var px2 = sx(pts[i].x), py2 = sy(pts[i].y);
+      c.beginPath(); c.arc(px2, py2, 5, 0, 7); c.fillStyle = INK; c.fill();
+      if(sel === i){
+        c.beginPath(); c.arc(px2, py2, 9, 0, 7);
+        c.strokeStyle = INK; c.lineWidth = 2; c.setLineDash([]); c.stroke();
+      }
+    }
+
+    // custom-line handles
+    if(mode === 'squares' && hand){
+      var hs = [[H1X, hand.y1, 'h1'], [H2X, hand.y2, 'h2']];
+      for(i=0;i<2;i++){
+        var hx = sx(hs[i][0]), hy = sy(hs[i][1]);
+        c.beginPath(); c.arc(hx, hy, 7, 0, 7);
+        c.fillStyle = sel === hs[i][2] ? INK : '#ffffff';
+        c.fill(); c.strokeStyle = INK; c.lineWidth = 2; c.setLineDash([]); c.stroke();
+      }
+    }
+
+    drawResid(lineA, lineB, f);
+    renderRead(f, lineA, lineB);
+    syncButtons(f);
+  }
+
+  function drawResid(lineA, lineB, f){
+    var c = ctxR;
+    c.clearRect(0, 0, RW, RH);
+    var mid = (RT+RB)/2;
+    c.strokeStyle = LINE; c.lineWidth = 1;
+    c.strokeRect(L+.5, RT+.5, R-L, RB-RT);
+    c.font = FONT; c.fillStyle = MUTED;
+    c.textAlign = 'center'; c.textBaseline = 'top';
+    for(var x=0; x<=100; x+=20){
+      var px = sx(x);
+      c.beginPath(); c.moveTo(px, RB); c.lineTo(px, RB+4); c.stroke();
+      c.fillText(String(x), px, RB+6);
+    }
+    c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+    c.fillText('residuals', L, RT-4);
+
+    if(lineA === null){
+      c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.fillText(f && f.err === 'vert' ? 'all points share one x value' : 'needs at least three points', (L+R)/2, mid);
+      cvR.setAttribute('aria-label', 'Residual plot: no line to measure against yet.');
+      return;
+    }
+    var i, res = [], maxAbs = 8;
+    for(i=0;i<pts.length;i++){
+      var e = pts[i].y - (lineA + lineB*pts[i].x);
+      res.push(e);
+      if(Math.abs(e) > maxAbs) maxAbs = Math.abs(e);
+    }
+    maxAbs *= 1.15;
+    function ry(e){ return mid - e/maxAbs*(mid-RT); }
+
+    // zero line
+    c.strokeStyle = MUTED; c.beginPath(); c.moveTo(L, mid+.5); c.lineTo(R, mid+.5); c.stroke();
+    c.textAlign = 'right'; c.textBaseline = 'middle';
+    c.fillText('0', L-7, mid);
+    c.fillText('+' + Math.round(maxAbs), L-7, RT+6);
+    c.fillText('−' + Math.round(maxAbs), L-7, RB-6);
+
+    for(i=0;i<pts.length;i++){
+      var px2 = sx(pts[i].x), py2 = ry(res[i]);
+      c.strokeStyle = GRAY; c.lineWidth = 1;
+      c.beginPath(); c.moveTo(px2, mid); c.lineTo(px2, py2); c.stroke();
+      c.beginPath(); c.arc(px2, py2, 4, 0, 7); c.fillStyle = INK; c.fill();
+      if(sel === i){
+        c.beginPath(); c.arc(px2, py2, 8, 0, 7);
+        c.strokeStyle = INK; c.lineWidth = 2; c.stroke();
+      }
+    }
+    var big = 0;
+    for(i=1;i<res.length;i++) if(Math.abs(res[i]) > Math.abs(res[big])) big = i;
+    cvR.setAttribute('aria-label', 'Residual plot for ' + pts.length +
+      ' points. Largest residual ' + fmt(res[big],1) + ' at x = ' + fmt(pts[big].x,0) + '.');
+  }
+
+  function renderRead(f, lineA, lineB){
+    var h = '';
+    if(f.err === 'few'){
+      h = 'a least-squares line needs at least three points — click empty space to add some';
+    } else if(f.err === 'vert'){
+      h = 'every point has the same x value, so Sxx = 0 and no least-squares line exists';
+    } else if(mode === 'squares'){
+      var ab = customAB();
+      var yours = sseOf(ab.a, ab.b);
+      h = 'your line      ' + eq(ab.a, ab.b) + '  <span class="lsr-dim">sum of squares</span> ' + fmt(yours,1) + '<br>' +
+          'least squares  ' + eq(f.a, f.b) + '  <span class="lsr-dim">minimum</span> ' + fmt(f.sse,1);
+      if(yours > f.sse + .05) h += '   <span class="lsr-dim">(+' + fmt(yours - f.sse,1) + ')</span>';
+    } else {
+      h = eq(f.a, f.b) + '   <span class="lsr-dim">n</span> = ' + f.n + '<br>' +
+          '<span class="lsr-dim">r</span> = ' + fmt(f.r,3) +
+          '   <span class="lsr-dim">r²</span> = ' + fmt(f.r2,3) +
+          '   <span class="lsr-dim">s</span> = ' + fmt(f.s,2);
+      if(typeof sel === 'number'){
+        var p = pts[sel];
+        var e = p.y - (f.a + f.b*p.x);
+        h += '<br>selected (' + fmt(p.x,0) + ', ' + fmt(p.y,0) + ')' +
+             '   <span class="lsr-dim">residual</span> ' + (e<0?'−':'+') + fmt(Math.abs(e),1) +
+             '   <span class="lsr-dim">leverage</span> ' + fmt(leverage(f, p.x),3);
+        if(pts.length >= 4){
+          var g = fit(pts.slice(0, sel).concat(pts.slice(sel+1)));
+          if(!g.err){
+            var db = f.b - g.b;
+            h += '<br>without it     ' + eq(g.a, g.b) +
+                 '   <span class="lsr-dim">slope change</span> ' + (db<0?'−':'+') + fmt(Math.abs(db),3);
+          }
+        }
+      }
+    }
+    read.innerHTML = h;
+    cvS.setAttribute('aria-label', 'Scatterplot with ' + pts.length + ' draggable points.' +
+      (f.err ? '' : ' Least-squares line ' + eq(f.a, f.b).replace('ŷ','y-hat') + ', r = ' + fmt(f.r,3) + '.') +
+      ' Use comma and period to choose a point, arrow keys to move it.');
+  }
+
+  function nearLS(){
+    var f = fit(pts);
+    if(f.err || !hand) return true;
+    return Math.abs(hand.y1 - (f.a + f.b*H1X)) < .2 && Math.abs(hand.y2 - (f.a + f.b*H2X)) < .2;
+  }
+
+  function syncButtons(f){
+    btnRem.disabled = typeof sel !== 'number';
+    btnSnap.disabled = !(mode === 'squares' && hand && !f.err && !nearLS());
+  }
+
+  function announce(msg){ status.textContent = msg; }
+
+  // ---------- interaction ----------
+  function toData(ev){
+    var rect = cvS.getBoundingClientRect();
+    var lx = (ev.clientX - rect.left) * SW/rect.width;
+    var ly = (ev.clientY - rect.top) * SH/rect.height;
+    return { x: (lx-L)/(R-L)*100, y: (SB-ly)/(SB-ST)*100, lx: lx, ly: ly };
+  }
+  function clamp(v){ return Math.max(0, Math.min(100, v)); }
+
+  function hitTest(d, coarse){
+    var i, best = null, bestD = coarse ? 30 : 15;   // logical px; bigger target for touch
+    if(mode === 'squares' && hand){
+      var hs = [[H1X, hand.y1, 'h1'], [H2X, hand.y2, 'h2']];
+      for(i=0;i<2;i++){
+        var dist = Math.hypot(d.lx - sx(hs[i][0]), d.ly - sy(hs[i][1]));
+        if(dist < bestD){ bestD = dist; best = hs[i][2]; }
+      }
+      if(best) return best;
+    }
+    for(i=0;i<pts.length;i++){
+      var dist2 = Math.hypot(d.lx - sx(pts[i].x), d.ly - sy(pts[i].y));
+      if(dist2 < bestD){ bestD = dist2; best = i; }
+    }
+    return best;
+  }
+
+  cvS.addEventListener('pointerdown', function(ev){
+    ev.preventDefault();
+    cvS.focus({ preventScroll: true });
+    var d = toData(ev);
+    var hit = hitTest(d, ev.pointerType === 'touch');
+    if(hit === null){
+      if(d.x < -3 || d.x > 103 || d.y < -3 || d.y > 103) return;
+      if(pts.length >= MAXPTS){ announce('point limit reached'); return; }
+      pts.push({ x: clamp(d.x), y: clamp(d.y) });
+      hit = pts.length - 1;
+      announce('added point (' + fmt(clamp(d.x),0) + ', ' + fmt(clamp(d.y),0) + ')');
+    }
+    sel = hit;
+    dragging = true;
+    cvS.setPointerCapture(ev.pointerId);
+    draw();
+  });
+
+  cvS.addEventListener('pointermove', function(ev){
+    if(!dragging || sel === null) return;
+    var d = toData(ev);
+    if(sel === 'h1') hand.y1 = clamp(d.y);
+    else if(sel === 'h2') hand.y2 = clamp(d.y);
+    else { pts[sel].x = clamp(d.x); pts[sel].y = clamp(d.y); }
+    draw();   // live update while dragging, not on release
+  });
+
+  function endDrag(){
+    if(!dragging) return;
+    dragging = false;
+    if(typeof sel === 'number'){
+      var p = pts[sel];
+      announce('point at (' + fmt(p.x,0) + ', ' + fmt(p.y,0) + ')');
+    }
+  }
+  cvS.addEventListener('pointerup', endDrag);
+  cvS.addEventListener('pointercancel', endDrag);
+
+  cvS.addEventListener('keydown', function(ev){
+    var k = ev.key;
+    var order = pts.map(function(_, i){ return i; });
+    if(mode === 'squares' && hand) order = order.concat(['h1','h2']);
+    if(k === ',' || k === '.'){
+      if(order.length === 0) return;
+      var at = order.indexOf(sel);
+      var next = k === '.' ? (at + 1) % order.length
+                           : (at - 1 + order.length) % order.length;
+      sel = order[next];
+      if(typeof sel === 'number'){
+        announce('selected point (' + fmt(pts[sel].x,0) + ', ' + fmt(pts[sel].y,0) + ')');
+      } else {
+        announce('selected line handle');
+      }
+      draw(); ev.preventDefault(); return;
+    }
+    if(k === 'Escape'){ sel = null; draw(); return; }
+    if(k === 'a' || k === 'A'){ addPoint(); ev.preventDefault(); return; }
+    if(k === 'Delete' || k === 'Backspace'){ removeSel(); ev.preventDefault(); return; }
+    var step = ev.shiftKey ? 5 : 1, dx = 0, dy = 0;
+    if(k === 'ArrowLeft') dx = -step;
+    else if(k === 'ArrowRight') dx = step;
+    else if(k === 'ArrowUp') dy = step;
+    else if(k === 'ArrowDown') dy = -step;
+    else return;
+    ev.preventDefault();
+    if(sel === null) return;
+    if(sel === 'h1') hand.y1 = clamp(hand.y1 + dy);
+    else if(sel === 'h2') hand.y2 = clamp(hand.y2 + dy);
+    else { pts[sel].x = clamp(pts[sel].x + dx); pts[sel].y = clamp(pts[sel].y + dy); }
+    draw();
+  });
+
+  function addPoint(){
+    if(pts.length >= MAXPTS){ announce('point limit reached'); return; }
+    // place at the center of the widest empty x gap, at mid height
+    var xs = pts.map(function(p){ return p.x; }).sort(function(a,b){ return a-b; });
+    var gx = 50, gap = 0, prev = 0;
+    for(var i=0;i<=xs.length;i++){
+      var cur = i < xs.length ? xs[i] : 100;
+      if(cur - prev > gap){ gap = cur - prev; gx = (cur + prev)/2; }
+      prev = cur;
+    }
+    pts.push({ x: Math.round(gx), y: 50 });
+    sel = pts.length - 1;
+    announce('added point (' + Math.round(gx) + ', 50) — arrow keys move it');
+    draw();
+  }
+
+  function removeSel(){
+    if(typeof sel !== 'number') { announce('choose a point first'); return; }
+    var p = pts[sel];
+    pts.splice(sel, 1);
+    announce('removed point (' + fmt(p.x,0) + ', ' + fmt(p.y,0) + ')');
+    sel = null;
+    draw();
+  }
+
+  btnAdd.addEventListener('click', function(){ addPoint(); cvS.focus({ preventScroll: true }); });
+  btnRem.addEventListener('click', removeSel);
+
+  btnSq.addEventListener('click', function(){
+    if(mode === 'fit'){
+      mode = 'squares';
+      var f = fit(pts);
+      if(!f.err) hand = { y1: clamp(f.a + f.b*H1X), y2: clamp(f.a + f.b*H2X) };
+      else hand = { y1: 50, y2: 50 };
+      btnSq.classList.add('is-active');
+      btnSq.setAttribute('aria-pressed', 'true');
+      announce('squares mode: each square’s area is a squared residual; drag the open handles to move the line');
+    } else {
+      mode = 'fit'; hand = null;
+      if(sel === 'h1' || sel === 'h2') sel = null;
+      btnSq.classList.remove('is-active');
+      btnSq.setAttribute('aria-pressed', 'false');
+      announce('');
+    }
+    draw();
+  });
+
+  btnSnap.addEventListener('click', function(){
+    var f = fit(pts);
+    if(f.err || !hand) return;
+    var t1 = clamp(f.a + f.b*H1X), t2 = clamp(f.a + f.b*H2X);
+    if(reduced){ hand.y1 = t1; hand.y2 = t2; draw(); announce('snapped to the least-squares line'); return; }
+    if(snapAnim) cancelAnimationFrame(snapAnim);
+    var s1 = hand.y1, s2 = hand.y2, t0 = null, DUR = 350;
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var u = Math.min(1, (ts - t0)/DUR);
+      var e = 1 - (1-u)*(1-u);   // ease-out
+      hand.y1 = s1 + (t1-s1)*e; hand.y2 = s2 + (t2-s2)*e;
+      draw();
+      if(u < 1) snapAnim = requestAnimationFrame(step);
+      else { snapAnim = null; announce('snapped to the least-squares line'); }
+    }
+    snapAnim = requestAnimationFrame(step);
+  });
+
+  var presetBtns = document.querySelectorAll('.lsr-preset');
+  presetBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      presetBtns.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      loadPreset(btn.getAttribute('data-preset'));
+    });
+  });
+
+  function loadPreset(name){
+    pts = PRESETS[name].map(function(p){ return { x: p[0], y: p[1] }; });
+    sel = null;
+    if(mode === 'squares'){
+      var f = fit(pts);
+      hand = f.err ? { y1: 50, y2: 50 } : { y1: clamp(f.a + f.b*H1X), y2: clamp(f.a + f.b*H2X) };
+    }
+    announce('');
+    draw();
+  }
+
+  loadPreset('linear');
+})();
+</script>
+</div>
