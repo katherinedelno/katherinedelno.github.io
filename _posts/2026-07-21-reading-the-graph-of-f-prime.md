@@ -25,12 +25,12 @@ Everything on this problem type follows from two facts: the sign of $$f'$$ contr
 |---|---|
 | $$f'$$ above the $$x$$-axis | $$f$$ is increasing |
 | $$f'$$ below the $$x$$-axis | $$f$$ is decreasing |
-| $$f'$$ crosses zero, positive to negative | $$f$$ has a relative **maximum** there |
-| $$f'$$ crosses zero, negative to positive | $$f$$ has a relative **minimum** there |
-| $$f'$$ is decreasing | $$f$$ is **concave down** |
-| $$f'$$ is increasing | $$f$$ is **concave up** |
-| $$f'$$ turns around (its own max or min) | $$f$$ has a **point of inflection** |
-| area trapped between $$f'$$ and the axis | **total change** in $$f$$ (signed) |
+| $$f'$$ crosses zero, positive to negative | $$f$$ has a relative maximum there |
+| $$f'$$ crosses zero, negative to positive | $$f$$ has a relative minimum there |
+| $$f'$$ is decreasing | $$f$$ is concave down |
+| $$f'$$ is increasing | $$f$$ is concave up |
+| $$f'$$ turns around (its own max or min) | $$f$$ has a point of inflection |
+| area trapped between $$f'$$ and the axis | total change in $$f$$ (signed) |
 
 Notice what is not in the table: the height of a bump on the graph, or the location of its peaks. Those features of $$f'$$ answer questions about concavity and $$f''$$, not questions about where $$f$$ is largest.
 
@@ -73,7 +73,7 @@ The graph below shows $$f'$$ (not $$f$$) on the interval $$[0, 8]$$: line segmen
 
 **Where is $$f$$ concave down?** Wherever $$f'$$ is decreasing, which is $$(0,4)$$. It is concave up where $$f'$$ increases, on $$(4,8)$$. The point of inflection sits at $$x = 4$$, the open dot, where $$f'$$ turns around. The justification: $$f''$$ changes sign at $$x = 4$$, since $$f'$$ changes from decreasing to increasing there.
 
-**If $$f(0) = 1$$, what is $$f(8)$$?** Use the Fundamental Theorem to accumulate the graph's signed areas. The triangles: from 0 to 2, area $$\tfrac12(2)(3) = 3$$ above the axis; from 2 to 6, area $$\tfrac12(4)(3) = 6$$ below the axis, which counts as $$-6$$; from 6 to 8, another $$+3$$. So
+**If $$f(0) = 1$$, what is $$f(8)$$?** Use the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) to accumulate the graph's signed areas. The triangles: from 0 to 2, area $$\tfrac12(2)(3) = 3$$ above the axis; from 2 to 6, area $$\tfrac12(4)(3) = 6$$ below the axis, which counts as $$-6$$; from 6 to 8, another $$+3$$. So
 
 $$f(8) = f(0) + \int_0^8 f'(x)\,dx = 1 + 3 - 6 + 3 = 1.$$
 

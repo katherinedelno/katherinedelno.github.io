@@ -30,7 +30,7 @@ Two or more separate samples, one categorical variable. Here you have distinct g
 
 ## The tell is in how the data were collected
 
-Because the arithmetic is identical, students often guess between the two. Do not guess, read the design. **One sample cross-classified two ways is a test for independence. Several separate groups compared on one variable is a test for homogeneity.** The way the data were gathered decides the test, not the way the table looks on the page.
+Because the arithmetic is identical, students often guess between the two. Do not guess, read the design. One sample cross-classified two ways is a test for independence. Several separate groups compared on one variable is a test for homogeneity. The way the data were gathered decides the test, not the way the table looks on the page.
 
 ## A quick example of each
 
@@ -50,7 +50,7 @@ Both tests share the same three conditions, and all three are easy points to los
 
 ## Finish the conclusion properly
 
-State the test statistic, the degrees of freedom, and the $$P$$-value, then compare the $$P$$-value to your significance level $$\alpha$$ and write a conclusion in context that refers back to the alternative hypothesis. A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
+State the test statistic, the degrees of freedom, and the $$P$$-value, then compare the $$P$$-value to your significance level $$\alpha$$ and write a conclusion in context that refers back to [the alternative hypothesis](/2026/07/14/writing-parameters-in-ap-statistics.html). A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
 
 <div class="article-note" markdown="1">
 If you have older review books that still include a goodness-of-fit test for a single categorical variable, that is the piece no longer part of the course. It remains a valid statistical idea, but it will not appear on the current AP exam. The real goal, either way, is being able to look at an unfamiliar problem under time pressure, decide which test it calls for, and justify that choice on your own.

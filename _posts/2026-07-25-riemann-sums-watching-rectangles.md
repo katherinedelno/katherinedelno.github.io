@@ -13,7 +13,7 @@ interactive: true
 blurb: "Watch the definition converge, and see why left and right sums bracket it"
 ---
 
-Before the Fundamental Theorem gives you a shortcut, the definite integral has a definition, and the definition is rectangles. To estimate the area under a curve, slice the interval into $$n$$ pieces, stand a rectangle on each piece, and add up the rectangle areas. The definite integral is what those sums approach as the slicing gets finer:
+Before the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives you a shortcut, the definite integral has a definition, and the definition is rectangles. To estimate the area under a curve, slice the interval into $$n$$ pieces, stand a rectangle on each piece, and add up the rectangle areas. The definite integral is what those sums approach as the slicing gets finer:
 
 $$\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{k=1}^{n} f\!\left(x_k^*\right)\Delta x.$$
 

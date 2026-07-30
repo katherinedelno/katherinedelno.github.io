@@ -160,7 +160,7 @@ The errors worth naming are the laws that do not exist. $$\log_b(x + y)$$ is not
 
 ## Solving equations: undo in the right order
 
-To solve an exponential equation, take a logarithm; to solve a logarithmic equation, exponentiate. The only technique is deciding what to undo first. Solve
+To solve an exponential equation, take a logarithm; to solve a logarithmic equation, exponentiate. The only technique is deciding [what to undo first](/2026/07/30/functions-inside-functions.html). Solve
 
 $$5 \cdot 3^t = 40.$$
 
@@ -173,3 +173,7 @@ The order matters. Taking a log of both sides of $$5 \cdot 3^t = 40$$ first is l
 Among all possible bases, one is special enough to own a key on the calculator: $$e \approx 2.718$$, with its logarithm written $$\ln x$$. In precalculus, $$e$$ earns its place through continuous growth — compounding a rate more and more often walks the growth factor toward $$e$$, which is why continuously compounded models are written $$A(t) = A_0 e^{rt}$$. Press "set base to e" above and look at the pair of curves; nothing visually dramatic marks the spot, and that is rather the point: $$e$$ is not a strange base, just the natural one, and $$\ln$$ obeys every law in this article with no special cases.
 
 For those continuing to calculus: that course runs almost entirely on base $$e$$, and it will assume the equivalence $$b^a = y \Leftrightarrow \log_b y = a$$, the three laws, and clean parenthesizing as reflexes rather than topics. The reflexes are built here.
+
+<div class="article-note" markdown="1">
+A self-test at the slider: push the base down toward its lower limit and watch both curves at once. The exponential flattens toward the horizontal line $$y = 1$$, and its mirror steepens toward the vertical. At $$b = 1$$ exactly, $$b^x$$ would be the constant function 1, which fails the horizontal line test and therefore has no inverse. The rule that a logarithm requires $$b \neq 1$$ is that collapse, caught one step before it happens.
+</div>

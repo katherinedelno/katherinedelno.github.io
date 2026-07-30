@@ -20,7 +20,7 @@ The tempting answer is 99%, or something near it. The correct answer is about 17
 
 The test's accuracy is a statement of the form $$P(\text{positive} \mid \text{disease})$$: among people who have the disease, how often does the test say so? The question asked of a patient is the reverse: $$P(\text{disease} \mid \text{positive})$$, among people the test flagged, how many are actually sick? These are different fractions with different denominators, and nothing in mathematics obliges them to be close. Treating them as interchangeable is called the confusion of the inverse, and it is the single most common conditional probability error, on the exam and in life.
 
-What drives the two numbers apart is the **base rate**: the underlying prevalence of the condition. When a disease is rare, the healthy population is so much larger than the sick one that even a small false-positive rate applied to the large group produces more false alarms than the large true-positive rate produces genuine detections.
+What drives the two numbers apart is the *base rate*: the underlying prevalence of the condition. When a disease is rare, the healthy population is so much larger than the sick one that even a small false-positive rate applied to the large group produces more false alarms than the large true-positive rate produces genuine detections.
 
 ## The population, drawn
 
@@ -37,7 +37,7 @@ The picture below shows a population of 10,000 people. Those with the condition 
     <input type="range" id="br-spec" min="50" max="100" step="1" value="95">
   </div>
   <div class="viz-controls"><span class="viz-value" id="br-read" style="min-width:100%"></span></div>
-  <p class="viz-caption">Each square is one person in a population of 10,000. Black squares are true positives; gray squares are false positives; the faint field is everyone who tested negative. The readout computes the probability that a positive result is genuine, which is simply the black squares as a fraction of all shaded squares. At the default settings, gray squares outnumber black ones roughly five to one. Now raise the prevalence and watch the same test become trustworthy: the test never changed, only the population did. This is the base rate doing its quiet work.</p>
+  <p class="viz-caption">Each square is one person in a population of 10,000. Black squares are true positives; gray squares are false positives; the faint field is everyone who tested negative. The readout computes the probability that a positive result is genuine, which is the black squares as a fraction of all shaded squares. At the default settings, gray squares outnumber black ones roughly five to one. Now raise the prevalence and watch the same test become trustworthy: the test never changed, only the population did. This is the base rate doing its quiet work.</p>
 </div>
 
 <script>

@@ -119,7 +119,7 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
 
 ## Why the slope of A is the height of f
 
-Here is the argument, and it fits in a paragraph. Ask how fast $$A$$ is growing at some moment $$x$$. Push the sweep line a small step $$h$$ further. The new area picked up, $$A(x+h) - A(x)$$, is a thin sliver, very nearly a rectangle with width $$h$$ and height $$f(x)$$, because a continuous function barely moves over a small interval. So
+Here is the argument, and it fits in a paragraph. Ask how fast $$A$$ is growing at some moment $$x$$. Push the sweep line a small step $$h$$ further. The new area picked up, $$A(x+h) - A(x)$$, is a thin sliver, [very nearly a rectangle](/2026/07/25/riemann-sums-watching-rectangles.html) with width $$h$$ and height $$f(x)$$, because a continuous function barely moves over a small interval. So
 
 $$\frac{A(x+h) - A(x)}{h} \approx \frac{f(x)\cdot h}{h} = f(x),$$
 

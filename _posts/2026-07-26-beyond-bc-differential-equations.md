@@ -25,7 +25,7 @@ $$\frac{dS}{dt} = -\beta \frac{SI}{N}, \qquad \frac{dI}{dt} = \beta \frac{SI}{N}
 
 Read them as sentences. New infections happen when susceptible and infected people meet, at a rate set by the transmission parameter $$\beta$$, so $$S$$ falls and $$I$$ rises by the same amount. Infected people recover at rate $$\gamma$$, draining $$I$$ into $$R$$. That is the whole model, three sentences long, and it is a direct ancestor of the models used in real public health.
 
-No formula solves this system exactly. But Euler's method, the humble two-step tool from BC, handles it numerically without complaint, and that is exactly what the simulation below is doing behind the scenes.
+No formula solves this system exactly. But [Euler's method](/2026/07/25/euler-method-step-size.html), the humble two-step tool from BC, handles it numerically without complaint, and that is exactly what the simulation below is doing behind the scenes.
 
 ## Steer an outbreak
 

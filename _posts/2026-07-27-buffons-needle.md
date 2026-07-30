@@ -88,7 +88,7 @@ The floor below uses that half-spacing needle. Drop them by the hundred and watc
 
 ## Why a statistics student should care
 
-The needle is the ancestor of the **Monte Carlo method**, the technique of computing a fixed, deterministic quantity by designing a random experiment whose long-run behavior encodes it. The Law of Large Numbers guarantees the convergence: the proportion of crossings must settle toward $$\tfrac{1}{\pi}$$, so the reciprocal must settle toward $$\pi$$. Every simulation in the AP course, from randomization distributions to simulated p-values, runs on exactly this engine, and the investigative-task questions that ask students to interpret a simulation are asking them to reason the way Buffon's floor does.
+The needle is the ancestor of the *Monte Carlo method*, the technique of computing a fixed, deterministic quantity by designing a random experiment whose long-run behavior encodes it. The Law of Large Numbers guarantees the convergence: the proportion of crossings must settle toward $$\tfrac{1}{\pi}$$, so the reciprocal must settle toward $$\pi$$. Every simulation in the AP course, from randomization distributions to simulated p-values, runs on exactly this engine, and the investigative-task questions that ask students to interpret a simulation are asking them to reason the way Buffon's floor does.
 
 The slow convergence carries its own lesson. The estimate's error shrinks in proportion to $$\tfrac{1}{\sqrt{n}}$$, which is the same $$\sqrt{n}$$ that sits in the denominator of every standard error formula in the course. A political poll of 1,000 people and a floor of 1,000 needles are bound by the same arithmetic, and neither can be made ten times more precise without one hundred times the effort.
 

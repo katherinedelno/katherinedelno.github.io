@@ -92,7 +92,7 @@ If you have seen the polar area element $$r\,dr\,d\theta$$ or wondered why subst
 
 ## Eigenvectors: the directions a matrix cannot hide
 
-Here is the course's central discovery. Almost every matrix, however it churns the plane, has a few special directions that it does not turn: vectors it merely stretches. Those are its **eigenvectors**, and the stretch factors are its **eigenvalues**. They are the matrix's true personality, and finding them turns impossible problems into easy ones, because along those directions a complicated transformation acts like simple multiplication.
+Here is the course's central discovery. Almost every matrix, however it churns the plane, has a few special directions that it does not turn: vectors it merely stretches. Those are its *eigenvectors*, and the stretch factors are its *eigenvalues*. They are the matrix's true personality, and finding them turns impossible problems into easy ones, because along those directions a complicated transformation acts like simple multiplication.
 
 Two examples show the reach. First, Google. Rank every webpage by the principle that a page is important if important pages link to it. That sounds circular, but write the link structure as a giant matrix and the circularity resolves: the ranking is the eigenvector of the web. PageRank, the algorithm that built Google, is an eigenvector computation on a matrix with billions of rows.
 
@@ -100,7 +100,7 @@ Second, your statistics course. A dataset with dozens of correlated variables is
 
 ## Least squares, revisited from above
 
-There is a moment in the course when AP Statistics students feel the floor connect. The least-squares regression line of Unit 5 is recomputed in one line of linear algebra: the data form a matrix equation $$X\beta \approx y$$ with no exact solution, and the least-squares fit is the *projection* of $$y$$ onto the space of predictions the model can reach, the geometric shadow of the data onto the model. The normal equations, the $$r^2$$ decomposition, multiple regression with twenty predictors: all of it is one projection picture. Statistics majors take linear algebra early for exactly this reason; regression is linear algebra wearing a lab coat.
+There is a moment in the course when AP Statistics students feel the floor connect. [The least-squares regression line of Unit 5](/2026/07/30/least-squares-regression-influence.html) is recomputed in one line of linear algebra: the data form a matrix equation $$X\beta \approx y$$ with no exact solution, and the least-squares fit is the *projection* of $$y$$ onto the space of predictions the model can reach, the geometric shadow of the data onto the model. The normal equations, the $$r^2$$ decomposition, multiple regression with twenty predictors: all of it is one projection picture. Statistics majors take linear algebra early for exactly this reason; regression is linear algebra wearing a lab coat.
 
 ## Where it sits in a college path
 
