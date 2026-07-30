@@ -28,6 +28,7 @@ is published.
 | `_data/` | Does not exist. |
 | `.github/workflows/featured-description-check.yml` | Warns (never fails) when a `featured` article's `description` falls outside 90–200 characters. |
 | `_style/` | This style sheet and `read-time.py`. Underscore-prefixed, so never published. |
+| `_ledgers/` | One claims ledger per article, named for the post it verifies. Also unpublished. |
 
 ### Front matter
 
