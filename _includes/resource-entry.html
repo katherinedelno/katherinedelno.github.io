@@ -1,5 +1,5 @@
 {%- assign p = include.post -%}
-{%- capture kindlabel -%}{%- if p.kind == "mechanics" -%}Exam craft{%- elsif p.kind == "foundations" -%}The idea{%- endif -%}{%- endcapture -%}
+{%- capture kindlabel -%}{%- if p.kind == "mechanics" -%}Mechanical{%- elsif p.kind == "foundations" -%}Foundations{%- endif -%}{%- endcapture -%}
 {%- capture lv -%}{%- if p.course == "AP Calculus AB & BC" -%}AB &amp; BC{%- elsif p.course == "AP Calculus AB" -%}AB{%- elsif p.course == "AP Calculus BC" -%}BC{%- endif -%}{%- endcapture -%}
 <a class="rxm-box{% if include.featured %} rxm-feat{% endif %}" href="{{ p.url | relative_url }}" aria-labelledby="rxb-{{ p.url | slugify }}">
   <p class="rxm-eyebrow">
@@ -11,7 +11,6 @@
     {%- else -%}
       {%- if kindlabel != "" -%}<span>{{ kindlabel }}</span>{%- endif -%}
     {%- endif -%}
-    {%- if p.interactive -%}<span>interactive</span>{%- endif -%}
   </p>
   <p class="rxm-title" id="rxb-{{ p.url | slugify }}">{{ p.title }}</p>
   <p class="rxm-blurb">{% if include.featured %}{{ p.description }}{% else %}{{ p.blurb }}{% endif %}</p>
