@@ -36,7 +36,7 @@ permalink: /resources/
   .pg .rxm-box:hover .rxm-title,.pg .rxm-box:focus-visible .rxm-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--faint)}
   .rxm-eyebrow{font-size:.594rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .55rem}
   .rxm-eyebrow span+span::before{content:"\00B7";margin:0 .6em;color:var(--line)}
-  .rxm-title{font-size:1.1875rem;font-weight:500;letter-spacing:-.015em;line-height:1.3;margin:0 0 .4rem}
+  .rxm-title{font-size:1.1875rem;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin:0 0 .4rem}
   .rxm-blurb{font-size:.84375rem;color:var(--muted);line-height:1.55;margin:0}
   .rxm-feat .rxm-title{font-size:1.6875rem;line-height:1.2}
   .rxm-feat .rxm-blurb{font-size:.9375rem;max-width:62ch}
