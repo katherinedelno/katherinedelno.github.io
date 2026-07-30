@@ -604,6 +604,9 @@ Recorded as they are made, so later sessions do not reopen them.
 | 2026-07-30 | No bold outside structural run-in labels. Terms of art take italics. |
 | 2026-07-30 | `read_time` is computed by `_style/read-time.py`, never set by hand. |
 | 2026-07-30 | 7B, the distribution explorer, ships as a post like any other, not a standalone page. It therefore needs the full front matter set, a `sequence`, and a card on the resources index. |
+| 2026-07-30 | **AP Calculus is sequenced by College Board unit order, and within a unit by its topic order.** AB and BC stay interleaved in one band. Numbering is consecutive, 1–31. The full plan is `_style/CALCULUS-SEQUENCE-PROPOSAL.md`, approved and applied. |
+| 2026-07-30 | The tier numbering in the 7D brief is the **writing** order. `sequence` is the **display** order. They are allowed to disagree, and in Unit 1 and Unit 6 they do. |
+| 2026-07-30 | 7D covers all 22 articles, tier 5 included, not the 18 of the front half alone. |
 
 Placements that need no renumbering, because they fall into existing `sequence` gaps:
 
@@ -619,8 +622,9 @@ approval before any front matter is written.
 
 ## Open questions for Katherine
 
-1. **`sequence` gaps** — AP Statistics is missing 3, 6, 8, 11; AP Calculus is missing 4.
-   Intentional reservations, or drift? Not blocking for 7A or 7C, which slot into existing
-   gaps. Blocking for 7D, which adds eighteen articles to a band that currently holds nine.
-2. **Vestigial front matter** — `courses`, `section`, and `interactive` are read by no
+1. **Vestigial front matter** — `courses`, `section`, and `interactive` are read by no
    template. Keep writing them for the record, or stop?
+
+Resolved: the `sequence` gaps. AP Statistics filled 3, 8 and 11 with 7C, 7B and 7A, leaving
+only 6. AP Calculus was renumbered 1–31 under the approved plan, and its 22 open slots are
+the 7D articles.

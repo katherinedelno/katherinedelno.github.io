@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
 math: true
 kind: mechanics
-sequence: 2
+sequence: 18
 interactive: false
 blurb: "The translation table for the exam's favorite question"
 ---

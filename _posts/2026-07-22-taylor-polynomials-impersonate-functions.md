@@ -7,7 +7,7 @@ course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
 kind: foundations
-sequence: 10
+sequence: 31
 interactive: true
 blurb: "Raise the degree and watch the polynomial impersonate the function"
 ---

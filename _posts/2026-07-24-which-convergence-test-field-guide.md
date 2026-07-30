@@ -7,7 +7,7 @@ course: "AP Calculus BC"
 read_time: "7 min read"
 math: true
 kind: mechanics
-sequence: 9
+sequence: 30
 interactive: false
 blurb: "The decision sequence, and what each test can and cannot conclude"
 ---
