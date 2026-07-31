@@ -131,9 +131,9 @@ procedure, fixed in advance at $\alpha$; the p-value is a function of the data.
 
 `[EXAM]` The AP framework retains a topic on errors in testing: topic 3.8, "Potential Errors
 When Performing Tests," in the course effective 2026-27. Supported by the College Board
-Course and Exam Description, Course at a Glance. The article deliberately does not use the
-phrase "Type I error," because I verified that the topic exists but not that the CED's
-essential-knowledge statements still use that term. See the flag below.
+Course and Exam Description, Course at a Glance. **Superseded — see the corrections section
+at the foot of this file.** The article now names the Type I error; the topic is confirmed
+from the CED itself and the vocabulary from a secondary source.
 
 ## Claims about the conclusion sentence
 
@@ -220,3 +220,30 @@ common error" to "a standing error," which I can support; the stronger claim I c
    that never closes (still 8% at $n = 1000$). The simulation would visibly fail to converge
    to the computed p-value, contradicting the article's central claim. The mean setup has no
    approximation anywhere.
+
+---
+
+## Corrections applied 2026-07-30, CED-alignment pass
+
+**Type I error is named.** Flag 1 above is resolved. The topic exists in the revised
+framework as 3.8, "Potential Errors When Performing Tests" — confirmed from the CED's own
+Course at a Glance. The vocabulary is confirmed only from a secondary source: Fiveable's
+topic-3.8 guide, verified for the 2027 exam, carries a section headed "the following words
+are mentioned explicitly in the AP course framework for this topic" listing *Type I error*,
+*Type II error*, and *power of a test*. `[EXAM]`, sourced to the framework for the topic and
+to a secondary source for the term. If you can see the Unit 3 essential knowledge, that
+downgrade goes away.
+
+The sentence now reads: rejecting a true null is a Type I error, its probability is
+$\alpha$, fixed in advance; the p-value is computed from the data. One is a property of the
+procedure, the other of this sample.
+
+**The known-$\sigma$ idealisation is flagged in the prose.** Flag 2 above is resolved. A
+paragraph before the closing note now says the population standard deviation is treated as
+known so the sampling distribution is exactly normal, and that on the exam a mean is tested
+with $t$ because $\sigma$ never is. This matches how your 95% confidence article handles the
+same idealisation.
+
+**Flag 3, the unit mismatch, is left as it stands.** p-values are introduced with proportions
+in Unit 3 and this article uses a mean. The concept is identical and the picture is exact
+only for the mean; the article mentions no unit numbers, so nothing is misstated.

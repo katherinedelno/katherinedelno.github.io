@@ -316,7 +316,7 @@ It is not the probability that $$H_0$$ is true. That probability never appears a
 
 A large p-value is not evidence that $$H_0$$ is true. Set the observed mean to 50.4 and the p-value climbs above 0.4, but 50.4 is equally unsurprising under $$\mu = 50.2$$ or $$\mu = 50.5$$. A result consistent with the null is consistent with many nearby alternatives, which is why the verdict is "fail to reject" and never "accept."
 
-It is not the probability that this test has made an error. Whether an error occurred depends on the true $$\mu$$, which the test never learns. The error rate belongs to the procedure and is set in advance by $$\alpha$$; the p-value belongs to this dataset.
+It is not the probability that this test has made an error. Rejecting a true null is a Type I error, and its probability is $$\alpha$$ — fixed in advance, before any data exist. The p-value is computed from the data and varies with them. Whether an error actually occurred depends on the true $$\mu$$, which the test never learns, so the two quantities are not even about the same kind of thing: one is a property of the procedure, the other a property of this sample.
 
 Statistical significance is not practical importance. Set the alternative to $$\mu \neq 50$$, hold the observed mean at 51, and drag the sample size to its limit. The gap from the null stays one point throughout, while the p-value falls from 0.6171 at $$n = 25$$ to 0.3173 at $$n = 100$$ to 0.0455 at $$n = 400$$, where the verdict flips to reject. The null distribution is narrowing, so a fixed gap counts as further and further out. A large enough study makes any gap significant, including gaps too small to matter. It is also why $$\alpha$$ is fixed before the data arrive: a standard of evidence chosen afterward is not one.
 
@@ -327,6 +327,8 @@ A complete conclusion links the p-value to $$\alpha$$, gives the decision, and s
 > Because $$p = 0.0250 < \alpha = 0.05$$, we reject $$H_0$$. There is convincing evidence that the true mean score for students at this school is greater than 50.
 
 Three failures cost the point. Omitting the comparison to $$\alpha$$ leaves the decision unlinked to any evidence. Naming no variable and no population leaves the conclusion out of context. And writing that the evidence shows $$\mu = 50$$, rather than that it fails to show otherwise, states the one thing a significance test can never conclude.
+
+The population standard deviation is treated as known throughout, which keeps the sampling distribution exactly normal and lets the simulation converge to the shaded area exactly. On the exam a mean is tested with $$t$$, because $$\sigma$$ never is known; the picture is the same and only the reference curve changes.
 
 <div class="article-note" markdown="1">
 A check worth performing on the simulation: set the alternative to $$\mu \neq 50$$ and drag the observed mean until the p-value reads 0.0500. It stops at 53.92. Now recall that a [95% confidence interval](/2026/07/25/what-95-percent-confident-means.html) from that same sample is $$53.92 \pm 1.96(2)$$, whose lower end is 50.00 exactly. The observed mean whose two-sided test lands on 0.05 is the same one whose interval just barely excludes the null. The two procedures are one procedure, read from two directions.
