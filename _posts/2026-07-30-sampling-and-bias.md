@@ -222,7 +222,7 @@ A student who has these straight can answer the standard exam question — *will
 
 ## The vocabulary, and the four methods
 
-The *population* is every individual you want to describe; the *sampling frame* is the list you actually draw from, and the gap between them is where undercoverage lives. The *sample* is who you reach. A *parameter* describes the population and a *statistic* describes the sample, a distinction developed in [writing parameters in AP Statistics](/2026/07/14/writing-parameters-in-ap-statistics.html).
+The *population* is every individual you want to describe, and the *sample* is who you actually reach. The gap between the two — everyone the method could never have selected — is where undercoverage lives. A *parameter* describes the population and a *statistic* describes the sample, a distinction developed in [writing parameters in AP Statistics](/2026/07/14/writing-parameters-in-ap-statistics.html).
 
 Four random methods are named in the course, and the framework defines each by its mechanism:
 
