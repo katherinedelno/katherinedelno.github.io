@@ -132,3 +132,20 @@ is deliberate: both topics are selection problems wearing computation clothes.
 4. **The opening triple is the article's strongest asset and is entirely borrowed from
    arithmetic.** Three expressions that all read $0/0$ and have limits 6, $\tfrac16$, and
    nonexistent. If you ever want a single slide for this topic, that is it.
+
+---
+
+## Corrections applied 2026-07-30, CED-alignment pass
+
+**The third named technique is now covered.** Flag 2 above is resolved. Topic 1.6's
+illustrative examples list three techniques and the article covered two. It now covers the
+third, "using alternate forms of trigonometric functions", with a worked example:
+
+$$\lim_{x \to 0} \frac{\tan x}{x} = \lim_{x \to 0} \frac{\sin x}{x}\cdot\frac{1}{\cos x} = 1.$$
+
+`[COMPUTED]` Verified numerically: $\tan(x)/x$ reads 1.000033, 1.000000003, and
+1.000000000 at $x = 10^{-2}, 10^{-4}, 10^{-6}$.
+
+The classification list gained a matching line: any other trigonometric function, rewrite it
+as sine and cosine first. The article is now 827 words against 772, still inside the corpus
+range.
