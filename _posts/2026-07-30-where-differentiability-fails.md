@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "The derivative is a limit, so it fails exactly where that limit fails. Four functions, four different failures, and the one-sided difference quotients showing which is which."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "7 min read"
+read_time: "8 min read"
 math: true
 kind: foundations
 sequence: 8
@@ -15,11 +15,13 @@ blurb: "Four ways for one limit to fail, and the number that tells them apart"
 
 [The derivative at a point is a limit](/2026/07/30/derivative-as-a-limit.html). So it exists exactly when that limit exists, and it fails exactly when that limit fails — which means the ways a derivative can fail are the ways a limit can fail, inherited whole from Unit 1.
 
-The two-sided limit of the difference quotient needs both one-sided quotients to exist and to agree. Four things can go wrong with that, and the course names all four.
+The two-sided limit of the difference quotient needs both one-sided quotients to exist and to agree. The framework states the consequence in one direction and denies it in the other: if a function is differentiable at a point then it is continuous there, and a continuous function may still fail to be differentiable at a point in its domain.
 
 ## Four ways to break it
 
 Each function below is broken at $$x = 0$$ and unremarkable everywhere else. The two secants are drawn from the same anchor, one to the left and one to the right, and the panel reports what each one-sided quotient is doing as $$h$$ shrinks.
+
+The framework's test is that pair of numbers, and nothing else. *Corner* and *cusp* are the conventional names for two of the outcomes, used in every textbook and review book; the buttons carry them because you will meet them, but the classification is settled by the quotients.
 
 <div class="viz" markdown="0">
   <canvas id="nd-cv" width="700" height="300"></canvas>
@@ -167,9 +169,9 @@ The vertical tangent is $$x^{1/3}$$. Here the quotients read $$+4.64$$, $$+21.5$
 
 The fourth button is different in kind. The first three functions are all continuous at 0 — they fail on the slope alone. This one fails earlier: the function has [a gap](/2026/07/30/continuity-three-conditions.html), and no discussion of slopes is required.
 
-That is the one-way implication the course tests. If $$f$$ is differentiable at $$c$$, then $$f$$ is continuous at $$c$$. The contrapositive is the usable form: *not continuous, therefore not differentiable*, and you can stop there.
+That is the one-way implication the course states outright: if $$f$$ is differentiable at a point, then it is continuous at that point. The contrapositive is the usable form — *not continuous, therefore not differentiable* — and you can stop there. The framework adds a corollary worth having: if a point is not in the domain of $$f$$, it is not in the domain of $$f'$$ either.
 
-The converse is false, and the first three buttons are the proof. Corner, cusp, and vertical tangent are all continuous at 0 and none has a derivative there. So "continuous" buys you nothing about differentiability, while "differentiable" buys you continuity for free.
+The converse is false, and the framework says so in as many words: a continuous function may fail to be differentiable at a point in its domain. The first three buttons are that sentence made concrete — all continuous at 0, none with a derivative there. Two of them are the framework's own illustrative examples: $$|x|$$, where the one-sided difference quotients are unequal, and $$x^{1/3}$$, where the tangent line is vertical and has no slope. So "continuous" buys you nothing about differentiability, while "differentiable" buys you continuity for free.
 
 Which makes the two claims worth keeping in the right order:
 

@@ -4,7 +4,7 @@ title: "A distribution explorer"
 date: 2026-07-30
 description: "A reference tool for the six distributions the course uses: type the numbers from the problem, choose a region, read the probability, and see the calculator command that produces the same value."
 course: "AP Statistics"
-read_time: "5 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 8

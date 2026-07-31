@@ -46,7 +46,7 @@ def measure(path):
 
     equations = len(re.findall(r'(?m)^\$\$', body))
     table_rows = len(re.findall(r'(?m)^\|', body))
-    interactive = bool(re.search(r'<div class="viz"|interactive-regression', body))
+    interactive = bool(re.search(r'<div class="viz[ "]|interactive-regression', body))
 
     text = re.sub(r'\$\$.*?\$\$', ' ', body, flags=re.S)   # mathematics first
     text = re.sub(r'<[^>]+>', ' ', text)                   # then tags
