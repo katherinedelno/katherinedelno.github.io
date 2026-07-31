@@ -194,7 +194,7 @@ Because they disagree, $$\lim_{x \to 2} f(x)$$ does not exist. The two-sided lim
 
 ## Failing without a jump
 
-Endless oscillation is the case that stops the pattern-matching. The function $$\sin\!\left(\frac{1}{x-2}\right)$$ has no jump, no break you could point at, and no vertical asymptote. It is perfectly finite everywhere near 2, trapped between $$-1$$ and 1.
+Endless oscillation is the case that stops the pattern-matching. The function $$\sin\!\left(\tfrac{1}{x-2}\right)$$ has no jump, no break you could point at, and no vertical asymptote. It is perfectly finite everywhere near 2, trapped between $$-1$$ and 1.
 
 It still has no limit, and the bar says why: the height stays at 2 for every $$\delta$$ you can reach. As $$x$$ closes on 2 the quantity $$1/(x-2)$$ runs off to infinity, so the sine completes infinitely many full cycles inside any window you choose. Every window, however narrow, contains inputs where the function is 1 and inputs where it is $$-1$$.
 

@@ -379,8 +379,32 @@ Established in the related rates article, which is the pattern for procedural pi
   Display: `$$…$$` on its own line, blank line above and below.
 - Display mathematics **carries its own terminal punctuation** — a comma if the sentence
   continues, a period if it ends. `$$\chi^2 = \sum \frac{(O-E)^2}{E},$$`
-- `\tfrac` inside prose (85 uses), `\frac` in display (111 uses). This keeps line height
-  even in paragraphs.
+
+### Inline mathematics must be forced small
+
+`head.html` maps `$$` to MathJax's **displayMath**, not inlineMath. So a `$$…$$` written
+mid-sentence still renders in *display* style: full-height fractions, integral signs with
+their limits stacked above and below, a full-size sigma. Left alone it wrecks the line
+height of the paragraph around it.
+
+Every chunky construct inside an inline `$$…$$` therefore has to be shrunk by hand:
+
+| construct | inline form | display form |
+|---|---|---|
+| fraction | `\tfrac{a}{b}` | `\frac{a}{b}` |
+| integral | `\textstyle\int_a^b` | `\int_a^b` |
+| sum, product | `\textstyle\sum`, `\textstyle\prod` | `\sum`, `\prod` |
+
+`\dfrac` is **never** correct inline — it forces display style, which is the opposite of
+what is wanted. In display mathematics it is only ever used to force a nested fraction back
+to full size, which is also unwanted: **a fraction appearing inside another fraction's
+numerator or denominator takes `\tfrac`**, so the compound fraction stays legible.
+
+`\textstyle` applies to the rest of its group, so putting it at the front of the inline
+expression is enough: `$$\textstyle\int_1^\infty \tfrac{1}{x^2}\,dx$$`.
+
+Audited and enforced across all 39 articles on 2026-07-30: 21 inline fractions, 27 inline
+integrals and sums, and 5 nested display fractions were corrected.
 - `\quad\Longrightarrow\quad` chains a result to its consequence on one display line.
 - `\text{…}` for words inside mathematics; `\,` before `dx` and between a coefficient and
   a derivative.

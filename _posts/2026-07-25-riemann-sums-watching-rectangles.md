@@ -21,7 +21,7 @@ The formula reads better as a recipe. $$\Delta x$$ is the width of each slice. T
 
 ## Try it
 
-The curve below is $$f(x) = x^2 + 1$$ on $$[0,3]$$, whose exact area is $$\int_0^3 (x^2+1)\,dx = 12$$. Slide $$n$$ and watch the rectangle total approach 12.
+The curve below is $$f(x) = x^2 + 1$$ on $$[0,3]$$, whose exact area is $$\textstyle \int_0^3 (x^2+1)\,dx = 12$$. Slide $$n$$ and watch the rectangle total approach 12.
 
 <div class="viz" markdown="0">
   <canvas id="rs-cv" width="700" height="300"></canvas>
@@ -91,7 +91,7 @@ On the free-response section, Riemann sums usually arrive with a table instead o
 |---|---|---|---|---|---|
 | $$R(t)$$ (liters/hour) | 40 | 46 | 58 | 52 | 48 |
 
-A left Riemann sum for $$\int_0^9 R(t)\,dt$$ uses each subinterval's left value times its width:
+A left Riemann sum for $$\textstyle \int_0^9 R(t)\,dt$$ uses each subinterval's left value times its width:
 
 $$40(2) + 46(3) + 58(3) + 52(1) = 444 \text{ liters}.$$
 
@@ -102,5 +102,5 @@ Two habits keep this clean. First, the widths come from the table and are not eq
 Once the Fundamental Theorem arrives, it is tempting to file rectangles away as scaffolding. The exam disagrees, for a reason worth respecting: many real functions have no antiderivative formula, and many real data sets have no formula at all, like the table above. Rectangle sums are not the primitive version of integration. They are what integration is, and the antiderivative shortcut is the special case that works when a formula happens to exist.
 
 <div class="article-note" markdown="1">
-A self-test: without computing either sum, decide whether the trapezoidal estimate of $$\int_0^3 (x^2+1)\,dx$$ is an overestimate or an underestimate. The answer depends on concavity alone. Since $$f$$ is concave up, each trapezoid's slanted top lies above the curve, so the trapezoidal sum overestimates. If that argument feels natural, the four-way chart is yours without memorizing it.
+A self-test: without computing either sum, decide whether the trapezoidal estimate of $$\textstyle \int_0^3 (x^2+1)\,dx$$ is an overestimate or an underestimate. The answer depends on concavity alone. Since $$f$$ is concave up, each trapezoid's slanted top lies above the curve, so the trapezoidal sum overestimates. If that argument feels natural, the four-way chart is yours without memorizing it.
 </div>

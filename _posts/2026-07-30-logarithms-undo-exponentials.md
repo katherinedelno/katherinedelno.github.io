@@ -164,7 +164,7 @@ To solve an exponential equation, take a logarithm; to solve a logarithmic equat
 
 $$5 \cdot 3^t = 40.$$
 
-Isolate the exponential before touching a logarithm: $$3^t = 8$$. Now the equation says, in exponential form, exactly what $$t = \log_3 8$$ says in logarithmic form — and the change-of-base formula turns that into something a calculator accepts: $$t = \frac{\ln 8}{\ln 3} \approx 1.893$$. Check it forward: $$3^{1.893} \approx 8.00$$, and $$5 \cdot 8 = 40$$.
+Isolate the exponential before touching a logarithm: $$3^t = 8$$. Now the equation says, in exponential form, exactly what $$t = \log_3 8$$ says in logarithmic form — and the change-of-base formula turns that into something a calculator accepts: $$t = \tfrac{\ln 8}{\ln 3} \approx 1.893$$. Check it forward: $$3^{1.893} \approx 8.00$$, and $$5 \cdot 8 = 40$$.
 
 The order matters. Taking a log of both sides of $$5 \cdot 3^t = 40$$ first is legal but produces $$\log 5 + t\log 3 = \log 40$$, an extra step that exists only to undo the 5 you could have divided away at the start. Isolate, then invert.
 
