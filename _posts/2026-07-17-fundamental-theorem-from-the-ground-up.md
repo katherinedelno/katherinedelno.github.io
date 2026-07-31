@@ -14,7 +14,7 @@ blurb: "Why an area function has a derivative, and why it recovers the curve"
 featured: true
 ---
 
-The Fundamental Theorem of Calculus is the most important sentence in the course, and it is routinely memorized without ever being seen. Students learn to compute $$\int_1^4 x^2\,dx$$ by antidifferentiating and subtracting, which works, but it hides the remarkable thing the theorem actually says: accumulating a quantity and differentiating are inverse operations. Area, of all things, undoes the derivative.
+The Fundamental Theorem of Calculus is the most important sentence in the course, and it is routinely memorized without ever being seen. Students learn to compute $$\textstyle \int_1^4 x^2\,dx$$ by antidifferentiating and subtracting, which works, but it hides the remarkable thing the theorem actually says: accumulating a quantity and differentiating are inverse operations. Area, of all things, undoes the derivative.
 
 This piece builds the theorem the way I build it with students. Start with a machine that measures area, discover that the machine has a derivative, and then notice whose derivative it is.
 
@@ -145,7 +145,7 @@ since $$A(a)$$ subtracts off the area before $$a$$. The constant cancels, which 
 
 The FTC appears on the free-response section in three reliable costumes.
 
-**The defined accumulation function.** You are given a graph of $$f$$ and the definition $$g(x) = \int_2^x f(t)\,dt$$, then asked for $$g(0)$$, $$g'(3)$$, and $$g''(3)$$. Translate once and everything follows: $$g' = f$$ and $$g'' = f'$$. So $$g'(3)$$ is the height of the given graph at 3, and $$g''(3)$$ is its slope there. For $$g(0) = \int_2^0 f(t)\,dt = -\int_0^2 f(t)\,dt$$, reverse the limits and read the geometric area off the graph, minding signs. Every question about $$g$$ is a question about the picture of $$f$$.
+**The defined accumulation function.** You are given a graph of $$f$$ and the definition $$\textstyle g(x) = \int_2^x f(t)\,dt$$, then asked for $$g(0)$$, $$g'(3)$$, and $$g''(3)$$. Translate once and everything follows: $$g' = f$$ and $$g'' = f'$$. So $$g'(3)$$ is the height of the given graph at 3, and $$g''(3)$$ is its slope there. For $$\textstyle g(0) = \int_2^0 f(t)\,dt = -\int_0^2 f(t)\,dt$$, reverse the limits and read the geometric area off the graph, minding signs. Every question about $$g$$ is a question about the picture of $$f$$.
 
 **The chain-rule hybrid.** If the upper limit is a function of $$x$$, the FTC peels off the integral and the chain rule handles the inner function:
 
@@ -153,12 +153,12 @@ $$\frac{d}{dx}\int_0^{x^2} \cos(t)\,dt = \cos\!\left(x^2\right)\cdot 2x.$$
 
 Substitute into the integrand, then multiply by the derivative of the limit.
 
-**Net change.** Since accumulating a rate gives total change, $$f(b) = f(a) + \int_a^b f'(t)\,dt$$. This is the workhorse of every in-context FRQ: final amount equals starting amount plus accumulated rate. When a tank starts with 30 gallons and water flows in at rate $$R(t)$$, the amount at time 6 is $$30 + \int_0^6 R(t)\,dt$$. No antiderivative formula is needed, and on a calculator section, none is wanted.
+**Net change.** Since accumulating a rate gives total change, $$\textstyle f(b) = f(a) + \int_a^b f'(t)\,dt$$. This is the workhorse of every in-context FRQ: final amount equals starting amount plus accumulated rate. When a tank starts with 30 gallons and water flows in at rate $$R(t)$$, the amount at time 6 is $$\textstyle 30 + \int_0^6 R(t)\,dt$$. No antiderivative formula is needed, and on a calculator section, none is wanted.
 
 ## The sentence worth remembering
 
 Differentiation asks how fast something is changing at this instant. Integration asks how much has accumulated in total. The Fundamental Theorem says these two questions are inverses of each other: "how much so far" is itself a quantity whose "how fast" is the original function. Newton and Leibniz are credited with calculus not because they computed areas (Archimedes did that) or slopes (Fermat did that), but because they saw that the two computations were secretly one.
 
 <div class="article-note" markdown="1">
-A good self-test: sketch any $$f$$ you like, then, without computing a single antiderivative, sketch $$A(x) = \int_0^x f$$. Mark where $$A$$ rises, falls, peaks, and bends. If you can do that from the picture alone, you understand the theorem. The algebra is just bookkeeping.
+A good self-test: sketch any $$f$$ you like, then, without computing a single antiderivative, sketch $$\textstyle A(x) = \int_0^x f$$. Mark where $$A$$ rises, falls, peaks, and bends. If you can do that from the picture alone, you understand the theorem. The algebra is just bookkeeping.
 </div>

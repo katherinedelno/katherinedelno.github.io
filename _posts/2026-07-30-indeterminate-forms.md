@@ -13,7 +13,7 @@ interactive: false
 blurb: "0/0 is a verdict on your method, not an answer"
 ---
 
-Substituting into $$\dfrac{x^2 - 9}{x - 3}$$ at $$x = 3$$ gives $$\dfrac{0}{0}$$, and the limit is 6. Substituting into $$\dfrac{x - 3}{x^2 - 9}$$ at $$x = 3$$ gives $$\dfrac{0}{0}$$, and the limit is $$\tfrac16$$. Substituting into $$\dfrac{x-3}{(x-3)^2}$$ gives $$\dfrac{0}{0}$$, and the limit does not exist.
+Substituting into $$\tfrac{x^2 - 9}{x - 3}$$ at $$x = 3$$ gives $$\tfrac{0}{0}$$, and the limit is 6. Substituting into $$\tfrac{x - 3}{x^2 - 9}$$ at $$x = 3$$ gives $$\tfrac{0}{0}$$, and the limit is $$\tfrac16$$. Substituting into $$\tfrac{x-3}{(x-3)^2}$$ gives $$\tfrac{0}{0}$$, and the limit does not exist.
 
 Three expressions, one symbol, three different answers. That is what "indeterminate" means: the form $$\tfrac00$$ is not a number and it is not a verdict on the limit. It is a report that substitution failed, and it carries no information about what the limit actually is.
 
@@ -51,7 +51,7 @@ The middle step is where the technique earns itself: the numerator becomes $$(x+
 
 A fraction inside a fraction is not indeterminate in a new way, only in an inconvenient form. Combine the inner fractions over a common denominator, then divide.
 
-$$\lim_{x \to 0} \frac{\dfrac{1}{x+2} - \dfrac{1}{2}}{x} = \lim_{x \to 0} \frac{\dfrac{2 - (x+2)}{2(x+2)}}{x} = \lim_{x \to 0} \frac{-x}{2x(x+2)} = -\frac{1}{4}.$$
+$$\lim_{x \to 0} \frac{\tfrac{1}{x+2} - \tfrac{1}{2}}{x} = \lim_{x \to 0} \frac{\tfrac{2 - (x+2)}{2(x+2)}}{x} = \lim_{x \to 0} \frac{-x}{2x(x+2)} = -\frac{1}{4}.$$
 
 This form appears constantly once the derivative arrives, because the difference quotient of $$1/x$$ looks exactly like this. Getting fluent now pays later.
 
@@ -69,7 +69,7 @@ where the whole move was refusing to leave $$\tan$$ in place.
 
 Both standard limits are $$\tfrac00$$ by substitution and neither factors. They are established by the squeeze theorem, which is the other tool listed under the same objective as algebraic rearrangement: if $$g(x) \le f(x) \le h(x)$$ near the point and $$g$$ and $$h$$ share a limit there, $$f$$ is trapped into having it too.
 
-The squeeze theorem also handles the oscillating cases that defeat everything else. The function $$x^2\sin\!\left(\frac1x\right)$$ has no limit-friendly rewriting, but $$\left|\sin\frac1x\right| \le 1$$ forces
+The squeeze theorem also handles the oscillating cases that defeat everything else. The function $$x^2\sin\!\left(\tfrac1x\right)$$ has no limit-friendly rewriting, but $$\left|\sin\frac1x\right| \le 1$$ forces
 
 $$-x^2 \le x^2\sin\!\left(\frac1x\right) \le x^2,$$
 

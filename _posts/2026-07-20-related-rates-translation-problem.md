@@ -126,7 +126,7 @@ The water level is falling at $$\tfrac{3}{4\pi} \approx 0.239$$ m/min. Notice th
 
 **Name:** $$y$$ is the rocket's height and $$\theta$$ is the angle of elevation. The 100 m ground distance never changes.
 
-**Static equation:** $$\tan\theta = \dfrac{y}{100}.$$
+**Static equation:** $$\tan\theta = \tfrac{y}{100}.$$
 
 **Differentiate:**
 

@@ -19,19 +19,19 @@ What follows is the list I wish every student had taped inside their binder: eac
 
 ## Keep the differential
 
-An integral needs its $$dx$$. Write $$\int f(x)\,dx$$, not just the integrand $$f(x)$$ on its own. The differential tells the reader which variable you are integrating with respect to, and it is part of the notation graders are looking for.
+An integral needs its $$dx$$. Write $$\textstyle \int f(x)\,dx$$, not just the integrand $$f(x)$$ on its own. The differential tells the reader which variable you are integrating with respect to, and it is part of the notation graders are looking for.
 
 This matters most during substitution, where the differential is doing real mathematical work. If $$u = x^2 + 1$$, then $$du = 2x\,dx$$, an actual equation you use to trade variables:
 
 $$\int 2x\sqrt{x^2+1}\,dx = \int \sqrt{u}\,du = \frac{2}{3}u^{3/2} + C = \frac{2}{3}\left(x^2+1\right)^{3/2} + C.$$
 
-Every integral in that chain carries its differential, and the substitution is visible and checkable. A student who writes $$\int \sqrt{u}$$ midway has stopped saying what the variable of integration is, and on a definite integral, that ambiguity is exactly where forgotten limit conversions hide.
+Every integral in that chain carries its differential, and the substitution is visible and checkable. A student who writes $$\textstyle \int \sqrt{u}$$ midway has stopped saying what the variable of integration is, and on a definite integral, that ambiguity is exactly where forgotten limit conversions hide.
 
 ## Where the constant enters
 
 Every indefinite integral gets a $$+\,C$$. It looks small, but on a problem that asks you to find a particular solution to a differential equation, the constant is the entire point, and you need it there to solve for the initial condition.
 
-Watch where the constant enters. Solving $$\frac{dy}{dx} = 2xy$$ with $$y(0) = 3$$:
+Watch where the constant enters. Solving $$\tfrac{dy}{dx} = 2xy$$ with $$y(0) = 3$$:
 
 $$\int \frac{dy}{y} = \int 2x\,dx \quad\Longrightarrow\quad \ln\vert y\vert = x^2 + C.$$
 
@@ -39,9 +39,9 @@ The $$C$$ appears at the moment of integration, one constant, on one side. A stu
 
 ## Say what is being evaluated
 
-$$f'(2)$$ means the derivative at $$2$$, not $$f(2)$$. Prime notation and $$\dfrac{dy}{dx}$$ express the same idea in two forms, and mixing them up, or writing $$f(2)$$ when you mean the rate of change, changes the mathematical claim. Be precise about whether you are reporting a value, a slope, or an accumulated amount.
+$$f'(2)$$ means the derivative at $$2$$, not $$f(2)$$. Prime notation and $$\tfrac{dy}{dx}$$ express the same idea in two forms, and mixing them up, or writing $$f(2)$$ when you mean the rate of change, changes the mathematical claim. Be precise about whether you are reporting a value, a slope, or an accumulated amount.
 
-The same discipline applies to evaluation bars. Writing $$\left.\dfrac{dy}{dx}\right\vert_{x=2}$$ says "the derivative, evaluated at 2." Writing $$\dfrac{dy}{dx} = 12$$ when the derivative is $$3x^2$$ and you mean its value at $$x=2$$ makes a false general claim; the bar makes it a true specific one.
+The same discipline applies to evaluation bars. Writing $$\left.\tfrac{dy}{dx}\right\vert_{x=2}$$ says "the derivative, evaluated at 2." Writing $$\tfrac{dy}{dx} = 12$$ when the derivative is $$3x^2$$ and you mean its value at $$x=2$$ makes a false general claim; the bar makes it a true specific one.
 
 ## The equals sign means equal
 
@@ -89,7 +89,7 @@ $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}.$$
 
 Keep that $$\lim_{h \to 0}$$ attached at every step until you actually evaluate it. Writing the expression without the limit and then producing a number treats a process as if it were already finished.
 
-The same rule governs improper integrals in BC. The integral $$\int_1^\infty \tfrac{1}{x^2}\,dx$$ is *defined* as $$\lim_{b\to\infty}\int_1^b \tfrac{1}{x^2}\,dx$$, and the scoring guidelines award a point specifically for writing the limit. Evaluating straight to $$1$$ without it gets the number and misses the point.
+The same rule governs improper integrals in BC. The integral $$\textstyle \int_1^\infty \tfrac{1}{x^2}\,dx$$ is *defined* as $$\textstyle \lim_{b\to\infty}\int_1^b \tfrac{1}{x^2}\,dx$$, and the scoring guidelines award a point specifically for writing the limit. Evaluating straight to $$1$$ without it gets the number and misses the point.
 
 ## Calculator answers need setups
 

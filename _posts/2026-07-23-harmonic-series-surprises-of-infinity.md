@@ -28,7 +28,7 @@ Every group contributes more than $$\tfrac12$$, and there are infinitely many gr
 
 What makes this genuinely strange is how slowly the divergence happens. The sum of the first $$n$$ terms grows like $$\ln n$$. To push the total past 10 you need about 12,367 terms. To pass 100, you would need more terms than there are atoms in the observable universe. The series diverges in theory and looks convergent on every calculator ever built. This is exactly why the exam insists on tests rather than numerical evidence, and why "the terms go to zero" earns no credit as a justification. The harmonic series is the standing counterexample: the nth-term test can convict a series of divergence, but it can never acquit one into convergence.
 
-The boundary here is razor thin. Raise the exponent by any amount at all and the sum tames itself: $$\sum \tfrac{1}{n^{1.0001}}$$ converges. The sharp cutoff at $$p = 1$$ in the [p-series test](/2026/07/24/which-convergence-test-field-guide.html) is not bureaucratic tidiness. It marks a real cliff edge, and the harmonic series sits exactly on the lip.
+The boundary here is razor thin. Raise the exponent by any amount at all and the sum tames itself: $$\textstyle \sum \tfrac{1}{n^{1.0001}}$$ converges. The sharp cutoff at $$p = 1$$ in the [p-series test](/2026/07/24/which-convergence-test-field-guide.html) is not bureaucratic tidiness. It marks a real cliff edge, and the harmonic series sits exactly on the lip.
 
 You can watch both behaviors at once. The picture below plots partial sums: the harmonic series climbing without a ceiling, and its sign-alternating twin (the subject of the next section) settling onto $$\ln 2$$.
 
@@ -103,7 +103,7 @@ Same terms, different order, different sum, half again as large. Addition of inf
 
 The reason becomes visible once you look at the two halves separately. The positive terms alone sum to $$+\infty$$, and the negative terms alone sum to $$-\infty$$. The ordinary order drains the two infinite reservoirs in careful balance. A shuffle that draws faster from the positive reservoir tilts the balance forever. Riemann proved the ultimate version of this in 1854: a conditionally convergent series can be rearranged to sum to any number you choose, or to diverge. The recipe is greedy. Pick a target; draw positive terms until you cross it, then negative terms until you cross back, and repeat. Each reservoir is infinite, so you never run out, and since the terms shrink to zero, the overshoots shrink too.
 
-Absolutely convergent series, the ones that survive with all signs stripped, such as $$\sum \tfrac{(-1)^n}{n^2}$$, have no such pathology. Shuffle them however you like and the sum holds. This is why BC bothers to distinguish absolute from conditional convergence. It is the difference between a sum that depends only on the set of terms and a sum that depends on their order.
+Absolutely convergent series, the ones that survive with all signs stripped, such as $$\textstyle \sum \tfrac{(-1)^n}{n^2}$$, have no such pathology. Shuffle them however you like and the sum holds. This is why BC bothers to distinguish absolute from conditional convergence. It is the difference between a sum that depends only on the set of terms and a sum that depends on their order.
 
 ## Surprise 3: the convergent twin has a beautiful secret
 
@@ -115,7 +115,7 @@ does converge, since $$p = 2 > 1$$. Its exact value stumped the Bernoullis for d
 
 $$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}.$$
 
-A sum built from nothing but whole numbers, and $$\pi$$ appears, the circle constant arriving uninvited in a problem with no circle in sight. Euler's original argument treated $$\tfrac{\sin x}{x}$$ as an infinite polynomial and factored it by its roots, exactly the way you would factor a quadratic. It was a gloriously reckless move that took another century to justify rigorously, and it previews the Taylor-series worldview in which functions really are their series. Change the exponent to 3, though, and the sum $$\sum \tfrac{1}{n^3}$$ has no known closed form; it was not even proved irrational until 1978. The frontier of mathematics runs directly through what looks like a BC homework problem.
+A sum built from nothing but whole numbers, and $$\pi$$ appears, the circle constant arriving uninvited in a problem with no circle in sight. Euler's original argument treated $$\tfrac{\sin x}{x}$$ as an infinite polynomial and factored it by its roots, exactly the way you would factor a quadratic. It was a gloriously reckless move that took another century to justify rigorously, and it previews the Taylor-series worldview in which functions really are their series. Change the exponent to 3, though, and the sum $$\textstyle \sum \tfrac{1}{n^3}$$ has no known closed form; it was not even proved irrational until 1978. The frontier of mathematics runs directly through what looks like a BC homework problem.
 
 ## What this buys you on the exam
 

@@ -156,11 +156,11 @@ Set the numerator to degree 3 and the denominator to degree 1, then zoom out, an
 
 There is one technique, and the three cases are what it returns. Divide numerator and denominator by the highest power of $$x$$ appearing in the *denominator*, then let every term of the form $$1/x^k$$ go to zero.
 
-For $$\dfrac{3x + 2}{2x + 5}$$, divide top and bottom by $$x$$:
+For $$\tfrac{3x + 2}{2x + 5}$$, divide top and bottom by $$x$$:
 
-$$\frac{3x+2}{2x+5} = \frac{3 + \dfrac{2}{x}}{2 + \dfrac{5}{x}} \longrightarrow \frac{3 + 0}{2 + 0} = \frac{3}{2}.$$
+$$\frac{3x+2}{2x+5} = \frac{3 + \tfrac{2}{x}}{2 + \tfrac{5}{x}} \longrightarrow \frac{3 + 0}{2 + 0} = \frac{3}{2}.$$
 
-The same division on $$\dfrac{3x+2}{2x^2+5x}$$ uses $$x^2$$ and sends the numerator's terms to zero while the denominator keeps its 2, giving 0. On $$\dfrac{3x^2+2x}{2x+5}$$ it leaves an $$x$$ upstairs that nothing cancels, and the expression grows.
+The same division on $$\tfrac{3x+2}{2x^2+5x}$$ uses $$x^2$$ and sends the numerator's terms to zero while the denominator keeps its 2, giving 0. On $$\tfrac{3x^2+2x}{2x+5}$$ it leaves an $$x$$ upstairs that nothing cancels, and the expression grows.
 
 Reading the degrees off is faster, and on a multiple-choice question that is what you should do. The division is what you write when a question asks you to justify, and it is the only version that survives a function that is not a quotient of polynomials.
 
