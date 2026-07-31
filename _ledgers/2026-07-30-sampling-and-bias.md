@@ -85,10 +85,9 @@ variance-reduction consequence is standard sampling theory rather than a quoted 
 `[EXAM]` Population, sample, parameter, statistic: used consistently with the framework and
 with the existing article on writing parameters, which the prose links.
 
-**Not claimed:** the term "sampling frame" does not appear in the essential-knowledge
-statements I read. The article uses it because it is standard vocabulary and because the
-population/frame gap is where undercoverage (1.12.A.3) lives, but it is not presented as
-exam vocabulary. See the flag below.
+**Removed:** the term "sampling frame" does not appear in the essential-knowledge statements
+for topics 1.10 to 1.13, and the article no longer uses it. See the corrections section at
+the foot of this file.
 
 ## The named biases
 
@@ -175,3 +174,17 @@ is as close to support as I have.
    generator produces 6.2 + 1.8x + 0.45z with x uniform, whose expectation is 7.1, and this
    particular draw of 400 landed at 7.09996. Convenient for the prose, and stable because
    the seed is fixed, but not something I engineered.
+
+---
+
+## Corrections applied 2026-07-30, CED-alignment pass
+
+**"Sampling frame" is removed.** Flag 1 above is resolved. The term does not appear in the
+essential knowledge for topics 1.10 through 1.13, and the article no longer uses it. The
+vocabulary sentence now runs population → sample → parameter → statistic, and the gap that
+produces undercoverage is described rather than named: "everyone the method could never have
+selected". That keeps the idea, which is framework content via 1.12.A.3, without importing a
+word the framework does not use.
+
+Remaining flags are unchanged: the proximity-weighted convenience model, the length, the
+table-instead-of-interactive decision, and the seed's true mean of 7.100.
