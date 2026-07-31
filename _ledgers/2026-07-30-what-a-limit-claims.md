@@ -122,3 +122,15 @@ as an opinion.
 5. **This is the first 7D article, so the tier order begins.** Article 2 is continuity's
    three conditions, which the closing paragraph of this one hands off to. That handoff is
    currently unlinked, since the article does not exist; it wants a link added once it does.
+
+---
+
+## Corrections applied 2026-07-30, CED-alignment pass
+
+**The handoff is linked.** Flag 5 above is resolved. The closing of "Failing without a jump"
+pointed forward to an article that did not exist when this one was written. It now links to
+[continuity's three conditions](/2026/07/30/continuity-three-conditions.html), giving this
+article two outbound links.
+
+Flag 1 stands corrected in the 7D-2 ledger: the reason I gave for cutting the two exam claims
+was wrong, though the cut itself was right on the merits.
