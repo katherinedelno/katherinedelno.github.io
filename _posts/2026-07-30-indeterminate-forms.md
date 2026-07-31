@@ -61,7 +61,13 @@ Some limits yield to none of the above, and two of them are standard enough that
 
 $$\lim_{x \to 0} \frac{\sin x}{x} = 1, \qquad \lim_{x \to 0} \frac{1 - \cos x}{x} = 0.$$
 
-Both are $$\tfrac00$$ by substitution and neither factors. They are established by the squeeze theorem, which is the other tool listed under the same objective as algebraic rearrangement: if $$g(x) \le f(x) \le h(x)$$ near the point and $$g$$ and $$h$$ share a limit there, $$f$$ is trapped into having it too.
+A third technique the framework names alongside factoring and conjugates is using alternate forms of trigonometric functions, and it is usually a matter of rewriting everything as sine and cosine. For instance
+
+$$\lim_{x \to 0} \frac{\tan x}{x} = \lim_{x \to 0} \frac{\sin x}{x}\cdot\frac{1}{\cos x} = 1 \cdot 1 = 1,$$
+
+where the whole move was refusing to leave $$\tan$$ in place.
+
+Both standard limits are $$\tfrac00$$ by substitution and neither factors. They are established by the squeeze theorem, which is the other tool listed under the same objective as algebraic rearrangement: if $$g(x) \le f(x) \le h(x)$$ near the point and $$g$$ and $$h$$ share a limit there, $$f$$ is trapped into having it too.
 
 The squeeze theorem also handles the oscillating cases that defeat everything else. The function $$x^2\sin\!\left(\frac1x\right)$$ has no limit-friendly rewriting, but $$\left|\sin\frac1x\right| \le 1$$ forces
 
@@ -77,6 +83,7 @@ Selecting the procedure is its own listed skill, which is a fair signal that it 
 - A square root in the numerator or denominator: *conjugate*.
 - A fraction stacked inside a fraction: *common denominator, then divide*.
 - Sine or cosine over $$x$$ near zero: *the two standard limits*.
+- Any other trigonometric function: *rewrite it as sine and cosine first*.
 - Bounded oscillation multiplied by something vanishing: *squeeze*.
 
 Work the classification before the algebra. A student who starts multiplying by conjugates on a polynomial quotient has not made an arithmetic error; they have skipped the step where the expression is read.
