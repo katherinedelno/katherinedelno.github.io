@@ -16,11 +16,26 @@ suggested skill 3.E, "Provide reasons or rationales for solutions and conclusion
 the CED's Course at a Glance, primary source. The article's structure follows that title
 literally: the connection first, then the determination.
 
-**Secondary only:** that FUN-2.A states differentiability implies continuity, and that the
-named failures are corners, cusps, vertical tangents, and discontinuities. The Calculus CED
-fetch truncates inside Unit 2's sample instructional activities, roughly a hundred lines
-before Unit 2's essential knowledge. The mathematics is `[STANDARD]` and needs no source;
-what I cannot do is quote the framework's own wording, so the article does not claim to.
+`[EXAM]` FUN-2 (enduring understanding): "Recognizing that a function's derivative may also
+be a function allows us to develop knowledge about the related behaviors of both."
+
+`[EXAM]` FUN-2.A (learning objective): "Explain the relationship between differentiability
+and continuity."
+
+`[EXAM]` FUN-2.A.1: "If a function is differentiable at a point, then it is continuous at
+that point. In particular, if a point is not in the domain of $f$, then it is not in the
+domain of $f'$." Both halves are now in the article.
+
+`[EXAM]` FUN-2.A.2: "A continuous function may fail to be differentiable at a point in its
+domain." Quoted almost verbatim.
+
+`[EXAM]` The framework's two illustrative examples for FUN-2.A.2 are exactly two of the
+article's four buttons: "The left hand and right hand limits of the difference quotient are
+not equal, as in $f(x) = |x|$ at $x = 0$", and "The tangent line is vertical and has no
+slope, as in $f(x) = \sqrt[3]{x}$ at $x = 0$."
+
+All from the AP Calculus AB and BC Course and Exam Description, read from the copy in your
+own Admin folder rather than the truncated web fetch.
 
 ## Computed results
 
@@ -104,19 +119,32 @@ argument, stated as one.
    to 0 before running the harness. That is five instances of this class in 7D; it is now the
    first thing I check when a prose value names a control setting.
 
-2. **Unit 2's essential knowledge is still unreachable**, for the second article running.
-   Everything in the framework section above is from the Course at a Glance, which is
-   primary but thin — a title, an enduring understanding code, and a skill. If you can get
-   me Unit 2's topic pages, topic 2.4 is where it would pay off most in this tier, since
-   "determining when derivatives do and do not exist" is the framework naming the article's
-   entire content.
+2. **Resolved: the CED was in your own folder the whole time.** I had said Unit 2's
+   essential knowledge was unreachable. It is in
+   `AP Calculus AB/Admin/Course and Exam Description/`, and extracting it gives 732,000
+   characters against the 106,000 the web fetch returned. Every claim above is now sourced
+   from the primary document. The same applies to Statistics, whose CED is in its own Admin
+   folder.
 
-3. **Short at 677 words**, against a corpus median of 746. The interactive carries four
+3. **"Cusp" does not appear anywhere in the Calculus CED. Not once.** Nor does "corner" as a
+   mathematical term — its six occurrences are all a classroom activity called Four Corners.
+   The framework's vocabulary for FUN-2.A.2 is descriptive rather than nominal: one-sided
+   difference quotient limits that are unequal, and a vertical tangent with no slope. The
+   article uses "corner" and "cusp" as button labels and section vocabulary, which is
+   universal textbook usage but is not the framework's.
+
+   **Resolved, Katherine's decision 2026-07-30:** keep the names, and say plainly that the
+   framework's test is the pair of one-sided quotients while corner and cusp are the
+   conventional names for two of its outcomes. A paragraph after the interactive's
+   introduction now does that. Students meet both words everywhere else, so dropping them
+   would have cost coverage without buying accuracy.
+
+4. **Short at 677 words**, against a corpus median of 746. The interactive carries four
    distinct cases and the panel explains each in its own words, so the prose does not repeat
    them. If you want it longer the natural addition is a second piecewise example that
    *passes* both tests, as a contrast to the one that fails continuity.
 
-4. **The vertical tangent is the case worth watching students on.** Left and right agree at
+5. **The vertical tangent is the case worth watching students on.** Left and right agree at
    every $h$, and the panel says so, which makes it the one case where the readout looks like
    success. The article addresses it directly — they agree on something that is not a number
    — but it is the sentence most likely to need saying out loud.

@@ -616,6 +616,22 @@ Second person was deliberately **not** retrofitted. The July 8 article still run
 uses of "you" per 1000 words; it is a mechanics article about what the reader writes on the
 exam, where the style sheet permits it.
 
+## Where the source documents are
+
+Both Course and Exam Descriptions are in Katherine's own materials folder, and they are the
+authority for every `[EXAM]` claim:
+
+- `Curriculum & Course Materials/AP Calculus AB/Admin/Course and Exam Description/ap-calculus-ab-and-bc-course-and-exam-description.pdf`
+- `Curriculum & Course Materials/AP Statistics/Admin/Course and Exam Description & Exam Reference Sheet/ap-statistics-course-and-exam-description-effective-fall-2026.pdf`
+
+Extract with `pdftotext -layout` before searching. The Calculus CED yields about 732,000
+characters and Statistics about 704,000. **Do not fetch these from the web**: the fetch
+truncates near 106,000 characters, which stops inside Unit 2 for Calculus and Unit 2 for
+Statistics, and cost two articles their sourcing before I noticed the local copies.
+
+There is also a clarifications document for Calculus effective fall 2026, in the same folder,
+confirming that course content is unchanged.
+
 ## Standing decisions for the article program
 
 Recorded as they are made, so later sessions do not reopen them.
