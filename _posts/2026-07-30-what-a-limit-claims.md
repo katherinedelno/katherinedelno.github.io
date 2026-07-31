@@ -198,7 +198,7 @@ Endless oscillation is the case that stops the pattern-matching. The function $$
 
 It still has no limit, and the bar says why: the height stays at 2 for every $$\delta$$ you can reach. As $$x$$ closes on 2 the quantity $$1/(x-2)$$ runs off to infinity, so the sine completes infinitely many full cycles inside any window you choose. Every window, however narrow, contains inputs where the function is 1 and inputs where it is $$-1$$.
 
-That is the honest content of "the outputs must close in on a single number." Not "the graph must be unbroken," and not "the function must be defined." Those are different claims, and separating them is what the next article does.
+That is the honest content of "the outputs must close in on a single number." Not "the graph must be unbroken," and not "the function must be defined." Those are different claims, and separating them is what [continuity's three conditions](/2026/07/30/continuity-three-conditions.html) does.
 
 ## Reading a limit off a graph
 
