@@ -531,9 +531,122 @@ Adding a link and watching the ranking reshuffle is the demonstration that sells
 
 ---
 
-*Also considered and set aside:* space-filling curves and fractal dimension (beautiful,
-but no existing article sets it up); conformal maps (prerequisites too steep); information
-and entropy (excellent, but wants its own sequence rather than a single article).
+### B5. A curve that fills a square
+
+*Added 2026-07-31 at Katherine's request. My original objection — that no published article
+sets it up — was wrong, and the setup is better than the one I was looking for.*
+
+**Why it works after all.** The Riemann sums article already teaches that a limit of
+approximations can be a different kind of object from any of the approximations, and the
+harmonic series article already teaches that infinity does not respect intuitions built on
+finite cases. A space-filling curve is those two lessons collided. Every stage of Hilbert's
+construction is an ordinary polygonal path with an ordinary length; the limit passes through
+every point of a square.
+
+**The misconception.** That a curve is one-dimensional because it is drawn with one
+parameter. Dimension is not a count of parameters, and the failure of that intuition is what
+forced mathematics to define dimension carefully in the first place. Peano's curve of 1890
+is the reason the definition exists.
+
+**Interactive.** One canvas, one slider: the Hilbert curve at order 1 through 7, drawn as a
+continuous path with a moving dot tracing it. Two live readouts alongside — path length,
+which doubles-and-a-bit at every order, and the largest gap between the curve and any point
+of the square, which halves. Push the slider up and the two numbers run in opposite
+directions, one to infinity and one to zero, which is the whole theorem in two columns.
+A second mode overlays the order-*n* and order-*(n+1)* curves so the recursive replacement
+is visible as a rule rather than as a picture.
+
+**The idea to land.** Length and dimension are different questions, and a limit can change
+the answer to the second while sending the answer to the first to infinity. Then the payoff:
+this is not a curiosity. Hilbert curves are how image and database systems flatten two
+dimensional data into one dimension while keeping nearby things near, which is a real
+engineering technique built on a nineteenth-century monster.
+
+**Courses:** BC primarily; Precalculus students can operate the slider and read both
+numbers without the limit argument.
+
+---
+
+### B6. The map that preserves angles
+
+*Added 2026-07-31 at Katherine's request. I had set this aside for steep prerequisites,
+which stands — so the article should be built to need none of them.*
+
+**The honest problem.** Conformal mapping properly belongs to complex analysis, two courses
+past BC. Written at that level it would be the only article on the site a reader cannot
+follow. So the article has to be built around what can be *seen* rather than what can be
+proved, and it should say so in the opening rather than pretending otherwise.
+
+**What survives the demotion.** Take the plane, apply $$z \mapsto z^2$$, and watch a grid.
+Squares become curved quadrilaterals, areas stretch and shrink wildly, and yet every place
+two grid lines crossed at a right angle, the images still cross at a right angle. That
+observation needs no theory. It needs a grid and a slider.
+
+**The link back.** The [linear algebra preview](/2026/07/26/linear-algebra-preview.html)
+already teaches a matrix as a motion of the plane, with the determinant as the area factor.
+This is the same question asked of a curved motion instead of a straight one, and the answer
+is that the local behaviour of a complex differentiable map is a rotation and a scaling —
+a matrix, at every point, varying from point to point. The article can make that sentence
+land without proving it.
+
+**Interactive.** A grid on the left, its image on the right, with a slider morphing
+continuously from the identity to the chosen map so the deformation is watchable rather than
+inferred. Four maps: $$z^2$$, $$1/z$$, $$e^z$$, and a Möbius map. A draggable crosshair on
+the source grid puts a small right-angle marker at its image, and a readout gives the local
+rotation and the local scale factor. The demonstration is that the marker stays a right
+angle everywhere except where the readout reports a scale factor of zero — the one point
+where the map is not conformal, which the reader can hunt for.
+
+**The idea to land.** Angles and areas are independent properties of a transformation, and
+there is an entire class of maps that abandons the second to protect the first. Then the
+application: this is why the Mercator projection looks the way it does, and why every
+navigational chart before satellites was a conformal map. Preserving angles is what lets a
+compass bearing be a straight line.
+
+**Courses:** BC and Precalculus. Deliberately proof-free.
+
+---
+
+### B7. Information, measured
+
+*Added 2026-07-31 at Katherine's request. My original note said this wants a sequence rather
+than one article. Having spent longer on it, one article is right — but it has to be the
+right one, and the right one is not "here is the entropy formula".*
+
+**Why one article.** The temptation is to cover entropy, coding, compression, and channel
+capacity, which is a course. The single idea underneath all four is worth an article on its
+own: the amount of information in an answer is the number of yes-or-no questions it saves
+you, and that number is a logarithm. Everything else is application.
+
+**The hook.** Twenty questions, played properly. If a set of $$2^{20}$$ possibilities can be
+cut in half by each question, twenty questions suffice — so the information in an answer
+drawn from that set is 20 bits, and the logarithm has appeared without being introduced.
+Then the turn that makes it statistics rather than arithmetic: this only works when the
+possibilities are equally likely. When they are not, a well-chosen question can do better
+than halving, and the average number of questions needed drops below $$\log_2 n$$. Entropy is
+exactly that average, minimised over all questioning strategies.
+
+**The link back.** [Benford's law](/2026/07/27/benfords-law.html) is the natural companion
+and already on the site — a distribution over nine digits that is provably not uniform, so
+its entropy is below $$\log_2 9$$, and the shortfall is precisely why first-digit tests carry
+information about fraud. The connection is real rather than decorative: a Benford
+distribution carries about 2.88 bits against a uniform digit's 3.17, and that gap is what an
+auditor is exploiting.
+
+**Interactive.** A set of outcomes with draggable probabilities, held normalised. Three
+things update: the entropy in bits, a live optimal question tree (the Huffman code, redrawn
+as the bars move), and the average questions per outcome that the tree achieves. Drag toward
+uniform and entropy climbs to its maximum while the tree becomes balanced; drag toward
+certainty and both collapse toward zero. Preset buttons for a fair coin, a loaded die,
+English letter frequencies, and Benford's digits.
+
+**The idea to land.** Uncertainty is measurable, its unit is the bit, and the measurement is
+a logarithm because questions compose multiplicatively while information adds. Shannon
+published this in 1948, and it is the reason a compressed file has a size floor that no
+algorithm will ever beat.
+
+**Courses:** Statistics primarily, with a foot in Precalculus through logarithms.
+The strongest cross-link on the enrichment roster after B3.
 
 ---
 

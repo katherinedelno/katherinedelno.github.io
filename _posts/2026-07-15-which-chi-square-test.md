@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: mechanics
-sequence: 12
+sequence: 13
 interactive: false
 blurb: "Independence versus homogeneity, and how to tell them apart"
 ---
