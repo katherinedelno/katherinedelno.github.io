@@ -7,7 +7,7 @@ course: "AP Precalculus"
 read_time: "7 min read"
 math: true
 kind: foundations
-sequence: 2
+sequence: 3
 interactive: true
 blurb: "Turn the four dials and see which two work in reverse"
 ---
