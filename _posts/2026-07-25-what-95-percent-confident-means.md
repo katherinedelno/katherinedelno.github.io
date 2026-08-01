@@ -4,7 +4,7 @@ title: "The meaning of 95% confidence"
 date: 2026-07-25
 description: "A confidence level describes the method rather than any single interval. One hundred simulated studies make the distinction visible."
 course: "AP Statistics"
-read_time: "6 min read"
+read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 9

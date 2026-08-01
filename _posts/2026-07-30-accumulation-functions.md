@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "9 min read"
 math: true
 kind: foundations
-sequence: 22
+sequence: 21
 interactive: true
 blurb: "Every question about g is a question about the picture of f"
 ---
