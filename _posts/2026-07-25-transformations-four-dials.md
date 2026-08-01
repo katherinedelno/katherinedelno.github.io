@@ -7,10 +7,9 @@ course: "AP Precalculus"
 read_time: "7 min read"
 math: true
 kind: foundations
-sequence: 1
+sequence: 2
 interactive: true
 blurb: "Turn the four dials and see which two work in reverse"
-featured: true
 ---
 
 Every transformation question in AP Precalculus, and later in calculus, is built from one master form:
