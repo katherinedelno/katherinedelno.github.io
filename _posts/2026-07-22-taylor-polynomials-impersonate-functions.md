@@ -2,7 +2,7 @@
 layout: post
 title: "Approximation by Taylor polynomials"
 date: 2026-07-22
-description: "A polynomial that matches enough derivatives becomes locally indistinguishable from the function it imitates. This article examines where the approximation holds, where it fails, and how the error is measured."
+description: "A polynomial that matches enough derivatives becomes locally indistinguishable from the function it imitates. Where the approximation holds, where it fails, and how the error gets measured."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
@@ -10,6 +10,7 @@ kind: foundations
 sequence: 31
 interactive: true
 blurb: "Raise the degree and watch the polynomial impersonate the function"
+featured: true
 ---
 
 The second half of BC rests on one idea. Polynomials are the functions we can actually compute, so we build a polynomial that behaves like the function we care about. Everything else in the unit, from Maclaurin series to error bounds to the radius of convergence, is the theory of how good that approximation is and where it holds.

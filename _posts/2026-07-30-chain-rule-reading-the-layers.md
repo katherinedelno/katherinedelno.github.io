@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The chain rule and reading the layers"
+title: "The chain rule, layer by layer"
 date: 2026-07-30
 description: "The chain rule is a single line, and applying it is mechanical. The difficulty is that most functions do not arrive labelled as compositions, so the first task is seeing the layers at all."
 course: "AP Calculus AB & BC"
@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 10
 interactive: true
 blurb: "Every layer contributes one factor, and the missing factor is always the inner one"
+featured: true
 ---
 
 The chain rule is one line long, and once an expression has been broken into layers, applying it is bookkeeping. Almost every mistake made with it happens before that point.
