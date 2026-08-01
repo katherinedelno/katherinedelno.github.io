@@ -63,7 +63,7 @@ blurb: "Run a hundred studies and count which intervals capture the truth"
 | `sequence` | Integer | Sort order **within a band**, not within a course. Gaps are tolerated; duplicates within one band produce an arbitrary order. |
 | `interactive` | `true` / `false` | **Read by no template.** Kept as an editorial record. |
 | `blurb` | Short phrase, no terminal period | Shown on non-featured cards. Usually imperative or descriptive: "Drag one point and watch the line, the residuals, and r respond". |
-| `featured` | `true` | Katherine's alone — never set by Claude. At most one per band; two in one band break the build loudly by design. |
+| `featured` | `true` | Katherine's alone — never set by Claude unless she asks. At most **five** per band; a sixth breaks the build loudly by design. Featured cards render in `sequence` position, so several disperse through a band rather than stacking at its top. The console warns when two sit fewer than four cards apart. |
 
 ### How the resources index bands an article
 
@@ -688,6 +688,11 @@ Recorded as they are made, so later sessions do not reopen them.
 | 2026-07-30 | **AP Calculus is sequenced by College Board unit order, and within a unit by its topic order.** AB and BC stay interleaved in one band. Numbering is consecutive, 1–31. The full plan is `_style/CALCULUS-SEQUENCE-PROPOSAL.md`, approved and applied. |
 | 2026-07-30 | The tier numbering in the 7D brief is the **writing** order. `sequence` is the **display** order. They are allowed to disagree, and in Unit 1 and Unit 6 they do. |
 | 2026-07-30 | 7D covers all 22 articles, tier 5 included, not the 18 of the front half alone. |
+| 2026-07-31 | Up to five `featured` articles per band, rendered in `sequence` position rather than hoisted. AP Calculus features are sequence 2, 10, 18, 22, 31. |
+| 2026-07-31 | **The grid must have no holes.** A `span 2` card that meets the cursor in column three wraps and leaves an empty cell behind it. Before adding or moving a featured card, simulate the placement: walk the band in `sequence` order, add 2 for a featured card and 1 otherwise, and confirm no card is placed with only one column free. AP Calculus lands at exactly 36 cells, 12 full rows. |
+| 2026-07-31 | **One deliberate exception to College Board topic order**, taken to close the last hole: the FTC article (topic 6.4) sits at sequence 22 and the accumulation-functions article (6.5–6.6) at 21. This was the cheapest of the gap-free arrangements — one article moved one position — and it also lifted the closest featured pair from three cards apart to four, clearing the dispersion warning. The two articles remain adjacent and cross-link, and the FTC card is the larger of the two, so it still reads first. |
+| 2026-07-31 | Titles avoid the "*X*, and *the thing that Y*" construction unless the second clause is the thesis rather than an appendix. Eleven were rewritten; three kept. |
+| 2026-07-31 | Every article is audited against the CED before it ships, and the Fall 2026 Calculus clarifications are part of that check — FUN-1.C.1's hypothesis interval was corrected from open to closed. |
 
 Placements that need no renumbering, because they fall into existing `sequence` gaps:
 

@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "10 min read"
 math: true
 kind: foundations
-sequence: 21
+sequence: 22
 interactive: true
 blurb: "Why an area function has a derivative, and why it recovers the curve"
 featured: true

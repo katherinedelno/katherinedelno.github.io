@@ -225,14 +225,28 @@ common error" to "a standing error," which I can support; the stronger claim I c
 
 ## Corrections applied 2026-07-30, CED-alignment pass
 
-**Type I error is named.** Flag 1 above is resolved. The topic exists in the revised
-framework as 3.8, "Potential Errors When Performing Tests" — confirmed from the CED's own
-Course at a Glance. The vocabulary is confirmed only from a secondary source: Fiveable's
-topic-3.8 guide, verified for the 2027 exam, carries a section headed "the following words
-are mentioned explicitly in the AP course framework for this topic" listing *Type I error*,
-*Type II error*, and *power of a test*. `[EXAM]`, sourced to the framework for the topic and
-to a secondary source for the term. If you can see the Unit 3 essential knowledge, that
-downgrade goes away.
+**Type I error is named, and now sourced to the primary document.** Flag 1 above is fully
+resolved. The Statistics CED in your Admin folder gives topic 3.8's essential knowledge
+directly:
+
+- 3.8.A.1: "A Type I error occurs when there is convincing statistical evidence that the
+  alternative hypothesis is true (due to the small p-value), but it is not."
+- 3.8.B.1: "The probability of making a Type I error is defined as the significance level,
+  $\alpha$. For a given study and hypothesis test, the probability of making a Type I error
+  is typically set to a small value (e.g., 0.01, 0.05, 0.10) **prior to collecting the
+  data**."
+
+The article's sentence — rejecting a true null is a Type I error, its probability is
+$\alpha$, fixed in advance before any data exist — is 3.8.B.1 almost word for word. The
+secondary-source downgrade is withdrawn.
+
+**The model conclusion matches topic 3.7's stated requirements.** Checked against the CED's
+own wording: a conclusion "is stated in context consistent with, and in terms of, the
+alternative hypothesis using non-definitive language" and "should contain a reference to the
+parameter and the population." The article's sentence uses "convincing evidence"
+(non-definitive), names the parameter ("the true mean score"), names the population
+("students at this school"), and is stated in terms of the alternative ("greater than 50").
+All four satisfied.
 
 The sentence now reads: rejecting a true null is a Type I error, its probability is
 $\alpha$, fixed in advance; the p-value is computed from the data. One is a property of the

@@ -228,27 +228,31 @@ descriptions are now inside the 90–200 window.
    AP Statistics is unaffected — its featured article lands eighth of eleven, mid-grid,
    which reads well. Looking ahead is unaffected; its featured article is already first.
 
-2. **The calculus grid picks up two gaps.** A `span 2` box that meets the cursor in column
-   three wraps to the next row and leaves a hole behind it. With featured at 2 / 10 / 18 /
-   21 / 31 that happens twice, at rows 8 and 12, plus the usual trailing gap in the last
-   row. The first three featured boxes land cleanly in columns 2–3; the last two land in
-   columns 1–2 after wrapping.
+2. **The calculus grid picked up two holes, and they are now closed.** A `span 2` card that
+   meets the cursor in column three wraps to the next row and leaves an empty cell behind
+   it. At 2 / 10 / 18 / 21 / 31 that happened twice, at rows 8 and 12, plus a trailing gap.
 
-   If the holes read as a bug rather than as air, the one-line fix is to make the featured
-   box span the full row:
+   Every gap-free arrangement was enumerated. The cheapest moves one article one position:
+   **2 / 10 / 18 / 22 / 31**, reached by swapping the `sequence` values of the FTC article
+   (21 → 22) and the accumulation-functions article (22 → 21). The result is exactly 36
+   cells in 12 full rows, no holes and no trailing gap, and the closest featured pair goes
+   from three cards apart to four, which also clears the dispersion warning.
 
-   ```css
-   .pg .rxm-feat{grid-column:1 / -1;padding:26px}
-   ```
+   The cost is one inversion of College Board topic order — FTC is topic 6.4 and
+   accumulation functions are 6.5–6.6, so the dependent article now displays first. It is
+   the smallest available disturbance: two articles in the same unit, one topic apart, still
+   adjacent on the page and cross-linked, with the FTC card the larger of the two and
+   therefore the one the eye reaches first. Every alternative was worse — moving Riemann
+   sums or integration by parts across FTC breaks the unit order far more.
 
-   That is what the existing `@media (max-width:900px)` rule already does, so it is a
-   widening of current behaviour rather than a new idea, and it removes every gap because a
-   full-width box always starts and finishes its own row. It is a heavier visual treatment
-   than the current two-thirds box. Worth looking at both before deciding.
+   If strict topic order matters more than the feature, the alternative is to leave both
+   `sequence` values alone and feature *accumulation functions* instead of *FTC*. That is
+   also gap-free and needs no reordering; it just gives the big box to the weaker article.
 
-   The alternative, `grid-auto-flow: dense` on `.rxm-grid`, backfills the holes with later
-   cards — but it does so by pulling articles out of sequence order, which defeats the
-   point of sorting by `sequence` at all. Not recommended.
+   The two remaining gaps are trailing cells at the end of AP Precalculus and Looking ahead,
+   which are a function of article counts (5 and 10 cells against a 3-column grid) rather
+   than of placement. They predate this change and read as the section ending rather than as
+   a hole. AP Statistics is exact at 12 cells.
 
 ### For AP Statistics, when you get there
 
