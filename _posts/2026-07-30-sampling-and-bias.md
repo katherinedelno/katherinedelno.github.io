@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "10 min read"
 math: true
 kind: foundations
-sequence: 3
+sequence: 4
 interactive: true
 blurb: "Watch a bad method stay wrong no matter how many people you ask"
 ---
