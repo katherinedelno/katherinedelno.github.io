@@ -76,7 +76,7 @@ Before you draw the sample, the process is random and probability applies: the p
 
 After you draw the sample, the randomness is spent. Your interval is now a fixed pair of numbers, say $$(47.1, 54.9)$$, and $$\mu$$ is a fixed number too. Either it is inside or it is not; there is no 95% about it, only our ignorance of which case we are in. What you are entitled to say is that you used a method that succeeds 95% of the time, and this interval is one of its outputs.
 
-The AP-credited interpretation of the interval says exactly that, in context: "We are 95% confident that the true mean amount of sleep for students at this school is between 47.1 and 54.9 minutes." The AP-credited interpretation of the level says what the simulation shows: "If we repeated this sampling process many times, about 95% of the intervals produced would capture the true mean."
+The AP-credited interpretation of the interval says exactly that, in context: "We are 95% confident that the true mean commute time for students at this school is between 47.1 and 54.9 minutes." The AP-credited interpretation of the level says what the simulation shows: "If we repeated this sampling process many times, about 95% of the intervals produced would capture the true mean."
 
 ## The wordings that lose the point
 
@@ -95,5 +95,5 @@ The interpretation that survives grading mentions repeated sampling, attaches th
 Nearly every statistical claim you will meet in the wild, from polling margins to clinical trial results, arrives as a confidence interval. Reading one correctly means holding two thoughts at once: this particular range may well be wrong, and the process that produced it is reliable at a known rate. That is a genuinely useful way to hold beliefs, and the hundred little studies above are the entire argument for it.
 
 <div class="article-note" markdown="1">
-An exercise for the simulator: the intervals here all have the same width, since the population standard deviation is known and the sample size is fixed. Predict what changing the confidence level to 99% would do to the picture, then check your prediction against the formula. Wider intervals, fewer misses: confidence is purchased with width, which is why 100% confidence is available and useless.
+An exercise for the simulator: the intervals here all have the same width, since the population standard deviation is treated as known and the sample size is fixed. That is a teaching simplification — on the exam a mean is estimated with $$t$$, because $$\sigma$$ never is known, and the intervals then vary in width from sample to sample. Nothing about the interpretation changes; only the reference curve does. Now predict what changing the confidence level to 99% would do to the picture, then check your prediction against the formula. Wider intervals, fewer misses: confidence is purchased with width, which is why 100% confidence is available and useless.
 </div>

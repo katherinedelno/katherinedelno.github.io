@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What a p-value is, and what it is not"
+title: "What a p-value cannot tell you"
 date: 2026-07-30
 description: "A p-value is computed by assuming the null hypothesis is true, which is exactly why it cannot report the probability that the null is true. A thousand simulated studies make the correct object visible."
 course: "AP Statistics"
@@ -305,7 +305,6 @@ With $$H_a: \mu \neq 50$$, the region is both tails, each the same distance from
 $$p = 0.0250 + 0.0250 = 0.0500.$$
 
 The mirror line in the theory view marks 46.08, exactly as far below 50 as 53.92 is above it. Reporting one tail for a two-sided test is a standing error in this topic, and the picture is the argument against it: a two-sided alternative calls a result extreme whether it lands high or low, so both regions count.
-<!-- VERIFY: I have called the one-tail-for-two-sided slip "a standing error" rather than "the most common," which I cannot support. If your own students make it as often as the brief suggests, the stronger wording is available. -->
 
 
 ## What the number does not say

@@ -2,7 +2,7 @@
 layout: post
 title: "Buffon's needle and the estimation of pi"
 date: 2026-07-27
-description: "Drop needles on a lined floor and count the crossings, and the number pi emerges from pure chance. A 1777 problem that connects probability, geometry, and simulation."
+description: "Drop needles on a lined floor and count the crossings, and the number pi emerges from pure chance. An eighteenth-century problem that connects probability, geometry, and simulation."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
@@ -12,7 +12,7 @@ interactive: true
 blurb: "Drop needles, count crossings, and pi emerges from pure chance"
 ---
 
-In 1777, Georges-Louis Leclerc, Comte de Buffon, posed a question about a parlor game: if a needle is dropped at random onto a floor of parallel boards, what is the probability that it comes to rest crossing one of the cracks? The answer turned out to contain $$\pi$$, which means the game can be run in reverse. Drop many needles, count how often they cross a line, and the count estimates $$\pi$$ itself, extracted from randomness by nothing more than arithmetic.
+In 1733, Georges-Louis Leclerc, Comte de Buffon, posed a question about a parlor game: if a needle is dropped at random onto a floor of parallel boards, what is the probability that it comes to rest crossing one of the cracks? He published his own solution forty-four years later. The answer turned out to contain $$\pi$$, which means the game can be run in reverse. Drop many needles, count how often they cross a line, and the count estimates $$\pi$$ itself, extracted from randomness by nothing more than arithmetic.
 
 The result is worth knowing for its own sake, and it is also a perfect miniature of an idea at the center of modern statistics: that simulation can compute quantities which have nothing visibly random about them.
 
