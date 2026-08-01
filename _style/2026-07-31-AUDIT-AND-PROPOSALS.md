@@ -168,7 +168,7 @@ brackets.
 | # | Article | Seq | Why it earns the space |
 |---|---|---|---|
 | 1 | **What a limit claims, and what it does not** | 2 | Everything downstream is a limit. Students who never internalize that the limit ignores the point carry the confusion into differentiability, continuity, and improper integrals — three later articles are written to clean up that specific damage. Best possible opener: it is the article that makes the rest legible. |
-| 2 | **The chain rule and reading the layers** | 10 | The most-applied rule in the course, and its failure mode (dropping the inner factor) is the single most common differentiation error on the exam. Five later articles depend on it: implicit differentiation, related rates, inverse derivatives, $u$-substitution, and the parametric second derivative. |
+| 2 | **The chain rule, layer by layer** | 10 | The most-applied rule in the course, and its failure mode (dropping the inner factor) is the single most common differentiation error on the exam. Five later articles depend on it: implicit differentiation, related rates, inverse derivatives, $u$-substitution, and the parametric second derivative. |
 | 3 | **Reading the graph of f′** | 18 | Your own framing: "Every AP Calculus exam contains some version of this question," and "one of the most-missed problem types in the course." Highest single-question frequency on the free-response section. Non-negotiable. |
 | 4 | **The Fundamental Theorem of Calculus from first principles** | 21 | Keep. The conceptual keystone, and the existing feature already works. |
 | 5 | **Approximation by Taylor polynomials** | 31 | Anchors the BC half, which otherwise has no big box at all. The entire second semester of BC — error bounds, radius of convergence, series manipulation — is this one idea used twelve ways, and it is where BC students most reliably lose the thread. Also gives the section a strong closing box. |
@@ -199,12 +199,63 @@ the two highest-value articles in the section and the grid can carry it.
 
 The other three (182, 188, 153) are already inside the window.
 
+### Implemented 2026-07-31
+
+`resources.md`:
+
+- The two render loops collapsed into one over `items`, so featured articles now sit in
+  **sequence position** instead of being hoisted to the front of the grid.
+- The build guard raised from `feats.size > 1` to `feats.size > 5`, with the include
+  renamed to `ERROR-more-than-five-featured-articles-in-one-section`. The file still does
+  not exist; that is the loud-failure mechanism, unchanged.
+- A second console editing aid added alongside the description-length one: it warns when
+  two featured boxes in a section sit fewer than four cards apart. It fires once on the
+  current set, for the 18/21 pair, which is the tradeoff described above made visible in
+  your own tooling rather than only in this file.
+
+`_posts/`: `featured: true` added to *what-a-limit-claims*, *chain-rule-reading-the-layers*,
+*reading-the-graph-of-f-prime*, and *taylor-polynomials-impersonate-functions*. FTC
+unchanged. Taylor's `description` trimmed 209 → 189 characters; all five featured
+descriptions are now inside the 90–200 window.
+
+**Two side effects worth knowing about.**
+
+1. **AP Precalculus' featured box moves from first to last.** *The unit circle and the sine
+   curve* is `sequence: 4` of 4, so under sequence ordering it now closes the section
+   instead of opening it. Nothing is broken, but the anchor effect is gone. If you want a
+   big box at the top of that section, *The four parameters of transformation*
+   (`sequence: 1`) is the natural pick and would work as a second featured article there.
+   AP Statistics is unaffected — its featured article lands eighth of eleven, mid-grid,
+   which reads well. Looking ahead is unaffected; its featured article is already first.
+
+2. **The calculus grid picks up two gaps.** A `span 2` box that meets the cursor in column
+   three wraps to the next row and leaves a hole behind it. With featured at 2 / 10 / 18 /
+   21 / 31 that happens twice, at rows 8 and 12, plus the usual trailing gap in the last
+   row. The first three featured boxes land cleanly in columns 2–3; the last two land in
+   columns 1–2 after wrapping.
+
+   If the holes read as a bug rather than as air, the one-line fix is to make the featured
+   box span the full row:
+
+   ```css
+   .pg .rxm-feat{grid-column:1 / -1;padding:26px}
+   ```
+
+   That is what the existing `@media (max-width:900px)` rule already does, so it is a
+   widening of current behaviour rather than a new idea, and it removes every gap because a
+   full-width box always starts and finishes its own row. It is a heavier visual treatment
+   than the current two-thirds box. Worth looking at both before deciding.
+
+   The alternative, `grid-auto-flow: dense` on `.rxm-grid`, backfills the holes with later
+   cards — but it does so by pulling articles out of sequence order, which defeats the
+   point of sorting by `sequence` at all. Not recommended.
+
 ### For AP Statistics, when you get there
 
 For symmetry, the same reasoning applied to the current stats set would give: **What moves
 the least-squares line** (seq 1), **Sampling and bias** (3), **The Central Limit Theorem in
 simulation** (7), **The meaning of 95% confidence** (9, currently featured), **What a
-p-value is** (11). That is 1 / 3 / 7 / 9 / 11 out of 12 — bunched at the back, because
+p-value cannot tell you** (11). That is 1 / 3 / 7 / 9 / 11 out of 12 — bunched at the back, because
 Unit 1 and Unit 2 are thin in the current corpus. Proposals 3 and 4 below are the ones
 that would fix the spacing as well as the coverage.
 
@@ -215,7 +266,7 @@ that would fix the spacing as well as the coverage.
 Ranked. Each is a real coverage gap against the revised five-unit CED, not a variation on
 something already published.
 
-### S1. Type I and Type II errors, and the power to detect
+### S1. Type I errors, Type II errors, and power
 
 **Gap.** The only current treatment is one paragraph inside the p-value article. The CED
 gives this its own skill (2.D, "Identify types of errors and relationships among components
@@ -239,7 +290,7 @@ picture.
 
 ---
 
-### S2. Which inference procedure? The decision that comes before the calculation
+### S2. Which inference procedure?
 
 **Gap.** *Which chi-square test* does this beautifully for two procedures. Nothing does it
 across all of them, and CED skill 2.C is literally "Identify appropriate statistical
@@ -260,7 +311,7 @@ the same table from two; a proportion question phrased with counts.
 
 ---
 
-### S3. Describing a distribution, and the words that earn the points
+### S3. Describing a distribution in the exam's own words
 
 **Gap.** The largest one in the corpus. Unit 1 is **20–30% of the exam** and the current set
 covers only sampling and bias. Nothing on shape/center/spread/unusual features, nothing on
@@ -305,7 +356,7 @@ fails, since that hypothesis is the one students never check.
 
 ---
 
-### S5. Every interval, one formula; every test statistic, one formula
+### S5. One template for every confidence interval
 
 **Gap.** The corpus teaches the individual procedures well but never says out loud that
 there are only two templates.
@@ -333,7 +384,7 @@ conceptual gap, S3 the biggest coverage gap, S2 the biggest exam-day gap.
 Only four precalc articles exist, and all of them serve Units 2 and 3. **Unit 1 is 30–40%
 of the exam and has no coverage at all.** Both proposals below are Unit 1.
 
-### P1. Multiplicity, holes, and end behavior: everything the factored form tells you
+### P1. What the factored form tells you
 
 **Gap.** Polynomial and rational functions, the largest single block of the course, entirely
 uncovered.
@@ -359,7 +410,7 @@ that Calculus Unit 5 assumes students already own.
 
 ---
 
-### P2. Rates of change, and the sentence AP Precalculus wants
+### P2. Increasing at a decreasing rate
 
 **Gap.** Topics 1.1–1.3, and the content that most distinguishes AP Precalculus from the
 precalculus course it replaced.
@@ -400,7 +451,7 @@ You asked specifically for enrichment with strong visualization. Ranked by visua
 per unit of prerequisite. The first two are already set up by articles you have published —
 each one answers a question an existing article explicitly poses and leaves open.
 
-### B1. The logistic map, and the road to chaos
+### B1. The logistic map: from order into chaos
 
 **Why this one first.** Two of your articles already point at it. *Logistic growth* teaches
 $\frac{dy}{dt} = ky(a-y)$ and its placid S-curve; *After BC: differential equations* ends on
@@ -459,7 +510,7 @@ everywhere.
 
 ---
 
-### B4. Markov chains, and how Google was built
+### B4. How Google was built on an eigenvector
 
 **Why.** Teased in *After AP Statistics*, and it is the one enrichment topic that reaches
 all three courses: Precalculus already teaches transition matrices (topic 4.14, unassessed),
@@ -479,6 +530,78 @@ Adding a link and watching the ranking reshuffle is the demonstration that sells
 *Also considered and set aside:* space-filling curves and fractal dimension (beautiful,
 but no existing article sets it up); conformal maps (prerequisites too steep); information
 and entropy (excellent, but wants its own sequence rather than a single article).
+
+---
+
+## Part VI — Title renames, 2026-07-31
+
+### The tic
+
+Fifteen of the fifty-five titles ran "*X*, and *the thing that Y*" — a headline followed by
+an appendix clause. Underneath it was a narrower habit: nine titles ended in *the [noun]
+that [verbs]* — the algebra that resolves them, the ways it fails, the two signs that decide
+everything, the step that is not calculus, the check that catches both, the exponent that
+decides. Individually each is fine. Fifty-five titles deep it reads as a formula, and a
+formula is the opposite of the effect the construction is going for.
+
+**Titles are cosmetic here — URLs come from filenames, not titles.** Nothing breaks.
+I checked every internal cross-reference: the articles link to each other through
+descriptive phrases ("a vertical asymptote", "the derivative at a point is a limit"), never
+by quoting a title, so no prose needed touching.
+
+### Kept (3)
+
+The construction earns its keep when the second clause *is* the thesis rather than an
+afterthought — when it reverses, withholds, or surprises.
+
+| Title | Why it survives |
+|---|---|
+| **What a limit claims, and what it does not** | The antithesis is the article. A limit's silence about the point is the whole idea, and the title enacts it. Also the featured opener of the section. |
+| **Two existence theorems, and what they refuse to tell you** | *Refuse* is doing real work. The article is about what the theorems decline to say, and no shorter title carries that. |
+| **Optimization, and the step that is not calculus** | The clause is a genuine surprise in a calculus article, which is the hook. |
+
+### Renamed (11)
+
+| Was | Now |
+|---|---|
+| Continuity's three conditions, and the ways it fails | **Breaking continuity one condition at a time** |
+| The Intermediate Value Theorem and how to invoke it | **Invoking the Intermediate Value Theorem** |
+| The rules, and choosing among them | **Choosing a differentiation rule** |
+| The chain rule and reading the layers | **The chain rule, layer by layer** |
+| Particle motion, and the two signs that decide everything | **Why negative acceleration is not slowing down** |
+| Linearization, and whether the answer is too big | **Over or under: reading a linearization** |
+| L'Hospital's rule, and the step before it | **Checking the form before L'Hospital's rule** |
+| Integration by parts, partial fractions, and the check that catches both | **Integration by parts and partial fractions** |
+| Improper integrals, and the exponent that decides | **When an unbounded region has finite area** |
+| Area between curves, and the average value of a function | **Area between curves and average value** |
+| What a p-value is, and what it is not | **What a p-value cannot tell you** |
+
+Notes on three of the choices:
+
+- *Choosing a differentiation rule* now rhymes deliberately with the existing *Choosing a
+  convergence test*. Both articles are about selection rather than execution, and the
+  parallel says so.
+- *Why negative acceleration is not slowing down* promotes the old blurb into the title,
+  because the misconception is a better hook than the topic name. Its blurb was rewritten
+  to avoid repeating itself.
+- *What a p-value is, and what it is not* was the strongest instance of the pattern and also
+  the most conspicuous echo, since *What a limit claims, and what it does not* is the same
+  sentence in a different course. Keeping both would have made the tic visible from the
+  index page. The limit one is the more original phrasing, so the p-value one moved.
+
+Three blurbs were rewritten where the new title had made them redundant:
+`continuity-three-conditions`, `particle-motion`, `lhospitals-rule`.
+
+### Proposal titles in Parts III–V
+
+Rewritten under the same rule before any of them get built, so the habit does not come back
+with the next batch: *Type I errors, Type II errors, and power*; *Which inference
+procedure?*; *Describing a distribution in the exam's own words*; *One template for every
+confidence interval*; *What the factored form tells you*; *Increasing at a decreasing rate*;
+*The logistic map: from order into chaos*; *How Google was built on an eigenvector*.
+
+*Increasing at a decreasing rate* is the best of them — it is the exact phrase students
+cannot parse, so the title is the diagnostic.
 
 ---
 

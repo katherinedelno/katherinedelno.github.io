@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Improper integrals, and the exponent that decides"
+title: "When an unbounded region has finite area"
 date: 2026-07-30
 description: "An integral is improper when a limit is infinite or the integrand blows up. Both cases are handled the same way, and for the power functions the verdict turns on a single number."
 course: "AP Calculus BC"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Particle motion, and the two signs that decide everything"
+title: "Why negative acceleration is not slowing down"
 date: 2026-07-30
 description: "Position, velocity, and acceleration are one function and its first two derivatives. Speed is the one that is not a derivative, and it is where most of the errors are."
 course: "AP Calculus AB & BC"
@@ -10,7 +10,7 @@ math: true
 kind: foundations
 sequence: 13
 interactive: true
-blurb: "Negative acceleration does not mean slowing down"
+blurb: "Two signs decide it, and speed is the one that is not a derivative"
 ---
 
 A particle moving on a line has a position $$s(t)$$, and everything else in the topic is a derivative of it. The course lists four quantities — position, speed, velocity, acceleration — and three of them are derivatives or the function itself. Speed is the odd one out, and that is where the errors are.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Intermediate Value Theorem and how to invoke it"
+title: "Invoking the Intermediate Value Theorem"
 date: 2026-07-30
 description: "An existence theorem promises that something happens without saying where. Check the hypotheses, state the conclusion in the theorem's own terms, and the point is earned."
 course: "AP Calculus AB & BC"

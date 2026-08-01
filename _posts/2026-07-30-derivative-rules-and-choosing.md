@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The rules, and choosing among them"
+title: "Choosing a differentiation rule"
 date: 2026-07-30
 description: "There are only a handful of differentiation rules and they are quickly memorised. The work is reading an expression and knowing which one it wants, including the times when the answer is to rewrite it first."
 course: "AP Calculus AB & BC"

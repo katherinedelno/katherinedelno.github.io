@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "L'Hospital's rule, and the step before it"
+title: "Checking the form before L'Hospital's rule"
 date: 2026-07-30
 description: "The rule replaces a quotient of functions with a quotient of their derivatives. It has hypotheses, they have to be checked first, and the rule is silent more often than students expect."
 course: "AP Calculus AB & BC"
@@ -10,7 +10,7 @@ math: true
 kind: mechanics
 sequence: 16
 interactive: true
-blurb: "Check the form first, and know what the rule does not say"
+blurb: "The rule is silent more often than students expect"
 ---
 
 L'Hospital's rule is a conditional, and almost every error with it comes from using the conclusion without having established the condition. It is easy to apply and easy to apply where it does not belong, and those are not separate facts about it.
