@@ -166,16 +166,43 @@ permalink: /resources/
       }
     });
 
-    // editing aid: warn (only) when two featured boxes in a section sit too close together
+    // editing aid: two checks the layout can fail silently.
+    // 1. a featured card that wraps leaves an empty cell behind it. It spans two columns
+    //    of three on desktop and the full width of two on mobile, so it must meet the
+    //    cursor with room: an even number of cards before it on mobile, and not in the
+    //    last column on desktop. Simulated here for both widths rather than measured,
+    //    so the warning fires whichever one you happen to be looking at.
+    // 2. featured cards clustering instead of dispersing, checked only where a section
+    //    is long enough for dispersion to mean anything.
     document.querySelectorAll('.rxm-section').forEach(function(sec){
       var boxes = Array.prototype.slice.call(sec.querySelectorAll('.rxm-box'));
+      var name = sec.getAttribute('data-cat'), n = boxes.length;
+      var feat = boxes.map(function(b){ return b.classList.contains('rxm-feat'); });
+
+      [3, 2].forEach(function(cols){
+        var col = 0, holes = 0;
+        feat.forEach(function(isFeat){
+          var span = isFeat ? 2 : 1;
+          if(col + span > cols){ holes++; col = 0; }
+          col += span;
+          if(col >= cols) col = 0;
+        });
+        if(holes){
+          console.warn('"' + name + '" leaves ' + holes + ' empty cell' + (holes > 1 ? 's' : '') +
+            ' at ' + cols + ' columns (' + (cols === 3 ? 'desktop' : 'mobile') +
+            '). Move a featured card one position: on mobile it must have an even number' +
+            ' of cards before it, on desktop it must not start in the last column.');
+        }
+      });
+
       var at = [];
-      boxes.forEach(function(b, i){ if(b.classList.contains('rxm-feat')) at.push(i); });
-      for(var i = 1; i < at.length; i++){
-        var gap = at[i] - at[i-1];
-        if(gap < 4){
-          console.warn('featured boxes in "' + sec.getAttribute('data-cat') + '" are only ' +
-            gap + ' apart (want 4 or more, so they disperse rather than cluster)');
+      feat.forEach(function(f, i){ if(f) at.push(i); });
+      if(n > 8){
+        for(var i = 1; i < at.length; i++){
+          if(at[i] - at[i-1] < 4){
+            console.warn('featured cards in "' + name + '" are only ' + (at[i] - at[i-1]) +
+              ' apart (want 4 or more, so they disperse rather than cluster)');
+          }
         }
       }
     });

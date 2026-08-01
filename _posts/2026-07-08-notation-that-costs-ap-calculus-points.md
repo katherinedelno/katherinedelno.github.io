@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "10 min read"
 math: true
 kind: mechanics
-sequence: 1
+sequence: 2
 interactive: false
 blurb: "The writing conventions that protect earned credit"
 ---

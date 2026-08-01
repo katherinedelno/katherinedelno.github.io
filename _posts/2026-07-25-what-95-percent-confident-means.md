@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
-sequence: 9
+sequence: 8
 interactive: true
 featured: true
 blurb: "Run a hundred studies and count which intervals capture the truth"
