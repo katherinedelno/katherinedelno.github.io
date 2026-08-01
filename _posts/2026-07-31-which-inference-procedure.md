@@ -7,9 +7,10 @@ course: "AP Statistics"
 read_time: "8 min read"
 math: true
 kind: mechanics
-sequence: 15
+sequence: 16
 interactive: true
 blurb: "Three questions about the design, asked before any arithmetic"
+featured: true
 ---
 
 A student who can execute every inference procedure in the course can still lose the question, because choosing the procedure happens before any of that skill is used. The framework treats selection as its own thing, attaching the skill *identify appropriate statistical inference methods* to eleven separate topics, and the reason is that the choice is settled by the study design rather than by the numbers.
