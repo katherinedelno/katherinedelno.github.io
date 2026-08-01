@@ -54,19 +54,22 @@
 
 /* Standfirst. One paragraph, set larger, that states the contribution. */
 .pj-lede {
-  font-size: 1.16em;
+  font-size: 1.04em;
   line-height: 1.62;
-  opacity: 0.9;
+  opacity: 0.88;
   margin: 0 0 2rem;
 }
 
 /* Thesis block. Used once per page, for the sentence the page turns on. */
 .pj-thesis {
-  border-left: 2px solid var(--pj-accent);
-  padding: 0.15rem 0 0.15rem 1.35rem;
+  border: 1px solid var(--pj-rule);
+  border-left: 3px solid var(--pj-accent);
+  border-radius: 12px;
+  background: var(--pj-surface);
+  padding: 1.1rem 1.35rem;
   margin: 2.4rem 0;
-  font-size: 1.1em;
-  line-height: 1.6;
+  font-size: 1em;
+  line-height: 1.65;
 }
 .pj-thesis p { margin: 0; }
 .pj-thesis p + p { margin-top: 0.8rem; }
@@ -77,7 +80,9 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1px;
   background: var(--pj-rule-2);
-  border-block: 1px solid var(--pj-rule);
+  border: 1px solid var(--pj-rule);
+  border-radius: 10px;
+  overflow: hidden;
   margin: 2rem 0 2.6rem;
 }
 .pj-stat {
@@ -101,6 +106,7 @@
 /* Small aside: scope notes, verification notes, honest caveats. */
 .pj-note {
   border: 1px solid var(--pj-rule);
+  border-radius: 10px;
   background: var(--pj-surface);
   padding: 1rem 1.15rem;
   margin: 2rem 0;
@@ -134,6 +140,8 @@
 
 .pj-figure {
   border: 1px solid var(--pj-rule);
+  border-radius: 12px;
+  overflow: hidden;          /* keeps the head's fill inside the radius */
   margin: 2.6rem 0;
   background: transparent;
 }
@@ -213,7 +221,7 @@
   border: 1px solid var(--pj-rule);
   background: transparent;
   color: inherit;
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 .pj-actions {
@@ -232,7 +240,7 @@
   background: transparent;
   color: inherit;
   cursor: pointer;
-  border-radius: 0;
+  border-radius: 999px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .pj-btn:hover:not(:disabled) {
@@ -309,6 +317,30 @@
 }
 
 /* --------------------------------------------------------------------------
+   3b. Interactivity, switched off
+
+   The figures still compute and draw on load at their default settings.
+   Only the parts you can grab are hidden: sliders, number fields, selects,
+   Run buttons and tab strips. Every one of them, markup and event handlers
+   alike, is still in the four page files, untouched. Delete this block to
+   turn the figures back into interactive ones.
+
+   The thin progress bar deliberately stays visible, so a figure that takes
+   a second or two to compute reads as loading rather than as broken.
+   -------------------------------------------------------------------------- */
+
+.pj-controls,
+.pj-seg              { display: none !important; }
+.pj-actions .pj-btn  { display: none !important; }
+.pj-actions          { margin-bottom: 0.9rem; }
+
+/* With the button gone, the empty progress track would read as a stray rule
+   above the plot, since both figures reset it to 0% when they finish. Drop
+   the track and keep only the fill, so it shows while computing and nothing
+   is left behind afterwards. */
+.pj-progress         { background: transparent; }
+
+/* --------------------------------------------------------------------------
    4. Console panel — mirrors the printed output of the R function
    -------------------------------------------------------------------------- */
 
@@ -318,6 +350,7 @@
   line-height: 1.72;
   padding: 1.05rem 1.2rem;
   border: 1px solid var(--pj-rule);
+  border-radius: 10px;
   background: var(--pj-surface);
   overflow-x: auto;
   white-space: pre-wrap;
@@ -391,6 +424,7 @@
   line-height: 1.7;
   padding: 1.05rem 1.2rem;
   border: 1px solid var(--pj-rule);
+  border-radius: 10px;
   background: var(--pj-surface);
   overflow-x: auto;
   margin: 2rem 0;
@@ -399,119 +433,135 @@
 
 /* --------------------------------------------------------------------------
    7. About page — "Statistical work" section
+
+   Built to the same recipe as the resource cards on /resources/ (.rxm-box):
+   one grid, a 1px hairline, a 10px radius, ink-coloured text, and a border
+   that darkens on hover while the title picks up an underline. The featured
+   entry spans two of the three columns, exactly as the featured article
+   does there.
    -------------------------------------------------------------------------- */
 
 .pj-work { margin-top: 1.4rem; }
 
 .pj-work__intro {
   max-width: 62ch;
-  opacity: 0.82;
-  margin-bottom: 2.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted, #5c5c5c);
+  margin: 0 0 1.8rem;
+  opacity: 1;
 }
 
-/* The featured entry. One project, given room. */
-.pj-feature {
-  display: block;
-  border: 1px solid var(--pj-rule);
-  padding: 1.7rem 1.8rem 1.8rem;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.18s ease, background-color 0.18s ease;
-}
-.pj-feature:hover,
-.pj-feature:focus-visible {
-  border-color: currentColor;
-  background: var(--pj-surface);
-}
-.pj-feature:focus-visible { outline: 2px solid var(--pj-accent); outline-offset: 2px; }
-
-.pj-feature__kicker {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.55rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: 0.75rem;
-}
-.pj-feature__tag {
-  border: 1px solid var(--pj-rule);
-  padding: 0.16rem 0.46rem;
-  letter-spacing: 0.09em;
-  opacity: 0.95;
-}
-.pj-feature__title {
-  font-size: 1.42rem;
-  line-height: 1.24;
-  margin: 0 0 0.75rem;
-  font-weight: 600;
-}
-.pj-feature__blurb {
-  margin: 0;
-  max-width: 66ch;
-  line-height: 1.62;
-  opacity: 0.86;
-}
-.pj-feature .pj-stats {
-  margin: 1.5rem 0 1.4rem;
-  border-block-color: var(--pj-rule);
-}
-.pj-feature__more,
-.pj-card__more {
-  display: inline-block;
-  margin-top: 1.1rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--pj-accent);
-}
-.pj-feature:hover .pj-feature__more,
-.pj-card:hover .pj-card__more { text-decoration: underline; }
-
-/* The remaining projects, three across. */
-.pj-cards {
+.pj-work__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
-  gap: 1px;
-  background: var(--pj-rule);
-  border: 1px solid var(--pj-rule);
-  border-top: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
-.pj-card {
-  display: flex;
-  flex-direction: column;
-  padding: 1.4rem 1.45rem 1.5rem;
-  text-decoration: none;
-  color: inherit;
-  background: transparent;
-  transition: background-color 0.18s ease;
-}
-.pj-card:hover,
-.pj-card:focus-visible { background: var(--pj-surface); }
-.pj-card:focus-visible { outline: 2px solid var(--pj-accent); outline-offset: -2px; }
 
-.pj-card__kicker {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.58;
-  margin-bottom: 0.62rem;
+.pg .pj-feature,
+.pg .pj-card {
+  display: block;
+  grid-column: span 1;
+  border: 1px solid var(--line, #e6e6e6);
+  border-radius: 10px;
+  padding: 22px;
+  background: transparent;
+  text-decoration: none;
+  color: var(--ink, #1f1f1f);
+  transition: border-color 0.12s ease;
 }
-.pj-card__title {
-  font-size: 1.03rem;
-  line-height: 1.32;
+.pg .pj-feature { grid-column: span 2; padding: 26px; }
+
+/* Never inherit minima's link blue, unvisited or visited. */
+.pg .pj-feature:link,  .pg .pj-feature:visited,
+.pg .pj-card:link,     .pg .pj-card:visited { color: var(--ink, #1f1f1f); }
+
+.pg .pj-feature:hover, .pg .pj-feature:focus-visible,
+.pg .pj-card:hover,    .pg .pj-card:focus-visible {
+  border-color: var(--accent, #2b2b2b);
+  background: transparent;
+  outline: none;
+}
+.pg .pj-feature:hover .pj-feature__title,
+.pg .pj-feature:focus-visible .pj-feature__title,
+.pg .pj-card:hover .pj-card__title,
+.pg .pj-card:focus-visible .pj-card__title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--faint, #9a9a97);
+}
+
+.pj-feature__kicker,
+.pj-card__kicker {
+  display: block;
+  font-size: 0.594rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   font-weight: 600;
+  color: var(--faint, #9a9a97);
+  opacity: 1;
   margin: 0 0 0.55rem;
 }
-.pj-card__blurb {
-  margin: 0;
-  font-size: 0.91rem;
-  line-height: 1.58;
-  opacity: 0.78;
-  flex: 1 1 auto;
+.pj-feature__kicker span + span::before {
+  content: "\00B7";
+  margin: 0 0.6em;
+  color: var(--line, #e6e6e6);
 }
-.pj-card__more { margin-top: 0.95rem; }
+.pj-feature__tag {           /* was a bordered pill; the resource eyebrow is plain */
+  border: 0;
+  padding: 0;
+  letter-spacing: inherit;
+  opacity: 1;
+}
+
+.pj-card__title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  margin: 0 0 0.4rem;
+}
+.pj-feature__title {
+  font-size: 1.6875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.45rem;
+}
+.pj-card__blurb,
+.pj-feature__blurb {
+  font-size: 0.84375rem;
+  line-height: 1.55;
+  color: var(--muted, #5c5c5c);
+  margin: 0;
+  opacity: 1;
+  max-width: none;
+}
+.pj-feature__blurb { font-size: 0.9375rem; max-width: 62ch; }
+
+/* The resource cards carry no call-to-action, and neither do these. Markup
+   left in place; drop this rule to bring the arrows back. */
+.pj-feature__more,
+.pj-card__more { display: none; }
+
+/* Same reasoning: a stat strip here reads as a box inside a box. It stays
+   on the project page itself. */
+.pj-work .pj-stats { display: none; }
+
+@media (max-width: 900px) {
+  .pj-work__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pg .pj-feature { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .pj-work__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .pg .pj-card    { padding: 14px; }
+  .pg .pj-feature { padding: 18px; }
+  .pj-card__title    { font-size: 1rem; }
+  .pj-card__blurb    { font-size: 0.78125rem; }
+  .pj-feature__title { font-size: 1.375rem; }
+  .pj-feature__blurb { font-size: 0.875rem; }
+}
 
 /* --------------------------------------------------------------------------
    8. Quality floor
@@ -521,8 +571,6 @@
   .pj-figure__body,
   .pj-figure__head { padding-inline: 0.95rem; }
   .pj-figure__caption { padding-inline: 0.95rem; }
-  .pj-feature { padding: 1.35rem 1.25rem 1.45rem; }
-  .pj-feature__title { font-size: 1.24rem; }
   .pj-stat { padding: 0.85rem 0.95rem 0.9rem; }
   .pj-stat__value { font-size: 1.14rem; }
 }

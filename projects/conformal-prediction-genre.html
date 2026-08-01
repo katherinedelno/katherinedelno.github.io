@@ -80,7 +80,7 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
 
 <figure class="pj-figure" id="cp-live">
   <div class="pj-figure__head">
-    <div class="pj-figure__num">Figure 1 &middot; Interactive</div>
+    <div class="pj-figure__num">Figure 1 &middot; Computed live</div>
     <h3 class="pj-figure__title">What the confidence level buys, and what it costs</h3>
   </div>
 
@@ -114,7 +114,7 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
 
   <figcaption class="pj-figure__caption">
     <p>A full conformal calibration, run in the browser: 600 calibration films are scored, the quantile is taken at the chosen &alpha;, and the resulting threshold is applied to 600 held-out films. Beneath, one film's twenty genre probabilities are shown against that threshold. The mechanism is exactly the one used in the project; the probabilities are synthetic stand-ins, drawn so that the genre marginals match the training set and the operating point at &alpha; = 0.615 reproduces the reported coverage of 0.90, mean set size near 8.6, and micro-recall near 0.96.</p>
-    <p>Drag &alpha; down toward 0.1 under the sum score and watch the prediction set swell to all twenty genres, which is the degenerate solution version V2 found: perfect coverage, no information. Switch to the maximum score and the same &alpha; behaves quite differently, which is why the three score functions could not share a confidence level.</p>
+    <p>Pushed down toward &alpha; = 0.1 under the sum score, the prediction set swells to all twenty genres, which is the degenerate solution version V2 found: perfect coverage, no information. Under the maximum score the same &alpha; behaves quite differently, which is why the three score functions could not share a confidence level.</p>
   </figcaption>
 </figure>
 

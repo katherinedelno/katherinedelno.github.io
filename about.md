@@ -166,9 +166,10 @@ permalink: /about/
 
       <p class="pj-work__intro">Alongside teaching, my graduate work included independent methodological research and applied projects in statistics and machine learning. It is the depth behind the instruction, particularly in AP Statistics. Each project below has a full write-up.</p>
 
-      <!-- ---------------------------------------------------------------- -->
-      <!-- Featured: the independent research                               -->
-      <!-- ---------------------------------------------------------------- -->
+      <!-- One grid, as on /resources/: the featured entry spans two of the
+           three columns and the three applied projects follow. -->
+      <div class="pj-work__grid">
+
       <a class="pj-feature" href="{{ '/projects/random-forest-spec-check/' | relative_url }}">
 
         <p class="pj-feature__kicker">
@@ -199,10 +200,6 @@ permalink: /about/
         <span class="pj-feature__more">Read the full account &rarr;</span>
       </a>
 
-      <!-- ---------------------------------------------------------------- -->
-      <!-- The applied projects                                             -->
-      <!-- ---------------------------------------------------------------- -->
-      <div class="pj-cards">
 
         <a class="pj-card" href="{{ '/projects/conformal-prediction-genre/' | relative_url }}">
           <p class="pj-card__kicker">Machine learning &middot; 2025</p>
