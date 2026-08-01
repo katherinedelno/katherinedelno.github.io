@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Continuity's three conditions, and the ways it fails"
+title: "Breaking continuity one condition at a time"
 date: 2026-07-30
 description: "The definition has three parts, and each one can be broken on its own. Break them one at a time and the standard taxonomy of discontinuities assembles itself."
 course: "AP Calculus AB & BC"
@@ -10,7 +10,7 @@ math: true
 kind: foundations
 sequence: 4
 interactive: true
-blurb: "Break each condition in turn and watch the discontinuity it produces"
+blurb: "Three conditions, three ways to fail, and the names each failure earns"
 ---
 
 The framework defines continuity at a point in one sentence with three parts. A function $$f$$ is continuous at $$x = c$$ provided that $$f(c)$$ exists, that $$\lim_{x \to c} f(x)$$ exists, and that

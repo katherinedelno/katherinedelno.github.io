@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Integration by parts, partial fractions, and the check that catches both"
+title: "Integration by parts and partial fractions"
 date: 2026-07-30
 description: "Two BC-only techniques with narrow scopes. One turns on a choice, the other on a restriction the course states explicitly, and both are verified the same way."
 course: "AP Calculus BC"

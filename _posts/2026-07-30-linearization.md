@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linearization, and whether the answer is too big"
+title: "Over or under: reading a linearization"
 date: 2026-07-30
 description: "The tangent line is the best straight-line stand-in for a function near a point. Deciding whether its value is an overestimate or an underestimate is a question about the whole interval, not about the point."
 course: "AP Calculus AB & BC"
