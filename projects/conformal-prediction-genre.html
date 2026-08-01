@@ -1,0 +1,427 @@
+---
+layout: project
+title: "A conformal prediction framework for multi-label movie genre classification"
+permalink: /projects/conformal-prediction-genre/
+description: "Fine-tuned DistilBERT paired with global conformal prediction to return calibrated sets of genre labels, with guaranteed coverage rather than point predictions."
+---
+
+<p class="pj-eyebrow"><a href="{{ '/about/#statistical-work' | relative_url }}">Research</a></p>
+
+<h1>A conformal prediction framework for multi-label movie genre classification</h1>
+
+<p class="pj-meta">Project lead &middot; with Jenny Xu &middot; 2025</p>
+
+<p class="pj-lede">A classifier that returns a single best guess is easy to evaluate and hard to trust. This project pairs a fully fine-tuned DistilBERT with <strong>conformal prediction</strong> so that the model returns a <em>set</em> of genres carrying a coverage guarantee, and then asks what that guarantee costs. The answer, in this instance, is a great deal: the calibrated model captures nearly every true genre and does so by predicting far too many.</p>
+
+<div class="pj-stats">
+  <div class="pj-stat">
+    <div class="pj-stat__value">2,386</div>
+    <div class="pj-stat__label">films, each labelled with some subset of 20 genres</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">90.2%</div>
+    <div class="pj-stat__label">empirical coverage: proportion of films whose full true genre set was captured</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">15</div>
+    <div class="pj-stat__label">configurations compared across score functions, fine-tuning depth, and calibration scheme</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">8.62</div>
+    <div class="pj-stat__label">genres in the average prediction set, out of 20: the price of the guarantee</div>
+  </div>
+</div>
+
+<h2>A problem with two ways to be wrong</h2>
+
+<p>Genre assignment is multi-label by nature. A film is not a comedy <em>or</em> a romance; it is frequently both, occasionally neither in any useful sense, and the label sets in this dataset average a little over two and a half genres per film. The distribution across the twenty available genres is also severely unbalanced: drama appears in more than a thousand of the 2,386 films, while foreign, western, and television film appear a few dozen times or fewer. A classifier trained on this will learn the common genres well and the rare ones barely at all.</p>
+
+<p>The task was scored on textual metadata only, the title, overview, and tagline concatenated into a single input string, with the overviews averaging about fifty-three words. Under those conditions a model will be genuinely uncertain about a large fraction of films, and the interesting question is not how to hide that uncertainty behind a threshold of 0.5 but how to report it.</p>
+
+<div class="pj-thesis">
+  <p>Conformal prediction replaces the point prediction with a set, and attaches a guarantee: over repeated use, the set contains the truth at least a specified fraction of the time. The guarantee is distribution-free and holds in finite samples. What it does not promise is that the set will be small.</p>
+</div>
+
+<h2>The mechanism</h2>
+
+<p>The procedure needs a <em>non-conformity score</em>, a number saying how surprising an observation is under the fitted model. A calibration set held out from training is scored, a quantile of those scores is taken at the desired confidence level, and that quantile is converted into a probability threshold applied to new films. Three score functions were compared, each aggregating the model's uncertainty across a film's true genres differently:</p>
+
+<div class="pj-tablewrap">
+  <table class="pj-table">
+    <caption>Table 1 &middot; Non-conformity scores compared, over the true label set <em>T</em></caption>
+    <thead>
+      <tr><th scope="col">Score</th><th scope="col" style="text-align:left">Definition</th><th scope="col" style="text-align:left">Behaviour</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Maximum</td>
+        <td style="text-align:left; font-family:var(--pj-mono)">max<sub>y&isin;T</sub> (1 &minus; p<sub>y</sub>)</td>
+        <td style="text-align:left; white-space:normal">Governed entirely by the single true genre the model is least sure of. One difficult label makes the whole film look anomalous.</td>
+      </tr>
+      <tr>
+        <td>Sum</td>
+        <td style="text-align:left; font-family:var(--pj-mono)">&sum;<sub>y&isin;T</sub> (1 &minus; p<sub>y</sub>)</td>
+        <td style="text-align:left; white-space:normal">Accumulates uncertainty over all true genres, so a film with four moderately uncertain labels scores worse than one with a single uncertain label. Scales with set size.</td>
+      </tr>
+      <tr>
+        <td>Average</td>
+        <td style="text-align:left; font-family:var(--pj-mono)">|T|<sup>&minus;1</sup> &sum;<sub>y&isin;T</sub> (1 &minus; p<sub>y</sub>)</td>
+        <td style="text-align:left; white-space:normal">Between the two, removing the dependence on how many genres a film has.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>The sum-based score performed best on held-out data, which is unsurprising given that the objective rewarded capturing a film's entire label set rather than any individual label. It also has a consequence that took some experimentation to appreciate: because the score adds a term for every true genre, its scale depends on how many genres a film has, and the quantile at conventional confidence levels lands somewhere useless. At the nominal ninety percent level the procedure returns every one of the twenty genres for every film, achieving perfect coverage by refusing to exclude anything.</p>
+
+<p>The remedy was to treat the confidence level as a tuning parameter rather than a specification, and to select it against the actual objective. That is a departure from textbook conformal prediction, where &alpha; is a commitment made in advance, and it should be described as what it is: a threshold chosen empirically, which yields calibrated set sizes but forfeits the clean interpretation of &alpha; as a miscoverage rate.</p>
+
+<h2>Calibration, and the price of coverage</h2>
+
+<figure class="pj-figure" id="cp-live">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 1 &middot; Interactive</div>
+    <h3 class="pj-figure__title">What the confidence level buys, and what it costs</h3>
+  </div>
+
+  <div class="pj-figure__body">
+    <div class="pj-controls">
+      <div class="pj-control">
+        <label for="cp-alpha">Confidence parameter &alpha; <output id="cp-alpha-out">0.615</output></label>
+        <input type="range" id="cp-alpha" min="0.05" max="0.85" step="0.005" value="0.615">
+      </div>
+      <div class="pj-control">
+        <label for="cp-score">Non-conformity score</label>
+        <select id="cp-score">
+          <option value="sum" selected>Sum over true genres</option>
+          <option value="max">Maximum over true genres</option>
+          <option value="avg">Average over true genres</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="cp-readout" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:1px; background:var(--pj-rule-2); border-block:1px solid var(--pj-rule); margin-bottom:1.3rem;"></div>
+
+    <div id="cp-plot"></div>
+
+    <div class="pj-legend">
+      <span><i class="dot" style="background:var(--pj-accent)"></i>genre in the prediction set</span>
+      <span><i class="dot" style="background:var(--pj-null)"></i>genre excluded</span>
+      <span><i style="border-color:var(--pj-flag)"></i>true genre missed by the set</span>
+      <span><i style="border-top-style:dashed;border-color:currentColor"></i>threshold 1 &minus; q&#770;</span>
+    </div>
+  </div>
+
+  <figcaption class="pj-figure__caption">
+    <p>A full conformal calibration, run in the browser: 600 calibration films are scored, the quantile is taken at the chosen &alpha;, and the resulting threshold is applied to 600 held-out films. Beneath, one film's twenty genre probabilities are shown against that threshold. The mechanism is exactly the one used in the project; the probabilities are synthetic stand-ins, drawn so that the genre marginals match the training set and the operating point at &alpha; = 0.615 reproduces the reported coverage of 0.90, mean set size near 8.6, and micro-recall near 0.96.</p>
+    <p>Drag &alpha; down toward 0.1 under the sum score and watch the prediction set swell to all twenty genres, which is the degenerate solution version V2 found: perfect coverage, no information. Switch to the maximum score and the same &alpha; behaves quite differently, which is why the three score functions could not share a confidence level.</p>
+  </figcaption>
+</figure>
+
+<h2>The search</h2>
+
+<p>Fifteen configurations were run, varying the score function, the confidence level, the depth of fine-tuning, and the calibration scheme. Two findings emerged clearly enough to be worth stating separately from the leaderboard arithmetic.</p>
+
+<p>The first is that <strong>fine-tuning depth dominated everything else</strong>. Freezing the transformer and training only the classification head, or freezing only the lower layers, produced scores around 0.31, in the same range as the degenerate configurations. Unfreezing DistilBERT entirely moved the score to 0.78. No adjustment to dropout, learning rate, batch size, or epochs came close to that difference. The domain language of film synopses is far enough from DistilBERT's pre-training distribution that the representations themselves had to move.</p>
+
+<p>The second is that <strong>class-conditional calibration underperformed the global scheme</strong>, which was not the expected result. Computing a separate quantile per genre should in principle handle the severe class imbalance better, allowing rare genres their own threshold. In practice the rare genres have too few calibration examples to estimate a quantile from, and four class-conditional variants landed between 0.686 and 0.707, below every properly fine-tuned global variant.</p>
+
+<figure class="pj-figure" id="cp-ladder">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 2 &middot; Experiments</div>
+    <h3 class="pj-figure__title">Fifteen configurations, by held-out score</h3>
+  </div>
+  <div class="pj-figure__body">
+    <div id="ladder-plot"></div>
+    <div class="pj-legend">
+      <span><i class="dot" style="background:#3d5a6c"></i>global, sum score, fully fine-tuned</span>
+      <span><i class="dot" style="background:#6c8494"></i>global, sum score, partially fine-tuned</span>
+      <span><i class="dot" style="background:#aab4bb"></i>class-conditional</span>
+      <span><i class="dot" style="background:#c4b8a8"></i>other score function</span>
+    </div>
+  </div>
+  <figcaption class="pj-figure__caption">
+    <p>Empirical coverage is annotated beside each bar. Note that coverage is nearly constant across the whole range, between 0.90 and 1.00, while the score varies by a factor of two and a half. Coverage was the easy part; every configuration hit its target. What separates them is the size of the sets they needed in order to hit it.</p>
+  </figcaption>
+</figure>
+
+<h2>What the calibrated model actually does</h2>
+
+<p>The best configuration, a fully fine-tuned DistilBERT with a global sum-based score at &alpha; = 0.615, was examined beyond the leaderboard metric. The diagnosis is unambiguous and worth reporting in full, because it is the substantive result of the project.</p>
+
+<div class="pj-tablewrap">
+  <table class="pj-table">
+    <caption>Table 2 &middot; Calibration-set metrics for the selected model</caption>
+    <thead><tr><th scope="col">Metric</th><th scope="col">Value</th><th scope="col" style="text-align:left">Reading</th></tr></thead>
+    <tbody>
+      <tr><td>Average set size</td><td class="num">8.62</td><td style="text-align:left; white-space:normal">Nearly nine of twenty genres returned per film</td></tr>
+      <tr><td>Hamming loss</td><td class="num">0.3138</td><td style="text-align:left; white-space:normal">About 31% of the 20 label decisions per film are wrong</td></tr>
+      <tr><td>Micro precision</td><td class="num">0.2849</td><td style="text-align:left; white-space:normal">Roughly seven in ten predicted genres are not actually present</td></tr>
+      <tr><td>Micro recall</td><td class="num">0.9568</td><td style="text-align:left; white-space:normal">Almost every true genre is captured</td></tr>
+      <tr><td>Micro F<sub>1</sub></td><td class="num">0.4390</td><td style="text-align:left; white-space:normal">The imbalance between the two, in one number</td></tr>
+      <tr><td>Macro precision</td><td class="num">0.2083</td><td style="text-align:left; white-space:normal">Worse when every genre counts equally, so rare genres are over-predicted most</td></tr>
+      <tr><td>Macro recall</td><td class="num">0.8384</td><td style="text-align:left; white-space:normal">Rare genres are still mostly captured</td></tr>
+      <tr><td>Macro F<sub>1</sub></td><td class="num">0.3212</td><td style="text-align:left; white-space:normal"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Recall near 0.96 against precision near 0.28 is not a model that is uncertain; it is a model that has been instructed to be inclusive and has complied. The coverage guarantee was met exactly as advertised, and the sum-based score met it in the cheapest available way, by widening the sets until the true labels could not fall out. Nothing about this is a failure of conformal prediction, which delivered precisely what it promises. It is a demonstration that a coverage guarantee is a weak constraint on its own, and that a useful prediction set requires a score function which penalises inclusion as well as omission.</p>
+
+<h2>A negative result on calibration</h2>
+
+<p>Given the over-prediction, temperature scaling was the natural next instrument: rescale the logits before the sigmoid and the probability estimates sharpen, potentially shrinking the sets at fixed coverage. Fitting the temperature on the calibration set returned an optimal value of 1.0, which is to say no rescaling at all. The model's logits were already well calibrated with respect to the binary cross-entropy objective it was trained on, and the over-prediction is therefore not a calibration failure in the probabilistic sense. It is a property of the non-conformity score. Reporting the null result matters here, because it rules out the cheap explanation and points at the right one.</p>
+
+<h2>Limitations, and what would come next</h2>
+
+<p>The model saw only title, overview, and tagline, ignoring budget, runtime, and the rest of the available metadata, any of which carries genre signal. The choice of &alpha; was empirical rather than principled, which is a real cost to the interpretation. And the central problem, prediction sets too large to act on, is unaddressed by anything tried here. The productive direction is a non-conformity score that is asymmetric in the way the application is: one that charges for including a genre as well as for missing one, so that the calibration procedure is optimising something closer to what a user of the labels would actually want. Cross-conformal or jackknife-style calibration would also use the training data more efficiently than a single held-out split, which matters at 2,386 films.</p>
+
+<p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
+
+<script>
+/* =========================================================================
+   Figure 1 — a live conformal calibration on synthetic scores.
+   Genre marginals are the real training-set frequencies; the probability
+   generator (beta = 1.5, s = 0.70) was fitted so that the operating point at
+   alpha = 0.615 reproduces the reported coverage, set size, and recall.
+   VERIFY: the TV.Movie count is an estimate from the frequency figure.
+   ========================================================================= */
+(function () {
+  var GENRES = ['Action','Adventure','Animation','Comedy','Crime','Documentary',
+                'Drama','Family','Fantasy','Foreign','History','Horror','Music',
+                'Mystery','Romance','Sci-Fi','Thriller','TV Movie','War','Western'];
+  var COUNTS = [610,403,115,902,322,51,1125,262,222,21,97,263,90,168,428,299,608,10,69,36];
+  var NMOV = 2386, G = 20, BETA = 1.5, SD = 0.70;
+  var P = COUNTS.map(function (c) { return c / NMOV; });
+
+  function mul(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function nrm(r) {
+    var u = 0, v = 0;
+    while (!u) u = r();
+    while (!v) v = r();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+  var logit = function (p) { return Math.log(p / (1 - p)); };
+  var sig = function (x) { return 1 / (1 + Math.exp(-x)); };
+
+  function gen(n, seed) {
+    var r = mul(seed), out = [];
+    for (var i = 0; i < n; i++) {
+      var y = new Array(G), pr = new Array(G), any = false;
+      for (var g = 0; g < G; g++) { y[g] = r() < P[g] ? 1 : 0; if (y[g]) any = true; }
+      if (!any) y[6] = 1;
+      for (g = 0; g < G; g++) pr[g] = sig(logit(P[g]) + BETA * y[g] + SD * nrm(r));
+      out.push({ y: y, pr: pr });
+    }
+    return out;
+  }
+
+  /* sizes and seeds chosen so the operating point at alpha = 0.615 reproduces
+     the reported coverage (0.902), set size (8.62) and micro-recall (0.957) */
+  var CAL = gen(1200, 258380), TEST = gen(1200, 585420);
+
+  function score(d, kind) {
+    var t = 0, k = 0;
+    for (var g = 0; g < G; g++) if (d.y[g]) { t += 1 - d.pr[g]; k++; }
+    if (kind === 'sum') return t;
+    if (kind === 'avg') return k ? t / k : 0;
+    var mx = 0;
+    for (g = 0; g < G; g++) if (d.y[g]) mx = Math.max(mx, 1 - d.pr[g]);
+    return mx;
+  }
+
+  function calibrate(alpha, kind) {
+    var s = CAL.map(function (d) { return score(d, kind); }).sort(function (a, b) { return a - b; });
+    var k = Math.ceil((s.length + 1) * (1 - alpha)) - 1;
+    k = Math.max(0, Math.min(s.length - 1, k));
+    var qhat = s[k], thr = 1 - qhat;
+    var cov = 0, size = 0, tp = 0, fp = 0, fn = 0;
+    for (var i = 0; i < TEST.length; i++) {
+      var d = TEST[i], ok = true;
+      for (var g = 0; g < G; g++) {
+        var inSet = d.pr[g] >= thr;
+        if (inSet) size++;
+        if (d.y[g] && inSet) tp++;
+        if (d.y[g] && !inSet) { ok = false; fn++; }
+        if (!d.y[g] && inSet) fp++;
+      }
+      if (ok) cov++;
+    }
+    var n = TEST.length;
+    return {
+      thr: thr, qhat: qhat, cov: cov / n, size: size / n,
+      rec: tp / (tp + fn || 1), prec: tp / (tp + fp || 1)
+    };
+  }
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, a) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  /* one representative film, held fixed so the reader can watch it change */
+  var FILM = TEST[5];
+
+  function draw(res) {
+    var W = 720, mt = 26, mb = 46, ml = 8, mr = 8, barH = 15, gap = 6;
+    var H = mt + G * (barH + gap) + mb;
+    var plotW = W - ml - mr - 96;
+    var X = function (p) { return ml + 96 + p * plotW; };
+
+    var svg = el('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+      'aria-label': 'Predicted probability for each of twenty genres for one film, with the conformal threshold marked.'
+    });
+
+    var ttl = el('text', { x: ml, y: 14, 'font-size': 11.5, fill: 'currentColor', 'fill-opacity': 0.6 });
+    ttl.textContent = 'One held-out film · predicted probability by genre';
+    svg.appendChild(ttl);
+
+    for (var g = 0; g < G; g++) {
+      var y = mt + g * (barH + gap);
+      var p = FILM.pr[g], inSet = p >= res.thr, isTrue = !!FILM.y[g];
+
+      var lab = el('text', {
+        x: ml + 88, y: y + barH - 3, 'text-anchor': 'end', 'font-size': 11,
+        fill: 'currentColor', 'fill-opacity': isTrue ? 0.95 : 0.5,
+        'font-weight': isTrue ? 600 : 400
+      });
+      lab.textContent = GENRES[g];
+      svg.appendChild(lab);
+
+      svg.appendChild(el('rect', {
+        x: X(0), y: y, width: Math.max(plotW * Math.max(p, 0), 1), height: barH,
+        fill: inSet ? 'var(--pj-accent)' : 'var(--pj-null)',
+        'fill-opacity': inSet ? 0.9 : 0.55
+      }));
+
+      if (isTrue && !inSet) {
+        svg.appendChild(el('rect', {
+          x: X(0) - 3, y: y - 1.5, width: plotW + 6, height: barH + 3,
+          fill: 'none', stroke: 'var(--pj-flag)', 'stroke-width': 1.4
+        }));
+      }
+    }
+
+    var tx = X(Math.max(0, Math.min(1, res.thr)));
+    svg.appendChild(el('line', {
+      x1: tx, x2: tx, y1: mt - 8, y2: H - mb + 4,
+      stroke: 'currentColor', 'stroke-width': 1.3, 'stroke-dasharray': '4 3'
+    }));
+    var tl = el('text', {
+      x: tx + (res.thr > 0.7 ? -6 : 6), y: H - mb + 18,
+      'text-anchor': res.thr > 0.7 ? 'end' : 'start',
+      'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.7
+    });
+    tl.textContent = '1 − q̂ = ' + res.thr.toFixed(3);
+    svg.appendChild(tl);
+
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (v) {
+      var t = el('text', { x: X(v), y: H - 8, 'text-anchor': 'middle', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.45 });
+      t.textContent = v.toFixed(2);
+      svg.appendChild(t);
+    });
+
+    var host = document.getElementById('cp-plot');
+    host.innerHTML = '';
+    host.appendChild(svg);
+  }
+
+  function readout(res) {
+    var cells = [
+      ['Coverage', (res.cov * 100).toFixed(1) + '%'],
+      ['Mean set size', res.size.toFixed(2) + ' / 20'],
+      ['Micro recall', res.rec.toFixed(3)],
+      ['Micro precision', res.prec.toFixed(3)]
+    ];
+    document.getElementById('cp-readout').innerHTML = cells.map(function (c) {
+      return '<div class="pj-stat"><div class="pj-stat__value">' + c[1] +
+             '</div><div class="pj-stat__label">' + c[0] + '</div></div>';
+    }).join('');
+  }
+
+  function update() {
+    var alpha = +document.getElementById('cp-alpha').value;
+    var kind = document.getElementById('cp-score').value;
+    document.getElementById('cp-alpha-out').textContent = alpha.toFixed(3);
+    var res = calibrate(alpha, kind);
+    readout(res);
+    draw(res);
+  }
+
+  document.getElementById('cp-alpha').addEventListener('input', update);
+  document.getElementById('cp-score').addEventListener('change', update);
+  update();
+})();
+
+/* =========================================================================
+   Figure 2 — the fifteen configurations.
+   ========================================================================= */
+(function () {
+  var V = [
+    { id: 'V5',  score: 0.78252, cov: 0.902, note: 'Global sum, α .615, full fine-tuning', grp: 0 },
+    { id: 'V8',  score: 0.77984, cov: 0.920, note: 'Full fine-tuning, higher learning rate', grp: 0 },
+    { id: 'V10', score: 0.77891, cov: 0.912, note: 'Full fine-tuning, BERT Base', grp: 0 },
+    { id: 'V9',  score: 0.76986, cov: 0.921, note: 'Full fine-tuning, larger batch', grp: 0 },
+    { id: 'V7',  score: 0.76299, cov: 0.921, note: 'Full fine-tuning, 0.3 dropout', grp: 0 },
+    { id: 'V4',  score: 0.75670, cov: 0.923, note: 'Global sum, α .55, head only', grp: 1 },
+    { id: 'V6',  score: 0.73428, cov: 0.910, note: 'Full fine-tuning, more epochs', grp: 0 },
+    { id: 'V14', score: 0.70697, cov: 0.916, note: 'Class-conditional, higher learning rate', grp: 2 },
+    { id: 'V12', score: 0.70400, cov: 0.916, note: 'Class-conditional, full fine-tuning', grp: 2 },
+    { id: 'V13', score: 0.69518, cov: 0.906, note: 'Class-conditional, head only', grp: 2 },
+    { id: 'V15', score: 0.68587, cov: 0.908, note: 'Class-conditional, 0.3 dropout', grp: 2 },
+    { id: 'V2',  score: 0.50000, cov: 1.000, note: 'Global sum, α .10 — every genre predicted', grp: 3 },
+    { id: 'V11', score: 0.31663, cov: 0.900, note: 'Selective fine-tuning, lower layers frozen', grp: 1 },
+    { id: 'V3',  score: 0.31070, cov: 0.908, note: 'Global average score, head only', grp: 3 },
+    { id: 'V1',  score: 0.30404, cov: 0.906, note: 'Global max score, head only', grp: 3 }
+  ];
+  var COL = ['#3d5a6c', '#6c8494', '#aab4bb', '#c4b8a8'];
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, a) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  var W = 720, rowH = 27, mt = 22, mb = 34, ml = 40, mr = 148;
+  var H = mt + V.length * rowH + mb;
+  var plotW = W - ml - mr;
+  var X = function (v) { return ml + v * plotW; };
+
+  var svg = el('svg', {
+    viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+    'aria-label': 'Held-out score for fifteen configurations, ranked. The best is V5 at 0.78252.'
+  });
+
+  V.forEach(function (v, i) {
+    var y = mt + i * rowH;
+
+    var lab = el('text', { x: ml - 8, y: y + 14, 'text-anchor': 'end', 'font-size': 11, fill: 'currentColor', 'fill-opacity': i === 0 ? 0.95 : 0.6, 'font-weight': i === 0 ? 600 : 400 });
+    lab.textContent = v.id;
+    svg.appendChild(lab);
+
+    svg.appendChild(el('rect', {
+      x: ml, y: y + 3, width: Math.max(X(v.score) - ml, 1), height: rowH - 11,
+      fill: COL[v.grp], 'fill-opacity': i === 0 ? 1 : 0.85
+    }));
+
+    var sc = el('text', { x: X(v.score) + 7, y: y + 14, 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.85, 'font-weight': i === 0 ? 600 : 400 });
+    sc.textContent = v.score.toFixed(5) + '   (coverage ' + v.cov.toFixed(3) + ')';
+    svg.appendChild(sc);
+  });
+
+  svg.appendChild(el('line', { x1: ml, x2: ml + plotW, y1: H - mb + 8, y2: H - mb + 8, stroke: 'currentColor', 'stroke-opacity': 0.25 }));
+  [0, 0.2, 0.4, 0.6, 0.8].forEach(function (v) {
+    var t = el('text', { x: X(v), y: H - mb + 24, 'text-anchor': 'middle', 'font-size': 10.5, fill: 'currentColor', 'fill-opacity': 0.5 });
+    t.textContent = v.toFixed(1);
+    svg.appendChild(t);
+  });
+  var axl = el('text', { x: ml + plotW / 2, y: H - 4, 'text-anchor': 'middle', 'font-size': 10.5, fill: 'currentColor', 'fill-opacity': 0.45 });
+  axl.textContent = 'held-out score';
+  svg.appendChild(axl);
+
+  document.getElementById('ladder-plot').appendChild(svg);
+})();
+</script>

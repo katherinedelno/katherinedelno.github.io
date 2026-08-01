@@ -1,0 +1,271 @@
+---
+layout: project
+title: "Fine-tuning BERT models for recipe classification"
+permalink: /projects/bert-recipe-classification/
+description: "Twenty-two fine-tuned transformer configurations compared on a domain-specific text classification task, and what the comparison revealed about selecting a model on a single validation split."
+---
+
+<p class="pj-eyebrow"><a href="{{ '/about/#statistical-work' | relative_url }}">Research</a></p>
+
+<h1>Fine-tuning BERT models for recipe classification</h1>
+
+<p class="pj-meta">Project lead &middot; with Jenny Xu &middot; 2025</p>
+
+<p class="pj-lede">Deciding whether a recipe is vegetarian sounds like a lookup problem and is not one. The distinguishing evidence is often a single ingredient whose status depends on wording that a keyword list will not catch, which makes it a good test of whether contextual language models earn their cost. Twenty-two configurations of BERT Base, BERT Large, and RoBERTa were fine-tuned and compared. The best reached <strong>0.869</strong> on held-out data, and the comparison produced a more useful finding than the winner did.</p>
+
+<div class="pj-stats">
+  <div class="pj-stat">
+    <div class="pj-stat__value">20,000+</div>
+    <div class="pj-stat__label">recipes, classified from description and ingredient list alone</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">22</div>
+    <div class="pj-stat__label">fine-tuned configurations across three pre-trained architectures</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">0.86908</div>
+    <div class="pj-stat__label">best held-out accuracy, from BERT Base rather than either larger model</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">r = 0.09</div>
+    <div class="pj-stat__label">correlation between validation accuracy and held-out accuracy across the 22 runs</div>
+  </div>
+</div>
+
+<h2>Why the task is not a lookup</h2>
+
+<p>A vegetarian classifier built from a banned-ingredient list fails on the cases that matter. Vegetable broth and chicken stock are both broths, occupy the same syntactic position in an ingredient list, and differ by one modifier. Gelatin, anchovy in a sauce, and lard in a pastry are all decisive and all easy to miss. Meanwhile a description mentioning that a dish pairs well with roast lamb is not evidence about the dish itself. The signal is contextual, which is the condition under which a bidirectional transformer should outperform simpler methods, and the point of the exercise was to find out by how much and at what cost.</p>
+
+<p>The input was the recipe description concatenated with its tokenised ingredient list, with missing descriptions filled as empty strings, split eighty-twenty into training and validation. Final evaluation was on a held-out set the models never saw, scored externally.</p>
+
+<h2>Three architectures</h2>
+
+<p><strong>BERT Base</strong> has twelve transformer encoder layers, 768 hidden units, twelve attention heads, and roughly 110 million parameters. <strong>BERT Large</strong> has twenty-four layers, 1024 hidden units, sixteen heads, and about 340 million parameters, giving it substantially more capacity for long or syntactically complicated text. <strong>RoBERTa</strong> keeps BERT's architecture and changes the pre-training: dynamic masking, so that different tokens are hidden on different passes rather than a mask fixed once, which prevents the model from over-fitting to a single masking pattern. All were fine-tuned end to end with AdamW and cross-entropy loss, and all were regularised with early stopping on validation accuracy.</p>
+
+<p>The larger models lost. BERT Large occupied three of the bottom eleven places, and RoBERTa, despite recording the single highest validation accuracy of any run, did not reach the top six on held-out data. The straightforward explanation is that a dataset of twenty thousand short texts does not supply enough signal to fit 340 million parameters, and that the additional capacity was spent memorising the training split. The more careful explanation is that the larger models were also tuned less thoroughly, because each run cost more, so their under-performance is confounded with the search budget they received. Both readings should be stated; only the first is flattering.</p>
+
+<h2>The finding worth keeping</h2>
+
+<p>The twenty-two runs form a small dataset in their own right, with a validation accuracy and a held-out accuracy for each. Plotting one against the other gives the result that has stayed with me from this project.</p>
+
+<figure class="pj-figure" id="bert-scatter">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 1 &middot; All 22 runs</div>
+    <h3 class="pj-figure__title">Validation accuracy against held-out accuracy</h3>
+  </div>
+  <div class="pj-figure__body">
+    <div id="bert-plot"></div>
+    <div class="pj-legend">
+      <span><i class="dot" style="background:#3d5a6c"></i>BERT Base</span>
+      <span><i class="dot" style="background:#8c3b3b"></i>BERT Large</span>
+      <span><i class="dot" style="background:#c4b8a8"></i>RoBERTa</span>
+    </div>
+  </div>
+  <figcaption class="pj-figure__caption">
+    <p>Across the 22 runs the Pearson correlation between validation accuracy and held-out accuracy is 0.09, and the rank correlation is &minus;0.09. The relationship is not weak; it is absent. The run with the highest validation accuracy of all, a RoBERTa configuration at 0.8600, placed seventh on held-out data, and the winning run sat in the middle of the validation distribution at 0.8515. The lowest validation accuracy in the study, 0.8352, still beat three configurations with visibly better validation numbers.</p>
+  </figcaption>
+</figure>
+
+<p>The explanation is not mysterious, and it is worth spelling out because it generalises well beyond this task. Validation accuracy here was computed on a single twenty-percent split of roughly four thousand recipes. The standard error on an accuracy estimate near 0.85 from that many observations is close to 0.006, so a difference of a single percentage point between two configurations is inside the noise. The entire spread of validation accuracies across all 22 runs was 0.0248, or about four standard errors, which means most of the ordering produced by that column is measurement error rather than a real difference in model quality. Selecting a model on it is close to selecting at random among the reasonable candidates.</p>
+
+<div class="pj-note">
+  <span class="pj-note__label">Methodological correction</span>
+  <p>The right instrument was <em>k</em>-fold cross-validation, which was not used. Five folds would have cut the standard error on each configuration's estimate by more than half and, more importantly, would have supplied a variance estimate per configuration, making it possible to say whether any two of them actually differed. The study as conducted can establish that fine-tuned BERT Base performs around 0.86 on this task. It cannot establish which of its top ten configurations is best, and it would have been wrong to claim otherwise.</p>
+</div>
+
+<h2>What the tuning did establish</h2>
+
+<p>Some choices produced differences large enough to survive the noise, and some were settled by evidence rather than by search.</p>
+
+<p><strong>Sequence length</strong> was decided by measurement. Tokenising the corpus gave a maximum length of 556 tokens, past BERT's 512-token ceiling, but a mean of only 73.7 and a ninetieth percentile of 126. A limit of 128 therefore covers ninety percent of recipes untruncated at a quarter of the memory cost of 256, and the one configuration run at 256 placed eighth without justifying its expense. That is the kind of decision worth making from the data rather than from a default.</p>
+
+<p><strong>Weight decay</strong> mattered in the expected direction and by a visible margin. The value 0.001 produced the best run; raising it to 0.02 cost roughly two points of held-out accuracy, and removing it entirely produced unstable validation curves consistent with over-fitting. <strong>Batch size</strong> settled at 64, with 128 converging faster and generalising worse, and 32 costing considerably more time for no gain. <strong>Learning rate</strong> settled at a static 1e-5; a linear scheduler with warm-up over the first ten percent of steps smoothed early training without improving the final result, and 1e-6 was too slow to converge inside the epoch budget.</p>
+
+<h2>An incident worth recording</h2>
+
+<p>The winning configuration was run a third time, with every hyperparameter identical. It trained for nine epochs rather than five and finished fifteenth of twenty-two.</p>
+
+<figure class="pj-figure" id="bert-curve">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 2 &middot; Best run</div>
+    <h3 class="pj-figure__title">Training loss and validation accuracy, by epoch</h3>
+  </div>
+  <div class="pj-figure__body">
+    <div id="curve-plot"></div>
+    <div class="pj-legend">
+      <span><i style="border-color:#3d5a6c"></i>training loss (left axis)</span>
+      <span><i style="border-color:#8c3b3b;border-top-style:dashed"></i>validation accuracy (right axis)</span>
+    </div>
+  </div>
+  <figcaption class="pj-figure__caption">
+    <p>Training loss falls monotonically from 0.489 to 0.226 while validation accuracy peaks at epoch three, dips at epoch four, and recovers at epoch five without exceeding its earlier maximum. Early stopping with patience two halted training here. The divergence between the two curves after epoch three is over-fitting becoming visible in real time.</p>
+  </figcaption>
+</figure>
+
+<p>The two curves explain the incident. Validation accuracy is nearly flat across epochs three to five, varying by about four thousandths, which is well inside the noise established above. Whether the patience counter trips at epoch five or survives to epoch nine therefore depends on which side of that noise a particular epoch happens to land, and that in turn depends on data shuffling and the order of gradient updates. Early stopping was doing its job; it was simply being asked to make a decision on evidence too weak to support one, and it resolved the coin flip differently on a different run. The lesson is not that early stopping is unreliable. It is that a stopping rule inherits the precision of the quantity it monitors, and monitoring a noisy quantity produces a noisy rule.</p>
+
+<h2>What would change</h2>
+
+<p>Cross-validation, first and above everything else, both for selection and for the variance estimate it supplies. Beyond that, the natural extensions are lighter rather than heavier architectures, since DistilBERT and ALBERT are designed for precisely this situation of a modest dataset and a narrow domain, and ensembling across seeds, which would convert the run-to-run variability documented above from a nuisance into a resource. Finally, the gap between validation and held-out performance deserves direct investigation rather than inference: comparing the distributions of the two sets would establish whether the decorrelation is pure sampling noise, as argued here, or whether the held-out set differs systematically in ways that preprocessing could address.</p>
+
+<p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
+
+<script>
+/* =========================================================================
+   Figure 1 — validation accuracy against held-out accuracy, all 22 runs.
+   VERIFY: transcribed from Table 1 of the paper.
+   ========================================================================= */
+(function () {
+  var RUNS = [
+    { r: 1,  m: 'base',  v: 0.8515, k: 0.86908 }, { r: 2,  m: 'base',  v: 0.8497, k: 0.86762 },
+    { r: 3,  m: 'base',  v: 0.8567, k: 0.86615 }, { r: 4,  m: 'base',  v: 0.8542, k: 0.86505 },
+    { r: 5,  m: 'base',  v: 0.8524, k: 0.86468 }, { r: 6,  m: 'base',  v: 0.8515, k: 0.86248 },
+    { r: 7,  m: 'rob',   v: 0.8600, k: 0.86211 }, { r: 8,  m: 'base',  v: 0.8558, k: 0.86175 },
+    { r: 9,  m: 'rob',   v: 0.8594, k: 0.86028 }, { r: 10, m: 'base',  v: 0.8548, k: 0.85845 },
+    { r: 11, m: 'base',  v: 0.8530, k: 0.85735 }, { r: 12, m: 'large', v: 0.8494, k: 0.85661 },
+    { r: 13, m: 'base',  v: 0.8506, k: 0.85625 }, { r: 14, m: 'base',  v: 0.8548, k: 0.85551 },
+    { r: 15, m: 'base',  v: 0.8527, k: 0.85515 }, { r: 16, m: 'base',  v: 0.8573, k: 0.85075 },
+    { r: 17, m: 'base',  v: 0.8352, k: 0.85075 }, { r: 18, m: 'base',  v: 0.8567, k: 0.84965 },
+    { r: 19, m: 'base',  v: 0.8530, k: 0.84891 }, { r: 20, m: 'rob',   v: 0.8464, k: 0.84818 },
+    { r: 21, m: 'large', v: 0.8561, k: 0.84708 }, { r: 22, m: 'large', v: 0.8558, k: 0.83571 }
+  ];
+  var COL = { base: '#3d5a6c', large: '#8c3b3b', rob: '#c4b8a8' };
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  var W = 720, H = 430, ml = 66, mr = 24, mt = 24, mb = 52;
+  var xlo = 0.832, xhi = 0.863, ylo = 0.833, yhi = 0.872;
+  var X = function (v) { return ml + (v - xlo) / (xhi - xlo) * (W - ml - mr); };
+  var Y = function (v) { return H - mb - (v - ylo) / (yhi - ylo) * (H - mt - mb); };
+
+  var svg = el('svg', {
+    viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+    'aria-label': 'Scatter plot of validation accuracy against held-out accuracy for 22 runs, showing no relationship.'
+  });
+
+  /* gridlines */
+  for (var gy = 0.84; gy <= 0.871; gy += 0.01) {
+    svg.appendChild(el('line', { x1: ml, x2: W - mr, y1: Y(gy), y2: Y(gy), stroke: 'currentColor', 'stroke-opacity': 0.08 }));
+    var yl = el('text', { x: ml - 10, y: Y(gy) + 4, 'text-anchor': 'end', 'font-size': 10.5, fill: 'currentColor', 'fill-opacity': 0.5 });
+    yl.textContent = gy.toFixed(2);
+    svg.appendChild(yl);
+  }
+  for (var gx = 0.835; gx <= 0.861; gx += 0.005) {
+    svg.appendChild(el('line', { x1: X(gx), x2: X(gx), y1: mt, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.06 }));
+    var xl = el('text', { x: X(gx), y: H - mb + 18, 'text-anchor': 'middle', 'font-size': 10.5, fill: 'currentColor', 'fill-opacity': 0.5 });
+    xl.textContent = gx.toFixed(3);
+    svg.appendChild(xl);
+  }
+
+  /* axes */
+  svg.appendChild(el('line', { x1: ml, x2: W - mr, y1: H - mb, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.3 }));
+  svg.appendChild(el('line', { x1: ml, x2: ml, y1: mt, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.3 }));
+
+  var axx = el('text', { x: (ml + W - mr) / 2, y: H - 22, 'text-anchor': 'middle', 'font-size': 11.5, fill: 'currentColor', 'fill-opacity': 0.6 });
+  axx.textContent = 'best validation accuracy';
+  svg.appendChild(axx);
+  var axy = el('text', { x: 16, y: (mt + H - mb) / 2, 'font-size': 11.5, fill: 'currentColor', 'fill-opacity': 0.6,
+                         transform: 'rotate(-90 16 ' + ((mt + H - mb) / 2) + ')', 'text-anchor': 'middle' });
+  axy.textContent = 'held-out accuracy';
+  svg.appendChild(axy);
+
+  /* least-squares line, to show how flat it is */
+  var n = RUNS.length, sx = 0, sy = 0;
+  RUNS.forEach(function (d) { sx += d.v; sy += d.k; });
+  var mx = sx / n, my = sy / n, num = 0, den = 0;
+  RUNS.forEach(function (d) { num += (d.v - mx) * (d.k - my); den += (d.v - mx) * (d.v - mx); });
+  var slope = num / den, icpt = my - slope * mx;
+  svg.appendChild(el('line', {
+    x1: X(xlo), y1: Y(icpt + slope * xlo), x2: X(xhi), y2: Y(icpt + slope * xhi),
+    stroke: 'currentColor', 'stroke-opacity': 0.35, 'stroke-dasharray': '5 4', 'stroke-width': 1.2
+  }));
+
+  RUNS.forEach(function (d) {
+    svg.appendChild(el('circle', {
+      cx: X(d.v), cy: Y(d.k), r: d.r === 1 ? 6.5 : 5,
+      fill: COL[d.m], 'fill-opacity': d.r === 1 ? 1 : 0.78,
+      stroke: d.r === 1 ? 'currentColor' : 'none', 'stroke-width': 1.2
+    }));
+  });
+
+  function note(d, text, dx, dy, anchor) {
+    var t = el('text', {
+      x: X(d.v) + dx, y: Y(d.k) + dy, 'text-anchor': anchor || 'start',
+      'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.72
+    });
+    t.textContent = text;
+    svg.appendChild(t);
+  }
+  note(RUNS[0], 'best held-out (0.8515 val)', -12, -12, 'end');
+  note(RUNS[6], 'best validation (7th held-out)', -11, 4, 'end');
+  note(RUNS[16], 'worst validation, mid-table', 11, 4);
+  note(RUNS[21], 'BERT Large', 10, 3);
+
+  var rl = el('text', { x: W - mr - 4, y: mt + 12, 'text-anchor': 'end', 'font-size': 12, fill: 'currentColor', 'fill-opacity': 0.72 });
+  rl.textContent = 'r = 0.09    ρ = −0.09';
+  svg.appendChild(rl);
+
+  document.getElementById('bert-plot').appendChild(svg);
+})();
+
+/* =========================================================================
+   Figure 2 — training loss and validation accuracy for the best run.
+   ========================================================================= */
+(function () {
+  var LOSS = [0.4892, 0.3339, 0.2946, 0.2607, 0.2255];
+  var VACC = [0.8358, 0.8494, 0.8515, 0.8473, 0.8503];
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  var W = 720, H = 300, ml = 58, mr = 62, mt = 24, mb = 50;
+  var X = function (i) { return ml + i * (W - ml - mr) / 4; };
+  var YL = function (v) { return H - mb - (v - 0.20) / (0.52 - 0.20) * (H - mt - mb); };
+  var YR = function (v) { return H - mb - (v - 0.833) / (0.854 - 0.833) * (H - mt - mb); };
+
+  var svg = el('svg', {
+    viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+    'aria-label': 'Training loss falls each epoch while validation accuracy peaks at epoch three.'
+  });
+
+  svg.appendChild(el('line', { x1: ml, x2: W - mr, y1: H - mb, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.3 }));
+
+  [0.25, 0.35, 0.45].forEach(function (v) {
+    svg.appendChild(el('line', { x1: ml, x2: W - mr, y1: YL(v), y2: YL(v), stroke: 'currentColor', 'stroke-opacity': 0.07 }));
+    var t = el('text', { x: ml - 9, y: YL(v) + 4, 'text-anchor': 'end', 'font-size': 10.5, fill: '#3d5a6c', 'fill-opacity': 0.85 });
+    t.textContent = v.toFixed(2);
+    svg.appendChild(t);
+  });
+  [0.836, 0.842, 0.848, 0.852].forEach(function (v) {
+    var t = el('text', { x: W - mr + 9, y: YR(v) + 4, 'font-size': 10.5, fill: '#8c3b3b', 'fill-opacity': 0.85 });
+    t.textContent = v.toFixed(3);
+    svg.appendChild(t);
+  });
+
+  var dL = '', dV = '';
+  LOSS.forEach(function (v, i) { dL += (i ? 'L' : 'M') + X(i) + ' ' + YL(v); });
+  VACC.forEach(function (v, i) { dV += (i ? 'L' : 'M') + X(i) + ' ' + YR(v); });
+  svg.appendChild(el('path', { d: dL, fill: 'none', stroke: '#3d5a6c', 'stroke-width': 1.8 }));
+  svg.appendChild(el('path', { d: dV, fill: 'none', stroke: '#8c3b3b', 'stroke-width': 1.8, 'stroke-dasharray': '5 3' }));
+  LOSS.forEach(function (v, i) { svg.appendChild(el('circle', { cx: X(i), cy: YL(v), r: 3.6, fill: '#3d5a6c' })); });
+  VACC.forEach(function (v, i) { svg.appendChild(el('circle', { cx: X(i), cy: YR(v), r: 3.6, fill: '#8c3b3b' })); });
+
+  /* mark the validation peak */
+  svg.appendChild(el('line', { x1: X(2), x2: X(2), y1: mt, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.22, 'stroke-dasharray': '3 3' }));
+  var pk = el('text', { x: X(2) + 8, y: mt + 12, 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.65 });
+  pk.textContent = 'validation peak';
+  svg.appendChild(pk);
+
+  for (var i = 0; i < 5; i++) {
+    var t = el('text', { x: X(i), y: H - mb + 19, 'text-anchor': 'middle', 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.55 });
+    t.textContent = String(i + 1);
+    svg.appendChild(t);
+  }
+  var xl = el('text', { x: (ml + W - mr) / 2, y: H - 12, 'text-anchor': 'middle', 'font-size': 11.5, fill: 'currentColor', 'fill-opacity': 0.6 });
+  xl.textContent = 'epoch';
+  svg.appendChild(xl);
+
+  document.getElementById('curve-plot').appendChild(svg);
+})();
+</script>
