@@ -9,7 +9,7 @@ read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 18
-interactive: false
+interactive: true
 blurb: "The translation table for the exam's favorite question"
 ---
 

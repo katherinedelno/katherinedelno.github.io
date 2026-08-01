@@ -423,8 +423,18 @@ element carrying `markdown="0"` (which is every `viz` block), and inside Liquid 
 `{%- … -%}` (which is how `resources.md` uses them). They are **not** safe inside an
 `article-note`, which carries `markdown="1"`.
 
-To check a file: strip the script and `markdown="0"` regions, then look for any remaining line
-containing `|` that is not part of a deliberate table.
+`_style/check.py` catches this, along with every other rule in this document that can be
+checked mechanically. Run it before committing:
+
+```
+python3 _style/check.py            # every article
+python3 _style/check.py _posts/…   # one file
+```
+
+It exits non-zero if it finds anything. The checks that catch *silent* failures — where the
+page renders wrongly and nothing warns you — are the bare pipe, an odd number of `$$`,
+unbalanced `\left`/`\right`, and unbalanced braces inside mathematics. The rest are the style
+rules in this document.
 
 `\dfrac` is **never** correct inline — it forces display style, which is the opposite of
 what is wanted. In display mathematics it is only ever used to force a nested fraction back
