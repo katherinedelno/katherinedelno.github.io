@@ -44,9 +44,9 @@ The table looks the same either way, and the computation is identical. The only 
 
 Both tests share the same three conditions, and all three are easy points to lose:
 
-- **Random**: the data come from a random sample or a randomized experiment.
-- **Expected counts of at least 5**: every expected count must satisfy $$E \geq 5$$, and this means expected counts, not observed. Checking the observed counts is one of the most common errors I see.
-- **Independent observations**: including the 10% condition when sampling without replacement.
+- **Randomization**: for a test of independence, the data come from a random sample; for a test of homogeneity, from independent random samples or a randomized experiment. The two tests state this condition differently, and the difference is the same design distinction the test itself turns on.
+- **Expected counts**: the revised framework asks that every expected count be greater than 5. Note that this means *expected* counts, not observed ones — checking the observed counts is one of the most common errors I see. Older review books often write the condition as "at least 5"; either phrasing will read as correct on the exam, but the framework's wording is the one to write.
+- **The 10% condition**: when sampling without replacement, check that $$n \leq 0.10N$$. This one is unnecessary when the data come from a randomized experiment.
 
 ## Finish the conclusion properly
 
