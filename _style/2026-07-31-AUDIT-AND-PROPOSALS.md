@@ -130,6 +130,30 @@ line through a curve.
   solution in 1777. Corrected, and the front-matter description now says "eighteenth
   century" rather than naming a year.
 
+### Found later, 2026-07-31: the reference sheet in the materials folder is the old one
+
+`AP Statistics/Admin/Course and Exam Description & Exam Reference Sheet/ap-statistics-exam-reference-sheet-2026.pdf`
+is headed **"2026 EXAM REFERENCE INFORMATION"**, which is the May 2026 administration — the
+final sitting of the *pre-revision* course. It is not the sheet a student starting in Fall
+2026 will be handed.
+
+The difference that matters: the file in the folder lists the **geometric distribution**,
+with $P(X = x) = (1-p)^{x-1}p$, mean $1/p$ and standard deviation $\sqrt{1-p}/p$. The
+revised course has dropped that distribution entirely — zero occurrences anywhere in the
+revised CED — and the formula sheet in the revised CED's own appendix carries the binomial
+and not the geometric.
+
+The correct sheet is **the appendix of the revised CED**, beginning at the page headed
+"Formula Sheet and Tables". Nothing in the folder was changed; this is recorded so the file
+can be swapped deliberately.
+
+This also killed a proposal. The original S4, *combining random variables: means add,
+standard deviations do not*, was written from the pre-revision course. The revised CED
+returns zero hits for sums or differences of random variables, zero for linear combinations,
+and zero for variances adding, and no combining formula appears on either sheet. The
+proposal was withdrawn rather than built, and the slot went to expected value and the
+binomial (topics 2.8–2.10), which were uncovered and are current.
+
 ### Noted, not changed
 
 - `2026-07-21-reading-the-graph-of-f-prime.md` carries `interactive: true` in an
