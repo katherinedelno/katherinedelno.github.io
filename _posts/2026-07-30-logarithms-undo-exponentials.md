@@ -7,7 +7,7 @@ course: "AP Precalculus"
 read_time: "8 min read"
 math: true
 kind: mechanics
-sequence: 4
+sequence: 5
 interactive: true
 blurb: "Slide the base and watch b^x and its logarithm mirror across y = x"
 ---

@@ -7,7 +7,7 @@ course: "AP Precalculus"
 read_time: "6 min read"
 math: true
 kind: foundations
-sequence: 3
+sequence: 4
 interactive: true
 blurb: "Feed one function through another and see why order matters"
 ---

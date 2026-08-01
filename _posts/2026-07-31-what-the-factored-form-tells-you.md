@@ -7,7 +7,7 @@ course: "AP Precalculus"
 read_time: "8 min read"
 math: true
 kind: foundations
-sequence: 1
+sequence: 2
 interactive: true
 blurb: "One expression, read four ways: zeros, tangencies, holes, and asymptotes"
 ---
