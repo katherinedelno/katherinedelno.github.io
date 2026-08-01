@@ -34,51 +34,43 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 
 <h2>The problem with checking a mixed model</h2>
 
-<p>Linear mixed models are the standard instrument for correlated data: repeated measures on the same subject, students inside classrooms, patients inside clinics. Their appeal is that they model the correlation rather than ignoring it, and the price of that appeal is that several assumptions have to hold at once. The fixed effects must have the right functional form. The random effects must have the right structure, which usually means deciding whether a slope varies across clusters and not only an intercept. The residual covariance must be specified correctly. A failure in any one of these can bias estimates or, more often and more insidiously, leave the estimates roughly intact while corrupting the standard errors.</p>
+<p>Linear mixed models are the standard instrument for correlated data: repeated measures on a subject, students inside classrooms, patients inside clinics. They model the correlation rather than ignoring it, and the price is that several assumptions must hold at once, covering the functional form of the fixed effects, the structure of the random effects, and the residual covariance. A failure in any one can bias estimates or, more insidiously, leave them intact while corrupting the standard errors.</p>
 
-<p>The conventional checks are the ones inherited from ordinary regression. Residuals are plotted against fitted values and inspected for curvature. Normal quantile plots are consulted for the random effects and the within-cluster errors. Information criteria are compared across a handful of candidate specifications. Each of these is useful and each has a characteristic blind spot. A residual plot is a judgement call, and a dense cloud of several thousand points will absorb a good deal of structure before it looks anything other than round. Information criteria compare only the models an analyst thought to fit, so a misspecification that occurred to nobody is never in the comparison at all. Formal tests for mixed-model adequacy exist, but they tend to be aimed at one alternative at a time, which returns the analyst to the same difficulty: you have to guess what is wrong before you can test for it.</p>
+<p>The conventional checks each have a characteristic blind spot. A residual plot is a judgement call, and a dense cloud of several thousand points absorbs a good deal of structure before it looks anything other than round. Information criteria compare only the models an analyst thought to fit. Formal tests are aimed at one alternative at a time. All of them return the analyst to the same difficulty: you have to guess what is wrong before you can test for it.</p>
 
 <div class="pj-thesis">
   <p>If a mixed model is correctly specified, its residuals carry no information about the covariates. RandomForestSpecCheck hands the residuals and the covariates to a random forest and asks it to find some anyway. A permutation test then decides whether what the forest found could plausibly have arisen from noise.</p>
 </div>
 
-<h2>The statistic</h2>
+<h2>The method</h2>
 
-<p>Fit the mixed model, extract the conditional residuals, and regress them on a set of candidate predictors using a random forest. The predictors are the ones an analyst suspects might have been mishandled: time, the cluster identifier, a covariate that entered only linearly. The measure of the forest's success is its out-of-bag coefficient of determination,</p>
+<p>Fit the mixed model, extract the conditional residuals, and regress them on the predictors an analyst suspects were mishandled &mdash; time, the cluster identifier, a covariate that entered only linearly &mdash; using a random forest. The measure of the forest's success is its out-of-bag coefficient of determination,</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">R&sup2;<sub>oob</sub> = 1 &minus; MSE<sub>oob</sub> / var(&ecirc;<sub>ij</sub>)</p>
 
-<p>where each tree is grown on a bootstrap sample and evaluated only on the observations that sample left out. Aggregating those out-of-bag predictions gives the forest an internal cross-validation, and so a nearly unbiased estimate of how well it generalises, without setting aside a test set. This matters more here than in an ordinary prediction problem, because a forest with enough depth will fit residual noise perfectly if permitted to score itself on the data it was grown from, and the diagnostic would then flag every model ever fitted.</p>
+<p>where each tree is scored only on the observations its bootstrap sample left out. That gives a nearly unbiased estimate of how well the forest generalises, which matters more here than in an ordinary prediction problem: a forest allowed to score itself on the data it was grown from would fit residual noise perfectly, and the diagnostic would flag every model ever fitted.</p>
 
-<p>The framing is a familiar hypothesis test wearing unfamiliar clothes. Under correct specification the conditional expectation of a residual given any predictor is zero, and a sufficiently large forest approximates conditional expectations, so the best achievable out-of-bag R&sup2; is zero up to sampling variability. Under misspecification the forest has something to find. The null and alternative are</p>
+<p>Under correct specification the conditional expectation of a residual given any predictor is zero, so the best achievable out-of-bag R&sup2; is zero up to sampling variability. The null and alternative are</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">H<sub>0</sub>: E[e | X] = 0&nbsp;&nbsp;&nbsp;versus&nbsp;&nbsp;&nbsp;H<sub>1</sub>: E[e | X] &ne; 0</p>
 
-<p>tested without specifying any parametric alternative. That is the whole point of using a forest rather than an expanded regression: the analyst supplies the variables, not the functional form.</p>
+<p>tested without specifying any parametric alternative: the analyst supplies the variables, not the functional form.</p>
 
-<h2>Where the null distribution comes from</h2>
+<p>The statistic has no tractable sampling distribution, so the null is simulated by permutation &mdash; <em>within</em> clusters, because shuffling freely would destroy the correlation structure along with the signal. Under the null, residuals are exchangeable inside a cluster, so permuting them severs the link to the predictors while leaving the joint distribution alone. Refitting the forest <em>B</em> times gives a null under a design identical to the real one, valid in finite samples with no appeal to asymptotics and no assumption of normality.</p>
 
-<p>The out-of-bag R&sup2; of a random forest has no tractable sampling distribution, so it has to be simulated. The obvious device is a permutation test, and the obvious hazard is that the data are clustered. Shuffling residuals freely across the whole dataset would destroy the correlation structure along with the signal, and the resulting null would describe a scenario the data were never drawn from.</p>
-
-<p>The procedure therefore permutes <em>within</em> clusters. Under the null hypothesis of no association between residuals and predictors, residuals are exchangeable inside a cluster: any ordering is as likely as any other, so permuting them leaves the joint distribution alone while severing the link to the predictors. Each cluster keeps its size and its membership; only the internal ordering is scrambled. Refitting the forest to the permuted residuals and repeating <em>B</em> times gives a distribution of out-of-bag R&sup2; values under a design identical to the real one, in a world with nothing to find. The test is valid in finite samples under exchangeability, with no appeal to asymptotics and no assumption that residuals are normal.</p>
-
-<h2>The decision rule</h2>
-
-<p>Because large values of the statistic indicate leftover structure, the test is one-sided and the comparison is against the upper tail. The procedure takes the 97.5th percentile of the permutation distribution as its critical value. On its own, however, statistical significance is a weak standard for a diagnostic: with enough data, structure that explains a fraction of a percent of residual variance will clear any percentile, and an analyst who redesigns a model on that basis has been badly served.</p>
-
-<p>The procedure therefore applies two criteria and flags a model only if both are met:</p>
+<p>Large values indicate leftover structure, so the test is one-sided against the 97.5th percentile. Significance alone is a weak standard, though: with enough data, structure explaining a fraction of a percent of residual variance clears any percentile. The procedure therefore flags a model only when both criteria are met,</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">R&sup2;<sub>oob</sub> &gt; Q<sub>0.975</sub>&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;R&sup2;<sub>oob</sub> &gt; &tau;</p>
 
-<p>The second criterion is a practical threshold, set by default at &tau; = 0.05, which is to say that the leftover structure must account for at least five percent of residual variance before it is worth an analyst's attention. The default is a judgement rather than a derivation, and it is exposed as an argument for exactly that reason. In the simulations below it balanced sensitivity against specificity well; in the real-data application it turns out to do essentially all of the discriminating work, which is a finding worth stating plainly rather than burying.</p>
+<p>with &tau; = 0.05 by default, so that leftover structure must account for at least five percent of residual variance before it is worth an analyst's attention. The default is a judgement rather than a derivation, and is exposed as an argument for that reason.</p>
 
 <h2>The diagnostic, running</h2>
 
-<p>The panel below is a working implementation of the procedure in the browser, not an illustration of it. It simulates clustered longitudinal data from a model with a quadratic time trend, fits the random-intercepts model that omits the quadratic term, grows a forest on the resulting residuals, builds the permutation null by shuffling those residuals within clusters, and applies the rule. Nothing is precomputed.</p>
+<p>The panel below is a working implementation of the procedure in the browser, not an illustration of it. It simulates clustered longitudinal data with a quadratic time trend, fits the random-intercepts model that omits the quadratic term, grows a forest on the residuals, builds the permutation null within clusters, and applies the rule. Nothing is precomputed.</p>
 
 <figure class="pj-figure" id="rfsc-live">
   <div class="pj-figure__head">
-    <div class="pj-figure__num">Figure 1 &middot; Interactive</div>
+    <div class="pj-figure__num">Figure 1 &middot; Computed live</div>
     <h3 class="pj-figure__title">RandomForestSpecCheck applied to an omitted quadratic effect</h3>
   </div>
 
@@ -124,16 +116,23 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
   </div>
 
   <figcaption class="pj-figure__caption">
-    <p>Data are generated as y<sub>ij</sub> = 2 + 0.5 t<sub>ij</sub> + &gamma; t<sub>ij</sub>&sup2; + b<sub>i</sub> + &epsilon;<sub>ij</sub> with b<sub>i</sub> ~ N(0, 1) and t<sub>ij</sub> ~ Uniform(0, 10); the fitted model is the random-intercepts model omitting the quadratic term, estimated by profile maximum likelihood over the variance ratio. The forest and the permutation loop are reduced for the browser: 50 trees, B = 60 permutations, and time as the sole predictor, against 500 permutations and a cluster factor in the published procedure. Set &gamma; to zero and the observed statistic falls back inside the null, which is the type-I behaviour the first simulation study was built to measure. Raise the noise to 5 and the flag disappears even at &gamma; = 0.4, which is the power behaviour of the second panel of Figure 2.</p>
-    <p>The null distribution sits below zero, and should. When residuals are shuffled there is genuinely nothing to predict, so a forest scored out-of-bag does worse than the sample mean and the R&sup2; goes negative. A null centred at zero would be evidence that the permutation was not doing its job. It sits further below zero here than in the published runs, because out-of-bag predictions from a fifty-tree forest on a few hundred observations are noisier than those from the full procedure.</p>
-    <p>Checked against the paper at twenty replicates per cell, the reduced version reproduces the published behaviour: nothing flagged at &gamma; = 0 for any noise level, everything flagged at &gamma; = 0.3 with &sigma; = 1, and detection falling away as noise rises, in line with the first row of Figure 2.</p>
+    <p>Data are generated as y<sub>ij</sub> = 2 + 0.5 t<sub>ij</sub> + &gamma; t<sub>ij</sub>&sup2; + b<sub>i</sub> + &epsilon;<sub>ij</sub>, and the fitted model is the random-intercepts model omitting the quadratic term. The forest and the permutation loop are reduced for the browser: 50 trees and B = 60, against 500 permutations in the published procedure.</p>
+    <p>The null sits below zero, and should: when residuals are shuffled there is nothing to predict, so a forest scored out-of-bag does worse than the sample mean. A null centred at zero would be evidence that the permutation was not working. Checked against the paper at twenty replicates per cell, the reduced version reproduces the published behaviour.</p>
   </figcaption>
 </figure>
 
 <h2>What the method detects, and what it does not</h2>
 
-<p>Four simulation studies were run, each generating data under a specific violation and fitting a model that omitted it. Three concern the mean structure: an omitted quadratic fixed effect, an omitted random slope, and unmodelled AR(1) correlation among the within-cluster errors. The fourth concerns the variance: residual variance increasing with time, fitted with a model assuming homoscedasticity. Every cell of every design was replicated one hundred times, and the quantity reported is the proportion of replicates in which the diagnostic flagged the model.</p>
+<p>Four simulation studies were run, each generating data under a specific violation and fitting a model that omitted it. Three concern the mean structure: an omitted quadratic fixed effect, an omitted random slope, and unmodelled AR(1) correlation. The fourth concerns the variance: residual variance increasing with time, fitted as homoscedastic. Every cell was replicated one hundred times.</p>
 
+<!-- ==========================================================================
+     Figure 2 (simulation results: four studies as a tabbed grid of small
+     multiples) was removed. It was too tall to read on a phone, and what it
+     showed is stated in the prose below and in the summary strip at the head
+     of the page. Markup kept here, drawing code kept further down, so it can
+     be put back.
+     ========================================================================== -->
+<!--
 <figure class="pj-figure" id="rfsc-power">
   <div class="pj-figure__head">
     <div class="pj-figure__num">Figure 2 &middot; Simulation results</div>
@@ -164,10 +163,11 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
     <p>Each panel fixes a cluster size and a noise level; the horizontal axis is the magnitude of the omitted effect and the vertical axis runs from zero to one. The leftmost point of every series is a correctly specified model, so those values are the empirical type-I error rate and should sit near or below the dashed line.</p>
   </figcaption>
 </figure>
+-->
 
-<p>The three mean-structure studies behave as a diagnostic should. False positives are held between zero and three percent throughout, which is conservative against a nominal five. Power then depends on the two things it ought to depend on, the size of the omitted effect and the signal-to-noise ratio of the design. A strong quadratic trend is caught in eighty to one hundred percent of replicates. A weak one, contributing a coefficient of 0.05, is caught rarely, and the honest reading is that the method requires either a large sample or a quiet one to detect subtle nonlinearity. Omitted random slopes show the same pattern with an added dependence on cluster size: with ten observations per cluster and low noise the diagnostic finds a slope variance of 0.4 in eighty-one to ninety-six percent of replicates, and with five observations per cluster it finds almost nothing, because the temporal information needed to reveal a slope simply is not there. Unmodelled autocorrelation is the hardest of the three, reaching only about a quarter of replicates at &rho; = 0.6.</p>
+<p>The three mean-structure studies behave as a diagnostic should. False positives are held between one and three percent against a nominal five, and power depends on the size of the omitted effect and the signal-to-noise ratio of the design: a strong quadratic trend is caught in eighty to one hundred percent of replicates, a weak one rarely. Omitted random slopes show the same pattern with an added dependence on cluster size. Unmodelled autocorrelation is the hardest, reaching about a quarter of replicates at &rho; = 0.6.</p>
 
-<p>The fourth study is the one worth dwelling on. Heteroscedastic residuals were essentially never flagged, at any variance strength, in any design. This is not a failure of the implementation; it is a consequence of what the statistic measures. The forest is predicting the residual, not its magnitude, and in a design where the variance grows with time while the mean stays at zero there is no conditional mean for the forest to recover. From the point of view of the statistic the fitted model is adequate, and the statistic says so.</p>
+<p>The fourth study is the one worth dwelling on. Heteroscedastic residuals were essentially never flagged, in any design. This is not a failure of the implementation but a consequence of what the statistic measures: the forest predicts the residual, not its magnitude, and where the variance grows while the mean stays at zero there is no conditional mean to recover. From the point of view of the statistic the model is adequate, and the statistic says so.</p>
 
 <div class="pj-note">
   <span class="pj-note__label">Scope</span>
@@ -176,7 +176,7 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 
 <h2>Application: the Framingham Heart Study</h2>
 
-<p>The diagnostic was applied to a subset of the Framingham Heart Study, comprising more than 2,600 cholesterol measurements taken at two-year intervals over ten years, alongside baseline age, sex, and body mass index. Five linear mixed models were fitted. Four are specifications a careful analyst might reasonably choose between: random intercepts, random slopes for time, an AR(1) residual correlation structure, and a quadratic term in time. The fifth is a deliberate act of sabotage, omitting time altogether from the fixed effects, a variable known on biological grounds to matter.</p>
+<p>The diagnostic was applied to a subset of the Framingham Heart Study: more than 2,600 cholesterol measurements at two-year intervals over ten years, with baseline age, sex, and body mass index. Five models were fitted &mdash; four specifications a careful analyst might reasonably choose between, and a fifth that omits time from the fixed effects altogether, a deliberate act of sabotage against a variable known on biological grounds to matter.</p>
 
 <div class="pj-tablewrap">
   <table class="pj-table">
@@ -229,7 +229,7 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 
 <figure class="pj-figure" id="rfsc-fram">
   <div class="pj-figure__head">
-    <div class="pj-figure__num">Figure 3 &middot; Framingham</div>
+    <div class="pj-figure__num">Figure 2 &middot; Framingham</div>
     <h3 class="pj-figure__title">Observed out-of-bag R&sup2; against its permutation interval, by model</h3>
   </div>
   <div class="pj-figure__body">
@@ -246,17 +246,17 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
   </figcaption>
 </figure>
 
-<p>Two things are worth reading off the table. The first is the intended result: the four reasonable specifications were cleared and the model missing a known predictor was flagged, with an observed R&sup2; of 0.191 against a threshold of 0.05. Standard residual-versus-fitted plots for all five models produce dense clouds centred at zero, and the sabotaged model's cloud is not visibly different from the others; the quantile plots are likewise unremarkable in all five cases. The misspecification was in the mean structure, which is where the forest was looking and where the eye was not.</p>
+<p>The intended result holds: the four reasonable specifications were cleared and the sabotaged model flagged, at an observed R&sup2; of 0.191 against a threshold of 0.05. Residual-versus-fitted plots for all five produce dense clouds centred at zero, and the sabotaged model's is not visibly different. The misspecification was in the mean structure, where the forest was looking and the eye was not.</p>
 
-<p>The second is less comfortable and more interesting. Every one of the five models, including the four that passed, has an observed R&sup2; above its own permutation 97.5th percentile. The permutation criterion alone separated nothing here. What separated the sabotaged model was the practical threshold, and the reason lies in the geometry of the null: because permuted residuals contain no signal at all, the out-of-bag R&sup2; under the null is reliably negative, so the upper percentile of the null sits below zero and almost any real fit clears it. In a dataset this size the first criterion is close to free. That is precisely the situation the second criterion was introduced for, and the application shows it earning its place rather than merely accompanying the first. It also sharpens a limitation: on data of this scale the procedure's operating characteristics are governed by &tau;, and an analyst who accepted the default without thinking about the effect size it encodes would be delegating the decision to a number they had not chosen.</p>
+<p>The second reading is less comfortable. All five models, including the four that passed, have an observed R&sup2; above their own permutation 97.5th percentile; that criterion separated nothing here. What separated the sabotaged model was the practical threshold. Because permuted residuals contain no signal, the null R&sup2; is reliably negative, its upper percentile sits below zero, and almost any real fit clears it. That is what the second criterion was introduced for, and it sharpens a limitation: on data of this scale the operating characteristics are governed by &tau;, and an analyst accepting the default without thinking about the effect size it encodes would be delegating the decision to a number they had not chosen.</p>
 
 <h2>Limitations</h2>
 
-<p>The procedure detects mean structure and only mean structure, as the fourth simulation study establishes directly. Power against subtle effects is modest and depends jointly on the number of clusters, the number of observations within them, and the noise level, so a null result in a small or noisy study is weak evidence of adequacy. The forest can only find structure in variables it is given, so a misspecification involving a covariate that was never measured is invisible by construction. And because the permutation scheme deliberately preserves clusters, a wholly omitted cluster-level mean effect is not disrupted under the null and will not be flagged; that failure mode is caught by simpler means, such as comparing average residuals across clusters, but it has to be caught by something. The method is a screening instrument for nuanced within-cluster structure, and it is at its most useful when treated as the first question asked rather than the last.</p>
+<p>The procedure detects mean structure and only mean structure. Power against subtle effects is modest and depends jointly on the number of clusters, the observations within them, and the noise level, so a null result in a small or noisy study is weak evidence of adequacy. The forest can only find structure in variables it is given. And because the permutation preserves clusters, a wholly omitted cluster-level effect will not be flagged; that failure mode is caught by simpler means, but it has to be caught by something. The method is a screening instrument, most useful as the first question asked rather than the last.</p>
 
 <h2>The function</h2>
 
-<p>The procedure is packaged as a single R function over <code>ranger</code> for the forests and <code>dplyr</code> for the grouped permutations. It takes a fitted model object, the data, a formula naming the predictors to search, the number of permutations, and the threshold, and it prints a verdict alongside the numbers behind it.</p>
+<p>The procedure is packaged as a single R function over <code>ranger</code> and <code>dplyr</code>. It takes a fitted model, the data, a formula naming the predictors to search, the number of permutations, and the threshold, and prints a verdict alongside the numbers behind it.</p>
 
 <pre class="pj-code">RandomForestSpecCheck(
   fitted_model = my_lmm,
@@ -279,11 +279,11 @@ null distribution and the practical threshold, indicating that the model leaves
 systematic structure in the residuals. This suggests that the model may be
 misspecified.</pre>
 
-<p>The printed output is deliberately verbose. A diagnostic that returns a bare logical invites an analyst to treat it as a verdict, and it is not one; it is a signal that some named variables are still doing work the model has not accounted for. The natural next steps are to read the forest's variable-importance measures to see which ones, and then to attempt the corresponding parametric extension and check whether the flag clears.</p>
+<p>The output is deliberately verbose. A diagnostic that returns a bare logical invites an analyst to treat it as a verdict, and it is not one; it is a signal that some named variables are still doing work the model has not accounted for. The next step is to read the forest's variable-importance measures, attempt the corresponding parametric extension, and check whether the flag clears.</p>
 
 <h2>Contribution</h2>
 
-<p>Permutation inference and tree ensembles are both long established, and residual analysis with machine learning has been explored for ordinary and generalised linear models. What had not been assembled was the combination in a mixed-model setting: a within-cluster permutation scheme that respects the nested design, a forest-derived statistic with an interpretable scale, a decision rule that separates significance from magnitude, and a simulation programme that maps where the resulting procedure has power and where it does not, including an explicit negative result. The work was written for submission to <em>Computational Statistics &amp; Data Analysis</em>.</p>
+<p>Permutation inference and tree ensembles are both long established, and residual analysis with machine learning has been explored for ordinary and generalised linear models. What had not been assembled was the combination in a mixed-model setting: a within-cluster permutation scheme that respects the nested design, a forest-derived statistic with an interpretable scale, a decision rule that separates significance from magnitude, and a simulation programme mapping where the procedure has power and where it does not, including an explicit negative result. The work was written for submission to <em>Computational Statistics &amp; Data Analysis</em>.</p>
 
 <p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
 
@@ -621,153 +621,159 @@ misspecified.</pre>
   else setTimeout(run, 260);
 })();
 
+// ---------------------------------------------------------------------
+// Figure 2 (simulation results) was removed from the page; see the note
+// beside its markup above. Its drawing code and the STUDIES data are kept
+// here, commented out, so the figure can be restored. Strip the leading
+// "// " from the block below and un-comment the markup to bring it back.
+// ---------------------------------------------------------------------
+// /* =========================================================================
+//    Figure 2 — simulation results, four studies, small multiples.
+//    VERIFY: these arrays transcribe Figures 1–4 of the paper. Check against the
+//    simulation output before publishing.
+//    ========================================================================= */
+// (function () {
+//   var STUDIES = {
+//     quad: {
+//       x: 'Quadratic coefficient γ', levels: ['0', '0.05', '0.30'],
+//       blurb: 'False positives stay at or below 0.03 everywhere. A strong quadratic trend is caught almost always when noise is low, and detection degrades in the expected direction as noise rises.',
+//       panels: [
+//         { m: 5,  s: 1, n10: [0, 0.03, 1.00], n20: [0, 0.05, 1.00], n50: [0, 0.00, 1.00] },
+//         { m: 10, s: 1, n10: [0, 0.06, 1.00], n20: [0, 0.04, 1.00], n50: [0, 0.00, 1.00] },
+//         { m: 5,  s: 3, n10: [0.00, 0.01, 0.51], n20: [0.01, 0.01, 0.84], n50: [0.00, 0.00, 0.97] },
+//         { m: 10, s: 3, n10: [0.00, 0.00, 0.97], n20: [0.00, 0.00, 0.96], n50: [0.00, 0.00, 1.00] },
+//         { m: 5,  s: 5, n10: [0.01, 0.00, 0.11], n20: [0.01, 0.00, 0.20], n50: [0.00, 0.00, 0.21] },
+//         { m: 10, s: 5, n10: [0.00, 0.00, 0.09], n20: [0.00, 0.00, 0.30], n50: [0.00, 0.00, 0.14] }
+//       ]
+//     },
+//     slope: {
+//       x: 'Random-slope variance σ²', levels: ['0', '0.15', '0.40'],
+//       blurb: 'Detection depends far more on the number of observations per cluster than on the number of clusters. With five observations per cluster there is too little temporal information to reveal a slope, whatever the sample size.',
+//       panels: [
+//         { m: 5,  s: 1, n10: [0.00, 0.02, 0.17], n20: [0.00, 0.03, 0.13], n50: [0.00, 0.00, 0.02] },
+//         { m: 10, s: 1, n10: [0.00, 0.51, 0.81], n20: [0.00, 0.59, 0.86], n50: [0.00, 0.50, 0.96] },
+//         { m: 5,  s: 3, n10: [0.01, 0.01, 0.00], n20: [0.01, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
+//         { m: 10, s: 3, n10: [0.00, 0.00, 0.07], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] }
+//       ]
+//     },
+//     ar1: {
+//       x: 'AR(1) correlation ρ', levels: ['0', '0.30', '0.60'],
+//       blurb: 'The hardest of the three mean-structure violations. Moderate autocorrelation is close to undetectable; strong autocorrelation reaches roughly a quarter of replicates, and only with ten observations per cluster.',
+//       panels: [
+//         { m: 5,  s: 1, n10: [0.01, 0.00, 0.02], n20: [0.00, 0.01, 0.01], n50: [0.00, 0.00, 0.01] },
+//         { m: 10, s: 1, n10: [0.00, 0.05, 0.26], n20: [0.00, 0.00, 0.09], n50: [0.00, 0.00, 0.07] },
+//         { m: 5,  s: 3, n10: [0.02, 0.03, 0.01], n20: [0.01, 0.02, 0.02], n50: [0.00, 0.00, 0.00] },
+//         { m: 10, s: 3, n10: [0.00, 0.04, 0.27], n20: [0.00, 0.02, 0.24], n50: [0.00, 0.00, 0.13] }
+//       ]
+//     },
+//     hetero: {
+//       x: 'Variance strength α', levels: ['0', '0.30', '0.60'],
+//       blurb: 'A negative result, and an expected one. Residual variance grows with time while the conditional mean stays at zero, so there is no mean structure for the forest to recover and the diagnostic correctly declines to flag anything.',
+//       panels: [
+//         { m: 5,  s: 1, n10: [0.00, 0.01, 0.01], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
+//         { m: 10, s: 1, n10: [0.00, 0.04, 0.03], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
+//         { m: 5,  s: 3, n10: [0.02, 0.01, 0.01], n20: [0.00, 0.00, 0.03], n50: [0.00, 0.00, 0.01] },
+//         { m: 10, s: 3, n10: [0.00, 0.00, 0.03], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] }
+//       ]
+//     }
+//   };
+//
+//   var NS = 'http://www.w3.org/2000/svg';
+//   var COL = { n10: '#aab4bb', n20: '#6c8494', n50: '#3d5a6c' };
+//
+//   function el(tag, attrs) {
+//     var e = document.createElementNS(NS, tag);
+//     for (var k in attrs) e.setAttribute(k, attrs[k]);
+//     return e;
+//   }
+//
+//   function marker(svg, x, y, key) {
+//     if (key === 'n10') {
+//       svg.appendChild(el('circle', { cx: x, cy: y, r: 3.4, fill: COL[key] }));
+//     } else if (key === 'n20') {
+//       svg.appendChild(el('rect', { x: x - 3, y: y - 3, width: 6, height: 6, fill: COL[key] }));
+//     } else {
+//       var p = el('path', { d: 'M' + x + ' ' + (y - 4) + 'L' + (x + 3.8) + ' ' + (y + 3) + 'L' + (x - 3.8) + ' ' + (y + 3) + 'Z', fill: COL[key] });
+//       svg.appendChild(p);
+//     }
+//   }
+//
+//   function panel(p, study) {
+//     var W = 216, H = 150, ml = 30, mr = 12, mt = 22, mb = 34;
+//     var svg = el('svg', {
+//       viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+//       'aria-label': 'Proportion flagged for cluster size ' + p.m + ' and noise ' + p.s + '.'
+//     });
+//     var X = function (i) { return ml + i * (W - ml - mr) / 2; };
+//     var Y = function (v) { return H - mb - v * (H - mt - mb); };
+//
+//     /* title */
+//     var ttl = el('text', { x: ml, y: 12, 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.72 });
+//     ttl.textContent = 'm = ' + p.m + ',  σ = ' + p.s;
+//     svg.appendChild(ttl);
+//
+//     /* frame + y ticks */
+//     [0, 0.5, 1].forEach(function (v) {
+//       svg.appendChild(el('line', {
+//         x1: ml, x2: W - mr, y1: Y(v), y2: Y(v),
+//         stroke: 'currentColor', 'stroke-opacity': v === 0 ? 0.3 : 0.09
+//       }));
+//       var t = el('text', { x: ml - 6, y: Y(v) + 3.5, 'text-anchor': 'end', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.5 });
+//       t.textContent = v.toFixed(v === 0 || v === 1 ? 0 : 1);
+//       svg.appendChild(t);
+//     });
+//
+//     /* nominal 5% reference */
+//     svg.appendChild(el('line', {
+//       x1: ml, x2: W - mr, y1: Y(0.05), y2: Y(0.05),
+//       stroke: 'currentColor', 'stroke-opacity': 0.4, 'stroke-dasharray': '3 3'
+//     }));
+//
+//     /* x labels */
+//     study.levels.forEach(function (lv, i) {
+//       var t = el('text', { x: X(i), y: H - mb + 15, 'text-anchor': 'middle', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.5 });
+//       t.textContent = lv;
+//       svg.appendChild(t);
+//     });
+//     var xl = el('text', { x: (ml + W - mr) / 2, y: H - 4, 'text-anchor': 'middle', 'font-size': 9.5, fill: 'currentColor', 'fill-opacity': 0.45 });
+//     xl.textContent = study.x;
+//     svg.appendChild(xl);
+//
+//     /* series */
+//     ['n10', 'n20', 'n50'].forEach(function (key) {
+//       var vals = p[key], d = '';
+//       vals.forEach(function (v, i) { d += (i ? 'L' : 'M') + X(i) + ' ' + Y(v); });
+//       svg.appendChild(el('path', { d: d, fill: 'none', stroke: COL[key], 'stroke-width': 1.5 }));
+//       vals.forEach(function (v, i) { marker(svg, X(i), Y(v), key); });
+//     });
+//
+//     return svg;
+//   }
+//
+//   function render(name) {
+//     var study = STUDIES[name];
+//     document.getElementById('pw-blurb').textContent = study.blurb;
+//     var host = document.getElementById('pw-panels');
+//     host.innerHTML = '';
+//     study.panels.forEach(function (p) {
+//       var box = document.createElement('div');
+//       box.appendChild(panel(p, study));
+//       host.appendChild(box);
+//     });
+//   }
+//
+//   var tabs = document.querySelectorAll('#rfsc-power .pj-seg button');
+//   tabs.forEach(function (b) {
+//     b.addEventListener('click', function () {
+//       tabs.forEach(function (o) { o.setAttribute('aria-selected', String(o === b)); });
+//       render(b.dataset.study);
+//     });
+//   });
+//   render('quad');
+// })();
+
 /* =========================================================================
-   Figure 2 — simulation results, four studies, small multiples.
-   VERIFY: these arrays transcribe Figures 1–4 of the paper. Check against the
-   simulation output before publishing.
-   ========================================================================= */
-(function () {
-  var STUDIES = {
-    quad: {
-      x: 'Quadratic coefficient γ', levels: ['0', '0.05', '0.30'],
-      blurb: 'False positives stay at or below 0.03 everywhere. A strong quadratic trend is caught almost always when noise is low, and detection degrades in the expected direction as noise rises.',
-      panels: [
-        { m: 5,  s: 1, n10: [0, 0.03, 1.00], n20: [0, 0.05, 1.00], n50: [0, 0.00, 1.00] },
-        { m: 10, s: 1, n10: [0, 0.06, 1.00], n20: [0, 0.04, 1.00], n50: [0, 0.00, 1.00] },
-        { m: 5,  s: 3, n10: [0.00, 0.01, 0.51], n20: [0.01, 0.01, 0.84], n50: [0.00, 0.00, 0.97] },
-        { m: 10, s: 3, n10: [0.00, 0.00, 0.97], n20: [0.00, 0.00, 0.96], n50: [0.00, 0.00, 1.00] },
-        { m: 5,  s: 5, n10: [0.01, 0.00, 0.11], n20: [0.01, 0.00, 0.20], n50: [0.00, 0.00, 0.21] },
-        { m: 10, s: 5, n10: [0.00, 0.00, 0.09], n20: [0.00, 0.00, 0.30], n50: [0.00, 0.00, 0.14] }
-      ]
-    },
-    slope: {
-      x: 'Random-slope variance σ²', levels: ['0', '0.15', '0.40'],
-      blurb: 'Detection depends far more on the number of observations per cluster than on the number of clusters. With five observations per cluster there is too little temporal information to reveal a slope, whatever the sample size.',
-      panels: [
-        { m: 5,  s: 1, n10: [0.00, 0.02, 0.17], n20: [0.00, 0.03, 0.13], n50: [0.00, 0.00, 0.02] },
-        { m: 10, s: 1, n10: [0.00, 0.51, 0.81], n20: [0.00, 0.59, 0.86], n50: [0.00, 0.50, 0.96] },
-        { m: 5,  s: 3, n10: [0.01, 0.01, 0.00], n20: [0.01, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
-        { m: 10, s: 3, n10: [0.00, 0.00, 0.07], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] }
-      ]
-    },
-    ar1: {
-      x: 'AR(1) correlation ρ', levels: ['0', '0.30', '0.60'],
-      blurb: 'The hardest of the three mean-structure violations. Moderate autocorrelation is close to undetectable; strong autocorrelation reaches roughly a quarter of replicates, and only with ten observations per cluster.',
-      panels: [
-        { m: 5,  s: 1, n10: [0.01, 0.00, 0.02], n20: [0.00, 0.01, 0.01], n50: [0.00, 0.00, 0.01] },
-        { m: 10, s: 1, n10: [0.00, 0.05, 0.26], n20: [0.00, 0.00, 0.09], n50: [0.00, 0.00, 0.07] },
-        { m: 5,  s: 3, n10: [0.02, 0.03, 0.01], n20: [0.01, 0.02, 0.02], n50: [0.00, 0.00, 0.00] },
-        { m: 10, s: 3, n10: [0.00, 0.04, 0.27], n20: [0.00, 0.02, 0.24], n50: [0.00, 0.00, 0.13] }
-      ]
-    },
-    hetero: {
-      x: 'Variance strength α', levels: ['0', '0.30', '0.60'],
-      blurb: 'A negative result, and an expected one. Residual variance grows with time while the conditional mean stays at zero, so there is no mean structure for the forest to recover and the diagnostic correctly declines to flag anything.',
-      panels: [
-        { m: 5,  s: 1, n10: [0.00, 0.01, 0.01], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
-        { m: 10, s: 1, n10: [0.00, 0.04, 0.03], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
-        { m: 5,  s: 3, n10: [0.02, 0.01, 0.01], n20: [0.00, 0.00, 0.03], n50: [0.00, 0.00, 0.01] },
-        { m: 10, s: 3, n10: [0.00, 0.00, 0.03], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] }
-      ]
-    }
-  };
-
-  var NS = 'http://www.w3.org/2000/svg';
-  var COL = { n10: '#aab4bb', n20: '#6c8494', n50: '#3d5a6c' };
-
-  function el(tag, attrs) {
-    var e = document.createElementNS(NS, tag);
-    for (var k in attrs) e.setAttribute(k, attrs[k]);
-    return e;
-  }
-
-  function marker(svg, x, y, key) {
-    if (key === 'n10') {
-      svg.appendChild(el('circle', { cx: x, cy: y, r: 3.4, fill: COL[key] }));
-    } else if (key === 'n20') {
-      svg.appendChild(el('rect', { x: x - 3, y: y - 3, width: 6, height: 6, fill: COL[key] }));
-    } else {
-      var p = el('path', { d: 'M' + x + ' ' + (y - 4) + 'L' + (x + 3.8) + ' ' + (y + 3) + 'L' + (x - 3.8) + ' ' + (y + 3) + 'Z', fill: COL[key] });
-      svg.appendChild(p);
-    }
-  }
-
-  function panel(p, study) {
-    var W = 216, H = 150, ml = 30, mr = 12, mt = 22, mb = 34;
-    var svg = el('svg', {
-      viewBox: '0 0 ' + W + ' ' + H, role: 'img',
-      'aria-label': 'Proportion flagged for cluster size ' + p.m + ' and noise ' + p.s + '.'
-    });
-    var X = function (i) { return ml + i * (W - ml - mr) / 2; };
-    var Y = function (v) { return H - mb - v * (H - mt - mb); };
-
-    /* title */
-    var ttl = el('text', { x: ml, y: 12, 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.72 });
-    ttl.textContent = 'm = ' + p.m + ',  σ = ' + p.s;
-    svg.appendChild(ttl);
-
-    /* frame + y ticks */
-    [0, 0.5, 1].forEach(function (v) {
-      svg.appendChild(el('line', {
-        x1: ml, x2: W - mr, y1: Y(v), y2: Y(v),
-        stroke: 'currentColor', 'stroke-opacity': v === 0 ? 0.3 : 0.09
-      }));
-      var t = el('text', { x: ml - 6, y: Y(v) + 3.5, 'text-anchor': 'end', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.5 });
-      t.textContent = v.toFixed(v === 0 || v === 1 ? 0 : 1);
-      svg.appendChild(t);
-    });
-
-    /* nominal 5% reference */
-    svg.appendChild(el('line', {
-      x1: ml, x2: W - mr, y1: Y(0.05), y2: Y(0.05),
-      stroke: 'currentColor', 'stroke-opacity': 0.4, 'stroke-dasharray': '3 3'
-    }));
-
-    /* x labels */
-    study.levels.forEach(function (lv, i) {
-      var t = el('text', { x: X(i), y: H - mb + 15, 'text-anchor': 'middle', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.5 });
-      t.textContent = lv;
-      svg.appendChild(t);
-    });
-    var xl = el('text', { x: (ml + W - mr) / 2, y: H - 4, 'text-anchor': 'middle', 'font-size': 9.5, fill: 'currentColor', 'fill-opacity': 0.45 });
-    xl.textContent = study.x;
-    svg.appendChild(xl);
-
-    /* series */
-    ['n10', 'n20', 'n50'].forEach(function (key) {
-      var vals = p[key], d = '';
-      vals.forEach(function (v, i) { d += (i ? 'L' : 'M') + X(i) + ' ' + Y(v); });
-      svg.appendChild(el('path', { d: d, fill: 'none', stroke: COL[key], 'stroke-width': 1.5 }));
-      vals.forEach(function (v, i) { marker(svg, X(i), Y(v), key); });
-    });
-
-    return svg;
-  }
-
-  function render(name) {
-    var study = STUDIES[name];
-    document.getElementById('pw-blurb').textContent = study.blurb;
-    var host = document.getElementById('pw-panels');
-    host.innerHTML = '';
-    study.panels.forEach(function (p) {
-      var box = document.createElement('div');
-      box.appendChild(panel(p, study));
-      host.appendChild(box);
-    });
-  }
-
-  var tabs = document.querySelectorAll('#rfsc-power .pj-seg button');
-  tabs.forEach(function (b) {
-    b.addEventListener('click', function () {
-      tabs.forEach(function (o) { o.setAttribute('aria-selected', String(o === b)); });
-      render(b.dataset.study);
-    });
-  });
-  render('quad');
-})();
-
-/* =========================================================================
-   Figure 3 — Framingham: observed R² against permutation interval.
+   Figure 2 — Framingham: observed R² against permutation interval.
    ========================================================================= */
 (function () {
   var ROWS = [
