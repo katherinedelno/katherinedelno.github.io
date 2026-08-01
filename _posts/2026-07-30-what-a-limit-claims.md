@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
 math: true
 kind: foundations
-sequence: 2
+sequence: 1
 interactive: true
 blurb: "Narrow the window and watch the outputs close in on a value the function skips"
 featured: true

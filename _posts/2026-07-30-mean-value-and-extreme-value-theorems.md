@@ -8,7 +8,7 @@ courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
 math: true
 kind: mechanics
-sequence: 17
+sequence: 18
 interactive: true
 blurb: "A guarantee that something exists, with no address attached"
 ---

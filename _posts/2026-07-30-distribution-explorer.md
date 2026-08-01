@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: mechanics
-sequence: 8
+sequence: 9
 interactive: true
 blurb: "Type the numbers, shade the region, read the probability and the command"
 ---
