@@ -7,7 +7,7 @@ course: "AP Precalculus"
 read_time: "6 min read"
 math: true
 kind: foundations
-sequence: 4
+sequence: 5
 interactive: true
 blurb: "Turn the angle and watch the circle's height become the sine curve"
 featured: true
