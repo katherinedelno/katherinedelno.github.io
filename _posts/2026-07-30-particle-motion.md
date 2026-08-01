@@ -23,19 +23,19 @@ $$v(t) = s'(t), \qquad a(t) = v'(t) = s''(t).$$
 
 Velocity is signed. Its sign is the direction of travel: positive means moving in the positive direction, negative means the other way, zero means momentarily at rest. Speed discards that information:
 
-$$\text{speed} = |v(t)|.$$
+$$\text{speed} = \vert v(t)\vert.$$
 
 Units follow the rule the framework states for every derivative — the unit of $$f'$$ is the unit of $$f$$ divided by the unit of its input. Position in metres and time in seconds gives velocity in metres per second, and differentiating again gives acceleration in metres per second per second. Nothing about motion is special here; it is [the same reading](/2026/07/21/reading-the-graph-of-f-prime.html) that any rate of change gets.
 
 ## Speeding up is a statement about two signs
 
-Speeding up means the speed is increasing, so it is a question about the derivative of $$|v|$$. Wherever $$v(t) \neq 0$$, [the chain rule](/2026/07/30/chain-rule-reading-the-layers.html) gives
+Speeding up means the speed is increasing, so it is a question about the derivative of $$\vert v\vert$$. Wherever $$v(t) \neq 0$$, [the chain rule](/2026/07/30/chain-rule-reading-the-layers.html) gives
 
-$$\frac{d}{dt}\,|v| = \frac{v}{|v|}\cdot a = \operatorname{sign}(v)\cdot a.$$
+$$\frac{d}{dt}\,\vert v\vert = \frac{v}{\vert v\vert}\cdot a = \operatorname{sign}(v)\cdot a.$$
 
 So the speed is increasing exactly when $$\operatorname{sign}(v)$$ and $$a$$ have the same sign — which is to say, when $$v$$ and $$a$$ do. That is the whole rule, and it is a one-line consequence rather than something to memorise. It is also why "the acceleration is negative, so it is slowing down" is wrong: negative acceleration slows a particle that is moving forward and speeds up one that is moving backward.
 
-At $$v = 0$$ the derivative above does not exist, because $$|v|$$ has [a corner wherever $$v$$ crosses zero](/2026/07/30/where-differentiability-fails.html). At such an instant the particle is neither speeding up nor slowing down; it is turning around.
+At $$v = 0$$ the derivative above does not exist, because $$\vert v\vert$$ has [a corner wherever $$v$$ crosses zero](/2026/07/30/where-differentiability-fails.html). At such an instant the particle is neither speeding up nor slowing down; it is turning around.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="pm-fns"></div>

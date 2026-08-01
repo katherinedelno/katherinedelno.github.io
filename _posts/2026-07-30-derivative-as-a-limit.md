@@ -169,9 +169,9 @@ What does change is which one is convenient. The $$h$$-form is easier to compute
 
 The framework asks for a derivative to be represented three ways, and the reason is that they emphasise different things.
 
-$$f'(a) \qquad \frac{dy}{dx}\bigg|_{x=a} \qquad y'$$
+$$f'(a) \qquad \left.\frac{dy}{dx}\right\vert_{x=a} \qquad y'$$
 
-Prime notation names the function and is compact. Leibniz notation, $$\tfrac{dy}{dx}$$, keeps both variables visible, which matters the moment there is more than one thing changing — it is the notation that survives into related rates and the chain rule, where you need to know what is being differentiated with respect to what. Its evaluation bar is not decoration: $$\tfrac{dy}{dx}$$ is a function and $$\tfrac{dy}{dx}\big|_{x=a}$$ is a number, and writing the first when you mean the second is the kind of thing [notation in AP Calculus](/2026/07/08/notation-that-costs-ap-calculus-points.html) is about.
+Prime notation names the function and is compact. Leibniz notation, $$\tfrac{dy}{dx}$$, keeps both variables visible, which matters the moment there is more than one thing changing — it is the notation that survives into related rates and the chain rule, where you need to know what is being differentiated with respect to what. Its evaluation bar is not decoration: $$\tfrac{dy}{dx}$$ is a function and $$\left.\tfrac{dy}{dx}\right\vert_{x=a}$$ is a number, and writing the first when you mean the second is the kind of thing [notation in AP Calculus](/2026/07/08/notation-that-costs-ap-calculus-points.html) is about.
 
 ## What the tangent line has to do with it
 

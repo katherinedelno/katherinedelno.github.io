@@ -42,7 +42,7 @@ $$\frac{1}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.$$
 
 Clearing denominators gives $$A(x+1) + B(x-1) = 1$$, and substituting $$x = 1$$ and $$x = -1$$ gives $$A = \tfrac12$$ and $$B = -\tfrac12$$ immediately. Each piece is now a logarithm:
 
-$$\int \frac{dx}{x^2-1} = \tfrac12\ln|x-1| - \tfrac12\ln|x+1| + C.$$
+$$\int \frac{dx}{x^2-1} = \tfrac12\ln\vert x-1\vert - \tfrac12\ln\vert x+1\vert + C.$$
 
 The restriction is what makes this reliable. A repeated factor such as $$(x-1)^2$$ needs a second term with the square in its denominator, and an irreducible quadratic such as $$x^2+1$$ needs a linear numerator — both are standard, and neither is in this course. If the denominator does not factor into distinct linear pieces, the problem is not asking for partial fractions.
 
@@ -183,7 +183,7 @@ Every [antiderivative](/2026/07/17/fundamental-theorem-from-the-ground-up.html) 
 })();
 </script>
 
-On the first four the pale curve never separates from the dark one, and the gap stays at the level of the numerical differentiation's own error. On the fifth it does not: the claimed antiderivative $$-\sin x - x\cos x$$ differentiates to $$x\sin x - 2\cos x$$, so the gap is $$2|\cos x|$$ and reaches 2 wherever the cosine is $$\pm 1$$. That is a large, obvious, findable error, and finding it costs one differentiation.
+On the first four the pale curve never separates from the dark one, and the gap stays at the level of the numerical differentiation's own error. On the fifth it does not: the claimed antiderivative $$-\sin x - x\cos x$$ differentiates to $$x\sin x - 2\cos x$$, so the gap is $$2\vert \cos x\vert$$ and reaches 2 wherever the cosine is $$\pm 1$$. That is a large, obvious, findable error, and finding it costs one differentiation.
 
 There is a reason to run that check on the antiderivative rather than trusting the final number, and this example makes it uncomfortably clear. The two claimed antiderivatives differ by $$-2\sin x$$, which is zero at every multiple of $$\pi$$. So on $$[0,\pi]$$ both give the same answer:
 

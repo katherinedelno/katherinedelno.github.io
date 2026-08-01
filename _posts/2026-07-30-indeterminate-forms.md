@@ -69,7 +69,7 @@ where the whole move was refusing to leave $$\tan$$ in place.
 
 Both standard limits are $$\tfrac00$$ by substitution and neither factors. They are established by the squeeze theorem, which is the other tool listed under the same objective as algebraic rearrangement: if $$g(x) \le f(x) \le h(x)$$ near the point and $$g$$ and $$h$$ share a limit there, $$f$$ is trapped into having it too.
 
-The squeeze theorem also handles the oscillating cases that defeat everything else. The function $$x^2\sin\!\left(\tfrac1x\right)$$ has no limit-friendly rewriting, but $$\left|\sin\frac1x\right| \le 1$$ forces
+The squeeze theorem also handles the oscillating cases that defeat everything else. The function $$x^2\sin\!\left(\tfrac1x\right)$$ has no limit-friendly rewriting, but $$\left\vert\sin\frac1x\right\vert \le 1$$ forces
 
 $$-x^2 \le x^2\sin\!\left(\frac1x\right) \le x^2,$$
 
