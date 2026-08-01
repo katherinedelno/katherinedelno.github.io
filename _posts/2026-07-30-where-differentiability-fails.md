@@ -159,7 +159,7 @@ The framework's test is that pair of numbers, and nothing else. *Corner* and *cu
 })();
 </script>
 
-The corner is $$|x|$$. Its one-sided quotients are $$-1$$ and $$+1$$ at every $$h$$, never converging on each other because there is nothing to converge — they were already constant. Two finite slopes that disagree is the cheapest way to have no derivative, and the graph shows it as a sharp turn.
+The corner is $$\vert x\vert$$. Its one-sided quotients are $$-1$$ and $$+1$$ at every $$h$$, never converging on each other because there is nothing to converge — they were already constant. Two finite slopes that disagree is the cheapest way to have no derivative, and the graph shows it as a sharp turn.
 
 The cusp is $$x^{2/3}$$. Push $$h$$ down and the quotients read $$\pm 2.15$$, then $$\pm 4.64$$, then $$\pm 10$$, then $$\pm 21.5$$, running to opposite infinities. The two branches both turn vertical, in opposite directions, and the curve is pinched to a point.
 
@@ -171,7 +171,7 @@ The fourth button is different in kind. The first three functions are all contin
 
 That is the one-way implication the course states outright: if $$f$$ is differentiable at a point, then it is continuous at that point. The contrapositive is the usable form — *not continuous, therefore not differentiable* — and you can stop there. The framework adds a corollary worth having: if a point is not in the domain of $$f$$, it is not in the domain of $$f'$$ either.
 
-The converse is false, and the framework says so in as many words: a continuous function may fail to be differentiable at a point in its domain. The first three buttons are that sentence made concrete — all continuous at 0, none with a derivative there. Two of them are the framework's own illustrative examples: $$|x|$$, where the one-sided difference quotients are unequal, and $$x^{1/3}$$, where the tangent line is vertical and has no slope. So "continuous" buys you nothing about differentiability, while "differentiable" buys you continuity for free.
+The converse is false, and the framework says so in as many words: a continuous function may fail to be differentiable at a point in its domain. The first three buttons are that sentence made concrete — all continuous at 0, none with a derivative there. Two of them are the framework's own illustrative examples: $$\vert x\vert$$, where the one-sided difference quotients are unequal, and $$x^{1/3}$$, where the tangent line is vertical and has no slope. So "continuous" buys you nothing about differentiability, while "differentiable" buys you continuity for free.
 
 Which makes the two claims worth keeping in the right order:
 
@@ -191,5 +191,5 @@ $$f(x) = \begin{cases} x^2 & x \le 1 \\ 2x - 5 & x > 1 \end{cases}$$
 The one-sided derivatives at $$x = 1$$ are $$2x = 2$$ and $$2$$, which match perfectly. But the function values are $$1$$ and $$-3$$, so $$f$$ is not even continuous at 1, and there is no derivative regardless of how well the slopes agree. Matching slopes across a gap means nothing.
 
 <div class="article-note" markdown="1">
-A self-test at the slider: the vertical tangent and the cusp both send their quotients to infinity, so what distinguishes them, in one sentence, is the *sign*. Now predict what $$-x^{2/3}$$ would look like and which pair of infinities it would produce. Then say which of the four cases $$\sqrt{|x|}$$ belongs to. The classification is entirely a question about the two one-sided quotients, which is why the panel prints them separately and prints nothing else.
+A self-test at the slider: the vertical tangent and the cusp both send their quotients to infinity, so what distinguishes them, in one sentence, is the *sign*. Now predict what $$-x^{2/3}$$ would look like and which pair of infinities it would produce. Then say which of the four cases $$\sqrt{\vert x\vert}$$ belongs to. The classification is entirely a question about the two one-sided quotients, which is why the panel prints them separately and prints nothing else.
 </div>

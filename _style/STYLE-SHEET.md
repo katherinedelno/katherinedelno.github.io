@@ -394,6 +394,37 @@ Every chunky construct inside an inline `$$…$$` therefore has to be shrunk by 
 | fraction | `\tfrac{a}{b}` | `\frac{a}{b}` |
 | integral | `\textstyle\int_a^b` | `\int_a^b` |
 | sum, product | `\textstyle\sum`, `\textstyle\prod` | `\sum`, `\prod` |
+| absolute value | `\vert x\vert` | `\left\vert x\right\vert` |
+| evaluation bar | — | `\left.\tfrac{dy}{dx}\right\vert_{x=a}` |
+
+## Never type a bare pipe, anywhere kramdown can see it
+
+**This is the one that breaks silently and looks like a rendering bug.** Kramdown starts a
+table when a paragraph's first line contains an unescaped `|`. A line like
+
+```
+The function $$|x| \cdot 1$$ has no derivative at 0.
+```
+
+is not a paragraph containing absolute values. It is a three-cell table row, and it renders as
+one: the prose is chopped into boxes and the mathematics never reaches MathJax. Nothing warns
+you, and the source looks correct.
+
+So absolute value is always `\vert … \vert`, and the evaluation bar is always
+`\left. … \right\vert_{…}`. Never `|`, and never `\lvert`/`\rvert` either — those work, but the
+corpus settled on `\vert` before this was written down, and one convention is worth more than a
+marginally better one.
+
+The rule applies to display equations on their own line as well as to inline mathematics, since
+a display equation is also the first line of its block.
+
+Pipes are safe in three places, all of which kramdown skips: inside `<script>`, inside any
+element carrying `markdown="0"` (which is every `viz` block), and inside Liquid tags
+`{%- … -%}` (which is how `resources.md` uses them). They are **not** safe inside an
+`article-note`, which carries `markdown="1"`.
+
+To check a file: strip the script and `markdown="0"` regions, then look for any remaining line
+containing `|` that is not part of a deliberate table.
 
 `\dfrac` is **never** correct inline — it forces display style, which is the opposite of
 what is wanted. In display mathematics it is only ever used to force a nested fraction back

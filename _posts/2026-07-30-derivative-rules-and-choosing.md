@@ -31,7 +31,7 @@ and if in addition $$g(x) \neq 0$$, then
 
 $$\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}.$$
 
-That is the whole card. Both rules require the pieces to be differentiable, and that hypothesis is doing work: when a factor fails it, the rule is silent rather than negative. The function $$|x| \cdot 1$$ has no derivative at 0, and $$|x| \cdot |x| = x^2$$ has one, so a [point where differentiability fails](/2026/07/30/where-differentiability-fails.html) inside a product has to be examined directly.
+That is the whole card. Both rules require the pieces to be differentiable, and that hypothesis is doing work: when a factor fails it, the rule is silent rather than negative. The function $$\vert x\vert \cdot 1$$ has no derivative at 0, and $$\vert x\vert \cdot \vert x\vert = x^2$$ has one, so a [point where differentiability fails](/2026/07/30/where-differentiability-fails.html) inside a product has to be examined directly.
 
 ## Two rules that get reached for too early
 
