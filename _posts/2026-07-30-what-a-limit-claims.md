@@ -11,6 +11,7 @@ kind: foundations
 sequence: 2
 interactive: true
 blurb: "Narrow the window and watch the outputs close in on a value the function skips"
+featured: true
 ---
 
 A limit says nothing about what happens at the point. It is a claim about every point nearby, and the value at the centre is deliberately excluded from the question.

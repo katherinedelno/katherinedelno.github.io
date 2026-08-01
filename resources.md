@@ -94,20 +94,24 @@ permalink: /resources/
     {%- for p in items -%}
       {%- if p.featured -%}{%- assign feats = feats | push: p -%}{%- endif -%}
     {%- endfor -%}
-    {%- comment -%} at most one featured article per section; two break the build loudly {%- endcomment -%}
-    {%- if feats.size > 1 -%}
-      {%- include ERROR-two-featured-articles-in-one-section -%}
+    {%- comment -%}
+      Featured articles render in sequence position rather than being hoisted to the front,
+      so that several of them land spread through a section instead of stacked at the top.
+      At most five per section; a sixth breaks the build loudly. Even dispersion is not
+      enforced here — the console warns when two featured boxes sit too close together.
+    {%- endcomment -%}
+    {%- if feats.size > 5 -%}
+      {%- include ERROR-more-than-five-featured-articles-in-one-section -%}
     {%- endif -%}
   <section class="rxm-section" id="sec-{{ cat }}" data-cat="{{ cat }}" aria-label="{{ bits[1] }}">
     <div class="rxm-sechead"><h2 class="rxm-secname">{{ bits[1] }}</h2><p class="rxm-seccount">{{ items.size }} articles</p></div>
     <div class="rxm-grid">
-      {%- for p in feats -%}
-        {%- include resource-entry.html post=p featured=true cat=cat -%}
-      {%- endfor -%}
       {%- for p in items -%}
-        {%- unless p.featured -%}
+        {%- if p.featured -%}
+          {%- include resource-entry.html post=p featured=true cat=cat -%}
+        {%- else -%}
           {%- include resource-entry.html post=p cat=cat -%}
-        {%- endunless -%}
+        {%- endif -%}
       {%- endfor -%}
     </div>
   </section>
@@ -159,6 +163,20 @@ permalink: /resources/
       if(n < 90 || n > 200){
         var t = el.closest('a').querySelector('.rxm-title').textContent;
         console.warn('featured description for "' + t + '" is ' + n + ' characters (want roughly 90–200)');
+      }
+    });
+
+    // editing aid: warn (only) when two featured boxes in a section sit too close together
+    document.querySelectorAll('.rxm-section').forEach(function(sec){
+      var boxes = Array.prototype.slice.call(sec.querySelectorAll('.rxm-box'));
+      var at = [];
+      boxes.forEach(function(b, i){ if(b.classList.contains('rxm-feat')) at.push(i); });
+      for(var i = 1; i < at.length; i++){
+        var gap = at[i] - at[i-1];
+        if(gap < 4){
+          console.warn('featured boxes in "' + sec.getAttribute('data-cat') + '" are only ' +
+            gap + ' apart (want 4 or more, so they disperse rather than cluster)');
+        }
       }
     });
   })();
