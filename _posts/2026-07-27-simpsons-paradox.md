@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
-sequence: 2
+sequence: 3
 interactive: true
 blurb: "Better in every subgroup, worse overall: the lurking variable at work"
 ---

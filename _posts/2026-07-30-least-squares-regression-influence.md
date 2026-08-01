@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "10 min read"
 math: true
 kind: foundations
-sequence: 1
+sequence: 2
 interactive: true
 blurb: "Drag one point and watch the line, the residuals, and r respond"
 ---

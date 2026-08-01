@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
-sequence: 5
+sequence: 6
 interactive: true
 blurb: "Why a 99% accurate test can produce positives that are usually wrong"
 ---

@@ -9,7 +9,6 @@ math: true
 kind: foundations
 sequence: 8
 interactive: true
-featured: true
 blurb: "Run a hundred studies and count which intervals capture the truth"
 ---
 

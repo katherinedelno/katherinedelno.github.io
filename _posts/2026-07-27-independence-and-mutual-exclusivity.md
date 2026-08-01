@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: foundations
-sequence: 4
+sequence: 5
 interactive: true
 blurb: "Mutually exclusive events are as dependent as events can be"
 ---
