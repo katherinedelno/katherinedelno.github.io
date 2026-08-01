@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "9 min read"
 math: true
 kind: foundations
-sequence: 13
+sequence: 14
 interactive: true
 blurb: "One error is chosen in advance; the other is inherited"
 ---
