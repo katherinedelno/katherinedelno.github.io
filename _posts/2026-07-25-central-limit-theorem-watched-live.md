@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: foundations
-sequence: 7
+sequence: 8
 interactive: true
 blurb: "Draw samples from a skewed population and watch the means organize"
 ---

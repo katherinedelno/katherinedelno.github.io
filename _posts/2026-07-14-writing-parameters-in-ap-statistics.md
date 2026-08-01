@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: mechanics
-sequence: 10
+sequence: 11
 interactive: false
 blurb: "A clean way to write parameters and hypotheses for every procedure"
 ---

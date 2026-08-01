@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "9 min read"
 math: true
 kind: foundations
-sequence: 11
+sequence: 12
 interactive: true
 blurb: "Simulate studies where nothing is happening, then find your result among them"
 ---

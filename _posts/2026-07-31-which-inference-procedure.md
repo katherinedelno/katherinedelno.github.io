@@ -7,7 +7,7 @@ course: "AP Statistics"
 read_time: "8 min read"
 math: true
 kind: mechanics
-sequence: 14
+sequence: 15
 interactive: true
 blurb: "Three questions about the design, asked before any arithmetic"
 ---
