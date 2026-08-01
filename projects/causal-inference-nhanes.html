@@ -1,0 +1,396 @@
+---
+layout: project
+title: "Causal analysis of food insecurity and type 2 diabetes"
+permalink: /projects/causal-inference-nhanes/
+description: "Estimating the effect of food insecurity on type 2 diabetes across three NHANES cycles with a doubly robust estimator, and an account of what cross-sectional survey data can and cannot support causally."
+---
+
+<p class="pj-eyebrow"><a href="{{ '/about/#statistical-work' | relative_url }}">Research</a></p>
+
+<h1>Causal analysis of food insecurity and type 2 diabetes</h1>
+
+<p class="pj-meta">Co-author &middot; Department of Biostatistics, University of Washington &middot; 2024</p>
+
+<p class="pj-lede">Food insecurity and type 2 diabetes are strongly associated, and the association is easy to measure. Whether one causes the other is a different question, and answering it requires data that can order the two in time. This project asked what could be established from the National Health and Nutrition Examination Survey, one of the richest sources of population health data in the United States. The estimated effect was <strong>close to zero and not significant</strong> under any specification, and the more durable contribution is a precise account of why the design, rather than the sample, was the binding constraint.</p>
+
+<div class="pj-stats">
+  <div class="pj-stat">
+    <div class="pj-stat__value">3</div>
+    <div class="pj-stat__label">NHANES survey cycles pooled, spanning 2013 to 2018</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">AIPW</div>
+    <div class="pj-stat__label">augmented inverse probability weighting, with g-computation as a comparison</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">5</div>
+    <div class="pj-stat__label">causal assumptions stated and audited before any estimate was produced</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">1 of 2</div>
+    <div class="pj-stat__label">planned questions answerable; the second was abandoned on identification grounds</div>
+  </div>
+</div>
+
+<h2>The question, and the shape it had to take</h2>
+
+<p>The substantive question was the average treatment effect of experiencing food insecurity on the subsequent development of type 2 diabetes. Randomising anyone into food insecurity is not available as a research design, so the effect has to be recovered from observational data under assumptions, and the assumptions have to be defensible.</p>
+
+<p>NHANES is cross-sectional. Each respondent is interviewed and examined once, which ordinarily forecloses any causal claim, because exposure and outcome are observed at the same instant and nothing in the data says which came first. The route around this was to build temporality out of the instrument itself. NHANES asks whether a respondent has had their glycohemoglobin measured by a clinician in the previous twelve months, and what that value was, and it separately measures glycohemoglobin directly at examination. A respondent who reports a non-diabetic value from the past year and presents a diabetic value at examination has, within the resolution of the survey, developed diabetes during a known interval. The food insecurity item asks about the same twelve months. That construction gives a genuine before and after inside a single-visit survey, and it is the only reason the question could be asked at all.</p>
+
+<p>It also costs almost the entire sample. Restricting to respondents with both a recalled clinical measurement and an examination measurement reduced three pooled cycles to a few hundred people, which is the first thing to say about the precision of anything that follows.</p>
+
+<h2>The assumptions, stated before the estimate</h2>
+
+<p>Five conditions have to hold for the estimand to be a causal effect rather than a weighted association. Writing them down first, and reporting honestly on each, is most of the methodological work in a study of this kind.</p>
+
+<div class="pj-tablewrap">
+  <table class="pj-table">
+    <caption>Table 1 &middot; Identification assumptions and their standing in this design</caption>
+    <thead><tr><th scope="col" style="width:24%">Assumption</th><th scope="col" style="text-align:left">Status</th></tr></thead>
+    <tbody>
+      <tr><td>Positivity</td><td style="text-align:left; white-space:normal">Satisfied. Every covariate stratum contains both exposed and unexposed respondents.</td></tr>
+      <tr><td>Conditional exchangeability</td><td style="text-align:left; white-space:normal">Partially satisfied. Age, sex, race and ethnicity, educational attainment, and survey cycle were adjusted for. Dietary intake, physical activity, and family history were not measured in a usable form and remain unmeasured confounders.</td></tr>
+      <tr><td>No reverse causation</td><td style="text-align:left; white-space:normal">Assumed, not established. The construction places the exposure window before the outcome window, but food insecurity is treated as persistent over the interval, and diabetes can itself produce food insecurity through medical cost. The direction is argued rather than observed.</td></tr>
+      <tr><td>SUTVA</td><td style="text-align:left; white-space:normal">Reasonable. One respondent's food security is unlikely to alter another's diabetes risk within this sampling frame.</td></tr>
+      <tr><td>Accurate measurement</td><td style="text-align:left; white-space:normal">Weakest link. The prior glycohemoglobin value is recalled by the respondent from a clinical encounter up to a year earlier, and food insecurity is self-reported. Both are exposed to recall bias, and misclassification of either attenuates the estimate.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Two of the five are compromised in ways no estimator can repair. That is the finding, and it is worth more than the point estimate that follows from it.</p>
+
+<h2>Why a doubly robust estimator</h2>
+
+<p>With a set of measured confounders there are two conventional routes to the average treatment effect. Model the outcome given treatment and covariates and average the contrast over the covariate distribution, which is g-computation. Or model the probability of treatment given covariates, the propensity score, and reweight the observed outcomes so that the two arms are comparable, which is inverse probability weighting. Each requires its own model to be right, and there is rarely a good reason to be confident in either.</p>
+
+<p>Augmented inverse probability weighting combines them:</p>
+
+<p style="text-align:center; font-family:var(--pj-mono); font-size:0.92rem; line-height:2; margin:1.7rem 0;">
+E[ &micro;<sub>1</sub>(X) &minus; &micro;<sub>0</sub>(X) + A{Y &minus; &micro;<sub>1</sub>(X)} / &pi;(X) &minus; (1&minus;A){Y &minus; &micro;<sub>0</sub>(X)} / {1 &minus; &pi;(X)} ]
+</p>
+
+<p>where &pi;(X) is the propensity score and &micro;<sub>a</sub>(X) the expected outcome under treatment <em>a</em>. The estimator has a property that is genuinely remarkable the first time one meets it: it remains consistent if <em>either</em> the outcome model or the propensity model is correctly specified, without requiring both. Two chances at the truth, needing only one to land. This was the reason for choosing it over either component alone, given how little confidence the covariate set warranted.</p>
+
+<figure class="pj-figure" id="dr-live">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 1 &middot; Interactive</div>
+    <h3 class="pj-figure__title">Double robustness, demonstrated</h3>
+  </div>
+
+  <div class="pj-figure__body">
+    <div class="pj-controls">
+      <div class="pj-control">
+        <label for="dr-ps">Propensity model <span class="pj-val" id="dr-ps-lab">correct</span></label>
+        <select id="dr-ps">
+          <option value="1" selected>Correctly specified</option>
+          <option value="0">Misspecified (omits a nonlinear term)</option>
+        </select>
+      </div>
+      <div class="pj-control">
+        <label for="dr-om">Outcome model <span class="pj-val" id="dr-om-lab">correct</span></label>
+        <select id="dr-om">
+          <option value="1" selected>Correctly specified</option>
+          <option value="0">Misspecified (omits a nonlinear term)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="pj-actions">
+      <button class="pj-btn" id="dr-run" type="button"><span>Run 200 replications</span></button>
+      <div class="pj-progress" aria-hidden="true"><div class="pj-progress__bar" id="dr-bar"></div></div>
+    </div>
+
+    <div id="dr-plot"></div>
+
+    <div class="pj-legend">
+      <span><i style="border-color:var(--pj-flag)"></i>true average treatment effect</span>
+      <span><i class="dot" style="background:var(--pj-accent)"></i>estimates essentially unbiased</span>
+      <span><i class="dot" style="background:var(--pj-null)"></i>estimates biased</span>
+    </div>
+  </div>
+
+  <figcaption class="pj-figure__caption">
+    <p>Two hundred datasets of 1,000 observations are simulated from a known data-generating process with a true treatment effect of 2. Each is analysed three ways, and the sampling distribution of each estimator is drawn. Turn off either nuisance model and its corresponding single-model estimator moves off target while AIPW stays put. Turn off both and AIPW moves with them, which is the honest boundary of the property: doubly robust is not robust to being wrong twice.</p>
+    <p>Inverse probability weighting carries a small bias even when its model is correct, visible as a slight rightward shift. This is a finite-sample effect of dividing by estimated propensities near zero, and it is the practical reason the augmented estimator is usually preferred to the weighting estimator alone.</p>
+  </figcaption>
+</figure>
+
+<p>In the analysis itself the estimator was fitted with the <code>AIPW</code> package, with g-computation from <code>RobinCar</code> run alongside as a comparison, over a nested sequence of covariate sets ordered from most to least likely to confound: survey cycle, then age, then race and ethnicity, then sex, then educational attainment. Presenting a sequence rather than a single adjusted model shows how the estimate responds to adjustment, which is more informative than any one specification.</p>
+
+<h2>What the analysis returned</h2>
+
+<p>The estimated average treatment effect of food insecurity on developing diabetes was close to zero across every covariate set, and no specification reached statistical significance at the five percent level. The two estimators agreed with each other closely, which is reassuring about the fitting and says nothing about the identification.</p>
+
+<p>The correct reading of a null result under these conditions is narrow. With a few hundred respondents, a rare outcome, self-reported exposure, and recalled outcome history, the study had little power to detect a moderate effect, and the measurement error present in both exposure and outcome attenuates estimates toward zero as a matter of course. The result is consistent with no effect and equally consistent with a real effect the design could not see. Published cohort studies with longitudinal follow-up have reported substantially elevated diabetes incidence among food insecure households; nothing here contradicts that, and nothing here supports it either.</p>
+
+<h2>The question that could not be asked</h2>
+
+<p>A second question, the effect of vitamin D deficiency on diabetes, was planned and abandoned. Serum vitamin D is measured only at examination, and because NHANES draws a fresh sample each cycle there is no way to observe a respondent's earlier level. No construction analogous to the recalled glycohemoglobin measurement exists in the instrument, so exposure and outcome are simultaneous and the effect is not identified.</p>
+
+<p>An instrumental variable was considered, with average regional sun exposure as the leading candidate. It was rejected because every candidate examined violated the exclusion restriction: sunlight and geography influence diabetes risk through physical activity, diet, and the socioeconomic composition of place, not solely through vitamin D. An instrument that fails the exclusion restriction does not weaken an estimate; it invalidates it. Reporting the question as unanswerable was the correct output, and it belongs in the write-up rather than being quietly dropped.</p>
+
+<h2>What would make NHANES answer this</h2>
+
+<p>The constraint is not the size of NHANES or the quality of its measurement, both of which are excellent. It is that the survey observes each person once. The precedent for the fix already exists in the programme's own history: the NHANES Epidemiologic Follow-up Study re-interviewed participants from an earlier wave and, in doing so, produced a dataset that has supported serious causal work for decades, including the canonical analysis of smoking cessation and weight gain that appears in causal inference textbooks. A follow-up component attached to the modern continuous survey would convert an unmatched collection of cross-sectional measurements into a longitudinal resource, and would make questions of this kind answerable rather than merely askable.</p>
+
+<p>That is the argument the project ended on, and it is the reason a null finding was still worth writing up. A study that establishes precisely why a question cannot be answered with the available data has produced information, provided it is explicit about which assumption failed and what data would repair it.</p>
+
+<div class="pj-note">
+  <span class="pj-note__label">Note</span>
+  <p>The manuscript itself is not circulated publicly, at the authors' request. This page describes the design, the estimator, and the methodological conclusions; the simulation above is an independent illustration of double robustness and uses no study data.</p>
+</div>
+
+<p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
+
+<script>
+/* =========================================================================
+   Figure 1 — double robustness of AIPW, simulated live.
+   True ATE = 2. Propensity depends nonlinearly on X1; outcome depends
+   nonlinearly on X1 and X2. "Misspecified" drops the nonlinear terms.
+   ========================================================================= */
+(function () {
+  var TRUE_ATE = 2, N = 1000, REPS = 200;
+
+  function mul(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function nrm(r) {
+    var u = 0, v = 0;
+    while (!u) u = r();
+    while (!v) v = r();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+  var sig = function (x) { return 1 / (1 + Math.exp(-x)); };
+
+  /* Gaussian elimination with partial pivoting */
+  function solve(A, b) {
+    var n = b.length, M = A.map(function (row, i) { return row.concat([b[i]]); }), c, r, k;
+    for (c = 0; c < n; c++) {
+      var p = c;
+      for (r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[p][c])) p = r;
+      var tmp = M[c]; M[c] = M[p]; M[p] = tmp;
+      if (Math.abs(M[c][c]) < 1e-10) M[c][c] = 1e-10;
+      for (r = 0; r < n; r++) {
+        if (r === c) continue;
+        var f = M[r][c] / M[c][c];
+        for (k = c; k <= n; k++) M[r][k] -= f * M[c][k];
+      }
+    }
+    return M.map(function (row, i) { return row[n] / row[i]; });
+  }
+
+  function lm(X, y) {
+    var p = X[0].length, n = X.length, i, j, k;
+    var A = [], b = new Array(p).fill(0);
+    for (j = 0; j < p; j++) A.push(new Array(p).fill(0));
+    for (i = 0; i < n; i++) {
+      for (j = 0; j < p; j++) {
+        b[j] += X[i][j] * y[i];
+        for (k = 0; k < p; k++) A[j][k] += X[i][j] * X[i][k];
+      }
+    }
+    return solve(A, b);
+  }
+
+  function logitFit(X, y) {
+    var p = X[0].length, n = X.length, beta = new Array(p).fill(0), it, i, j, k;
+    for (it = 0; it < 25; it++) {
+      var A = [], g = new Array(p).fill(0);
+      for (j = 0; j < p; j++) A.push(new Array(p).fill(0));
+      for (i = 0; i < n; i++) {
+        var eta = 0;
+        for (j = 0; j < p; j++) eta += X[i][j] * beta[j];
+        var mu = sig(eta), w = Math.max(mu * (1 - mu), 1e-6);
+        for (j = 0; j < p; j++) {
+          g[j] += X[i][j] * (y[i] - mu);
+          for (k = 0; k < p; k++) A[j][k] += w * X[i][j] * X[i][k];
+        }
+      }
+      var step = solve(A, g), mx = 0;
+      for (j = 0; j < p; j++) { beta[j] += step[j]; mx = Math.max(mx, Math.abs(step[j])); }
+      if (mx < 1e-8) break;
+    }
+    return beta;
+  }
+
+  function oneRep(psOK, omOK, seed) {
+    var r = mul(seed), X1 = [], X2 = [], A = [], Y = [], i;
+    for (i = 0; i < N; i++) {
+      var x1 = nrm(r), x2 = nrm(r);
+      var pi = sig(0.5 * x1 - 1.0 * x2 + 0.6 * (x1 * x1 - 1));
+      var a = r() < pi ? 1 : 0;
+      X1.push(x1); X2.push(x2); A.push(a);
+      Y.push(1 + TRUE_ATE * a + 1.2 * x1 + 0.9 * x1 * x1 + 0.8 * x2 + 1.0 * x2 * x2 + nrm(r));
+    }
+
+    var Xp = [];
+    for (i = 0; i < N; i++) {
+      Xp.push(psOK ? [1, X1[i], X2[i], X1[i] * X1[i]] : [1, X1[i], X2[i]]);
+    }
+    var bp = logitFit(Xp, A), ps = [];
+    for (i = 0; i < N; i++) {
+      var e = 0;
+      for (var j = 0; j < Xp[i].length; j++) e += Xp[i][j] * bp[j];
+      ps.push(Math.min(0.98, Math.max(0.02, sig(e))));
+    }
+
+    var Xo = [];
+    for (i = 0; i < N; i++) {
+      Xo.push(omOK
+        ? [1, A[i], X1[i], X2[i], X1[i] * X1[i], X2[i] * X2[i]]
+        : [1, A[i], X1[i], X2[i]]);
+    }
+    var bo = lm(Xo, Y);
+    function mu(a, i) {
+      var row = omOK
+        ? [1, a, X1[i], X2[i], X1[i] * X1[i], X2[i] * X2[i]]
+        : [1, a, X1[i], X2[i]];
+      var e = 0;
+      for (var j = 0; j < row.length; j++) e += row[j] * bo[j];
+      return e;
+    }
+
+    var g = 0, aipw = 0, n1 = 0, d1 = 0, n0 = 0, d0 = 0;
+    for (i = 0; i < N; i++) {
+      n1 += A[i] * Y[i] / ps[i];        d1 += A[i] / ps[i];
+      n0 += (1 - A[i]) * Y[i] / (1 - ps[i]); d0 += (1 - A[i]) / (1 - ps[i]);
+      var m1 = mu(1, i), m0 = mu(0, i);
+      g += m1 - m0;
+      aipw += m1 - m0 + A[i] * (Y[i] - m1) / ps[i] - (1 - A[i]) * (Y[i] - m0) / (1 - ps[i]);
+    }
+    return { ipw: n1 / d1 - n0 / d0, g: g / N, aipw: aipw / N };
+  }
+
+  /* ---- drawing ---- */
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  function draw(res) {
+    var names = [
+      ['ipw', 'Inverse probability weighting', 'needs the propensity model'],
+      ['g', 'G-computation', 'needs the outcome model'],
+      ['aipw', 'Augmented IPW', 'needs either one']
+    ];
+    var W = 720, rowH = 96, mt = 22, mb = 44, ml = 176, mr = 96;
+    var H = mt + names.length * rowH + mb;
+    var xlo = 0.6, xhi = 3.6;
+    var X = function (v) { return ml + (v - xlo) / (xhi - xlo) * (W - ml - mr); };
+
+    var svg = el('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+      'aria-label': 'Sampling distributions of three estimators against the true treatment effect of 2.'
+    });
+
+    /* truth line */
+    svg.appendChild(el('line', {
+      x1: X(TRUE_ATE), x2: X(TRUE_ATE), y1: mt - 10, y2: H - mb + 4,
+      stroke: 'var(--pj-flag)', 'stroke-width': 1.6
+    }));
+    var tl = el('text', { x: X(TRUE_ATE) + 6, y: mt - 1, 'font-size': 11, fill: 'var(--pj-flag)' });
+    tl.textContent = 'true ATE = 2';
+    svg.appendChild(tl);
+
+    names.forEach(function (nm, r) {
+      var vals = res[nm[0]], y0 = mt + r * rowH, mid = y0 + rowH / 2;
+      var mean = vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
+      var bias = mean - TRUE_ATE;
+      var biased = Math.abs(bias) > 0.12;
+      var col = biased ? 'var(--pj-null)' : 'var(--pj-accent)';
+
+      var lab = el('text', { x: ml - 16, y: mid - 3, 'text-anchor': 'end', 'font-size': 12.5, fill: 'currentColor', 'fill-opacity': 0.9 });
+      lab.textContent = nm[1];
+      svg.appendChild(lab);
+      var sub = el('text', { x: ml - 16, y: mid + 13, 'text-anchor': 'end', 'font-size': 10.5, fill: 'currentColor', 'fill-opacity': 0.5 });
+      sub.textContent = nm[2];
+      svg.appendChild(sub);
+
+      /* histogram */
+      var NB = 46, bw = (xhi - xlo) / NB, counts = new Array(NB).fill(0);
+      vals.forEach(function (v) {
+        var b = Math.floor((v - xlo) / bw);
+        if (b >= 0 && b < NB) counts[b]++;
+      });
+      var cmax = Math.max.apply(null, counts) || 1, hMax = rowH - 34;
+      for (var b = 0; b < NB; b++) {
+        if (!counts[b]) continue;
+        var h = counts[b] / cmax * hMax;
+        svg.appendChild(el('rect', {
+          x: X(xlo + b * bw), y: mid + 14 - h,
+          width: Math.max((W - ml - mr) / NB - 0.8, 0.9), height: h,
+          fill: col, 'fill-opacity': 0.85
+        }));
+      }
+
+      /* mean marker */
+      svg.appendChild(el('line', {
+        x1: X(mean), x2: X(mean), y1: mid + 14 - hMax - 5, y2: mid + 19,
+        stroke: 'currentColor', 'stroke-opacity': 0.75, 'stroke-width': 1.2
+      }));
+
+      var bt = el('text', {
+        x: W - mr + 10, y: mid + 4, 'font-size': 11.5,
+        fill: biased ? 'var(--pj-flag)' : 'currentColor', 'fill-opacity': biased ? 1 : 0.7
+      });
+      bt.textContent = 'bias ' + (bias >= 0 ? '+' : '\u2212') + Math.abs(bias).toFixed(3);
+      svg.appendChild(bt);
+    });
+
+    svg.appendChild(el('line', { x1: ml, x2: W - mr, y1: H - mb + 10, y2: H - mb + 10, stroke: 'currentColor', 'stroke-opacity': 0.25 }));
+    [1.0, 1.5, 2.0, 2.5, 3.0, 3.5].forEach(function (v) {
+      var t = el('text', { x: X(v), y: H - mb + 27, 'text-anchor': 'middle', 'font-size': 10.5, fill: 'currentColor', 'fill-opacity': 0.5 });
+      t.textContent = v.toFixed(1);
+      svg.appendChild(t);
+    });
+    var axl = el('text', { x: (ml + W - mr) / 2, y: H - 6, 'text-anchor': 'middle', 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.5 });
+    axl.textContent = 'estimated average treatment effect';
+    svg.appendChild(axl);
+
+    var host = document.getElementById('dr-plot');
+    host.innerHTML = '';
+    host.appendChild(svg);
+  }
+
+  /* ---- run loop ---- */
+  var running = false;
+  function run() {
+    if (running) return;
+    running = true;
+    var btn = document.getElementById('dr-run'), bar = document.getElementById('dr-bar');
+    btn.disabled = true;
+
+    var psOK = document.getElementById('dr-ps').value === '1';
+    var omOK = document.getElementById('dr-om').value === '1';
+    document.getElementById('dr-ps-lab').textContent = psOK ? 'correct' : 'wrong';
+    document.getElementById('dr-om-lab').textContent = omOK ? 'correct' : 'wrong';
+
+    var res = { ipw: [], g: [], aipw: [] }, i = 0;
+    (function chunk() {
+      var t0 = performance.now();
+      while (i < REPS && performance.now() - t0 < 24) {
+        var e = oneRep(psOK, omOK, 5000 + i * 13);
+        res.ipw.push(e.ipw); res.g.push(e.g); res.aipw.push(e.aipw);
+        i++;
+      }
+      bar.style.width = (i / REPS * 100) + '%';
+      if (i < REPS) { requestAnimationFrame(chunk); return; }
+      draw(res);
+      bar.style.width = '0%';
+      btn.disabled = false;
+      running = false;
+    })();
+  }
+
+  document.getElementById('dr-run').addEventListener('click', run);
+  document.getElementById('dr-ps').addEventListener('change', run);
+  document.getElementById('dr-om').addEventListener('change', run);
+
+  if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 1500 });
+  else setTimeout(run, 300);
+})();
+</script>

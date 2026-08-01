@@ -1,0 +1,847 @@
+---
+layout: project
+title: "A permutation-based random forest diagnostic for linear mixed models"
+permalink: /projects/random-forest-spec-check/
+description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a random forest to the residuals of a linear mixed model and uses a within-cluster permutation test to decide whether the leftover structure is real."
+---
+
+<p class="pj-eyebrow"><a href="{{ '/about/#statistical-work' | relative_url }}">Research</a></p>
+
+<h1>A permutation-based random forest diagnostic for linear mixed models</h1>
+
+<p class="pj-meta">Independent research · Sole author · Department of Statistics, University of Washington · 2025</p>
+
+<p class="pj-lede">A linear mixed model can be wrong in several ways at once, and the standard diagnostics are not well suited to finding out which. <strong>RandomForestSpecCheck</strong> takes a different route: it asks a random forest to predict the fitted model's residuals from the covariates, and uses a permutation test that respects the clustered design to decide whether the forest's success is real. The result is a single verdict on whether the model has left systematic structure behind, without any commitment in advance to the form that structure might take.</p>
+
+<div class="pj-stats">
+  <div class="pj-stat">
+    <div class="pj-stat__value">5,400</div>
+    <div class="pj-stat__label">simulated datasets across 54 parameter configurations, in the first study alone</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">1&ndash;3%</div>
+    <div class="pj-stat__label">empirical false-positive rate at a nominal 5% level, under correct specification</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">80&ndash;100%</div>
+    <div class="pj-stat__label">power against large mean-structure departures in favourable designs</div>
+  </div>
+  <div class="pj-stat">
+    <div class="pj-stat__value">R</div>
+    <div class="pj-stat__label">packaged as a single function over <code>ranger</code> and <code>dplyr</code></div>
+  </div>
+</div>
+
+<h2>The problem with checking a mixed model</h2>
+
+<p>Linear mixed models are the standard instrument for correlated data: repeated measures on the same subject, students inside classrooms, patients inside clinics. Their appeal is that they model the correlation rather than ignoring it, and the price of that appeal is that several assumptions have to hold at once. The fixed effects must have the right functional form. The random effects must have the right structure, which usually means deciding whether a slope varies across clusters and not only an intercept. The residual covariance must be specified correctly. A failure in any one of these can bias estimates or, more often and more insidiously, leave the estimates roughly intact while corrupting the standard errors.</p>
+
+<p>The conventional checks are the ones inherited from ordinary regression. Residuals are plotted against fitted values and inspected for curvature. Normal quantile plots are consulted for the random effects and the within-cluster errors. Information criteria are compared across a handful of candidate specifications. Each of these is useful and each has a characteristic blind spot. A residual plot is a judgement call, and a dense cloud of several thousand points will absorb a good deal of structure before it looks anything other than round. Information criteria compare only the models an analyst thought to fit, so a misspecification that occurred to nobody is never in the comparison at all. Formal tests for mixed-model adequacy exist, but they tend to be aimed at one alternative at a time, which returns the analyst to the same difficulty: you have to guess what is wrong before you can test for it.</p>
+
+<div class="pj-thesis">
+  <p>If a mixed model is correctly specified, its residuals carry no information about the covariates. RandomForestSpecCheck hands the residuals and the covariates to a random forest and asks it to find some anyway. A permutation test then decides whether what the forest found could plausibly have arisen from noise.</p>
+</div>
+
+<h2>The statistic</h2>
+
+<p>Fit the mixed model, extract the conditional residuals, and regress them on a set of candidate predictors using a random forest. The predictors are the ones an analyst suspects might have been mishandled: time, the cluster identifier, a covariate that entered only linearly. The measure of the forest's success is its out-of-bag coefficient of determination,</p>
+
+<p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">R&sup2;<sub>oob</sub> = 1 &minus; MSE<sub>oob</sub> / var(&ecirc;<sub>ij</sub>)</p>
+
+<p>where each tree is grown on a bootstrap sample and evaluated only on the observations that sample left out. Aggregating those out-of-bag predictions gives the forest an internal cross-validation, and so a nearly unbiased estimate of how well it generalises, without setting aside a test set. This matters more here than in an ordinary prediction problem, because a forest with enough depth will fit residual noise perfectly if permitted to score itself on the data it was grown from, and the diagnostic would then flag every model ever fitted.</p>
+
+<p>The framing is a familiar hypothesis test wearing unfamiliar clothes. Under correct specification the conditional expectation of a residual given any predictor is zero, and a sufficiently large forest approximates conditional expectations, so the best achievable out-of-bag R&sup2; is zero up to sampling variability. Under misspecification the forest has something to find. The null and alternative are</p>
+
+<p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">H<sub>0</sub>: E[e | X] = 0&nbsp;&nbsp;&nbsp;versus&nbsp;&nbsp;&nbsp;H<sub>1</sub>: E[e | X] &ne; 0</p>
+
+<p>tested without specifying any parametric alternative. That is the whole point of using a forest rather than an expanded regression: the analyst supplies the variables, not the functional form.</p>
+
+<h2>Where the null distribution comes from</h2>
+
+<p>The out-of-bag R&sup2; of a random forest has no tractable sampling distribution, so it has to be simulated. The obvious device is a permutation test, and the obvious hazard is that the data are clustered. Shuffling residuals freely across the whole dataset would destroy the correlation structure along with the signal, and the resulting null would describe a scenario the data were never drawn from.</p>
+
+<p>The procedure therefore permutes <em>within</em> clusters. Under the null hypothesis of no association between residuals and predictors, residuals are exchangeable inside a cluster: any ordering is as likely as any other, so permuting them leaves the joint distribution alone while severing the link to the predictors. Each cluster keeps its size and its membership; only the internal ordering is scrambled. Refitting the forest to the permuted residuals and repeating <em>B</em> times gives a distribution of out-of-bag R&sup2; values under a design identical to the real one, in a world with nothing to find. The test is valid in finite samples under exchangeability, with no appeal to asymptotics and no assumption that residuals are normal.</p>
+
+<h2>The decision rule</h2>
+
+<p>Because large values of the statistic indicate leftover structure, the test is one-sided and the comparison is against the upper tail. The procedure takes the 97.5th percentile of the permutation distribution as its critical value. On its own, however, statistical significance is a weak standard for a diagnostic: with enough data, structure that explains a fraction of a percent of residual variance will clear any percentile, and an analyst who redesigns a model on that basis has been badly served.</p>
+
+<p>The procedure therefore applies two criteria and flags a model only if both are met:</p>
+
+<p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">R&sup2;<sub>oob</sub> &gt; Q<sub>0.975</sub>&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;R&sup2;<sub>oob</sub> &gt; &tau;</p>
+
+<p>The second criterion is a practical threshold, set by default at &tau; = 0.05, which is to say that the leftover structure must account for at least five percent of residual variance before it is worth an analyst's attention. The default is a judgement rather than a derivation, and it is exposed as an argument for exactly that reason. In the simulations below it balanced sensitivity against specificity well; in the real-data application it turns out to do essentially all of the discriminating work, which is a finding worth stating plainly rather than burying.</p>
+
+<h2>The diagnostic, running</h2>
+
+<p>The panel below is a working implementation of the procedure in the browser, not an illustration of it. It simulates clustered longitudinal data from a model with a quadratic time trend, fits the random-intercepts model that omits the quadratic term, grows a forest on the resulting residuals, builds the permutation null by shuffling those residuals within clusters, and applies the rule. Nothing is precomputed.</p>
+
+<figure class="pj-figure" id="rfsc-live">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 1 &middot; Interactive</div>
+    <h3 class="pj-figure__title">RandomForestSpecCheck applied to an omitted quadratic effect</h3>
+  </div>
+
+  <div class="pj-figure__body">
+    <div class="pj-controls">
+      <div class="pj-control">
+        <label for="rf-gamma">Quadratic coefficient &gamma; <output id="rf-gamma-out">0.30</output></label>
+        <input type="range" id="rf-gamma" min="0" max="0.4" step="0.01" value="0.3">
+      </div>
+      <div class="pj-control">
+        <label for="rf-sigma">Noise SD &sigma;<sub>&epsilon;</sub> <output id="rf-sigma-out">3</output></label>
+        <input type="range" id="rf-sigma" min="1" max="5" step="1" value="3">
+      </div>
+      <div class="pj-control">
+        <label for="rf-n">Clusters <em>n</em> <output id="rf-n-out">20</output></label>
+        <input type="range" id="rf-n" min="10" max="50" step="10" value="20">
+      </div>
+      <div class="pj-control">
+        <label for="rf-m">Cluster size <em>m</em> <output id="rf-m-out">10</output></label>
+        <input type="range" id="rf-m" min="5" max="10" step="5" value="10">
+      </div>
+      <div class="pj-control">
+        <label for="rf-seed">Seed</label>
+        <input type="number" id="rf-seed" value="123" min="1" max="99999" step="1">
+      </div>
+    </div>
+
+    <div class="pj-actions">
+      <button class="pj-btn" id="rf-run" type="button"><span>Run diagnostic</span></button>
+      <div class="pj-progress" aria-hidden="true"><div class="pj-progress__bar" id="rf-bar"></div></div>
+    </div>
+
+    <div id="rf-plot"></div>
+
+    <div class="pj-legend">
+      <span><i class="dot" style="background:var(--pj-null)"></i>permutation null distribution, B = 60</span>
+      <span><i style="border-top-style:dashed;border-color:var(--pj-accent)"></i>Q<sub>0.975</sub></span>
+      <span><i style="border-top-style:dotted;border-color:currentColor"></i>practical threshold &tau; = 0.05</span>
+      <span><i style="border-color:var(--pj-flag)"></i>observed R&sup2;<sub>oob</sub></span>
+    </div>
+
+    <pre class="pj-console" id="rf-console" aria-live="polite" role="status">Running.</pre>
+  </div>
+
+  <figcaption class="pj-figure__caption">
+    <p>Data are generated as y<sub>ij</sub> = 2 + 0.5 t<sub>ij</sub> + &gamma; t<sub>ij</sub>&sup2; + b<sub>i</sub> + &epsilon;<sub>ij</sub> with b<sub>i</sub> ~ N(0, 1) and t<sub>ij</sub> ~ Uniform(0, 10); the fitted model is the random-intercepts model omitting the quadratic term, estimated by profile maximum likelihood over the variance ratio. The forest and the permutation loop are reduced for the browser: 50 trees, B = 60 permutations, and time as the sole predictor, against 500 permutations and a cluster factor in the published procedure. Set &gamma; to zero and the observed statistic falls back inside the null, which is the type-I behaviour the first simulation study was built to measure. Raise the noise to 5 and the flag disappears even at &gamma; = 0.4, which is the power behaviour of the second panel of Figure 2.</p>
+    <p>The null distribution sits below zero, and should. When residuals are shuffled there is genuinely nothing to predict, so a forest scored out-of-bag does worse than the sample mean and the R&sup2; goes negative. A null centred at zero would be evidence that the permutation was not doing its job. It sits further below zero here than in the published runs, because out-of-bag predictions from a fifty-tree forest on a few hundred observations are noisier than those from the full procedure.</p>
+    <p>Checked against the paper at twenty replicates per cell, the reduced version reproduces the published behaviour: nothing flagged at &gamma; = 0 for any noise level, everything flagged at &gamma; = 0.3 with &sigma; = 1, and detection falling away as noise rises, in line with the first row of Figure 2.</p>
+  </figcaption>
+</figure>
+
+<h2>What the method detects, and what it does not</h2>
+
+<p>Four simulation studies were run, each generating data under a specific violation and fitting a model that omitted it. Three concern the mean structure: an omitted quadratic fixed effect, an omitted random slope, and unmodelled AR(1) correlation among the within-cluster errors. The fourth concerns the variance: residual variance increasing with time, fitted with a model assuming homoscedasticity. Every cell of every design was replicated one hundred times, and the quantity reported is the proportion of replicates in which the diagnostic flagged the model.</p>
+
+<figure class="pj-figure" id="rfsc-power">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 2 &middot; Simulation results</div>
+    <h3 class="pj-figure__title">Proportion of replicates flagged, across four misspecifications</h3>
+  </div>
+
+  <div class="pj-figure__body">
+    <div class="pj-seg" role="tablist" aria-label="Simulation study">
+      <button role="tab" type="button" data-study="quad" aria-selected="true">Omitted quadratic effect</button>
+      <button role="tab" type="button" data-study="slope" aria-selected="false">Omitted random slope</button>
+      <button role="tab" type="button" data-study="ar1" aria-selected="false">Unmodelled AR(1)</button>
+      <button role="tab" type="button" data-study="hetero" aria-selected="false">Heteroscedasticity</button>
+    </div>
+
+    <p id="pw-blurb" style="font-size:0.9rem; line-height:1.6; opacity:0.78; margin:0 0 1.2rem;"></p>
+
+    <div id="pw-panels" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(206px, 1fr)); gap:1.1rem;"></div>
+
+    <div class="pj-legend">
+      <span><i class="dot" style="background:#aab4bb"></i>n = 10 clusters</span>
+      <span><i class="dot" style="background:#6c8494"></i>n = 20</span>
+      <span><i class="dot" style="background:#3d5a6c"></i>n = 50</span>
+      <span><i style="border-top-style:dashed;border-color:currentColor"></i>nominal 5% level</span>
+    </div>
+  </div>
+
+  <figcaption class="pj-figure__caption">
+    <p>Each panel fixes a cluster size and a noise level; the horizontal axis is the magnitude of the omitted effect and the vertical axis runs from zero to one. The leftmost point of every series is a correctly specified model, so those values are the empirical type-I error rate and should sit near or below the dashed line.</p>
+  </figcaption>
+</figure>
+
+<p>The three mean-structure studies behave as a diagnostic should. False positives are held between zero and three percent throughout, which is conservative against a nominal five. Power then depends on the two things it ought to depend on, the size of the omitted effect and the signal-to-noise ratio of the design. A strong quadratic trend is caught in eighty to one hundred percent of replicates. A weak one, contributing a coefficient of 0.05, is caught rarely, and the honest reading is that the method requires either a large sample or a quiet one to detect subtle nonlinearity. Omitted random slopes show the same pattern with an added dependence on cluster size: with ten observations per cluster and low noise the diagnostic finds a slope variance of 0.4 in eighty-one to ninety-six percent of replicates, and with five observations per cluster it finds almost nothing, because the temporal information needed to reveal a slope simply is not there. Unmodelled autocorrelation is the hardest of the three, reaching only about a quarter of replicates at &rho; = 0.6.</p>
+
+<p>The fourth study is the one worth dwelling on. Heteroscedastic residuals were essentially never flagged, at any variance strength, in any design. This is not a failure of the implementation; it is a consequence of what the statistic measures. The forest is predicting the residual, not its magnitude, and in a design where the variance grows with time while the mean stays at zero there is no conditional mean for the forest to recover. From the point of view of the statistic the fitted model is adequate, and the statistic says so.</p>
+
+<div class="pj-note">
+  <span class="pj-note__label">Scope</span>
+  <p>RandomForestSpecCheck is a test for unmodelled mean structure, not a general test of model adequacy. Pure variance misspecification, heavy tails, and departures from normality that leave the conditional mean at zero will not be flagged and should not be expected to be. Where those are the concern, variance functions and residual-spread diagnostics remain the right instruments, and this procedure is a complement to them rather than a replacement.</p>
+</div>
+
+<h2>Application: the Framingham Heart Study</h2>
+
+<p>The diagnostic was applied to a subset of the Framingham Heart Study, comprising more than 2,600 cholesterol measurements taken at two-year intervals over ten years, alongside baseline age, sex, and body mass index. Five linear mixed models were fitted. Four are specifications a careful analyst might reasonably choose between: random intercepts, random slopes for time, an AR(1) residual correlation structure, and a quadratic term in time. The fifth is a deliberate act of sabotage, omitting time altogether from the fixed effects, a variable known on biological grounds to matter.</p>
+
+<div class="pj-tablewrap">
+  <table class="pj-table">
+    <caption>Table 1 &middot; Five linear mixed models fitted to the Framingham subset, with diagnostic results</caption>
+    <thead>
+      <tr>
+        <th scope="col">Model</th>
+        <th scope="col">AIC</th>
+        <th scope="col">BIC</th>
+        <th scope="col">Observed R&sup2;</th>
+        <th scope="col">Permutation 2.5th</th>
+        <th scope="col">Permutation 97.5th</th>
+        <th scope="col">Verdict</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Random intercepts</td>
+        <td class="num">130708</td><td class="num">130760</td>
+        <td class="num">&minus;0.008</td><td class="num">&minus;0.162</td><td class="num">&minus;0.127</td>
+        <td class="is-clear">No strong evidence</td>
+      </tr>
+      <tr>
+        <td>Random slopes</td>
+        <td class="num">130415</td><td class="num">130482</td>
+        <td class="num">&minus;0.046</td><td class="num">&minus;0.164</td><td class="num">&minus;0.126</td>
+        <td class="is-clear">No strong evidence</td>
+      </tr>
+      <tr>
+        <td>AR(1) residual correlation</td>
+        <td class="num">130710</td><td class="num">130770</td>
+        <td class="num">&minus;0.007</td><td class="num">&minus;0.162</td><td class="num">&minus;0.126</td>
+        <td class="is-clear">No strong evidence</td>
+      </tr>
+      <tr>
+        <td>Quadratic in time</td>
+        <td class="num">130709</td><td class="num">130770</td>
+        <td class="num">0.031</td><td class="num">&minus;0.075</td><td class="num">&minus;0.050</td>
+        <td class="is-clear">No strong evidence</td>
+      </tr>
+      <tr>
+        <td>Time omitted</td>
+        <td class="num">133091</td><td class="num">133136</td>
+        <td class="num">0.191</td><td class="num">&minus;0.156</td><td class="num">&minus;0.123</td>
+        <td class="is-flagged">Likely misspecified</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<figure class="pj-figure" id="rfsc-fram">
+  <div class="pj-figure__head">
+    <div class="pj-figure__num">Figure 3 &middot; Framingham</div>
+    <h3 class="pj-figure__title">Observed out-of-bag R&sup2; against its permutation interval, by model</h3>
+  </div>
+  <div class="pj-figure__body">
+    <div id="fram-plot"></div>
+    <div class="pj-legend">
+      <span><i style="border-top-width:7px;border-color:var(--pj-null)"></i>permutation 95% interval</span>
+      <span><i class="dot" style="background:var(--pj-accent)"></i>observed R&sup2;, not flagged</span>
+      <span><i class="dot" style="background:var(--pj-flag)"></i>observed R&sup2;, flagged</span>
+      <span><i style="border-top-style:dashed;border-color:currentColor"></i>&tau; = 0.05</span>
+    </div>
+  </div>
+  <figcaption class="pj-figure__caption">
+    <p>The four plausible specifications are indistinguishable at this scale and sit close to zero. The sabotaged model sits at 0.191, four times the practical threshold and well clear of everything else.</p>
+  </figcaption>
+</figure>
+
+<p>Two things are worth reading off the table. The first is the intended result: the four reasonable specifications were cleared and the model missing a known predictor was flagged, with an observed R&sup2; of 0.191 against a threshold of 0.05. Standard residual-versus-fitted plots for all five models produce dense clouds centred at zero, and the sabotaged model's cloud is not visibly different from the others; the quantile plots are likewise unremarkable in all five cases. The misspecification was in the mean structure, which is where the forest was looking and where the eye was not.</p>
+
+<p>The second is less comfortable and more interesting. Every one of the five models, including the four that passed, has an observed R&sup2; above its own permutation 97.5th percentile. The permutation criterion alone separated nothing here. What separated the sabotaged model was the practical threshold, and the reason lies in the geometry of the null: because permuted residuals contain no signal at all, the out-of-bag R&sup2; under the null is reliably negative, so the upper percentile of the null sits below zero and almost any real fit clears it. In a dataset this size the first criterion is close to free. That is precisely the situation the second criterion was introduced for, and the application shows it earning its place rather than merely accompanying the first. It also sharpens a limitation: on data of this scale the procedure's operating characteristics are governed by &tau;, and an analyst who accepted the default without thinking about the effect size it encodes would be delegating the decision to a number they had not chosen.</p>
+
+<h2>Limitations</h2>
+
+<p>The procedure detects mean structure and only mean structure, as the fourth simulation study establishes directly. Power against subtle effects is modest and depends jointly on the number of clusters, the number of observations within them, and the noise level, so a null result in a small or noisy study is weak evidence of adequacy. The forest can only find structure in variables it is given, so a misspecification involving a covariate that was never measured is invisible by construction. And because the permutation scheme deliberately preserves clusters, a wholly omitted cluster-level mean effect is not disrupted under the null and will not be flagged; that failure mode is caught by simpler means, such as comparing average residuals across clusters, but it has to be caught by something. The method is a screening instrument for nuanced within-cluster structure, and it is at its most useful when treated as the first question asked rather than the last.</p>
+
+<h2>The function</h2>
+
+<p>The procedure is packaged as a single R function over <code>ranger</code> for the forests and <code>dplyr</code> for the grouped permutations. It takes a fitted model object, the data, a formula naming the predictors to search, the number of permutations, and the threshold, and it prints a verdict alongside the numbers behind it.</p>
+
+<pre class="pj-code">RandomForestSpecCheck(
+  fitted_model = my_lmm,
+  data         = my_data,
+  formula_rf   = resid_model ~ time + cluster,
+  B            = 500,
+  threshold    = 0.05
+)</pre>
+
+<pre class="pj-console">RandomForestSpecCheck: Random Forest Model Specification Diagnostic for LMMs
+
+<span class="k">Practical threshold:</span>                        <span class="v">0.05</span>
+<span class="k">Observed R-squared:</span>                         <span class="v">0.191</span>
+<span class="k">Permutation mean R-squared and 95% CI:</span>     <span class="v">-0.009 (-0.011, -0.006)</span>
+
+<span class="k">Result:</span> <span class="flag">Model likely misspecified</span>
+
+<span class="k">Interpretation:</span> The observed R-squared exceeds both the upper bound of the
+null distribution and the practical threshold, indicating that the model leaves
+systematic structure in the residuals. This suggests that the model may be
+misspecified.</pre>
+
+<p>The printed output is deliberately verbose. A diagnostic that returns a bare logical invites an analyst to treat it as a verdict, and it is not one; it is a signal that some named variables are still doing work the model has not accounted for. The natural next steps are to read the forest's variable-importance measures to see which ones, and then to attempt the corresponding parametric extension and check whether the flag clears.</p>
+
+<h2>Contribution</h2>
+
+<p>Permutation inference and tree ensembles are both long established, and residual analysis with machine learning has been explored for ordinary and generalised linear models. What had not been assembled was the combination in a mixed-model setting: a within-cluster permutation scheme that respects the nested design, a forest-derived statistic with an interpretable scale, a decision rule that separates significance from magnitude, and a simulation programme that maps where the resulting procedure has power and where it does not, including an explicit negative result. The work was written for submission to <em>Computational Statistics &amp; Data Analysis</em>.</p>
+
+<p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
+
+<script>
+/* =========================================================================
+   Figure 1 — a working RandomForestSpecCheck in the browser.
+   Simulate → fit random-intercepts LMM → forest on residuals → within-cluster
+   permutation null → dual-criteria decision. Nothing here is precomputed.
+   ========================================================================= */
+(function () {
+  var NTREES = 50, B = 60, MAXDEPTH = 7, MINNODE = 5;
+
+  /* --- seeded PRNG so runs are reproducible ---------------------------- */
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function normal(rng) {
+    var u = 0, v = 0;
+    while (u === 0) u = rng();
+    while (v === 0) v = rng();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  /* --- data generating process ----------------------------------------- */
+  function simulate(n, m, sigma, gamma, rng) {
+    var N = n * m, t = new Float64Array(N), y = new Float64Array(N),
+        cl = new Int32Array(N), k = 0;
+    for (var i = 0; i < n; i++) {
+      var b = normal(rng);
+      for (var j = 0; j < m; j++) {
+        var tt = rng() * 10;
+        t[k] = tt; cl[k] = i;
+        y[k] = 2 + 0.5 * tt + gamma * tt * tt + b + sigma * normal(rng);
+        k++;
+      }
+    }
+    return { t: t, y: y, cl: cl, n: n, m: m, N: N };
+  }
+
+  /* --- OLS with two columns, returned with its residual sum of squares -- */
+  function ols2(x0, x1, yy, N) {
+    var s00 = 0, s01 = 0, s11 = 0, s0y = 0, s1y = 0, syy = 0;
+    for (var i = 0; i < N; i++) {
+      var a = x0[i], b = x1[i], c = yy[i];
+      s00 += a * a; s01 += a * b; s11 += b * b;
+      s0y += a * c; s1y += b * c; syy += c * c;
+    }
+    var det = s00 * s11 - s01 * s01;
+    if (Math.abs(det) < 1e-12) return { b0: 0, b1: 0, rss: syy };
+    var b0 = (s11 * s0y - s01 * s1y) / det;
+    var b1 = (s00 * s1y - s01 * s0y) / det;
+    var rss = syy - 2 * (b0 * s0y + b1 * s1y)
+            + b0 * b0 * s00 + 2 * b0 * b1 * s01 + b1 * b1 * s11;
+    return { b0: b0, b1: b1, rss: Math.max(rss, 1e-12) };
+  }
+
+  /* --- random-intercepts LMM by profile ML over lambda = sig2_b/sig2_e ---
+     For balanced clusters, GLS reduces to OLS on partially centred data:
+     y* = y - alpha * ybar_i, with alpha = 1 - 1/sqrt(1 + m*lambda).
+     Conditional residuals then match resid() on an lme fit.            --- */
+  function fitLMM(d) {
+    var n = d.n, m = d.m, N = d.N, i, k;
+    var ybar = new Float64Array(n), tbar = new Float64Array(n);
+    for (k = 0; k < N; k++) { ybar[d.cl[k]] += d.y[k]; tbar[d.cl[k]] += d.t[k]; }
+    for (i = 0; i < n; i++) { ybar[i] /= m; tbar[i] /= m; }
+
+    var x0 = new Float64Array(N), x1 = new Float64Array(N), ys = new Float64Array(N);
+    var lams = [0], G = 44;
+    for (var g = 0; g <= G; g++) lams.push(Math.exp(-6 + g * (Math.log(80) + 6) / G));
+
+    var best = null, bestLam = 0;
+    for (var L = 0; L < lams.length; L++) {
+      var lam = lams[L], alpha = 1 - 1 / Math.sqrt(1 + m * lam);
+      for (k = 0; k < N; k++) {
+        var c = d.cl[k];
+        x0[k] = 1 - alpha;
+        x1[k] = d.t[k] - alpha * tbar[c];
+        ys[k] = d.y[k] - alpha * ybar[c];
+      }
+      var f = ols2(x0, x1, ys, N);
+      var nll = N * Math.log(f.rss / N) + n * Math.log(1 + m * lam);
+      if (best === null || nll < best.nll) { best = { nll: nll, b0: f.b0, b1: f.b1 }; bestLam = lam; }
+    }
+
+    /* BLUPs, then conditional residuals */
+    var shrink = m * bestLam / (1 + m * bestLam);
+    var mr = new Float64Array(n);
+    for (k = 0; k < N; k++) mr[d.cl[k]] += d.y[k] - best.b0 - best.b1 * d.t[k];
+    for (i = 0; i < n; i++) mr[i] = shrink * mr[i] / m;
+
+    var e = new Float64Array(N);
+    for (k = 0; k < N; k++) e[k] = d.y[k] - best.b0 - best.b1 * d.t[k] - mr[d.cl[k]];
+    return e;
+  }
+
+  /* --- regression tree on a single continuous predictor ----------------- */
+  function buildNode(pairs, depth) {
+    var nn = pairs.length, sum = 0, i;
+    for (i = 0; i < nn; i++) sum += pairs[i][1];
+    if (nn < 2 * MINNODE || depth >= MAXDEPTH) return { v: sum / nn };
+
+    pairs.sort(function (a, b) { return a[0] - b[0]; });
+
+    var bestGain = sum * sum / nn, bestI = -1, sl = 0;
+    for (i = 0; i < nn - 1; i++) {
+      sl += pairs[i][1];
+      if (pairs[i][0] === pairs[i + 1][0]) continue;
+      var nl = i + 1, nr = nn - nl;
+      if (nl < MINNODE || nr < MINNODE) continue;
+      var sr = sum - sl, gain = sl * sl / nl + sr * sr / nr;
+      if (gain > bestGain) { bestGain = gain; bestI = i; }
+    }
+    if (bestI < 0) return { v: sum / nn };
+
+    return {
+      thr: (pairs[bestI][0] + pairs[bestI + 1][0]) / 2,
+      L: buildNode(pairs.slice(0, bestI + 1), depth + 1),
+      R: buildNode(pairs.slice(bestI + 1), depth + 1)
+    };
+  }
+  function predict(node, x) {
+    while (node.thr !== undefined) node = (x <= node.thr) ? node.L : node.R;
+    return node.v;
+  }
+
+  /* --- forest, scored out-of-bag --------------------------------------- */
+  function forestR2(t, r, rng) {
+    var N = t.length, i, k;
+    var oobSum = new Float64Array(N), oobCnt = new Int32Array(N);
+    var inbag = new Int32Array(N);
+
+    for (k = 0; k < NTREES; k++) {
+      inbag.fill(0);
+      var pairs = new Array(N);
+      for (i = 0; i < N; i++) {
+        var ix = (rng() * N) | 0;
+        inbag[ix]++;
+        pairs[i] = [t[ix], r[ix]];
+      }
+      var tree = buildNode(pairs, 0);
+      for (i = 0; i < N; i++) {
+        if (inbag[i] === 0) { oobSum[i] += predict(tree, t[i]); oobCnt[i]++; }
+      }
+    }
+
+    var mean = 0; for (i = 0; i < N; i++) mean += r[i]; mean /= N;
+    var vr = 0;   for (i = 0; i < N; i++) vr += (r[i] - mean) * (r[i] - mean); vr /= N;
+    var sse = 0, cnt = 0;
+    for (i = 0; i < N; i++) {
+      if (oobCnt[i] > 0) { var dd = r[i] - oobSum[i] / oobCnt[i]; sse += dd * dd; cnt++; }
+    }
+    if (!cnt || vr <= 0) return 0;
+    return 1 - (sse / cnt) / vr;
+  }
+
+  function permuteWithin(r, cl, n, rng) {
+    var out = Float64Array.from(r), groups = [], i;
+    for (i = 0; i < n; i++) groups.push([]);
+    for (i = 0; i < cl.length; i++) groups[cl[i]].push(i);
+    for (var g = 0; g < n; g++) {
+      var idx = groups[g];
+      for (var j = idx.length - 1; j > 0; j--) {
+        var q = (rng() * (j + 1)) | 0, tmp = out[idx[j]];
+        out[idx[j]] = out[idx[q]]; out[idx[q]] = tmp;
+      }
+    }
+    return out;
+  }
+
+  /* --- rendering -------------------------------------------------------- */
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  function drawHist(perm, obs, q975, tau) {
+    var W = 720, H = 250, ml = 8, mr = 8, mt = 54, mb = 34;
+    var lo = Math.min.apply(null, perm), hi = Math.max.apply(null, perm);
+    var xlo = Math.min(lo, obs, -0.06), xhi = Math.max(hi, obs, tau + 0.02);
+    var pad = (xhi - xlo) * 0.09; xlo -= pad; xhi += pad;
+    var X = function (v) { return ml + (v - xlo) / (xhi - xlo) * (W - ml - mr); };
+
+    var NB = 24, bw = (hi - lo) / NB || 1, counts = new Array(NB).fill(0);
+    for (var i = 0; i < perm.length; i++) {
+      var b = Math.min(NB - 1, Math.floor((perm[i] - lo) / bw));
+      counts[b]++;
+    }
+    var cmax = Math.max.apply(null, counts) || 1;
+
+    var svg = el('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+      'aria-label': 'Histogram of the permutation null distribution of out-of-bag R squared, with the observed statistic marked.'
+    });
+
+    /* bars */
+    for (i = 0; i < NB; i++) {
+      if (!counts[i]) continue;
+      var x0 = X(lo + i * bw), x1 = X(lo + (i + 1) * bw);
+      var h = counts[i] / cmax * (H - mt - mb);
+      svg.appendChild(el('rect', {
+        x: x0, y: H - mb - h, width: Math.max(x1 - x0 - 0.75, 0.8), height: h,
+        fill: 'var(--pj-null)'
+      }));
+    }
+
+    /* baseline */
+    svg.appendChild(el('line', {
+      x1: ml, x2: W - mr, y1: H - mb, y2: H - mb,
+      stroke: 'currentColor', 'stroke-opacity': 0.28, 'stroke-width': 1
+    }));
+
+    /* x ticks */
+    var step = (xhi - xlo) > 0.5 ? 0.1 : 0.05;
+    for (var v = Math.ceil(xlo / step) * step; v <= xhi; v += step) {
+      var xv = X(v);
+      svg.appendChild(el('line', {
+        x1: xv, x2: xv, y1: H - mb, y2: H - mb + 5,
+        stroke: 'currentColor', 'stroke-opacity': 0.28
+      }));
+      var lab = el('text', {
+        x: xv, y: H - mb + 18, 'text-anchor': 'middle',
+        'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.55
+      });
+      lab.textContent = (Math.abs(v) < 1e-9 ? 0 : v).toFixed(2);
+      svg.appendChild(lab);
+    }
+
+    function marker(v, colour, dash, text, row) {
+      var x = X(v), y = mt - 34 + row * 15;
+      svg.appendChild(el('line', {
+        x1: x, x2: x, y1: mt - 22 + row * 15, y2: H - mb,
+        stroke: colour, 'stroke-width': dash ? 1.2 : 1.8,
+        'stroke-dasharray': dash || 'none'
+      }));
+      var anchor = x > W * 0.72 ? 'end' : 'start';
+      var t = el('text', {
+        x: x + (anchor === 'end' ? -6 : 6), y: y + 8,
+        'text-anchor': anchor, 'font-size': 11.5, fill: colour
+      });
+      t.textContent = text;
+      svg.appendChild(t);
+    }
+
+    marker(q975, 'var(--pj-accent)', '4 3', 'Q₀.₉₇₅ = ' + q975.toFixed(3), 0);
+    marker(tau, 'currentColor', '1 3', 'τ = ' + tau.toFixed(2), 1);
+    marker(obs, 'var(--pj-flag)', null, 'observed = ' + obs.toFixed(3), 2);
+
+    var host = document.getElementById('rf-plot');
+    host.innerHTML = '';
+    host.appendChild(svg);
+  }
+
+  function writeConsole(obs, perm, q975, tau, flagged) {
+    var mean = perm.reduce(function (a, b) { return a + b; }, 0) / perm.length;
+    var s = perm.slice().sort(function (a, b) { return a - b; });
+    var q025 = s[Math.floor(0.025 * (s.length - 1))];
+    var f = function (x) { return (x < 0 ? '\u2212' : '') + Math.abs(x).toFixed(3); };
+    document.getElementById('rf-console').innerHTML =
+      'RandomForestSpecCheck: Random Forest Model Specification Diagnostic for LMMs\n\n' +
+      '<span class="k">Practical threshold:</span>                        <span class="v">' + tau.toFixed(2) + '</span>\n' +
+      '<span class="k">Observed R-squared:</span>                         <span class="v">' + f(obs) + '</span>\n' +
+      '<span class="k">Permutation mean R-squared and 95% CI:</span>     <span class="v">' +
+        f(mean) + ' (' + f(q025) + ', ' + f(q975) + ')</span>\n\n' +
+      '<span class="k">Result:</span> ' + (flagged
+        ? '<span class="flag">Model likely misspecified</span>'
+        : '<span class="clear">No strong evidence of model misspecification</span>');
+  }
+
+  /* --- run loop, chunked so the page stays responsive ------------------- */
+  var running = false, timer = null;
+
+  function run() {
+    if (running) return;
+    running = true;
+    var btn = document.getElementById('rf-run');
+    var bar = document.getElementById('rf-bar');
+    btn.disabled = true;
+
+    var gamma = +document.getElementById('rf-gamma').value;
+    var sigma = +document.getElementById('rf-sigma').value;
+    var n = +document.getElementById('rf-n').value;
+    var m = +document.getElementById('rf-m').value;
+    var seed = +document.getElementById('rf-seed').value || 1;
+    var tau = 0.05;
+
+    var rng = mulberry32(seed);
+    var d = simulate(n, m, sigma, gamma, rng);
+    var e = fitLMM(d);
+    var obs = forestR2(d.t, e, rng);
+
+    var perm = [], b = 0;
+    (function chunk() {
+      var t0 = performance.now();
+      while (b < B && performance.now() - t0 < 26) {
+        perm.push(forestR2(d.t, permuteWithin(e, d.cl, d.n, rng), rng));
+        b++;
+      }
+      bar.style.width = (b / B * 100) + '%';
+      if (b < B) { requestAnimationFrame(chunk); return; }
+
+      var s = perm.slice().sort(function (x, y) { return x - y; });
+      var q975 = s[Math.min(s.length - 1, Math.ceil(0.975 * (s.length - 1)))];
+      var flagged = obs > q975 && obs > tau;
+
+      drawHist(perm, obs, q975, tau);
+      writeConsole(obs, perm, q975, tau, flagged);
+
+      bar.style.width = '0%';
+      btn.disabled = false;
+      running = false;
+    })();
+  }
+
+  function schedule() { clearTimeout(timer); timer = setTimeout(run, 340); }
+
+  ['rf-gamma', 'rf-sigma', 'rf-n', 'rf-m'].forEach(function (id) {
+    var input = document.getElementById(id);
+    var out = document.getElementById(id + '-out');
+    input.addEventListener('input', function () {
+      out.textContent = (id === 'rf-gamma') ? (+input.value).toFixed(2) : input.value;
+      schedule();
+    });
+  });
+  document.getElementById('rf-seed').addEventListener('change', schedule);
+  document.getElementById('rf-run').addEventListener('click', run);
+
+  if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 1200 });
+  else setTimeout(run, 260);
+})();
+
+/* =========================================================================
+   Figure 2 — simulation results, four studies, small multiples.
+   VERIFY: these arrays transcribe Figures 1–4 of the paper. Check against the
+   simulation output before publishing.
+   ========================================================================= */
+(function () {
+  var STUDIES = {
+    quad: {
+      x: 'Quadratic coefficient γ', levels: ['0', '0.05', '0.30'],
+      blurb: 'False positives stay at or below 0.03 everywhere. A strong quadratic trend is caught almost always when noise is low, and detection degrades in the expected direction as noise rises.',
+      panels: [
+        { m: 5,  s: 1, n10: [0, 0.03, 1.00], n20: [0, 0.05, 1.00], n50: [0, 0.00, 1.00] },
+        { m: 10, s: 1, n10: [0, 0.06, 1.00], n20: [0, 0.04, 1.00], n50: [0, 0.00, 1.00] },
+        { m: 5,  s: 3, n10: [0.00, 0.01, 0.51], n20: [0.01, 0.01, 0.84], n50: [0.00, 0.00, 0.97] },
+        { m: 10, s: 3, n10: [0.00, 0.00, 0.97], n20: [0.00, 0.00, 0.96], n50: [0.00, 0.00, 1.00] },
+        { m: 5,  s: 5, n10: [0.01, 0.00, 0.11], n20: [0.01, 0.00, 0.20], n50: [0.00, 0.00, 0.21] },
+        { m: 10, s: 5, n10: [0.00, 0.00, 0.09], n20: [0.00, 0.00, 0.30], n50: [0.00, 0.00, 0.14] }
+      ]
+    },
+    slope: {
+      x: 'Random-slope variance σ²', levels: ['0', '0.15', '0.40'],
+      blurb: 'Detection depends far more on the number of observations per cluster than on the number of clusters. With five observations per cluster there is too little temporal information to reveal a slope, whatever the sample size.',
+      panels: [
+        { m: 5,  s: 1, n10: [0.00, 0.02, 0.17], n20: [0.00, 0.03, 0.13], n50: [0.00, 0.00, 0.02] },
+        { m: 10, s: 1, n10: [0.00, 0.51, 0.81], n20: [0.00, 0.59, 0.86], n50: [0.00, 0.50, 0.96] },
+        { m: 5,  s: 3, n10: [0.01, 0.01, 0.00], n20: [0.01, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
+        { m: 10, s: 3, n10: [0.00, 0.00, 0.07], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] }
+      ]
+    },
+    ar1: {
+      x: 'AR(1) correlation ρ', levels: ['0', '0.30', '0.60'],
+      blurb: 'The hardest of the three mean-structure violations. Moderate autocorrelation is close to undetectable; strong autocorrelation reaches roughly a quarter of replicates, and only with ten observations per cluster.',
+      panels: [
+        { m: 5,  s: 1, n10: [0.01, 0.00, 0.02], n20: [0.00, 0.01, 0.01], n50: [0.00, 0.00, 0.01] },
+        { m: 10, s: 1, n10: [0.00, 0.05, 0.26], n20: [0.00, 0.00, 0.09], n50: [0.00, 0.00, 0.07] },
+        { m: 5,  s: 3, n10: [0.02, 0.03, 0.01], n20: [0.01, 0.02, 0.02], n50: [0.00, 0.00, 0.00] },
+        { m: 10, s: 3, n10: [0.00, 0.04, 0.27], n20: [0.00, 0.02, 0.24], n50: [0.00, 0.00, 0.13] }
+      ]
+    },
+    hetero: {
+      x: 'Variance strength α', levels: ['0', '0.30', '0.60'],
+      blurb: 'A negative result, and an expected one. Residual variance grows with time while the conditional mean stays at zero, so there is no mean structure for the forest to recover and the diagnostic correctly declines to flag anything.',
+      panels: [
+        { m: 5,  s: 1, n10: [0.00, 0.01, 0.01], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
+        { m: 10, s: 1, n10: [0.00, 0.04, 0.03], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] },
+        { m: 5,  s: 3, n10: [0.02, 0.01, 0.01], n20: [0.00, 0.00, 0.03], n50: [0.00, 0.00, 0.01] },
+        { m: 10, s: 3, n10: [0.00, 0.00, 0.03], n20: [0.00, 0.00, 0.00], n50: [0.00, 0.00, 0.00] }
+      ]
+    }
+  };
+
+  var NS = 'http://www.w3.org/2000/svg';
+  var COL = { n10: '#aab4bb', n20: '#6c8494', n50: '#3d5a6c' };
+
+  function el(tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  function marker(svg, x, y, key) {
+    if (key === 'n10') {
+      svg.appendChild(el('circle', { cx: x, cy: y, r: 3.4, fill: COL[key] }));
+    } else if (key === 'n20') {
+      svg.appendChild(el('rect', { x: x - 3, y: y - 3, width: 6, height: 6, fill: COL[key] }));
+    } else {
+      var p = el('path', { d: 'M' + x + ' ' + (y - 4) + 'L' + (x + 3.8) + ' ' + (y + 3) + 'L' + (x - 3.8) + ' ' + (y + 3) + 'Z', fill: COL[key] });
+      svg.appendChild(p);
+    }
+  }
+
+  function panel(p, study) {
+    var W = 216, H = 150, ml = 30, mr = 12, mt = 22, mb = 34;
+    var svg = el('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+      'aria-label': 'Proportion flagged for cluster size ' + p.m + ' and noise ' + p.s + '.'
+    });
+    var X = function (i) { return ml + i * (W - ml - mr) / 2; };
+    var Y = function (v) { return H - mb - v * (H - mt - mb); };
+
+    /* title */
+    var ttl = el('text', { x: ml, y: 12, 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.72 });
+    ttl.textContent = 'm = ' + p.m + ',  σ = ' + p.s;
+    svg.appendChild(ttl);
+
+    /* frame + y ticks */
+    [0, 0.5, 1].forEach(function (v) {
+      svg.appendChild(el('line', {
+        x1: ml, x2: W - mr, y1: Y(v), y2: Y(v),
+        stroke: 'currentColor', 'stroke-opacity': v === 0 ? 0.3 : 0.09
+      }));
+      var t = el('text', { x: ml - 6, y: Y(v) + 3.5, 'text-anchor': 'end', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.5 });
+      t.textContent = v.toFixed(v === 0 || v === 1 ? 0 : 1);
+      svg.appendChild(t);
+    });
+
+    /* nominal 5% reference */
+    svg.appendChild(el('line', {
+      x1: ml, x2: W - mr, y1: Y(0.05), y2: Y(0.05),
+      stroke: 'currentColor', 'stroke-opacity': 0.4, 'stroke-dasharray': '3 3'
+    }));
+
+    /* x labels */
+    study.levels.forEach(function (lv, i) {
+      var t = el('text', { x: X(i), y: H - mb + 15, 'text-anchor': 'middle', 'font-size': 10, fill: 'currentColor', 'fill-opacity': 0.5 });
+      t.textContent = lv;
+      svg.appendChild(t);
+    });
+    var xl = el('text', { x: (ml + W - mr) / 2, y: H - 4, 'text-anchor': 'middle', 'font-size': 9.5, fill: 'currentColor', 'fill-opacity': 0.45 });
+    xl.textContent = study.x;
+    svg.appendChild(xl);
+
+    /* series */
+    ['n10', 'n20', 'n50'].forEach(function (key) {
+      var vals = p[key], d = '';
+      vals.forEach(function (v, i) { d += (i ? 'L' : 'M') + X(i) + ' ' + Y(v); });
+      svg.appendChild(el('path', { d: d, fill: 'none', stroke: COL[key], 'stroke-width': 1.5 }));
+      vals.forEach(function (v, i) { marker(svg, X(i), Y(v), key); });
+    });
+
+    return svg;
+  }
+
+  function render(name) {
+    var study = STUDIES[name];
+    document.getElementById('pw-blurb').textContent = study.blurb;
+    var host = document.getElementById('pw-panels');
+    host.innerHTML = '';
+    study.panels.forEach(function (p) {
+      var box = document.createElement('div');
+      box.appendChild(panel(p, study));
+      host.appendChild(box);
+    });
+  }
+
+  var tabs = document.querySelectorAll('#rfsc-power .pj-seg button');
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      tabs.forEach(function (o) { o.setAttribute('aria-selected', String(o === b)); });
+      render(b.dataset.study);
+    });
+  });
+  render('quad');
+})();
+
+/* =========================================================================
+   Figure 3 — Framingham: observed R² against permutation interval.
+   ========================================================================= */
+(function () {
+  var ROWS = [
+    { name: 'Random intercepts',        obs: -0.008, lo: -0.162, hi: -0.127, flag: false },
+    { name: 'Random slopes',            obs: -0.046, lo: -0.164, hi: -0.126, flag: false },
+    { name: 'AR(1) residual correlation', obs: -0.007, lo: -0.162, hi: -0.126, flag: false },
+    { name: 'Quadratic in time',        obs:  0.031, lo: -0.075, hi: -0.050, flag: false },
+    { name: 'Time omitted',             obs:  0.191, lo: -0.156, hi: -0.123, flag: true  }
+  ];
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  var W = 720, rowH = 40, mt = 26, mb = 42, ml = 190, mr = 22;
+  var H = mt + ROWS.length * rowH + mb;
+  var xlo = -0.20, xhi = 0.23;
+  var X = function (v) { return ml + (v - xlo) / (xhi - xlo) * (W - ml - mr); };
+
+  var svg = el('svg', {
+    viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+    'aria-label': 'Observed out-of-bag R squared and permutation intervals for five Framingham models. Four sit near zero; the model omitting time sits at 0.191.'
+  });
+
+  /* zero line and tau */
+  svg.appendChild(el('line', { x1: X(0), x2: X(0), y1: mt - 8, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.22 }));
+  svg.appendChild(el('line', { x1: X(0.05), x2: X(0.05), y1: mt - 14, y2: H - mb, stroke: 'currentColor', 'stroke-opacity': 0.55, 'stroke-dasharray': '4 3' }));
+  var tl = el('text', { x: X(0.05) + 6, y: mt - 6, 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.6 });
+  tl.textContent = 'τ = 0.05';
+  svg.appendChild(tl);
+
+  ROWS.forEach(function (r, i) {
+    var y = mt + i * rowH + rowH / 2;
+
+    var lab = el('text', { x: ml - 14, y: y + 4, 'text-anchor': 'end', 'font-size': 12.5, fill: 'currentColor', 'fill-opacity': r.flag ? 0.95 : 0.72 });
+    lab.textContent = r.name;
+    svg.appendChild(lab);
+
+    svg.appendChild(el('rect', {
+      x: X(r.lo), y: y - 3.5, width: Math.max(X(r.hi) - X(r.lo), 1.5), height: 7,
+      fill: 'var(--pj-null)'
+    }));
+
+    svg.appendChild(el('circle', {
+      cx: X(r.obs), cy: y, r: 5,
+      fill: r.flag ? 'var(--pj-flag)' : 'var(--pj-accent)'
+    }));
+
+    var val = el('text', {
+      x: X(r.obs) + (r.obs > 0.1 ? -11 : 11), y: y + 4,
+      'text-anchor': r.obs > 0.1 ? 'end' : 'start',
+      'font-size': 11.5, fill: r.flag ? 'var(--pj-flag)' : 'currentColor',
+      'fill-opacity': r.flag ? 1 : 0.62
+    });
+    val.textContent = (r.obs < 0 ? '\u2212' : '') + Math.abs(r.obs).toFixed(3);
+    svg.appendChild(val);
+  });
+
+  /* axis */
+  svg.appendChild(el('line', { x1: ml, x2: W - mr, y1: H - mb + 6, y2: H - mb + 6, stroke: 'currentColor', 'stroke-opacity': 0.28 }));
+  for (var v = -0.20; v <= 0.2001; v += 0.05) {
+    var xv = X(v);
+    svg.appendChild(el('line', { x1: xv, x2: xv, y1: H - mb + 6, y2: H - mb + 11, stroke: 'currentColor', 'stroke-opacity': 0.28 }));
+    var t = el('text', { x: xv, y: H - mb + 25, 'text-anchor': 'middle', 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.55 });
+    t.textContent = (Math.abs(v) < 1e-9 ? '0' : (v < 0 ? '\u2212' : '') + Math.abs(v).toFixed(2));
+    svg.appendChild(t);
+  }
+  var axl = el('text', { x: (ml + W - mr) / 2, y: H - 6, 'text-anchor': 'middle', 'font-size': 11, fill: 'currentColor', 'fill-opacity': 0.5 });
+  axl.textContent = 'out-of-bag R²';
+  svg.appendChild(axl);
+
+  document.getElementById('fram-plot').appendChild(svg);
+})();
+</script>

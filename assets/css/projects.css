@@ -1,0 +1,542 @@
+/* ==========================================================================
+   projects.css — Katherine Delno
+   Components for the project detail pages and the "Statistical work"
+   section of the about page.
+
+   DESIGN NOTE
+   This stylesheet is deliberately parasitic on the existing site design.
+   It sets no page background, no body font, and no base type size. Every
+   component inherits the site's typeface and text colour and adds only the
+   structure that the project pages need: figure frames, data tables, control
+   rows, console panels, and cards.
+
+   Secondary text is expressed as `color: inherit` plus opacity rather than a
+   fixed grey, so it tracks the site's ink automatically. Rules and panel
+   fills are alpha overlays for the same reason.
+
+   Only three literal colours are introduced, all scoped to data display:
+     --pj-accent   structural / reference marks
+     --pj-flag     the observed statistic, the flagged result
+     --pj-null     the permutation null distribution
+   Override the three in the :root block below to match the site palette.
+   ========================================================================== */
+
+:root {
+  --pj-accent: #3d5a6c;   /* muted slate: axes, reference lines, links in figures */
+  --pj-flag:   #8c3b3b;   /* garnet: observed statistic, "flagged" state         */
+  --pj-null:   #aab4bb;   /* pale slate: null distributions, inert data          */
+
+  --pj-rule:    rgba(0, 0, 0, 0.13);
+  --pj-rule-2:  rgba(0, 0, 0, 0.07);
+  --pj-surface: rgba(0, 0, 0, 0.025);
+
+  --pj-mono: ui-monospace, "SF Mono", SFMono-Regular, "IBM Plex Mono",
+             Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* --------------------------------------------------------------------------
+   1. Article furniture
+   -------------------------------------------------------------------------- */
+
+.pj-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin: 0 0 0.6rem;
+}
+
+.pj-meta {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin: 0.4rem 0 2rem;
+}
+
+/* Standfirst. One paragraph, set larger, that states the contribution. */
+.pj-lede {
+  font-size: 1.16em;
+  line-height: 1.62;
+  opacity: 0.9;
+  margin: 0 0 2rem;
+}
+
+/* Thesis block. Used once per page, for the sentence the page turns on. */
+.pj-thesis {
+  border-left: 2px solid var(--pj-accent);
+  padding: 0.15rem 0 0.15rem 1.35rem;
+  margin: 2.4rem 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+.pj-thesis p { margin: 0; }
+.pj-thesis p + p { margin-top: 0.8rem; }
+
+/* At-a-glance figures. Three or four cells under the page title. */
+.pj-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--pj-rule-2);
+  border-block: 1px solid var(--pj-rule);
+  margin: 2rem 0 2.6rem;
+}
+.pj-stat {
+  padding: 1rem 1.1rem 1.05rem;
+  background: transparent;
+}
+.pj-stat__value {
+  font-family: var(--pj-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.28rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.pj-stat__label {
+  font-size: 0.74rem;
+  line-height: 1.4;
+  opacity: 0.6;
+  margin-top: 0.42rem;
+}
+
+/* Small aside: scope notes, verification notes, honest caveats. */
+.pj-note {
+  border: 1px solid var(--pj-rule);
+  background: var(--pj-surface);
+  padding: 1rem 1.15rem;
+  margin: 2rem 0;
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+.pj-note > :first-child { margin-top: 0; }
+.pj-note > :last-child  { margin-bottom: 0; }
+.pj-note__label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 0.5rem;
+}
+
+/* Back link at the foot of a project page. */
+.pj-back {
+  display: inline-block;
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--pj-rule);
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. Figures
+   -------------------------------------------------------------------------- */
+
+.pj-figure {
+  border: 1px solid var(--pj-rule);
+  margin: 2.6rem 0;
+  background: transparent;
+}
+
+.pj-figure__head {
+  padding: 0.95rem 1.2rem 0.9rem;
+  border-bottom: 1px solid var(--pj-rule);
+  background: var(--pj-surface);
+}
+.pj-figure__num {
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.pj-figure__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0;
+  line-height: 1.35;
+}
+
+.pj-figure__body { padding: 1.2rem; }
+
+.pj-figure__caption {
+  padding: 0 1.2rem 1.2rem;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  opacity: 0.68;
+}
+.pj-figure__caption > :first-child { margin-top: 0; }
+.pj-figure__caption > :last-child  { margin-bottom: 0; }
+
+.pj-figure svg { display: block; width: 100%; height: auto; }
+
+/* --------------------------------------------------------------------------
+   3. Controls
+   -------------------------------------------------------------------------- */
+
+.pj-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+  gap: 1.05rem 1.4rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--pj-rule-2);
+}
+
+.pj-control label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  opacity: 0.72;
+  margin-bottom: 0.42rem;
+}
+.pj-control output,
+.pj-control .pj-val {
+  font-family: var(--pj-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  opacity: 1;
+}
+
+.pj-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--pj-accent);
+  cursor: pointer;
+}
+.pj-control input[type="number"],
+.pj-control select {
+  width: 100%;
+  font-family: var(--pj-mono);
+  font-size: 0.85rem;
+  padding: 0.38rem 0.5rem;
+  border: 1px solid var(--pj-rule);
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+}
+
+.pj-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.pj-btn {
+  font: inherit;
+  font-size: 0.86rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.pj-btn:hover:not(:disabled) {
+  background: var(--pj-accent);
+  border-color: var(--pj-accent);
+  color: #fff;
+}
+.pj-btn:disabled { opacity: 0.4; cursor: progress; }
+.pj-btn:focus-visible { outline: 2px solid var(--pj-accent); outline-offset: 2px; }
+
+.pj-progress {
+  flex: 1 1 130px;
+  height: 2px;
+  background: var(--pj-rule);
+  position: relative;
+  overflow: hidden;
+}
+.pj-progress__bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--pj-accent);
+  transition: width 0.12s linear;
+}
+
+/* Segmented control, for switching between the four simulation studies. */
+.pj-seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--pj-rule);
+  border: 1px solid var(--pj-rule);
+  margin-bottom: 1.3rem;
+}
+.pj-seg button {
+  flex: 1 1 auto;
+  font: inherit;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  padding: 0.6rem 0.7rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.pj-seg button[aria-selected="true"] {
+  background: var(--pj-surface);
+  opacity: 1;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--pj-accent);
+}
+.pj-seg button:focus-visible { outline: 2px solid var(--pj-accent); outline-offset: -2px; }
+
+/* Legend chips. */
+.pj-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  font-size: 0.76rem;
+  opacity: 0.72;
+  margin-top: 0.9rem;
+}
+.pj-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.pj-legend i {
+  width: 16px;
+  height: 0;
+  border-top-width: 2px;
+  border-top-style: solid;
+  flex: none;
+}
+.pj-legend i.dot {
+  width: 9px; height: 9px; border: 0; border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   4. Console panel — mirrors the printed output of the R function
+   -------------------------------------------------------------------------- */
+
+.pj-console {
+  font-family: var(--pj-mono);
+  font-size: 0.8rem;
+  line-height: 1.72;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid var(--pj-rule);
+  background: var(--pj-surface);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 0;
+}
+.pj-console .k { opacity: 0.55; }
+.pj-console .v { font-variant-numeric: tabular-nums; }
+.pj-console .flag { color: var(--pj-flag); font-weight: 600; }
+.pj-console .clear { color: var(--pj-accent); font-weight: 600; }
+.pj-console hr {
+  border: 0;
+  border-top: 1px solid var(--pj-rule);
+  margin: 0.75rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Data tables
+   -------------------------------------------------------------------------- */
+
+.pj-tablewrap { overflow-x: auto; margin: 2.4rem 0; }
+
+.pj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+}
+.pj-table caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  padding-bottom: 0.75rem;
+}
+.pj-table th,
+.pj-table td {
+  padding: 0.56rem 0.9rem 0.56rem 0;
+  text-align: right;
+  border-bottom: 1px solid var(--pj-rule-2);
+  white-space: nowrap;
+}
+.pj-table th:first-child,
+.pj-table td:first-child { text-align: left; white-space: normal; }
+.pj-table td:last-child,
+.pj-table th:last-child { padding-right: 0; }
+.pj-table thead th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  opacity: 0.62;
+  border-bottom: 1px solid var(--pj-rule);
+  vertical-align: bottom;
+  line-height: 1.3;
+  white-space: normal;
+}
+.pj-table tbody tr:last-child td { border-bottom: 1px solid var(--pj-rule); }
+.pj-table .num { font-family: var(--pj-mono); font-size: 0.82rem; }
+.pj-table .is-flagged { color: var(--pj-flag); font-weight: 600; }
+.pj-table .is-clear { opacity: 0.72; }
+.pj-table tr.is-best td { background: var(--pj-surface); font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   6. Code
+   -------------------------------------------------------------------------- */
+
+.pj-code {
+  font-family: var(--pj-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid var(--pj-rule);
+  background: var(--pj-surface);
+  overflow-x: auto;
+  margin: 2rem 0;
+  white-space: pre;
+}
+
+/* --------------------------------------------------------------------------
+   7. About page — "Statistical work" section
+   -------------------------------------------------------------------------- */
+
+.pj-work { margin-top: 1.4rem; }
+
+.pj-work__intro {
+  max-width: 62ch;
+  opacity: 0.82;
+  margin-bottom: 2.2rem;
+}
+
+/* The featured entry. One project, given room. */
+.pj-feature {
+  display: block;
+  border: 1px solid var(--pj-rule);
+  padding: 1.7rem 1.8rem 1.8rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+.pj-feature:hover,
+.pj-feature:focus-visible {
+  border-color: currentColor;
+  background: var(--pj-surface);
+}
+.pj-feature:focus-visible { outline: 2px solid var(--pj-accent); outline-offset: 2px; }
+
+.pj-feature__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 0.75rem;
+}
+.pj-feature__tag {
+  border: 1px solid var(--pj-rule);
+  padding: 0.16rem 0.46rem;
+  letter-spacing: 0.09em;
+  opacity: 0.95;
+}
+.pj-feature__title {
+  font-size: 1.42rem;
+  line-height: 1.24;
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+.pj-feature__blurb {
+  margin: 0;
+  max-width: 66ch;
+  line-height: 1.62;
+  opacity: 0.86;
+}
+.pj-feature .pj-stats {
+  margin: 1.5rem 0 1.4rem;
+  border-block-color: var(--pj-rule);
+}
+.pj-feature__more,
+.pj-card__more {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--pj-accent);
+}
+.pj-feature:hover .pj-feature__more,
+.pj-card:hover .pj-card__more { text-decoration: underline; }
+
+/* The remaining projects, three across. */
+.pj-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+  gap: 1px;
+  background: var(--pj-rule);
+  border: 1px solid var(--pj-rule);
+  border-top: 0;
+}
+.pj-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.45rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  transition: background-color 0.18s ease;
+}
+.pj-card:hover,
+.pj-card:focus-visible { background: var(--pj-surface); }
+.pj-card:focus-visible { outline: 2px solid var(--pj-accent); outline-offset: -2px; }
+
+.pj-card__kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.58;
+  margin-bottom: 0.62rem;
+}
+.pj-card__title {
+  font-size: 1.03rem;
+  line-height: 1.32;
+  font-weight: 600;
+  margin: 0 0 0.55rem;
+}
+.pj-card__blurb {
+  margin: 0;
+  font-size: 0.91rem;
+  line-height: 1.58;
+  opacity: 0.78;
+  flex: 1 1 auto;
+}
+.pj-card__more { margin-top: 0.95rem; }
+
+/* --------------------------------------------------------------------------
+   8. Quality floor
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  .pj-figure__body,
+  .pj-figure__head { padding-inline: 0.95rem; }
+  .pj-figure__caption { padding-inline: 0.95rem; }
+  .pj-feature { padding: 1.35rem 1.25rem 1.45rem; }
+  .pj-feature__title { font-size: 1.24rem; }
+  .pj-stat { padding: 0.85rem 0.95rem 0.9rem; }
+  .pj-stat__value { font-size: 1.14rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pj-progress__bar,
+  .pj-btn,
+  .pj-feature,
+  .pj-card { transition: none; }
+}
+
+@media print {
+  .pj-controls,
+  .pj-actions,
+  .pj-seg { display: none; }
+  .pj-figure { break-inside: avoid; }
+}
