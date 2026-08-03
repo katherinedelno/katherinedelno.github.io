@@ -8,7 +8,7 @@ section: beyond
 read_time: "9 min read"
 math: true
 kind: beyond
-sequence: 6
+sequence: 7
 interactive: true
 blurb: "Laws of nature specify change; systems, phase lines, and an epidemic to steer"
 ---

@@ -9,7 +9,7 @@ section: beyond
 read_time: "7 min read"
 math: true
 kind: beyond
-sequence: 9
+sequence: 5
 interactive: true
 blurb: "Any repeating signal assembled from smooth sine waves, one harmonic at a time"
 ---
