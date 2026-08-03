@@ -274,10 +274,11 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 
 <span class="k">Result:</span> <span class="flag">Model likely misspecified</span>
 
-<span class="k">Interpretation:</span> The observed R-squared exceeds both the upper bound of the
-null distribution and the practical threshold, indicating that the model leaves
-systematic structure in the residuals. This suggests that the model may be
-misspecified.</pre>
+<span class="k">Interpretation:</span> The observed R-squared exceeds both the
+upper bound of the null distribution and the practical
+threshold, indicating that the model leaves systematic
+structure in the residuals. This suggests that the model
+may be misspecified.</pre>
 
 <p>The output is deliberately verbose. A diagnostic that returns a bare logical invites an analyst to treat it as a verdict, and it is not one; it is a signal that some named variables are still doing work the model has not accounted for. The next step is to read the forest's variable-importance measures, attempt the corresponding parametric extension, and check whether the flag clears.</p>
 

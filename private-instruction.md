@@ -112,7 +112,6 @@ permalink: /private-instruction/
     .pi-reg-row { flex-direction:column; align-items:stretch; }
     .pi-reg-row .pi-btn { text-align:center; }
   }
-  .pi-cta .email { display:block; margin-top:1rem; font-size:.92rem; color:var(--muted); }
 
   .pi-fine { margin-top:2.4rem; padding-top:1.6rem; border-top:1px solid var(--line); }
   .pi-fine p { font-size:.9rem; color:var(--muted); }
@@ -463,7 +462,6 @@ permalink: /private-instruction/
       <a href="https://calendly.com/katherinedelno" class="pi-btn pi-btn-outline"
          onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">Book a meet-and-greet</a>
     </div>
-    <span class="email">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
     <p style="margin:1.4rem auto 0;font-size:.9rem;">Before we begin, please read the <a href="/policies/">policies</a> and the <a href="/privacy/">privacy notice</a>. I send both by email at intake and ask for a short reply confirming you have read them.</p>
   </div>
 
