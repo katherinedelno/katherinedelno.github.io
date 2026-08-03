@@ -316,7 +316,9 @@ permalink: /private-instruction/
     <h2>What families say</h2>
     <div class="pi-quotes">
       <div class="pi-quote">
-        <p>&ldquo;Katherine is an attentive, thoughtful, and highly effective tutor. She helped my daughter build both confidence and understanding in AP Statistics, making challenging material feel approachable. Her follow-up was exceptional; she regularly checked in and ensured nothing fell through the cracks. I highly recommend Katherine to any family looking for a knowledgeable, supportive, and dedicated tutor.&rdquo;</p>
+        <p>&ldquo;Katherine is an attentive, thoughtful, and highly effective tutor. Her thoroughness and genuine care are evident in every interaction. She helped my daughter build both confidence and understanding in AP Statistics, making challenging material feel approachable and manageable.</p>
+        <p>Communication was consistently easy and her follow-up was exceptional; Katherine regularly checked in, provided helpful feedback, and ensured that nothing fell through the cracks. Most importantly, my daughter felt comfortable and connected, which made learning more engaging and productive.</p>
+        <p>I highly recommend Katherine to any family looking for a knowledgeable, supportive, and dedicated tutor.&rdquo;</p>
         <span class="who">Parent of 2025 AP Statistics student</span>
       </div>
       <div class="pi-quote">
