@@ -107,6 +107,11 @@ permalink: /private-instruction/
   .pi-btn-outline { background:transparent; color:var(--accent) !important; }
   .pi-btn-outline:hover { background:#fff; opacity:1; }
   .pi-cta-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .pi-reg-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:1.3rem; }
+  @media (max-width:560px){
+    .pi-reg-row { flex-direction:column; align-items:stretch; }
+    .pi-reg-row .pi-btn { text-align:center; }
+  }
   .pi-cta .email { display:block; margin-top:1rem; font-size:.92rem; color:var(--muted); }
 
   .pi-fine { margin-top:2.4rem; padding-top:1.6rem; border-top:1px solid var(--line); }
@@ -213,11 +218,14 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Free webinars</p>
     <h2>Two free sessions this August</h2>
-    <p>Whether your student's year begins in August or after Labor Day, I'm giving two free 45-minute sessions on how to start it well. Everyone who registers receives my getting-started guide for their course right away, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
+    <p>Whether your student's year begins in August or after Labor Day, I'm giving two free 45-minute sessions on how to start it well. Everyone who registers receives my getting-started guide for their course within a day, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
     <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
     <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
     <p style="margin-top:1.5rem;font-size:.93rem;color:var(--muted);">Students in AP Precalculus are welcome to register as well; I'll send the AP Precalculus guide, with a live session available by request.</p>
-    <a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pi-btn" style="margin-top:1.3rem;" target="_blank" rel="noopener">Register for a webinar</a>
+    <div class="pi-reg-row">
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
+    </div>
   </div>
 
   <!-- BACKGROUND -->
