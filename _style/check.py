@@ -154,6 +154,36 @@ def check(path, known_urls):
     if '<canvas' in body and 'devicePixelRatio' in body and \
        'Math.min(window.devicePixelRatio' not in body:
         flag('canvas without a device-pixel-ratio cap')
+    # The backing store must be resized exactly once per canvas. If the resize
+    # sits in a helper that is itself called from inside another function, it
+    # re-reads a width it already scaled and doubles it again, so the canvas
+    # grows without bound on every slider event. Nothing warns; the page simply
+    # falls apart after a few interactions.
+    #
+    # A resize at the top level of the IIFE is fine. A resize inside a helper is
+    # fine too, provided that helper is only ever called during setup — so the
+    # test is whether any call to the enclosing helper happens while already
+    # inside another function body.
+    for js in re.findall(r'<script>(.*?)</script>', body, flags=re.S):
+        for m in re.finditer(r'^[ \t]*\w+\.width\s*=\s*\w+\s*\*\s*d__', js, flags=re.M):
+            before = js[:m.start()]
+            if before.count('{') - before.count('}') <= 1:
+                continue                      # top level of the IIFE: correct
+            fn = None
+            for d in re.finditer(r'function\s+(\w+)\s*\(', before):
+                fn = d.group(1)               # nearest enclosing named function
+            if not fn:
+                flag('device-pixel-ratio resize inside an anonymous nested function',
+                     m.group(0).strip())
+                continue
+            for call in re.finditer(r'\b%s\s*\(' % re.escape(fn), js):
+                if re.match(r'\s*function', js[call.end() - len(fn) - 8:]):
+                    continue
+                head = js[:call.start()]
+                if head.count('{') - head.count('}') > 1:
+                    flag('device-pixel-ratio resize reachable from a redrawn function '
+                         '(canvas doubles on every call)', '%s() called inside another function' % fn)
+                    break
     has_viz = 'class="viz' in body or 'interactive-regression' in body
     if fm and bool(fm.get('interactive')) != has_viz:
         flag('interactive: flag disagrees with the body',

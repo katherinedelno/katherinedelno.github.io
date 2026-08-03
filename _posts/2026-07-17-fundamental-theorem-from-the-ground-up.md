@@ -52,12 +52,21 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
   var slider = document.getElementById('ftc-x'), read = document.getElementById('ftc-read');
   var INK = '#1f1f1f', MUTED = '#8a8a8a', LINE = '#e0e0e0', POS = '#c9c9c9', NEG = '#efefef';
 
-  function setup(cv, lo, hi){
-    var c = cv.getContext('2d'), W = cv.width, H = cv.height, pad = 34;
+  // Resize the backing store exactly once per canvas. Doing this inside draw()
+  // re-reads a width that was already scaled and multiplies it again, so the
+  // canvas doubles on every slider event.
+  function prepare(cv){
+    var c = cv.getContext('2d'), W = cv.width, H = cv.height;
     var d__ = Math.min(window.devicePixelRatio || 1, 2);
     cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
+    return { c:c, W:W, H:H };
+  }
+  var CT = prepare(top), CB = prepare(bot);
+
+  function setup(base, lo, hi){
+    var W = base.W, H = base.H, pad = 34;
     return {
-      c:c, W:W, H:H, pad:pad, lo:lo, hi:hi,
+      c:base.c, W:W, H:H, pad:pad, lo:lo, hi:hi,
       px:function(x){ return pad + (x - X0)/(X1 - X0)*(W - 2*pad); },
       py:function(y){ return H - pad - (y - lo)/(hi - lo)*(H - 2*pad); }
     };
@@ -73,7 +82,7 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
   }
   function draw(){
     var x = X0 + (slider.value/1000)*(X1 - X0);
-    var gT = setup(top, -1.9, 3.1), gB = setup(bot, -0.6, 8.2);
+    var gT = setup(CT, -1.9, 3.1), gB = setup(CB, -0.6, 8.2);
 
     axes(gT, 'f  (the rate)');
     // shaded region 0..x
