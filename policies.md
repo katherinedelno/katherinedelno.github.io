@@ -47,7 +47,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p class="label">Policies</p>
     <h1>Policies &amp; Terms of Instruction</h1>
     <p>These are the terms on which I work with families. They exist so that everyone begins with the same understanding of what I do, what I ask, and what happens when something does not go as planned. I would rather state all of this plainly at the outset than have any of it come as a surprise later.</p>
-    <p>Booking a session constitutes acceptance of these terms. Enrolled families also sign a short engagement agreement at intake, which incorporates this page by reference.</p>
+    <p>Booking a session constitutes acceptance of these terms. Before instruction begins I also send each family these policies by email and ask for a short reply confirming they have read them, so that we both start from the same written understanding.</p>
   </div>
 
   <nav class="pol-jump" aria-label="Page sections">
@@ -119,9 +119,9 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p class="label">Billing</p>
     <h2>Billing and payment</h2>
     <ul class="pol-list">
-      <li>Sessions are billed monthly in arrears. Invoices are sent on the 1st for the previous month and are due within seven days.</li>
+      <li>Sessions are billed after they happen, never in advance. On the first business day of each month I send one invoice covering the sessions we had the month before. Payment is due within seven days of the invoice date. September's sessions, for example, are invoiced on the first business day of October and paid seven days after that.</li>
       <li>Accepted methods: Apple Cash, PayPal, and Zelle.</li>
-      <li>Invoices more than fourteen days past due pause instruction until the balance is settled. The weekly slot is held for two weeks from that point, after which it may be released.</li>
+      <li>Invoices unpaid fourteen days after the due date pause instruction until the balance is settled. The weekly slot is held for two weeks from that point, after which it may be released.</li>
       <li>Completed sessions are not refundable, nor are sessions billed under the cancellation policy above.</li>
       <li>Between-session support is billed monthly at $200 and may be added or discontinued with fourteen days' notice, effective at the start of the next billing month. It is not prorated within a month.</li>
       <li>Rates are held for the full academic year for enrolled families. Any change takes effect the following academic year, with notice by the preceding June.</li>
@@ -158,7 +158,8 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p class="label">Communication</p>
     <h2>Communication and student records</h2>
     <p>I answer email on weekdays, usually within one business day. Families enrolled in between-session support have broader weekday and weekend availability for their student's academic questions; that is a generous arrangement, not an on-call one.</p>
-    <p>For students under 18, a parent or guardian is included on my correspondence with the student, and scheduling and billing are handled with the parent or guardian directly. Parents may be added to the shared materials folder on request and may ask to see my session notes at any time.</p>
+    <p>For students under 18, a parent or guardian is included on every channel I use to reach the student. Most scheduling and question-asking happens by text, because it is far easier for a student to photograph a problem than to describe it, so in practice this means a group message with your student, you, and me. You are welcome to mute it and never read a word of it. What matters is that the thread is open, and that nothing passes between me and your student that you could not see.</p>
+    <p>I hold to this even when families tell me it isn't necessary. It protects your student and it protects me, and a rule that only applies when someone asks for it isn't much of a rule. Scheduling changes and billing are confirmed with you directly. Parents may be added to the shared materials folder on request and may ask to see my session notes at any time.</p>
     <p>What information I collect, why, who processes it, and how long I keep it is set out in full in the <a href="/privacy/">privacy notice</a>.</p>
   </div>
 
@@ -170,7 +171,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p>I also reserve the right to end an engagement, with notice and a final prorated invoice, in these circumstances:</p>
     <ul class="pol-list">
       <li>repeated missed or late-cancelled sessions</li>
-      <li>invoices more than fourteen days past due</li>
+      <li>invoices unpaid fourteen days after the due date</li>
       <li>a student consistently unwilling to participate, after I have raised it with you and we have tried together to address it</li>
       <li>conduct toward me, from a student or an adult, that is hostile, demeaning, or abusive</li>
     </ul>
