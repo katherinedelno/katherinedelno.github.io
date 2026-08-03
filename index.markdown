@@ -53,7 +53,7 @@ permalink: /
 
   <div class="pg-section">
     <h2>This August</h2>
-    <p>Before the school year begins, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course, whether or not they attend.</p>
+    <p>As the school year gets underway, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course immediately, whether or not they attend.</p>
     <p style="margin-top:1rem;"><a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pg-btn" target="_blank" rel="noopener">Register</a></p>
   </div>
 

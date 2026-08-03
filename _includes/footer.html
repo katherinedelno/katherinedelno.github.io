@@ -1,0 +1,52 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <style>
+    .site-legal {
+      margin-top: 26px; padding-top: 16px; border-top: 1px solid #e6e6e6;
+      font-size: .8rem; line-height: 1.6; color: #5c5c5c;
+    }
+    .site-legal p { margin: 0 0 .35rem; max-width: 74ch; }
+    .site-legal a { color: #5c5c5c; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #b9b9b9; }
+    .site-legal a:hover { color: #1f1f1f; text-decoration-color: #1f1f1f; }
+    .site-legal a:focus-visible { outline: 2px solid #2b2b2b; outline-offset: 3px; color: #1f1f1f; }
+    .site-legal .sep { padding: 0 .5em; color: #b9b9b9; }
+  </style>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">{%- include social.html -%}</div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+
+    <div class="site-legal">
+      <p>
+        <a href="{{ "/policies/" | relative_url }}">Policies</a><span class="sep">&middot;</span><a href="{{ "/privacy/" | relative_url }}">Privacy</a><span class="sep">&middot;</span><a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>
+      </p>
+      <p>AP&reg; is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this private instruction service.</p>
+    </div>
+
+  </div>
+
+</footer>
