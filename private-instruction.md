@@ -356,7 +356,7 @@ permalink: /private-instruction/
       <li><b>Monthly parent check-ins</b> by email or call to review progress, strengths, and next steps.</li>
     </ul>
 
-    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed monthly in arrears. Invoices are sent on the 1st for the previous month and are due within seven days. Rates are held for the full academic year for enrolled families. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist. Full billing, attendance, and cancellation terms are set out under <a href="/policies/">policies</a>.</p>
+    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed after they happen, never in advance. On the first business day of each month I send one invoice covering the sessions we had the month before, payable within seven days of the invoice date. Rates are held for the full academic year for enrolled families. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist. Full billing, attendance, and cancellation terms are set out under <a href="/policies/">policies</a>.</p>
   </div>
 
   <!-- REFERRALS -->
@@ -456,7 +456,7 @@ permalink: /private-instruction/
          onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">Book a meet-and-greet</a>
     </div>
     <span class="email">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
-    <p style="margin:1.4rem auto 0;font-size:.9rem;">Before we begin, please read the <a href="/policies/">policies</a> and the <a href="/privacy/">privacy notice</a>. Enrolled families sign a short engagement agreement that incorporates both.</p>
+    <p style="margin:1.4rem auto 0;font-size:.9rem;">Before we begin, please read the <a href="/policies/">policies</a> and the <a href="/privacy/">privacy notice</a>. I send both by email at intake and ask for a short reply confirming you have read them.</p>
   </div>
 
   <!-- DISCLAIMER -->

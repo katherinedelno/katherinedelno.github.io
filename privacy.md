@@ -57,7 +57,7 @@ description: "What information Katherine Delno collects from families and studen
   <div class="pol-section">
     <p class="label">Minors</p>
     <h2>Students under 18</h2>
-    <p>Most of my students are minors. Scheduling, billing, and policy correspondence go to a parent or guardian, and a parent or guardian is included on my correspondence with the student.</p>
+    <p>Most of my students are minors. Scheduling, billing, and policy correspondence go to a parent or guardian, and a parent or guardian is included on every channel I use to reach the student, including text. In practice that means a group message thread rather than a private one, so that a student's messages with me are always visible to a parent.</p>
     <p>Parents and guardians may ask at any time to see the session notes, materials, and records I hold about their student, and may be added to the shared materials folder on request.</p>
     <p>This site and this practice are not directed to children under 13, and I do not knowingly collect information from them.</p>
   </div>
