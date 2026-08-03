@@ -370,7 +370,7 @@ permalink: /private-instruction/
   <div class="pi-section" id="referrals">
     <p class="label">Referrals</p>
     <h2>Most of my students come from families I already work with</h2>
-    <p>If you refer a family and their student enrolls, I credit one of your regular sessions to your next invoice, once the new student has completed a first month of instruction. There is no limit on how many referrals you may make, and the credit applies whether or not you are enrolled at the time. If you are no longer enrolled, I will send the equivalent amount as a gift card or hold it against future sessions, whichever you prefer.</p>
+    <p>If you refer a family and their student enrolls, I credit one of your regular sessions to your next invoice, once the new student has completed a first month of instruction. There is no limit on how many referrals you may make, and the credit applies whether or not you are enrolled at the time. If you are no longer enrolled, I will hold the equivalent amount against future sessions.</p>
     <p style="margin-top:1.1rem;">I ask only that referrals be genuine ones. I would rather work with three families who are a real fit than ten who are not, and a referral that isn't serves neither of us.</p>
     <p style="margin-top:1.1rem;">Families considering the practice are welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> or <a href="https://calendly.com/katherinedelno" target="_blank" rel="noopener">book a free 15-minute introduction</a>.</p>
   </div>
