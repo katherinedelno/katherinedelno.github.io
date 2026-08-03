@@ -132,7 +132,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
   <div class="pol-section" id="referrals">
     <p class="label">Referrals</p>
     <h2>Referrals</h2>
-    <p>If you refer a family and their student enrolls, I credit one of your regular sessions to your next invoice, once the new student has completed a first month of instruction. There is no limit, and the credit applies whether or not you are enrolled at the time.</p>
+    <p>If you refer a family and their student enrolls, I credit one 60-minute session to your next invoice, once the new student has completed a first month of instruction. There is no limit on how many referrals you may make. If you are no longer enrolled when the credit comes due, I will send an Amazon gift card for the same amount instead.</p>
     <p>I ask only that referrals be genuine ones. I would rather work with three families who are a real fit than ten who are not.</p>
   </div>
 
