@@ -255,9 +255,12 @@ It is built for working, not for reading. Type the exact values from a problem i
       fields:[['pp','p',0,1,0.01],['pn','n',1,5000,1]],
       get:function(){ var p=S.P.pp,n=S.P.pn; return { m:p, s:Math.sqrt(p*(1-p)/n), p:p, n:n }; },
       mean:function(q){ return q.m; }, sd:function(q){ return q.s; },
-      pdf:function(x,q){ return normpdf((x-q.m)/q.s)/q.s; },
-      cdf:function(x,q){ return normcdf((x-q.m)/q.s); },
-      inv:function(p,q){ return q.m + q.s*norminv(p); } },
+      // At p = 0 or p = 1 the sampling distribution is a point mass, so there is
+      // no density to draw. Returning zero keeps the axes finite and leaves the
+      // large-counts warning to explain why no curve is there.
+      pdf:function(x,q){ return q.s>0 ? normpdf((x-q.m)/q.s)/q.s : 0; },
+      cdf:function(x,q){ return q.s>0 ? normcdf((x-q.m)/q.s) : (x<q.m?0:1); },
+      inv:function(p,q){ return q.s>0 ? q.m + q.s*norminv(p) : q.m; } },
     xbar: { name:'Sample mean', disc:false,
       fields:[['xmu','μ',-1e6,1e6,0.1],['xsig','σ',1e-6,1e6,0.1],['xn','n',1,5000,1]],
       get:function(){ var n=S.P.xn; return { m:S.P.xmu, s:S.P.xsig/Math.sqrt(n), sig:S.P.xsig, n:n }; },
@@ -289,6 +292,10 @@ It is built for working, not for reading. Type the exact values from a problem i
   }
   function range(){
     var D=def(), q=D.get(), m=D.mean(q), s=D.sd(q);
+    // A binomial at p = 0 or p = 1, and a sample proportion at either end, have
+    // zero spread. Without this the window collapses to a single point, every
+    // horizontal coordinate becomes 0/0, and the whole figure disappears.
+    if(!isFinite(s) || s<=0) s = D.disc ? 1 : Math.max(Math.abs(m), 1)/8;
     if(S.d==='binom') return [Math.max(-0.5,m-4.5*s), Math.min(q.n+0.5, m+4.5*s)];
     if(D.pos) return [0, m+4.5*s];
     return [m-4*s, m+4*s];

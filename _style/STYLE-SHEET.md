@@ -431,6 +431,32 @@ python3 _style/check.py            # every article
 python3 _style/check.py _posts/…   # one file
 ```
 
+### And run the interactives, not just the prose
+
+`check.py` reads the source. It cannot see a script that throws, a canvas that grows without
+bound, or a slider position that sends every coordinate to `NaN` — all of which look
+perfect in the source and fall apart the moment a reader touches the control.
+
+```
+node _style/runtime-check.js            # every article
+node _style/runtime-check.js _posts/…   # one file
+```
+
+It builds a stand-in DOM and canvas, runs each article's own `<script>`, then exercises
+every control it registered: thirteen positions across each slider, every button twice so
+toggles see both states, then the sliders again now that the presets have changed. It
+reports four things — a script that throws, a backing store that changes size after setup,
+a non-finite number reaching a drawing call, and `getElementById` returning null.
+
+Both of the defects it found on its first run were invisible to every other check:
+
+- the Fundamental Theorem canvas doubled on every slider event, because the
+  device-pixel-ratio resize sat in a helper that `draw()` called;
+- the distribution explorer produced a zero-width window at $p = 0$ and $p = 1$, for the
+  binomial and for the sample proportion, so the figure vanished.
+
+Neither raised an error in the console. Both were immediately visible to a reader.
+
 It exits non-zero if it finds anything. The checks that catch *silent* failures — where the
 page renders wrongly and nothing warns you — are the bare pipe, an odd number of `$$`,
 unbalanced `\left`/`\right`, and unbalanced braces inside mathematics. The rest are the style
