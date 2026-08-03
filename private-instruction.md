@@ -213,7 +213,7 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Free webinars</p>
     <h2>Two free sessions this August</h2>
-    <p>Before the school year begins, I'm giving two free 45-minute sessions on how to start the year well. Everyone who registers receives my getting-started guide for their course, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
+    <p>Whether your student's year begins in August or after Labor Day, I'm giving two free 45-minute sessions on how to start it well. Everyone who registers receives my getting-started guide for their course right away, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
     <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
     <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
     <p style="margin-top:1.5rem;font-size:.93rem;color:var(--muted);">Students in AP Precalculus are welcome to register as well; I'll send the AP Precalculus guide, with a live session available by request.</p>
@@ -356,7 +356,16 @@ permalink: /private-instruction/
       <li><b>Monthly parent check-ins</b> by email or call to review progress, strengths, and next steps.</li>
     </ul>
 
-    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed monthly, with invoices sent on the 1st. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist.</p>
+    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed monthly in arrears. Invoices are sent on the 1st for the previous month and are due within seven days. Rates are held for the full academic year for enrolled families. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist. Full billing, attendance, and cancellation terms are set out under <a href="/policies/">policies</a>.</p>
+  </div>
+
+  <!-- REFERRALS -->
+  <div class="pi-section" id="referrals">
+    <p class="label">Referrals</p>
+    <h2>Most of my students come from families I already work with</h2>
+    <p>If you refer a family and their student enrolls, I credit one 90-minute session, $180, to your next invoice once the new student has completed a first month of instruction. There is no limit on how many referrals you may make, and the credit applies whether or not you are enrolled at the time. If you are no longer enrolled, I will send the credit as a gift card or apply it to future sessions, whichever you prefer.</p>
+    <p style="margin-top:1.1rem;">I ask only that referrals be genuine ones. I would rather work with three families who are a real fit than ten who are not, and a referral that isn't serves neither of us.</p>
+    <p style="margin-top:1.1rem;">Families considering the practice are welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> or <a href="https://calendly.com/katherinedelno" target="_blank" rel="noopener">book a free 15-minute introduction</a>.</p>
   </div>
 
   <!-- TECHNOLOGY -->
@@ -413,7 +422,7 @@ permalink: /private-instruction/
       </details>
       <details>
         <summary>What if we need to reschedule?</summary>
-        <p>Occasional schedule changes are normal. I ask for at least 24 hours' notice and do my best to accommodate; the full policy is set out under <a href="/policies/">policies</a>.</p>
+        <p>Occasional changes are normal and I will always try to find another time in the same week. I ask for at least 24 hours' notice; sessions cancelled inside that window, and missed sessions, are billed in full, because the hour is reserved for your student and not offered to anyone else. Every family gets one exception per term without question, and illness and emergencies are handled with common sense. The full policy is under <a href="/policies/">policies</a>.</p>
       </details>
       <details>
         <summary>Is the between-session support required?</summary>
@@ -447,17 +456,16 @@ permalink: /private-instruction/
          onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">Book a meet-and-greet</a>
     </div>
     <span class="email">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
+    <p style="margin:1.4rem auto 0;font-size:.9rem;">Before we begin, please read the <a href="/policies/">policies</a> and the <a href="/privacy/">privacy notice</a>. Enrolled families sign a short engagement agreement that incorporates both.</p>
   </div>
 
   <!-- DISCLAIMER -->
   <div class="pi-fine">
     <p class="label">Academic progress &amp; no guaranteed outcomes</p>
     <p>My goal is to help students build durable understanding, stronger problem-solving habits, and clearer written communication through structured instruction, targeted practice, and actionable feedback aligned with AP expectations.</p>
-    <p>I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student's consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, and test-day conditions. By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome.</p>
-    <p>The complete policies — academic outcomes, scheduling and cancellations, billing, communication, and how families acknowledge them — are set out plainly under <a href="/policies/">policies</a>.</p>
+    <p>I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student's consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, and test-day conditions. By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome. What I do hold myself to, and what each engagement is judged against, is set out in full under <a href="/policies/">policies</a>.</p>
     <p class="label" style="margin-top:1.4rem;">Accessibility</p>
     <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements. If you have any difficulty accessing content on this site, or if you need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I will work with you promptly to provide the information or assistance you need.</p>
-    <p><small>AP&reg; is a registered trademark owned by the College Board, which is not affiliated with and does not endorse this private instruction service.</small></p>
   </div>
 
 </div>
