@@ -89,7 +89,7 @@ description: "What information Katherine Delno collects from families and studen
   </div>
 
   <div class="pol-fine">
-    <p>Last updated 2 August 2026.</p>
+    <p>Last updated 3 August 2026.</p>
   </div>
 
 </div>

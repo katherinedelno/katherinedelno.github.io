@@ -19,6 +19,11 @@ permalink: /
   .pg-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600}
   .pg-btn:hover{opacity:.88}
   .btn-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .btn-row-reg{display:flex;gap:12px;flex-wrap:wrap;margin-top:1rem}
+  @media (max-width:560px){
+    .btn-row-reg{flex-direction:column;align-items:stretch}
+    .btn-row-reg .pg-btn{text-align:center}
+  }
   .btn-row .quiet{font-size:.97rem;color:var(--muted)}
   .btn-row .quiet a{color:var(--ink)}
 
@@ -53,8 +58,11 @@ permalink: /
 
   <div class="pg-section">
     <h2>This August</h2>
-    <p>As the school year gets underway, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course immediately, whether or not they attend.</p>
-    <p style="margin-top:1rem;"><a href="https://forms.gle/PMQRaH75zCRBTLg3A" class="pg-btn" target="_blank" rel="noopener">Register</a></p>
+    <p>As the school year gets underway, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course within a day, whether or not they attend.</p>
+    <div class="btn-row-reg">
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
+    </div>
   </div>
 
   <div class="pg-close">

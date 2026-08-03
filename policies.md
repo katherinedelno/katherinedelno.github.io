@@ -198,7 +198,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
   <div class="pol-section" id="changes">
     <p class="label">Changes</p>
     <h2>Changes to these policies</h2>
-    <p>These policies were last updated on 2 August 2026. I will give enrolled families at least fourteen days' notice by email before any change that materially affects them. Continuing instruction after that notice constitutes acceptance of the revised terms.</p>
+    <p>These policies were last updated on 3 August 2026. I will give enrolled families at least fourteen days' notice by email before any change that materially affects them. Continuing instruction after that notice constitutes acceptance of the revised terms.</p>
     <p>Questions about any of this are welcome, before you enroll or at any point afterward: <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </div>
 
