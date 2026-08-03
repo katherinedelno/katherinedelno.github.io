@@ -220,7 +220,7 @@ permalink: /private-instruction/
     <p>Whether your student's year begins in August or after Labor Day, I'm giving two free 45-minute sessions on how to start it well. Everyone who registers receives my getting-started guide for their course within a day, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
     <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
     <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
-    <p style="margin-top:1.5rem;font-size:.93rem;color:var(--muted);">Students in AP Precalculus are welcome to register as well; I'll send the AP Precalculus guide, with a live session available by request.</p>
+    <p style="margin-top:1.5rem;font-size:.93rem;color:var(--muted);">Students in AP Precalculus: email me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I'll send the getting-started guide for that course.</p>
     <div class="pi-reg-row">
       <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
       <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
@@ -335,12 +335,12 @@ permalink: /private-instruction/
       <div class="pi-price featured">
         <span class="pill">Recommended</span>
         <h3>90-minute session</h3>
-        <div class="amt">$180<span> / session</span></div>
+        <div class="amt">$210<span> / session</span></div>
         <p class="note">Room to teach the topic, work through it together, and finish with an independent check. This is the cadence I recommend for steady weekly progress.</p>
       </div>
       <div class="pi-price">
         <h3>60-minute session</h3>
-        <div class="amt">$130<span> / session</span></div>
+        <div class="amt">$140<span> / session</span></div>
         <p class="note">Best for targeted help, test review, or self-directed students who come with specific questions.</p>
       </div>
     </div>
@@ -354,7 +354,7 @@ permalink: /private-instruction/
       <li><b>AP-aligned writing</b> focus on setup, justification, and interpretation.</li>
     </ul>
 
-    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
+    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$300/month ($75/week)</span></p>
     <p style="margin-top:.5rem;font-size:.95rem;color:var(--muted);">For families who want the learning to stay active between meetings: continuity, accountability, and a feedback loop so a misunderstanding doesn't sit untouched for a week.</p>
     <ul class="pi-list">
       <li><b>Weekly assigned problem sets</b> with written feedback on method, setup, and communication, giving the student extra accountability to keep practicing between sessions.</li>
@@ -370,7 +370,7 @@ permalink: /private-instruction/
   <div class="pi-section" id="referrals">
     <p class="label">Referrals</p>
     <h2>Most of my students come from families I already work with</h2>
-    <p>If you refer a family and their student enrolls, I credit one 90-minute session, $180, to your next invoice once the new student has completed a first month of instruction. There is no limit on how many referrals you may make, and the credit applies whether or not you are enrolled at the time. If you are no longer enrolled, I will send the credit as a gift card or apply it to future sessions, whichever you prefer.</p>
+    <p>If you refer a family and their student enrolls, I credit one of your regular sessions to your next invoice, once the new student has completed a first month of instruction. There is no limit on how many referrals you may make, and the credit applies whether or not you are enrolled at the time. If you are no longer enrolled, I will send the equivalent amount as a gift card or hold it against future sessions, whichever you prefer.</p>
     <p style="margin-top:1.1rem;">I ask only that referrals be genuine ones. I would rather work with three families who are a real fit than ten who are not, and a referral that isn't serves neither of us.</p>
     <p style="margin-top:1.1rem;">Families considering the practice are welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> or <a href="https://calendly.com/katherinedelno" target="_blank" rel="noopener">book a free 15-minute introduction</a>.</p>
   </div>
