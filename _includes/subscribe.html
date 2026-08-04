@@ -1,0 +1,53 @@
+{%- comment -%}
+  Email signup. Service-agnostic: set `newsletter_action` in _config.yml to your
+  provider's form endpoint and the form goes live everywhere it is included.
+  While that value is empty the block renders a mailto link instead, so the page
+  is never showing a form that quietly discards addresses.
+
+  Usage:
+    {% include subscribe.html
+       heading="..." blurb="..." button="..." %}
+  All three are optional and fall back to the copy below.
+{%- endcomment -%}
+
+{%- assign sub_heading = include.heading | default: "New writing, when there is some" -%}
+{%- assign sub_blurb = include.blurb | default: "A short note when I publish something new. Roughly monthly, often less. No other mail, and you can leave in one click." -%}
+{%- assign sub_button = include.button | default: "Subscribe" -%}
+
+<section class="sub" aria-labelledby="sub-h">
+  <style>
+    .sub{margin-top:3rem;padding:26px 28px;border:1px solid #e6e6e6;border-radius:12px;background:#fbfbfb;max-width:70ch}
+    .sub h2{font-size:1.12rem;font-weight:700;letter-spacing:-.015em;margin:0 0 .45rem}
+    .sub p{font-size:.92rem;color:#5c5c5c;line-height:1.6;margin:0 0 1.1rem;max-width:60ch}
+    .sub form{display:flex;gap:9px;flex-wrap:wrap}
+    .sub input[type=email]{flex:1;min-width:220px;font:inherit;font-size:.95rem;padding:11px 13px;border:1px solid #d6d6d6;border-radius:8px;background:#fff;color:#1f1f1f}
+    .sub input[type=email]:focus{outline:2px solid #2b2b2b;outline-offset:1px;border-color:#2b2b2b}
+    .sub button{font:inherit;font-size:.88rem;font-weight:700;letter-spacing:.03em;padding:11px 20px;border:1px solid #1f1f1f;border-radius:8px;background:#1f1f1f;color:#fff;cursor:pointer}
+    .sub button:hover{background:#000;border-color:#000}
+    .sub button:focus-visible{outline:2px solid #2b2b2b;outline-offset:2px}
+    .sub .sub-fine{font-size:.78rem;color:#8a8a8a;margin:.8rem 0 0}
+    .sub .sub-fine a{color:#8a8a8a}
+    .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    @media (max-width:520px){.sub form{flex-direction:column}.sub input[type=email],.sub button{width:100%}}
+  </style>
+
+  <h2 id="sub-h">{{ sub_heading }}</h2>
+  <p>{{ sub_blurb }}</p>
+
+  {%- if site.newsletter_action and site.newsletter_action != "" -%}
+  <form action="{{ site.newsletter_action }}" method="post" target="_blank" novalidate>
+    <label class="sub-hp" for="sub-email">Email address</label>
+    <input type="email" id="sub-email" name="email" placeholder="you@example.com"
+           autocomplete="email" required>
+    {%- comment -%}Honeypot: bots fill it, people never see it.{%- endcomment -%}
+    <div class="sub-hp" aria-hidden="true">
+      <label for="sub-hp">Leave this field empty</label>
+      <input type="text" id="sub-hp" name="website" tabindex="-1" autocomplete="off">
+    </div>
+    <button type="submit">{{ sub_button }}</button>
+  </form>
+  <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>. You can also subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>.</p>
+  {%- else -%}
+  <p class="sub-fine">The list isn't open yet. In the meantime you can subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I'll add you when it is.</p>
+  {%- endif -%}
+</section>

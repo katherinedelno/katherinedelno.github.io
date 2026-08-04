@@ -209,4 +209,19 @@ permalink: /resources/
   })();
   </script>
 
+  <section class="rxm-section" aria-label="Diagnostics">
+    <div class="rxm-sechead"><h2 class="rxm-secname">Diagnostics</h2><p class="rxm-seccount">1 tool</p></div>
+    <div class="rxm-grid">
+      <a class="rxm-box rxm-feat" href="{{ "/ap-calculus-readiness/" | relative_url }}">
+        <p class="rxm-eyebrow"><span>AP Calculus</span><span>Interactive</span></p>
+        <p class="rxm-title">Are you ready for AP Calculus?</p>
+        <p class="rxm-blurb">Sixteen questions in the algebra, functions, trigonometry, and logarithms the course assumes you already have. Scored by area, with what each gap costs once the term starts.</p>
+      </a>
+    </div>
+  </section>
+
+  {% include subscribe.html
+     heading="New writing, when there is some"
+     blurb="These pieces go out to the students I teach first. If you'd like a short note when a new one is up, leave an address. Roughly monthly, often less, and nothing else." %}
+
 </div>
