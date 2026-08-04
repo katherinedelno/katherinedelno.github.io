@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 16
 interactive: true
 blurb: "The rule is silent more often than students expect"
+image: "/assets/og/lhospitals-rule.png"
 ---
 
 L'Hospital's rule is a conditional, and almost every error with it comes from using the conclusion without having established the condition. It is easy to apply and easy to apply where it does not belong, and those are not separate facts about it.
@@ -213,5 +214,5 @@ Then the differentiation, and then — if the new quotient is still indeterminat
 The framework treats this as more than a preference. Its resource list for the topic points three separate documents at a single released free-response part — the scoring guidelines, the samples and commentary, and the chief reader report, all for question 5(d) from 2018. It also lists two teacher discussions, one of them titled "Possible Inconsistent Language". Three documents and a warning about wording, for one part of one problem.
 
 <div class="article-note" markdown="1">
-Before reaching for the rule, check whether [ordinary algebra](/2026/07/30/indeterminate-forms.html) resolves the form. Factoring, rationalising, and dividing by the highest power all handle large families of $$\tfrac00$$ and $$\tfrac{\infty}{\infty}$$ limits without any theorem, and they never require you to argue that a hypothesis holds. The rule is worth saving for the quotients that algebra cannot reach.
+Before reaching for the rule, check whether [ordinary algebra](/2026/07/30/indeterminate-forms.html) resolves the form. Factoring, rationalizing, and dividing by the highest power all handle large families of $$\tfrac00$$ and $$\tfrac{\infty}{\infty}$$ limits without any theorem, and they never require you to argue that a hypothesis holds. The rule is worth saving for the quotients that algebra cannot reach.
 </div>

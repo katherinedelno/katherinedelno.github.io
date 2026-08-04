@@ -10,6 +10,7 @@ kind: mechanics
 sequence: 24
 interactive: true
 blurb: "The exponent that saves you at infinity is the one that ruins you at zero"
+image: "/assets/og/improper-integrals.png"
 ---
 
 The framework's enduring understanding for this topic is worth reading twice, because it states a result rather than a technique: the use of limits allows us to show that the areas of unbounded regions may be finite.
@@ -154,7 +155,7 @@ The pattern is exact and it is a reversal. For the tail out to infinity, $$\text
 
 The reason is the same in both cases and it is worth saying once. Convergence at infinity needs the function to fall off quickly, and a large $$p$$ does that. Convergence at zero needs the function to blow up slowly, and a large $$p$$ does the opposite. One exponent cannot do both, which is why $$\textstyle\int_0^{\infty} x^{-p}dx$$ diverges for every $$p$$ whatsoever.
 
-At $$p = 1$$ both fail. That is the case the log-log picture makes obvious: $$y = x^{-p}$$ is a straight line of slope $$-p$$ on those axes, and $$p = 1$$ is the dashed diagonal that separates the two behaviours. It is on the wrong side of both boundaries at once, because both are strict.
+At $$p = 1$$ both fail. That is the case the log-log picture makes obvious: $$y = x^{-p}$$ is a straight line of slope $$-p$$ on those axes, and $$p = 1$$ is the dashed diagonal that separates the two behaviors. It is on the wrong side of both boundaries at once, because both are strict.
 
 That threshold is going to appear again. The series $$\textstyle\sum n^{-p}$$ converges under exactly the condition that $$\textstyle\int_1^{\infty}x^{-p}dx$$ does, and the case $$p = 1$$ — [the harmonic series](/2026/07/23/harmonic-series-surprises-of-infinity.html) — is on the divergent side of both. That is not a coincidence, and Unit 10 gives it a name and a theorem. The framework recommends making the connection in the other direction as well, from the integral test back to this topic.
 
@@ -171,5 +172,5 @@ The integrand is unbounded at $$x = 0$$, which is inside the interval. The integ
 The absurd answer is the useful part. An integral of a positive function that returns a negative number is telling you that [the Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) was applied across a point where its hypotheses fail — it wants an integrand that is continuous on the closed interval, and this one is not defined at the middle of it.
 
 <div class="article-note" markdown="1">
-Two habits close most of the gap on this topic. Write the limit every time, even when you are sure it converges, because the notation is the argument and a value with no limit attached has not been justified. And before starting, look at the integrand at both endpoints and at any zero of a denominator inside the interval — that scan takes five seconds and is the only defence against the case that does not announce itself.
+Two habits close most of the gap on this topic. Write the limit every time, even when you are sure it converges, because the notation is the argument and a value with no limit attached has not been justified. And before starting, look at the integrand at both endpoints and at any zero of a denominator inside the interval — that scan takes five seconds and is the only defense against the case that does not announce itself.
 </div>

@@ -10,6 +10,7 @@ kind: foundations
 sequence: 2
 interactive: true
 blurb: "One expression, read four ways: zeros, tangencies, holes, and asymptotes"
+image: "/assets/og/what-the-factored-form-tells-you.png"
 ---
 
 A factored expression is not a step on the way to a graph. It is the graph, written down, and almost every question Unit 1 asks is a request to read one line of it out loud.
@@ -29,7 +30,7 @@ The slider below moves one root. The other factors stay where they are.
     <span class="viz-value" id="ff-expr" style="min-width:100%"></span>
   </div>
   <div class="ff-read" id="ff-read"></div>
-  <p class="viz-caption">Four expressions, all in factored form, with one root under the slider. The curve is drawn from the factors directly, and every marker on it is placed by comparing multiplicities rather than by inspecting the picture: a filled dot is a zero, an open dot is a hole, a dashed vertical is an asymptote. On the first two, slide a onto the neighbouring root and watch what the graph does at the moment the two become one. On the last two, slide a onto 1 and compare the results, because those two expressions differ only in an exponent and they do not end up the same.</p>
+  <p class="viz-caption">Four expressions, all in factored form, with one root under the slider. The curve is drawn from the factors directly, and every marker on it is placed by comparing multiplicities rather than by inspecting the picture: a filled dot is a zero, an open dot is a hole, a dashed vertical is an asymptote. On the first two, slide a onto the neighboring root and watch what the graph does at the moment the two become one. On the last two, slide a onto 1 and compare the results, because those two expressions differ only in an exponent and they do not end up the same.</p>
   <style>
     .ff-read{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -138,7 +139,11 @@ The slider below moves one root. The other factors stay where they are.
     });
 
     // readout
-    expr.textContent = P[mode].lab.replace('a', a.toFixed(2));
+    // a negative root would otherwise print as "(x−-1.25)", so fold the sign into
+    // the operator rather than leaving two of them side by side
+    expr.textContent = P[mode].lab.replace(/(.)a\)/, function(whole, minus){
+      return (a < 0 ? '+' : minus) + ' ' + Math.abs(a).toFixed(2) + ')';
+    });
     var lines = fs.map(function(t){
       var word = t.kind === 'zero'
           ? (t.mult === 1 ? 'crosses' : (t.mult % 2 === 0 ? 'tangent to the axis' : 'flattens through'))
@@ -192,9 +197,9 @@ Anyone reasoning by cancellation gets the fourth one wrong, and the readout unde
 
 ## The largest factor decides the ends
 
-The last reading is the coarsest. For inputs of large magnitude a polynomial is dominated by its leading term, so the end behaviour of a rational function is the end behaviour of the quotient of the two leading terms — a claim that ignores every factor except the biggest one.
+The last reading is the coarsest. For inputs of large magnitude a polynomial is dominated by its leading term, so the end behavior of a rational function is the end behavior of the quotient of the two leading terms — a claim that ignores every factor except the biggest one.
 
-Three outcomes follow, and the framework organises them by which polynomial dominates. When the denominator wins, the quotient tends to zero and the graph flattens onto the horizontal axis. When neither wins, the quotient is the ratio of the leading coefficients and the graph flattens onto that height. When the numerator wins, there is no horizontal asymptote at all, and the graph instead takes on the end behaviour of the leftover polynomial — which, in the single case where that leftover is linear, is a slant asymptote.
+Three outcomes follow, and the framework organises them by which polynomial dominates. When the denominator wins, the quotient tends to zero and the graph flattens onto the horizontal axis. When neither wins, the quotient is the ratio of the leading coefficients and the graph flattens onto that height. When the numerator wins, there is no horizontal asymptote at all, and the graph instead takes on the end behavior of the leftover polynomial — which, in the single case where that leftover is linear, is a slant asymptote.
 
 <div class="article-note" markdown="1">
 A prediction to test at the slider: on the fourth expression, set $$a$$ to 1 and then ask what would have to change for the asymptote to become a hole. Not the cancelling, which already happens. The numerator would need a second factor of $$(x-1)$$, so that the multiplicities tie at two apiece. Write the resulting expression and check that its graph has a hole where an asymptote used to be. A student who can construct that example on demand has stopped reading rational functions by cancellation and started reading them by multiplicity, which is the only version that survives contact with a repeated factor.

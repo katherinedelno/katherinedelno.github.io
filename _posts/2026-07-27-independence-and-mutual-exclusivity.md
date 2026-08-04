@@ -10,6 +10,7 @@ kind: foundations
 sequence: 5
 interactive: true
 blurb: "Mutually exclusive events are as dependent as events can be"
+image: "/assets/og/independence-and-mutual-exclusivity.png"
 ---
 
 Ask a class whether mutually exclusive events are independent and a majority will say yes, on the reasonable-sounding grounds that both words describe events with nothing to do with each other. The truth is nearly the reverse. Mutually exclusive events are as strongly dependent as two events can be, and the confusion between the two properties is among the most reliable point-losers in the probability units of AP Statistics.

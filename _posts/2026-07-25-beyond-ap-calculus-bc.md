@@ -12,6 +12,7 @@ sequence: 6
 interactive: true
 blurb: "Functions become landscapes, derivatives become directions"
 featured: true
+image: "/assets/og/beyond-ap-calculus-bc.png"
 ---
 
 Every function in AP Calculus takes one number in and puts one number out, so its graph is a curve, and the whole course happens on that curve: slopes along it, areas under it. Calculus 3 asks a single innocent question. What if a function takes two numbers in?

@@ -10,6 +10,7 @@ kind: beyond
 sequence: 4
 interactive: true
 blurb: "Why the leading digit 1 appears 30% of the time, and how it catches fraud"
+image: "/assets/og/benfords-law.png"
 ---
 
 Collect the populations of every county in the United States, or the lengths of the world's rivers, or the line items of a corporate ledger, and tally the first digit of each number. Intuition expects the nine digits to appear roughly equally, about 11% each. What actually happens is one of the strangest reliable facts in statistics: the digit 1 leads about 30% of the time, 2 about 18%, and the frequencies fall steadily until 9, which leads barely 5% of entries.

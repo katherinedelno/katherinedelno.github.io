@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 11
 interactive: true
 blurb: "The slope on an implicit curve needs both coordinates, not just x"
+image: "/assets/og/implicit-differentiation.png"
 ---
 
 A relation like $$x^2 + xy + y^2 = 7$$ describes a perfectly good curve, and it has a tangent line at almost every point of it. What it does not have is a formula for $$y$$ in terms of $$x$$ that anyone wants to differentiate.
@@ -19,7 +20,7 @@ Implicit differentiation gets the slope without solving. The framework's stateme
 
 ## The chain rule, applied to a variable
 
-Differentiating $$y^2$$ with respect to $$x$$ gives $$2y \cdot \tfrac{dy}{dx}$$, not $$2y$$. The extra factor is the [inner derivative](/2026/07/30/chain-rule-reading-the-layers.html) — $$y$$ is a function of $$x$$, so $$y^2$$ is a composition, and the chain rule attaches the derivative of what is inside. The course's exam guidance says exactly this: in an expression like $$\tfrac{y}{3y^2 - x}$$, students must recognise that the chain rule applies to $$y$$ because $$y$$ depends on $$x$$.
+Differentiating $$y^2$$ with respect to $$x$$ gives $$2y \cdot \tfrac{dy}{dx}$$, not $$2y$$. The extra factor is the [inner derivative](/2026/07/30/chain-rule-reading-the-layers.html) — $$y$$ is a function of $$x$$, so $$y^2$$ is a composition, and the chain rule attaches the derivative of what is inside. The course's exam guidance says exactly this: in an expression like $$\tfrac{y}{3y^2 - x}$$, students must recognize that the chain rule applies to $$y$$ because $$y$$ depends on $$x$$.
 
 Everything else is ordinary differentiation. Take $$x^2 + xy + y^2 = 7$$ and differentiate both sides with respect to $$x$$, using the product rule on $$xy$$:
 
@@ -43,7 +44,7 @@ On this curve, setting $$x = 1$$ gives $$y^2 + y - 6 = 0$$, so $$y = 2$$ or $$y 
     <input type="range" id="im-t" min="0" max="1000" step="1" value="120">
   </div>
   <div class="im-read" id="im-read"></div>
-  <p class="viz-caption">Four relations, none of them solved for y. The point slides along the curve and the line drawn through it is the tangent whose slope the implicit formula predicts. Below, that formula is shown with its numerator and denominator separated, then checked against a slope obtained a completely different way — by parametrising the curve and dividing dy by dx. The two agree everywhere, including where they both fail: when the denominator reaches zero the tangent is vertical and there is no slope to report, which is a point the course calls critical rather than an accident of the algebra.</p>
+  <p class="viz-caption">Four relations, none of them solved for y. The point slides along the curve and the line drawn through it is the tangent whose slope the implicit formula predicts. Below, that formula is shown with its numerator and denominator separated, then checked against a slope obtained a completely different way — by parametrizing the curve and dividing dy by dx. The two agree everywhere, including where they both fail: when the denominator reaches zero the tangent is vertical and there is no slope to report, which is a point the course calls critical rather than an accident of the algebra.</p>
   <style>
     .im-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -61,7 +62,7 @@ On this curve, setting $$x = 1$$ gives $$y^2 + y - 6 = 0$$, so $$y = 2$$ or $$y 
   var INK='#1f1f1f',MUTED='#5c5c5c',LINE='#e6e6e6',FAINT='#9a9a97',PALE='#d6d6d3';
   var FONT='Hanken Grotesk, sans-serif';
   var $=function(i){ return document.getElementById(i); };
-  var SIDE=336, TOPP=22, CX0=(W-SIDE)/2;   // the plot is a centred square
+  var SIDE=336, TOPP=22, CX0=(W-SIDE)/2;   // the plot is a centered square
 
   var A=Math.sqrt(14/3), B=Math.sqrt(14), R2=Math.SQRT2;
   // Each curve: p(s) for s in [0,1] gives the point and a tangent DIRECTION
@@ -93,7 +94,8 @@ On this curve, setting $$x = 1$$ gives $$y^2 + y - 6 = 0$$, so $$y = 2$$ or $$y 
   function py(y){ var g=G(); return TOPP+SIDE-(y-(g.cy-g.w))/(2*g.w)*SIDE; }
   // Values below 1e-12 are floating-point residue from sin and cos at multiples
   // of pi/2, not quantities; print them as the zero they are meant to be.
-  function fmt(v){ var a=Math.abs(v);
+  function fmt(v){ if(!isFinite(v)) return '—';
+    var a=Math.abs(v);
     if(a<1e-12) return (0).toFixed(4);
     if(a<1e-3||a>=1e5) return v.toExponential(3);
     return v.toFixed(4); }
@@ -149,15 +151,21 @@ On this curve, setting $$x = 1$$ gives $$y^2 + y - 6 = 0$$, so $$y = 2$$ or $$y 
     // readout
     var N=g.num(P.x,P.y), D=g.den(P.x,P.y);
     var vertical = Math.abs(P.dx) < 1e-9*(Math.abs(P.dx)+Math.abs(P.dy));
-    var slope = vertical ? null : N/D;
+    // At the folium's node both parts vanish at once. The curve crosses itself
+    // there, so it has two tangents rather than none, and a single quotient
+    // cannot choose between them.
+    var node = Math.abs(N) < 1e-12 && Math.abs(D) < 1e-12;
+    var slope = (vertical || node) ? null : N/D;
     var meas  = vertical ? null : P.dy/P.dx;
     var out=
       '<div><span class="im-lab">point on the curve</span>('+fmt(P.x)+', '+fmt(P.y)+')</div>'+
       '<div><span class="im-lab">dy/dx = '+g.eq+'</span>'+
         fmt(N)+' / '+fmt(D)+' = '+
-        (vertical?'<span class="im-flag">undefined &mdash; vertical tangent</span>':fmt(slope))+'</div>'+
+        (node?'<span class="im-flag">0/0 &mdash; the curve crosses itself here, so there are two tangents rather than none</span>'
+            :vertical?'<span class="im-flag">undefined &mdash; vertical tangent</span>':fmt(slope))+'</div>'+
       '<div><span class="im-lab">measured, dy &divide; dx</span>'+
-        (vertical?'<span class="im-flag">undefined</span>':fmt(meas))+'</div>';
+        (vertical?'<span class="im-flag">undefined</span>':fmt(meas))+
+        (node?'<span class="im-flag">&nbsp;&mdash; the branch this parametrization is on</span>':'')+'</div>';
     $('im-read').innerHTML=out;
   }
   $('im-t').addEventListener('input',draw);

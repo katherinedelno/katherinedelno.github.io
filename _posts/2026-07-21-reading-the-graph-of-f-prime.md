@@ -12,6 +12,7 @@ sequence: 17
 interactive: true
 blurb: "The translation table for the exam's favorite question"
 featured: true
+image: "/assets/og/reading-the-graph-of-f-prime.png"
 ---
 
 Every AP Calculus exam contains some version of this question: *the figure shows the graph of $$f'$$, the derivative of $$f$$*, followed by questions about $$f$$ itself. It is one of the most-missed problem types in the course, and almost every miss traces back to a single cause. At some point, the student's eyes start treating the picture as the graph of $$f$$.
@@ -41,26 +42,26 @@ The graph below shows $$f'$$ (not $$f$$) on the interval $$[0, 8]$$: line segmen
 
 <div class="viz" markdown="0">
 <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph of f prime: piecewise linear, starting at (0,3), decreasing to (4,-3), increasing to (8,3)">
-  <!-- gridlines -->
+  <!-- gridlines: 75 px per unit, x = 0 at 50 and x = 8 at 650 -->
   <g stroke="#ececec" stroke-width="1">
-    <line x1="130" y1="40" x2="130" y2="260"/><line x1="210" y1="40" x2="210" y2="260"/>
-    <line x1="290" y1="40" x2="290" y2="260"/><line x1="370" y1="40" x2="370" y2="260"/>
-    <line x1="450" y1="40" x2="450" y2="260"/><line x1="530" y1="40" x2="530" y2="260"/>
-    <line x1="610" y1="40" x2="610" y2="260"/>
+    <line x1="125" y1="40" x2="125" y2="260"/><line x1="200" y1="40" x2="200" y2="260"/>
+    <line x1="275" y1="40" x2="275" y2="260"/><line x1="350" y1="40" x2="350" y2="260"/>
+    <line x1="425" y1="40" x2="425" y2="260"/><line x1="500" y1="40" x2="500" y2="260"/>
+    <line x1="575" y1="40" x2="575" y2="260"/>
     <line x1="50" y1="80" x2="650" y2="80"/><line x1="50" y1="220" x2="650" y2="220"/>
   </g>
   <!-- axes -->
-  <line x1="50" y1="150" x2="660" y2="150" stroke="#9a9a9a" stroke-width="1.5"/>
+  <line x1="50" y1="150" x2="665" y2="150" stroke="#9a9a9a" stroke-width="1.5"/>
   <line x1="50" y1="30" x2="50" y2="270" stroke="#9a9a9a" stroke-width="1.5"/>
   <!-- f' curve -->
-  <polyline points="50,80 210,150 370,220 530,150 650,80" fill="none" stroke="#1f1f1f" stroke-width="3" stroke-linejoin="round"/>
+  <polyline points="50,80 200,150 350,220 500,150 650,80" fill="none" stroke="#1f1f1f" stroke-width="3" stroke-linejoin="round"/>
   <!-- zero crossings + turning point -->
-  <circle cx="210" cy="150" r="5" fill="#1f1f1f"/>
-  <circle cx="530" cy="150" r="5" fill="#1f1f1f"/>
-  <circle cx="370" cy="220" r="5" fill="#fff" stroke="#1f1f1f" stroke-width="2.5"/>
+  <circle cx="200" cy="150" r="5" fill="#1f1f1f"/>
+  <circle cx="500" cy="150" r="5" fill="#1f1f1f"/>
+  <circle cx="350" cy="220" r="5" fill="#fff" stroke="#1f1f1f" stroke-width="2.5"/>
   <!-- labels -->
   <g font-family="Hanken Grotesk, sans-serif" font-size="15" fill="#5c5c5c">
-    <text x="205" y="140">2</text><text x="365" y="145">4</text><text x="525" y="140">6</text><text x="640" y="143">8</text>
+    <text x="195" y="140">2</text><text x="345" y="145">4</text><text x="495" y="140">6</text><text x="645" y="143">8</text>
     <text x="34" y="85">3</text><text x="26" y="226">−3</text>
     <text x="600" y="60" font-weight="700" fill="#1f1f1f" font-style="italic">y = f ′(x)</text>
   </g>

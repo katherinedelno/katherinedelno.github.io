@@ -10,6 +10,7 @@ kind: foundations
 sequence: 8
 interactive: true
 blurb: "Draw samples from a skewed population and watch the means organize"
+image: "/assets/og/central-limit-theorem-watched-live.png"
 ---
 
 The Central Limit Theorem is the load-bearing wall of inference. [Every confidence interval for a mean](/2026/07/25/what-95-percent-confident-means.html) and every t-test in the course leans on it. Yet the statement sounds like a riddle: take samples from almost any population, however lopsided, and the distribution of the sample means will be approximately normal, with the approximation improving as the sample size grows.
@@ -42,10 +43,13 @@ The top panel shows the population: a strongly right-skewed distribution of indi
   [popCv, mCv].forEach(function(k){ k.width *= d__; k.height *= d__; });
   var nSl = document.getElementById('clt-n'), read = document.getElementById('clt-read');
   var LO = 0, HI = 80, BINS = 60;
-  // right-skewed population: exponential-like, mean 20, clipped at 80
+  // Right-skewed population: exponential with mean exactly 20. The values are
+  // deliberately not clipped at the right edge of the histogram — clipping would
+  // pile the tail into the last bin and drag the true mean down to 19.63, below
+  // the 20 the marker claims. The thin tail past 80 simply falls outside the
+  // bins, which is a fact about the drawing rather than about the population.
   function drawValue(){
-    var v = -20*Math.log(1 - Math.random());
-    return Math.min(v, HI - 0.01);
+    return -20*Math.log(1 - Math.random());
   }
   var means = [];
   function hist(canvas, ctx, data, label, maxBarsNorm){

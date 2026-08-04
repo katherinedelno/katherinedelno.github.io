@@ -10,6 +10,7 @@ kind: foundations
 sequence: 2
 interactive: true
 blurb: "Drag one point and watch the line, the residuals, and r respond"
+image: "/assets/og/least-squares-regression-influence.png"
 ---
 
 Press the regression button and every calculator agrees: one line, a slope to six digits, an $$r^2$$ that looks reassuring. The exam is rarely interested in the button. It asks two questions instead: what do the numbers mean, and which points are responsible for them? Both questions have answers you can see. Every point in the scatterplot below can be dragged, and everything that depends on the points moves with them.
@@ -50,7 +51,7 @@ Load "curved." The correlation is $$r = 0.918$$, a number most students would be
 
 Now load "two clusters." The correlation is $$r = 0.957$$, and there is almost no relationship in the data at all — just two separate groups, one high and one low, with the line dutifully connecting their centers. Strong correlation can be manufactured by [group structure](/2026/07/27/simpsons-paradox.html) rather than by any relationship between the variables. Ask what the two clusters are before trusting the line between them.
 
-One more reading discipline, and the curved preset is the place to practise it. Go back to it and look at both numbers together: $$r = 0.918$$ and $$r^2 = 0.842$$ are not the same number and not the same claim, and neither is a probability. $$r^2$$ is the proportion of the variation in $$y$$ that the linear relationship with $$x$$ accounts for — which on a curve is a genuinely misleading 84%. The two numbers answer different questions, and the exam asks for each by name.
+One more reading discipline, and the curved preset is the place to practice it. Go back to it and look at both numbers together: $$r = 0.918$$ and $$r^2 = 0.842$$ are not the same number and not the same claim, and neither is a probability. $$r^2$$ is the proportion of the variation in $$y$$ that the linear relationship with $$x$$ accounts for — which on a curve is a genuinely misleading 84%. The two numbers answer different questions, and the exam asks for each by name.
 
 ## Beyond the data
 

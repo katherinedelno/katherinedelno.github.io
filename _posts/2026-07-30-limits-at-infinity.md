@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 5
 interactive: true
 blurb: "Two phrases one word apart, describing opposite things"
+image: "/assets/og/limits-at-infinity.png"
 ---
 
 Two phrases in this unit are one word apart and mean opposite things.
@@ -85,9 +86,26 @@ For a rational function the answer depends only on which degree is larger. Set t
 
   function draw(){
     var xm=XMAX(), info=limitInfo(), i, x, y;
+    // A negative b puts a zero of the denominator inside the window. That is a
+    // vertical asymptote, which is the other topic entirely, and if its spike is
+    // allowed to set the vertical scale then the horizontal asymptote and the
+    // curve are squashed into one flat line. So find the poles first and keep a
+    // margin around them out of the scaling.
+    var N=400, poles=[], dprev=den(xm/N), dv;
+    for(i=2;i<=N;i++){
+      x=xm*i/N; dv=den(x);
+      if(dv===0 || dprev*dv<0) poles.push(x);
+      dprev=dv;
+    }
+    var guard=xm*0.06;
     // vertical window: cover the asymptote and the visible values
-    var ys=[], N=400;
-    for(i=1;i<=N;i++){ y=f(xm*i/N); if(isFinite(y)) ys.push(y); }
+    var ys=[];
+    for(i=1;i<=N;i++){
+      x=xm*i/N;
+      if(poles.some(function(p){ return Math.abs(x-p)<guard; })) continue;
+      y=f(x); if(isFinite(y)) ys.push(y);
+    }
+    if(!ys.length) ys=[0,1];
     var lo=Math.min.apply(null,ys), hi=Math.max.apply(null,ys);
     if(info.L!==null){ lo=Math.min(lo,info.L); hi=Math.max(hi,info.L); }
     if(hi-lo<1e-9){ hi=lo+1; }

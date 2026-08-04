@@ -11,6 +11,7 @@ kind: foundations
 sequence: 13
 interactive: true
 blurb: "Two signs decide it, and speed is the one that is not a derivative"
+image: "/assets/og/particle-motion.png"
 ---
 
 A particle moving on a line has a position $$s(t)$$, and everything else in the topic is a derivative of it. The course lists four quantities — position, speed, velocity, acceleration — and three of them are derivatives or the function itself. Speed is the odd one out, and that is where the errors are.
@@ -33,7 +34,7 @@ Speeding up means the speed is increasing, so it is a question about the derivat
 
 $$\frac{d}{dt}\,\vert v\vert = \frac{v}{\vert v\vert}\cdot a = \operatorname{sign}(v)\cdot a.$$
 
-So the speed is increasing exactly when $$\operatorname{sign}(v)$$ and $$a$$ have the same sign — which is to say, when $$v$$ and $$a$$ do. That is the whole rule, and it is a one-line consequence rather than something to memorise. It is also why "the acceleration is negative, so it is slowing down" is wrong: negative acceleration slows a particle that is moving forward and speeds up one that is moving backward.
+So the speed is increasing exactly when $$\operatorname{sign}(v)$$ and $$a$$ have the same sign — which is to say, when $$v$$ and $$a$$ do. That is the whole rule, and it is a one-line consequence rather than something to memorize. It is also why "the acceleration is negative, so it is slowing down" is wrong: negative acceleration slows a particle that is moving forward and speeds up one that is moving backward.
 
 At $$v = 0$$ the derivative above does not exist, because $$\vert v\vert$$ has [a corner wherever $$v$$ crosses zero](/2026/07/30/where-differentiability-fails.html). At such an instant the particle is neither speeding up nor slowing down; it is turning around.
 
@@ -179,7 +180,7 @@ It is slowing down for the first three seconds and speeding up for the last thre
 
 ## Displacement is not distance
 
-Over $$[0,4]$$ the first particle ends at $$s(4) = 4$$ having started at $$s(0) = 0$$, so its displacement is 4. That is not how far it travelled. It turns around at $$t = 1$$ and $$t = 3$$, and its positions at $$t = 0, 1, 3, 4$$ are $$0, 4, 0, 4$$, so the distance covered is $$4 + 4 + 4 = 12$$.
+Over $$[0,4]$$ the first particle ends at $$s(4) = 4$$ having started at $$s(0) = 0$$, so its displacement is 4. That is not how far it traveled. It turns around at $$t = 1$$ and $$t = 3$$, and its positions at $$t = 0, 1, 3, 4$$ are $$0, 4, 0, 4$$, so the distance covered is $$4 + 4 + 4 = 12$$.
 
 Displacement is the net change in $$s$$ and needs only the endpoints. Distance needs the turning points, which means it needs the zeros of $$v$$, which is the reason a question asking for total distance is really a question about the sign of the velocity.
 

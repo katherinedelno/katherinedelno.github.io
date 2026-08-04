@@ -2,7 +2,7 @@
 layout: post
 title: "What a limit claims, and what it does not"
 date: 2026-07-30
-description: "A limit is a claim about the neighbourhood of a point, not about the point. Narrow the window by hand and watch the outputs close in on a number the function may never actually take."
+description: "A limit is a claim about the neighborhood of a point, not about the point. Narrow the window by hand and watch the outputs close in on a number the function may never actually take."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -12,9 +12,10 @@ sequence: 1
 interactive: true
 blurb: "Narrow the window and watch the outputs close in on a value the function skips"
 featured: true
+image: "/assets/og/what-a-limit-claims.png"
 ---
 
-A limit says nothing about what happens at the point. It is a claim about every point nearby, and the value at the centre is deliberately excluded from the question.
+A limit says nothing about what happens at the point. It is a claim about every point nearby, and the value at the center is deliberately excluded from the question.
 
 That exclusion is not a technicality to be tolerated until the real material arrives. It is the entire reason limits exist. A derivative is a limit of quotients that are undefined at the point of interest, and a definite integral is [a limit of sums](/2026/07/25/riemann-sums-watching-rectangles.html) that never equal the area. Both need a way to say "the outputs are closing in on this number" without ever asking the function to reach it.
 
@@ -40,7 +41,7 @@ Pick a point $$a$$ and a width $$\delta$$, look at every input within $$\delta$$
   <div class="viz-controls">
     <span class="viz-value" id="lm-read" style="min-width:100%"></span>
   </div>
-  <p class="viz-caption">The shaded band is the window: every input within &delta; of 2, with the centre itself punched out. The bar on the right is the set of outputs the function takes on that band, and its height is the number to watch. For the hole, the bar collapses toward a point at height 4 however small &delta; gets, and the marker at x = 2 can be set to 4, to 1, or removed entirely without the bar noticing. For the jump it sits at 3, the size of the gap, and never shrinks. For the oscillation it holds at 2 forever, because every window, however narrow, contains inputs sending the output to every value between −1 and 1.</p>
+  <p class="viz-caption">The shaded band is the window: every input within &delta; of 2, with the center itself punched out. The bar on the right is the set of outputs the function takes on that band, and its height is the number to watch. For the hole, the bar collapses toward a point at height 4 however small &delta; gets, and the marker at x = 2 can be set to 4, to 1, or removed entirely without the bar noticing. For the jump it sits at 3, the size of the gap, and never shrinks. For the oscillation it holds at 2 forever, because every window, however narrow, contains inputs sending the output to every value between −1 and 1.</p>
 </div>
 
 <script>
@@ -181,7 +182,7 @@ $$f(x) = \frac{x^2 - 4}{x - 2},$$
 
 which equals $$x + 2$$ everywhere except at $$x = 2$$, where the formula reads $$0/0$$ and defines nothing. Drag $$\delta$$ down. The output bar closes steadily toward height zero around the value 4, and it does so no matter how far you push: at $$\delta = 0.01$$ the outputs span a height of 0.02, at $$\delta = 0.0001$$ a height of 0.0002. The limit is 4.
 
-Now set the value at $$x = 2$$ to 4, then to 1, then remove it again. The bar does not move. It cannot: the window has the centre punched out, so the marker at $$x = 2$$ is not among the outputs being collected. This is what "a limit is about the neighbourhood" means operationally, and it is why $$\lim_{x \to 2} f(x) = 4$$ is true for all three versions of the function even though only one of them is continuous there.
+Now set the value at $$x = 2$$ to 4, then to 1, then remove it again. The bar does not move. It cannot: the window has the center punched out, so the marker at $$x = 2$$ is not among the outputs being collected. This is what "a limit is about the neighborhood" means operationally, and it is why $$\lim_{x \to 2} f(x) = 4$$ is true for all three versions of the function even though only one of them is continuous there.
 
 ## The claim requires both sides to agree
 
@@ -203,7 +204,7 @@ That is the honest content of "the outputs must close in on a single number." No
 
 ## Reading a limit off a graph
 
-Everything above turns into a single reading habit: cover the centre with a finger and look only at what is on either side of it.
+Everything above turns into a single reading habit: cover the center with a finger and look only at what is on either side of it.
 
 If the two sides go to the same place, that place is the limit, whatever the graph does at the point itself — an open circle there, a filled dot at some unrelated height, or nothing at all. If they go to different places, the limit does not exist. If either side fails to settle anywhere, the limit does not exist either, and for a different reason, which is why the oscillation is worth having seen once.
 

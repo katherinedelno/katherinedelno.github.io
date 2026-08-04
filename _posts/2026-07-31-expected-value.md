@@ -10,6 +10,7 @@ kind: foundations
 sequence: 7
 interactive: true
 blurb: "A long-run average, and often a number no outcome can produce"
+image: "/assets/og/expected-value.png"
 ---
 
 The expected value of a fair die is 3.5, which is not a face the die has. Nothing has gone wrong. The name is misleading in a way the definition is not, and unpicking the difference is most of what the topic asks.
@@ -30,7 +31,7 @@ Each preset below is a probability distribution. The bars are the probabilities 
     <span class="viz-value" id="ev-read" style="min-width:100%"></span>
   </div>
   <div class="ev-read" id="ev-panel"></div>
-  <p class="viz-caption">Top: the probability distribution, with a dashed vertical at the expected value and short marks one standard deviation either side. Bottom: the running average of the outcomes drawn so far, against the number of trials, with the same expected value as a dashed target. The scale is logarithmic in the number of trials, because the interesting behaviour is the settling and it happens over orders of magnitude. On three of the four presets the dashed vertical falls in the gap between two bars, so the running average converges to a number that no single trial can ever produce.</p>
+  <p class="viz-caption">Top: the probability distribution, with a dashed vertical at the expected value and short marks one standard deviation either side. Bottom: the running average of the outcomes drawn so far, against the number of trials, with the same expected value as a dashed target. The scale is logarithmic in the number of trials, because the interesting behavior is the settling and it happens over orders of magnitude. On three of the four presets the dashed vertical falls in the gap between two bars, so the running average converges to a number that no single trial can ever produce.</p>
   <style>
     .ev-read{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -196,7 +197,7 @@ The standard deviation is the companion measurement and the framework gives it t
 
 ## Why the binomial gets a shortcut
 
-For most distributions, finding $$\mu_X$$ means doing the weighted sum term by term. The binomial is exempted, and the exemption is worth understanding rather than memorising.
+For most distributions, finding $$\mu_X$$ means doing the weighted sum term by term. The binomial is exempted, and the exemption is worth understanding rather than memorizing.
 
 A binomial random variable counts successes in $$n$$ repeated independent trials, each with two outcomes and the same probability $$p$$ of success. Because the trials are identical and independent, each one contributes the same amount to the total on average, and the framework can state the result outright:
 

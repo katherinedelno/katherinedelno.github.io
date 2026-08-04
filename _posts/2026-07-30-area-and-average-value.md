@@ -11,6 +11,7 @@ kind: foundations
 sequence: 27
 interactive: true
 blurb: "Two applications, one integrand: the difference of two things"
+image: "/assets/og/area-and-average-value.png"
 ---
 
 Two of Unit 8's applications look unrelated and are the same calculation. The average value of a function is the constant that would enclose the same area; the area between two curves is the integral of their difference. In both cases the integrand is a difference, and in both cases the mistakes come from getting that difference wrong.
@@ -133,7 +134,7 @@ The midpoint of the range asks where the outputs sit. The average value asks how
       if(g.v==='x'){ c.beginPath(); c.moveTo(ax(i,0),TOP); c.lineTo(ax(i,0),BOT); c.stroke(); }
       else { c.beginPath(); c.moveTo(PADL,ay(i,0)); c.lineTo(W-PADR,ay(i,0)); c.stroke(); } }
 
-    // the region, strip by strip, coloured by which boundary is ahead
+    // the region, strip by strip, colored by which boundary is ahead
     var N=440;
     for(i=0;i<N;i++){
       var t0=g.a+(g.b-g.a)*i/N, t1=g.a+(g.b-g.a)*(i+1)/N, tm=(t0+t1)/2;

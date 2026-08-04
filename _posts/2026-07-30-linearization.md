@@ -11,6 +11,7 @@ kind: foundations
 sequence: 15
 interactive: true
 blurb: "Concavity at the point of tangency is not the same as concavity in between"
+image: "/assets/og/linearization.png"
 ---
 
 Near the point of tangency, a curve and its tangent line are hard to tell apart. The course calls that local linearity, and it turns the tangent line into a calculator: an expression you can evaluate for a function value you cannot.
@@ -33,7 +34,7 @@ The true value is $$2.02484567\ldots$$, so the estimate is high by about 0.00015
 
 ## Over or under is a question about the interval
 
-A tangent line to a concave-up arc lies below it, and a tangent line to a concave-down arc lies above it. So [the sign of $$f''$$](/2026/07/21/reading-the-graph-of-f-prime.html) decides the direction of the error — but only where it holds. The framework is careful about this, saying that the behaviour of $$f$$ near the point of tangency *may* determine whether the value is an underestimate or an overestimate.
+A tangent line to a concave-up arc lies below it, and a tangent line to a concave-down arc lies above it. So [the sign of $$f''$$](/2026/07/21/reading-the-graph-of-f-prime.html) decides the direction of the error — but only where it holds. The framework is careful about this, saying that the behavior of $$f$$ near the point of tangency *may* determine whether the value is an underestimate or an overestimate.
 
 That word is doing work. What guarantees the answer is the concavity on the entire interval between $$a$$ and $$x$$, not the concavity at $$a$$.
 

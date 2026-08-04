@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 12
 interactive: true
 blurb: "A reciprocal, evaluated somewhere other than where you are standing"
+image: "/assets/og/derivatives-of-inverse-functions.png"
 ---
 
 The graph of $$f^{-1}$$ is the graph of $$f$$ reflected across the line $$y = x$$. Reflecting a line across $$y = x$$ swaps its rise and its run, so the slopes at corresponding points are reciprocals. That picture is the whole theorem, and it is worth having before the formula.
@@ -47,7 +48,7 @@ Topic 3.3's suggested skill is to confirm that solutions are accurate and approp
     <input type="range" id="iv-b" min="0" max="1200" step="1" value="900">
   </div>
   <div class="iv-read" id="iv-read"></div>
-  <p class="viz-caption">The dark curve is f and the pale one is its reflection across the dashed diagonal, drawn by swapping coordinates rather than by inverting anything. A point sits at (b, f(b)) and its mirror at (f(b), b); the two short lines are the tangents there. The panel gives f'(b), its reciprocal, and their product, which is 1 wherever both exist. Where an inverse derivative has a formula worth memorising, the last row evaluates that formula independently and reports the gap. For x³ + x there is no formula to compare against, which is the case the rule was built for.</p>
+  <p class="viz-caption">The dark curve is f and the pale one is its reflection across the dashed diagonal, drawn by swapping coordinates rather than by inverting anything. A point sits at (b, f(b)) and its mirror at (f(b), b); the two short lines are the tangents there. The panel gives f'(b), its reciprocal, and their product, which is 1 wherever both exist. Where an inverse derivative has a formula worth memorizing, the last row evaluates that formula independently and reports the gap. For x³ + x there is no formula to compare against, which is the case the rule was built for.</p>
   <style>
     .iv-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -68,7 +69,7 @@ Topic 3.3's suggested skill is to confirm that solutions are accurate and approp
   var $=function(i){ return document.getElementById(i); };
   var SIDE=336, TOPP=22, CX0=(W-SIDE)/2;
 
-  // invd is the memorised derivative of the inverse, as a function of a — used
+  // invd is the memorized derivative of the inverse, as a function of a — used
   // only as an independent check, never to produce the answer.
   // Ranges are chosen so that the b values the article quotes land on integer
   // slider positions: b = 1 at 900, b = pi/6 at 800, b = pi/4 at 960, b = 0 at 600.
@@ -184,13 +185,13 @@ Topic 3.3's suggested skill is to confirm that solutions are accurate and approp
 })();
 </script>
 
-The first confirmation is geometric and needs no algebra: the two slopes multiply to 1 at every position of the slider, on every function. The second is the row at the bottom. Where the inverse has a derivative worth memorising, the tool evaluates that memorised formula independently and prints the gap between the two answers. Across every function and every slider position that gap never exceeds seven parts in a trillion, which is arithmetic rounding rather than disagreement.
+The first confirmation is geometric and needs no algebra: the two slopes multiply to 1 at every position of the slider, on every function. The second is the row at the bottom. Where the inverse has a derivative worth memorizing, the tool evaluates that memorized formula independently and prints the gap between the two answers. Across every function and every slider position that gap never exceeds seven parts in a trillion, which is arithmetic rounding rather than disagreement.
 
 For $$x^3 + x$$ that row has nothing to say, and that is the case the rule exists for.
 
 ## The inverse trigonometric derivatives are not a second list
 
-The framework is explicit that the inverse trigonometric derivatives come from this rule rather than from memorisation — the chain rule with the definition of an inverse, or the inverse-derivative formula itself. Both routes are named, and both are short.
+The framework is explicit that the inverse trigonometric derivatives come from this rule rather than from memorization — the chain rule with the definition of an inverse, or the inverse-derivative formula itself. Both routes are named, and both are short.
 
 With $$f = \sin$$ on $$[-\tfrac{\pi}{2}, \tfrac{\pi}{2}]$$, so that $$f^{-1} = \arcsin$$ and $$f' = \cos$$,
 

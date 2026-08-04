@@ -11,6 +11,7 @@ sequence: 31
 interactive: true
 blurb: "Raise the degree and watch the polynomial impersonate the function"
 featured: true
+image: "/assets/og/taylor-polynomials-impersonate-functions.png"
 ---
 
 The second half of BC rests on one idea. Polynomials are the functions we can actually compute, so we build a polynomial that behaves like the function we care about. Everything else in the unit, from Maclaurin series to error bounds to the radius of convergence, is the theory of how good that approximation is and where it holds.
@@ -86,7 +87,7 @@ The graph below shows $$\sin x$$ in light gray and its Taylor polynomial in blac
     plot(Math.sin, '#c4c4c4', 2.5);
     plot(function(x){ return taylor(x, n); }, '#1f1f1f', 2);
     c.fillStyle = '#1f1f1f'; c.beginPath(); c.arc(px(0), py(0), 4, 0, 7); c.fill();
-    var terms = ['x', 'x − x³/3!', 'x − x³/3! + x⁵/5!', '… + x⁷/7!', '… − x⁹/9!', '… + x¹¹/11!', '… − x¹³/13!'];
+    var terms = ['x', 'x − x³/3!', 'x − x³/3! + x⁵/5!', '… − x⁷/7!', '… + x⁹/9!', '… − x¹¹/11!', '… + x¹³/13!'];
     read.textContent = 'T' + deg + '(x) = ' + terms[n];
   }
   slider.addEventListener('input', draw);

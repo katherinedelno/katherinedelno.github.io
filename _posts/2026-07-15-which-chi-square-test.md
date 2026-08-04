@@ -10,6 +10,7 @@ kind: mechanics
 sequence: 15
 interactive: false
 blurb: "Independence versus homogeneity, and how to tell them apart"
+image: "/assets/og/which-chi-square-test.png"
 ---
 
 Starting with the revised AP Statistics course, the College Board removed the chi-square goodness-of-fit test. That actually simplifies a question students used to find confusing. The chi-square procedures you will use on the exam now all involve two-way tables, so the real decision is between just two tests: the test for independence and the test for homogeneity.
@@ -50,7 +51,7 @@ Both tests share the same three conditions, and all three are easy points to los
 
 ## Finish the conclusion properly
 
-State the test statistic, the degrees of freedom, and the $$P$$-value, then compare the $$P$$-value to your significance level $$\alpha$$ and write a conclusion in context that refers back to [the alternative hypothesis](/2026/07/14/writing-parameters-in-ap-statistics.html). A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
+State the test statistic, the degrees of freedom, and the p-value, then compare the p-value to your significance level $$\alpha$$ and write a conclusion in context that refers back to [the alternative hypothesis](/2026/07/14/writing-parameters-in-ap-statistics.html). A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
 
 <div class="article-note" markdown="1">
 If you have older review books that still include a goodness-of-fit test for a single categorical variable, that is the piece no longer part of the course. It remains a valid statistical idea, but it will not appear on the current AP exam. The real goal, either way, is being able to look at an unfamiliar problem under time pressure, decide which test it calls for, and justify that choice on your own.

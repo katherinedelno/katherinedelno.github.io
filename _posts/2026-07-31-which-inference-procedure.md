@@ -11,11 +11,12 @@ sequence: 16
 interactive: true
 blurb: "Three questions about the design, asked before any arithmetic"
 featured: true
+image: "/assets/og/which-inference-procedure.png"
 ---
 
-A student who can execute every inference procedure in the course can still lose the question, because choosing the procedure happens before any of that skill is used. The framework treats selection as its own thing, attaching the skill *identify appropriate statistical inference methods* to eleven separate topics, and the reason is that the choice is settled by the study design rather than by the numbers.
+A student who can execute every inference procedure in the course can still lose the question, because choosing the procedure happens before any of that skill is used. The framework treats selection as its own thing, attaching the skill *identify appropriate statistical inference methods* to topic after topic across both inference units, and the reason is that the choice is settled by the study design rather than by the numbers.
 
-Twelve procedures survive in the revised course: six families, each available as an interval and as a test. That sounds like a lot to sort until the sorting is written down, at which point it is three questions.
+Eleven procedures survive in the revised course: six families, five of them available both as an interval and as a test, and chi-square as a test only. That sounds like a lot to sort until the sorting is written down, at which point it is three questions.
 
 ## Three questions, in order
 
@@ -84,7 +85,7 @@ Classify the design. No arithmetic, and no numbers are supplied for any.
     { s: 'Two independent random samples of 300 voters, one drawn in each of two states, are asked whether they support a measure. By how much do the two states differ?',
       f: 'p2', p: 'ci', t: 'Two samples, categorical response, and a question about the size of a difference rather than its existence.' },
     { s: 'A nutritionist records the calorie content of 40 randomly selected items from one restaurant chain. Does the mean exceed the advertised 600?',
-      f: 'm1', p: 'ht', t: 'One sample of numbers, and a stated claim to be judged against. The 600 is a hypothesised value.' },
+      f: 'm1', p: 'ht', t: 'One sample of numbers, and a stated claim to be judged against. The 600 is a hypothesized value.' },
     { s: 'Battery life is measured for 50 randomly chosen units of one brand and 50 of another. Estimate how much longer one brand lasts on average.',
       f: 'm2', p: 'ci', t: 'Two separately drawn samples of numbers, and a question about the size of the gap. Compare this with the two-state voter scenario, which asks the same thing of a categorical response.' }
   ];
@@ -155,7 +156,7 @@ The tell is never the arithmetic. It is whether the two numbers in a pair came f
 
 Scenarios five and six both end in a two-way table, both use $$\chi^2 = \textstyle\sum (O-E)^2/E$$, and both have $$(r-1)(c-1)$$ degrees of freedom. The tables can be identical. [Only the design separates them](/2026/07/15/which-chi-square-test.html): one sample classified two ways is a test for independence, and several separately collected samples compared on one variable is a test for homogeneity.
 
-The framework keeps the distinction alive even in the conditions, where the randomisation requirement is worded one way for independence and another for homogeneity. A procedure whose arithmetic is identical and whose conditions differ is a procedure that is really two.
+The framework keeps the distinction alive even in the conditions, where the randomization requirement is worded one way for independence and another for homogeneity. A procedure whose arithmetic is identical and whose conditions differ is a procedure that is really two.
 
 ## Estimate, or judge a claim
 

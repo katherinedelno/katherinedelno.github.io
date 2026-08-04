@@ -11,6 +11,7 @@ sequence: 1
 interactive: true
 featured: true
 blurb: "Push one value and watch which summaries move and which hold still"
+image: "/assets/og/describing-a-distribution.png"
 ---
 
 The mean follows an outlier and the median refuses to. That is not a curiosity about two formulas; it is the reason the course asks which summary a distribution deserves, and grades the answer.
@@ -88,15 +89,16 @@ Eleven of the twelve values below are nailed down. The twelfth moves.
     if(st.hi <= XHI) c.fillText('FENCE', px(st.hi), 14);
     if(st.lo >= XLO) c.fillText('FENCE', px(st.lo), 14);
 
-    // dotplot, stacking equal values
-    var counts = {};
-    all.forEach(function(x){
+    // dotplot, stacking equal values. The mover is the last entry, so it is
+    // identified by index: comparing values would also hollow out a fixed value
+    // that the slider happens to be sitting on.
+    var counts = {}, ROVER = all.length - 1;
+    all.forEach(function(x, idx){
       var k = Math.round(px(x));
       counts[k] = (counts[k] || 0) + 1;
       var y = DOTBASE - (counts[k] - 1)*13;
-      var isRover = (x === r) && (counts[k] === 1 || BASE.indexOf(x) < 0);
       c.beginPath(); c.arc(px(x), y, 5, 0, 7);
-      if(x === r){ c.fillStyle = '#fff'; c.fill(); c.strokeStyle = INK; c.lineWidth = 2; c.stroke(); }
+      if(idx === ROVER){ c.fillStyle = '#fff'; c.fill(); c.strokeStyle = INK; c.lineWidth = 2; c.stroke(); }
       else { c.fillStyle = INK; c.fill(); }
     });
 

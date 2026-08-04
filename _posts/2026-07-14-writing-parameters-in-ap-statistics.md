@@ -10,6 +10,7 @@ kind: mechanics
 sequence: 10
 interactive: false
 blurb: "A clean way to write parameters and hypotheses for every procedure"
+image: "/assets/og/writing-parameters-in-ap-statistics.png"
 ---
 
 Almost every inference problem in AP Statistics starts by defining a parameter, and it is one of the most common places to lose easy points. The fix is a habit rather than a new idea. Once you are clear on what a parameter is and how to write one, hypotheses and confidence intervals stop feeling like guesswork.

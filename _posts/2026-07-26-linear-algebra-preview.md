@@ -12,6 +12,7 @@ kind: beyond
 sequence: 8
 interactive: true
 blurb: "Matrices as motions of space, eigenvectors as the directions that matter"
+image: "/assets/og/linear-algebra-preview.png"
 ---
 
 Ask a mathematician, a statistician, and a machine-learning engineer which college course they use most, and you will get one answer three times: linear algebra. It is the mathematics of many things at once, of data with thousands of columns, images with millions of pixels, systems with dozens of interlocking equations. Calculus studies change; linear algebra studies structure, and the modern world runs on both.

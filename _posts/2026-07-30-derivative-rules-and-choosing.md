@@ -2,7 +2,7 @@
 layout: post
 title: "Choosing a differentiation rule"
 date: 2026-07-30
-description: "There are only a handful of differentiation rules and they are quickly memorised. The work is reading an expression and knowing which one it wants, including the times when the answer is to rewrite it first."
+description: "There are only a handful of differentiation rules and they are quickly memorized. The work is reading an expression and knowing which one it wants, including the times when the answer is to rewrite it first."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "9 min read"
@@ -11,11 +11,12 @@ kind: mechanics
 sequence: 9
 interactive: true
 blurb: "The rules are the easy part; reading the expression is the skill"
+image: "/assets/og/derivative-rules-and-choosing.png"
 ---
 
-The differentiation rules in this unit fit on an index card, and memorising them is a week's work at most. Almost none of the difficulty in Unit 2 lives there.
+The differentiation rules in this unit fit on an index card, and memorizing them is a week's work at most. Almost none of the difficulty in Unit 2 lives there.
 
-The difficulty is in the step before: looking at an expression and knowing which rule it wants. That step has no formula and is rarely written down, but it is not an afterthought in the course either. The enduring understanding these topics sit under says it outright — recognising opportunities to apply derivative rules can simplify differentiation — and where topics 2.5 through 2.9 ask you to *apply* an appropriate rule, topic 2.10 asks you to *identify* one. Those are different skills, and only one of them is memorisation.
+The difficulty is in the step before: looking at an expression and knowing which rule it wants. That step has no formula and is rarely written down, but it is not an afterthought in the course either. The enduring understanding these topics sit under says it outright — recognizing opportunities to apply derivative rules can simplify differentiation — and where topics 2.5 through 2.9 ask you to *apply* an appropriate rule, topic 2.10 asks you to *identify* one. Those are different skills, and only one of them is memorization.
 
 ## The rules, briefly
 
@@ -52,7 +53,7 @@ Below is a classification drill. No differentiating — just name the first move
     <button type="button" class="res-filter" id="rc-next" style="font-size:.72rem">Next expression</button>
     <span class="viz-value" id="rc-score"></span>
   </div>
-  <p class="viz-caption">Ten expressions, cycling. Five of them want a rewrite, and those are the ones worth arguing about: two products that collapse to a single power, one quotient that is really a division, and the two trigonometric functions the framework says to rearrange rather than memorise. The product and quotient rules would give the right answer on all five; they are just the long way round, and the long way is where sign errors live.</p>
+  <p class="viz-caption">Ten expressions, cycling. Five of them want a rewrite, and those are the ones worth arguing about: two products that collapse to a single power, one quotient that is really a division, and the two trigonometric functions the framework says to rearrange rather than memorize. The product and quotient rules would give the right answer on all five; they are just the long way round, and the long way is where sign errors live.</p>
   <style>
     .rc-expr{font-size:1.9rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);
       text-align:center;padding:18px 0 14px;min-height:2.6em}
@@ -76,7 +77,7 @@ Below is a classification drill. No differentiating — just name the first move
     { e:'(x² + 1) / (x − 3)', a:'quotient',
       why:'A genuine quotient. Nothing cancels, so the quotient rule is the shortest route.' },
     { e:'tan x', a:'rewrite',
-      why:'Rewrite as sin x / cos x, then apply the quotient rule. The framework says the other four trigonometric derivatives come from rearranging with identities, not from four more memorised rules.' },
+      why:'Rewrite as sin x / cos x, then apply the quotient rule. The framework says the other four trigonometric derivatives come from rearranging with identities, not from four more memorized rules.' },
     { e:'(x³ + 2x) / x', a:'rewrite',
       why:'Divide first: this is x² + 2, whose derivative is 2x. The quotient rule gets there too, three steps later.' },
     { e:'5e^x', a:'basic',
@@ -130,15 +131,15 @@ which is right, and which took three steps to reach a result that dividing throu
 
 ## The other four trigonometric functions are quotients
 
-Among the trigonometric functions, the course states derivatives for sine and cosine only. Tangent, cotangent, secant, and cosecant are not a second list to memorise — the framework says that rearranging them with identities allows differentiation using the rules you already have.
+Among the trigonometric functions, the course states derivatives for sine and cosine only. Tangent, cotangent, secant, and cosecant are not a second list to memorize — the framework says that rearranging them with identities allows differentiation using the rules you already have.
 
 $$\tan x = \frac{\sin x}{\cos x} \;\Longrightarrow\; (\tan x)' = \frac{\cos x \cos x - \sin x(-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x.$$
 
-Four steps, using the quotient rule and one Pythagorean identity, and the result is the formula that usually gets memorised instead. Secant is the same move on $$1/\cos x$$, and gives $$\sec x \tan x$$. Deriving one of these a few times costs less than misremembering it once in May.
+Four steps, using the quotient rule and one Pythagorean identity, and the result is the formula that usually gets memorized instead. Secant is the same move on $$1/\cos x$$, and gives $$\sec x \tan x$$. Deriving one of these a few times costs less than misremembering it once in May.
 
 ## A limit that is secretly a derivative
 
-The recognition skill runs backwards too, and the framework lists it as its own objective: recognising an expression as [the definition of a derivative](/2026/07/30/derivative-as-a-limit.html), for a function whose derivative you know, is a way of evaluating a limit.
+The recognition skill runs backwards too, and the framework lists it as its own objective: recognizing an expression as [the definition of a derivative](/2026/07/30/derivative-as-a-limit.html), for a function whose derivative you know, is a way of evaluating a limit.
 
 $$\lim_{h \to 0} \frac{(2+h)^5 - 2^5}{h}$$
 

@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 3
 interactive: false
 blurb: "0/0 is a verdict on your method, not an answer"
+image: "/assets/og/indeterminate-forms.png"
 ---
 
 Substituting into $$\tfrac{x^2 - 9}{x - 3}$$ at $$x = 3$$ gives $$\tfrac{0}{0}$$, and the limit is 6. Substituting into $$\tfrac{x - 3}{x^2 - 9}$$ at $$x = 3$$ gives $$\tfrac{0}{0}$$, and the limit is $$\tfrac16$$. Substituting into $$\tfrac{x-3}{(x-3)^2}$$ gives $$\tfrac{0}{0}$$, and the limit does not exist.
@@ -35,7 +36,7 @@ $$\lim_{x \to 3} \frac{x^2-9}{x-3} = \lim_{x \to 3} \frac{(x-3)(x+3)}{x-3} = \li
 
 The cancellation is legal because the limit never evaluates the function at $$x = 3$$. On every $$x$$ the limit does look at, $$x - 3 \neq 0$$ and the division is ordinary arithmetic. This is the same fact that makes $$\lim$$ indifferent to the hole it leaves behind, and it is worth saying aloud once: you are not simplifying the function, you are replacing it with a different function that agrees with it everywhere the limit cares about.
 
-Higher degrees need the harder factorisations. A difference of cubes:
+Higher degrees need the harder factorizations. A difference of cubes:
 
 $$\lim_{x \to 2} \frac{x^3-8}{x^2-4} = \lim_{x \to 2} \frac{(x-2)(x^2+2x+4)}{(x-2)(x+2)} = \frac{4+4+4}{4} = 3.$$
 
@@ -77,7 +78,7 @@ and both bounds go to 0, so the middle does as well. Note what had to be checked
 
 ## Choosing among them
 
-Selecting the procedure is its own listed skill, which is a fair signal that it is the part worth practising. The classification is quick:
+Selecting the procedure is its own listed skill, which is a fair signal that it is the part worth practicing. The classification is quick:
 
 - Both parts polynomial, sharing a root: *factor and cancel*.
 - A square root in the numerator or denominator: *conjugate*.

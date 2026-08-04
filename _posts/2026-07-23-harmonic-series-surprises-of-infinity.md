@@ -10,6 +10,7 @@ kind: foundations
 sequence: 29
 interactive: true
 blurb: "Terms that vanish, sums that diverge, and order that matters"
+image: "/assets/og/harmonic-series-surprises-of-infinity.png"
 ---
 
 Unit 10 is where calculus stops feeling like a faster version of algebra and starts producing results that sound false. This piece collects three of the best examples, each one a true statement that reads like a mistake, together with real proofs rather than incantations. If infinite series ever feel like a list of arbitrary rules, this is the antidote. The rules exist because infinity really does behave this strangely.
@@ -39,7 +40,7 @@ You can watch both behaviors at once. The picture below plots partial sums: the 
     <input type="range" id="hs-n" min="2" max="400" step="1" value="30">
     <span class="viz-value" id="hs-read"></span>
   </div>
-  <p class="viz-caption">Dark curve: harmonic partial sums, still climbing at 400 terms and never stopping, though ever more slowly (the growth is logarithmic). Light curve with the dashed target: the alternating harmonic series, hopping left and right in shrinking steps and trapping ln 2 between consecutive hops. Same ingredients, opposite fates. The gap between each light hop and the dashed line is smaller than the next term, which is the alternating series error bound drawn in the air.</p>
+  <p class="viz-caption">Top: harmonic partial sums, still climbing at 400 terms and never stopping, though ever more slowly (the growth is logarithmic). Bottom, on a vertical scale roughly ten times finer, because on the upper panel's scale it would be a flat line: the alternating harmonic series, hopping above and below the target in shrinking steps and trapping ln 2 between consecutive hops. Same ingredients, opposite fates. The gap between each hop and the dashed line is smaller than the next term, which is the alternating series error bound drawn in the air.</p>
 </div>
 
 <script>
@@ -49,33 +50,52 @@ You can watch both behaviors at once. The picture below plots partial sums: the 
   var W = cv.width, H = cv.height, pad = 36;
   var d__ = Math.min(window.devicePixelRatio || 1, 2);
   cv.width = W*d__; cv.height = H*d__; c.setTransform(d__, 0, 0, d__, 0, 0);
-  var YMAX = 7;
+  // Two panels sharing one horizontal axis. A single vertical scale cannot show
+  // both series: the harmonic sum passes 6.5 by 400 terms, and against that the
+  // alternating one is a flat line a few pixels thick.
+  var HTOP = 18, HBOT = 142, ATOP = 178, ABOT = 258;
+  var HMAX = 7, ALO = 0.42, AHI = 1.06;
+  var FONT = '700 11px Hanken Grotesk, sans-serif';
   function px(i, n){ return pad + (W - 2*pad)*i/n; }
-  function py(v){ return H - pad - (H - 2*pad)*v/YMAX; }
+  function hy(v){ return HBOT - (HBOT - HTOP)*v/HMAX; }
+  function ay(v){ return ABOT - (ABOT - ATOP)*(v - ALO)/(AHI - ALO); }
   function draw(){
-    var n = +slider.value;
+    var n = +slider.value, k, ln2 = Math.log(2);
     c.clearRect(0, 0, W, H);
+
+    // upper panel: the harmonic partial sums
     c.strokeStyle = '#e0e0e0'; c.lineWidth = 1;
-    c.beginPath(); c.moveTo(pad, py(0)); c.lineTo(W - pad, py(0)); c.stroke();
-    var ln2 = Math.log(2);
-    c.strokeStyle = '#8a8a8a'; c.setLineDash([4,4]);
-    c.beginPath(); c.moveTo(pad, py(ln2)); c.lineTo(W - pad, py(ln2)); c.stroke();
-    c.setLineDash([]);
-    c.fillStyle = '#5c5c5c'; c.font = '700 12px Hanken Grotesk, sans-serif';
-    c.fillText('ln 2', W - pad - 28, py(ln2) - 6);
-    var hSum = 0, aSum = 0, k;
-    c.strokeStyle = '#b9b9b6'; c.lineWidth = 1.6; c.beginPath();
-    for(k = 1; k <= n; k++){
-      aSum += (k % 2 ? 1 : -1)/k;
-      var Y = py(aSum);
-      k === 1 ? c.moveTo(px(k, n), Y) : c.lineTo(px(k, n), Y);
+    c.beginPath(); c.moveTo(pad, hy(0)); c.lineTo(W - pad, hy(0)); c.stroke();
+    c.font = FONT; c.fillStyle = '#9a9a97'; c.textAlign = 'right';
+    for(var g = 2; g <= 6; g += 2){
+      c.strokeStyle = '#f2f2f0';
+      c.beginPath(); c.moveTo(pad, hy(g)); c.lineTo(W - pad, hy(g)); c.stroke();
+      c.fillText(String(g), pad - 6, hy(g) + 4);
     }
-    c.stroke();
+    c.textAlign = 'left'; c.fillStyle = '#5c5c5c';
+    c.fillText('harmonic partial sums', pad, HTOP + 2);
+    var hSum = 0;
     c.strokeStyle = '#1f1f1f'; c.lineWidth = 2; c.beginPath();
     for(k = 1; k <= n; k++){
       hSum += 1/k;
-      var Y2 = py(Math.min(hSum, YMAX + 0.5));
+      var Y2 = hy(Math.min(hSum, HMAX));
       k === 1 ? c.moveTo(px(k, n), Y2) : c.lineTo(px(k, n), Y2);
+    }
+    c.stroke();
+
+    // lower panel: the alternating partial sums, on a scale ten times finer
+    c.strokeStyle = '#8a8a8a'; c.lineWidth = 1; c.setLineDash([4,4]);
+    c.beginPath(); c.moveTo(pad, ay(ln2)); c.lineTo(W - pad, ay(ln2)); c.stroke();
+    c.setLineDash([]);
+    c.fillStyle = '#5c5c5c'; c.font = FONT; c.textAlign = 'left';
+    c.fillText('alternating partial sums', pad, ATOP - 8);
+    c.fillText('ln 2', W - pad - 26, ay(ln2) - 6);
+    var aSum = 0;
+    c.strokeStyle = '#5c5c5c'; c.lineWidth = 1.6; c.beginPath();
+    for(k = 1; k <= n; k++){
+      aSum += (k % 2 ? 1 : -1)/k;
+      var Y = ay(Math.max(ALO, Math.min(AHI, aSum)));
+      k === 1 ? c.moveTo(px(k, n), Y) : c.lineTo(px(k, n), Y);
     }
     c.stroke();
     read.textContent = 'harmonic: ' + hSum.toFixed(3) + '   alternating: ' + aSum.toFixed(3);
