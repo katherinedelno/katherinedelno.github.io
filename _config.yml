@@ -60,6 +60,16 @@ header_pages:
 # is ever collected into nowhere.
 newsletter_action: ""
 
+# Google Forms backend for the signup blocks.
+# The form posts invisibly to your own Google Form; visitors never see Google,
+# and answers land in the linked spreadsheet. Used only when newsletter_action
+# above is empty, so pasting a provider endpoint there takes precedence.
+# To find these: open the form, three-dot menu, Pre-fill form, enter a dummy
+# value, Get link. The id is between /d/e/ and /viewform; the field is the
+# entry.NNNNNNN key in the query string.
+google_form_id: "1FAIpQLSez7O1JZg6ia_tYk29ol4zXfTFn6mXQwVnCz_zcqEZRCF6T4w"
+google_form_email_field: "entry.158450840"
+
 # Social preview cards.
 # Every post carries its own `image:` written by tools/og-cards.py; this default
 # covers the standalone pages. jekyll-seo-tag reads `image` and, when it finds
