@@ -397,51 +397,34 @@ permalink: /private-instruction/
     <p class="label">Questions</p>
     <h2>Frequently asked</h2>
     <div class="pi-faq">
+      {%- for item in site.data.faq %}
       <details>
-        <summary>How is this different from homework help?</summary>
-        <p>Homework help is organized around tonight's assignment; my work is organized around your student. Rather than walk through whatever problem is due, I watch how they reason, find what is actually getting in the way, teach to that, and make sure they can do it without me. The aim is a student who needs less help over time, not more.</p>
+        <summary>{{ item.q }}</summary>
+        <p>{{ item.a }}</p>
       </details>
-      <details>
-        <summary>What if my student understands an explanation but can't do the problems alone?</summary>
-        <p>This is one of the most common reasons families reach out, and it is exactly what the structure is built for. Following an explanation and producing the reasoning yourself are different skills. Every session ends with the student working independently, so we find out what actually holds without prompts and rebuild whatever doesn't.</p>
-      </details>
-      <details>
-        <summary>How do you know what my student needs to work on?</summary>
-        <p>From watching them work. The setup, the notation, where they hesitate, and which errors repeat tell me whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and my notes carry that from week to week so the picture sharpens over time.</p>
-      </details>
-      <details>
-        <summary>Why do you recommend a consistent weekly schedule?</summary>
-        <p>Consistency is what lets the work compound. A steady weekly rhythm keeps us ahead of the class's pacing, lets me catch small gaps before they turn into costly ones, and means each session builds on the last instead of starting over.</p>
-      </details>
-      <details>
-        <summary>Are sessions online or in person?</summary>
-        <p>Sessions are conducted live over Zoom with a digital whiteboard for step-by-step work. This lets me support students wherever they are while keeping all notes and materials organized in one shared folder.</p>
-      </details>
-      <details>
-        <summary>How do you align with my student's class?</summary>
-        <p>I follow your student's course pacing and build each session around their current topics, assignments, and the specific errors I observe, so our work reinforces what is happening in the classroom rather than running parallel to it.</p>
-      </details>
-      <details>
-        <summary>Do you teach courses beyond the three listed?</summary>
-        <p>Yes. AP coursework is the center of the practice, but I also work with students in non-AP and college-level mathematics and statistics. If your course is not listed, write and we will discuss fit.</p>
-      </details>
-      <details>
-        <summary>What happens before the AP exam?</summary>
-        <p>In the final one to two months, sessions shift into focused exam preparation with timed practice, full free-response and multiple-choice work, and targeted review. All preparation materials are included.</p>
-      </details>
-      <details>
-        <summary>What if we need to reschedule?</summary>
-        <p>Occasional changes are normal and I will always try to find another time in the same week. I ask for at least 24 hours' notice; sessions cancelled inside that window, and missed sessions, are billed in full, because the hour is reserved for your student and not offered to anyone else. Every family gets one exception per term without question, and illness and emergencies are handled with common sense. The full policy is under <a href="/policies/">policies</a>.</p>
-      </details>
-      <details>
-        <summary>Is the between-session support required?</summary>
-        <p>No. It is an optional monthly add-on for families who want assigned practice, written feedback, and weekday support between sessions. Many students do well with the weekly session alone.</p>
-      </details>
-      <details>
-        <summary>What does my student need to get started?</summary>
-        <p>A quiet space, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent note-taking method.</p>
-      </details>
+      {%- endfor %}
     </div>
+
+    {%- comment -%}
+      FAQPage structured data, generated from the same _data/faq.yml the list
+      above renders. Google shows these as expandable results; keeping both
+      outputs on one source is what stops the markup and the page disagreeing.
+    {%- endcomment -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for item in site.data.faq %}
+        {
+          "@type": "Question",
+          "name": {{ item.q | strip_html | jsonify }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | strip_html | jsonify }} }
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ]
+    }
+    </script>
   </div>
 
   <!-- AVAILABILITY -->

@@ -50,6 +50,32 @@ header_pages:
   - resources.md
 
 
+# Email list.
+# Paste your provider's form endpoint between the quotes to switch every signup
+# form on the site from a placeholder to a working form. Nothing else changes.
+#   Buttondown  https://buttondown.com/api/emails/embed-subscribe/YOUR-USERNAME
+#   Kit         https://app.kit.com/forms/YOUR-FORM-ID/subscriptions
+#   Mailchimp   the action URL from the embedded-form snippet
+# Left empty, the forms render an RSS link and a mailto instead, so no address
+# is ever collected into nowhere.
+newsletter_action: ""
+
+# Social preview cards.
+# Every post carries its own `image:` written by tools/og-cards.py; this default
+# covers the standalone pages. jekyll-seo-tag reads `image` and, when it finds
+# one, upgrades the Twitter card from `summary` to `summary_large_image`.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/og/default.png"
+
+# Used by jekyll-seo-tag for the Person JSON-LD block.
+social:
+  name: "Katherine Delno"
+  links:
+    - https://katherinedelno.com
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

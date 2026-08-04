@@ -42,6 +42,23 @@ layout: default
   .article-note p{margin:0}
   .article-back{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.95rem}
 
+  .article-more{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--ink);max-width:70ch}
+  .article-more .label{margin-bottom:1rem}
+  .article-more ul{list-style:none;margin:0;padding:0}
+  .article-more li{margin:0 0 .85rem;padding:0}
+  .article-more a{display:block;text-decoration:none;color:var(--ink)}
+  .article-more a:hover .am-title,.article-more a:focus-visible .am-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--faint,#9a9a97)}
+  .am-eyebrow{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#9a9a97;font-weight:600;margin:0 0 .2rem}
+  .am-title{font-size:1.02rem;font-weight:700;letter-spacing:-.01em;line-height:1.35;margin:0 0 .15rem}
+  .am-blurb{font-size:.85rem;color:var(--muted);line-height:1.5;margin:0}
+
+  .article-cta{margin-top:2.6rem;padding:24px 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;max-width:70ch}
+  .article-cta p{margin:0 0 .75rem;font-size:.95rem;line-height:1.6}
+  .article-cta p:last-child{margin-bottom:0}
+  .article-cta .cta-name{font-weight:700}
+  .article-cta a{color:var(--ink)!important;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:#9a9a97}
+  .article-cta a:hover{text-decoration-color:var(--ink)}
+
   @media (max-width:720px){.article-head h1{font-size:1.7rem}}
 </style>
 
@@ -55,6 +72,49 @@ layout: default
   <div class="article-body">
     {{ content }}
   </div>
+
+  {%- comment -%}
+    Related reading: the nearest articles in the same course, taken forward along
+    the sequence first and then backward, so the suggestion reads as "what comes
+    next" rather than an arbitrary sample. Falls back to nothing if the course
+    has no other articles, which is better than padding with unrelated ones.
+  {%- endcomment -%}
+  {%- assign fam = site.posts | where: "course", page.course | sort: "sequence" -%}
+  {%- assign ahead = "" | split: "" -%}
+  {%- assign behind = "" | split: "" -%}
+  {%- for p in fam -%}
+    {%- unless p.url == page.url -%}
+      {%- if p.sequence > page.sequence -%}
+        {%- assign ahead = ahead | push: p -%}
+      {%- else -%}
+        {%- assign behind = behind | push: p -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- assign behind = behind | reverse -%}
+  {%- assign related = ahead | concat: behind -%}
+
+  {%- if related.size > 0 -%}
+  <nav class="article-more" aria-label="Related reading">
+    <p class="label">Related reading</p>
+    <ul>
+      {%- for p in related limit: 3 -%}
+      <li>
+        <a href="{{ p.url | relative_url }}">
+          <p class="am-eyebrow">{{ p.course }}</p>
+          <p class="am-title">{{ p.title }}</p>
+          {%- if p.blurb %}<p class="am-blurb">{{ p.blurb }}</p>{% endif -%}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+  {%- endif -%}
+
+  <aside class="article-cta">
+    <p><span class="cta-name">Katherine Delno</span> &mdash; I teach AP Statistics, AP Calculus, and AP Precalculus privately, one student at a time, through the full arc of a course. M.S. Statistics, University of Washington.</p>
+    <p>If your student is working through this material and something isn't landing, it is usually specific, and usually findable. <a href="{{ "/private-instruction/" | relative_url }}">Private instruction &amp; rates</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+  </aside>
 
   <p class="article-back"><a href="{{ "/resources/" | relative_url }}">&larr; All resources</a></p>
 </div>
