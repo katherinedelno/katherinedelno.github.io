@@ -11,6 +11,7 @@ kind: foundations
 sequence: 7
 interactive: true
 blurb: "Drag the second point in until the secant has nowhere left to go"
+image: "/assets/og/derivative-as-a-limit.png"
 ---
 
 An average rate of change divides a change in one variable by a change in another, so it needs two points. At a single instant there is only one, the denominator would be zero, and the quotient is undefined. The framework states the obstacle in exactly those terms, and then states the way past it: the limit concept allows us to define instantaneous rate of change in terms of average rates of change.
@@ -163,11 +164,11 @@ $$f'(a) = \lim_{h \to 0}\frac{f(a+h) - f(a)}{h} = \lim_{x \to a}\frac{f(x) - f(a
 
 They are the same quotient. Put $$x = a + h$$ and the second becomes the first: the numerators match, and the denominator $$x - a$$ *is* $$h$$. The readouts print both at every setting and the values never differ, because there is nothing to differ about.
 
-What does change is which one is convenient. The $$h$$-form is easier to compute with, since $$h$$ is the thing you are sending to zero and it appears by itself. The $$x$$-form is easier to *recognise*, because exam questions hand you a limit and ask what derivative it represents, and they hand it to you in whichever form makes it least obvious.
+What does change is which one is convenient. The $$h$$-form is easier to compute with, since $$h$$ is the thing you are sending to zero and it appears by itself. The $$x$$-form is easier to *recognize*, because exam questions hand you a limit and ask what derivative it represents, and they hand it to you in whichever form makes it least obvious.
 
 ## The notation, and what each piece of it says
 
-The framework asks for a derivative to be represented three ways, and the reason is that they emphasise different things.
+The framework asks for a derivative to be represented three ways, and the reason is that they emphasize different things.
 
 $$f'(a) \qquad \left.\frac{dy}{dx}\right\vert_{x=a} \qquad y'$$
 

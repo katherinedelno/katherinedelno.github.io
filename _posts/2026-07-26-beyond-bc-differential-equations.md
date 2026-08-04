@@ -11,6 +11,7 @@ kind: beyond
 sequence: 7
 interactive: true
 blurb: "Laws of nature specify change; systems, phase lines, and an epidemic to steer"
+image: "/assets/og/beyond-bc-differential-equations.png"
 ---
 
 Most laws of nature do not tell you what happens. They tell you how things are changing, and leave you to work out what happens. Newton's second law relates acceleration, a second derivative, to force. Populations grow in proportion to their size. Heat flows in proportion to temperature differences. Each of these is a differential equation, and the college course by that name is where calculus stops being a subject and starts being the operating system of physics, biology, engineering, and economics.
@@ -106,5 +107,5 @@ The course ends with one of the great discoveries of twentieth-century mathemati
 Differential equations is the most direct sequel to BC. Separable equations, exponential and logistic models, Euler's method, slope fields, and the Taylor series all reappear as first-class citizens (series solutions are a whole chapter). If integration technique is sharp and the logistic story genuinely made sense, the course opens easily, and it pairs naturally with linear algebra, whose eigenvalues turn out to be the key that unlocks systems.
 
 <div class="article-note" markdown="1">
-A question to take with you: in the simulator, set β so that R&#8320; is just above 1 and note how many people are still susceptible when the outbreak dies. Herd immunity has a formula: the epidemic turns around exactly when the susceptible fraction falls to 1/R&#8320;. Check it against the curves. A threshold that important, derivable from three one-line equations, is a fair advertisement for the whole subject.
+A question to take with you: in the simulator, note how many people are still susceptible at the moment the infected curve peaks. Herd immunity has a formula: the epidemic turns around exactly when the susceptible fraction falls to 1/R&#8320;. Check it against the curves — and then notice that the outbreak does not stop there. It keeps going while the infected still outnumber the recoveries, so the final susceptible count ends up lower than the threshold, by more and more as R&#8320; climbs. That overshoot is why a population can pass the herd-immunity point and still lose a large fraction of the people who were left. A threshold that important, derivable from three one-line equations, is a fair advertisement for the whole subject.
 </div>

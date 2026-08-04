@@ -10,6 +10,7 @@ kind: foundations
 sequence: 4
 interactive: true
 blurb: "Watch a bad method stay wrong no matter how many people you ask"
+image: "/assets/og/sampling-and-bias.png"
 ---
 
 A biased sampling method does not improve when you ask more people. It gets more precisely wrong: the estimates cluster more tightly around a value that was never the right one. That single sentence is most of the design unit, and it is the one thing a student can carry into every question about how data were collected.
@@ -145,7 +146,7 @@ Below are 400 students at one school. Each is plotted by where on campus they sp
         }
         var m=0; for(i=0;i<data.length;i++) m+=data[i]; m/=data.length;
         c.fillStyle=MUTED; c.font='700 10px '+FONT; c.textAlign='right';
-        c.fillText('centre '+m.toFixed(3), W-PADR, top+9);
+        c.fillText('center '+m.toFixed(3), W-PADR, top+9);
       }
       // the truth, through every row
       c.strokeStyle=INK; c.lineWidth=1.5; c.setLineDash([4,3]);
@@ -208,15 +209,15 @@ Below are 400 students at one school. Each is plotted by where on campus they sp
 
 Run 300 of each and the three rows separate immediately. The simple random sample sits on the line. The other two sit to its left, because both of them systematically over-recruit students who sleep less: convenience because those students are the ones standing nearby, voluntary response because those are the students who feel strongly enough to answer.
 
-Now drag the sample size from 5 to 60 and watch what changes. All three distributions narrow, by about three-quarters. Not one of the three moves sideways. At $$n = 10$$ the convenience method centres near 6.68 and the voluntary method near 6.40; at $$n = 60$$ they centre near 6.71 and 6.49, still short of 7.10 by about four-tenths and six-tenths of an hour. The simple random sample centres on 7.10 at both.
+Now drag the sample size from 5 to 60 and watch what changes. All three distributions narrow, by about three-quarters. Not one of the three moves sideways. At $$n = 10$$ the convenience method centers near 6.68 and the voluntary method near 6.40; at $$n = 60$$ they center near 6.71 and 6.49, still short of 7.10 by about four-tenths and six-tenths of an hour. The simple random sample centers on 7.10 at both.
 
-## Bias is about centre, variability about spread
+## Bias is about center, variability about spread
 
 Those are two different failures with two different remedies, and the interactive separates them cleanly.
 
-Variability is the spread of the estimates around wherever they centre. It is a nuisance rather than an error, and a bigger sample fixes it, which is why the spread shrank when you raised $$n$$.
+Variability is the spread of the estimates around wherever they center. It is a nuisance rather than an error, and a bigger sample fixes it, which is why the spread shrank when you raised $$n$$.
 
-Bias is the distance from that centre to the truth. No sample size touches it. The only repair is a different sampling method, because the fault is in how individuals were chosen and not in how many.
+Bias is the distance from that center to the truth. No sample size touches it. The only repair is a different sampling method, because the fault is in how individuals were chosen and not in how many.
 
 A student who has these straight can answer the standard exam question — *will increasing the sample size correct this problem?* — without hesitating. For variability, yes. For bias, never.
 
@@ -241,19 +242,19 @@ They are worth telling apart because the exam asks which one a described study s
 
 ## What each kind of randomness buys
 
-Two different randomisations do two different jobs, and mixing them up is the most common way to lose a conclusion question.
+Two different randomizations do two different jobs, and mixing them up is the most common way to lose a conclusion question.
 
-Random *selection* is how individuals get into the study. It is what licenses generalising to the population. Random *assignment* is how selected individuals get sorted into treatment groups. It is what licenses a cause-and-effect claim, because it makes the groups alike in every extraneous variable.
+Random *selection* is how individuals get into the study. It is what licenses generalizing to the population. Random *assignment* is how selected individuals get sorted into treatment groups. It is what licenses a cause-and-effect claim, because it makes the groups alike in every extraneous variable.
 
 The four combinations give four different sentences:
 
 | | Random assignment | No random assignment |
 |---|---|---|
-| Random selection | Cause and effect, generalisable to the population | Association only, generalisable to the population |
+| Random selection | Cause and effect, generalizable to the population | Association only, generalizable to the population |
 | No random selection | Cause and effect, but only for individuals like those studied | Association only, and only for individuals like those studied |
 
 An observational study is one where treatments are not imposed; the researcher records what is already there. That is why it cannot establish causation on its own: a confounding variable, associated with both the explanatory and the response variable, offers a rival explanation that the design has not ruled out. The reversal in [Simpson's paradox](/2026/07/27/simpsons-paradox.html) is that rival explanation doing its work in public.
 
 <div class="article-note" markdown="1">
-A diagnostic worth running: set the sample size to 60, clear, and run 300 of each. The convenience and voluntary distributions are now narrow enough that they barely overlap the truth at all, and a student reporting one of those estimates would quote a small margin of error alongside it. Precision and accuracy have come apart completely. The interval would be tight, confident, and centred on the wrong number, which is the practical reason the design unit comes before the inference units rather than after them.
+A diagnostic worth running: set the sample size to 60, clear, and run 300 of each. The convenience and voluntary distributions are now narrow enough that they barely overlap the truth at all, and a student reporting one of those estimates would quote a small margin of error alongside it. Precision and accuracy have come apart completely. The interval would be tight, confident, and centered on the wrong number, which is the practical reason the design unit comes before the inference units rather than after them.
 </div>

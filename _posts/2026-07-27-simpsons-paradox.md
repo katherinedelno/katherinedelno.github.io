@@ -10,6 +10,7 @@ kind: foundations
 sequence: 3
 interactive: true
 blurb: "Better in every subgroup, worse overall: the lurking variable at work"
+image: "/assets/og/simpsons-paradox.png"
 ---
 
 In 1986, researchers compared two treatments for kidney stones using the records of a British hospital group. Open surgery succeeded in 78% of its cases; the newer, less invasive procedure succeeded in 83%. The natural reading is that the newer procedure is better, and the natural reading is wrong. Split the patients by stone size and open surgery wins among small stones, 93% to 87%, and wins again among large stones, 73% to 69%. The treatment that is better for every patient is worse on paper.
@@ -29,7 +30,7 @@ The instrument below holds the four subgroup success rates fixed at their publis
     <input type="range" id="sx-mix" min="0" max="100" step="1" value="77">
     <span class="viz-value" id="sx-read"></span>
   </div>
-  <p class="viz-caption">Each column is one treatment; the darker band is its large-stone caseload and the lighter band its small-stone caseload, with the marker showing the resulting overall success rate. The subgroup rates printed beside the bands never change. At an even case mix the overall comparison agrees with the subgroups, and surgery leads. Drag the slider toward the historical value of about 77% and the marker order reverses while every printed rate stands still. The paradox is not in the treatments; it is in the weighting, and the slider is the lurking variable made into a physical object.</p>
+  <p class="viz-caption">Each column is one treatment; the darker band is its large-stone caseload and the lighter band its small-stone caseload, with the marker showing the resulting overall success rate against the percentage scale at the left. Band heights are case counts, not rates — the two quantities share a frame because the point is how the first one drags the second. The subgroup rates printed beside the bands never change. At an even case mix the overall comparison agrees with the subgroups, and surgery leads. Drag the slider toward the historical value of about 77% and the marker order reverses while every printed rate stands still. The paradox is not in the treatments; it is in the weighting, and the slider is the lurking variable made into a physical object.</p>
 </div>
 
 <script>
@@ -68,11 +69,25 @@ The instrument below holds the four subgroup success rates fixed at their publis
     c.fillText('small: ' + nSmall + ' cases at ' + Math.round(rSmall*100) + '%', x, H - 5);
     return overall;
   }
+  // The band heights are case counts and the marker is a success rate, so the
+  // rate scale is drawn explicitly rather than left to be guessed at.
+  function rateAxis(){
+    var top = 38, bh = H - 92;
+    c.strokeStyle = '#efefed'; c.lineWidth = 1;
+    c.fillStyle = '#9a9a97'; c.font = '700 10px Hanken Grotesk, sans-serif';
+    for(var p = 0; p <= 100; p += 25){
+      var y = top + bh - bh*p/100;
+      c.beginPath(); c.moveTo(100, y); c.lineTo(W - 24, y); c.stroke();
+      c.textAlign = 'right'; c.fillText(p + '%', 94, y + 3);
+    }
+    c.textAlign = 'left'; c.fillText('SUCCESS RATE', 8, top - 10);
+  }
   function draw(){
     var t = sl.value/100;
     var sL = Math.round(N_LARGE*t), pL = N_LARGE - sL;
     var sS = N_SMALL - Math.round(N_SMALL*t), pS = N_SMALL - sS;
     c.clearRect(0, 0, W, H);
+    rateAxis();
     var o1 = bar(110, 'Open surgery', sL, sS, S_LARGE, S_SMALL);
     var o2 = bar(410, 'New procedure', pL, pS, P_LARGE, P_SMALL);
     var flipped = o2 > o1;

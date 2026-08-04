@@ -11,7 +11,7 @@ kind: beyond
 sequence: 9
 interactive: true
 blurb: "Probability theory, Bayesian inference, and randomness with memory"
-featured: true
+image: "/assets/og/beyond-ap-statistics.png"
 ---
 
 AP Statistics teaches a curated set of recipes: intervals, tests, and the discipline of checking conditions and writing conclusions in context. What it mostly cannot show, for lack of time and calculus, is where the recipes come from and how far the subject reaches. The upper division is where the kitchen doors open. Here is a preview of what is inside, written for a student who liked this course and wants to know what they would be signing up for.

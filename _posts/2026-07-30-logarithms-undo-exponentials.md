@@ -10,6 +10,7 @@ kind: mechanics
 sequence: 5
 interactive: true
 blurb: "Slide the base and watch b^x and its logarithm mirror across y = x"
+image: "/assets/og/logarithms-undo-exponentials.png"
 ---
 
 Most difficulty with logarithms comes from treating them as a new species of object with its own arbitrary rulebook. They are not. A logarithm is an exponent — $$\log_b y$$ is the answer to one question: *b raised to what power gives y?* Hold onto that sentence and every rule in this article becomes something you can rederive in a line rather than memorize.

@@ -10,6 +10,7 @@ kind: foundations
 sequence: 28
 interactive: true
 blurb: "Three notations, one chain rule, and one thing to watch"
+image: "/assets/og/parametric-vector-polar.png"
 ---
 
 The last unit of BC looks like three new topics. Read its essential knowledge and the same sentence appears three times in slightly different clothes: methods for calculating derivatives of real-valued functions can be extended to parametric functions, methods for calculating derivatives of real-valued functions can be extended to functions in polar coordinates, and the concept of calculating areas in rectangular coordinates can be extended to polar coordinates.
@@ -32,9 +33,9 @@ The velocity of a particle following the curve is the vector $$\langle x'(t), y'
 
 $$\text{speed} = \sqrt{\big(x'(t)\big)^2 + \big(y'(t)\big)^2}.$$
 
-Distance travelled is the accumulated speed, $$\textstyle\int_a^b \sqrt{(x')^2+(y')^2}\,dt$$, which is also the arc length of the curve when the particle does not retrace its path.
+Distance traveled is the accumulated speed, $$\textstyle\int_a^b \sqrt{(x')^2+(y')^2}\,dt$$, which is also the arc length of the curve when the particle does not retrace its path.
 
-The framework introduces this by pointing back: as with [particle motion on a line](/2026/07/30/particle-motion.html), the work is deciding which procedure a scenario needs. The distinctions carry over unchanged and gain a dimension. Velocity is a vector and speed is its length, so speed is again the unsigned quantity. Displacement over $$[a,b]$$ is the vector $$\langle x(b)-x(a),\, y(b)-y(a)\rangle$$ and needs only the endpoints; distance travelled is the integral above and needs the whole path. A particle that returns to where it started has zero displacement and a positive distance, in the plane exactly as on the line.
+The framework introduces this by pointing back: as with [particle motion on a line](/2026/07/30/particle-motion.html), the work is deciding which procedure a scenario needs. The distinctions carry over unchanged and gain a dimension. Velocity is a vector and speed is its length, so speed is again the unsigned quantity. Displacement over $$[a,b]$$ is the vector $$\langle x(b)-x(a),\, y(b)-y(a)\rangle$$ and needs only the endpoints; distance traveled is the integral above and needs the whole path. A particle that returns to where it started has zero displacement and a positive distance, in the plane exactly as on the line.
 
 ## The one that catches people
 
@@ -195,7 +196,7 @@ Differentiate the slope with respect to the parameter, then divide by $$\tfrac{d
 
 Nothing in that panel is computed by a rule belonging to any one system. Every row comes from $$x(t)$$ and $$y(t)$$ and their derivatives, and the polar curves reach it by being converted first.
 
-Two things repay watching. On the circle the arrow has constant length and the speed reads 3 at every position, while on the ellipse the same-looking path has an arrow that stretches and shrinks — a reminder that a parametrisation carries more information than a curve does. And on the third preset the point passes through the origin twice, at $$t = -1$$ and $$t = 1$$, with slopes $$-1$$ and $$+1$$. One point of the plane, two tangent lines, because they happen at different times.
+Two things repay watching. On the circle the arrow has constant length and the speed reads 3 at every position, while on the ellipse the same-looking path has an arrow that stretches and shrinks — a reminder that a parametrization carries more information than a curve does. And on the third preset the point passes through the origin twice, at $$t = -1$$ and $$t = 1$$, with slopes $$-1$$ and $$+1$$. One point of the plane, two tangent lines, because they happen at different times.
 
 ## Polar area is the extension the framework promised
 

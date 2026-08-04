@@ -10,13 +10,14 @@ kind: foundations
 sequence: 12
 interactive: true
 blurb: "Two formulas, a table of standard errors, and nothing else"
+image: "/assets/og/one-template.png"
 ---
 
 The formula sheet handed out on exam day carries two formulas for inference. Not twelve, and not one per procedure. Two:
 
 $$\text{statistic} \pm (\text{critical value})(\text{standard error}), \qquad \frac{\text{statistic} - \text{parameter}}{\text{standard error}}.$$
 
-The first is every confidence interval in the course. The second is every standardized test statistic. What follows them on the sheet is not more formulas — it is a table of standard errors, one row per sampling distribution, and choosing the row is the whole of what looks like memorising a dozen procedures.
+The first is every confidence interval in the course. The second is every standardized test statistic. What follows them on the sheet is not more formulas — it is a table of standard errors, one row per sampling distribution, and choosing the row is the whole of what looks like memorizing a dozen procedures.
 
 ## Assemble one
 
@@ -122,7 +123,7 @@ Pick a procedure and watch which of the three slots changes.
     }
     pEl.innerHTML =
       '<div><span class="ot-k">statistic</span>' + t.stat +
-        '<span class="ot-sub">' + (pur === 'ci' ? 'the centre of the interval' : 'the top of the fraction, minus the null value ' + t.par) + '</span></div>' +
+        '<span class="ot-sub">' + (pur === 'ci' ? 'the center of the interval' : 'the top of the fraction, minus the null value ' + t.par) + '</span></div>' +
       '<div><span class="ot-k">' + (pur === 'ci' ? 'critical value' : 'reference curve') + '</span>' +
         (pur === 'ci' ? t.cv : t.ref.split(',')[0]) +
         '<span class="ot-sub">from the ' + t.ref + '</span></div>' +
@@ -148,7 +149,7 @@ Now hold the family fixed and switch between interval and test. For every proced
 
 For proportions, the standard error changes too, and the sheet says why in a way that is easy to read past. It gives two columns rather than one: a *standard deviation* built from the parameter, and a *standard error* built from the statistic. A test has a null hypothesis, so it knows a value for the parameter and can use the first. An interval has no such value, so it must estimate with the second.
 
-This is also the honest answer to a question students ask constantly: why do proportions get $$z$$ and means get $$t$$? Because a proportion's spread is determined by the proportion itself, so a hypothesised $$p_0$$ supplies the standard deviation exactly. A mean's spread depends on $$\sigma$$, which no hypothesis ever supplies, so $$s$$ must stand in — and the extra uncertainty in that substitution is precisely what the $$t$$ distribution is for.
+This is also the honest answer to a question students ask constantly: why do proportions get $$z$$ and means get $$t$$? Because a proportion's spread is determined by the proportion itself, so a hypothesized $$p_0$$ supplies the standard deviation exactly. A mean's spread depends on $$\sigma$$, which no hypothesis ever supplies, so $$s$$ must stand in — and the extra uncertainty in that substitution is precisely what the $$t$$ distribution is for.
 
 The two-proportion test carries the same idea one step further. Its null says the two proportions are equal, so a test may pool the two samples into a single combined estimate $$\hat{p}_c$$ before computing the standard error. The interval, assuming nothing, keeps them apart. Same statistic on top, two different denominators, and the difference is entirely about what the null hypothesis was willing to tell you.
 
@@ -159,5 +160,5 @@ Chi-square does not fit either template, and the sheet prints it separately for 
 That is worth noticing rather than filing away. Every other procedure measures how far one number sits from another in standard errors, which is why every other procedure has both an interval and a test. Chi-square measures total disagreement across a whole table, and a total has no natural interval attached. The shape of the formula predicts what questions the procedure can answer.
 
 <div class="article-note" markdown="1">
-An exercise for the tool, best done with the reference sheet beside it: choose any procedure, write the assembled formula from memory, then find the standard error you used in the sheet's table and confirm you took the right row. Do that for all eleven combinations and the sheet stops being a page to search under time pressure and becomes a page with two formulas and a lookup table on it. Students who reach that point stop losing time hunting for a formula that was never printed, because they have realised it was theirs to build.
+An exercise for the tool, best done with the reference sheet beside it: choose any procedure, write the assembled formula from memory, then find the standard error you used in the sheet's table and confirm you took the right row. Do that for all eleven combinations and the sheet stops being a page to search under time pressure and becomes a page with two formulas and a lookup table on it. Students who reach that point stop losing time hunting for a formula that was never printed, because they have realized it was theirs to build.
 </div>

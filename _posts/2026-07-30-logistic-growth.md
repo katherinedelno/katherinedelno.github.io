@@ -10,6 +10,7 @@ kind: foundations
 sequence: 26
 interactive: true
 blurb: "The carrying capacity and the fastest growth are both visible in the equation"
+image: "/assets/og/logistic-growth.png"
 ---
 
 Exponential growth assumes nothing ever runs out. Logistic growth is what you write down when something does.
@@ -120,7 +121,7 @@ For $$0 < y < a$$ the first two factors are positive, so the sign is the sign of
       var m=rate(k,y), L=9;
       var dt=1, dy=m, n=Math.hypot(px(1)-px(0), py(0)-py(m));
       if(n===0) continue;
-      var ux=(px(1)-px(0))/n*L, uy=-(py(0)-py(m))/n*L;
+      var ux=(px(1)-px(0))/n*L, uy=(py(0)-py(m))/n*L;
       c.beginPath(); c.moveTo(px(t)-ux,py(y)+uy); c.lineTo(px(t)+ux,py(y)-uy); c.stroke();
     }
     // equilibria and the half-capacity line
@@ -173,13 +174,13 @@ Three things are worth watching. Every curve starting strictly between 0 and 100
 
 That last point is the one to hold onto. The framework asks for the carrying capacity and for the value where the quantity is changing fastest, and neither depends on $$k$$ or on where you started.
 
-Reasoning about a differential equation's long-run behaviour without solving it has a name in the courses that follow this one, and [it is most of what they do](/2026/07/26/beyond-bc-differential-equations.html). The logistic model is where it starts.
+Reasoning about a differential equation's long-run behavior without solving it has a name in the courses that follow this one, and [it is most of what they do](/2026/07/26/beyond-bc-differential-equations.html). The logistic model is where it starts.
 
 ## Saying it in context
 
 The suggested skill for this topic is to explain the meaning of mathematical solutions in context, which for a logistic model means three sentences and no formulas.
 
-Take a fish population modelled by $$\tfrac{dP}{dt} = 0.02P(100-P)$$, with $$P$$ in thousands and $$t$$ in years, starting at 10 thousand. The population approaches 100 thousand in the long run, because that is the value making the rate zero from a start below it. It is growing fastest when it reaches 50 thousand, half the carrying capacity. At that moment it is growing at $$\tfrac{ka^2}{4} = 50$$ thousand per year.
+Take a fish population modeled by $$\tfrac{dP}{dt} = 0.02P(100-P)$$, with $$P$$ in thousands and $$t$$ in years, starting at 10 thousand. The population approaches 100 thousand in the long run, because that is the value making the rate zero from a start below it. It is growing fastest when it reaches 50 thousand, half the carrying capacity. At that moment it is growing at $$\tfrac{ka^2}{4} = 50$$ thousand per year.
 
 Every one of those came from the equation. The one thing they do not tell you is *when* the population reaches 50 thousand, and that is the question the exam does not ask, because answering it needs the solution.
 

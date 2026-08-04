@@ -10,6 +10,7 @@ kind: foundations
 sequence: 4
 interactive: true
 blurb: "Feed one function through another and see why order matters"
+image: "/assets/og/functions-inside-functions.png"
 ---
 
 A function is a machine: a number goes in, a number comes out. Composition is what happens when two machines run in a row — the output of the first is fed directly into the second, no stops. We write the result as $$f(g(x))$$, and it is worth reading that notation aloud the way it actually operates: $$x$$ goes into $$g$$ first, and whatever $$g$$ produces goes into $$f$$. The function written on the outside acts last.

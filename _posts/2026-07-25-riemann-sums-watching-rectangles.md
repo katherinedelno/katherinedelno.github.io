@@ -11,6 +11,7 @@ kind: foundations
 sequence: 20
 interactive: true
 blurb: "Watch the definition converge, and see why left and right sums bracket it"
+image: "/assets/og/riemann-sums-watching-rectangles.png"
 ---
 
 Before the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives you a shortcut, the definite integral has a definition, and the definition is rectangles. To estimate the area under a curve, slice the interval into $$n$$ pieces, stand a rectangle on each piece, and add up the rectangle areas. The definite integral is what those sums approach as the slicing gets finer:
@@ -32,7 +33,7 @@ The curve below is $$f(x) = x^2 + 1$$ on $$[0,3]$$, whose exact area is $$\texts
     <button type="button" id="rs-right" class="res-filter" style="font-size:.72rem">Right</button>
     <span class="viz-value" id="rs-read"></span>
   </div>
-  <p class="viz-caption">With a handful of rectangles the error is visible as the white gaps (left sum) or the gray overhangs (right sum). By n = 80 the rectangles are nearly indistinguishable from the region itself, and the sum is within a few hundredths of 12. The limit in the definition is this picture carried to completion.</p>
+  <p class="viz-caption">With a handful of rectangles the error is visible as the white gaps (left sum) or the gray overhangs (right sum). By n = 80 the rectangles are nearly indistinguishable from the region itself, and the sum is within about two tenths of 12 — the left sum reads 11.832 and the right 12.169, still bracketing the exact value from either side. The limit in the definition is this picture carried to completion.</p>
 </div>
 
 <script>

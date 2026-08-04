@@ -10,6 +10,7 @@ kind: mechanics
 sequence: 23
 interactive: true
 blurb: "Choose u, factor the denominator, then differentiate your answer"
+image: "/assets/og/parts-and-partial-fractions.png"
 ---
 
 Two of BC's integration techniques are procedures rather than ideas. Integration by parts undoes the product rule; partial fractions splits a rational function into pieces that basic techniques already handle. Neither is difficult once started. The difficulty is in starting the right one, and in knowing how narrow each one's scope is.
@@ -32,7 +33,7 @@ Choosing $$u = x$$ and $$dv = e^x dx$$ gives $$du = dx$$ and $$v = e^x$$, so the
 
 Choosing $$u = e^x$$ and $$dv = x\,dx$$ gives $$du = e^x dx$$ and $$v = \tfrac{x^2}{2}$$, so the formula produces $$\tfrac{x^2}{2}e^x - \textstyle\int \tfrac{x^2}{2}e^x\,dx$$. That is also true, and it is worse: the polynomial's degree went from one to two, and repeating the move will take it to three.
 
-So the test for the choice is not a rule to memorise but a question to ask: does $$\textstyle\int v\,du$$ look easier than what I started with? If the polynomial factor gets differentiated it shrinks toward a constant, and if it gets integrated it grows. That is the reason $$u$$ is usually the polynomial, and it is also the reason the rule breaks for $$\textstyle\int \ln x\,dx$$, where there is no polynomial and only one choice available: $$u = \ln x$$, $$dv = dx$$, giving $$x\ln x - \textstyle\int 1\,dx = x\ln x - x$$.
+So the test for the choice is not a rule to memorize but a question to ask: does $$\textstyle\int v\,du$$ look easier than what I started with? If the polynomial factor gets differentiated it shrinks toward a constant, and if it gets integrated it grows. That is the reason $$u$$ is usually the polynomial, and it is also the reason the rule breaks for $$\textstyle\int \ln x\,dx$$, where there is no polynomial and only one choice available: $$u = \ln x$$, $$dv = dx$$, giving $$x\ln x - \textstyle\int 1\,dx = x\ln x - x$$.
 
 ## Linear and nonrepeating, and what that rules out
 

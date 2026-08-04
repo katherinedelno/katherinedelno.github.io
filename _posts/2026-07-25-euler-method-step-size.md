@@ -10,6 +10,7 @@ kind: foundations
 sequence: 25
 interactive: true
 blurb: "What a smaller step purchases, and why the path undershoots a concave-up solution"
+image: "/assets/og/euler-method-step-size.png"
 ---
 
 A differential equation tells you the slope of a solution curve at every point, but not the curve itself. Euler's method turns that slope information into a curve the most direct way imaginable: stand at the initial point, walk a short distance along the tangent line, look up the new slope where you land, and repeat. Each step uses the update
@@ -29,7 +30,7 @@ The differential equation below is $$\tfrac{dy}{dx} = y$$ with $$y(0) = 1$$, who
     <input type="range" id="eu-h" min="1" max="40" step="1" value="4">
     <span class="viz-value" id="eu-read"></span>
   </div>
-  <p class="viz-caption">With two big steps the path lands far below the curve. With forty small steps it hugs the curve almost perfectly. The dots mark the points Euler's method actually computes; the segments between them are the tangent lines it walks along. Notice that every path sits below the gray curve. That is not an accident, and the reason is a scoring point on the exam.</p>
+  <p class="viz-caption">With two big steps the path lands far below the curve, at 4 against a true 7.389. With forty small steps it closes most of that gap, reaching 7.040: the error has fallen from about 3.4 to about 0.35. Note that it is still short, and visibly so at the right-hand edge, because a twentyfold cut in step size buys only about a twentyfold cut in error. The dots mark the points Euler's method actually computes; the segments between them are the tangent lines it walks along. Notice that every path sits below the gray curve. That is not an accident, and the reason is a scoring point on the exam.</p>
 </div>
 
 <script>

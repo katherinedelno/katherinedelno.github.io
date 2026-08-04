@@ -11,6 +11,7 @@ kind: foundations
 sequence: 4
 interactive: true
 blurb: "Three conditions, three ways to fail, and the names each failure earns"
+image: "/assets/og/continuity-three-conditions.png"
 ---
 
 The framework defines continuity at a point in one sentence with three parts. A function $$f$$ is continuous at $$x = c$$ provided that $$f(c)$$ exists, that $$\lim_{x \to c} f(x)$$ exists, and that
@@ -39,7 +40,7 @@ The buttons below break a single condition each. The checklist reports the three
     <div class="ct-cond" id="ct-c3"></div>
     <div class="ct-verdict" id="ct-v"></div>
   </div>
-  <p class="viz-caption">Each button leaves the curve alone and changes only what happens at x = 2. "No value" removes the point; "wrong value" puts it somewhere the neighbourhood does not point to; "sides disagree" and "unbounded" break the limit itself, in the two ways a limit can fail here. The checklist is the definition read one clause at a time, and the verdict is the name that clause pattern earns. Repair works on exactly the two cases where the limit exists, which is the whole content of what "removable" means.</p>
+  <p class="viz-caption">Each button leaves the curve alone and changes only what happens at x = 2. "No value" removes the point; "wrong value" puts it somewhere the neighborhood does not point to; "sides disagree" and "unbounded" break the limit itself, in the two ways a limit can fail here. The checklist is the definition read one clause at a time, and the verdict is the name that clause pattern earns. Repair works on exactly the two cases where the limit exists, which is the whole content of what "removable" means.</p>
   <style>
     .ct-panel{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--line)}
     .ct-cond{font-size:.95rem;line-height:1.75;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -175,7 +176,7 @@ Start at "continuous" and step right. Each button changes only what happens at $
 
 "No value" removes $$f(2)$$. The first condition fails, the other two are fine — the limit is still 4, because [a limit never consulted the point anyway](/2026/07/30/what-a-limit-claims.html).
 
-"Wrong value" puts $$f(2) = 1$$ while the neighbourhood still points at 4. Now $$f(2)$$ exists and the limit exists, and they disagree, so the third condition is the one that breaks.
+"Wrong value" puts $$f(2) = 1$$ while the neighborhood still points at 4. Now $$f(2)$$ exists and the limit exists, and they disagree, so the third condition is the one that breaks.
 
 Those two cases share a name. The framework calls both a *removable discontinuity*, and the name is a promise: because the limit exists, you can define or redefine $$f(2)$$ to equal it and continuity is restored. Press "repair it" in either case and watch all three ticks turn.
 
@@ -187,7 +188,7 @@ The last two buttons break the second condition, and they break it in the two wa
 
 "Unbounded" uses $$1/(x-2)^2$$, which grows without bound from both directions. The framework's third category is a *discontinuity due to a vertical asymptote*, and again nothing can be assigned at $$x = 2$$ to fix it.
 
-Those are the three types the course names: removable, jump, and vertical asymptote. They are not a list to memorise so much as a consequence of there being three conditions and a limit having two ways to fail.
+Those are the three types the course names: removable, jump, and vertical asymptote. They are not a list to memorize so much as a consequence of there being three conditions and a limit having two ways to fail.
 
 ## Continuity on an interval, and what you may assume
 

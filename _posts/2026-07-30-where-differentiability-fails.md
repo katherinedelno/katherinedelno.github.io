@@ -11,6 +11,7 @@ kind: foundations
 sequence: 8
 interactive: true
 blurb: "Four ways for one limit to fail, and the number that tells them apart"
+image: "/assets/og/where-differentiability-fails.png"
 ---
 
 [The derivative at a point is a limit](/2026/07/30/derivative-as-a-limit.html). So it exists exactly when that limit exists, and it fails exactly when that limit fails — which means the ways a derivative can fail are the ways a limit can fail, inherited whole from Unit 1.
@@ -176,7 +177,7 @@ The converse is false, and the framework says so in as many words: a continuous 
 Which makes the two claims worth keeping in the right order:
 
 - Differentiable at $$c$$ $$\Rightarrow$$ continuous at $$c$$. Always.
-- Continuous at $$c$$ $$\Rightarrow$$ differentiable at $$c$$. Never, as a general rule.
+- Continuous at $$c$$ $$\Rightarrow$$ differentiable at $$c$$. Not in general — the first three buttons are the counterexamples.
 
 ## Testing a piecewise join
 
@@ -188,7 +189,7 @@ Both steps are needed, and a student who does only the second can be caught out.
 
 $$f(x) = \begin{cases} x^2 & x \le 1 \\ 2x - 5 & x > 1 \end{cases}$$
 
-The one-sided derivatives at $$x = 1$$ are $$2x = 2$$ and $$2$$, which match perfectly. But the function values are $$1$$ and $$-3$$, so $$f$$ is not even continuous at 1, and there is no derivative regardless of how well the slopes agree. Matching slopes across a gap means nothing.
+The one-sided derivatives at $$x = 1$$ are $$2x$$ evaluated at 1, which is 2, and 2, which match perfectly. But the function values are $$1$$ and $$-3$$, so $$f$$ is not even continuous at 1, and there is no derivative regardless of how well the slopes agree. Matching slopes across a gap means nothing.
 
 <div class="article-note" markdown="1">
 A self-test at the slider: the vertical tangent and the cusp both send their quotients to infinity, so what distinguishes them, in one sentence, is the *sign*. Now predict what $$-x^{2/3}$$ would look like and which pair of infinities it would produce. Then say which of the four cases $$\sqrt{\vert x\vert}$$ belongs to. The classification is entirely a question about the two one-sided quotients, which is why the panel prints them separately and prints nothing else.

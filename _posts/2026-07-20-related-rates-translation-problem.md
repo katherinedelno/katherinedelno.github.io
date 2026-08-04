@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 14
 interactive: true
 blurb: "A five-step routine for the translation, not the calculus"
+image: "/assets/og/related-rates-translation-problem.png"
 ---
 
 Related rates has a reputation it does not deserve. The calculus involved is one move, differentiating both sides with respect to time, and any student who can use the chain rule can do it. What actually goes wrong is the translation: turning a paragraph about a leaking cone or a sliding ladder into an equation worth differentiating. Treat it as a translation problem and the fog lifts.

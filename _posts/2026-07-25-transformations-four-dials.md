@@ -10,6 +10,7 @@ kind: foundations
 sequence: 3
 interactive: true
 blurb: "Turn the four dials and see which two work in reverse"
+image: "/assets/og/transformations-four-dials.png"
 ---
 
 Every transformation question in AP Precalculus, and later in calculus, is built from one master form:
@@ -103,5 +104,5 @@ A parallel trap lives outside: in $$-f(x) + 2$$, the reflection happens before t
 This topic is a rare investment that pays in every course that follows. In AP Precalculus, it writes [sinusoidal models](/2026/07/25/unit-circle-unrolled.html) directly: amplitude is $$\vert a\vert$$, midline is $$y = k$$, period comes from $$b$$, and the phase comes from $$h$$. In AP Calculus, the chain rule differentiates $$f\big(b(x-h)\big)$$ and the same four numbers reappear in every substitution. In AP Statistics, standardizing a score, $$z = \tfrac{x - \mu}{\sigma}$$, is precisely a shift by $$h = \mu$$ and a horizontal scale by $$\sigma$$, which is why the normal table only needs one curve. Four dials, learned once.
 
 <div class="article-note" markdown="1">
-A self-test at the dials: set the sliders to make the black curve have amplitude 2, period π, midline y = 1, and a peak on the y-axis. There are two honest solutions, one using a sine with a shift and one that would use a cosine with none, which is a good reminder that models are not unique. Sine peaks when its argument reaches π/2, so you need $$b(0 - h) = \tfrac{\pi}{2}$$ with $$b = 2$$, which gives $$h = -\tfrac{\pi}{4}$$ — a shift *left* by a quarter of the way to π/2, not right. Getting that sign by reasoning rather than by dragging is the whole point of the exercise, and the result is $$2\sin(2x + \tfrac{\pi}{2}) + 1$$, which is $$2\cos(2x) + 1$$: the quarter-lap relationship between the two functions, arrived at from the dials.
+A self-test at the dials: set the sliders to make the black curve have amplitude 2, period π, midline y = 1, and a peak on the y-axis. There are two honest solutions, one using a sine with a shift and one that would use a cosine with none, which is a good reminder that models are not unique. Sine peaks when its argument reaches π/2, so you need $$b(0 - h) = \tfrac{\pi}{2}$$ with $$b = 2$$, which gives $$h = -\tfrac{\pi}{4}$$ — a shift *left* by a quarter of the period, not right. Getting that sign by reasoning rather than by dragging is the whole point of the exercise, and the result is $$2\sin(2x + \tfrac{\pi}{2}) + 1$$, which is $$2\cos(2x) + 1$$: the quarter-lap relationship between the two functions, arrived at from the dials.
 </div>

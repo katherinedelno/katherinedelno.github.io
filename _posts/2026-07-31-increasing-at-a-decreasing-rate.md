@@ -11,6 +11,7 @@ sequence: 1
 interactive: true
 featured: true
 blurb: "The second half of the phrase is about the rate, not the function"
+image: "/assets/og/increasing-at-a-decreasing-rate.png"
 ---
 
 A quantity can be increasing and slowing down at the same time, and AP Precalculus has a phrase for it. The phrase reads like a contradiction only because its two halves are about different things: the first describes the function, and the second describes the function's rate of change.
@@ -21,7 +22,7 @@ This is the language the course adds that a previous precalculus course did not,
 
 The first question is whether the output values go up or down. The framework's definition is about ordering and nothing else: a function is increasing over an interval if, for all $$a$$ and $$b$$ in it, $$a < b$$ implies $$f(a) < f(b)$$.
 
-The second question is what the *rate* is doing, and it has its own definition. The average rate of change over $$[a,b]$$ is the slope of the secant line from $$\big(a, f(a)\big)$$ to $$\big(b, f(b)\big)$$. Compute it over consecutive equal-length intervals and a second sequence of numbers appears, one that describes the first sequence's behaviour. That second sequence is what the phrase's second half is about, and the framework attaches concavity to it directly: the graph is concave up on intervals where the rate of change is increasing, and concave down where it is decreasing.
+The second question is what the *rate* is doing, and it has its own definition. The average rate of change over $$[a,b]$$ is the slope of the secant line from $$\big(a, f(a)\big)$$ to $$\big(b, f(b)\big)$$. Compute it over consecutive equal-length intervals and a second sequence of numbers appears, one that describes the first sequence's behavior. That second sequence is what the phrase's second half is about, and the framework attaches concavity to it directly: the graph is concave up on intervals where the rate of change is increasing, and concave down where it is decreasing.
 
 Two sequences, two questions, four combinations. All four are examinable and all four appear below.
 
@@ -36,7 +37,7 @@ Two sequences, two questions, four combinations. All four are examinable and all
     <span class="viz-value" id="rc-sec"></span>
   </div>
   <div class="rc-read" id="rc-read"></div>
-  <p class="viz-caption">Four functions on the same seven inputs, one class of behaviour each. The curve carries every secant, with the selected one drawn dark, and the table underneath gives the outputs, the average rate of change over each interval, and the change in those rates. Read the third column's signs to answer the first question and the fourth column's signs to answer the second. All four functions here are quadratics, which is why the last column is constant: the framework notes that a quadratic's average rates over consecutive equal-length intervals are themselves given by a linear function, so they change at a constant rate.</p>
+  <p class="viz-caption">Four functions on the same seven inputs, one class of behavior each. The curve carries every secant, with the selected one drawn dark, and the table underneath gives the outputs, the average rate of change over each interval, and the change in those rates. Read the third column's signs to answer the first question and the fourth column's signs to answer the second. All four functions here are quadratics, which is why the last column is constant: the framework notes that a quadratic's average rates over consecutive equal-length intervals are themselves given by a linear function, so they change at a constant rate.</p>
   <style>
     .rc-read{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--line);
       font-size:.9rem;line-height:1.55;color:var(--ink);font-variant-numeric:tabular-nums}

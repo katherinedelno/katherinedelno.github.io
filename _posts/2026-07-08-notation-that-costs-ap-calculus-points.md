@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 2
 interactive: false
 blurb: "The writing conventions that protect earned credit"
+image: "/assets/og/notation-that-costs-ap-calculus-points.png"
 ---
 
 Most of the free-response points I see students lose in AP Calculus are not lost on ideas. They are lost on notation and justification. The student knows how to solve the problem, does the real work correctly, and then leaves credit behind in how it is written. Graders reward reasoning that is communicated clearly, and calculus has a handful of conventions that are easy to drop under time pressure.

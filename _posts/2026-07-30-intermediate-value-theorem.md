@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 6
 interactive: true
 blurb: "Something happens somewhere, and the theorem refuses to say where"
+image: "/assets/og/intermediate-value-theorem.png"
 ---
 
 The framework gathers a small family of results under one idea: existence theorems allow us to draw conclusions about a function's behavior on an interval without precisely locating that behavior. The Intermediate Value Theorem is the first of them, and that sentence is the whole shape of it. Something happens. The theorem declines to say where.
@@ -35,7 +36,7 @@ Four things to notice, and the interactive below is built to make each of them v
     <div class="iv-verdict" id="iv-v"></div>
     <div class="iv-truth" id="iv-t"></div>
   </div>
-  <p class="viz-caption">Both functions run from f(0) = 1 to f(4) = 5, so the bracket the theorem checks is identical in the two modes and only continuity differs. Drag the target. Where the theorem applies it promises at least one crossing, and the crossings actually present are marked and counted underneath — usually three, which is the gap between what is guaranteed and what is true. Switch to the jump and drag the target between 3 and 4: the bracket still holds, the theorem no longer applies, and there is genuinely no crossing to find.</p>
+  <p class="viz-caption">Both functions run from f(0) = 1 to f(4) = 5, so the bracket the theorem checks is identical in the two modes and only continuity differs. Drag the target. Where the theorem applies it promises at least one crossing, and every place the function actually meets the target is marked and counted underneath — three, whenever the theorem has anything to say, which is the gap between what is guaranteed and what is true. Switch to the jump and drag the target between 3 and 4: the bracket still holds, the theorem no longer applies, and there is genuinely no crossing to find.</p>
   <style>
     .iv-panel{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--line)}
     .iv-row{font-size:.95rem;line-height:1.7;color:var(--ink)}
@@ -67,18 +68,24 @@ Four things to notice, and the interactive below is built to make each of them v
   function fj(x){ return x<2 ? 1+x : 0.5*x+3; }
   function f(x){ return cont?fc(x):fj(x); }
 
+  // Every place where f attains d, not only the sign changes. A turning point
+  // that sits exactly on d — d = 1 and d = 5 here — is attained without any
+  // change of sign, and counting only sign changes would miss it.
   function crossings(d){
-    var out=[], N=200000, prev=f(A)-d, x, v, i;
+    var out=[], N=200000, prev=f(A)-d, prev2=null, x, v, i;
     for(i=1;i<=N;i++){
       x=A+(B-A)*i/N; v=f(x)-d;
       if(prev===0){ out.push(A+(B-A)*(i-1)/N); }
       else if(prev*v<0){
         var lo=A+(B-A)*(i-1)/N, hi=x;
-        if(!cont && lo<2 && hi>=2){ prev=v; continue; }   // the jump is not a crossing
-        for(var k=0;k<60;k++){ var m=(lo+hi)/2; if((f(lo)-d)*(f(m)-d)<=0) hi=m; else lo=m; }
-        out.push((lo+hi)/2);
+        if(cont || !(lo<2 && hi>=2)){                     // the jump is not a crossing
+          for(var k=0;k<60;k++){ var m=(lo+hi)/2; if((f(lo)-d)*(f(m)-d)<=0) hi=m; else lo=m; }
+          out.push((lo+hi)/2);
+        }
+      } else if(prev2!==null && (prev-prev2)*(v-prev)<0 && Math.abs(prev)<1e-6){
+        out.push(A+(B-A)*(i-1)/N);                        // a turning point resting on d
       }
-      prev=v;
+      prev2=prev; prev=v;
     }
     if(Math.abs(f(B)-d)<1e-12) out.push(B);
     return out;
@@ -151,7 +158,7 @@ Four things to notice, and the interactive below is built to make each of them v
       : 'The theorem does not apply, so it promises nothing';
     var n=xs.length;
     document.getElementById('iv-t').textContent =
-      'In fact this function crosses d ' + (n===0?'nowhere':(n===1?'once':n===2?'twice':n+' times')) +
+      'In fact this function meets d ' + (n===0?'nowhere':(n===1?'once':n===2?'twice':n+' times')) +
       (n?' — at x = '+xs.map(function(x){return x.toFixed(4);}).join(', '):'') + '.';
   }
   document.getElementById('iv-c').addEventListener('click',function(){

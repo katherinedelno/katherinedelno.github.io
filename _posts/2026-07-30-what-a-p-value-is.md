@@ -10,6 +10,7 @@ kind: foundations
 sequence: 13
 interactive: true
 blurb: "Simulate studies where nothing is happening, then find your result among them"
+image: "/assets/og/what-a-p-value-is.png"
 ---
 
 A p-value is computed by assuming the null hypothesis is true. Everything confusing about p-values follows from that sentence, and so does everything useful about them. Students want the number to mean "the probability that the null hypothesis is true," and it cannot mean that, because a quantity built on the assumption that $$H_0$$ holds cannot also report the chance that $$H_0$$ holds.
@@ -49,7 +50,7 @@ The simulation view runs studies in a world where the claim is true: each draws 
     <button type="button" id="pv-clr" class="res-filter" style="font-size:.72rem">Clear</button>
     <span class="viz-value" id="pv-read" style="min-width:100%"></span>
   </div>
-  <p class="viz-caption">Every dot is one study run in a world where the mean really is 50. Dark dots are the studies that came out as extreme as the observed result or more so; the running share of them is what the p-value counts. Switch to Theory and the same region appears as area under the curve, which is what we compute instead of counting. Drag the observed mean, or the sample size, and watch both numbers move together. Changing the alternative recolours the dots without redrawing them: the studies, the distribution, and the observed result do not depend on the question being asked.</p>
+  <p class="viz-caption">Every dot is one study run in a world where the mean really is 50. Dark dots are the studies that came out as extreme as the observed result or more so; the running share of them is what the p-value counts. Switch to Theory and the same region appears as area under the curve, which is what we compute instead of counting. Drag the observed mean, or the sample size, and watch both numbers move together. Changing the alternative recolors the dots without redrawing them: the studies, the distribution, and the observed result do not depend on the question being asked.</p>
 </div>
 
 <script>

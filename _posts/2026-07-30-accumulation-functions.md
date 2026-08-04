@@ -11,6 +11,7 @@ kind: foundations
 sequence: 21
 interactive: true
 blurb: "Every question about g is a question about the picture of f"
+image: "/assets/og/accumulation-functions.png"
 ---
 
 A function can be defined by an integral. Given a continuous $$f$$ and a number $$a$$ in its interval, set
@@ -19,7 +20,7 @@ $$g(x) = \int_a^x f(t)\,dt,$$
 
 and $$g$$ is a perfectly ordinary function with a graph, a derivative, and extrema. The framework calls it an accumulation function and states plainly what makes it usable: graphical, numerical, analytical, and verbal representations of $$f$$ provide information about $$g$$.
 
-[Why $$g' = f$$](/2026/07/17/fundamental-theorem-from-the-ground-up.html) is the Fundamental Theorem and is argued elsewhere. This article is about the consequence: the translation from a picture of $$f$$ to the behaviour of $$g$$.
+[Why $$g' = f$$](/2026/07/17/fundamental-theorem-from-the-ground-up.html) is the Fundamental Theorem and is argued elsewhere. This article is about the consequence: the translation from a picture of $$f$$ to the behavior of $$g$$.
 
 ## The translation
 

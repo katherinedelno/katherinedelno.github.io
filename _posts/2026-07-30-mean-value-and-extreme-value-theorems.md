@@ -11,11 +11,12 @@ kind: mechanics
 sequence: 18
 interactive: true
 blurb: "A guarantee that something exists, with no address attached"
+image: "/assets/og/mean-value-and-extreme-value-theorems.png"
 ---
 
-The enduring understanding these two theorems sit under says what they are for in one sentence: existence theorems let us draw conclusions about a function's behaviour on an interval without precisely locating that behaviour. Both of them promise something exists. Neither tells you where it is.
+The enduring understanding these two theorems sit under says what they are for in one sentence: existence theorems let us draw conclusions about a function's behavior on an interval without precisely locating that behavior. Both of them promise something exists. Neither tells you where it is.
 
-That is the same bargain [the Intermediate Value Theorem](/2026/07/30/intermediate-value-theorem.html) offers, and these two are its neighbours in the framework — all three sit under FUN-1.
+That is the same bargain [the Intermediate Value Theorem](/2026/07/30/intermediate-value-theorem.html) offers, and these two are its neighbors in the framework — all three sit under FUN-1.
 
 ## The two statements
 

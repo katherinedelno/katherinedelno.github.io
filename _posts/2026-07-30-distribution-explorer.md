@@ -10,6 +10,7 @@ kind: mechanics
 sequence: 9
 interactive: true
 blurb: "Type the numbers, shade the region, read the probability and the command"
+image: "/assets/og/distribution-explorer.png"
 ---
 
 Every probability question in AP Statistics has the same shape once the words are stripped away: a distribution, a region, and a number. The tool below holds all three on screen at once, for the six distributions the course uses, with the TI-84 command that produces the same number printed underneath.
@@ -54,7 +55,7 @@ It is built for working, not for reading. Type the exact values from a problem i
     <button type="button" class="res-filter" id="de-present">Presentation mode</button>
   </div>
 
-  <p class="viz-caption">Six distributions, typed parameters, four region shapes, and both directions: a region gives a probability, a probability gives a cutoff. The binomial keeps P(X = k) and P(X &le; k) side by side, because those are the two the calculator distinguishes as binompdf and binomcdf and they are the pair most often swapped. The t curve carries the standard normal behind it in outline, so raising the degrees of freedom shows one collapsing onto the other. For the two sampling distributions the centre and spread are printed as expressions with the numbers substituted, and a warning appears when a normal-approximation condition fails.</p>
+  <p class="viz-caption">Six distributions, typed parameters, four region shapes, and both directions: a region gives a probability, a probability gives a cutoff. The binomial keeps P(X = k) and P(X &le; k) side by side, because those are the two the calculator distinguishes as binompdf and binomcdf and they are the pair most often swapped. The t curve carries the standard normal behind it in outline, so raising the degrees of freedom shows one collapsing onto the other. For the two sampling distributions the center and spread are printed as expressions with the numbers substituted, and a warning appears when a normal-approximation condition fails.</p>
 
   <style>
     .de-wrap .de-row{display:flex;align-items:center;gap:8px;margin:0 0 .7rem;flex-wrap:wrap}
@@ -552,14 +553,14 @@ It is built for working, not for reading. Type the exact values from a problem i
     // sampling-distribution expressions and condition flags
     var f='';
     if(S.d==='phat'){
-      f += '<p>centre '+nf(q.m,4)+' = p &nbsp;&middot;&nbsp; spread &radic;(p(1−p)/n) = &radic;('+
+      f += '<p>center '+nf(q.m,4)+' = p &nbsp;&middot;&nbsp; spread &radic;(p(1−p)/n) = &radic;('+
            nf(q.p,4)+'·'+nf(1-q.p,4)+'/'+q.n+') = '+nf(q.s,5)+'</p>';
       var np=q.n*q.p, nq=q.n*(1-q.p);
       if(np<10||nq<10) f += '<p>Large counts fails: np = '+nf(np,2)+', n(1−p) = '+nf(nq,2)+
         '. Both must be at least 10 before this normal curve is a fair stand-in for the true (binomial) sampling distribution.</p>';
     }
     if(S.d==='xbar'){
-      f += '<p>centre '+nf(q.m,4)+' = μ &nbsp;&middot;&nbsp; spread σ/&radic;n = '+nf(q.sig,4)+'/&radic;'+q.n+' = '+nf(q.s,5)+'</p>';
+      f += '<p>center '+nf(q.m,4)+' = μ &nbsp;&middot;&nbsp; spread σ/&radic;n = '+nf(q.sig,4)+'/&radic;'+q.n+' = '+nf(q.s,5)+'</p>';
       if(q.n<30) f += '<p>n = '+q.n+' is below 30. If the population is normal this curve is exact; if it is not, the Central Limit Theorem has not yet earned you the normal shape.</p>';
     }
     flags.innerHTML=f;
@@ -634,7 +635,7 @@ The calculator line under the readout always shows the command for whichever dir
 
 ## Where the normal curve is standing in for something else
 
-The two sampling-distribution settings draw a normal curve, but they are the only two that are drawing an approximation rather than the thing itself. The tool prints the centre and spread as expressions with the numbers substituted, and says so when a condition fails.
+The two sampling-distribution settings draw a normal curve, but they are the only two that are drawing an approximation rather than the thing itself. The tool prints the center and spread as expressions with the numbers substituted, and says so when a condition fails.
 
 For a sample proportion the curve stands in for a binomial, and it is trustworthy when $$np \geq 10$$ and $$n(1-p) \geq 10$$. For a sample mean the curve is exact if the population is normal, and otherwise rests on [the Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html) and the $$n \geq 30$$ guideline. Set $$n$$ below either threshold and the warning appears; it is not decoration, it is the condition an exam response has to state.
 

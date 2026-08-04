@@ -10,6 +10,7 @@ kind: foundations
 sequence: 14
 interactive: true
 blurb: "One error is chosen in advance; the other is inherited"
+image: "/assets/og/two-ways-a-test-can-be-wrong.png"
 ---
 
 The probability of a Type I error is a number chosen in advance. The probability of a Type II error is inherited from the situation, and in a real study it is never observed at all. That asymmetry is the whole of this topic, and it accounts for a lopsidedness students notice without being able to name: $$\alpha$$ is announced before the data are collected, and its counterpart usually is not announced anywhere.
@@ -36,7 +37,7 @@ Both panels below show the same cut, drawn in the same place. What changes betwe
     <label for="pw-p">True rework rate</label>
     <input type="range" id="pw-p" min="100" max="250" step="1" value="150">
     <label for="pw-n">Sample size n</label>
-    <input type="range" id="pw-n" min="50" max="800" step="10" value="200">
+    <input type="range" id="pw-n" min="50" max="800" step="1" value="200">
   </div>
   <div class="viz-controls">
     <label>Significance level &alpha;</label>

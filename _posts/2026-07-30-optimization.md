@@ -11,6 +11,7 @@ kind: mechanics
 sequence: 19
 interactive: true
 blurb: "Setting up the function and its domain is most of the work"
+image: "/assets/og/optimization.png"
 ---
 
 The framework's suggested skill for the introductory optimization topic is to identify common underlying structures in problems involving different contextual situations. That is an unusual thing to ask of a calculus topic, and it is the right thing to ask of this one. Fences, boxes, and distances are the same problem wearing different clothes.
@@ -218,7 +219,7 @@ The framework states it in one line: absolute extrema of a function on a closed 
 
 Both parts of the definition of a critical point matter here. A critical point is where the derivative is zero *or* [fails to exist](/2026/07/30/where-differentiability-fails.html), and objectives built from absolute values or roots can have the second kind without having the first.
 
-The third problem is the one that breaks the habit. Minimising the distance from $$(0,2)$$ to the parabola $$y = x^2$$ gives
+The third problem is the one that breaks the habit. Minimizing the distance from $$(0,2)$$ to the parabola $$y = x^2$$ gives
 
 $$D^2(x) = x^2 + (x^2-2)^2 = x^4 - 3x^2 + 4,$$
 
@@ -230,8 +231,8 @@ And $$x = 0$$ is a critical point that is a local *maximum* of the distance. A s
 
 The suggested skill for the second optimization topic is to explain the meaning of mathematical solutions in context, which mostly means noticing what was asked for.
 
-The fence question asks for the largest area, which is $$1250$$ square metres, not $$x = 25$$. The box question asks for the volume, $$128$$ cubic inches, not the cut. And the distance question asks for a distance, so the answer is $$\tfrac{\sqrt7}{2}$$, not $$\tfrac74$$ — minimising $$D^2$$ instead of $$D$$ is a legitimate shortcut, because the square root is increasing and preserves the location of the minimum, but the shortcut has to be undone before the answer is written down.
+The fence question asks for the largest area, which is $$1250$$ square metres, not $$x = 25$$. The box question asks for the volume, $$128$$ cubic inches, not the cut. And the distance question asks for a distance, so the answer is $$\tfrac{\sqrt7}{2}$$, not $$\tfrac74$$ — minimizing $$D^2$$ instead of $$D$$ is a legitimate shortcut, because the square root is increasing and preserves the location of the minimum, but the shortcut has to be undone before the answer is written down.
 
 <div class="article-note" markdown="1">
-The setup is worth practising apart from the calculus. Take a page of optimization problems and, for each one, write only three lines: the quantity being optimized, the constraint, and the domain with a reason for each end of it. Do not differentiate any of them. The differentiating is the part that already works, and separating the two makes it obvious how much of the difficulty lives in the first three lines.
+The setup is worth practicing apart from the calculus. Take a page of optimization problems and, for each one, write only three lines: the quantity being optimized, the constraint, and the domain with a reason for each end of it. Do not differentiate any of them. The differentiating is the part that already works, and separating the two makes it obvious how much of the difficulty lives in the first three lines.
 </div>
