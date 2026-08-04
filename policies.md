@@ -123,7 +123,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
       <li>Accepted methods: Apple Cash, PayPal, and Zelle.</li>
       <li>Invoices unpaid fourteen days after the due date pause instruction until the balance is settled. The weekly slot is held for two weeks from that point, after which it may be released.</li>
       <li>Completed sessions are not refundable, nor are sessions billed under the cancellation policy above.</li>
-      <li>Between-session support is billed monthly at $300 and may be added or discontinued with fourteen days' notice, effective at the start of the next billing month. It is not prorated within a month.</li>
+      <li>Between-session support is billed monthly at $200 and may be added or discontinued with fourteen days' notice, effective at the start of the next billing month. It is not prorated within a month.</li>
       <li>Rates are held for the full academic year for enrolled families. Any change takes effect the following academic year, with notice by the preceding June.</li>
     </ul>
   </div>
