@@ -218,12 +218,12 @@ permalink: /private-instruction/
     <p class="label">Free webinars</p>
     <h2>Two free sessions this August</h2>
     <p>Whether your student's year begins in August or after Labor Day, I'm giving two free 45-minute sessions on how to start it well. Everyone who registers receives my getting-started guide for their course within a day, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
-    <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 18, 5:30 p.m. Pacific</p>
-    <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 20, 5:30 p.m. Pacific</p>
+    <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
+    <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
     <p style="margin-top:1.5rem;font-size:.93rem;color:var(--muted);">Students in AP Precalculus: email me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I'll send the getting-started guide for that course.</p>
     <div class="pi-reg-row">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 18</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 20</a>
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
     </div>
   </div>
 
