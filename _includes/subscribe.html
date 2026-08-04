@@ -1,18 +1,23 @@
 {%- comment -%}
-  Email signup. Service-agnostic: set `newsletter_action` in _config.yml to your
-  provider's form endpoint and the form goes live everywhere it is included.
-  While that value is empty the block renders a mailto link instead, so the page
-  is never showing a form that quietly discards addresses.
+  Email signup. Three modes, checked in order:
+
+  1. site.newsletter_action  — a provider endpoint (Buttondown, Kit, Formspree).
+  2. site.google_form_id     — posts to your own Google Form, invisibly. The
+                               response lands in a hidden iframe so the page
+                               never navigates away, and the visitor sees our
+                               own confirmation rather than Google's.
+  3. neither set             — renders an RSS link and a mailto, so no address
+                               is ever collected into nowhere.
 
   Usage:
-    {% include subscribe.html
-       heading="..." blurb="..." button="..." %}
-  All three are optional and fall back to the copy below.
+    {% include subscribe.html heading="..." blurb="..." button="..." %}
+  All optional; defaults below.
 {%- endcomment -%}
 
 {%- assign sub_heading = include.heading | default: "New writing, when there is some" -%}
 {%- assign sub_blurb = include.blurb | default: "A short note when I publish something new. Roughly monthly, often less. No other mail, and you can leave in one click." -%}
 {%- assign sub_button = include.button | default: "Subscribe" -%}
+{%- assign sub_done = include.done | default: "Thank you — that's in. Check your inbox shortly." -%}
 
 <section class="sub" aria-labelledby="sub-h">
   <style>
@@ -24,9 +29,12 @@
     .sub input[type=email]:focus{outline:2px solid #2b2b2b;outline-offset:1px;border-color:#2b2b2b}
     .sub button{font:inherit;font-size:.88rem;font-weight:700;letter-spacing:.03em;padding:11px 20px;border:1px solid #1f1f1f;border-radius:8px;background:#1f1f1f;color:#fff;cursor:pointer}
     .sub button:hover{background:#000;border-color:#000}
+    .sub button:disabled{background:#c9c9c9;border-color:#c9c9c9;cursor:default}
     .sub button:focus-visible{outline:2px solid #2b2b2b;outline-offset:2px}
     .sub .sub-fine{font-size:.78rem;color:#8a8a8a;margin:.8rem 0 0}
     .sub .sub-fine a{color:#8a8a8a}
+    .sub .sub-ok{font-size:.95rem;color:#1f1f1f;font-weight:600;margin:0;display:flex;align-items:center;gap:10px}
+    .sub .sub-ok::before{content:"";flex:0 0 auto;width:18px;height:2px;background:#2b2b2b}
     .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
     @media (max-width:520px){.sub form{flex-direction:column}.sub input[type=email],.sub button{width:100%}}
   </style>
@@ -37,9 +45,7 @@
   {%- if site.newsletter_action and site.newsletter_action != "" -%}
   <form action="{{ site.newsletter_action }}" method="post" target="_blank" novalidate>
     <label class="sub-hp" for="sub-email">Email address</label>
-    <input type="email" id="sub-email" name="email" placeholder="you@example.com"
-           autocomplete="email" required>
-    {%- comment -%}Honeypot: bots fill it, people never see it.{%- endcomment -%}
+    <input type="email" id="sub-email" name="email" placeholder="you@example.com" autocomplete="email" required>
     <div class="sub-hp" aria-hidden="true">
       <label for="sub-hp">Leave this field empty</label>
       <input type="text" id="sub-hp" name="website" tabindex="-1" autocomplete="off">
@@ -47,6 +53,56 @@
     <button type="submit">{{ sub_button }}</button>
   </form>
   <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>. You can also subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>.</p>
+
+  {%- elsif site.google_form_id and site.google_form_id != "" -%}
+  {%- comment -%}
+    The form targets a hidden iframe, so the browser posts normally and never
+    navigates. Google's response is same-origin-blocked and unreadable, which is
+    fine: the post either succeeds or the visitor sees nothing change, and the
+    iframe's load event is a reliable enough signal to confirm on. No fetch, no
+    CORS, and it degrades to a plain form post if scripting is off.
+  {%- endcomment -%}
+  <form class="sub-form"
+        action="https://docs.google.com/forms/d/e/{{ site.google_form_id }}/formResponse"
+        method="post" target="sub-sink">
+    <label class="sub-hp" for="sub-email">Email address</label>
+    <input type="email" id="sub-email" name="{{ site.google_form_email_field }}"
+           placeholder="you@example.com" autocomplete="email" required>
+    <div class="sub-hp" aria-hidden="true">
+      <label for="sub-hp">Leave this field empty</label>
+      <input type="text" id="sub-hp" class="sub-trap" tabindex="-1" autocomplete="off">
+    </div>
+    <button type="submit">{{ sub_button }}</button>
+  </form>
+  <iframe name="sub-sink" class="sub-hp" title="Hidden form target" aria-hidden="true" tabindex="-1"></iframe>
+  <p class="sub-ok" hidden>{{ sub_done }}</p>
+  <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>. You can also subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>.</p>
+
+  <script>
+  (function(){
+    var box = document.currentScript.closest('.sub');
+    if (!box) return;
+    var form = box.querySelector('.sub-form'),
+        sink = box.querySelector('iframe[name="sub-sink"]'),
+        ok   = box.querySelector('.sub-ok'),
+        trap = box.querySelector('.sub-trap'),
+        sent = false;
+
+    form.addEventListener('submit', function(e){
+      if (trap && trap.value) { e.preventDefault(); return; }   // bot filled the honeypot
+      sent = true;
+      form.querySelector('button').disabled = true;
+    });
+
+    sink.addEventListener('load', function(){
+      if (!sent) return;                                        // ignore the initial blank load
+      form.hidden = true;
+      ok.hidden = false;
+      ok.setAttribute('role', 'status');
+    });
+  })();
+  </script>
+
   {%- else -%}
   <p class="sub-fine">The list isn't open yet. In the meantime you can subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I'll add you when it is.</p>
   {%- endif -%}
