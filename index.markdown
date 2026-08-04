@@ -58,10 +58,10 @@ permalink: /
 
   <div class="pg-section">
     <h2>This August</h2>
-    <p>As the school year gets underway, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;18</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;20</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course within a day, whether or not they attend.</p>
+    <p>As the school year gets underway, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course within a day, whether or not they attend.</p>
     <div class="btn-row-reg">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 18</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 20</a>
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
     </div>
   </div>
 
