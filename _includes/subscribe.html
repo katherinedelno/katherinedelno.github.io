@@ -18,6 +18,8 @@
 {%- assign sub_blurb = include.blurb | default: "A short note when I publish something new. Roughly monthly, often less. No other mail, and you can leave in one click." -%}
 {%- assign sub_button = include.button | default: "Subscribe" -%}
 {%- assign sub_done = include.done | default: "Thank you. You're on the list." -%}
+{%- assign sub_course = include.course | default: "Writing list" -%}
+{%- assign sub_choose = include.choose -%}
 
 <section class="sub" aria-labelledby="sub-h">
   <style>
@@ -26,7 +28,9 @@
     .sub p{font-size:.92rem;color:#5c5c5c;line-height:1.6;margin:0 0 1.1rem;max-width:60ch}
     .sub form{display:flex;gap:9px;flex-wrap:wrap}
     .sub input[type=email]{flex:1;min-width:220px;font:inherit;font-size:.95rem;padding:11px 13px;border:1px solid #d6d6d6;border-radius:8px;background:#fff;color:#1f1f1f}
-    .sub input[type=email]:focus{outline:2px solid #2b2b2b;outline-offset:1px;border-color:#2b2b2b}
+    .sub input[type=email]:focus,.sub select:focus{outline:2px solid #2b2b2b;outline-offset:1px;border-color:#2b2b2b}
+    .sub select{font:inherit;font-size:.95rem;padding:11px 13px;border:1px solid #d6d6d6;border-radius:8px;background:#fff;color:#1f1f1f;cursor:pointer}
+    .sub .sub-pick{display:block;font-size:.8rem;font-weight:700;letter-spacing:.02em;color:#5c5c5c;margin:0 0 .45rem}
     .sub button{font:inherit;font-size:.88rem;font-weight:700;letter-spacing:.03em;padding:11px 20px;border:1px solid #1f1f1f;border-radius:8px;background:#1f1f1f;color:#fff;cursor:pointer}
     .sub button:hover{background:#000;border-color:#000}
     .sub button:disabled{background:#c9c9c9;border-color:#c9c9c9;cursor:default}
@@ -35,7 +39,7 @@
     .sub .sub-fine a{color:#8a8a8a}
     .sub .sub-ok{font-size:1rem;color:#1f1f1f;font-weight:600;line-height:1.5;margin:0;padding:12px 0 2px}
     .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-    @media (max-width:520px){.sub form{flex-direction:column}.sub input[type=email],.sub button{width:100%}}
+    @media (max-width:640px){.sub form{flex-direction:column}.sub input[type=email],.sub select,.sub button{width:100%}}
   </style>
 
   <h2 id="sub-h">{{ sub_heading }}</h2>
@@ -67,6 +71,26 @@
     <label class="sub-hp" for="sub-email">Email address</label>
     <input type="email" id="sub-email" name="{{ site.google_form_email_field }}"
            placeholder="you@example.com" autocomplete="email" required>
+    {%- if sub_choose and site.google_form_course_field and site.google_form_course_field != "" -%}
+    {%- comment -%}
+      Visitor picks the course. The Course question on the form must stay a
+      short-answer field: Google rejects submissions whose value is not in the
+      list if it is ever converted to a dropdown.
+    {%- endcomment -%}
+    <label class="sub-hp" for="sub-course">Which course</label>
+    <select id="sub-course" name="{{ site.google_form_course_field }}" required>
+      <option value="" disabled selected>Choose a course</option>
+      <option value="AP Statistics">AP Statistics</option>
+      <option value="AP Calculus AB &amp; BC">AP Calculus AB &amp; BC</option>
+      <option value="AP Precalculus">AP Precalculus</option>
+    </select>
+    {%- elsif site.google_form_course_field and site.google_form_course_field != "" -%}
+    {%- comment -%}
+      Which page the address came from, so the spreadsheet says what to send.
+      Hidden rather than asked: the visitor already told us by being here.
+    {%- endcomment -%}
+    <input type="hidden" name="{{ site.google_form_course_field }}" value="{{ sub_course }}">
+    {%- endif -%}
     <div class="sub-hp" aria-hidden="true">
       <label for="sub-hp">Leave this field empty</label>
       <input type="text" id="sub-hp" class="sub-trap" tabindex="-1" autocomplete="off">
