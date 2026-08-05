@@ -66,10 +66,11 @@ permalink: /
   </div>
 
   {% include subscribe.html
-     heading="If you'd rather read first"
-     blurb="Not everyone arrives ready to book a session. I write for students through the year: the reasoning beneath the courses, and the habits that hold up under time pressure. Leave an address and I'll send a note when there is something new. Roughly monthly, often less."
-     button="Subscribe"
-     done="Thank you. I'll write when there is something worth sending." %}
+     heading="The getting-started guide for your course"
+     blurb="Before the term begins I send a short guide for each course: the habits that make the year go well, the setup of calculator and notation, how the course and exam are structured, and the early mistakes most worth avoiding. Choose a course and I'll send it. No charge, and nothing else follows."
+     button="Send the guide"
+     done="Thank you. I'll send the guide to that address shortly."
+     choose="true" %}
 
   <div class="pg-close">
     <p>Writing for students is collected under <a href="/resources/">resources</a>; my background and statistical work are under <a href="/about/">about</a>. The roster for the academic year is small, and it fills. Families considering the fall are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
