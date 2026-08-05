@@ -152,7 +152,8 @@ image: "/assets/og/readiness-calculus.png"
     {% include subscribe.html
        heading="The full review plan for what you missed"
        blurb="This diagnostic is the short version of a thirty-item one I give my own students, and each area above has a review packet behind it. Leave an address and I'll send the getting-started guide for AP Calculus, which covers the setup, the notation, and the early mistakes most worth avoiding."
-       button="Send the guide" %}
+       button="Send the guide"
+       done="Thank you. I'll send the AP Calculus getting-started guide to that address shortly." %}
 
     <div class="dg-note">
       <p><b>A word on what this does and doesn't tell you.</b> Sixteen questions cannot see everything, and a low score here is not a verdict about whether you can do calculus. Most students who struggle with calculus are not missing the calculus; they are missing three or four specific pieces of algebra that show up inside every problem, and those are fixable in a matter of weeks when someone names them.</p>
