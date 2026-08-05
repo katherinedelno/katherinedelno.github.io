@@ -69,6 +69,7 @@ newsletter_action: ""
 # entry.NNNNNNN key in the query string.
 google_form_id: "1FAIpQLSez7O1JZg6ia_tYk29ol4zXfTFn6mXQwVnCz_zcqEZRCF6T4w"
 google_form_email_field: "entry.158450840"
+google_form_course_field: "entry.1668351078"
 
 # Social preview cards.
 # Every post carries its own `image:` written by tools/og-cards.py; this default

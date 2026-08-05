@@ -222,6 +222,7 @@ permalink: /resources/
 
   {% include subscribe.html
      heading="New writing, when there is some"
-     blurb="These pieces go out to the students I teach first. If you'd like a short note when a new one is up, leave an address. Roughly monthly, often less, and nothing else." %}
+     blurb="These pieces go out to the students I teach first. If you'd like a short note when a new one is up, leave an address. Roughly monthly, often less, and nothing else." 
+       course="Writing list" %}
 
 </div>
