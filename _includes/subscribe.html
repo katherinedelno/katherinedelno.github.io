@@ -6,8 +6,8 @@
                                response lands in a hidden iframe so the page
                                never navigates away, and the visitor sees our
                                own confirmation rather than Google's.
-  3. neither set             — renders an RSS link and a mailto, so no address
-                               is ever collected into nowhere.
+  3. neither set             — renders a mailto only, so no address is ever
+                               collected into nowhere.
 
   Usage:
     {% include subscribe.html heading="..." blurb="..." button="..." %}
@@ -17,7 +17,7 @@
 {%- assign sub_heading = include.heading | default: "New writing, when there is some" -%}
 {%- assign sub_blurb = include.blurb | default: "A short note when I publish something new. Roughly monthly, often less. No other mail, and you can leave in one click." -%}
 {%- assign sub_button = include.button | default: "Subscribe" -%}
-{%- assign sub_done = include.done | default: "Thank you — that's in. Check your inbox shortly." -%}
+{%- assign sub_done = include.done | default: "Thank you. You're on the list." -%}
 
 <section class="sub" aria-labelledby="sub-h">
   <style>
@@ -33,8 +33,7 @@
     .sub button:focus-visible{outline:2px solid #2b2b2b;outline-offset:2px}
     .sub .sub-fine{font-size:.78rem;color:#8a8a8a;margin:.8rem 0 0}
     .sub .sub-fine a{color:#8a8a8a}
-    .sub .sub-ok{font-size:.95rem;color:#1f1f1f;font-weight:600;margin:0;display:flex;align-items:center;gap:10px}
-    .sub .sub-ok::before{content:"";flex:0 0 auto;width:18px;height:2px;background:#2b2b2b}
+    .sub .sub-ok{font-size:1rem;color:#1f1f1f;font-weight:600;line-height:1.5;margin:0;padding:12px 0 2px}
     .sub-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
     @media (max-width:520px){.sub form{flex-direction:column}.sub input[type=email],.sub button{width:100%}}
   </style>
@@ -52,7 +51,7 @@
     </div>
     <button type="submit">{{ sub_button }}</button>
   </form>
-  <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>. You can also subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>.</p>
+  <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>.</p>
 
   {%- elsif site.google_form_id and site.google_form_id != "" -%}
   {%- comment -%}
@@ -76,7 +75,7 @@
   </form>
   <iframe name="sub-sink" class="sub-hp" title="Hidden form target" aria-hidden="true" tabindex="-1"></iframe>
   <p class="sub-ok" hidden>{{ sub_done }}</p>
-  <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>. You can also subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>.</p>
+  <p class="sub-fine">Your address is used for this list only. See the <a href="{{ "/privacy/" | relative_url }}">privacy notice</a>.</p>
 
   <script>
   (function(){
@@ -96,7 +95,7 @@
 
     sink.addEventListener('load', function(){
       if (!sent) return;                                        // ignore the initial blank load
-      form.hidden = true;
+      form.style.display = 'none';
       ok.hidden = false;
       ok.setAttribute('role', 'status');
     });
@@ -104,6 +103,6 @@
   </script>
 
   {%- else -%}
-  <p class="sub-fine">The list isn't open yet. In the meantime you can subscribe by <a href="{{ "/feed.xml" | relative_url }}">RSS</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I'll add you when it is.</p>
+  <p class="sub-fine">The list isn't open yet. Write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I'll add you when it is.</p>
   {%- endif -%}
 </section>
