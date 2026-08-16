@@ -190,10 +190,10 @@ At an instant where $$v=0$$, the particle may be changing direction. The derivat
     var dir  = rest ? 'momentarily at rest' : (V>0 ? 'moving in the positive direction'
                                                    : 'moving in the negative direction');
     var verdict;
-    if(rest) verdict='turning around &mdash; speed is not differentiable here';
-    else if(Math.abs(A)<1e-12) verdict='neither &mdash; the acceleration is zero';
-    else if(V*A>0) verdict='speeding up &mdash; v and a have the same sign';
-    else verdict='slowing down &mdash; v and a have opposite signs';
+    if(rest) verdict='turning around, so speed is not differentiable here';
+    else if(Math.abs(A)<1e-12) verdict='neither, because the acceleration is zero';
+    else if(V*A>0) verdict='speeding up, because v and a have the same sign';
+    else verdict='slowing down, because v and a have opposite signs';
 
     function row(l,v,n){ return '<div><span class="pm-lab">'+l+'</span>'+
       '<span class="pm-val">'+v+'</span>'+(n?'<span class="pm-note">'+n+'</span>':'')+'</div>'; }

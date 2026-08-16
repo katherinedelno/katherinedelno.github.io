@@ -40,7 +40,7 @@ The hypotheses and the conclusion are all worth reading carefully.
     <div class="iv-verdict" id="iv-v"></div>
     <div class="iv-truth" id="iv-t"></div>
   </div>
-  <p class="viz-caption">Both functions run from f(0) = 1 to f(4) = 5, so the bracket the theorem checks is identical in the two modes and only continuity differs. Drag the target. Where the theorem applies it promises at least one crossing, and every place the function actually meets the target is marked and counted underneath — three, whenever the theorem has anything to say, which is the gap between what is guaranteed and what is true. Switch to the jump and drag the target between 3 and 4: the bracket still holds, the theorem no longer applies, and there is genuinely no crossing to find.</p>
+  <p class="viz-caption">Both functions run from f(0) = 1 to f(4) = 5, so the bracket the theorem checks is identical in the two modes and only continuity differs. Drag the target. Where the theorem applies it promises at least one crossing, and every place the function actually meets the target is marked and counted underneath: three, whenever the theorem has anything to say, which is the gap between what is guaranteed and what is true. Switch to the jump and drag the target between 3 and 4: the bracket still holds, the theorem no longer applies, and there is genuinely no crossing to find.</p>
   <style>
     .iv-panel{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--line)}
     .iv-row{font-size:.95rem;line-height:1.7;color:var(--ink)}
@@ -153,7 +153,7 @@ The hypotheses and the conclusion are all worth reading carefully.
       e.innerHTML='<span class="iv-mk">'+(ok?'&#10003;':'&#10007;')+'</span>'+txt;
     }
     row('iv-h1', cont, cont ? 'f is continuous on the closed interval [0, 4]'
-                            : 'f is not continuous on [0, 4] &mdash; it jumps at x = 2');
+                            : 'f is not continuous on [0, 4]. It jumps at x = 2');
     row('iv-h2', between, between ? 'd = '+d.toFixed(2)+' lies between f(0) = 1 and f(4) = 5'
                                   : 'd = '+d.toFixed(2)+' does not lie between f(0) = 1 and f(4) = 5');
     var applies = cont && between;
@@ -163,7 +163,7 @@ The hypotheses and the conclusion are all worth reading carefully.
     var n=xs.length;
     document.getElementById('iv-t').textContent =
       'In fact this function meets d ' + (n===0?'nowhere':(n===1?'once':n===2?'twice':n+' times')) +
-      (n?' — at x = '+xs.map(function(x){return x.toFixed(4);}).join(', '):'') + '.';
+      (n?': at x = '+xs.map(function(x){return x.toFixed(4);}).join(', '):'') + '.';
   }
   document.getElementById('iv-c').addEventListener('click',function(){
     cont=true; this.classList.add('is-active');

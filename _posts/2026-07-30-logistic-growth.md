@@ -128,7 +128,7 @@ The change occurs at half the carrying capacity, exactly where the growth rate i
     <input type="range" id="lg-k" min="0" max="1200" step="1" value="400">
   </div>
   <div class="lg-read" id="lg-read"></div>
-  <p class="viz-caption">The carrying capacity is fixed at 100. Short strokes give the slope field for dy/dt = ky(100 − y); the pale curves are solutions from a spread of starting values and the dark one is the solution from the chosen y₀. Every curve is computed by stepping the differential equation numerically, never from a formula for y — which is the point of the topic. The two dashed lines are the equilibria at 0 and 100; the dotted line at 50 is where every curve has its steepest point and its inflection, whichever side it starts on.</p>
+  <p class="viz-caption">The carrying capacity is fixed at 100. Short strokes give the slope field for dy/dt = ky(100 − y); the pale curves are solutions from a spread of starting values and the dark one is the solution from the chosen y₀. Every curve is computed by stepping the differential equation numerically, never from a formula for y, which is the point of the topic. The two dashed lines are the equilibria at 0 and 100; the dotted line at 50 is where every curve has its steepest point and its inflection, whichever side it starts on.</p>
   <style>
     .lg-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}

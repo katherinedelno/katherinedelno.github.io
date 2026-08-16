@@ -196,10 +196,10 @@ Checking $$f''(a)$$ alone is not always enough.
     var verdict = Math.abs(err)<1e-12 ? 'the line meets the curve here'
                 : (err>0 ? 'overestimate' : 'underestimate');
     var ccnote = {
-      up:   'positive throughout &mdash; concave up, so the line lies below',
-      down: 'negative throughout &mdash; concave down, so the line lies above',
-      mixed:'changes sign &mdash; concavity alone settles nothing here',
-      flat: 'zero throughout &mdash; the function is its own tangent line',
+      up:   'positive throughout. Concave up, so the line lies below',
+      down: 'negative throughout. Concave down, so the line lies above',
+      mixed:'changes sign. Concavity alone settles nothing here',
+      flat: 'zero throughout. The function is its own tangent line',
       none: 'no interval yet'
     }[cc];
     function row(l,v,n){ return '<div><span class="lz-lab">'+l+'</span>'+

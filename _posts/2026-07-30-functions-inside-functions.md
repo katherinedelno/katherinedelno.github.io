@@ -53,7 +53,7 @@ The outside function acts last.
     <input type="range" id="cf-x" min="-4" max="4" step="0.1" value="3">
     <span class="viz-value" id="cf-read"></span>
   </div>
-  <p class="viz-caption">The upper band is the pipeline: x enters g, and g's output enters f. The graph below it draws the composite f(g(x)) in ink, with g dashed and f dotted for reference. Where the composite line breaks, the first machine has produced a value the second cannot accept. Swap the order and the composite changes shape — composition is not commutative, and the graph shows it immediately.</p>
+  <p class="viz-caption">The upper band is the pipeline: x enters g, and g's output enters f. The graph below it draws the composite f(g(x)) in ink, with g dashed and f dotted for reference. Where the composite line breaks, the first machine has produced a value the second cannot accept. Swap the order and the composite changes shape. Composition is not commutative, and the graph shows it immediately.</p>
   <style>
     .viz .cf-sel{font:inherit;font-size:.9rem;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
     .viz .cf-sel:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

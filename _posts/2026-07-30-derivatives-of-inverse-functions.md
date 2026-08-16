@@ -189,7 +189,7 @@ We never needed a formula for $$f^{-1}$$.
       row('a = f(b)', V(fmt(a)))+
       row('f&prime;(b)', V(fmt(m)))+
       row('(f&#8315;&sup1;)&prime;(a) = 1 / f&prime;(b)',
-          dead ? flag('undefined &mdash; f&prime;(b) is zero') : V(fmt(rec)))+
+          dead ? flag('undefined, because f&prime;(b) is zero') : V(fmt(rec)))+
       row('f&prime;(b) &times; (f&#8315;&sup1;)&prime;(a)',
           dead ? flag('no product to form') : V(fmt(m*rec)));
     if(g.invd){

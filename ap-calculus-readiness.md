@@ -2,7 +2,7 @@
 layout: page
 title: Are you ready for AP Calculus?
 permalink: /ap-calculus-readiness/
-description: "Sixteen questions covering the algebra, functions, trigonometry, and logarithms that AP Calculus assumes. Results are organized by area so you can see what is secure and what is worth reviewing before the course begins."
+description: "Sixteen questions covering the algebra, functions, trigonometry, and logarithms that AP Calculus assumes. Results are organized by area so you can see which skills are secure and which are worth reviewing before the course begins."
 math: true
 image: "/assets/og/readiness-calculus.png"
 ---
@@ -153,7 +153,7 @@ image: "/assets/og/readiness-calculus.png"
 
     {% include subscribe.html
        heading="A review plan for what you missed"
-       blurb="This is the shorter version of the readiness diagnostic I use with my own students. Each topic area has additional review material behind it. If you would like the AP Calculus getting-started guide, leave an email address below. It covers course setup, notation, and several early habits that are useful before the term begins."
+       blurb="This is the shorter version of the readiness diagnostic I use with my own students. Each topic area has additional review material behind it. || If you would like the AP Calculus getting-started guide, leave an email address below. It covers course setup, notation, and several early habits that are useful before the term begins."
        button="Send the guide"
        done="Thank you. I'll send the AP Calculus getting-started guide to that address shortly." 
        course="AP Calculus" %}

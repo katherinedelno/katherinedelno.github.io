@@ -182,7 +182,7 @@ permalink: /about/
           <span>2025</span>
         </p>
 
-        <h3 class="pj-feature__title">RandomForestSpecCheck: A Permutation-Based Random Forest Diagnostic for Linear Mixed Models</h3>
+        <h3 class="pj-feature__title">RandomForestSpecCheck: A permutation-based random forest diagnostic for linear mixed models</h3>
 
         <p class="pj-feature__blurb">I designed a nonparametric diagnostic for detecting misspecification in linear mixed models. A random forest measures remaining structure in the model residuals, while a permutation test that preserves the clustered design supplies the null distribution.</p>
 

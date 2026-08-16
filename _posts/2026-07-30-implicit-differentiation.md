@@ -96,7 +96,7 @@ So when an implicit problem asks for a slope, the full point usually matters.
     <input type="range" id="im-t" min="0" max="1000" step="1" value="120">
   </div>
   <div class="im-read" id="im-read"></div>
-  <p class="viz-caption">Four relations, none of them solved for y. The point slides along the curve and the line drawn through it is the tangent whose slope the implicit formula predicts. Below, that formula is shown with its numerator and denominator separated, then checked against a slope obtained a completely different way — by parametrizing the curve and dividing dy by dx. The two agree everywhere, including where they both fail: when the denominator reaches zero the tangent is vertical and there is no slope to report, which is a point the course calls critical rather than an accident of the algebra.</p>
+  <p class="viz-caption">Four relations, none of them solved for y. The point slides along the curve and the line drawn through it is the tangent whose slope the implicit formula predicts. Below, that formula is shown with its numerator and denominator separated, then checked against a slope obtained a completely different way, by parametrizing the curve and dividing dy by dx. The two agree everywhere, including where they both fail: when the denominator reaches zero the tangent is vertical and there is no slope to report, which is a point the course calls critical rather than an accident of the algebra.</p>
   <style>
     .im-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -213,11 +213,11 @@ So when an implicit problem asks for a slope, the full point usually matters.
       '<div><span class="im-lab">point on the curve</span>('+fmt(P.x)+', '+fmt(P.y)+')</div>'+
       '<div><span class="im-lab">dy/dx = '+g.eq+'</span>'+
         fmt(N)+' / '+fmt(D)+' = '+
-        (node?'<span class="im-flag">0/0 &mdash; the curve crosses itself here, so there are two tangents rather than none</span>'
-            :vertical?'<span class="im-flag">undefined &mdash; vertical tangent</span>':fmt(slope))+'</div>'+
+        (node?'<span class="im-flag">0/0. The curve crosses itself here, so there are two tangents rather than none</span>'
+            :vertical?'<span class="im-flag">undefined, vertical tangent</span>':fmt(slope))+'</div>'+
       '<div><span class="im-lab">measured, dy &divide; dx</span>'+
         (vertical?'<span class="im-flag">undefined</span>':fmt(meas))+
-        (node?'<span class="im-flag">&nbsp;&mdash; the branch this parametrization is on</span>':'')+'</div>';
+        (node?'<span class="im-flag">, the branch this parametrization is on</span>':'')+'</div>';
     $('im-read').innerHTML=out;
   }
   $('im-t').addEventListener('input',draw);

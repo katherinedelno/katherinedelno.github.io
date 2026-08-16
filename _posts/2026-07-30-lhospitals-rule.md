@@ -64,7 +64,7 @@ is the ratio of two derivatives. It is not the derivative of the quotient $$f/g$
     <input type="range" id="lh-x" min="0" max="1200" step="1" value="900">
   </div>
   <div class="lh-read" id="lh-read"></div>
-  <p class="viz-caption">Five limits. The panel checks the form before it does anything else, and says in words what the check found. The dashed horizontal line is the true limit where one exists. On the first three the two curves converge on that line together, which is the rule working. On the fourth the form is not indeterminate at all and the derivative ratio runs off to infinity while the function ratio walks calmly to 1. On the fifth the form is genuinely infinity over infinity, the hypotheses about differentiability hold, and the derivative ratio still has no limit — so the rule concludes nothing, even though the original limit exists and equals 1.</p>
+  <p class="viz-caption">Five limits. The panel checks the form before it does anything else, and says in words what the check found. The dashed horizontal line is the true limit where one exists. On the first three the two curves converge on that line together, which is the rule working. On the fourth the form is not indeterminate at all and the derivative ratio runs off to infinity while the function ratio walks calmly to 1. On the fifth the form is genuinely infinity over infinity, the hypotheses about differentiability hold, and the derivative ratio still has no limit, so the rule concludes nothing, even though the original limit exists and equals 1.</p>
   <style>
     .lh-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -100,7 +100,7 @@ is the ratio of two derivatives. It is not the derivative of the quotient $$f/g$
       f:function(x){return 1-cos(x);}, g:function(x){return x*x;},
       df:sin, dg:function(x){return 2*x;},
       fl:'→ 0', gl:'→ 0', form:'0/0', L:0.5,
-      fn:'indeterminate, so the rule applies &mdash; and again after the first pass',
+      fn:'indeterminate, so the rule applies, and again after the first pass',
       ln:'and f′/g′ arrives at the same value',
       ylo:-0.08, yhi:0.62 },
     { n:'x² / eˣ   as x → ∞', lo:0, hi:Math.log10(30), rev:true,
@@ -114,7 +114,7 @@ is the ratio of two derivatives. It is not the derivative of the quotient $$f/g$
       f:function(x){return x+1;}, g:function(x){return x*x+1;},
       df:function(){return 1;}, dg:function(x){return 2*x;},
       fl:'→ 1', gl:'→ 1', form:'1/1', L:1,
-      fn:'not an indeterminate form &mdash; the rule does not apply',
+      fn:'not an indeterminate form, so the rule does not apply',
       ln:'found by evaluating the quotient, not by the rule',
       ylo:-0.2, yhi:3.2 },
     { n:'(x + sin x) / x   as x → ∞', lo:0, hi:Math.log10(40), rev:true,

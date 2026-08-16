@@ -144,7 +144,7 @@ The second describes its rate of change.
     read.innerHTML = '<table>' + rows + '</table>' +
       '<div class="rc-say">' + (up ? 'increasing' : 'decreasing') + ' at ' +
       (faster ? 'an increasing' : 'a decreasing') + ' rate' +
-      '<span style="font-weight:400;color:var(--muted);font-size:.9rem"> &mdash; concave ' +
+      '<span style="font-weight:400;color:var(--muted);font-size:.9rem">, concave ' +
       (faster ? 'up' : 'down') + '</span></div>';
   }
 

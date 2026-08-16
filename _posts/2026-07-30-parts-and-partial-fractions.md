@@ -167,7 +167,7 @@ $$\frac{1}{2(x-1)} - \frac{1}{2(x+1)} = \frac{1}{x^2-1}.$$
     <input type="range" id="ip-x" min="0" max="1200" step="1" value="700">
   </div>
   <div class="ip-read" id="ip-read"></div>
-  <p class="viz-caption">Top: the integrand f as a dark curve, with the measured derivative of the claimed antiderivative drawn over it as a pale one. When the antiderivative is right the pale curve is invisible, because it is exactly underneath. Bottom: the antiderivative itself. The last entry is the same integral as the second with the sign of one term flipped, which is the usual slip on that problem; its two curves come apart immediately and the panel prints the gap. Nothing here uses the derivation — the check only needs the claimed answer and the integrand.</p>
+  <p class="viz-caption">Top: the integrand f as a dark curve, with the measured derivative of the claimed antiderivative drawn over it as a pale one. When the antiderivative is right the pale curve is invisible, because it is exactly underneath. Bottom: the antiderivative itself. The last entry is the same integral as the second with the sign of one term flipped, which is the usual slip on that problem; its two curves come apart immediately and the panel prints the gap. Nothing here uses the derivation. The check only needs the claimed answer and the integrand.</p>
   <style>
     .ip-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}

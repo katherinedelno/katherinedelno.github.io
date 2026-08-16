@@ -136,7 +136,7 @@ The drill below asks only for the first move.
     var ok = a===Q[i].a;
     if(ok) right++;
     $('rc-fb').innerHTML = (ok ? '<span class="rc-ok">Yes.</span> ' :
-      '<span class="rc-no">No &mdash; ' + LABEL[Q[i].a] + '.</span> ') + Q[i].why;
+      '<span class="rc-no">No. ' + LABEL[Q[i].a] + '.</span> ') + Q[i].why;
     score();
   }
   Array.prototype.forEach.call(document.querySelectorAll('.rc-a'),function(b){

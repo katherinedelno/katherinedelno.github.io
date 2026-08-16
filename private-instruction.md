@@ -411,10 +411,10 @@ permalink: /private-instruction/
     <h2>Technology &amp; setup</h2>
     <p>Sessions are designed to feel as close as possible to working side by side while keeping the student's work organized and easy to revisit.</p>
     <ul class="pi-list">
-      <li><b>Live Zoom sessions</b> use a shared digital whiteboard for step-by-step work.</li>
+      <li>Live Zoom sessions use a shared digital whiteboard for step-by-step work.</li>
       <li>I can annotate the student's own problems and homework in real time.</li>
-      <li><b>Notes and full solutions</b> are uploaded to a private shared Dropbox folder after each meeting. Parents may be added on request.</li>
-      <li><b>TI-84 Plus CE work</b> can be demonstrated on screen when relevant.</li>
+      <li>Notes and full solutions are uploaded to a private shared Dropbox folder after each meeting. Parents may be added on request.</li>
+      <li>TI-84 Plus CE work can be demonstrated on screen when relevant.</li>
       <li>I am based in the Pacific time zone and work with students in other time zones.</li>
       <li>Students need a quiet space, stable internet, a graphing calculator when required, and a consistent way to take notes.</li>
     </ul>

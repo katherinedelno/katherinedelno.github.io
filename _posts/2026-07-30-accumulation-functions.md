@@ -60,7 +60,7 @@ Here $$f$$ plays the role of $$g'$$.
     <input type="range" id="ac-x" min="0" max="1600" step="1" value="700">
   </div>
   <div class="ac-read" id="ac-read"></div>
-  <p class="viz-caption">Top: a piecewise linear f, the format these questions arrive in, with the region between a and x shaded — dark where it counts positively, light where it counts negatively. Bottom: the graph of g for the current lower limit, with hollow dots at its local extrema and bars at its inflection points. Move x and watch g trace out. Then move a and watch the whole curve slide vertically while every marker stays exactly where it was, because changing the lower limit changes g by a constant and a constant has no effect on any derivative.</p>
+  <p class="viz-caption">Top: a piecewise linear f, the format these questions arrive in, with the region between a and x shaded, dark where it counts positively, light where it counts negatively. Bottom: the graph of g for the current lower limit, with hollow dots at its local extrema and bars at its inflection points. Move x and watch g trace out. Then move a and watch the whole curve slide vertically while every marker stays exactly where it was, because changing the lower limit changes g by a constant and a constant has no effect on any derivative.</p>
   <style>
     .ac-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}

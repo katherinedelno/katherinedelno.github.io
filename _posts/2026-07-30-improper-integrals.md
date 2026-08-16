@@ -70,7 +70,7 @@ The vertical asymptote does not force the area to be infinite.
     <input type="range" id="im-d" min="0" max="1200" step="1" value="600">
   </div>
   <div class="im-read" id="im-read"></div>
-  <p class="viz-caption">Top: y = x⁻ᵖ drawn on logarithmic axes, where every power function is a straight line of slope −p. The dashed diagonal is p = 1, the dividing case. Bottom: the two partial integrals plotted against how far the cutoff has been pushed, in decades — outward toward infinity, and inward toward zero. Both start at zero and climb. A curve that flattens is converging to the value the panel names; a curve that keeps rising is diverging, and the panel says so rather than printing a number. Slide p through 1 and watch the two verdicts trade places.</p>
+  <p class="viz-caption">Top: y = x⁻ᵖ drawn on logarithmic axes, where every power function is a straight line of slope −p. The dashed diagonal is p = 1, the dividing case. Bottom: the two partial integrals plotted against how far the cutoff has been pushed, in decades, outward toward infinity, and inward toward zero. Both start at zero and climb. A curve that flattens is converging to the value the panel names; a curve that keeps rising is diverging, and the panel says so rather than printing a number. Slide p through 1 and watch the two verdicts trade places.</p>
   <style>
     .im-read{margin:.7rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);
       font-size:.95rem;line-height:1.9;color:var(--ink);font-variant-numeric:tabular-nums}

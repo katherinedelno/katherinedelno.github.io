@@ -54,7 +54,15 @@
   </style>
 
   <h2 id="sub-h">{{ sub_heading }}</h2>
-  <p>{{ sub_blurb }}</p>
+  {%- comment -%}
+    A blurb may be more than one paragraph. Callers separate them with "||",
+    since an include parameter cannot carry a real line break. A blurb with no
+    "||" renders as the single paragraph it always did.
+  {%- endcomment -%}
+  {%- assign sub_paras = sub_blurb | split: "||" -%}
+  {%- for sub_para in sub_paras %}
+  <p>{{ sub_para | strip }}</p>
+  {%- endfor %}
 
   {%- if site.newsletter_action and site.newsletter_action != "" -%}
   <form action="{{ site.newsletter_action }}" method="post" target="_blank" novalidate>

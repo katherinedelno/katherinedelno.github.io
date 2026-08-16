@@ -154,7 +154,7 @@ The visualization below changes what happens at $$x=2$$ while leaving the surrou
     var rt = kind===4 ? 'unbounded' : os[1].toFixed(2);
     row('ct-c2', lim2,
       lim2 ? 'the limit exists, and equals '+s.limit
-           : 'the limit does not exist &mdash; from the left, ' + lt + '; from the right, ' + rt);
+           : 'the limit does not exist. From the left, ' + lt + '; from the right, ' + rt);
     var third = lim2 && s.value!==null && s.value===s.limit;
     row('ct-c3', third,
       third ? 'the limit equals f(2)'

@@ -39,7 +39,7 @@ Keeping those two forms connected makes most logarithm rules easier to understan
     <input type="range" id="el-a" min="-2" max="3" step="0.05" value="1.5">
     <span class="viz-value" id="el-read"></span>
   </div>
-  <p class="viz-caption">The solid curve is y = b^x; the lighter curve is its inverse, the logarithm base b; the dashed diagonal is y = x. The two marked points are reflections of each other: if b^a = y, then the logarithm of y is a — one fact, plotted twice, as the panels on either side of the graph spell out. Slide the base through e &#8776; 2.718; nothing dramatic marks it, and that is rather the point. Push the base higher and the exponential steepens while the logarithm flattens.</p>
+  <p class="viz-caption">The solid curve is y = b^x; the lighter curve is its inverse, the logarithm base b; the dashed diagonal is y = x. The two marked points are reflections of each other: if b^a = y, then the logarithm of y is a. One fact, plotted twice, as the panels on either side of the graph spell out. Slide the base through e &#8776; 2.718; nothing dramatic marks it, and that is rather the point. Push the base higher and the exponential steepens while the logarithm flattens.</p>
 </div>
 
 <script>

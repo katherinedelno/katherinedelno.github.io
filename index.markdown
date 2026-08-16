@@ -63,14 +63,14 @@ permalink: /
     <p>As the school year begins, I am offering two free 45-minute sessions on starting the year well. The <b>AP&nbsp;Statistics session is Tuesday, August&nbsp;25</b>, and the <b>AP&nbsp;Calculus session is Thursday, August&nbsp;27</b>. Both begin at <b>5:30&nbsp;p.m. Pacific</b>.</p>
     <p>Everyone who registers will receive the getting-started guide for the course within a day, whether or not they attend.</p>
     <div class="btn-row-reg">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register - AP Statistics, Aug 25</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register - AP Calculus, Aug 27</a>
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register for AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register for AP Calculus, Aug 27</a>
     </div>
   </div>
 
   {% include subscribe.html
      heading="The getting-started guide for your course"
-     blurb="Before the term begins, I send a short guide for each course. It covers the habits that matter most early on, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding. Choose a course and I'll send it. There is no charge, and nothing else follows."
+     blurb="Before the term begins, I send a short guide for each course. It covers the habits that matter most early on, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding. || Choose a course and I'll send it. There is no charge, and nothing else follows."
      button="Send the guide"
      done="Thank you. I'll send the guide to that address shortly."
      choose="true" %}
