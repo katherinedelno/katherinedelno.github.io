@@ -5,8 +5,9 @@
     python3 _style/check.py FILE ...   # named files
 
 Exit status is 1 if anything is reported. Nothing here is a matter of taste;
-every check corresponds to a rule in _style/STYLE-SHEET.md or to a way the
-page can render wrongly without any warning.
+every check corresponds to a rule in STYLE-SHEET.md, which lives in the
+private site-notes repository, or to a way the page can render wrongly
+without any warning.
 
 The three checks that catch silent rendering failures are the pipe check, the
 math-delimiter check, and the \\left/\\right check. The rest are style.
