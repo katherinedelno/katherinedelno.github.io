@@ -56,7 +56,7 @@ description: "What information Katherine Delno collects from families and studen
     <h2>Why I collect it</h2>
     <p>Session notes and student work help me teach with continuity from week to week. They allow me to track what has been covered, what remains uncertain, and which patterns recur in a student's work.</p>
     <p>Contact and billing information is used for scheduling, invoicing, and communication about instruction. Registration information is used to send materials or information you requested.</p>
-    <p>I do not use this information for unrelated marketing or advertising.</p>
+    <p>I do not use this information for anything else.</p>
   </div>
 
   <div class="pol-section">
@@ -64,8 +64,8 @@ description: "What information Katherine Delno collects from families and studen
     <h2>Students under 18</h2>
     <p>Most of my students are minors.</p>
     <p>Scheduling, billing, and policy correspondence go to a parent or guardian. A parent or guardian is also included on every communication channel I use with a minor student, including text. In practice, this usually means a group message rather than a private thread.</p>
-    <p>Parents and guardians may ask to see the session notes, materials, and records I hold about their student. They may also be added to the shared materials folder on request.</p>
-    <p>This website and practice are not directed to children under 13, and I do not knowingly collect personal information from them.</p>
+    <p>Parents and guardians may ask at any time to see the session notes, materials, and records I hold about their student. They may also be added to the shared materials folder on request.</p>
+    <p>This website and practice are not directed to children under 13, and I do not knowingly collect information from them.</p>
   </div>
 
   <div class="pol-section">

@@ -94,7 +94,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p>If one of these becomes a significant obstacle, I will tell you clearly and as early as I can. Regular instruction cannot substitute for work that is not being done between meetings.</p>
 
     <h3>Academic progress and outcomes</h3>
-    <p>I do not guarantee a particular grade, test score, class placement, or AP exam result. Families are purchasing instructional time and academic support rather than a promised outcome.</p>
+    <p>I do not guarantee a particular grade, test score, class placement, or AP exam result, and I will not agree to do so if asked. Families are engaging instructional time and academic coaching rather than a promised outcome.</p>
     <p>I hold myself to standards I can control. Sessions should be prepared, the mathematics should be accurate, and the instruction should be responsive to the student. I will also communicate honestly about progress, including when I think something needs to change.</p>
   </div>
 
@@ -111,7 +111,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
       <li><b>Illness and family emergencies</b> are handled with discretion.</li>
       <li><b>If I cancel</b>, the session is not billed. I will offer a replacement time or a credit.</li>
     </ul>
-    <p>Three or more consecutive missed weeks without an arranged pause may result in the weekly slot being released. I will contact you before that happens.</p>
+    <p>Sustained absence, by which I mean three or more consecutive missed weeks without an arranged pause, releases the weekly slot back to the schedule. I will always write to you before that happens.</p>
   </div>
 
   <!-- BILLING -->
@@ -146,14 +146,14 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p class="label">Conduct</p>
     <h2>Conduct</h2>
     <p>Sessions are meant to be calm working environments. Questions are taken seriously, and students are not made to feel foolish for not knowing something. I extend that courtesy to students and families and ask for the same in return.</p>
-    <p>Session time is not used to manage conflict about grades or effort. If a session becomes unproductive for reasons I cannot resolve during the meeting, I may end it early and bill for the scheduled time. I will write afterward to explain what happened and what I recommend next.</p>
+    <p>Session time is not used to manage conflict about grades or effort. If a session becomes unproductive for reasons I cannot resolve during the meeting, I may end it early and bill for the scheduled time. I will always write to you afterward to explain what happened and what I recommend next.</p>
   </div>
 
   <!-- MATERIALS -->
   <div class="pol-section" id="materials">
     <p class="label">Materials</p>
     <h2>Materials, recording, and intellectual property</h2>
-    <p>The curriculum, worked solutions, guides, problem sets, and session notes I provide are my own work. They are provided to the enrolled student for personal academic use during our engagement and for the student's own review afterward.</p>
+    <p>The curriculum, worked solutions, guides, problem sets, and session notes I provide are my own work. They are licensed to the enrolled student for personal academic use during our engagement and for the student's own review afterward.</p>
     <p>They may not be redistributed, shared with other students or tutoring services, posted publicly, sold, or used to train or prompt an automated system.</p>
     <p>I do not record sessions and ask students and families not to record them by video, audio, or screen capture. If a recording would be useful for a particular student, contact me in advance. Any recording requires written agreement and is limited to that student's personal use.</p>
     <p>Whiteboard work, notes, and full solutions are uploaded after each session.</p>
@@ -197,7 +197,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p class="label">Accessibility</p>
     <h2>Accessibility</h2>
     <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines, WCAG 2.1 Level AA, and make ongoing improvements.</p>
-    <p>If you have difficulty accessing content on this site, need materials in an alternative format, or need an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>. I will work with you to provide the information or assistance you need.</p>
+    <p>If you have difficulty accessing content on this site, need materials in an alternative format, or need an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>. I will work with you promptly to provide the information or assistance you need.</p>
   </div>
 
   <!-- CHANGES -->

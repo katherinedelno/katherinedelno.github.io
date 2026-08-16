@@ -484,13 +484,13 @@ permalink: /private-instruction/
   <!-- DISCLAIMER -->
   <div class="pi-fine">
     <p class="label">Academic progress &amp; no guaranteed outcomes</p>
-    <p>My role is to provide careful instruction, appropriate practice, and clear feedback. I cannot guarantee a particular grade, test score, class placement, or AP exam result.</p>
+    <p>My role is to provide careful instruction, appropriate practice, and clear feedback. I cannot and do not guarantee a particular grade, test score, class placement, or AP exam result, and I will not agree to do so if asked.</p>
     <p>Outcomes also depend on factors outside my control, including attendance, work between sessions, classroom instruction, grading policies, assessment difficulty, and test-day conditions.</p>
-    <p>Families are purchasing instructional time and academic support, not a promised outcome.</p>
+    <p>Families are engaging instructional time and academic coaching, not a promised outcome.</p>
     <p>The standards I hold myself to are set out in full under <a href="/policies/">Policies</a>.</p>
     <p class="label" style="margin-top:1.4rem;">Accessibility</p>
     <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements.</p>
-    <p>If you have difficulty accessing content on this site, or need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>. I will work with you to provide the information or assistance you need.</p>
+    <p>If you have difficulty accessing content on this site, or need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>. I will work with you promptly to provide the information or assistance you need.</p>
   </div>
 
 </div>
