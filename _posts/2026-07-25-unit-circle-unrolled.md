@@ -2,23 +2,29 @@
 layout: post
 title: "The unit circle and the sine curve"
 date: 2026-07-25
-description: "The sine curve records the circle's height as the angle turns, and every feature of the wave can be read directly from the circle. An animation traces the correspondence."
+description: "The sine graph records the vertical coordinate of a point moving around the unit circle. Its amplitude, period, zeros, and symmetry all follow from that motion."
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 6
 interactive: true
-blurb: "Turn the angle and watch the circle's height become the sine curve"
+blurb: "The sine graph records the vertical coordinate of a point moving around the unit circle. Its amplitude, period, zeros, and symmetry all follow from that motion"
 featured: true
 image: "/assets/og/unit-circle-unrolled.png"
 ---
 
-Students usually meet the unit circle and the sine graph as two separate things to memorize: a circle full of special angles, and a wavy graph with [amplitude and period](/2026/07/25/transformations-four-dials.html). They are not two things. The sine graph is what the circle writes down when you track one number, the height of a point traveling around it, while the angle grows. Once you watch the unrolling happen, the graph's features stop being facts and start being consequences.
+The unit circle and the sine graph describe the same motion in two different ways.
 
-## Watch the circle write the wave
+A point moves around the unit circle.
 
-On the left, a point sits on the unit circle at angle $$\theta$$, measured counterclockwise from the positive $$x$$-axis. Its height is $$\sin\theta$$. On the right, that height is being recorded as the angle grows. Drag the slider.
+At each angle $$\theta$$, its vertical coordinate is
+
+$$\sin\theta.$$
+
+If that height is recorded as the angle increases, the result is the sine curve.
+
+## Watch the height become the graph
 
 <div class="viz" markdown="0">
   <canvas id="uc-cv" width="700" height="260"></canvas>
@@ -101,28 +107,176 @@ On the left, a point sits on the unit circle at angle $$\theta$$, measured count
 })();
 </script>
 
-## Reading the wave's features off the circle
+On the circle, the point has coordinates
 
-Every property of $$y = \sin\theta$$ that the course asks about is a circle fact in disguise.
+$$(\cos\theta,\sin\theta).$$
 
-**Amplitude 1.** The point lives on a circle of radius 1, so its height is trapped between $$-1$$ and $$1$$. The wave can never leave that band, and the maximum height 1 is reached exactly when the point is at the top of the circle.
+On the graph, the horizontal coordinate is $$\theta$$ and the vertical coordinate is the same value
 
-**Period $$2\pi$$.** One full lap returns the point to its starting position, so the height record must repeat. The period of sine is the circumference of the trip in angle terms, nothing more. When a function is written $$\sin(b\theta)$$, the point travels $$b$$ times as fast, laps in $$\tfrac{2\pi}{b}$$, and the period shrinks accordingly.
+$$\sin\theta.$$
 
-**The zeros at $$0, \pi, 2\pi$$.** These are the two moments per lap when the point crosses the horizontal axis, where its height is zero. Between consecutive zeros the point is entirely above or entirely below the axis, which is why the wave alternates arches and troughs.
+The dashed line in the visualization connects those two heights.
 
-**Symmetry.** Walking the circle backward, $$\sin(-\theta) = -\sin\theta$$: an angle swept clockwise puts the point at the mirror-image height. The sine graph's odd symmetry is the circle's up-down mirror.
+Several familiar points follow immediately.
 
-Cosine is the same story told about the other coordinate. The point's horizontal position, $$\cos\theta$$, starts at 1, hits 0 at the top of the circle, and reaches $$-1$$ at the far left. That is why the cosine wave is the sine wave shifted left by $$\tfrac{\pi}{2}$$: the horizontal coordinate is a quarter-lap ahead of the vertical one, always.
+At
 
-## Why radians are the natural unit here
+$$\theta=0,$$
 
-The unrolling picture also explains why the course insists on radians. A radian measures the angle by the arc length walked along a unit circle, so the horizontal axis of the wave is literally the distance the point has traveled. Angle in, distance out, same number: the input axis and the circle's edge are the same ruler. In degrees, one lap is 360 of something arbitrary; in radians, one lap is $$2\pi$$ because the unit circle's circumference is $$2\pi$$. Every clean fact about sinusoids, from the period $$2\pi$$ to the calculus that waits in AP Calculus, depends on that ruler agreeing with itself.
+the point is on the positive $$x$$-axis and has height 0.
 
-## Where the exam takes this
+At
 
-AP Precalculus builds sinusoidal models: Ferris wheels, tides, daylight hours. Every one of those problems is the animation above with the circle resized and relocated. A wheel of radius 20 meters centered 22 meters up is the unit circle stretched by 20 and shifted by 22, which is exactly how the model $$h(t) = -20\cos\left(\tfrac{\pi t}{30}\right) + 22$$ earns each of its numbers: amplitude from the radius, midline from the center height, period from the rotation time, and the leading sign from where the ride starts. Students who can narrate that correspondence write these models in a minute. Students who memorized $$a$$, $$b$$, $$h$$, $$k$$ as slots tend to fill the slots with the wrong circle facts.
+$$\theta=\frac{\pi}{2},$$
+
+it reaches the top of the circle and the sine value is 1.
+
+At
+
+$$\theta=\pi,$$
+
+it returns to height 0.
+
+At
+
+$$\theta=\frac{3\pi}{2},$$
+
+it reaches height $$-1$$.
+
+After
+
+$$2\pi,$$
+
+the point completes one full revolution and returns to its starting position.
+
+The sine graph therefore repeats.
+
+## Amplitude and period come from the circle
+
+The unit circle has radius 1.
+
+So the vertical coordinate can never exceed 1 or fall below $$-1$$.
+
+That gives sine an amplitude of 1.
+
+One full revolution takes an angle of
+
+$$2\pi.$$
+
+That gives sine its period.
+
+For
+
+$$\sin(bx),$$
+
+the angle inside the sine function changes $$b$$ times as quickly.
+
+So the period becomes
+
+$$\frac{2\pi}{\vert b\vert }.$$
+
+The period formula is a statement about how quickly the point completes one full lap.
+
+## Zeros and symmetry
+
+Sine is zero whenever the point lies on the horizontal axis.
+
+Over one full revolution, that occurs at
+
+$$0,\quad\pi,\quad2\pi.$$
+
+The sign of sine records whether the point lies above or below that axis.
+
+Sine also satisfies
+
+$$\sin(-\theta) = -\sin\theta.$$
+
+Moving clockwise by $$\theta$$ produces the opposite vertical coordinate from moving counterclockwise by the same amount.
+
+That is why sine is an odd function.
+
+## Cosine records the other coordinate
+
+Cosine records the horizontal coordinate of the same moving point.
+
+At
+
+$$\theta=0,$$
+
+cosine begins at 1.
+
+At
+
+$$\frac{\pi}{2},$$
+
+it reaches 0.
+
+At
+
+$$\pi,$$
+
+it reaches $$-1$$.
+
+The cosine curve is therefore the same circular motion recorded from the horizontal coordinate instead of the vertical one.
+
+Sine and cosine differ by a quarter-cycle shift.
+
+For example,
+
+$$\cos x = \sin\left(x+\frac{\pi}{2}\right).$$
+
+## Why radians fit the geometry
+
+On a unit circle, radian measure equals arc length.
+
+An angle of
+
+$$\theta$$
+
+radians cuts off an arc of length
+
+$$\theta.$$
+
+So when the sine graph uses radians on its horizontal axis, the input also measures the distance traveled around the unit circle.
+
+One full lap has length
+
+$$2\pi,$$
+
+which is why the period appears naturally as
+
+$$2\pi.$$
+
+Radians are not an arbitrary replacement for degrees.
+
+They connect the angle directly to the geometry of the circle.
+
+## From the circle to a sinusoidal model
+
+[A sinusoidal model](/2026/07/25/transformations-four-dials.html) rescales and shifts this same motion.
+
+A Ferris wheel with radius 20 meters and center height 22 meters might be modeled with an amplitude of 20 and a midline of 22.
+
+The period comes from the time required for one revolution.
+
+The phase shift depends on where the rider begins.
+
+The parameters should therefore be read from the physical motion.
 
 <div class="article-note" markdown="1">
-A self-test with the slider: before dragging, predict the two angles in one lap where $$\sin\theta = \tfrac12$$, then drag and check where the dashed line sits at height one half. The answers, $$\tfrac{\pi}{6}$$ and $$\tfrac{5\pi}{6}$$, are mirror images across the top of the circle, and seeing that symmetry once is worth a page of reference-angle drills.
+A useful self-test is to find the angles in one revolution where
+
+$$\sin\theta=\frac12.$$
+
+On the unit circle, the height $$1/2$$ occurs in Quadrants I and II.
+
+So the angles are
+
+$$\frac{\pi}{6}$$
+
+and
+
+$$\frac{5\pi}{6}.$$
+
+The graph and the circle give the same answer.
 </div>

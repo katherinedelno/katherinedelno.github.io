@@ -2,7 +2,7 @@
 layout: page
 title: Are you ready for AP Calculus?
 permalink: /ap-calculus-readiness/
-description: "A sixteen-question diagnostic in the algebra, functions, trigonometry, and logarithms that AP Calculus assumes you already have. Scored by topic, with what each gap costs later."
+description: "Sixteen questions covering the algebra, functions, trigonometry, and logarithms that AP Calculus assumes. Results are organized by area so you can see what is secure and what is worth reviewing before the course begins."
 math: true
 image: "/assets/og/readiness-calculus.png"
 ---
@@ -103,18 +103,19 @@ image: "/assets/og/readiness-calculus.png"
   <div class="dg-hero">
     <p class="label">Diagnostic</p>
     <h1>Are you ready for AP Calculus?</h1>
-    <p>Calculus is rarely the thing that makes calculus hard. What makes it hard is the algebra, the trigonometry, and the function work that the course assumes you already have and never stops to reteach. This is sixteen questions in exactly that material.</p>
-    <p>It is not a test and there is no grade at the end. It is a placement tool, and its only purpose is to tell you, specifically, which of four areas would cost you the most in September.</p>
+    <p>Calculus depends on a large amount of algebra, function work, trigonometry, and logarithms that the course generally assumes are already familiar.</p>
+    <p>This diagnostic contains sixteen questions in those prerequisite skills. It is designed to identify specific areas that may be worth reviewing before the course begins.</p>
+    <p>There is no grade.</p>
   </div>
 
   <div class="dg-panel" id="dg-start">
     <h2>Before you begin</h2>
     <ul class="dg-facts">
-      <li><b>Length</b> <span>16 questions, four per topic area. About 15 minutes.</span></li>
-      <li><b>Calculator</b> <span>None. Every answer is exact by design.</span></li>
-      <li><b>Skipping</b> <span>Allowed, and counted as information rather than as a wrong answer.</span></li>
-      <li><b>Results</b> <span>Immediate, broken down by area, with every question explained.</span></li>
-      <li><b>Privacy</b> <span>Everything runs in your browser. Nothing is recorded or sent anywhere.</span></li>
+      <li><b>Length</b> <span>16 questions, four in each topic area. About 15 minutes.</span></li>
+      <li><b>Calculator</b> <span>None. Every answer is exact.</span></li>
+      <li><b>Skipping</b> <span>Allowed. A skipped question is treated as useful information rather than forced into a guess.</span></li>
+      <li><b>Results</b> <span>Immediate, with a breakdown by area and an explanation for every question.</span></li>
+      <li><b>Privacy</b> <span>Everything runs in your browser. Nothing from the diagnostic is recorded or sent anywhere.</span></li>
     </ul>
     <button type="button" class="dg-btn" id="dg-begin">Begin the diagnostic</button>
   </div>
@@ -141,7 +142,8 @@ image: "/assets/og/readiness-calculus.png"
 
     <div class="dg-review">
       <h2>Every question, and what each answer meant</h2>
-      <p>The wrong options were not random. Each one is a mistake students actually make, and which one you chose says more than whether you were right.</p>
+      <p>The incorrect choices are deliberate. Each corresponds to a mistake that commonly appears in this material.</p>
+      <p>Reviewing the answer choices can therefore tell you more than the total score alone. It can show whether the issue came from algebra, notation, a remembered rule, or the way the problem was interpreted.</p>
       <div id="dg-items"></div>
     </div>
 
@@ -150,15 +152,16 @@ image: "/assets/og/readiness-calculus.png"
     </div>
 
     {% include subscribe.html
-       heading="The full review plan for what you missed"
-       blurb="This diagnostic is the short version of a thirty-item one I give my own students, and each area above has a review packet behind it. Leave an address and I'll send the getting-started guide for AP Calculus, which covers the setup, the notation, and the early mistakes most worth avoiding."
+       heading="A review plan for what you missed"
+       blurb="This is the shorter version of the readiness diagnostic I use with my own students. Each topic area has additional review material behind it. If you would like the AP Calculus getting-started guide, leave an email address below. It covers course setup, notation, and several early habits that are useful before the term begins."
        button="Send the guide"
        done="Thank you. I'll send the AP Calculus getting-started guide to that address shortly." 
        course="AP Calculus" %}
 
     <div class="dg-note">
-      <p><b>A word on what this does and doesn't tell you.</b> Sixteen questions cannot see everything, and a low score here is not a verdict about whether you can do calculus. Most students who struggle with calculus are not missing the calculus; they are missing three or four specific pieces of algebra that show up inside every problem, and those are fixable in a matter of weeks when someone names them.</p>
-      <p>If you'd like help closing the gaps this found, that is what I do. <a href="{{ "/private-instruction/" | relative_url }}">Private instruction &amp; rates</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+      <p>Sixteen questions cannot measure every prerequisite skill. A low score in one area is not a conclusion about whether you can succeed in calculus.</p>
+      <p>The useful part of the result is its specificity. If several missed questions point to the same algebraic or trigonometric skill, that gives you something concrete to review before the course begins.</p>
+      <p>If you would like help working through what the diagnostic found, you can read about <a href="{{ "/private-instruction/" | relative_url }}">private instruction &amp; rates</a> or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
     </div>
   </div>
 

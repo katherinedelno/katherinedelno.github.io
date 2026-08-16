@@ -2,7 +2,7 @@
 layout: post
 title: "After BC: multivariable calculus"
 date: 2026-07-25
-description: "Functions become landscapes, derivatives become directions, integrals fill volumes. A preview of the course that follows, with a surface to turn."
+description: "Functions become surfaces, derivatives become directional, and integrals extend over regions and volumes. Much of BC reappears in a higher-dimensional setting."
 course: "AP Calculus BC"
 section: beyond
 read_time: "9 min read"
@@ -10,18 +10,36 @@ math: true
 kind: beyond
 sequence: 6
 interactive: true
-blurb: "Functions become landscapes, derivatives become directions"
+blurb: "Functions become surfaces, derivatives become directional, and integrals extend over regions and volumes. Much of BC reappears in a higher-dimensional setting"
 featured: true
 image: "/assets/og/beyond-ap-calculus-bc.png"
 ---
 
-Every function in AP Calculus takes one number in and puts one number out, so its graph is a curve, and the whole course happens on that curve: slopes along it, areas under it. Calculus 3 asks a single innocent question. What if a function takes two numbers in?
+AP Calculus studies functions of one variable.
 
-The answer is that the graph becomes a surface, a landscape floating over the plane, and every idea you learned this year grows a new dimension. None of the BC machinery is wasted; it all reappears, upgraded.
+A function such as
 
-## Functions become landscapes
+$$y=f(x)$$
 
-The function $$f(x,y) = \sin x \cos y$$ takes a point of the plane and returns a height. Its graph is the rolling terrain below. Drag the slider to walk around it.
+takes one input and produces one output, so its graph is a curve.
+
+Multivariable calculus begins by allowing more than one input.
+
+For example,
+
+$$z=f(x,y)$$
+
+takes a point in the plane and assigns it a height.
+
+The graph is now a surface.
+
+Many of the ideas from BC remain recognizable, but they have to account for the additional directions.
+
+## Functions become surfaces
+
+Consider
+
+$$f(x,y)=\sin x\cos y.$$
 
 <div class="viz" markdown="0">
   <canvas id="s3-cv" width="700" height="330"></canvas>
@@ -75,38 +93,170 @@ The function $$f(x,y) = \sin x \cos y$$ takes a point of the plane and returns a
 })();
 </script>
 
-## Derivatives become directions
+The graph rises and falls over the $$xy$$-plane.
 
-On a curve there is only one way to move, so one derivative suffices. On a landscape you can set off in any direction, and each direction has its own rate of change. Calculus 3 tames the infinity of choices with two special ones: the *partial derivatives* $$\tfrac{\partial f}{\partial x}$$ and $$\tfrac{\partial f}{\partial y}$$, the rates of change walking due east and due north. They are computed with the rules you already know, holding the other variable still, so if $$f(x,y) = x^2 y$$, then $$\tfrac{\partial f}{\partial x} = 2xy$$, treating $$y$$ like the constant it momentarily is.
+A maximum is now a peak on a surface.
 
-Then comes the first genuinely new object of the course. Package the two partials into a vector,
+A minimum is a valley.
 
-$$\nabla f = \left\langle \frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y} \right\rangle,$$
+There can also be saddle points, where the surface rises in one direction and falls in another.
 
-called the *gradient*, and something remarkable is true: at every point of the landscape, this vector points in the direction of steepest ascent, and its length is the steepness. A ball released on the surface rolls exactly opposite the gradient. Hikers, heat-seeking particles, and the machine-learning algorithms that train neural networks all follow gradients; "gradient descent," the phrase behind much of modern AI, means rolling downhill on a landscape with millions of input variables instead of two.
+That additional geometry is the first major change.
 
-Optimization upgrades the same way. Maxima and minima still occur where the derivative vanishes, but now that means the whole gradient is zero, and a new character appears alongside peaks and valleys: the *saddle point*, a mountain pass that is a maximum along one direction and a minimum along another. The second-derivative test grows into a determinant computation for exactly this reason; one number can no longer distinguish a peak from a pass. You can spot saddles in the surface above, sitting between neighboring peaks.
+With one input, there is essentially one axis along which to ask how the function changes.
 
-## Integrals fill volumes
+With two inputs, there are infinitely many possible directions.
 
-In BC, $$\textstyle \int_a^b f\,dx$$ adds up values along an interval. The *double integral* $$\textstyle \iint_R f\,dA$$ adds up values over a whole region of the plane, and where the single integral computed area under a curve, the double integral computes volume under a surface. The mechanics are pleasantly familiar: integrate in $$x$$ treating $$y$$ as constant, then integrate the result in $$y$$, two BC integrals stacked. [Riemann sums](/2026/07/25/riemann-sums-watching-rectangles.html) return too, now as grids of rectangular columns filling a solid, which is exactly the picture the wireframe above suggests.
+## Partial derivatives
 
-Polar coordinates, which BC introduced for curves, become a workhorse here. Regions with circular symmetry are miserable in $$x$$ and $$y$$ and effortless in $$r$$ and $$\theta$$, and the polar area element $$dA = r\,dr\,d\theta$$ explains, at last, exactly why the polar area formula you memorized carries its factor of $$\tfrac12 r^2$$. And one of the first triumphs of the course is a BC white whale: $$\textstyle \int_{-\infty}^{\infty} e^{-x^2} dx$$, which has no elementary antiderivative, falls in three lines once you square it and switch to polar coordinates. The answer is $$\sqrt{\pi}$$, and it is the reason the normal distribution in statistics has a $$\sqrt{2\pi}$$ in its formula.
+Two directions are especially useful.
 
-## Curves fight back: vector fields and line integrals
+The partial derivative
 
-The last third of the course flips the picture. Instead of a landscape of heights, imagine a plane where every point carries an arrow: wind velocity, water current, gravitational pull. That is a *vector field*, and the natural question becomes: how much does the field help or hinder you as you travel along a curve through it? The answer is a *line integral*, and it is precisely the physicist's definition of work.
+$$\frac{\partial f}{\partial x}$$
 
-Here your parametric training pays its full dividend. Curves are traced by $$\big(x(t), y(t)\big)$$ exactly as in BC Unit 9, and the arc-length integrand $$\sqrt{x'(t)^2 + y'(t)^2}$$ you learned there is the backbone of every line integral.
+measures the rate of change in the $$x$$-direction while $$y$$ is held fixed.
 
-The finale is a family of theorems, with *Green's theorem* first among them, that relate what a field does along the boundary of a region to what happens inside it. If that sounds familiar, it should: the [Fundamental Theorem of Calculus](/2026/07/17/fundamental-theorem-from-the-ground-up.html) says the accumulation inside an interval is controlled by values at the two boundary points. Green's theorem is the same statement one dimension up, and Stokes' theorem, at the end of the road, is the version for surfaces in space. The FTC you learned this year is the first rung of a ladder that climbs through every dimension.
+Similarly,
 
-## What carries over, and what to keep sharp
+$$\frac{\partial f}{\partial y}$$
 
-Students sometimes assume Calculus 3 requires new superpowers. It mostly requires BC skills executed cleanly in a richer setting: the chain rule (which becomes a beautiful tree-diagram bookkeeping system), integration technique, parametric curves and vectors, polar coordinates, and comfort with limits. The series unit takes a rest and returns in differential equations and analysis courses.
+measures change in the $$y$$-direction while $$x$$ is held fixed.
 
-If you want the honest preview in one sentence: BC taught you calculus on a wire; Calculus 3 teaches it on a sheet, and the sheet is where physics, economics, data science, and machine learning actually live.
+The differentiation rules themselves are familiar.
+
+For
+
+$$f(x,y)=x^2y,$$
+
+treat $$y$$ as constant when differentiating with respect to $$x$$:
+
+$$\frac{\partial f}{\partial x}=2xy.$$
+
+Treat $$x$$ as constant when differentiating with respect to $$y$$:
+
+$$\frac{\partial f}{\partial y}=x^2.$$
+
+The new notation records which input is changing.
+
+## The gradient
+
+The two partial derivatives can be collected into a vector:
+
+$$\nabla f = \left\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right\rangle.$$
+
+This is the gradient.
+
+At a point where the gradient is nonzero, it points in the direction of steepest increase.
+
+Its magnitude gives the rate of that steepest increase.
+
+The directional derivative in any other direction can be obtained by projecting the gradient onto that direction.
+
+This is one reason vectors become central in the course.
+
+Optimization also changes.
+
+For an interior critical point of a differentiable function of two variables, both partial derivatives must be zero.
+
+Then second-derivative information is used to distinguish local maxima, minima, and saddle points.
+
+## Integrals become double and triple integrals
+
+In one variable,
+
+$$\int_a^b f(x)\,dx$$
+
+accumulates across an interval.
+
+A double integral,
+
+$$\iint_R f(x,y)\,dA,$$
+
+accumulates across a region in the plane.
+
+When $$f$$ represents height, the integral can compute volume under a surface.
+
+The basic [Riemann-sum](/2026/07/25/riemann-sums-watching-rectangles.html) idea is the same.
+
+Instead of dividing an interval into narrow subintervals, divide a region into small pieces and sum the contributions from each one.
+
+Many double integrals can be evaluated as repeated one-variable integrals.
+
+For example, integrate with respect to $$x$$ while treating $$y$$ as constant, then integrate the result with respect to $$y$$.
+
+The BC integration rules are still doing the computational work.
+
+## Coordinate systems matter more
+
+Polar coordinates become especially useful for regions with circular symmetry.
+
+The area element is
+
+$$dA=r\,dr\,d\theta.$$
+
+The factor $$r$$ accounts for the way polar coordinates stretch area.
+
+This change-of-variables idea extends much further in multivariable calculus through Jacobian determinants.
+
+A classical example is the Gaussian integral
+
+$$\int_{-\infty}^{\infty}e^{-x^2}\,dx.$$
+
+It has no elementary antiderivative.
+
+By squaring the integral and interpreting the result as a double integral, the problem can be converted to polar coordinates.
+
+The result is
+
+$$\sqrt{\pi}.$$
+
+The same calculation helps explain the normalization constant in the normal distribution.
+
+## Vector fields and line integrals
+
+A multivariable course eventually shifts from scalar functions to vector fields.
+
+A vector field assigns an arrow to each point in space.
+
+Examples include velocity fields, gravitational fields, and electric fields.
+
+A line integral measures accumulation along a curve through such a field.
+
+One interpretation is physical work.
+
+The parametric curves from BC become useful again because a path can be written as
+
+$$\mathbf r(t) = \langle x(t),y(t)\rangle.$$
+
+Arc length, velocity vectors, and parameterized motion all carry directly into this setting.
+
+## The Fundamental Theorem grows too
+
+Later the course develops theorems such as Green's theorem and, in higher dimensions, Stokes' theorem and the divergence theorem.
+
+These connect behavior on the boundary of a region with behavior throughout its interior.
+
+The resemblance to the [Fundamental Theorem of Calculus](/2026/07/17/fundamental-theorem-from-the-ground-up.html) is structural.
+
+In one dimension, integration of a derivative over an interval is determined by values at the endpoints.
+
+In higher dimensions, related theorems connect integrals over a region with integrals over its boundary.
+
+## What carries over from BC
+
+The most useful preparation is still ordinary calculus done cleanly.
+
+The chain rule, integration techniques, parametric curves, vectors, polar coordinates, and limits all return.
+
+The new challenge is usually geometric.
+
+There are more variables, more directions, and more coordinate systems, but the underlying operations remain recognizable.
 
 <div class="article-note" markdown="1">
-A question to carry with you into the course: on the spinning surface above, where would a drop of water land if it started at a mountain pass, exactly on the saddle? The answer depends on the direction of the smallest nudge, which is why saddle points, not peaks, turn out to be the interesting places, in mountain ranges and in neural networks alike.
+A good preview question is to look at the surface above and ask how its height changes if you move east, north, or along a diagonal.
+
+Those are three different directional questions about the same function.
+
+That is the shift from one-variable to multivariable calculus.
 </div>

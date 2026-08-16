@@ -2,54 +2,162 @@
 layout: post
 title: "Integration by parts and partial fractions"
 date: 2026-07-30
-description: "Two BC-only techniques with narrow scopes. One turns on a choice, the other on a restriction the course states explicitly, and both are verified the same way."
+description: "Two integration techniques for expressions that do not yield directly to substitution. One reverses the product rule. The other rewrites a rational function into simpler pieces."
 course: "AP Calculus BC"
 read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 23
 interactive: true
-blurb: "Choose u, factor the denominator, then differentiate your answer"
+blurb: "Two integration techniques for expressions that do not yield directly to substitution. One reverses the product rule. The other rewrites a rational function into simpler pieces"
 image: "/assets/og/parts-and-partial-fractions.png"
 ---
 
-Two of BC's integration techniques are procedures rather than ideas. Integration by parts undoes the product rule; partial fractions splits a rational function into pieces that basic techniques already handle. Neither is difficult once started. The difficulty is in starting the right one, and in knowing how narrow each one's scope is.
+Integration by parts and partial fractions solve different kinds of problems.
 
-## The two formulas, and what they require
+Integration by parts is useful when an integrand contains a product whose structure becomes simpler after one factor is differentiated.
 
-Integration by parts is the product rule read backwards. From $$(uv)' = u'v + uv'$$, integrating both sides and rearranging,
+Partial fractions is useful for rational functions that can be decomposed into simpler fractions.
 
-$$\int u \,dv = uv - \int v\,du.$$
+The first step is recognizing which structure is present.
 
-The framework says only that it is a technique for finding antiderivatives, which is honest: the formula does not evaluate anything, it trades one integral for another. Whether that is progress depends entirely on the choice.
+## Integration by parts
 
-Partial fractions comes with a restriction stated in the framework's own words: *some* rational functions can be decomposed into sums of ratios of *linear, nonrepeating* factors. Three conditions, and all three are load-bearing. The denominator must factor, the factors must be linear, and no factor may repeat.
+The product rule says
 
-## Choosing u is the whole of integration by parts
+$$\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}.$$
 
-Take $$\textstyle\int x e^x\,dx$$. There are two ways to assign the pieces.
+Integrating both sides gives
 
-Choosing $$u = x$$ and $$dv = e^x dx$$ gives $$du = dx$$ and $$v = e^x$$, so the formula produces $$x e^x - \textstyle\int e^x dx$$, and the remaining integral is one you know. The answer is $$(x-1)e^x$$.
+$$uv = \int u\,dv + \int v\,du.$$
 
-Choosing $$u = e^x$$ and $$dv = x\,dx$$ gives $$du = e^x dx$$ and $$v = \tfrac{x^2}{2}$$, so the formula produces $$\tfrac{x^2}{2}e^x - \textstyle\int \tfrac{x^2}{2}e^x\,dx$$. That is also true, and it is worse: the polynomial's degree went from one to two, and repeating the move will take it to three.
+Rearranging,
 
-So the test for the choice is not a rule to memorize but a question to ask: does $$\textstyle\int v\,du$$ look easier than what I started with? If the polynomial factor gets differentiated it shrinks toward a constant, and if it gets integrated it grows. That is the reason $$u$$ is usually the polynomial, and it is also the reason the rule breaks for $$\textstyle\int \ln x\,dx$$, where there is no polynomial and only one choice available: $$u = \ln x$$, $$dv = dx$$, giving $$x\ln x - \textstyle\int 1\,dx = x\ln x - x$$.
+$$\int u\,dv = uv-\int v\,du.$$
 
-## Linear and nonrepeating, and what that rules out
+This is integration by parts.
 
-To integrate $$\tfrac{1}{x^2-1}$$, factor the denominator and write
+The choice of $$u$$ matters. A useful choice is one whose derivative is simpler than the original factor.
+
+Consider
+
+$$\int xe^x\,dx.$$
+
+Choose
+
+$$u=x$$
+
+and
+
+$$dv=e^x\,dx.$$
+
+Then
+
+$$du=dx$$
+
+and
+
+$$v=e^x.$$
+
+So
+
+$$\int xe^x\,dx = xe^x-\int e^x\,dx = xe^x-e^x+C.$$
+
+The remaining integral is simpler than the one we started with.
+
+If instead we choose
+
+$$u=e^x$$
+
+and
+
+$$dv=x\,dx,$$
+
+the resulting integral becomes more complicated.
+
+The formula is valid either way. The useful choice is the one that improves the problem.
+
+## A function that looks like one factor
+
+Integration by parts can also be used when there is no visible product.
+
+For
+
+$$\int \ln x\,dx,$$
+
+write
+
+$$\ln x = (\ln x)(1).$$
+
+Choose
+
+$$u=\ln x$$
+
+and
+
+$$dv=dx.$$
+
+Then
+
+$$du=\frac1x\,dx$$
+
+and
+
+$$v=x.$$
+
+Therefore
+
+$$\int \ln x\,dx = x\ln x-\int1\,dx = x\ln x-x+C.$$
+
+The invisible factor of 1 is what makes the product-rule structure available.
+
+## Partial fractions
+
+Partial fractions begins with a rational function.
+
+Suppose
+
+$$\frac{1}{x^2-1} = \frac{1}{(x-1)(x+1)}.$$
+
+We seek constants $$A$$ and $$B$$ such that
 
 $$\frac{1}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.$$
 
-Clearing denominators gives $$A(x+1) + B(x-1) = 1$$, and substituting $$x = 1$$ and $$x = -1$$ gives $$A = \tfrac12$$ and $$B = -\tfrac12$$ immediately. Each piece is now a logarithm:
+Multiplying through by the denominator gives
 
-$$\int \frac{dx}{x^2-1} = \tfrac12\ln\vert x-1\vert - \tfrac12\ln\vert x+1\vert + C.$$
+$$1 = A(x+1)+B(x-1).$$
 
-The restriction is what makes this reliable. A repeated factor such as $$(x-1)^2$$ needs a second term with the square in its denominator, and an irreducible quadratic such as $$x^2+1$$ needs a linear numerator — both are standard, and neither is in this course. If the denominator does not factor into distinct linear pieces, the problem is not asking for partial fractions.
+Setting $$x=1$$ gives
 
-## Differentiate to check
+$$A=\frac12.$$
 
-Every [antiderivative](/2026/07/17/fundamental-theorem-from-the-ground-up.html) carries its own answer key. If $$F$$ is claimed to be an antiderivative of $$f$$, then $$F'$$ must equal $$f$$ everywhere on the interval, and that is a check you can run without knowing whether the original work was right — or whose work it was.
+Setting $$x=-1$$ gives
+
+$$B=-\frac12.$$
+
+So
+
+$$\frac{1}{x^2-1} = \frac12\frac{1}{x-1} - \frac12\frac{1}{x+1}.$$
+
+Now integrate term by term:
+
+$$\int\frac{1}{x^2-1}\,dx = \frac12\ln\vert x-1\vert - \frac12\ln\vert x+1\vert + C.$$
+
+The original rational function did not have an obvious antiderivative. After decomposition, each term does.
+
+For the course-level problems considered here, the denominator factors into distinct linear factors. More general decompositions can involve repeated factors and irreducible quadratics, but those require additional forms.
+
+## Check by differentiating
+
+An [antiderivative](/2026/07/17/fundamental-theorem-from-the-ground-up.html) can be checked immediately.
+
+Differentiate
+
+$$\frac12\ln\vert x-1\vert - \frac12\ln\vert x+1\vert .$$
+
+The result is
+
+$$\frac{1}{2(x-1)} - \frac{1}{2(x+1)} = \frac{1}{x^2-1}.$$
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ip-fns"></div>
@@ -184,16 +292,22 @@ Every [antiderivative](/2026/07/17/fundamental-theorem-from-the-ground-up.html) 
 })();
 </script>
 
-On the first four the pale curve never separates from the dark one, and the gap stays at the level of the numerical differentiation's own error. On the fifth it does not: the claimed antiderivative $$-\sin x - x\cos x$$ differentiates to $$x\sin x - 2\cos x$$, so the gap is $$2\vert \cos x\vert$$ and reaches 2 wherever the cosine is $$\pm 1$$. That is a large, obvious, findable error, and finding it costs one differentiation.
+This is a useful habit after any longer integration problem.
 
-There is a reason to run that check on the antiderivative rather than trusting the final number, and this example makes it uncomfortably clear. The two claimed antiderivatives differ by $$-2\sin x$$, which is zero at every multiple of $$\pi$$. So on $$[0,\pi]$$ both give the same answer:
+It is especially important with definite integrals because a wrong antiderivative can occasionally produce a plausible numerical answer for particular bounds.
 
-$$\int_0^{\pi} x\sin x\,dx = \pi,$$
+A correct final value does not repair incorrect reasoning.
 
-correct from the right antiderivative and correct from the wrong one. The error is real, the arithmetic is wrong, and the number is right. Shift the upper limit to $$\tfrac{\pi}{2}$$ and it surfaces: the correct antiderivative gives 1 and the faulty one gives $$-1$$.
+## Choosing the technique
 
-A definite integral can launder a mistake, and which mistakes it launders depends on the limits. Differentiating the antiderivative does not depend on anything.
+A useful classification is:
+
+- If the integrand contains a composite function and its derivative, try substitution.
+- If it contains a product where differentiating one factor makes the expression simpler, consider integration by parts.
+- If it is a rational function with a factorable denominator, consider partial fractions.
 
 <div class="article-note" markdown="1">
-The framework devotes a whole topic to choosing among antidifferentiation techniques, and its suggested skill there is to identify an appropriate procedure from the classification of the expression — the same skill the [derivative rules](/2026/07/30/derivative-rules-and-choosing.html) topic carries. The classification questions are short. Is there a composition with its inner derivative present? Substitute. Is it a product of two unrelated functions, one of which simplifies when differentiated? Parts. Is it a rational function whose denominator factors into distinct linear pieces? Partial fractions. Asking all three before writing anything is faster than restarting.
+These categories can overlap.
+
+The goal is not to identify the most advanced available technique. It is to find the rewrite that makes the integral simpler.
 </div>

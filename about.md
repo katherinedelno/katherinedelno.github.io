@@ -58,8 +58,9 @@ permalink: /about/
     <div>
       <p class="label">About</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I teach mathematics and statistics one-on-one, in AP Statistics, AP Calculus, and AP Precalculus. I came to the subject by an unusual road. Mathematics did not come easily to me; in my early schooling I struggled with it deeply and for years, and I remember with precision what it is to sit before a problem that will not open. I went on to earn a degree in mathematics and a graduate degree in statistics, and the distance between those two facts is the foundation of my work as a teacher.</p>
-      <p>Because I have been the struggling student, I do not regard difficulty as a verdict. I regard it as information, a marker of the precise place where understanding stops, which is usually earlier and more particular than the student supposes. The work of each session is to locate that place, to rebuild from it, and to remain until the reasoning is the student's to carry alone.</p>
+      <p>I teach mathematics and statistics one-on-one, primarily in AP Statistics, AP Calculus, and AP Precalculus.</p>
+      <p>I did not begin as a student who found mathematics easy. I struggled with it for years in school, and I remember very clearly what it feels like to sit in front of a problem and have no idea how to begin. I eventually went on to earn a degree in mathematics and a graduate degree in statistics. That experience still shapes how I teach.</p>
+      <p>Difficulty is useful information. A student may feel as though they do not understand an entire topic when the actual problem began several steps earlier. I try to find that point precisely. Then we rebuild from there until the student can carry the reasoning independently.</p>
     </div>
     <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
   </div>
@@ -76,11 +77,12 @@ permalink: /about/
     </style>
     <p class="label">Education</p>
     <h2>Academic training</h2>
-    <p>Graduate and undergraduate degrees in statistics and mathematics, with coursework spanning everything my students study and a great deal beyond it. The coursework matters less than the judgment it builds: seeing the structure underneath a problem, tracing an error to its source, and explaining a topic a second way when the first doesn't land.</p>
+    <p>My training in mathematics and statistics is rigorous and strongly theoretical. It includes the full sequence of topics my students encounter, along with proof-based mathematics, statistical theory, advanced regression, inference, computation, and applied research.</p>
+    <p>That background matters in my teaching. It helps me see the structure underneath a problem, trace an error to its source, and explain the same idea in more than one way when needed.</p>
 
-    <h3>M.S. Statistics: Advanced Methods &amp; Data Analysis</h3>
+    <h3>M.S. Statistics</h3>
     <p class="deg-meta">University of Washington &middot; 2025 &middot; Statistics ranked #6 nationally, UW #3 among U.S. public universities (U.S. News, 2026)</p>
-    <p>Rigorous graduate training in statistical theory, methodology, and computation. The core was the full theoretical inference sequence, where the estimators, tests, and intervals of applied statistics are derived and proved rather than taken on faith, alongside regression for independent and correlated data, the design and analysis of experiments, categorical data analysis, and statistical computing, with applied biostatistics and a capstone in applied statistics carried out in R and Python.</p>
+    <p>My graduate work focused on statistical theory, methodology, and computation. The core included a full theoretical inference sequence in which estimators, tests, and confidence intervals were derived rather than simply applied. I also studied regression for independent and correlated data, experimental design, categorical data analysis, statistical computing, biostatistics, causal inference, and applied statistics in R and Python.</p>
     <details class="cw-details">
       <summary>Graduate coursework</summary>
       <div class="pg-tags">
@@ -99,7 +101,8 @@ permalink: /about/
 
     <h3 style="margin-top:2.2rem;">B.S. Mathematics</h3>
     <p class="deg-meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
-    <p>A deeply proof-based mathematics core: the full calculus sequence, linear algebra, differential equations, and numerical methods, together with two semesters of real analysis, where calculus itself is rebuilt from rigorous foundations, and formal training in proof writing. This was paired with statistics coursework in probability, statistical theory, regression, and computing. I began university in engineering, which left me with a broad foundation across the physical sciences as well; it helps me meet students wherever their coursework sits.</p>
+    <p>My undergraduate mathematics training was heavily proof-based. It included the full calculus sequence, linear algebra, differential equations, numerical methods, proof writing, and two semesters of real analysis. In real analysis, the ideas of calculus are rebuilt from rigorous definitions and proofs.</p>
+    <p>I also completed substantial coursework in probability, statistical theory, regression, computing, engineering, and the physical sciences. I began university in engineering before moving fully into mathematics and statistics, so that broader technical background remains part of how I approach quantitative problems.</p>
     <details class="cw-details">
       <summary>Undergraduate coursework</summary>
       <div class="pg-tags">
@@ -130,7 +133,7 @@ permalink: /about/
   <div class="about-section">
     <p class="label">Experience</p>
     <h2>Teaching experience</h2>
-    <p>My teaching is grounded in years of one-on-one and university-level instruction. My current work, and full focus, is the private instruction practice.</p>
+    <p>My teaching experience includes private instruction, university statistics courses, and one-on-one academic mentoring. My current work and primary focus are the private instruction practice.</p>
 
     <div class="pg-timeline">
 
@@ -138,21 +141,22 @@ permalink: /about/
         <p class="date">2025 &ndash; Present</p>
         <h3>Private Mathematics &amp; Statistics Instructor <span class="badge">Current</span></h3>
         <p class="org">Independent &middot; Remote</p>
-        <p>I run a private instruction practice teaching mathematics and statistics to high school and college students, with a focus on AP coursework. Each session is built around how the student actually reasons: I watch closely as they work, diagnose whether a difficulty is conceptual, procedural, or a matter of execution, and adjust the teaching to what I see. I assess not only whether a student reaches the correct answer but how they get there, using recurring patterns in their work to shape pacing, explanation, and practice over time. A complete curriculum I write myself and detailed written and verbal feedback sit behind the work, so each session builds on the last.</p>
+        <p>I teach mathematics and statistics privately to high school and college students, with a focus on AP coursework. Sessions are built around the student's reasoning. I watch how they set up a problem, where they hesitate, which errors repeat, and how much of the work they can reproduce independently.</p>
+        <p style="margin-top:.7rem;">I use those patterns to shape the pacing, explanation, and practice over time. I also write the curriculum and supporting materials used in sessions and keep detailed notes so that each meeting builds on the last.</p>
       </div>
 
       <div class="pg-entry">
         <p class="date">2024</p>
         <h3>Mentor, Directed Reading Program</h3>
         <p class="org">Statistics &amp; Probability Association, University of Washington &middot; Seattle, WA</p>
-        <p>Designed and led a one-on-one short course on statistical learning, covering linear regression, classification methods, resampling techniques, and regularization. Created all course materials and lectures, guided weekly discussions, and provided ongoing feedback to deepen the student's understanding throughout the quarter.</p>
+        <p>I designed and led a one-on-one short course in statistical learning. Topics included linear regression, classification, resampling methods, and regularization. I created the course materials, led weekly discussions, and provided ongoing feedback throughout the quarter.</p>
       </div>
 
       <div class="pg-entry">
         <p class="date">2022</p>
         <h3>Graduate Teaching Assistant</h3>
         <p class="org">Department of Mathematics &amp; Statistics, University of Nevada, Reno &middot; Reno, NV</p>
-        <p>Led discussion sections for an undergraduate statistics course, designed and delivered lecture materials, and provided one-on-one and group tutoring to help students understand complex statistical concepts. Graded exams and quizzes with detailed feedback, and mentored undergraduates with academic support and guidance throughout the course.</p>
+        <p>I led discussion sections for an undergraduate statistics course and developed instructional materials for weekly meetings. I also provided individual and group support, graded exams and quizzes with written feedback, and worked with students on statistical reasoning and communication.</p>
       </div>
 
     </div>
@@ -164,7 +168,7 @@ permalink: /about/
 
     <div class="pj-work">
 
-      <p class="pj-work__intro">Alongside teaching, my graduate work included independent methodological research and applied projects in statistics and machine learning. It is the depth behind the instruction, particularly in AP Statistics. Each project below has a full write-up.</p>
+      <p class="pj-work__intro">My graduate work also included independent methodological research and applied projects in statistics and machine learning. These projects reflect the depth of statistical training behind my teaching, particularly in AP Statistics. Each project below has a full write-up.</p>
 
       <!-- One grid, as on /resources/: the featured entry spans two of the
            three columns and the three applied projects follow. -->
@@ -178,9 +182,9 @@ permalink: /about/
           <span>2025</span>
         </p>
 
-        <h3 class="pj-feature__title">A permutation-based random forest diagnostic for linear mixed models</h3>
+        <h3 class="pj-feature__title">RandomForestSpecCheck: A Permutation-Based Random Forest Diagnostic for Linear Mixed Models</h3>
 
-        <p class="pj-feature__blurb">A nonparametric diagnostic I designed for detecting misspecification in linear mixed models, where standard residual plots and information criteria often miss subtle violations. A random forest measures leftover structure in the model's residuals, and a permutation test that respects the clustered design supplies the null distribution, without assuming normality.</p>
+        <p class="pj-feature__blurb">I designed a nonparametric diagnostic for detecting misspecification in linear mixed models. A random forest measures remaining structure in the model residuals, while a permutation test that preserves the clustered design supplies the null distribution.</p>
 
         <div class="pj-stats">
           <div class="pj-stat">
@@ -204,21 +208,21 @@ permalink: /about/
         <a class="pj-card" href="{{ '/projects/conformal-prediction-genre/' | relative_url }}">
           <p class="pj-card__kicker">Machine learning &middot; 2025</p>
           <h3 class="pj-card__title">Conformal prediction for multi-label genre classification</h3>
-          <p class="pj-card__blurb">A fine-tuned DistilBERT paired with conformal prediction, returning calibrated sets of genre labels with at least 90% coverage. The guarantee was met; the write-up is about what it cost.</p>
+          <p class="pj-card__blurb">A fine-tuned DistilBERT model paired with conformal prediction to return calibrated sets of genre labels with at least 90% coverage. The target coverage was achieved. The write-up focuses on the tradeoffs required to obtain it.</p>
           <span class="pj-card__more">Read &rarr;</span>
         </a>
 
         <a class="pj-card" href="{{ '/projects/bert-recipe-classification/' | relative_url }}">
           <p class="pj-card__kicker">Machine learning &middot; 2025</p>
           <h3 class="pj-card__title">Fine-tuning BERT models for recipe classification</h3>
-          <p class="pj-card__blurb">Twenty-two configurations of BERT Base, BERT Large, and RoBERTa compared across 20,000 recipes. The smallest model won, and validation accuracy turned out not to predict the result.</p>
+          <p class="pj-card__blurb">Twenty-two configurations of BERT Base, BERT Large, and RoBERTa were compared across 20,000 recipes. The smallest model performed best, while validation accuracy proved to be an unreliable guide to the final result.</p>
           <span class="pj-card__more">Read &rarr;</span>
         </a>
 
         <a class="pj-card" href="{{ '/projects/causal-inference-nhanes/' | relative_url }}">
           <p class="pj-card__kicker">Causal inference &middot; 2024</p>
           <h3 class="pj-card__title">Causal analysis of food insecurity and type 2 diabetes</h3>
-          <p class="pj-card__blurb">A doubly robust estimate of the effect of food insecurity on diabetes across three NHANES cycles. The finding was null; the contribution is an account of what survey data can support.</p>
+          <p class="pj-card__blurb">A doubly robust estimate of the effect of food insecurity on type 2 diabetes across three NHANES cycles. The estimated effect was null. The project focuses on what can and cannot be supported by observational survey data.</p>
           <span class="pj-card__more">Read &rarr;</span>
         </a>
 
@@ -230,11 +234,11 @@ permalink: /about/
   <div class="about-section">
     <p class="label">Personal</p>
     <h2>Outside the classroom</h2>
-    <p>I live in Seattle. Away from the whiteboard I'm usually baking, fussing over my espresso setup, adding to a slowly growing ceramics collection, or spending time with my cat, <a href="#blue-photo">Blue</a>.</p>
+    <p>I live in Seattle. Away from the whiteboard, I am usually baking, fussing over my espresso setup, adding to a slowly growing ceramics collection, or spending time with my cat, <a href="#blue-photo">Blue</a>.</p>
   </div>
 
   <div class="about-section">
-    <p>If you're curious whether I'd be a good fit for your student, the <a href="/private-instruction/">private instruction page</a> has the full picture, or just email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+    <p>If you are curious whether I would be a good fit for your student, the <a href="/private-instruction/">private instruction page</a> has the full picture. You can also email me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </div>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">

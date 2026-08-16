@@ -2,26 +2,32 @@
 layout: post
 title: "One template for every interval"
 date: 2026-07-31
-description: "The formula sheet supplied on exam day carries two formulas for inference. Everything students think of as twelve separate procedures is one of those two with a different standard error."
+description: "Most inference procedures in the course are built from two general forms. The procedure changes mainly through the standard error."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 12
 interactive: true
-blurb: "Two formulas, a table of standard errors, and nothing else"
+blurb: "Most inference procedures in the course are built from two general forms. The procedure changes mainly through the standard error"
 image: "/assets/og/one-template.png"
 ---
 
-The formula sheet handed out on exam day carries two formulas for inference. Not twelve, and not one per procedure. Two:
+Most of the inference formulas in AP Statistics can be organized around two structures.
 
-$$\text{statistic} \pm (\text{critical value})(\text{standard error}), \qquad \frac{\text{statistic} - \text{parameter}}{\text{standard error}}.$$
+A confidence interval has the form
 
-The first is every confidence interval in the course. The second is every standardized test statistic. What follows them on the sheet is not more formulas — it is a table of standard errors, one row per sampling distribution, and choosing the row is the whole of what looks like memorizing a dozen procedures.
+$$\text{statistic} \pm (\text{critical value})(\text{standard error}).$$
+
+A standardized test statistic has the form
+
+$$\frac{\text{statistic}-\text{null parameter value}}{\text{standard error}}.$$
+
+The procedure determines which statistic, critical value, and standard error belong in those slots.
 
 ## Assemble one
 
-Pick a procedure and watch which of the three slots changes.
+Pick a procedure and switch between interval and test.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ot-fam"></div>
@@ -137,28 +143,108 @@ Pick a procedure and watch which of the three slots changes.
 })();
 </script>
 
-## Only one slot moves
+The overall structure stays nearly fixed.
 
-Hold the purpose at *confidence interval* and step through the six families. The shape never changes. A statistic, a critical value, a standard error, and a plus-or-minus. What changes is the third slot, and every value it takes is a row of the sheet's table: one proportion, two proportions, one mean, two means. There is no separate formula for a paired interval, because a paired design is a one-sample procedure on the differences and takes the one-mean row with $$n$$ counting pairs.
+What changes most often is the standard error.
 
-That is why the sheet does not print twelve formulas. It prints two, and expects them to be assembled.
+For example, a one-proportion confidence interval uses
 
-## Where the two purposes disagree
+$$\hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}.$$
 
-Now hold the family fixed and switch between interval and test. For every procedure about means, nothing changes but the critical value, because the standard error is $$s/\sqrt{n}$$ either way.
+A one-sample $$t$$-interval for a mean uses
 
-For proportions, the standard error changes too, and the sheet says why in a way that is easy to read past. It gives two columns rather than one: a *standard deviation* built from the parameter, and a *standard error* built from the statistic. A test has a null hypothesis, so it knows a value for the parameter and can use the first. An interval has no such value, so it must estimate with the second.
+$$\bar x \pm t^* \frac{s}{\sqrt n}.$$
 
-This is also the honest answer to a question students ask constantly: why do proportions get $$z$$ and means get $$t$$? Because a proportion's spread is determined by the proportion itself, so a hypothesized $$p_0$$ supplies the standard deviation exactly. A mean's spread depends on $$\sigma$$, which no hypothesis ever supplies, so $$s$$ must stand in — and the extra uncertainty in that substitution is precisely what the $$t$$ distribution is for.
+A two-sample interval changes the statistic and standard error but not the general form.
 
-The two-proportion test carries the same idea one step further. Its null says the two proportions are equal, so a test may pool the two samples into a single combined estimate $$\hat{p}_c$$ before computing the standard error. The interval, assuming nothing, keeps them apart. Same statistic on top, two different denominators, and the difference is entirely about what the null hypothesis was willing to tell you.
+## Paired data fit the same template
 
-## The exception, and what it tells you
+A matched-pairs problem is converted into one sample of differences.
 
-Chi-square does not fit either template, and the sheet prints it separately for that reason. It is a sum over cells rather than a standardized distance, there is no parameter subtracted, and there is no chi-square interval anywhere in the course.
+If
 
-That is worth noticing rather than filing away. Every other procedure measures how far one number sits from another in standard errors, which is why every other procedure has both an interval and a test. Chi-square measures total disagreement across a whole table, and a total has no natural interval attached. The shape of the formula predicts what questions the procedure can answer.
+$$d_i$$
+
+is the difference for pair $$i$$, then inference concerns
+
+$$\mu_d.$$
+
+The interval is therefore a one-sample $$t$$-interval applied to the differences:
+
+$$\bar d \pm t^* \frac{s_d}{\sqrt n}.$$
+
+There is no need for an entirely separate formula family.
+
+The design changes the variable being analyzed.
+
+## Why means use $$t$$
+
+For a population mean, the standard deviation $$\sigma$$ is usually unknown.
+
+The standard error is estimated using
+
+$$\frac{s}{\sqrt n}.$$
+
+That substitution adds uncertainty.
+
+The $$t$$-distribution accounts for it.
+
+As the degrees of freedom increase, $$t$$ approaches the standard normal distribution.
+
+## Why proportion intervals and tests use different standard errors
+
+A one-proportion confidence interval does not assume a population value for $$p$$.
+
+So its standard error is estimated with the sample proportion:
+
+$$\sqrt{\frac{\hat p(1-\hat p)}{n}}.$$
+
+A hypothesis test specifies a null value
+
+$$p_0.$$
+
+Under the null, the sampling distribution is built using that hypothesized parameter:
+
+$$\sqrt{\frac{p_0(1-p_0)}{n}}.$$
+
+The difference comes from the question.
+
+The interval estimates an unknown parameter.
+
+The test temporarily assumes a particular value.
+
+## Pooling in a two-proportion test
+
+For a two-proportion interval, the two sample proportions remain separate in the standard error.
+
+A two-proportion test under
+
+$$H_0:p_1=p_2$$
+
+assumes the groups share one population proportion under the null.
+
+That allows a pooled estimate
+
+$$\hat p_c = \frac{x_1+x_2}{n_1+n_2}.$$
+
+The test standard error uses this combined value.
+
+The interval does not pool because it is estimating the difference without assuming equality.
+
+## Chi-square is different
+
+Chi-square procedures use
+
+$$\chi^2 = \sum \frac{(O-E)^2}{E}.$$
+
+This is not a single standardized difference between a statistic and a parameter.
+
+It accumulates discrepancies across several cells of a table.
+
+That is why chi-square sits outside the two general templates and appears only as a test in this course.
 
 <div class="article-note" markdown="1">
-An exercise for the tool, best done with the reference sheet beside it: choose any procedure, write the assembled formula from memory, then find the standard error you used in the sheet's table and confirm you took the right row. Do that for all eleven combinations and the sheet stops being a page to search under time pressure and becomes a page with two formulas and a lookup table on it. Students who reach that point stop losing time hunting for a formula that was never printed, because they have realized it was theirs to build.
+The reference sheet is easier to use once the formulas are seen this way.
+
+Most of the work is identifying the design and choosing the matching standard error.
 </div>

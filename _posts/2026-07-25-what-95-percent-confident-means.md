@@ -2,23 +2,31 @@
 layout: post
 title: "The meaning of 95% confidence"
 date: 2026-07-25
-description: "A confidence level describes the method rather than any single interval. One hundred simulated studies make the distinction visible."
+description: "A confidence level describes the long-run success rate of the interval-producing method, not a probability attached to one finished interval."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 11
 interactive: true
-blurb: "Run a hundred studies and count which intervals capture the truth"
+blurb: "A confidence level describes the long-run success rate of the interval-producing method, not a probability attached to one finished interval"
 featured: true
 image: "/assets/og/what-95-percent-confident-means.png"
 ---
 
-The most commonly missed interpretation question in AP Statistics is also the most commonly asked: what does "95% confident" mean? Students want it to mean "there is a 95% chance the true mean is in my interval." It does not mean that, the exam knows students want it to mean that, and the scoring guidelines are written to catch it. The distinction is easier to see than to say, so the simulation comes first.
+A 95% confidence interval does not mean that there is a 95% probability the fixed population parameter lies inside one particular interval.
 
-## Build a hundred intervals
+The 95% describes the method used to generate intervals.
 
-Each row below is a complete, honest study: a random sample of size 25 drawn from a population with true mean $$\mu = 50$$, followed by a 95% confidence interval computed from that sample alone. The dashed line marks the truth, which in real life nobody gets to see. Intervals that capture $$\mu$$ are gray; intervals that miss are black.
+Under repeated sampling, that method captures the true parameter about 95% of the time.
+
+## Build one hundred intervals
+
+Each row below represents a new random sample of size 25 from a population with
+
+$$\mu=50.$$
+
+A 95% confidence interval is constructed from each sample.
 
 <div class="viz" markdown="0">
   <canvas id="ci-cv" width="700" height="330"></canvas>
@@ -71,30 +79,86 @@ Each row below is a complete, honest study: a random sample of size 25 drawn fro
 })();
 </script>
 
-## The method has the probability, not the interval
+The dashed vertical line marks the true mean.
 
-Before you draw the sample, the process is random and probability applies: the procedure "sample, then build $$\bar{x} \pm 1.96\,\tfrac{\sigma}{\sqrt{n}}$$" will capture $$\mu$$ in 95% of its uses. That is a fact about the method, verified by the simulation above.
+Intervals that contain $$\mu$$ are distinguished from those that miss.
 
-After you draw the sample, the randomness is spent. Your interval is now a fixed pair of numbers, say $$(47.1, 54.9)$$, and $$\mu$$ is a fixed number too. Either it is inside or it is not; there is no 95% about it, only our ignorance of which case we are in. What you are entitled to say is that you used a method that succeeds 95% of the time, and this interval is one of its outputs.
+Run the simulation several times.
 
-The AP-credited interpretation of the interval says exactly that, in context: "We are 95% confident that the true mean commute time for students at this school is between 47.1 and 54.9 minutes." The AP-credited interpretation of the level says what the simulation shows: "If we repeated this sampling process many times, about 95% of the intervals produced would capture the true mean."
+The number of successful intervals varies from run to run, but it tends to stay near 95 out of 100.
 
-## The wordings that lose the point
+That is the confidence level in repeated use.
 
-Each of the following appears on real student papers every year, and each earns zero for a specific reason.
+## The probability belongs to the procedure
 
-"There is a 95% probability that $$\mu$$ is between 47.1 and 54.9." This assigns randomness to $$\mu$$, which is a fixed number. The probability belonged to the sampling process, and that process is over.
+Before a sample is drawn, the interval is random because the sample is random.
 
-"95% of the data are in the interval." A confidence interval for a mean estimates where the mean is, not where individual observations fall. In the simulation, the population values spread from roughly 20 to 80, while the intervals are only a few units wide. An interval that contained 95% of individual values would be a different object entirely.
+A procedure such as
 
-"95% of sample means fall in this interval." Close enough to sound right, and still wrong: [the reference distribution of sample means](/2026/07/25/central-limit-theorem-watched-live.html) is centered at $$\mu$$, not at your particular $$\bar{x}$$. Your interval is one draw, not the yardstick.
+$$\bar x \pm 1.96\frac{\sigma}{\sqrt n}$$
 
-The interpretation that survives grading mentions repeated sampling, attaches the 95% to the method, and states the parameter in context. Three ingredients, one sentence.
+has a 95% long-run capture rate under its assumptions.
 
-## Why this is worth internalizing beyond the exam
+After the sample is drawn, the interval endpoints are fixed.
 
-Nearly every statistical claim you will meet in the wild, from polling margins to clinical trial results, arrives as a confidence interval. Reading one correctly means holding two thoughts at once: this particular range may well be wrong, and the process that produced it is reliable at a known rate. That is a genuinely useful way to hold beliefs, and the hundred little studies above are the entire argument for it.
+The parameter is also fixed.
+
+For that particular interval, the parameter is either inside or outside.
+
+The frequentist confidence statement does not assign a 95% probability to that fixed event.
+
+A correct contextual interpretation is:
+
+“We are 95% confident that the true mean commute time for students at this school lies between 47.1 and 54.9 minutes.”
+
+An interpretation of the confidence level is:
+
+“If this sampling process were repeated many times, about 95% of the intervals produced would contain the true mean commute time.”
+
+## Three common misinterpretations
+
+### “There is a 95% probability that $$\mu$$ is in this interval.”
+
+In the frequentist framework used in AP Statistics, $$\mu$$ is fixed.
+
+The probability statement applies to the random interval-producing process before the sample is observed.
+
+### “95% of the data are in the interval.”
+
+A confidence interval for a mean estimates the population mean.
+
+It does not describe the range containing 95% of individual observations.
+
+### “95% of sample means fall in this interval.”
+
+The interval is centered on one observed sample statistic.
+
+It is not a fixed reference range for all possible sample means.
+
+The [sampling distribution](/2026/07/25/central-limit-theorem-watched-live.html) of $$\bar X$$ is centered at $$\mu$$, not at the particular $$\bar x$$ observed in one sample.
+
+## Confidence level and width
+
+A higher confidence level requires a larger critical value.
+
+That produces a wider interval.
+
+So increasing confidence generally reduces the chance of missing the parameter by accepting less precision.
+
+A 99% interval is wider than a 95% interval based on the same data and method.
+
+This tradeoff is part of what a confidence level means.
+
+## What changes with $$t$$
 
 <div class="article-note" markdown="1">
-An exercise for the simulator: the intervals here all have the same width, since the population standard deviation is treated as known and the sample size is fixed. That is a teaching simplification — on the exam a mean is estimated with $$t$$, because $$\sigma$$ never is known, and the intervals then vary in width from sample to sample. Nothing about the interpretation changes; only the reference curve does. Now predict what changing the confidence level to 99% would do to the picture, then check your prediction against the formula. Wider intervals, fewer misses: confidence is purchased with width, which is why 100% confidence is available and useless.
+The simulation treats the population standard deviation as known so that all intervals have the same width.
+
+For inference about a mean in AP Statistics, $$\sigma$$ is typically unknown.
+
+We estimate it with $$s$$ and use a $$t$$-distribution.
+
+The interval widths then vary because $$s$$ varies from sample to sample.
+
+The interpretation of confidence does not change.
 </div>

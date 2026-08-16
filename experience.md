@@ -35,7 +35,7 @@ permalink: /experience/
   <div class="pg-hero">
     <p class="label">Experience</p>
     <h1>Teaching experience</h1>
-    <p>My teaching is grounded in years of one-on-one and university-level instruction. My current work, and full focus, is the private instruction practice below.</p>
+    <p>My teaching experience includes private instruction, university statistics courses, and one-on-one academic mentoring. My current work and primary focus are the private instruction practice.</p>
   </div>
 
   <div class="pg-timeline">
@@ -44,21 +44,22 @@ permalink: /experience/
       <p class="date">2025 &ndash; Present</p>
       <h3>Private Mathematics &amp; Statistics Instructor <span class="badge">Current</span></h3>
       <p class="org">Independent &middot; Remote</p>
-      <p>I run a private instruction practice teaching mathematics and statistics to high school and college students, with a focus on AP coursework. Each session is built around how the student actually reasons: I watch closely as they work, diagnose whether a difficulty is conceptual, procedural, or a matter of execution, and adjust the teaching to what I see. I assess not only whether a student reaches the correct answer but how they get there, using recurring patterns in their work to shape pacing, explanation, and practice over time. A complete curriculum I write myself and detailed written and verbal feedback sit behind the work, so each session builds on the last.</p>
+      <p>I teach mathematics and statistics privately to high school and college students, with a focus on AP coursework. Sessions are built around the student's reasoning. I watch how they set up a problem, where they hesitate, which errors repeat, and how much of the work they can reproduce independently.</p>
+      <p style="margin-top:.6rem;">I use those patterns to shape the pacing, explanation, and practice over time. I also write the curriculum and supporting materials used in sessions and keep detailed notes so that each meeting builds on the last.</p>
     </div>
 
     <div class="pg-entry">
       <p class="date">2024</p>
       <h3>Mentor, Directed Reading Program</h3>
       <p class="org">Statistics &amp; Probability Association, University of Washington &middot; Seattle, WA</p>
-      <p>Designed and led a one-on-one short course on statistical learning, covering linear regression, classification methods, resampling techniques, and regularization. Created all course materials and lectures, guided weekly discussions, and provided ongoing feedback to deepen the student's understanding throughout the quarter.</p>
+      <p>I designed and led a one-on-one short course in statistical learning. Topics included linear regression, classification, resampling methods, and regularization. I created the course materials, led weekly discussions, and provided ongoing feedback throughout the quarter.</p>
     </div>
 
     <div class="pg-entry">
       <p class="date">2022</p>
       <h3>Graduate Teaching Assistant</h3>
       <p class="org">Department of Mathematics &amp; Statistics, University of Nevada, Reno &middot; Reno, NV</p>
-      <p>Led discussion sections for an undergraduate statistics course, designed and delivered lecture materials, and provided one-on-one and group tutoring to help students understand complex statistical concepts. Graded exams and quizzes with detailed feedback, and mentored undergraduates with academic support and guidance throughout the course.</p>
+      <p>I led discussion sections for an undergraduate statistics course and developed instructional materials for weekly meetings. I also provided individual and group support, graded exams and quizzes with written feedback, and worked with students on statistical reasoning and communication.</p>
     </div>
 
   </div>

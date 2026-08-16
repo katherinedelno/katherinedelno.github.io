@@ -2,26 +2,38 @@
 layout: post
 title: "The four parameters of transformation"
 date: 2026-07-25
-description: "Every transformation question involves the same four parameters performing the same four roles, two of them in reverse. An interactive set of dials makes the structure visible."
+description: "In g(x) = a f(b(x - h)) + k, the outside parameters act on outputs and the inside parameters act on inputs. That distinction explains the direction and scale of each transformation."
 course: "AP Precalculus"
 read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 3
 interactive: true
-blurb: "Turn the four dials and see which two work in reverse"
+blurb: "In g(x) = a f(b(x - h)) + k, the outside parameters act on outputs and the inside parameters act on inputs. That distinction explains the direction and scale of each transformation"
 image: "/assets/og/transformations-four-dials.png"
 ---
 
-Every transformation question in AP Precalculus, and later in calculus, is built from one master form:
+A large class of graph transformations can be written as
 
-$$g(x) = a\,f\big(b(x-h)\big) + k.$$
+$$g(x)=a\,f\big(b(x-h)\big)+k.$$
 
-Four numbers, four jobs. The outside pair $$a$$ and $$k$$ act on outputs, so they move the graph vertically and behave exactly as they read. The inside pair $$b$$ and $$h$$ act on inputs, so they move the graph horizontally and behave opposite to the way they read. That one sentence is the whole topic. The dials below let you verify it.
+Each parameter has a different role.
 
-## Turn the dials
+The outside parameters $$a$$ and $$k$$ act on outputs.
 
-The gray curve is the parent function $$f(x) = \sin x$$. The black curve is $$g(x) = a\sin\big(b(x-h)\big) + k$$ with your dial settings.
+The inside parameters $$b$$ and $$h$$ act on inputs.
+
+That distinction explains why horizontal transformations often appear to work in the opposite direction from the signs in the formula.
+
+## Turn the four parameters
+
+The parent function is
+
+$$f(x)=\sin x.$$
+
+The transformed function is
+
+$$g(x) = a\sin\big(b(x-h)\big)+k.$$
 
 <div class="viz" markdown="0">
   <canvas id="tf-cv" width="700" height="280"></canvas>
@@ -79,30 +91,128 @@ The gray curve is the parent function $$f(x) = \sin x$$. The black curve is $$g(
 })();
 </script>
 
-## Why the inside works backward
+Changing $$a$$ scales the output values.
 
-The backward behavior of $$b$$ and $$h$$ is the part students distrust, so it deserves an actual reason rather than a mnemonic.
+If
 
-Consider $$g(x) = f(x - 3)$$. Ask: what input must $$g$$ receive to produce the value $$f(0)$$? It needs $$x - 3 = 0$$, so $$x = 3$$. The feature of $$f$$ that used to live at 0 now lives at 3. Every feature migrates the same way, three units right. The minus sign in the formula is not a direction; it is the price of admission. The graph moves right because the input must be larger to compensate for the subtraction.
+$$\vert a\vert >1,$$
 
-The same logic runs the compression. In $$g(x) = f(2x)$$, the input $$x = 1$$ already delivers $$f(2)$$: the function experiences inputs twice as fast as you supply them, so everything $$f$$ does gets done in half the horizontal space. Bigger $$b$$, faster consumption, narrower graph. For sinusoids this becomes the period formula, period $$= \tfrac{2\pi}{\vert b\vert}$$, but the formula is just this paragraph compressed.
+the graph stretches vertically.
 
-Outputs have no such reversal because they happen after the function has done its work. Multiply the result by $$a$$, add $$k$$: the graph's heights scale and slide exactly as written.
+If
 
-## The order of operations trap
+$$0<\vert a\vert <1,$$
 
-When several dials are set at once, the order you narrate them matters in one specific place: the horizontal factor and shift must be read from the factored form. Compare
+it compresses vertically.
 
-$$g(x) = f(2x - 6) \qquad \text{and} \qquad g(x) = f\big(2(x - 3)\big).$$
+If $$a<0$$, the graph is also reflected across the $$x$$-axis.
 
-These are the same function, but only the second displays the true shift. Read the first one naively and you will report a shift of 6; factoring the 2 out first reveals the actual shift of 3. On multiple-choice questions this is the most reliable distractor in the topic, and the defense is mechanical: before naming any horizontal transformation, factor the inside so it reads $$b(x - h)$$.
+Changing $$k$$ shifts every output vertically by the same amount.
 
-A parallel trap lives outside: in $$-f(x) + 2$$, the reflection happens before the upward shift, so the graph flips about the $$x$$-axis and then rises. Reading transformations in the wrong order rarely changes horizontal-only or vertical-only answers, but it scrambles anything mixing a reflection with a shift in the same direction.
+Those two parameters behave directly because they act after the parent function has produced an output.
 
-## One skill, three courses
+## Why horizontal shifts look backward
 
-This topic is a rare investment that pays in every course that follows. In AP Precalculus, it writes [sinusoidal models](/2026/07/25/unit-circle-unrolled.html) directly: amplitude is $$\vert a\vert$$, midline is $$y = k$$, period comes from $$b$$, and the phase comes from $$h$$. In AP Calculus, the chain rule differentiates $$f\big(b(x-h)\big)$$ and the same four numbers reappear in every substitution. In AP Statistics, standardizing a score, $$z = \tfrac{x - \mu}{\sigma}$$, is precisely a shift by $$h = \mu$$ and a horizontal scale by $$\sigma$$, which is why the normal table only needs one curve. Four dials, learned once.
+Consider
+
+$$g(x)=f(x-3).$$
+
+A feature of $$f$$ that occurred at input 0 now occurs where
+
+$$x-3=0.$$
+
+That means
+
+$$x=3.$$
+
+So the graph shifts right by 3.
+
+The minus sign does not mean “move left.”
+
+It tells us what new input is required to make the inside of the function equal the old input.
+
+The same reasoning explains horizontal scaling.
+
+For
+
+$$g(x)=f(2x),$$
+
+the input $$x=1$$ sends the parent function the value 2.
+
+The parent function experiences its inputs twice as quickly.
+
+Its horizontal features therefore occur in half the original distance.
+
+For sine,
+
+$$\text{period} = \frac{2\pi}{\vert b\vert }.$$
+
+A larger $$\vert b\vert$$ produces a shorter period.
+
+## Factor the inside before reading a shift
+
+Compare
+
+$$f(2x-6)$$
+
+with
+
+$$f\big(2(x-3)\big).$$
+
+These are the same expression.
+
+The second form makes the shift visible.
+
+The horizontal shift is 3, not 6.
+
+So before reading $$h$$, factor the inside into the form
+
+$$b(x-h).$$
+
+That avoids one of the most common transformation errors.
+
+## Order outside the function
+
+The outside operations also have an order.
+
+In
+
+$$-f(x)+2,$$
+
+the output of $$f$$ is first multiplied by $$-1$$, then 2 is added.
+
+So the graph is reflected across the $$x$$-axis and then shifted upward.
+
+When several transformations are combined, it is often cleaner to reason from the algebra than to memorize a verbal sequence.
+
+## Sinusoidal models
+
+For
+
+$$y=a\sin\big(b(x-h)\big)+k,$$
+
+the parameters have immediate [modeling interpretations](/2026/07/25/unit-circle-unrolled.html).
+
+$$\vert a\vert$$
+
+is the amplitude.
+
+$$k$$
+
+is the midline.
+
+The period is
+
+$$\frac{2\pi}{\vert b\vert }.$$
+
+The value $$h$$ determines the horizontal shift.
+
+Those quantities often come directly from a physical setting such as a Ferris wheel, seasonal temperature, or daylight hours.
+
+The model should be built from the situation rather than by filling four remembered slots.
 
 <div class="article-note" markdown="1">
-A self-test at the dials: set the sliders to make the black curve have amplitude 2, period π, midline y = 1, and a peak on the y-axis. There are two honest solutions, one using a sine with a shift and one that would use a cosine with none, which is a good reminder that models are not unique. Sine peaks when its argument reaches π/2, so you need $$b(0 - h) = \tfrac{\pi}{2}$$ with $$b = 2$$, which gives $$h = -\tfrac{\pi}{4}$$ — a shift *left* by a quarter of the period, not right. Getting that sign by reasoning rather than by dragging is the whole point of the exercise, and the result is $$2\sin(2x + \tfrac{\pi}{2}) + 1$$, which is $$2\cos(2x) + 1$$: the quarter-lap relationship between the two functions, arrived at from the dials.
+A useful test is to ask where a known feature of the parent graph should move.
+
+That usually determines the sign of the horizontal shift more reliably than memory.
 </div>

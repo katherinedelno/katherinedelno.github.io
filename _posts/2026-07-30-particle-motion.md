@@ -2,7 +2,7 @@
 layout: post
 title: "Why negative acceleration is not slowing down"
 date: 2026-07-30
-description: "Position, velocity, and acceleration are one function and its first two derivatives. Speed is the one that is not a derivative, and it is where most of the errors are."
+description: "A particle speeds up when velocity and acceleration have the same sign, and slows down when their signs differ."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,33 +10,72 @@ math: true
 kind: foundations
 sequence: 13
 interactive: true
-blurb: "Two signs decide it, and speed is the one that is not a derivative"
+blurb: "A particle speeds up when velocity and acceleration have the same sign, and slows down when their signs differ"
 image: "/assets/og/particle-motion.png"
 ---
 
-A particle moving on a line has a position $$s(t)$$, and everything else in the topic is a derivative of it. The course lists four quantities — position, speed, velocity, acceleration — and three of them are derivatives or the function itself. Speed is the odd one out, and that is where the errors are.
+A particle moving on a line has a position $$s(t)$$.
 
-## One function and its first two derivatives
+Velocity and acceleration come from differentiating that position:
 
-Velocity is the derivative of position, and acceleration is the derivative of velocity:
+$$v(t)=s'(t), \qquad a(t)=v'(t)=s''(t).$$
 
-$$v(t) = s'(t), \qquad a(t) = v'(t) = s''(t).$$
+Speed is different.
 
-Velocity is signed. Its sign is the direction of travel: positive means moving in the positive direction, negative means the other way, zero means momentarily at rest. Speed discards that information:
+$$\text{speed}=\vert v(t)\vert .$$
 
-$$\text{speed} = \vert v(t)\vert.$$
+That absolute value is the reason the sign of acceleration alone cannot tell you whether a particle is speeding up or slowing down.
 
-Units follow the rule the framework states for every derivative — the unit of $$f'$$ is the unit of $$f$$ divided by the unit of its input. Position in metres and time in seconds gives velocity in metres per second, and differentiating again gives acceleration in metres per second per second. Nothing about motion is special here; it is [the same reading](/2026/07/21/reading-the-graph-of-f-prime.html) that any rate of change gets.
+## Position, velocity, acceleration, and speed
 
-## Speeding up is a statement about two signs
+Velocity is signed.
 
-Speeding up means the speed is increasing, so it is a question about the derivative of $$\vert v\vert$$. Wherever $$v(t) \neq 0$$, [the chain rule](/2026/07/30/chain-rule-reading-the-layers.html) gives
+If
 
-$$\frac{d}{dt}\,\vert v\vert = \frac{v}{\vert v\vert}\cdot a = \operatorname{sign}(v)\cdot a.$$
+$$v(t)>0,$$
 
-So the speed is increasing exactly when $$\operatorname{sign}(v)$$ and $$a$$ have the same sign — which is to say, when $$v$$ and $$a$$ do. That is the whole rule, and it is a one-line consequence rather than something to memorize. It is also why "the acceleration is negative, so it is slowing down" is wrong: negative acceleration slows a particle that is moving forward and speeds up one that is moving backward.
+the particle is moving in the positive direction.
 
-At $$v = 0$$ the derivative above does not exist, because $$\vert v\vert$$ has [a corner wherever $$v$$ crosses zero](/2026/07/30/where-differentiability-fails.html). At such an instant the particle is neither speeding up nor slowing down; it is turning around.
+If
+
+$$v(t)<0,$$
+
+it is moving in the negative direction.
+
+If
+
+$$v(t)=0,$$
+
+it is momentarily at rest.
+
+Speed removes the direction and keeps only the magnitude.
+
+Units follow the derivative structure. If position is measured in meters and time in seconds, then velocity is measured in meters per second and acceleration in meters per second squared.
+
+## Speeding up depends on two signs
+
+Where $$v(t)\neq0$$,
+
+$$\frac{d}{dt}\vert v\vert = \frac{v}{\vert v\vert }a.$$
+
+So speed increases exactly when $$v$$ and $$a$$ have the same sign.
+
+It decreases when they have opposite signs.
+
+This gives the useful rule:
+
+- $$v>0$$ and $$a>0$$: speeding up
+- $$v<0$$ and $$a<0$$: speeding up
+- $$v>0$$ and $$a<0$$: slowing down
+- $$v<0$$ and $$a>0$$: slowing down
+
+Negative acceleration does not mean slowing down.
+
+It means velocity is decreasing.
+
+Whether that decreases or increases speed depends on the sign of the velocity.
+
+At an instant where $$v=0$$, the particle may be changing direction. The derivative of $$\vert v\vert$$ can fail there because the absolute-value graph has [a corner when velocity crosses zero](/2026/07/30/where-differentiability-fails.html).
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="pm-fns"></div>
@@ -170,20 +209,82 @@ At $$v = 0$$ the derivative above does not exist, because $$\vert v\vert$$ has [
 })();
 </script>
 
-On the first function the velocity is $$3(t-1)(t-3)$$ and the acceleration is $$6t - 12$$, so the signs change at $$t = 1$$, $$t = 2$$, and $$t = 3$$. Those three instants cut $$[0,4]$$ into four intervals, and each one is a different combination: right and slowing, left and speeding up, left and slowing, right and speeding up. Watch the track rather than the graphs and the particle goes out to 4, back to 0, and out to 4 again.
+The visualization shows position, velocity, and acceleration on the same time axis, along with the particle's actual motion on a line.
 
-## The case where physical intuition fails
+For the first example,
 
-A ball thrown straight up at 30 metres per second, with gravity rounded to 10 for clean numbers, has position $$s(t) = 30t - 5t^2$$ in metres. Its acceleration is $$-10$$ metres per second per second at every instant of the flight — constant, negative, never changing.
+$$v(t)=3(t-1)(t-3)$$
 
-It is slowing down for the first three seconds and speeding up for the last three. Nothing about the acceleration changed; the velocity did. On the way up $$v > 0$$ and $$a < 0$$, so the signs disagree and the speed falls. At the apex $$v = 0$$. On the way down $$v < 0$$ and $$a < 0$$, the signs agree, and the speed climbs back. A single constant acceleration produced both answers, which is the clearest argument there is against reading the sign of $$a$$ on its own.
+and
 
-## Displacement is not distance
+$$a(t)=6t-12.$$
 
-Over $$[0,4]$$ the first particle ends at $$s(4) = 4$$ having started at $$s(0) = 0$$, so its displacement is 4. That is not how far it traveled. It turns around at $$t = 1$$ and $$t = 3$$, and its positions at $$t = 0, 1, 3, 4$$ are $$0, 4, 0, 4$$, so the distance covered is $$4 + 4 + 4 = 12$$.
+The relevant signs change at $$t=1$$, $$t=2$$, and $$t=3$$.
 
-Displacement is the net change in $$s$$ and needs only the endpoints. Distance needs the turning points, which means it needs the zeros of $$v$$, which is the reason a question asking for total distance is really a question about the sign of the velocity.
+Those times divide the interval into four different combinations of direction and speed behavior.
+
+## A falling object makes the distinction clear
+
+Suppose
+
+$$s(t)=30t-5t^2.$$
+
+Then
+
+$$v(t)=30-10t$$
+
+and
+
+$$a(t)=-10.$$
+
+The acceleration is negative for the entire motion.
+
+For the first three seconds,
+
+$$v>0 \quad\text{and}\quad a<0.$$
+
+The signs differ, so the object slows down.
+
+At $$t=3$$,
+
+$$v=0.$$
+
+After that,
+
+$$v<0 \quad\text{and}\quad a<0.$$
+
+The signs agree, so the object speeds up.
+
+The acceleration never changed. The velocity changed sign.
+
+## Displacement and total distance
+
+Displacement is the net change in position:
+
+$$s(b)-s(a).$$
+
+Total distance records all motion, regardless of direction.
+
+For the first particle in the visualization, suppose
+
+$$s(0)=0,\quad s(1)=4,\quad s(3)=0,\quad s(4)=4.$$
+
+The displacement over $$[0,4]$$ is
+
+$$s(4)-s(0)=4.$$
+
+But the particle travels 4 units forward, 4 units back, and 4 units forward again.
+
+Its total distance is
+
+$$4+4+4=12.$$
+
+To compute total distance from a position or velocity function, first find the times when the particle changes direction. Those occur where the velocity changes sign.
 
 <div class="article-note" markdown="1">
-Sign charts earn no credit on their own. The framework's exam guidance is explicit that a justification has to connect the work to a definition or a theorem, so a chart showing $$v < 0$$ and $$a < 0$$ on an interval is the evidence, not the answer. The sentence that scores says what the signs mean: the velocity and the acceleration are both negative on that interval, so the speed is increasing and the particle is speeding up.
+A [sign chart](/2026/07/21/reading-the-graph-of-f-prime.html) can organize the work, but the written conclusion should state what the signs mean.
+
+For example:
+
+“The velocity and acceleration are both negative on this interval, so the speed is increasing and the particle is speeding up.”
 </div>

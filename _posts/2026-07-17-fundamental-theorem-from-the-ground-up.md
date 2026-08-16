@@ -2,7 +2,7 @@
 layout: post
 title: "The Fundamental Theorem of Calculus from first principles"
 date: 2026-07-17
-description: "An account of why an area function has a derivative, and of why that derivative recovers the original curve, with a dynamic illustration of the theorem at work."
+description: "Build an accumulation function from area, then differentiate it. The result is the original integrand."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "10 min read"
@@ -10,28 +10,40 @@ math: true
 kind: foundations
 sequence: 22
 interactive: true
-blurb: "Why an area function has a derivative, and why it recovers the curve"
+blurb: "Build an accumulation function from area, then differentiate it. The result is the original integrand"
 featured: true
 image: "/assets/og/fundamental-theorem-from-the-ground-up.png"
 ---
 
-The Fundamental Theorem of Calculus is the most important sentence in the course, and it is routinely memorized without ever being seen. Students learn to compute $$\textstyle \int_1^4 x^2\,dx$$ by antidifferentiating and subtracting, which works, but it hides the remarkable thing the theorem actually says: accumulating a quantity and differentiating are inverse operations. Area, of all things, undoes the derivative.
+Students often meet the Fundamental Theorem of Calculus as an evaluation rule:
 
-This piece builds the theorem the way I build it with students. Start with a machine that measures area, discover that the machine has a derivative, and then notice whose derivative it is.
+$$\int_a^b f(x)\,dx = F(b)-F(a),$$
 
-## A function that measures area
+where $$F'=f$$.
 
-Take any continuous function $$f$$. Do not antidifferentiate it; just watch it. Define a new function by asking, at each input $$x$$, how much area the graph of $$f$$ has swept out so far:
+That rule is important, but it is not the most revealing way to understand the theorem.
+
+The deeper statement is that accumulation and differentiation are inverse operations.
+
+## Build a function out of area
+
+Let $$f$$ be continuous and define
 
 $$A(x) = \int_0^x f(t)\,dt.$$
 
-Two notational points matter here, on the exam as much as in theory. First, the variable inside is $$t$$, not $$x$$. The letter $$x$$ is busy serving as the upper limit, and using it in two roles at once is exactly the kind of ambiguity graders penalize. Second, $$A$$ is a genuine function: feed it an input and it returns a number. $$A(2)$$ is the signed area from $$0$$ to $$2$$, and $$A(0) = 0$$, because no ground has been covered yet.
+The variable $$t$$ belongs inside the integral because $$x$$ is already serving as the upper limit.
 
-The word "signed" is doing real work in that sentence. Where $$f$$ is negative, the region between the graph and the axis counts against the total, so the accumulation function goes down while the curve is below the axis. Hold that thought, because it is about to become the whole theorem.
+The function $$A$$ takes an input $$x$$ and returns the signed accumulation from 0 to $$x$$.
 
-## Watching the accumulation happen
+If $$f$$ is positive, $$A$$ increases.
 
-The picture below shows a function $$f$$ (top) and its accumulation function $$A$$ (bottom) being traced out as $$x$$ sweeps to the right. Drag the slider and watch both panels at once.
+If $$f$$ is negative, $$A$$ decreases.
+
+And
+
+$$A(0)=0.$$
+
+## Watch the accumulation
 
 <div class="viz" markdown="0">
   <canvas id="ftc-top" width="700" height="230"></canvas>
@@ -127,48 +139,148 @@ The picture below shows a function $$f$$ (top) and its accumulation function $$A
 })();
 </script>
 
-## Why the slope of A is the height of f
+The upper graph shows $$f$$.
 
-Here is the argument, and it fits in a paragraph. Ask how fast $$A$$ is growing at some moment $$x$$. Push the sweep line a small step $$h$$ further. The new area picked up, $$A(x+h) - A(x)$$, is a thin sliver, [very nearly a rectangle](/2026/07/25/riemann-sums-watching-rectangles.html) with width $$h$$ and height $$f(x)$$, because a continuous function barely moves over a small interval. So
+The lower graph shows $$A$$.
 
-$$\frac{A(x+h) - A(x)}{h} \approx \frac{f(x)\cdot h}{h} = f(x),$$
+As $$x$$ moves to the right, the shaded region in the upper panel records the signed area accumulated so far.
 
-and the approximation sharpens to equality as $$h \to 0$$. Continuity of $$f$$ is what pays for that last step, via the Squeeze Theorem, since the sliver's height is trapped between the minimum and maximum of $$f$$ on the small interval. But the left side is the definition of the derivative of $$A$$. The conclusion:
+At the same time, the lower graph traces the value of $$A(x)$$.
+
+Three things are worth watching.
+
+When $$f$$ is above the axis, $$A$$ rises.
+
+When $$f$$ is below the axis, $$A$$ falls.
+
+And the slope of $$A$$ at each point matches the height of $$f$$ there.
+
+That last observation is the first part of the Fundamental Theorem.
+
+## Why $$A'(x)=f(x)$$
+
+Consider a small increase from $$x$$ to $$x+h$$.
+
+The change in accumulated area is
+
+$$A(x+h)-A(x).$$
+
+For small $$h$$, this additional region is [close to a rectangle](/2026/07/25/riemann-sums-watching-rectangles.html) with width $$h$$ and height $$f(x)$$.
+
+So
+
+$$A(x+h)-A(x) \approx f(x)h.$$
+
+Divide by $$h$$:
+
+$$\frac{A(x+h)-A(x)}{h} \approx f(x).$$
+
+As $$h\to0$$, continuity makes the approximation exact.
+
+Therefore
 
 $$A'(x) = f(x).$$
 
-That is the first part of the Fundamental Theorem: every continuous function has an antiderivative, namely its own accumulation function. The rate at which area accumulates under a curve is the height of the curve. Once you see it in the animation, with a tall curve producing a steep accumulation and a below-axis curve producing a falling one, it stops being a formula and becomes something close to obvious.
+The rate at which signed area accumulates is the value of the function being accumulated.
 
-## The evaluation shortcut is a corollary
+That is the central connection between integration and differentiation.
 
-The version everyone uses,
+## The evaluation rule follows
 
-$$\int_a^b f(x)\,dx = F(b) - F(a) \quad\text{where } F' = f,$$
+Now suppose $$F$$ is any antiderivative of $$f$$.
 
-follows almost immediately. The accumulation function $$A$$ is an antiderivative of $$f$$, and your $$F$$ is another. Two antiderivatives of the same function differ by a constant, which is a Mean Value Theorem fact: a function with zero derivative is constant. So $$F = A + C$$, and
+Then $$A$$ and $$F$$ have the same derivative:
 
-$$F(b) - F(a) = \big(A(b) + C\big) - \big(A(a) + C\big) = A(b) - A(a) = \int_a^b f(t)\,dt,$$
+$$A'=F'=f.$$
 
-since $$A(a)$$ subtracts off the area before $$a$$. The constant cancels, which is also why the $$+C$$ never matters in a definite integral. The everyday computation is a corollary of the deeper statement, not the theorem itself.
+So they differ by a constant.
 
-## What this looks like on the exam
+Write
 
-The FTC appears on the free-response section in three reliable costumes.
+$$F(x)=A(x)+C.$$
 
-**The defined accumulation function.** You are given a graph of $$f$$ and the definition $$\textstyle g(x) = \int_2^x f(t)\,dt$$, then asked for $$g(0)$$, $$g'(3)$$, and $$g''(3)$$. Translate once and everything follows: $$g' = f$$ and $$g'' = f'$$. So $$g'(3)$$ is the height of the given graph at 3, and $$g''(3)$$ is its slope there. For $$\textstyle g(0) = \int_2^0 f(t)\,dt = -\int_0^2 f(t)\,dt$$, reverse the limits and read the geometric area off the graph, minding signs. Every question about $$g$$ is a question about the picture of $$f$$.
+Then
 
-**The chain-rule hybrid.** If the upper limit is a function of $$x$$, the FTC peels off the integral and the chain rule handles the inner function:
+$$F(b)-F(a) = A(b)-A(a).$$
 
-$$\frac{d}{dx}\int_0^{x^2} \cos(t)\,dt = \cos\!\left(x^2\right)\cdot 2x.$$
+But
 
-Substitute into the integrand, then multiply by the derivative of the limit.
+$$A(b)-A(a) = \int_a^b f(t)\,dt.$$
 
-**Net change.** Since accumulating a rate gives total change, $$\textstyle f(b) = f(a) + \int_a^b f'(t)\,dt$$. This is the workhorse of every in-context FRQ: final amount equals starting amount plus accumulated rate. When a tank starts with 30 gallons and water flows in at rate $$R(t)$$, the amount at time 6 is $$\textstyle 30 + \int_0^6 R(t)\,dt$$. No antiderivative formula is needed, and on a calculator section, none is wanted.
+Therefore
 
-## The sentence worth remembering
+$$\int_a^b f(x)\,dx = F(b)-F(a).$$
 
-Differentiation asks how fast something is changing at this instant. Integration asks how much has accumulated in total. The Fundamental Theorem says these two questions are inverses of each other: "how much so far" is itself a quantity whose "how fast" is the original function. Newton and Leibniz are credited with calculus not because they computed areas (Archimedes did that) or slopes (Fermat did that), but because they saw that the two computations were secretly one.
+The familiar evaluation rule follows from the accumulation-function statement.
+
+The constant disappears because subtraction removes it.
+
+## Three common forms
+
+### An accumulation function
+
+Suppose
+
+$$g(x) = \int_2^x f(t)\,dt.$$
+
+Then
+
+$$g'(x)=f(x).$$
+
+And, where $$f$$ is differentiable,
+
+$$g''(x)=f'(x).$$
+
+Values of $$g$$ come from signed area.
+
+Derivatives of $$g$$ come from the graph of $$f$$.
+
+### A variable upper limit
+
+If the upper limit is itself a function of $$x$$, use the chain rule.
+
+For example,
+
+$$\frac{d}{dx} \int_0^{x^2}\cos(t)\,dt = \cos(x^2)\cdot2x.$$
+
+The Fundamental Theorem evaluates the integrand at the upper limit. The chain rule contributes the derivative of that upper limit.
+
+### Net change
+
+If $$f'$$ is a rate of change, then
+
+$$f(b) = f(a) + \int_a^b f'(t)\,dt.$$
+
+This is the net change form.
+
+A starting amount plus accumulated rate gives the final amount.
+
+If a tank begins with 30 gallons and water enters at rate $$R(t)$$, then after 6 units of time the amount is
+
+$$30+\int_0^6R(t)\,dt.$$
+
+No antiderivative formula is required if the integral is evaluated numerically.
+
+## A useful self-test
 
 <div class="article-note" markdown="1">
-A good self-test: sketch any $$f$$ you like, then, without computing a single antiderivative, sketch $$\textstyle A(x) = \int_0^x f$$. Mark where $$A$$ rises, falls, peaks, and bends. If you can do that from the picture alone, you understand the theorem. The algebra is just bookkeeping.
+Sketch any continuous function $$f$$.
+
+Then sketch
+
+$$A(x) = \int_0^x f(t)\,dt$$
+
+without finding an antiderivative.
+
+Use only the graph of $$f$$.
+
+Where $$f$$ is positive, $$A$$ should rise.
+
+Where $$f$$ is negative, $$A$$ should fall.
+
+Where $$f=0$$, $$A$$ may have an extremum.
+
+Where $$f$$ is increasing, $$A$$ should be concave up.
+
+If you can build that second graph from the first, the theorem is doing more than supplying an integration shortcut.
 </div>

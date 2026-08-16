@@ -2,57 +2,100 @@
 layout: post
 title: "Which chi-square test? Independence or homogeneity"
 date: 2026-07-15
-description: "With goodness-of-fit removed from the revised AP Statistics course, the chi-square decision comes down to independence versus homogeneity. Here is how to tell them apart and the conditions to check."
+description: "The two chi-square tests use the same calculation. The study design determines whether the question is about association within one sample or distributions across several groups."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 15
 interactive: false
-blurb: "Independence versus homogeneity, and how to tell them apart"
+blurb: "The two chi-square tests use the same calculation. The study design determines whether the question is about association within one sample or distributions across several groups"
 image: "/assets/og/which-chi-square-test.png"
 ---
 
-Starting with the revised AP Statistics course, the College Board removed the chi-square goodness-of-fit test. That actually simplifies a question students used to find confusing. The chi-square procedures you will use on the exam now all involve two-way tables, so the real decision is between just two tests: the test for independence and the test for homogeneity.
+The chi-square tests for independence and homogeneity use the same test statistic:
 
-They are easy to mix up, because they use the same statistic,
+$$\chi^2 = \sum \frac{(O-E)^2}{E}.$$
 
-$$\chi^2 = \sum \frac{(O - E)^2}{E},$$
+They also use the same degrees of freedom:
 
-and the same degrees of freedom, $$(r-1)(c-1)$$, where $$r$$ and $$c$$ are the number of rows and columns. What separates them is the question being asked and, above all, how the data were collected.
+$$(r-1)(c-1).$$
+
+The distinction comes from how the data were collected and what the question asks.
 
 ## Test for independence
 
-One sample, two categorical variables. You take a single group of individuals and classify each one two ways, then ask whether the two variables are associated. For example, you survey one group of students and record both their grade level and their preferred study method, and ask whether study method is related to grade level.
+Use a test for independence when one sample is classified according to two categorical variables.
+
+For example, take one random sample of students.
+
+For each student, record grade level and preferred study method.
+
+The question is whether those two variables are associated in the population.
+
+The hypotheses concern independence between two categorical variables.
 
 ## Test for homogeneity
 
-Two or more separate samples, one categorical variable. Here you have distinct groups collected independently, and you ask whether they share the same distribution of a single variable. For example, you survey seniors and juniors separately and compare how each group's study methods are distributed.
+Use a test for homogeneity when separate groups or samples are compared on one categorical response.
 
-## The tell is in how the data were collected
+For example, sample juniors and seniors separately.
 
-Because the arithmetic is identical, students often guess between the two. Do not guess, read the design. One sample cross-classified two ways is a test for independence. Several separate groups compared on one variable is a test for homogeneity. The way the data were gathered decides the test, not the way the table looks on the page.
+Within each group, record preferred study method.
 
-## A quick example of each
+The question is whether the distribution of study method is the same across the populations.
 
-Say you want to know whether study method is related to how students do in a course. If you take one class of 40 students and record, for each student, both their main study method (alone or in a group) and whether they earned an A, you have one sample split by two questions. That is a test for independence.
+## The table can look identical
 
-Now suppose instead you take 40 students who study alone and a separate 40 who study in groups, and record each student's grade. Those are two groups collected separately and compared on one variable. That is a test for homogeneity.
+A two-way table does not reveal by itself which test generated it.
 
-The table looks the same either way, and the computation is identical. The only difference is that in the first case one group was classified by two questions, and in the second, two groups were each asked one.
+The same counts could arise from:
 
-## Check the conditions before you compute
+- one sample classified by two variables
+- several separate samples measured on one variable
 
-Both tests share the same three conditions, and all three are easy points to lose:
+The arithmetic is identical.
 
-- **Randomization**: for a test of independence, the data come from a random sample; for a test of homogeneity, from independent random samples or a randomized experiment. The two tests state this condition differently, and the difference is the same design distinction the test itself turns on.
-- **Expected counts**: the revised framework asks that every expected count be greater than 5. Note that this means *expected* counts, not observed ones — checking the observed counts is one of the most common errors I see. Older review books often write the condition as "at least 5"; either phrasing will read as correct on the exam, but the framework's wording is the one to write.
-- **The 10% condition**: when sampling without replacement, check that $$n \leq 0.10N$$. This one is unnecessary when the data come from a randomized experiment.
+The design is not.
 
-## Finish the conclusion properly
+So read the description of data collection before naming the procedure.
 
-State the test statistic, the degrees of freedom, and the p-value, then compare the p-value to your significance level $$\alpha$$ and write a conclusion in context that refers back to [the alternative hypothesis](/2026/07/14/writing-parameters-in-ap-statistics.html). A conclusion that never names the actual variables, or that "accepts" the null hypothesis, leaves earned points on the table.
+## Expected counts
+
+For either test, the expected count in a cell under the null is
+
+$$E = \frac{(\text{row total})(\text{column total})}{\text{grand total}}.$$
+
+The chi-square statistic compares observed and expected counts across all cells.
+
+Large discrepancies produce a larger value of $$\chi^2$$.
+
+The relevant large-count condition is checked using expected counts, not observed counts.
+
+That distinction matters.
+
+## Randomization and independence
+
+The randomization condition depends on the design.
+
+A test for independence commonly begins with one random sample.
+
+A homogeneity test uses independent random samples or may arise from a randomized experiment.
+
+When sampling without replacement from a finite population, the usual 10% condition supports approximate independence within the sample.
+
+The statistical conditions should match the actual way the data were generated.
+
+## Conclusion
+
+After computing the statistic and p-value, compare the p-value with $$\alpha$$.
+
+For a test of independence, the conclusion concerns evidence of an association between the two categorical variables.
+
+For a test of homogeneity, the conclusion concerns evidence that the population distributions differ.
 
 <div class="article-note" markdown="1">
-If you have older review books that still include a goodness-of-fit test for a single categorical variable, that is the piece no longer part of the course. It remains a valid statistical idea, but it will not appear on the current AP exam. The real goal, either way, is being able to look at an unfamiliar problem under time pressure, decide which test it calls for, and justify that choice on your own.
+Do not “accept” the null after a large p-value.
+
+Failing to reject means the data did not provide convincing evidence for [the alternative](/2026/07/14/writing-parameters-in-ap-statistics.html).
 </div>

@@ -2,26 +2,52 @@
 layout: post
 title: "Simpson's paradox and the lurking variable"
 date: 2026-07-27
-description: "A treatment can be superior in every subgroup and inferior overall. Real medical data, an adjustable case mix, and the reason observational comparisons require such care."
+description: "An overall association can reverse after data are separated into meaningful subgroups. The reversal comes from unequal weighting across those groups."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 3
 interactive: true
-blurb: "Better in every subgroup, worse overall: the lurking variable at work"
+blurb: "An overall association can reverse after data are separated into meaningful subgroups. The reversal comes from unequal weighting across those groups"
 image: "/assets/og/simpsons-paradox.png"
 ---
 
-In 1986, researchers compared two treatments for kidney stones using the records of a British hospital group. Open surgery succeeded in 78% of its cases; the newer, less invasive procedure succeeded in 83%. The natural reading is that the newer procedure is better, and the natural reading is wrong. Split the patients by stone size and open surgery wins among small stones, 93% to 87%, and wins again among large stones, 73% to 69%. The treatment that is better for every patient is worse on paper.
+An association observed in combined data can reverse after the data are separated into relevant groups.
 
-This reversal, an association that holds in every subgroup yet flips when the subgroups are combined, is called Simpson's paradox, and it is not a curiosity. It is the sharpest available demonstration of why AP Statistics insists so firmly on the vocabulary of lurking variables, confounding, and the limits of observational data.
+This is Simpson's paradox.
 
-## How the reversal happens
+A well-known example comes from a comparison of two treatments for kidney stones.
 
-Nothing in the arithmetic is exotic. An overall success rate is a weighted average of subgroup rates, weighted by how many patients each subgroup contributes. In the kidney-stone data, surgeons steered the difficult large stones toward open surgery and the easy small stones toward the new procedure. Open surgery's overall figure was therefore an average dominated by hard cases, and the new procedure's by easy ones. Each treatment's overall rate says as much about its caseload as about its quality.
+Overall, the less invasive treatment had a higher success rate.
 
-The instrument below holds the four subgroup success rates fixed at their published values. The slider controls only the case mix: what fraction of the difficult cases each treatment receives.
+But within both small-stone and large-stone groups, open surgery had the higher success rate.
+
+The reversal came from the way patients were distributed between the treatments.
+
+## The kidney-stone example
+
+Open surgery succeeded in about 93% of small-stone cases and 73% of large-stone cases.
+
+The less invasive procedure succeeded in about 87% of small-stone cases and 69% of large-stone cases.
+
+So open surgery had the higher success rate in both subgroups.
+
+Yet the combined success rates favored the less invasive procedure.
+
+Why?
+
+The treatments did not receive the same mix of patients.
+
+Surgeons were more likely to use open surgery for difficult large stones.
+
+The less invasive treatment received more of the easier small-stone cases.
+
+An overall success rate is a weighted average of subgroup rates.
+
+Different weights can therefore reverse the comparison.
+
+## Change only the case mix
 
 <div class="viz" markdown="0">
   <canvas id="sx-cv" width="700" height="290"></canvas>
@@ -98,14 +124,56 @@ The instrument below holds the four subgroup success rates fixed at their publis
 })();
 </script>
 
-## The statistical moral
+The subgroup success rates remain fixed.
 
-The paradox settles a question students often ask about the design unit: why so much ceremony about random assignment? Because random assignment is precisely the device that severs the link the slider controls. When treatments are assigned by coin flip, difficult cases distribute themselves evenly, the case mixes match, and the overall comparison means what it appears to mean. When treatments are assigned by human judgment, as in any observational study, the assignment mechanism is free to correlate with severity, and the aggregate numbers inherit that correlation. The kidney-stone surgeons were making sensible medical decisions; the data recorded their sensible decisions as a statistical illusion.
+Only the fraction of difficult cases assigned to each treatment changes.
 
-The exam vocabulary maps onto the picture exactly. Stone size is a lurking variable, associated both with the treatment received and with the outcome, which is the definition of confounding. The corrected analysis, comparing like with like inside each subgroup, is stratification. And the one-sentence conclusion the rubric wants is a causal disclaimer: because this is an observational study, the overall association between treatment and success cannot support a causal claim.
+At an even case mix, the overall comparison agrees with the subgroup comparisons.
 
-A last caution keeps the lesson honest: the paradox does not say that subgroup rates are always the truth and aggregates always the lie. Splitting data by a variable that is a consequence of the treatment, rather than a pre-existing condition, can manufacture reversals just as spurious in the other direction. Which level of the data answers the question depends on what caused what, and that dependence, formalized, is the modern field of causal inference. The AP course's insistence on naming the study design before interpreting any number is the first chapter of that field.
+As the treatment groups become more imbalanced in stone severity, the aggregate rates can reverse.
+
+Nothing about the treatment-specific subgroup rates changed.
+
+Only the weights changed.
+
+## The lurking variable
+
+Stone size is related to the treatment received.
+
+It is also related to the probability of success.
+
+That makes it a confounding variable in the treatment-outcome association.
+
+The aggregate comparison mixes together the effect of treatment and the effect of severity.
+
+Stratifying by stone size compares more similar patients and exposes the reversal.
+
+This is why study design matters before any calculation is interpreted.
+
+## Random assignment and confounding
+
+Random assignment is designed to break systematic relationships between treatment assignment and pre-existing characteristics.
+
+If patients are assigned to treatment at random, variables such as disease severity should be balanced between groups apart from chance variation.
+
+In an observational study, treatment choice may depend on prognosis, physician preference, patient characteristics, or other factors.
+
+Those variables can then confound the observed treatment-outcome relationship.
+
+An observational association can therefore be real without being causal.
+
+## Aggregated data are not always wrong
+
+Simpson's paradox does not mean that subgroup analysis is automatically better.
+
+The relevant level of analysis depends on the causal structure.
+
+Conditioning on a variable caused by the treatment can itself introduce bias.
+
+The important question is why the groups differ and where the third variable sits in the sequence of events.
 
 <div class="article-note" markdown="1">
-The reversal has appeared in consequential places: in the 1973 Berkeley graduate admissions data, where the university's overall admission rate appeared to favor men while most individual departments slightly favored women — the explanation being that women had applied disproportionately to the most competitive departments — and in batting averages, where one player can trail another in both halves of a season yet lead for the year. A worthwhile exercise with the slider: find the exact case mix at which the overall rates tie, and note that nothing medical happens there at all; the tie is a fact about arithmetic, which is the entire point.
+For AP Statistics, the practical lesson is simpler.
+
+Before making a causal claim, identify the study design and consider whether a lurking or confounding variable could explain the association.
 </div>

@@ -2,35 +2,116 @@
 layout: post
 title: "Which inference procedure?"
 date: 2026-07-31
-description: "Six procedures, two purposes, and three questions that sort them. The decision is settled by how the data were collected, not by the numbers the problem happens to supply."
+description: "Choose an inference procedure from the response type, the number and relationship of groups, and whether the goal is estimation or hypothesis testing."
 course: "AP Statistics"
 read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 16
 interactive: true
-blurb: "Three questions about the design, asked before any arithmetic"
+blurb: "Choose an inference procedure from the response type, the number and relationship of groups, and whether the goal is estimation or hypothesis testing"
 featured: true
 image: "/assets/og/which-inference-procedure.png"
 ---
 
-A student who can execute every inference procedure in the course can still lose the question, because choosing the procedure happens before any of that skill is used. The framework treats selection as its own thing, attaching the skill *identify appropriate statistical inference methods* to topic after topic across both inference units, and the reason is that the choice is settled by the study design rather than by the numbers.
+Choosing an inference procedure happens before any formula is used.
 
-Eleven procedures survive in the revised course: six families, five of them available both as an interval and as a test, and chi-square as a test only. That sounds like a lot to sort until the sorting is written down, at which point it is three questions.
+The study design usually determines the choice.
 
-## Three questions, in order
+A useful sequence is to identify the response type, identify the groups and their relationship, and then decide whether the goal is estimation or testing.
 
-**What kind of response was recorded?** If each individual contributes a category — yes or no, brand A or B, resolved or not — the parameter is a proportion. If each individual contributes a number, it is a mean. Nothing else about the problem matters until this is answered, because it decides which half of the course you are in.
+## Question 1: what kind of response was recorded?
 
-**How many groups, and where did they come from?** One group gives a one-sample procedure. Two independently collected groups give a two-sample one. A single group classified two ways gives a two-way table and a chi-square procedure.
+If each individual contributes a category, the parameter usually involves a proportion or a categorical distribution.
 
-**If there are two sets of numbers, are they paired?** Two measurements on the same individuals, or on individuals deliberately matched, is not two samples. It is one sample of differences.
+Examples include:
 
-Only after those three is there a fourth: is the question asking what the parameter *is*, or whether a claim about it survives? The first is an interval and the second is a test.
+- yes or no
+- success or failure
+- preferred category
 
-## The drill
+If each individual contributes a numerical measurement, the parameter usually involves a mean.
 
-Classify the design. No arithmetic, and no numbers are supplied for any.
+Examples include:
+
+- height
+- wait time
+- blood pressure
+- test score
+
+This first distinction separates proportion procedures from mean procedures.
+
+## Question 2: how many groups are there?
+
+One sample gives a one-sample procedure.
+
+Two independently collected groups give a two-sample procedure.
+
+Several categorical groups summarized in a two-way table may call for chi-square.
+
+The number of columns in a dataset is not enough.
+
+The way the observations were collected matters.
+
+## Question 3: are numerical observations paired?
+
+Two measurements can look like two samples while actually forming pairs.
+
+Examples include:
+
+- before and after measurements on the same people
+- twins or deliberately matched subjects
+- two measurements on the same experimental unit
+
+For paired data, compute one difference for each pair.
+
+The analysis becomes a one-sample $$t$$-procedure on those differences.
+
+The parameter is
+
+$$\mu_d,$$
+
+[the population mean difference](/2026/07/14/writing-parameters-in-ap-statistics.html).
+
+It is not
+
+$$\mu_1-\mu_2$$
+
+for two independent populations.
+
+## Question 4: interval or test?
+
+A confidence interval estimates a parameter or difference.
+
+A hypothesis test evaluates evidence about a specific claim.
+
+Wording such as
+
+“estimate,”
+
+“find a plausible range,”
+
+or
+
+“by how much”
+
+usually points toward an interval.
+
+Wording such as
+
+“is there convincing evidence,”
+
+“test the claim,”
+
+or
+
+“do the data support”
+
+usually points toward a test.
+
+The purpose and the procedure family are separate decisions.
+
+## Classify the design
 
 <div class="viz" markdown="0">
   <div class="wi-stem" id="wi-stem"></div>
@@ -144,26 +225,42 @@ Classify the design. No arithmetic, and no numbers are supplied for any.
 })();
 </script>
 
-## The pair that looks like two samples
+The drill presents scenarios without arithmetic.
 
-Scenarios three and eight are paired designs, and both invite the two-sample answer because two sets of numbers arrive. The framework's instruction is unusually direct about what to do instead: for a matched pairs design with two dependent samples, the appropriate analysis calculates differences between pairs of values to produce *one* sample of differences, and the procedure is a one-sample $$t$$-interval for a population mean difference.
+That is intentional.
 
-So a paired design does not get its own family of formulas. It gets converted into a one-sample problem before any formula is used, and the parameter changes with it — from $$\mu_1 - \mu_2$$, the difference of two population means, to $$\mu_d$$, the mean of a population of differences. Those are different quantities, and [defining the parameter correctly](/2026/07/14/writing-parameters-in-ap-statistics.html) is where the distinction is graded.
+The point is to identify which feature of the design determines the method.
 
-The tell is never the arithmetic. It is whether the two numbers in a pair came from the same individual, or from two individuals matched deliberately. Forty runners timed twice is forty differences. Forty city employees and forty suburban ones is two samples, and no amount of equal sample size makes them pairs.
+A correct choice should be explainable in words before any calculator command is entered.
 
-## The pair that looks like one table
+## Two chi-square designs
 
-Scenarios five and six both end in a two-way table, both use $$\chi^2 = \textstyle\sum (O-E)^2/E$$, and both have $$(r-1)(c-1)$$ degrees of freedom. The tables can be identical. [Only the design separates them](/2026/07/15/which-chi-square-test.html): one sample classified two ways is a test for independence, and several separately collected samples compared on one variable is a test for homogeneity.
+A two-way table can arise in two ways.
 
-The framework keeps the distinction alive even in the conditions, where the randomization requirement is worded one way for independence and another for homogeneity. A procedure whose arithmetic is identical and whose conditions differ is a procedure that is really two.
+One sample classified according to two categorical variables calls for a test of independence.
 
-## Estimate, or judge a claim
+Several separate groups compared on one categorical response call for a test of homogeneity.
 
-The second row of buttons is a separate decision and it fails separately. A question that supplies a specific value to argue about — an advertised 600 calories, a claimed 60% — is offering a null hypothesis and wants a test. A question that asks how large something is, or by how much two things differ, wants an interval.
+The tables and test statistic can be identical.
 
-The wording is reliable enough to use as a rule. *Is there convincing evidence that*, *do the data support*, and *test the claim* are tests. *Estimate*, *find a range of plausible values*, and *by how much* are intervals. Scenario seven mentions 500 millilitres and is still an interval, because the number arrives as context rather than as a claim to be judged.
+[The data collection distinguishes the procedures](/2026/07/15/which-chi-square-test.html).
+
+## A compact map
+
+| Design | Typical procedure |
+|---|---|
+| One categorical sample | One-proportion $$z$$ |
+| Two independent categorical groups | Two-proportion $$z$$ |
+| One numerical sample | One-sample $$t$$ |
+| Two independent numerical groups | Two-sample $$t$$ |
+| Paired numerical data | One-sample $$t$$ on differences |
+| One sample, two categorical variables | Chi-square test for independence |
+| Several groups, one categorical variable | Chi-square test for homogeneity |
+
+Then decide whether the question asks for an interval or a test.
+
+Chi-square appears as a test only.
 
 <div class="article-note" markdown="1">
-A drill in the same spirit as the tool, but harder: take a released free-response question, cover everything after the first sentence of the stem, and name the procedure from the design alone. Then uncover the rest and check. The scenarios that resist are the ones where the design is described last, which is a writing choice rather than a statistical one, and noticing it is worth more under time pressure than any formula on the reference sheet.
+The fastest way to become fluent is to practice classification separately from computation.
 </div>

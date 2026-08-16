@@ -2,20 +2,32 @@
 layout: post
 title: "Functions inside functions"
 date: 2026-07-30
-description: "Composition runs one function's output into another's input, and the order changes everything. A pipeline to operate, and the skill of reading a composite from the outside in."
+description: "Composition sends the output of one function into another. Order matters, and the domain of the composite has to satisfy both functions."
 course: "AP Precalculus"
 read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 4
 interactive: true
-blurb: "Feed one function through another and see why order matters"
+blurb: "Composition sends the output of one function into another. Order matters, and the domain of the composite has to satisfy both functions"
 image: "/assets/og/functions-inside-functions.png"
 ---
 
-A function is a machine: a number goes in, a number comes out. Composition is what happens when two machines run in a row — the output of the first is fed directly into the second, no stops. We write the result as $$f(g(x))$$, and it is worth reading that notation aloud the way it actually operates: $$x$$ goes into $$g$$ first, and whatever $$g$$ produces goes into $$f$$. The function written on the outside acts last.
+Function composition connects two functions in sequence.
 
-The pipeline below runs live. Choose the two machines, slide the input, and watch the intermediate value pass from one to the other.
+In
+
+$$f(g(x)),$$
+
+the input goes into $$g$$ first.
+
+The output of $$g$$ then becomes the input of $$f$$.
+
+The inside function acts first.
+
+The outside function acts last.
+
+## Follow the pipeline
 
 <div class="viz" markdown="0">
   <canvas id="cf-cv" width="700" height="320"></canvas>
@@ -177,32 +189,168 @@ The pipeline below runs live. Choose the two machines, slide the input, and watc
 })();
 </script>
 
+The visualization shows the intermediate value between the two functions.
+
+It also graphs the composite.
+
+If the first function produces an output that the second function cannot accept, the composite is undefined there.
+
+Swapping the order generally changes the result.
+
 ## Order matters
 
-Set the machines to $$g(x) = 2x + 1$$ first and $$f(x) = x^2$$ second, and read the pipeline at $$x = 3$$: the 3 becomes 7, and the 7 becomes 49. That is $$f(g(3)) = (2 \cdot 3 + 1)^2 = 49$$. Now press "swap f and g," so the squaring happens first: 3 becomes 9, and 9 becomes 19. That is $$g(f(3)) = 2 \cdot 3^2 + 1 = 19$$.
+Let
 
-Same two machines, same input, different answers — because $$(2x+1)^2$$ and $$2x^2 + 1$$ are different functions. Composition is not commutative, and this is the single most common composition error: treating $$f(g(x))$$ and $$g(f(x))$$ as interchangeable because both "use $$f$$ and $$g$$." The graph makes the difference visible faster than the algebra does. Swap the order and the composite's whole shape changes.
+$$g(x)=2x+1$$
 
-## Reading a composite from the outside in
+and
 
-The harder skill, and the one exams reward, runs in reverse: you are handed the finished composite and asked to see the machines inside it. Take
+$$f(x)=x^2.$$
 
-$$h(x) = \sqrt{3x + 1}.$$
+At $$x=3$$,
 
-Nobody hands you $$f$$ and $$g$$; you have to find them. The reliable method is to ask what the function does to its input, *last*. Here, the last thing that happens is a square root — so the outside function is $$f(u) = \sqrt{u}$$, and everything under the root is the inside, $$g(x) = 3x + 1$$. Check by running the pipeline forward: $$x = 5$$ gives $$3(5) + 1 = 16$$, and $$\sqrt{16} = 4$$. The decomposition works when composing it back gives you the original function.
+$$g(3)=7,$$
 
-Two habits make this reliable. First, give the inside a name — writing $$u = 3x + 1$$, so that $$h = \sqrt{u}$$, turns a nested expression into two simple ones. Second, expect more than one right answer: $$h(x) = (x+2)^6$$ decomposes naturally as $$u = x + 2$$ inside the sixth power, but $$u = (x+2)^2$$ inside a cube is also correct. Decompositions are not unique; useful ones put the messy part inside and leave the outside simple.
+so
 
-## Domains travel through the pipeline
+$$f(g(3)) = f(7) = 49.$$
 
-Set $$g(x) = 2x + 1$$ first and $$f(x) = \sqrt{x}$$ second, and slide the input left. The composite's graph stops abruptly — to the left of $$x = -\tfrac{1}{2}$$, the first machine produces negative outputs, and the second machine cannot accept them. The pipeline readout says so directly: $$g(x)$$ has a value, and $$f(g(x))$$ is undefined.
+Reverse the order.
 
-This is the general rule, and it is worth stating carefully: $$x$$ is in the domain of $$f \circ g$$ exactly when $$x$$ is in the domain of $$g$$ *and* $$g(x)$$ is in the domain of $$f$$. The domain of a composite is inherited from both machines, not read off the final simplified formula. Simplification can hide the restriction; the pipeline cannot.
+First,
 
-## Why this skill compounds
+$$f(3)=9.$$
 
-Nearly everything built later in precalculus is a composition wearing a disguise. [A transformed graph](/2026/07/25/transformations-four-dials.html) like $$y = \sin(2x - \pi)$$ is a composition; [an exponential model](/2026/07/30/logarithms-undo-exponentials.html) like $$A(t) = 50e^{0.03t}$$ is a composition; inverting a function is running a pipeline backward, machine by machine, last one first. And for those continuing on: calculus differentiates composite functions by exactly the outside-in reading practiced here — the students who struggle there are almost never confused about the new rule, only about seeing which function is inside which. Learn to see the seams now and that course gets noticeably easier.
+Then
+
+$$g(f(3)) = g(9) = 19.$$
+
+Thus
+
+$$f\circ g$$
+
+and
+
+$$g\circ f$$
+
+are different functions.
+
+Composition is not commutative.
+
+## Reading a composite from the outside
+
+Suppose
+
+$$h(x)=\sqrt{3x+1}.$$
+
+To decompose it, ask what operation happens last.
+
+The final operation is a square root.
+
+So a natural choice is
+
+$$f(u)=\sqrt{u}$$
+
+and
+
+$$g(x)=3x+1.$$
+
+Then
+
+$$h(x)=f(g(x)).$$
+
+Giving the inside expression a temporary name often makes the structure easier to see.
+
+Write
+
+$$u=3x+1.$$
+
+Then
+
+$$h=\sqrt{u}.$$
+
+The decomposition is not always unique.
+
+For
+
+$$(x+2)^6,$$
+
+one valid decomposition is a sixth power applied to $$x+2$$.
+
+Another is a cube applied to $$(x+2)^2$$.
+
+A useful decomposition is usually the one that makes the relevant operation easiest to analyze.
+
+## Domains pass through both functions
+
+Suppose
+
+$$g(x)=2x+1$$
+
+and
+
+$$f(x)=\sqrt{x}.$$
+
+Then
+
+$$f(g(x)) = \sqrt{2x+1}.$$
+
+For the composite to exist, $$x$$ must be in the domain of $$g$$, and $$g(x)$$ must lie in the domain of $$f$$.
+
+Here that means
+
+$$2x+1\ge0,$$
+
+so
+
+$$x\ge-\frac12.$$
+
+In general,
+
+$$x\in\operatorname{dom}(f\circ g)$$
+
+exactly when
+
+$$x\in\operatorname{dom}(g)$$
+
+and
+
+$$g(x)\in\operatorname{dom}(f).$$
+
+Simplifying an expression can sometimes hide an original restriction, so it is worth determining the domain from the composition itself.
+
+## Composition appears everywhere later
+
+[Graph transformations](/2026/07/25/transformations-four-dials.html) are compositions.
+
+[Exponential and logarithmic models](/2026/07/30/logarithms-undo-exponentials.html) are compositions.
+
+Inverse functions undo compositions in reverse order.
+
+In calculus, the chain rule differentiates compositions by identifying the same inner and outer layers.
+
+The notation becomes more elaborate later, but the underlying reading skill is the same.
 
 <div class="article-note" markdown="1">
-A self-test at the pipeline: set $$g$$ to $$\sqrt{x}$$ and $$f$$ to $$x^2$$, then press swap and compare the two composites at $$x = -4$$. One returns 4 and the other is undefined, though both simplify to formulas that look harmless, $$x$$ and $$\vert x\vert$$. The order decided which restriction survived, and neither finished formula records it.
+A useful self-test is to compare
+
+$$(\sqrt{x})^2$$
+
+with
+
+$$\sqrt{x^2}.$$
+
+The first is defined only for
+
+$$x\ge0$$
+
+and simplifies to $$x$$ on that domain.
+
+The second is defined for every real $$x$$ and equals
+
+$$\vert x\vert .$$
+
+The operations look similar.
+
+Their order changes both the output and the domain.
 </div>

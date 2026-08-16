@@ -2,7 +2,7 @@
 layout: post
 title: "Choosing a differentiation rule"
 date: 2026-07-30
-description: "There are only a handful of differentiation rules and they are quickly memorized. The work is reading an expression and knowing which one it wants, including the times when the answer is to rewrite it first."
+description: "Differentiation is often easier once the expression has been classified and simplified before any rule is applied."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "9 min read"
@@ -10,35 +10,61 @@ math: true
 kind: mechanics
 sequence: 9
 interactive: true
-blurb: "The rules are the easy part; reading the expression is the skill"
+blurb: "Differentiation is often easier once the expression has been classified and simplified before any rule is applied"
 image: "/assets/og/derivative-rules-and-choosing.png"
 ---
 
-The differentiation rules in this unit fit on an index card, and memorizing them is a week's work at most. Almost none of the difficulty in Unit 2 lives there.
+The basic differentiation rules are short.
 
-The difficulty is in the step before: looking at an expression and knowing which rule it wants. That step has no formula and is rarely written down, but it is not an afterthought in the course either. The enduring understanding these topics sit under says it outright — recognizing opportunities to apply derivative rules can simplify differentiation — and where topics 2.5 through 2.9 ask you to *apply* an appropriate rule, topic 2.10 asks you to *identify* one. Those are different skills, and only one of them is memorization.
+The harder skill is deciding which rule fits the expression in front of you.
 
-## The rules, briefly
+A product does not always need the product rule. A quotient does not always need the quotient rule. Some expressions are much easier after a small algebraic rewrite.
 
-The framework groups them by what they act on. For a power, $$\tfrac{d}{dx}x^r = rx^{r-1}$$ for real $$r$$, at every $$x$$ where both sides are defined. Sums, differences, and constant multiples pass straight through, so a polynomial is differentiated term by term. Four specific functions have rules of their own: sine, cosine, the exponential, and the natural logarithm.
+It is worth separating two questions.
 
-$$\frac{d}{dx}\sin x = \cos x, \qquad \frac{d}{dx}\cos x = -\sin x, \qquad \frac{d}{dx}e^x = e^x, \qquad \frac{d}{dx}\ln x = \frac1x.$$
+First, what rule is valid?
 
-Then two rules for expressions built from others. If $$f$$ and $$g$$ are both differentiable at $$x$$, then
+Second, what approach is simplest?
 
-$$(fg)'(x) = f'(x)g(x) + f(x)g'(x),$$
+## The core rules
 
-and if in addition $$g(x) \neq 0$$, then
+For a power,
 
-$$\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}.$$
+$$\frac{d}{dx}x^r=rx^{r-1},$$
 
-That is the whole card. Both rules require the pieces to be differentiable, and that hypothesis is doing work: when a factor fails it, the rule is silent rather than negative. The function $$\vert x\vert \cdot 1$$ has no derivative at 0, and $$\vert x\vert \cdot \vert x\vert = x^2$$ has one, so a [point where differentiability fails](/2026/07/30/where-differentiability-fails.html) inside a product has to be examined directly.
+where the expression is defined.
 
-## Two rules that get reached for too early
+Sums, differences, and constant multiples can be differentiated term by term.
 
-The product and quotient rules are correct whenever they apply, and they apply more often than they are needed. An expression can be a product and still not want the product rule, because multiplying it out first is less work and less error-prone.
+The basic trigonometric, exponential, and logarithmic derivatives include
 
-Below is a classification drill. No differentiating — just name the first move.
+$$\frac{d}{dx}\sin x=\cos x,$$
+
+$$\frac{d}{dx}\cos x=-\sin x,$$
+
+$$\frac{d}{dx}e^x=e^x,$$
+
+and
+
+$$\frac{d}{dx}\ln x=\frac1x.$$
+
+For products,
+
+$$(fg)'(x)=f'(x)g(x)+f(x)g'(x).$$
+
+For quotients, when $$g(x)\neq0$$,
+
+$$\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}.$$
+
+These rules assume the relevant component functions are [differentiable at the point](/2026/07/30/where-differentiability-fails.html).
+
+If that condition fails, the rule cannot simply be applied mechanically.
+
+## Rewrite before using a longer rule
+
+The product and quotient rules are often correct even when they are unnecessary.
+
+The drill below asks only for the first move.
 
 <div class="viz" markdown="0">
   <div class="rc-expr" id="rc-e"></div>
@@ -121,32 +147,89 @@ Below is a classification drill. No differentiating — just name the first move
 })();
 </script>
 
-Five of the ten want a rewrite, and they are the five worth slowing down for. Two are products that collapse to a single power, one is a quotient that is really a division, and two are the trigonometric functions the framework explicitly says to rearrange.
+Consider
 
-Take $$\tfrac{x^3 + 2x}{x}$$. The quotient rule gives
+$$\frac{x^3+2x}{x}.$$
 
-$$\frac{(3x^2+2)(x) - (x^3+2x)(1)}{x^2} = \frac{2x^3}{x^2} = 2x,$$
+The quotient rule works, but simplifying first is much easier:
 
-which is right, and which took three steps to reach a result that dividing through gives in one: the expression is $$x^2 + 2$$, so the derivative is $$2x$$. Nothing was learned by the longer route, and it carried a subtraction, two derivatives, and a squared denominator that the direct route never needed.
+$$\frac{x^3+2x}{x}=x^2+2$$
 
-## The other four trigonometric functions are quotients
+for $$x\neq0$$.
 
-Among the trigonometric functions, the course states derivatives for sine and cosine only. Tangent, cotangent, secant, and cosecant are not a second list to memorize — the framework says that rearranging them with identities allows differentiation using the rules you already have.
+Then
 
-$$\tan x = \frac{\sin x}{\cos x} \;\Longrightarrow\; (\tan x)' = \frac{\cos x \cos x - \sin x(-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = \sec^2 x.$$
+$$\frac{d}{dx}(x^2+2)=2x.$$
 
-Four steps, using the quotient rule and one Pythagorean identity, and the result is the formula that usually gets memorized instead. Secant is the same move on $$1/\cos x$$, and gives $$\sec x \tan x$$. Deriving one of these a few times costs less than misremembering it once in May.
+Using the quotient rule produces the same derivative with more algebra and more opportunities for error.
 
-## A limit that is secretly a derivative
+The same idea applies to products that collapse to a single power or rational expressions that simplify before differentiation.
 
-The recognition skill runs backwards too, and the framework lists it as its own objective: recognizing an expression as [the definition of a derivative](/2026/07/30/derivative-as-a-limit.html), for a function whose derivative you know, is a way of evaluating a limit.
+Before choosing a rule, ask whether ordinary algebra makes the structure simpler.
 
-$$\lim_{h \to 0} \frac{(2+h)^5 - 2^5}{h}$$
+## Deriving the other trigonometric rules
 
-is a $$0/0$$ form, and the usual [algebra for resolving one](/2026/07/30/indeterminate-forms.html) is not worth attempting here — expanding the fifth power to cancel the $$h$$ is five terms of work for a number you already know. It is exactly $$f'(2)$$ for $$f(x) = x^5$$, so it equals $$5(2)^4 = 80$$. The whole problem is noticing the shape.
+Sine and cosine are enough to derive the other standard trigonometric derivatives.
 
-Two things give it away: a limit as $$h \to 0$$, and a numerator that is *something at a shifted input, minus the same thing at the input*. Once those register, the question is only which function and which point.
+For example,
+
+$$\tan x=\frac{\sin x}{\cos x}.$$
+
+Using the quotient rule,
+
+$$(\tan x)' = \frac{\cos^2x+\sin^2x}{\cos^2x} = \frac{1}{\cos^2x} = \sec^2x.$$
+
+Likewise,
+
+$$\sec x=\frac1{\cos x}$$
+
+can be differentiated using the quotient rule or a negative power.
+
+This is useful even if you eventually memorize the formulas. Knowing where they come from makes them easier to recover when memory fails.
+
+## Recognizing a derivative inside a limit
+
+The same classification skill can run in reverse.
+
+Consider
+
+$$\lim_{h\to0} \frac{(2+h)^5-2^5}{h}.$$
+
+Direct substitution gives [$$0/0$$](/2026/07/30/indeterminate-forms.html).
+
+You could expand $$(2+h)^5$$, cancel $$h$$, and then evaluate the limit.
+
+But the expression is already [the definition of a derivative](/2026/07/30/derivative-as-a-limit.html).
+
+If
+
+$$f(x)=x^5,$$
+
+then the limit is
+
+$$f'(2).$$
+
+Since
+
+$$f'(x)=5x^4,$$
+
+the answer is
+
+$$f'(2)=5(2)^4=80.$$
+
+Two features reveal the structure:
+
+- the limit is taken as $$h\to0$$
+- the numerator has the form $$f(a+h)-f(a)$$
+
+Recognizing the form is the entire problem.
 
 <div class="article-note" markdown="1">
-A drill in the same spirit as the one above: take a page of derivative exercises and, without differentiating any of them, write next to each one only the first move. Then compare with a classmate. Disagreements will cluster on the expressions that could be done two ways, which are exactly the ones worth discussing, and the discussion is more useful than the derivatives would have been.
+A useful practice exercise is to take a page of derivative problems and write only the first move beside each one.
+
+Do not differentiate yet.
+
+For each expression, decide whether you would simplify, use a basic derivative, use the product rule, use the quotient rule, or use the chain rule.
+
+That isolates the classification skill from the algebra that follows.
 </div>

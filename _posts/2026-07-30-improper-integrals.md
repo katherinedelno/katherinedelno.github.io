@@ -2,42 +2,64 @@
 layout: post
 title: "When an unbounded region has finite area"
 date: 2026-07-30
-description: "An integral is improper when a limit is infinite or the integrand blows up. Both cases are handled the same way, and for the power functions the verdict turns on a single number."
+description: "An improper integral is defined through a limit. An infinite interval or an unbounded integrand does not by itself determine whether the integral converges."
 course: "AP Calculus BC"
 read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 24
 interactive: true
-blurb: "The exponent that saves you at infinity is the one that ruins you at zero"
+blurb: "An improper integral is defined through a limit. An infinite interval or an unbounded integrand does not by itself determine whether the integral converges"
 image: "/assets/og/improper-integrals.png"
 ---
 
-The framework's enduring understanding for this topic is worth reading twice, because it states a result rather than a technique: the use of limits allows us to show that the areas of unbounded regions may be finite.
+A definite integral becomes improper when the interval is unbounded or the integrand becomes unbounded somewhere on the interval.
 
-Unbounded regions with finite area are not intuitive, and the machinery that establishes them is short. Everything hard about improper integrals is in deciding which ones are finite.
+In either case, the integral is [defined through a limit](/2026/07/30/what-a-limit-claims.html).
 
-## Two ways to be improper
+The geometric region may extend infinitely far or rise without bound and still have finite area.
 
-The framework's definition names both: an improper integral is one that has one or both limits infinite, or has an integrand that is unbounded in the interval of integration.
+## An infinite interval
 
-The first kind is visible in the notation. The second is not, and that is what makes it dangerous — $$\textstyle\int_0^1 \tfrac{dx}{\sqrt{x}}$$ looks like an ordinary definite integral and is not one, because the integrand has no value at the left endpoint. Before evaluating anything, check the integrand at both endpoints and everywhere between.
+Consider
 
-## Rewrite as a limit
+$$\int_1^\infty \frac{1}{x^2}\,dx.$$
 
-The procedure is one line of the framework: improper integrals are determined using limits of definite integrals. Replace the offending endpoint with a variable, integrate properly, and take the limit.
+The infinity symbol is not an endpoint at which an antiderivative can be evaluated.
 
-$$\int_1^{\infty} \frac{dx}{x^2} = \lim_{T\to\infty}\int_1^{T}\frac{dx}{x^2} = \lim_{T\to\infty}\left(1 - \frac1T\right) = 1.$$
+Instead, write
 
-An unbounded region with area exactly 1. The same move handles the other kind:
+$$\int_1^\infty \frac{1}{x^2}\,dx = \lim_{T\to\infty} \int_1^T \frac{1}{x^2}\,dx.$$
 
-$$\int_0^{1} \frac{dx}{\sqrt{x}} = \lim_{s\to 0^+}\int_s^{1}\frac{dx}{\sqrt{x}} = \lim_{s\to 0^+}\big(2 - 2\sqrt{s}\big) = 2.$$
+Then
 
-Notice that the limit is [one-sided](/2026/07/30/what-a-limit-claims.html), and that it approaches the bad endpoint from inside the interval. Writing the limit is not decoration; a divergent integral looks exactly like a convergent one until the limit is taken, and there is nowhere else for the word "diverges" to come from.
+$$= \lim_{T\to\infty} \left[-\frac1x\right]_1^T = \lim_{T\to\infty} \left(1-\frac1T\right) = 1.$$
 
-## The same exponent, opposite verdicts
+The interval has infinite length, but the area is finite.
 
-Both of the integrals above are $$x^{-p}$$ for some $$p$$, and both converged. That is a coincidence of which $$p$$ went with which end.
+The integral converges.
+
+## An unbounded integrand
+
+Now consider
+
+$$\int_0^1\frac{1}{\sqrt{x}}\,dx.$$
+
+The interval is finite, but the integrand grows without bound as $$x\to0^+$$.
+
+So write
+
+$$\int_0^1\frac{1}{\sqrt{x}}\,dx = \lim_{s\to0^+} \int_s^1 x^{-1/2}\,dx.$$
+
+Then
+
+$$= \lim_{s\to0^+} \left[2\sqrt{x}\right]_s^1 = \lim_{s\to0^+} \left(2-2\sqrt{s}\right) = 2.$$
+
+Again, the integral converges.
+
+The vertical asymptote does not force the area to be infinite.
+
+## The $$p$$-integral thresholds
 
 <div class="viz" markdown="0">
   <canvas id="im-cv" width="700" height="340"></canvas>
@@ -151,26 +173,82 @@ Both of the integrals above are $$x^{-p}$$ for some $$p$$, and both converged. T
 })();
 </script>
 
-The pattern is exact and it is a reversal. For the tail out to infinity, $$\textstyle\int_1^{\infty} x^{-p}dx$$ converges precisely when $$p > 1$$, to $$\tfrac{1}{p-1}$$. For the spike at the origin, $$\textstyle\int_0^{1} x^{-p}dx$$ converges precisely when $$p < 1$$, to $$\tfrac{1}{1-p}$$.
+Two standard families are worth knowing.
 
-The reason is the same in both cases and it is worth saying once. Convergence at infinity needs the function to fall off quickly, and a large $$p$$ does that. Convergence at zero needs the function to blow up slowly, and a large $$p$$ does the opposite. One exponent cannot do both, which is why $$\textstyle\int_0^{\infty} x^{-p}dx$$ diverges for every $$p$$ whatsoever.
+For the tail integral,
 
-At $$p = 1$$ both fail. That is the case the log-log picture makes obvious: $$y = x^{-p}$$ is a straight line of slope $$-p$$ on those axes, and $$p = 1$$ is the dashed diagonal that separates the two behaviors. It is on the wrong side of both boundaries at once, because both are strict.
+$$\int_1^\infty \frac{1}{x^p}\,dx,$$
 
-That threshold is going to appear again. The series $$\textstyle\sum n^{-p}$$ converges under exactly the condition that $$\textstyle\int_1^{\infty}x^{-p}dx$$ does, and the case $$p = 1$$ — [the harmonic series](/2026/07/23/harmonic-series-surprises-of-infinity.html) — is on the divergent side of both. That is not a coincidence, and Unit 10 gives it a name and a theorem. The framework recommends making the connection in the other direction as well, from the integral test back to this topic.
+the integral converges exactly when
 
-## The blow-up you did not look for
+$$p>1.$$
 
-Here is the one that catches people, and it catches them because it does not look improper:
+When it converges,
 
-$$\int_{-1}^{1}\frac{dx}{x^2}.$$
+$$\int_1^\infty x^{-p}\,dx = \frac{1}{p-1}.$$
 
-Both limits are finite. Antidifferentiate and evaluate and you get $$\left[-\tfrac1x\right]_{-1}^{1} = -1 - 1 = -2$$, which is a confident, wrong, and impossible answer — the integrand is positive wherever it is defined, so no correct value can be negative.
+For the integral near zero,
 
-The integrand is unbounded at $$x = 0$$, which is inside the interval. The integral has to be split there, and each half evaluated as its own limit. Each half is $$\textstyle\int x^{-2}$$ against the origin with $$p = 2 > 1$$, so each half diverges, and so does the whole thing.
+$$\int_0^1\frac{1}{x^p}\,dx,$$
 
-The absurd answer is the useful part. An integral of a positive function that returns a negative number is telling you that [the Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) was applied across a point where its hypotheses fail — it wants an integrand that is continuous on the closed interval, and this one is not defined at the middle of it.
+the condition reverses.
+
+It converges exactly when
+
+$$p<1.$$
+
+When it converges,
+
+$$\int_0^1 x^{-p}\,dx = \frac{1}{1-p}.$$
+
+The boundary case
+
+$$p=1$$
+
+diverges in both settings.
+
+The same expression,
+
+$$\frac1x,$$
+
+therefore sits at the convergence threshold both near zero and at infinity.
+
+## A discontinuity inside the interval
+
+Suppose
+
+$$\int_{-1}^{1}\frac{1}{x^2}\,dx.$$
+
+The integrand is unbounded at $$x=0$$, so the integral must be split there:
+
+$$\int_{-1}^{1}\frac{1}{x^2}\,dx = \int_{-1}^{0}\frac{1}{x^2}\,dx + \int_{0}^{1}\frac{1}{x^2}\,dx.$$
+
+Each piece is improper and needs its own limit.
+
+Both diverge.
+
+So the original integral diverges.
+
+If we ignore the discontinuity and apply the Fundamental Theorem mechanically,
+
+$$\left[-\frac1x\right]_{-1}^{1} = -2.$$
+
+That answer is impossible as geometric area under a positive function.
+
+The problem is not the antiderivative. [The Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) was applied across a point where the hypotheses failed.
+
+## Two habits that prevent most errors
+
+First, inspect the interval and the integrand before integrating.
+
+Look for infinite bounds, denominator zeros, logarithmic singularities, and endpoints where a root or power becomes unbounded.
+
+Second, write the limit explicitly.
+
+The limit is part of the definition of the improper integral.
 
 <div class="article-note" markdown="1">
-Two habits close most of the gap on this topic. Write the limit every time, even when you are sure it converges, because the notation is the argument and a value with no limit attached has not been justified. And before starting, look at the integrand at both endpoints and at any zero of a denominator inside the interval — that scan takes five seconds and is the only defense against the case that does not announce itself.
+If the limit is finite, the integral converges.
+
+If the limit is infinite or fails to exist, the integral diverges.
 </div>

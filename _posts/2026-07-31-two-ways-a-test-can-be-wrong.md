@@ -2,34 +2,68 @@
 layout: post
 title: "The two ways a test can be wrong"
 date: 2026-07-31
-description: "A Type I error is a risk chosen before the data arrive. A Type II error is inherited, and four separate things move it. Two curves and one cut make the difference visible."
+description: "Type I error is a false rejection of the null. Type II error is a failure to detect a false null. Power is the probability of detecting the effect when it is real."
 course: "AP Statistics"
 read_time: "9 min read"
 math: true
 kind: foundations
 sequence: 14
 interactive: true
-blurb: "One error is chosen in advance; the other is inherited"
+blurb: "Type I error is a false rejection of the null. Type II error is a failure to detect a false null. Power is the probability of detecting the effect when it is real"
 image: "/assets/og/two-ways-a-test-can-be-wrong.png"
 ---
 
-The probability of a Type I error is a number chosen in advance. The probability of a Type II error is inherited from the situation, and in a real study it is never observed at all. That asymmetry is the whole of this topic, and it accounts for a lopsidedness students notice without being able to name: $$\alpha$$ is announced before the data are collected, and its counterpart usually is not announced anywhere.
+A hypothesis test can make two kinds of error.
 
-## Two errors, named for what they get wrong
+A Type I error occurs when the null hypothesis is true and the test rejects it.
 
-The framework defines both by the verdict rather than by the arithmetic. A Type I error occurs when there is convincing statistical evidence that the alternative hypothesis is true, on the strength of a small p-value, but it is not. A Type II error occurs when there is not convincing evidence that the alternative is true, on the strength of a large p-value, but it is.
+A Type II error occurs when the null hypothesis is false and the test fails to reject it.
 
-Each error pairs a verdict with a truth, and the two are the only ways that pair can disagree. A test that rejects a true null has raised a false alarm; a test that fails to reject a false null has missed something real.
+The two errors arise from different parts of the testing procedure.
 
-A third definition completes the set: the power of a test is the probability that it correctly rejects a false null hypothesis. Power and the Type II error are complements, and the framework states the relationship as a formula rather than as a picture:
+## Type I error
 
-$$P(\text{Type II error}) = 1 - \text{power}.$$
+Suppose
 
-## One cut, two curves
+$$H_0:p=0.10$$
 
-A production line is treated as in control when at most 10% of parts need rework. An inspector draws a random sample and tests $$H_0: p = 0.10$$ against $$H_a: p > 0.10$$, rejecting when the sample proportion lands far enough above 0.10.
+and
 
-Both panels below show the same cut, drawn in the same place. What changes between them is which world the sample was drawn from. Move the true rate and watch only the lower panel respond.
+$$H_a:p>0.10.$$
+
+A Type I error means concluding that the rework rate exceeds 10% when the true rate is actually 10%.
+
+This is a false positive.
+
+The significance level
+
+$$\alpha$$
+
+is the probability of a Type I error when the null is true.
+
+It is chosen before the data are observed.
+
+## Type II error and power
+
+A Type II error occurs when the true rework rate is greater than 10% but the study does not produce enough evidence to reject $$H_0$$.
+
+This is a missed detection.
+
+The probability of Type II error is often written
+
+$$\beta.$$
+
+Power is the probability that the test correctly rejects a false null.
+
+Therefore
+
+$$\text{power}=1-\beta.$$
+
+Power depends on which alternative value is actually true.
+
+There is not one universal power value for a test.
+
+## One cutoff, two possible worlds
 
 <div class="viz" markdown="0">
   <canvas id="pw-cv" width="700" height="368"></canvas>
@@ -185,28 +219,67 @@ Both panels below show the same cut, drawn in the same place. What changes betwe
 })();
 </script>
 
-## What each control moves, and what it leaves alone
+The rejection cutoff is chosen so that the probability of entering the rejection region under the null equals $$\alpha$$.
 
-The framework lists four things that raise power, and attaches the same clause to all four: *provided the others do not change*. The three controls above are those four factors, because sample size and standard error are one lever rather than two.
+The lower curve represents a particular alternative value.
 
-Raise $$n$$ from 200 to 400 and power climbs from 0.7252 to 0.9220. Both curves narrow, the cut slides left, and the top panel's dark area stays at 0.05 throughout. That is the first thing worth watching. The significance level is a constraint the cut is built to satisfy, so it cannot drift; everything else on screen is free to move.
+Under that alternative, the rejection region represents correct detection.
 
-Drag the true rate from 0.15 out to 0.20 and power runs to 0.9893, with nothing about the test changed. A test is not powerful or weak on its own, only powerful against a particular alternative, and a discrepancy far from the null is easier to see than one nearby. Drag the other way, to 0.12, and power falls to 0.2585 — the same test, now missing a real problem three times in four.
+The area outside it represents Type II error.
 
-Loosening $$\alpha$$ to 0.10 raises power to 0.8169, and tightening it to 0.01 drops power to 0.5103. This is the only one of the four that is a trade rather than a gain. The others buy power with sample size or receive it as a gift from the truth; this one buys it by accepting more false alarms.
+The same cutoff is evaluated under two different distributions.
 
-## Power at the null
+## What increases power
 
-Slide the true rate all the way down to 0.10, so the two panels show the same curve. The readout stops calling the lower area power in any useful sense and reports a number equal to $$\alpha$$ exactly — 0.0500 at the default setting, 0.0100 if the level is tightened.
+Power generally increases when:
 
-The coincidence is not a coincidence. Power is the probability of rejecting, evaluated at whatever the truth is; at the null value that is the probability of rejecting a true null, which is the definition of $$\alpha$$. So $$\alpha$$ is the beginning of the power curve rather than a separate quantity, and the two errors are measured on one continuum instead of belonging to different worlds.
+- sample size increases
+- the true parameter lies farther from the null value
+- variability decreases
+- $$\alpha$$ increases
 
-## What the exam asks of this
+The first three improve the ability to distinguish the null from the alternative.
 
-Less arithmetic than the picture suggests. The relationship $$P(\text{Type II error}) = 1 - \text{power}$$ is the calculation, so a question supplying a power of 0.80 is asking for 0.20 and nothing more. Nothing on the exam requires shading a normal curve to produce $$\beta$$ from scratch.
+Changing $$\alpha$$ is different.
 
-What is assessed is identification, the four factors, and consequences. Consequences are where the two errors stop being symmetric: halting a line that is running properly costs production, while letting a faulty line run costs the parts that reach customers, and the framework asks which is worse to be settled before the study rather than after. That judgment sets $$\alpha$$, because $$\alpha$$ is the probability of a Type I error, and it sets $$n$$, because sample size drives the probability of the other. Neither number is chosen for a statistical reason, and both are fixed before any data exist — the same discipline that makes [a p-value interpretable at all](/2026/07/30/what-a-p-value-is.html) once it arrives.
+Increasing $$\alpha$$ raises power by making rejection easier, but it also raises the Type I error rate.
+
+That is a tradeoff.
+
+## Sample size
+
+Increasing $$n$$ reduces the standard error.
+
+The null and alternative sampling distributions become narrower.
+
+A fixed difference between them is easier to detect.
+
+This increases power without changing the chosen significance level.
+
+That is one reason sample-size planning is done before a study begins.
+
+## Effect size
+
+A test has more power against alternatives far from the null than against alternatives very close to it.
+
+A true rework rate of 20% is easier to distinguish from 10% than a true rate of 12%.
+
+So a power statement should name the alternative effect size it refers to.
+
+Saying only that “the study has 80% power” is incomplete unless the target discrepancy is clear.
+
+## Consequences matter
+
+Type I and Type II errors may have very different practical costs.
+
+In one setting, a false alarm may be more serious.
+
+In another, failing to detect a real effect may be worse.
+
+The choice of $$\alpha$$, sample size, and desired power should reflect those consequences before the data are analyzed.
 
 <div class="article-note" markdown="1">
-A prediction to test against the interactive: set the true rate to 0.15 and the level to 0.05, then find the smallest sample size that lifts power to the 0.80 benchmark. Guess first, nearer 250 or nearer 500. It is 253. Now ask what that number becomes if the inspector cares about a rate of 0.12 instead, and notice the question cannot be answered without naming an alternative. Power is never a property of a test alone, which is why a study reporting it always reports the discrepancy it was built to catch.
+The statistical definitions are symmetric.
+
+The real-world costs often are not.
 </div>

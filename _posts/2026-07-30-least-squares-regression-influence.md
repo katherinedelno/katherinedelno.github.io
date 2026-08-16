@@ -2,63 +2,154 @@
 layout: post
 title: "What moves the least-squares line"
 date: 2026-07-30
-description: "A draggable scatterplot with a linked residual plot: outliers, influential points, and why the residual plot catches what r misses."
+description: "Residuals, leverage, influence, correlation, and least squares become easier to distinguish when one point can be moved by hand."
 course: "AP Statistics"
 read_time: "10 min read"
 math: true
 kind: foundations
 sequence: 2
 interactive: true
-blurb: "Drag one point and watch the line, the residuals, and r respond"
+blurb: "Residuals, leverage, influence, correlation, and least squares become easier to distinguish when one point can be moved by hand"
 image: "/assets/og/least-squares-regression-influence.png"
 ---
 
-Press the regression button and every calculator agrees: one line, a slope to six digits, an $$r^2$$ that looks reassuring. The exam is rarely interested in the button. It asks two questions instead: what do the numbers mean, and which points are responsible for them? Both questions have answers you can see. Every point in the scatterplot below can be dragged, and everything that depends on the points moves with them.
+A least-squares regression line summarizes a particular set of points.
+
+Move the points and the line changes.
+
+Some observations have much more influence on that change than others.
+
+The interactive below lets you move individual observations while watching the regression line, residual plot, correlation, and residual standard deviation update together.
 
 {% include interactive-regression.html %}
 
-## Drag one point
+When a point is selected, the dashed line shows the regression fit without that point.
 
-The plot underneath the scatterplot is the residual plot: the same points with the line subtracted out. Each residual is the vertical gap between a point and the line,
+The distance between the two fitted lines gives a visual sense of its influence.
 
-$$\text{residual} = y - \hat{y},$$
+## Residuals
 
-actual minus predicted, so a point above the line has a positive residual and a point below has a negative one. Drag any point up and down and watch the two plots move as one picture, because that is what they are. The residual plot is the scatterplot seen from the line's point of view, and it magnifies exactly what the scatterplot hides: whether what is left over after the line has done its work is noise or structure.
+A residual is
 
-Four numbers update as you drag. The slope and intercept define the line itself. The correlation $$r$$ measures the strength and direction of the linear relationship, and $$s$$, the standard deviation of the residuals, is the typical size of a miss — how far off the line's predictions run, in the units of $$y$$. When an exam question asks you to interpret $$s = 8.41$$, that is the sentence it wants: predictions from this line are typically off by about 8.41 units.
+$$y-\hat y.$$
 
-## An outlier is not an influential point
+It is the observed response minus the response predicted by the line.
 
-Load the "one outlier" preset. One point sits far above the cloud, near the middle of the x-range. Its residual is enormous — and the line barely notices it. Select it and drag it: the slope moves in the third decimal place. The point is an outlier, but it is not influential.
+A point above the line has a positive residual.
 
-Now load "one influential point." One point sits far to the right, and the line has bent toward it. Select it, and the dashed ghost line appears: the fit computed without that point. Here the two lines disagree completely — slope 0.399 without the point, 0.025 with it. One point has flattened the entire relationship.
+A point below has a negative residual.
 
-The difference between the two presets is not how wrong the point is; it is where the point stands. The readout calls this leverage,
+The residual plot shows the same observations after the fitted linear trend has been subtracted.
 
-$$h_i = \frac{1}{n} + \frac{(x_i - \bar{x})^2}{S_{xx}},$$
+That makes departures from linearity easier to see.
 
-and the formula says in symbols what the dragging shows directly: distance from $$\bar{x}$$ is what buys a point its power over the line. Vertical distance from the line makes a residual. Horizontal distance from the rest of the data makes leverage. Moving the line takes both, which you can verify by dragging any point around the plot and watching when the ghost line diverges. An outlier is a point the line fails to fit. An influential point is a point the line cannot afford to ignore. They are different failures, they are diagnosed differently — one from the residual plot, one by refitting without the point — and a single point can be either, both, or neither.
+For a useful linear model, the residuals should look like unstructured scatter around zero.
 
-## Why squares
+A visible curve or other pattern is evidence that the linear model has missed systematic structure.
 
-The name "least squares" is a literal description, not a brand name. Press "show squares": each residual becomes an actual square, with area equal to the squared residual, and the shaded area on the plot is the sum the method minimizes.
+## Interpreting the numerical summaries
 
-The line now has two open handles. Drag them and make your own line — a steeper one, a flatter one, one that chases the outlier. The readout keeps score: your sum of squares against the least-squares minimum. You can reduce the gap, and with care you can get close, but you cannot beat the minimum, and "snap to least squares" will show you how much area your best attempt was still carrying. Of all possible lines, the least-squares line is the one that leaves behind the smallest total squared error. That is the entire definition, and it is why single large misses cost so much: squaring punishes a residual of 20 four times as hard as a residual of 10.
+The slope gives the predicted change in $$y$$ for a one-unit increase in $$x$$.
 
-## What r cannot see
+The intercept gives the predicted response at $$x=0$$, when that value is meaningful in context.
 
-Load "curved." The correlation is $$r = 0.918$$, a number most students would be delighted to report, and the scatterplot is plainly not a line — it bends, and the residual plot underneath shows the bend as an unmistakable arc: positive residuals at both ends, negative in the middle. $$r$$ measures linear association and nothing else. It will report a strong value for a relationship that is strong and curved, because it has no way to know the difference. The residual plot knows. A patterned residual plot means the linear model is the wrong model, whatever $$r$$ says, and this is precisely why exam questions hand you a residual plot and ask whether a linear model is appropriate.
+The correlation $$r$$ measures the strength and direction of a linear association.
 
-Now load "two clusters." The correlation is $$r = 0.957$$, and there is almost no relationship in the data at all — just two separate groups, one high and one low, with the line dutifully connecting their centers. Strong correlation can be manufactured by [group structure](/2026/07/27/simpsons-paradox.html) rather than by any relationship between the variables. Ask what the two clusters are before trusting the line between them.
+The residual standard deviation $$s$$ measures the typical prediction error in the units of $$y$$.
 
-One more reading discipline, and the curved preset is the place to practice it. Go back to it and look at both numbers together: $$r = 0.918$$ and $$r^2 = 0.842$$ are not the same number and not the same claim, and neither is a probability. $$r^2$$ is the proportion of the variation in $$y$$ that the linear relationship with $$x$$ accounts for — which on a curve is a genuinely misleading 84%. The two numbers answer different questions, and the exam asks for each by name.
+If
 
-## Beyond the data
+$$s=8.41,$$
 
-The line in the scatterplot turns gray past the smallest and largest x-values in the data. The equation is perfectly willing to produce $$\hat{y}$$ for any $$x$$ you like — that is what equations do — but outside the range of the observed data there is no evidence the pattern continues. Prediction out there is extrapolation, and the gray is a reminder that the data have no opinion about it.
+a contextual interpretation is that predictions from the regression line are typically off by about 8.41 response units.
 
-Drag a few points before you leave. The line every calculator prints is not a fact about the world; it is a summary of particular points, some of which matter far more than others. Knowing which ones, and why, is the part the button cannot do for you.
+## Outliers and influential points are different
+
+Load the “one outlier” example.
+
+The unusual point sits far from the regression line vertically but near the center of the observed $$x$$-values.
+
+It has a large residual.
+
+Removing it does not change the slope much.
+
+Now load “one influential point.”
+
+The unusual point lies far from the rest of the data horizontally.
+
+Removing it changes the fitted line substantially.
+
+That point has high leverage.
+
+In simple linear regression, leverage increases as an observation's $$x$$-value moves farther from $$\bar x$$.
+
+A point with high leverage has the potential to be influential.
+
+Whether it actually changes the fitted line also depends on its $$y$$-value.
+
+So a point can be:
+
+- an outlier but not influential
+- influential but not a large residual outlier
+- both
+- neither
+
+Those labels describe different features.
+
+## Why least squares uses squares
+
+Press “show squares.”
+
+Each residual becomes the side length of a square.
+
+The least-squares line is the line that minimizes
+
+$$\sum (y_i-\hat y_i)^2.$$
+
+Large residuals therefore receive disproportionately large weight.
+
+A residual of 20 contributes four times as much squared error as a residual of 10.
+
+The word “least squares” describes the optimization criterion literally.
+
+## What correlation cannot tell you
+
+Load the curved example.
+
+A high value of $$r$$ can occur even when the relationship is visibly nonlinear.
+
+Correlation measures linear association.
+
+It does not test whether a line is the correct model.
+
+The residual plot is useful here because curvature that is easy to miss in the scatterplot can appear as a clear pattern after the line is removed.
+
+Now load the two-cluster example.
+
+A strong overall correlation can also be created by [group structure](/2026/07/27/simpsons-paradox.html).
+
+If two distinct groups sit in different parts of the plane, the line may connect the group centers even when there is little relationship within either group.
+
+So a numerical value of $$r$$ should never be interpreted without looking at the graph.
+
+Likewise,
+
+$$r^2$$
+
+is not a probability.
+
+It describes the proportion of variability in the response accounted for by the fitted linear relationship.
+
+## Extrapolation
+
+The fitted equation can produce a numerical prediction at any input.
+
+That does not mean the data support that prediction.
+
+Using the line outside the observed range of $$x$$ is extrapolation.
+
+The relationship may change beyond the data.
 
 <div class="article-note" markdown="1">
-A self-test at the plot: a point can be an outlier, influential, both, or neither, and all four are reachable from the linear preset with "add point." A point far above the cloud but central in $$x$$ is an outlier alone. Push it to the right and it becomes both. Then drag it down onto the line's own extension: leverage stays high, the residual vanishes, and the ghost line closes back onto the fit. High leverage is only potential influence, and that last drag is where the two words come apart.
+A regression equation is a summary of the observed range, not a guarantee about values that were never studied.
 </div>

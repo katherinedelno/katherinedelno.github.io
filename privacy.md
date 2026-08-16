@@ -17,7 +17,8 @@ description: "What information Katherine Delno collects from families and studen
   .pg b,.pg strong{font-weight:600}
   .pg-hero{margin:0 0 1rem;max-width:64ch}
   .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .8rem;letter-spacing:-.02em;font-weight:700}
-  .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.6;margin:0}
+  .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.6;margin:0 0 .9rem}
+  .pg-hero p:last-child{margin-bottom:0}
 
   .pol-section{padding:2.2rem 0 1.4rem;border-top:1px solid var(--line);margin-top:1.2rem}
   .pol-section:first-of-type{margin-top:1.6rem}
@@ -35,57 +36,67 @@ description: "What information Katherine Delno collects from families and studen
   <div class="pg-hero">
     <p class="label">Privacy</p>
     <h1>Privacy notice</h1>
-    <p>This page explains what information I collect, why, and what happens to it. The short version: I collect what I need in order to teach your student and to run a small practice, I do not sell it, and I do not use it for advertising. The terms of instruction themselves are set out under <a href="/policies/">policies</a>.</p>
+    <p>This page explains what information I collect, why I collect it, and what happens to it.</p>
+    <p>I collect the information I need to teach students and run a small private practice. I do not sell personal information or use it for advertising. The terms of instruction are set out under <a href="/policies/">Policies</a>.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Collection</p>
     <h2>What I collect</h2>
-    <p><b>From families.</b> Your name, email address, a phone number if you give me one, your student's course and their class's pacing, and the scheduling and billing details needed to run the engagement.</p>
-    <p><b>From students.</b> The work they show me and send me, the notes I take during and after each session, and my own running record of what has been taught and what still needs attention.</p>
-    <p><b>From the registration and introduction forms.</b> Name, email address, course of interest, and anything else you choose to write in.</p>
-    <p><b>From this website.</b> This site sets no advertising cookies, and I use no advertising, profiling, or cross-site tracking tools of any kind. The site is served through GitHub Pages behind Cloudflare, and those providers keep the ordinary server records that any website generates: the IP address a request comes from, the page requested, and the time. Cloudflare may also count page views and referring sites in aggregate, without cookies and without anything that identifies an individual visitor. Typefaces are loaded from Google Fonts, and the booking widget on the private instruction page from Calendly; each sees the request that loads it, and Calendly's own terms apply once you open it to book a time.</p>
+    <p><b>From families.</b> I collect your name, email address, a phone number if you provide one, your student's course and class pacing, and the scheduling and billing information needed to manage instruction.</p>
+    <p><b>From students.</b> I keep the work students show or send me, notes I take during and after sessions, and a running record of what we have covered and what still needs attention.</p>
+    <p><b>From registration and introduction forms.</b> I collect your name, email address, course of interest, and anything else you choose to include.</p>
+    <p><b>From this website.</b> This site does not use advertising cookies, advertising tools, profiling tools, or cross-site tracking.</p>
+    <p>The site is served through GitHub Pages behind Cloudflare. Those services maintain ordinary server records associated with website requests, including the requesting IP address, page requested, and time of the request. Cloudflare may also provide aggregate counts such as page views and referring sites without using cookies or identifying individual visitors.</p>
+    <p>Typefaces are loaded from Google Fonts. The booking widget on the Private Instruction page is provided by Calendly. Each service receives the request required to load its content. Calendly's own terms apply when you use its booking service.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Purpose</p>
     <h2>Why I collect it</h2>
-    <p>To teach. Session notes and work samples are the reason instruction gets more precise over a term instead of starting fresh each week; that accumulating picture of how a particular student works is a large part of what the practice is.</p>
-    <p>Contact and billing information is used for scheduling, invoicing, and correspondence about the engagement, and to send the materials you registered for. I do not use it for anything else.</p>
+    <p>Session notes and student work help me teach with continuity from week to week. They allow me to track what has been covered, what remains uncertain, and which patterns recur in a student's work.</p>
+    <p>Contact and billing information is used for scheduling, invoicing, and communication about instruction. Registration information is used to send materials or information you requested.</p>
+    <p>I do not use this information for unrelated marketing or advertising.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Minors</p>
     <h2>Students under 18</h2>
-    <p>Most of my students are minors. Scheduling, billing, and policy correspondence go to a parent or guardian, and a parent or guardian is included on every channel I use to reach the student, including text. In practice that means a group message thread rather than a private one, so that a student's messages with me are always visible to a parent.</p>
-    <p>Parents and guardians may ask at any time to see the session notes, materials, and records I hold about their student, and may be added to the shared materials folder on request.</p>
-    <p>This site and this practice are not directed to children under 13, and I do not knowingly collect information from them.</p>
+    <p>Most of my students are minors.</p>
+    <p>Scheduling, billing, and policy correspondence go to a parent or guardian. A parent or guardian is also included on every communication channel I use with a minor student, including text. In practice, this usually means a group message rather than a private thread.</p>
+    <p>Parents and guardians may ask to see the session notes, materials, and records I hold about their student. They may also be added to the shared materials folder on request.</p>
+    <p>This website and practice are not directed to children under 13, and I do not knowingly collect personal information from them.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Processors</p>
     <h2>Who else handles it</h2>
-    <p>Running the practice requires a small number of ordinary services: video conferencing for sessions, a shared cloud folder for notes and solutions, scheduling and form tools, an email provider, and invoicing. These providers process information on my behalf under their own terms.</p>
-    <p>I do not sell information, share it with advertisers, or pass it to other tutoring services. I would disclose information without your consent only if required by law, or if I had a good-faith belief that doing so was necessary to prevent serious harm to someone.</p>
+    <p>Running the practice requires a small number of ordinary services. These include video conferencing, shared cloud storage, scheduling and form tools, email, and invoicing. Those providers process information on my behalf under their own terms.</p>
+    <p>I do not sell personal information, share it with advertisers, or provide it to other tutoring services.</p>
+    <p>I would disclose information without consent only when required by law or when I have a good-faith belief that disclosure is necessary to prevent serious harm to someone.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Retention</p>
     <h2>How long I keep it</h2>
-    <p>Session notes and materials are kept for the duration of the engagement and for one year afterward, so that a returning student's history is still there. Billing records are kept as long as tax and accounting requirements demand. Registration lists for the free sessions are kept until you ask to be removed.</p>
+    <p>Session notes and materials are retained for the duration of instruction and for one year afterward. This allows a returning student's previous work to remain available.</p>
+    <p>Billing records are kept for as long as tax and accounting requirements require.</p>
+    <p>Registration lists for free sessions are kept until you ask to be removed.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Your choices</p>
     <h2>Your choices</h2>
-    <p>Write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> to ask what I hold about you or your student, to correct it, to receive a copy, or to have it deleted, subject to records I am required to retain. I will respond within thirty days.</p>
-    <p>Any email I send that is not about your engagement includes a way to unsubscribe.</p>
+    <p>You may write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> to ask what information I hold about you or your student, request a correction, request a copy, or ask for deletion. Some records may need to be retained for legal, tax, or accounting purposes.</p>
+    <p>I will respond within thirty days.</p>
+    <p>Any email I send that is not directly related to an existing engagement includes a way to unsubscribe.</p>
   </div>
 
   <div class="pol-section">
     <p class="label">Contact</p>
     <h2>Contact</h2>
-    <p>Katherine Delno — <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></p>
+    <p>Katherine Delno</p>
+    <p><a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></p>
   </div>
 
   <div class="pol-fine">

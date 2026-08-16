@@ -11,7 +11,11 @@ description: "Estimating the effect of food insecurity on type 2 diabetes across
 
 <p class="pj-meta">Co-author &middot; Department of Biostatistics, University of Washington &middot; 2024</p>
 
-<p class="pj-lede">Food insecurity and type 2 diabetes are strongly associated, and the association is easy to measure. Whether one causes the other is a different question, and answering it requires data that can order the two in time. This project asked what could be established from the National Health and Nutrition Examination Survey, one of the richest sources of population health data in the United States. The estimated effect was <strong>close to zero and not significant</strong> under any specification, and the more durable contribution is a precise account of why the design, rather than the sample, was the binding constraint.</p>
+<p class="pj-lede">Food insecurity and type 2 diabetes are associated in observational data. A causal question is harder because the data must establish a defensible time order and support the assumptions required for identification.</p>
+
+<p class="pj-lede">This project examined what could be learned from three cycles of the National Health and Nutrition Examination Survey. The estimated effect of food insecurity on subsequent type 2 diabetes was <strong>close to zero and not statistically significant</strong> across the specifications we considered.</p>
+
+<p class="pj-lede">The more important result was methodological. The study makes clear which parts of the causal question NHANES can support, which assumptions remain weak, and why a second planned question could not be identified from the available data.</p>
 
 <div class="pj-stats">
   <div class="pj-stat">
@@ -24,25 +28,37 @@ description: "Estimating the effect of food insecurity on type 2 diabetes across
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">5</div>
-    <div class="pj-stat__label">causal assumptions stated and audited before any estimate was produced</div>
+    <div class="pj-stat__label">causal assumptions stated and audited before estimation</div>
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">1 of 2</div>
-    <div class="pj-stat__label">planned questions answerable; the second was abandoned on identification grounds</div>
+    <div class="pj-stat__label">planned questions answerable, with the second abandoned on identification grounds</div>
   </div>
 </div>
 
-<h2>The question, and the shape it had to take</h2>
+<h2>Defining a causal question from cross-sectional data</h2>
 
-<p>The substantive question was the average treatment effect of experiencing food insecurity on the subsequent development of type 2 diabetes. Randomising anyone into food insecurity is not available as a research design, so the effect has to be recovered from observational data under assumptions, and the assumptions have to be defensible.</p>
+<p>The target was the average treatment effect of experiencing food insecurity on the subsequent development of type 2 diabetes.</p>
 
-<p>NHANES is cross-sectional. Each respondent is interviewed and examined once, which ordinarily forecloses any causal claim, because exposure and outcome are observed at the same instant and nothing in the data says which came first. The route around this was to build temporality out of the instrument itself. NHANES asks whether a respondent has had their glycohemoglobin measured by a clinician in the previous twelve months, and what that value was, and it separately measures glycohemoglobin directly at examination. A respondent who reports a non-diabetic value from the past year and presents a diabetic value at examination has, within the resolution of the survey, developed diabetes during a known interval. The food insecurity item asks about the same twelve months. That construction gives a genuine before and after inside a single-visit survey, and it is the only reason the question could be asked at all.</p>
+<p>Food insecurity cannot be assigned experimentally, so the effect has to be estimated from observational data under explicit assumptions.</p>
 
-<p>It also costs almost the entire sample. Restricting to respondents with both a recalled clinical measurement and an examination measurement reduced three pooled cycles to a few hundred people, which is the first thing to say about the precision of anything that follows.</p>
+<p>NHANES is primarily cross-sectional. Each respondent is interviewed and examined once. Exposure and outcome are therefore usually observed at the same point in time, which makes temporal ordering difficult.</p>
 
-<h2>The assumptions, stated before the estimate</h2>
+<p>For this question, the survey instrument provided a partial way around that problem.</p>
 
-<p>Five conditions have to hold for the estimand to be a causal effect rather than a weighted association. Writing them down first, and reporting honestly on each, is most of the methodological work in a study of this kind.</p>
+<p>NHANES asks whether a respondent had glycohemoglobin measured by a clinician during the previous twelve months and asks for the recalled value. It also measures glycohemoglobin directly at the examination.</p>
+
+<p>A respondent who reports a prior non-diabetic value and presents with a diabetic value at examination can therefore be treated, within the limits of the survey, as having developed diabetes during the interval.</p>
+
+<p>The food-insecurity questions refer to the same twelve-month period.</p>
+
+<p>This construction creates a usable time ordering within a single-visit survey. It also reduces the sample substantially because respondents need both the recalled prior measurement and the examination measurement. After pooling three cycles, the resulting analytic sample contained only a few hundred people.</p>
+
+<p>That limitation is central to the precision of the estimates.</p>
+
+<h2>The identification assumptions</h2>
+
+<p>Five assumptions were considered explicitly before interpreting the estimate as causal.</p>
 
 <div class="pj-tablewrap">
   <table class="pj-table">
@@ -51,26 +67,38 @@ description: "Estimating the effect of food insecurity on type 2 diabetes across
     <tbody>
       <tr><td>Positivity</td><td style="text-align:left; white-space:normal">Satisfied. Every covariate stratum contains both exposed and unexposed respondents.</td></tr>
       <tr><td>Conditional exchangeability</td><td style="text-align:left; white-space:normal">Partially satisfied. Age, sex, race and ethnicity, educational attainment, and survey cycle were adjusted for. Dietary intake, physical activity, and family history were not measured in a usable form and remain unmeasured confounders.</td></tr>
-      <tr><td>No reverse causation</td><td style="text-align:left; white-space:normal">Assumed, not established. The construction places the exposure window before the outcome window, but food insecurity is treated as persistent over the interval, and diabetes can itself produce food insecurity through medical cost. The direction is argued rather than observed.</td></tr>
-      <tr><td>SUTVA</td><td style="text-align:left; white-space:normal">Reasonable. One respondent's food security is unlikely to alter another's diabetes risk within this sampling frame.</td></tr>
-      <tr><td>Accurate measurement</td><td style="text-align:left; white-space:normal">Weakest link. The prior glycohemoglobin value is recalled by the respondent from a clinical encounter up to a year earlier, and food insecurity is self-reported. Both are exposed to recall bias, and misclassification of either attenuates the estimate.</td></tr>
+      <tr><td>No reverse causation</td><td style="text-align:left; white-space:normal">Assumed, not established. The construction places the exposure window before the outcome window, but food insecurity is treated as persistent over the interval, and diabetes can itself contribute to food insecurity through medical cost.</td></tr>
+      <tr><td>SUTVA</td><td style="text-align:left; white-space:normal">Reasonable. One respondent's food-security status is unlikely to alter another respondent's diabetes risk within this sampling frame.</td></tr>
+      <tr><td>Accurate measurement</td><td style="text-align:left; white-space:normal">Weak. The earlier glycohemoglobin value is recalled from a clinical encounter up to one year earlier, and food insecurity is self-reported. Both are subject to measurement error.</td></tr>
     </tbody>
   </table>
 </div>
 
-<p>Two of the five are compromised in ways no estimator can repair. That is the finding, and it is worth more than the point estimate that follows from it.</p>
+<p>The last two substantive weaknesses cannot be repaired by a more sophisticated estimator.</p>
 
-<h2>Why a doubly robust estimator</h2>
+<p>Unmeasured confounding remains possible, and the temporal construction is imperfect. Measurement error in both exposure and prior outcome history also tends to attenuate associations.</p>
 
-<p>With a set of measured confounders there are two conventional routes to the average treatment effect. Model the outcome given treatment and covariates and average the contrast over the covariate distribution, which is g-computation. Or model the probability of treatment given covariates, the propensity score, and reweight the observed outcomes so that the two arms are comparable, which is inverse probability weighting. Each requires its own model to be right, and there is rarely a good reason to be confident in either.</p>
+<p>These limits have to remain part of the interpretation.</p>
 
-<p>Augmented inverse probability weighting combines them:</p>
+<h2>Why use a doubly robust estimator</h2>
+
+<p>With measured confounders, one approach is to model the outcome given treatment and covariates and average the resulting contrast. This is g-computation.</p>
+
+<p>Another is to model the probability of treatment given covariates and use the estimated propensity score to reweight observations. This is inverse probability weighting.</p>
+
+<p>Each method depends on its own nuisance model.</p>
+
+<p>Augmented inverse probability weighting combines the two.</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.92rem; line-height:2; margin:1.7rem 0;">
 E[ &micro;<sub>1</sub>(X) &minus; &micro;<sub>0</sub>(X) + A{Y &minus; &micro;<sub>1</sub>(X)} / &pi;(X) &minus; (1&minus;A){Y &minus; &micro;<sub>0</sub>(X)} / {1 &minus; &pi;(X)} ]
 </p>
 
-<p>where &pi;(X) is the propensity score and &micro;<sub>a</sub>(X) the expected outcome under treatment <em>a</em>. The estimator has a property that is genuinely remarkable the first time one meets it: it remains consistent if <em>either</em> the outcome model or the propensity model is correctly specified, without requiring both. Two chances at the truth, needing only one to land. This was the reason for choosing it over either component alone, given how little confidence the covariate set warranted.</p>
+<p>Here &pi;(X) is the propensity score and &micro;<sub>a</sub>(X) is the expected outcome under treatment level <em>a</em>.</p>
+
+<p>AIPW is doubly robust. The estimator remains consistent if <em>either</em> the outcome model or the propensity model is correctly specified, provided the other regularity conditions hold.</p>
+
+<p>That does not make it robust to all misspecification. If both nuisance models are wrong, the protection is lost.</p>
 
 <figure class="pj-figure" id="dr-live">
   <div class="pj-figure__head">
@@ -111,34 +139,67 @@ E[ &micro;<sub>1</sub>(X) &minus; &micro;<sub>0</sub>(X) + A{Y &minus; &micro;<s
   </div>
 
   <figcaption class="pj-figure__caption">
-    <p>Two hundred datasets of 1,000 observations are simulated from a known data-generating process with a true treatment effect of 2. Each is analysed three ways, and the sampling distribution of each estimator is drawn. Turn off either nuisance model and its corresponding single-model estimator moves off target while AIPW stays put. Turn off both and AIPW moves with them, which is the honest boundary of the property: doubly robust is not robust to being wrong twice.</p>
-    <p>Inverse probability weighting carries a small bias even when its model is correct, visible as a slight rightward shift. This is a finite-sample effect of dividing by estimated propensities near zero, and it is the practical reason the augmented estimator is usually preferred to the weighting estimator alone.</p>
+    <p>The browser simulation generates two hundred datasets of 1,000 observations from a known data-generating process with a true treatment effect of 2.</p>
+    <p>Each dataset is analyzed with g-computation, inverse probability weighting, and AIPW. When either the propensity model or outcome model is misspecified, its corresponding single-model estimator moves away from the truth while AIPW remains centered near the target. When both are misspecified, AIPW moves as well.</p>
+    <p>The simulation also shows a small finite-sample bias in inverse probability weighting when estimated propensities approach zero. This is one practical reason to prefer the augmented estimator over weighting alone.</p>
   </figcaption>
 </figure>
 
-<p>In the analysis itself the estimator was fitted with the <code>AIPW</code> package, with g-computation from <code>RobinCar</code> run alongside as a comparison, over a nested sequence of covariate sets ordered from most to least likely to confound: survey cycle, then age, then race and ethnicity, then sex, then educational attainment. Presenting a sequence rather than a single adjusted model shows how the estimate responds to adjustment, which is more informative than any one specification.</p>
+<p>In the NHANES analysis, AIPW was fit with the <code>AIPW</code> package. G-computation from <code>RobinCar</code> was used as a comparison.</p>
+
+<p>We examined a nested sequence of adjustment sets. Covariates were added in the order survey cycle, age, race and ethnicity, sex, and educational attainment.</p>
+
+<p>Looking across several specifications makes it easier to see whether the estimate is sensitive to the adjustment set rather than treating one model as uniquely authoritative.</p>
 
 <h2>What the analysis returned</h2>
 
-<p>The estimated average treatment effect of food insecurity on developing diabetes was close to zero across every covariate set, and no specification reached statistical significance at the five percent level. The two estimators agreed with each other closely, which is reassuring about the fitting and says nothing about the identification.</p>
+<p>The estimated average treatment effect of food insecurity on developing diabetes remained close to zero across the covariate sets we examined.</p>
 
-<p>The correct reading of a null result under these conditions is narrow. With a few hundred respondents, a rare outcome, self-reported exposure, and recalled outcome history, the study had little power to detect a moderate effect, and the measurement error present in both exposure and outcome attenuates estimates toward zero as a matter of course. The result is consistent with no effect and equally consistent with a real effect the design could not see. Published cohort studies with longitudinal follow-up have reported substantially elevated diabetes incidence among food insecure households; nothing here contradicts that, and nothing here supports it either.</p>
+<p>No specification reached statistical significance at the five percent level.</p>
 
-<h2>The question that could not be asked</h2>
+<p>AIPW and g-computation also agreed closely. That consistency is reassuring about the mechanics of the analysis, but it does not resolve the identification problems described above.</p>
 
-<p>A second question, the effect of vitamin D deficiency on diabetes, was planned and abandoned. Serum vitamin D is measured only at examination, and because NHANES draws a fresh sample each cycle there is no way to observe a respondent's earlier level. No construction analogous to the recalled glycohemoglobin measurement exists in the instrument, so exposure and outcome are simultaneous and the effect is not identified.</p>
+<p>The null result should therefore be read narrowly.</p>
 
-<p>An instrumental variable was considered, with average regional sun exposure as the leading candidate. It was rejected because every candidate examined violated the exclusion restriction: sunlight and geography influence diabetes risk through physical activity, diet, and the socioeconomic composition of place, not solely through vitamin D. An instrument that fails the exclusion restriction does not weaken an estimate; it invalidates it. Reporting the question as unanswerable was the correct output, and it belongs in the write-up rather than being quietly dropped.</p>
+<p>The sample was small. The outcome was uncommon. Food insecurity was self-reported, and prior glycohemoglobin was recalled. Both forms of measurement error can push estimates toward zero.</p>
 
-<h2>What would make NHANES answer this</h2>
+<p>The data are compatible with no effect. They are also compatible with a real effect that this design had too little power or too much measurement error to detect.</p>
 
-<p>The constraint is not the size of NHANES or the quality of its measurement, both of which are excellent. It is that the survey observes each person once. The precedent for the fix already exists in the programme's own history: the NHANES Epidemiologic Follow-up Study re-interviewed participants from an earlier wave and, in doing so, produced a dataset that has supported serious causal work for decades, including the canonical analysis of smoking cessation and weight gain that appears in causal inference textbooks. A follow-up component attached to the modern continuous survey would convert an unmatched collection of cross-sectional measurements into a longitudinal resource, and would make questions of this kind answerable rather than merely askable.</p>
+<p>The estimate should not be treated as evidence that food insecurity has no causal effect on diabetes risk.</p>
 
-<p>That is the argument the project ended on, and it is the reason a null finding was still worth writing up. A study that establishes precisely why a question cannot be answered with the available data has produced information, provided it is explicit about which assumption failed and what data would repair it.</p>
+<h2>The question we could not identify</h2>
+
+<p>A second planned question concerned the effect of vitamin D deficiency on type 2 diabetes.</p>
+
+<p>That analysis was abandoned.</p>
+
+<p>Serum vitamin D is measured only at the NHANES examination. Because each survey cycle draws a new cross-sectional sample, there is no earlier vitamin D measurement for the same respondent. Exposure and outcome are therefore observed at the same time.</p>
+
+<p>The temporal construction used for glycohemoglobin is not available.</p>
+
+<p>We also considered an instrumental-variable strategy. Regional sunlight exposure was one candidate.</p>
+
+<p>It was rejected because the exclusion restriction was not credible. Geography and sunlight can influence diabetes risk through physical activity, diet, socioeconomic conditions, and other pathways that do not operate through vitamin D.</p>
+
+<p>An invalid instrument does not merely make an estimate less precise. It undermines identification.</p>
+
+<p>The appropriate result for that question was therefore that the effect could not be estimated credibly from these data.</p>
+
+<h2>What would make the question answerable</h2>
+
+<p>The main constraint is the cross-sectional design rather than the overall scale of NHANES.</p>
+
+<p>A follow-up component would change that.</p>
+
+<p>NHANES has historical precedent for this approach. The NHANES Epidemiologic Follow-up Study re-interviewed participants from an earlier wave and created longitudinal data that supported later causal analyses.</p>
+
+<p>A similar follow-up structure attached to the modern continuous survey would make it possible to establish temporal ordering directly rather than reconstruct it from recalled measurements.</p>
+
+<p>That is why the null finding was still useful. The project identified where the available data support a causal analysis, where the assumptions remain weak, and what additional data would be needed to answer related questions more credibly.</p>
 
 <div class="pj-note">
   <span class="pj-note__label">Note</span>
-  <p>The manuscript itself is not circulated publicly, at the authors' request. This page describes the design, the estimator, and the methodological conclusions; the simulation above is an independent illustration of double robustness and uses no study data.</p>
+  <p>The manuscript itself is not circulated publicly, at the authors' request. This page describes the design, estimator, and methodological conclusions. The simulation above is an independent illustration of double robustness and uses no study data.</p>
 </div>
 
 <p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>

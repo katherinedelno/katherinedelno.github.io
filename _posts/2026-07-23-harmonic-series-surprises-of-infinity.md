@@ -2,36 +2,80 @@
 layout: post
 title: "The harmonic series and conditional convergence"
 date: 2026-07-23
-description: "A series whose terms vanish may nonetheless diverge, and a convergent sum may depend on the order of its terms. Three true results that sound false, each with its reasoning."
+description: "Terms can approach zero while their series diverges. Alternating signs can restore convergence, and conditional convergence makes the order of terms matter."
 course: "AP Calculus BC"
 read_time: "12 min read"
 math: true
 kind: foundations
 sequence: 29
 interactive: true
-blurb: "Terms that vanish, sums that diverge, and order that matters"
+blurb: "Terms can approach zero while their series diverges. Alternating signs can restore convergence, and conditional convergence makes the order of terms matter"
 image: "/assets/og/harmonic-series-surprises-of-infinity.png"
 ---
 
-Unit 10 is where calculus stops feeling like a faster version of algebra and starts producing results that sound false. This piece collects three of the best examples, each one a true statement that reads like a mistake, together with real proofs rather than incantations. If infinite series ever feel like a list of arbitrary rules, this is the antidote. The rules exist because infinity really does behave this strangely.
+Infinite series force a distinction between the behavior of individual terms and the behavior of their accumulated sum.
 
-## Surprise 1: terms that vanish, a sum that does not
+The harmonic series is the standard example.
 
-The harmonic series adds up the reciprocals:
+Its terms approach zero, but the series diverges.
 
-$$1 + \frac12 + \frac13 + \frac14 + \frac15 + \cdots$$
+Changing only the signs produces a convergent series.
 
-The terms shrink to zero, so it seems the sum should settle down. It does not, and the proof, due to Nicole Oresme around 1350, fits in three lines. Group the terms:
+That difference explains several of the [convergence tests](/2026/07/24/which-convergence-test-field-guide.html) used in BC.
 
-$$1 + \frac12 + \underbrace{\left(\frac13 + \frac14\right)}_{>\,\frac14 + \frac14\, =\, \frac12} + \underbrace{\left(\frac15 + \frac16 + \frac17 + \frac18\right)}_{>\,4\,\cdot\,\frac18\, =\, \frac12} + \underbrace{\left(\frac19 + \cdots + \frac1{16}\right)}_{>\,8\,\cdot\,\frac1{16}\, =\, \frac12} + \cdots$$
+## Terms can vanish while the sum diverges
 
-Every group contributes more than $$\tfrac12$$, and there are infinitely many groups, so the partial sums eventually pass any number you name. The series diverges even though its terms go to zero.
+The harmonic series is
 
-What makes this genuinely strange is how slowly the divergence happens. The sum of the first $$n$$ terms grows like $$\ln n$$. To push the total past 10 you need about 12,367 terms. To pass 100, you would need roughly $$1.5 \times 10^{43}$$ of them — a machine adding a trillion terms every second would not be a millionth of the way through by the time the sun burns out. The series diverges in theory and looks convergent on every calculator ever built. This is exactly why the exam insists on tests rather than numerical evidence, and why "the terms go to zero" earns no credit as a justification. The harmonic series is the standing counterexample: the nth-term test can convict a series of divergence, but it can never acquit one into convergence.
+$$1+\frac12+\frac13+\frac14+\frac15+\cdots.$$
 
-The boundary here is razor thin. Raise the exponent by any amount at all and the sum tames itself: $$\textstyle \sum \tfrac{1}{n^{1.0001}}$$ converges. The sharp cutoff at $$p = 1$$ in the [p-series test](/2026/07/24/which-convergence-test-field-guide.html) is not bureaucratic tidiness. It marks a real cliff edge, and the harmonic series sits exactly on the lip.
+Its terms approach zero.
 
-You can watch both behaviors at once. The picture below plots partial sums: the harmonic series climbing without a ceiling, and its sign-alternating twin (the subject of the next section) settling onto $$\ln 2$$.
+The series nevertheless diverges.
+
+A classical proof groups the terms:
+
+$$1+\frac12 + \left(\frac13+\frac14\right) + \left(\frac15+\frac16+\frac17+\frac18\right) +\cdots.$$
+
+In the first displayed group,
+
+$$\frac13+\frac14>\frac12.$$
+
+In the next,
+
+$$\frac15+\frac16+\frac17+\frac18 > 4\left(\frac18\right) = \frac12.$$
+
+Each new block contains twice as many terms, and every block contributes more than $$1/2$$.
+
+With infinitely many such blocks, the partial sums grow without bound.
+
+So
+
+$$\sum_{n=1}^{\infty}\frac1n$$
+
+diverges even though
+
+$$\frac1n\to0.$$
+
+This is why the $$n$$-th term test can prove divergence but cannot prove convergence.
+
+If the terms do not approach zero, the series diverges.
+
+If they do approach zero, more information is needed.
+
+## Divergence can be extremely slow
+
+The partial sums of the harmonic series grow roughly like
+
+$$\ln n.$$
+
+That growth is very slow.
+
+The series can appear numerically stable for a long time while continuing to diverge.
+
+This is one reason numerical evidence is not enough to establish convergence.
+
+A test has to address the infinite tail.
 
 <div class="viz" markdown="0">
   <canvas id="hs-cv" width="700" height="280"></canvas>
@@ -105,47 +149,112 @@ You can watch both behaviors at once. The picture below plots partial sums: the 
 })();
 </script>
 
-## Surprise 2: alternate the signs, and order suddenly matters
+The upper panel shows harmonic partial sums continuing upward.
 
-Flip every other sign and the harmonic series calms down completely:
+The lower panel shows the alternating harmonic partial sums approaching a finite limit.
 
-$$1 - \frac12 + \frac13 - \frac14 + \frac15 - \cdots = \ln 2 \approx 0.693.$$
+The ingredients are nearly the same. The signs change the outcome.
 
-Convergence here is easy to see. The partial sums hop right, then left, each hop smaller than the last, closing in like a pendulum losing energy. That picture is the entire content of the alternating series test: terms decreasing in size to zero force the hops to trap a limit. The picture also hands you the famous error bound for free. The true sum is always trapped between consecutive partial sums, so you are never farther from the limit than the size of the next hop. In other words, the first omitted term bounds the error. That is not a formula to memorize so much as the pendulum picture written down.
+## Alternating signs
 
-But this series converges only because of the cancellation. Take absolute values and you are back to the divergent harmonic series. BC calls this situation conditional convergence, and the name is a warning label. Here is what the condition is.
+Now consider
 
-Consider what shuffling does. Take the same numbers, every positive term $$1, \tfrac13, \tfrac15, \ldots$$ and every negative term $$-\tfrac12, -\tfrac14, \ldots$$, each used exactly once, but deal them in a different order: two positives, then one negative, and repeat.
+$$1-\frac12+\frac13-\frac14+\frac15-\cdots.$$
 
-$$1 + \frac13 - \frac12 + \frac15 + \frac17 - \frac14 + \cdots = \frac{3}{2}\ln 2.$$
+This series converges to
 
-Same terms, different order, different sum, half again as large. Addition of infinitely many things is not commutative.
+$$\ln2.$$
 
-The reason becomes visible once you look at the two halves separately. The positive terms alone sum to $$+\infty$$, and the negative terms alone sum to $$-\infty$$. The ordinary order drains the two infinite reservoirs in careful balance. A shuffle that draws faster from the positive reservoir tilts the balance forever. Riemann proved the ultimate version of this in 1854: a conditionally convergent series can be rearranged to sum to any number you choose, or to diverge. The recipe is greedy. Pick a target; draw positive terms until you cross it, then negative terms until you cross back, and repeat. Each reservoir is infinite, so you never run out, and since the terms shrink to zero, the overshoots shrink too.
+The alternating series test explains why.
 
-Absolutely convergent series, the ones that survive with all signs stripped, such as $$\textstyle \sum \tfrac{(-1)^n}{n^2}$$, have no such pathology. Shuffle them however you like and the sum holds. This is why BC bothers to distinguish absolute from conditional convergence. It is the difference between a sum that depends only on the set of terms and a sum that depends on their order.
+If the positive magnitudes $$b_n$$ decrease to zero, then
 
-## Surprise 3: the convergent twin has a beautiful secret
+$$\sum(-1)^n b_n$$
 
-The near-twin of the harmonic series, built from squares,
+converges.
 
-$$1 + \frac14 + \frac19 + \frac1{16} + \cdots$$
+The partial sums alternate above and below the limit with progressively smaller corrections.
 
-does converge, since $$p = 2 > 1$$. Its exact value stumped the Bernoullis for decades. The question became known as the Basel problem, and Euler answered it in 1734 with one of the most celebrated results in mathematics:
+That same structure gives the alternating-series error bound.
 
-$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}.$$
+If the series satisfies the hypotheses of the test, the error after truncation is no larger than the magnitude of the first omitted term.
 
-A sum built from nothing but whole numbers, and $$\pi$$ appears, the circle constant arriving uninvited in a problem with no circle in sight. Euler's original argument treated $$\tfrac{\sin x}{x}$$ as an infinite polynomial and factored it by its roots, exactly the way you would factor a quadratic. It was a gloriously reckless move that took another century to justify rigorously, and it previews the Taylor-series worldview in which functions really are their series. Change the exponent to 3, though, and the sum $$\textstyle \sum \tfrac{1}{n^3}$$ has no known closed form; it was not even proved irrational until 1978. The frontier of mathematics runs directly through what looks like a BC homework problem.
+## Conditional convergence
 
-## What this buys you on the exam
+The alternating harmonic series converges.
 
-None of the above appears on the test directly, but all of it stands behind the test, and the strangeness explains why the rules are what they are.
+But its absolute-value series is
 
-- The nth-term test only proves divergence because of Surprise 1: vanishing terms guarantee nothing.
-- Justifications must name a test and verify its hypotheses because numerical evidence is provably worthless here. Recall the 12,367 terms needed just to reach 10.
-- Absolute versus conditional convergence is worth classifying because of Surprise 2. The two kinds of convergence differ in kind, not merely in degree.
-- The alternating series error bound is the pendulum picture, and remembering the picture is more reliable than remembering the formula.
+$$\sum_{n=1}^{\infty}\frac1n,$$
+
+which diverges.
+
+So the alternating harmonic series converges conditionally rather than absolutely.
+
+This distinction has a real consequence.
+
+A conditionally convergent series can change value when its terms are rearranged.
+
+For example, taking two positive terms and then one negative term repeatedly gives a rearrangement of the alternating harmonic series with a different sum.
+
+The positive terms by themselves diverge to $$+\infty$$.
+
+The negative terms by themselves diverge to $$-\infty$$.
+
+A rearrangement changes the balance between those two parts.
+
+The Riemann rearrangement theorem goes further. A conditionally convergent series can be rearranged to converge to any chosen real number, or to diverge.
+
+Absolutely convergent series do not have this behavior.
+
+If
+
+$$\sum \vert a_n\vert$$
+
+converges, rearranging
+
+$$\sum a_n$$
+
+does not change its sum.
+
+## The neighboring $$p$$-series
+
+The harmonic series is the $$p=1$$ case of
+
+$$\sum_{n=1}^{\infty}\frac{1}{n^p}.$$
+
+This series converges when
+
+$$p>1$$
+
+and diverges when
+
+$$p\le1.$$
+
+For $$p=2$$,
+
+$$\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}.$$
+
+The appearance of $$\pi$$ in a series involving only reciprocals of squares is the classical Basel problem.
+
+For $$p=3$$, the series also converges, but its value has no known comparably simple closed form.
+
+The important course-level distinction is the threshold at $$p=1$$.
+
+Even a very small change above 1 changes the convergence behavior.
+
+## What to carry into convergence problems
+
+Several practical rules follow from these examples.
+
+- A term approaching zero is necessary for convergence, but not sufficient.
+- Numerical partial sums cannot establish convergence.
+- Absolute convergence is stronger than conditional convergence.
+- For an alternating series that meets the hypotheses, the first omitted term bounds the truncation error.
+- The $$p$$-series threshold at $$p=1$$ is exact.
 
 <div class="article-note" markdown="1">
-Something to try at a whiteboard: use the greedy rearrangement recipe to steer the alternating harmonic series toward 1.2. Take positive terms until you pass it, then negative terms until you drop below, and repeat. Watching the overshoots shrink term by term is the fastest way I know to believe Riemann's theorem in your bones.
+These are not unrelated rules.
+
+They describe different ways that infinite accumulation can behave.
 </div>

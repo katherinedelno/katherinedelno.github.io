@@ -2,32 +2,64 @@
 layout: post
 title: "Independence and mutual exclusivity"
 date: 2026-07-27
-description: "Two properties that students treat as siblings are nearly opposites: mutually exclusive events are as dependent as events can be. An interactive pair of events makes the distinction concrete."
+description: "Mutual exclusivity is about overlap. Independence is about whether learning one event changes the probability of the other."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 5
 interactive: true
-blurb: "Mutually exclusive events are as dependent as events can be"
+blurb: "Mutual exclusivity is about overlap. Independence is about whether learning one event changes the probability of the other"
 image: "/assets/og/independence-and-mutual-exclusivity.png"
 ---
 
-Ask a class whether mutually exclusive events are independent and a majority will say yes, on the reasonable-sounding grounds that both words describe events with nothing to do with each other. The truth is nearly the reverse. Mutually exclusive events are as strongly dependent as two events can be, and the confusion between the two properties is among the most reliable point-losers in the probability units of AP Statistics.
+Independence and mutual exclusivity describe different relationships between events.
 
-The cure is to state both definitions in terms of what they actually control, and then to watch them move.
+Mutual exclusivity is about whether two events can happen together.
 
-## What each property says
+Independence is about whether learning that one event occurred changes the probability of the other.
 
-**Mutual exclusivity** is a statement about overlap: events $$A$$ and $$B$$ are mutually exclusive when they cannot occur together, so that $$P(A \text{ and } B) = 0$$. It is a fact about the geometry of the sample space, visible in a Venn diagram as two regions that do not touch.
+For events with positive probability, mutually exclusive events cannot be independent.
 
-**Independence** is a statement about information: $$A$$ and $$B$$ are independent when knowing that one occurred leaves the probability of the other unchanged, so that $$P(A \mid B) = P(A)$$, or equivalently $$P(A \text{ and } B) = P(A)\,P(B)$$. It is not visible in a Venn diagram at all, because it is a numerical coincidence between areas, not a shape.
+## Mutual exclusivity
 
-Now put the two together. If $$A$$ and $$B$$ are mutually exclusive, and you learn that $$B$$ occurred, you have learned something enormous about $$A$$: it did not happen. Formally, $$P(A \mid B) = 0$$, which differs from $$P(A)$$ whenever $$A$$ is possible at all. Mutually exclusive events with nonzero probabilities are therefore never independent. Exclusivity is maximal dependence.
+Events $$A$$ and $$B$$ are mutually exclusive when
 
-## Watching the two properties separate
+$$P(A\cap B)=0.$$
 
-The events below have fixed probabilities $$P(A) = 0.5$$ and $$P(B) = 0.4$$. The slider controls the only remaining freedom, the probability of the overlap, from 0 up to its largest possible value. The readout tracks the quantity independence cares about.
+They have no overlap.
+
+If one occurs, the other did not.
+
+This condition simplifies the addition rule:
+
+$$P(A\cup B) = P(A)+P(B)$$
+
+when the events are mutually exclusive.
+
+## Independence
+
+Events $$A$$ and $$B$$ are independent when
+
+$$P(A\mid B)=P(A).$$
+
+Knowing that $$B$$ occurred gives no new information about the probability of $$A$$.
+
+An equivalent condition is
+
+$$P(A\cap B) = P(A)P(B).$$
+
+Independence is therefore a numerical relationship among probabilities.
+
+## Watch the overlap change
+
+The events below have fixed probabilities
+
+$$P(A)=0.5$$
+
+and
+
+$$P(B)=0.4.$$
 
 <div class="viz" markdown="0">
   <canvas id="ie-cv" width="700" height="250"></canvas>
@@ -73,12 +105,72 @@ The events below have fixed probabilities $$P(A) = 0.5$$ and $$P(B) = 0.4$$. The
 })();
 </script>
 
-## The two-way table version
+Independence requires
 
-The exam most often probes this distinction through a two-way table, where both properties become arithmetic. Exclusivity is a zero in the joint cell. Independence is the multiplicative check: does the joint cell equal the product of the marginal totals, divided appropriately? A table can fail both, satisfy exclusivity alone, or satisfy independence alone; the one combination that is impossible, for events of positive probability, is both at once.
+$$P(A\cap B) = (0.5)(0.4) = 0.20.$$
 
-Two habits keep the distinction secure under exam conditions. First, always test independence numerically, by comparing $$P(A \text{ and } B)$$ with $$P(A)\,P(B)$$, or $$P(A \mid B)$$ with $$P(A)$$; the words in the problem never settle it, and "the groups seem unrelated" is not a justification the rubric accepts. Second, reserve the phrase "mutually exclusive" for the addition rule, where it does its real work: $$P(A \text{ or } B) = P(A) + P(B)$$ holds exactly when the overlap contributes nothing. Each property licenses its own rule, the overlap term is the hinge for both, and neither property can be inferred from the other.
+At overlap 0.20,
+
+$$P(A\mid B)=P(A)=0.5.$$
+
+Move the overlap to zero.
+
+The events are now mutually exclusive.
+
+Then
+
+$$P(A\mid B)=0,$$
+
+which is very different from
+
+$$P(A)=0.5.$$
+
+Learning that $$B$$ happened tells us with certainty that $$A$$ did not.
+
+That is dependence, not independence.
+
+## An overlapping pair can be independent
+
+Draw one card from a standard deck.
+
+Let $$A$$ be the event that the card is a heart.
+
+Let $$B$$ be the event that the card is a king.
+
+The events overlap because the king of hearts belongs to both.
+
+But
+
+$$P(A\cap B) = \frac1{52},$$
+
+and
+
+$$P(A)P(B) = \frac{13}{52}\cdot\frac4{52} = \frac1{52}.$$
+
+So the events are independent.
+
+Overlap and independence are compatible.
+
+No overlap and independence are not compatible when both events have positive probability.
+
+## Two-way tables
+
+In a two-way table, independence can be checked by comparing a conditional proportion with the corresponding marginal proportion.
+
+For example, compare
+
+$$P(A\mid B)$$
+
+with
+
+$$P(A).$$
+
+Or use the multiplication condition
+
+$$P(A\cap B)=P(A)P(B).$$
 
 <div class="article-note" markdown="1">
-A question that separates the two ideas cleanly: draw one card from a standard deck, with $$A$$ the event of drawing a heart and $$B$$ the event of drawing a king. These events overlap, in the king of hearts, and they are independent, since $$P(A \text{ and } B) = \tfrac{1}{52}$$ while $$P(A)\,P(B) = \tfrac{13}{52}\cdot\tfrac{4}{52} = \tfrac{1}{52}$$ as well. Overlapping yet independent, the exact opposite of the intuition the vocabulary suggests, which is why the numerical test, not the vocabulary, is what earns the point.
+The wording of the categories does not determine independence.
+
+The probabilities do.
 </div>

@@ -2,7 +2,7 @@
 layout: post
 title: "Derivatives of inverse functions"
 date: 2026-07-30
-description: "The derivative of an inverse function can be found without ever writing the inverse down. The rule is a reciprocal, and the whole difficulty is remembering where it gets evaluated."
+description: "Corresponding tangent slopes of a function and its inverse are reciprocals, with the derivative evaluated at the corresponding input."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,35 +10,57 @@ math: true
 kind: mechanics
 sequence: 12
 interactive: true
-blurb: "A reciprocal, evaluated somewhere other than where you are standing"
+blurb: "Corresponding tangent slopes of a function and its inverse are reciprocals, with the derivative evaluated at the corresponding input"
 image: "/assets/og/derivatives-of-inverse-functions.png"
 ---
 
-The graph of $$f^{-1}$$ is the graph of $$f$$ reflected across the line $$y = x$$. Reflecting a line across $$y = x$$ swaps its rise and its run, so the slopes at corresponding points are reciprocals. That picture is the whole theorem, and it is worth having before the formula.
+The graph of $$f^{-1}$$ is the graph of $$f$$ reflected across the line $$y=x$$.
 
-What makes the formula useful is that it needs no formula for $$f^{-1}$$. The inverse can be something nobody can write down, and the derivative of it at a point is still an ordinary arithmetic problem.
+Reflection across $$y=x$$ swaps horizontal and vertical change. At corresponding points, tangent slopes are therefore reciprocals.
 
-## The rule, and where it is evaluated
+That geometric picture leads directly to the derivative formula.
 
-Suppose $$f$$ is one-to-one and differentiable on an interval, $$f^{-1}$$ is defined near $$a$$, and $$f'\big(f^{-1}(a)\big) \neq 0$$. Then $$f^{-1}$$ is differentiable at $$a$$ and
+## The rule and the evaluation point
+
+Suppose $$f$$ is one-to-one and differentiable, and suppose
+
+$$f'\big(f^{-1}(a)\big)\neq0.$$
+
+Then
 
 $$\big(f^{-1}\big)'(a) = \frac{1}{f'\big(f^{-1}(a)\big)}.$$
 
-It comes straight out of the chain rule, which is what the framework says it comes out of. Start from the definition of an inverse, $$f\big(f^{-1}(x)\big) = x$$, and differentiate both sides:
+The formula follows from the identity
+
+$$f\big(f^{-1}(x)\big)=x.$$
+
+[Differentiate both sides](/2026/07/30/chain-rule-reading-the-layers.html):
 
 $$f'\big(f^{-1}(x)\big) \cdot \big(f^{-1}\big)'(x) = 1.$$
 
-Divide. The condition $$f'\big(f^{-1}(a)\big) \neq 0$$ is exactly the condition that lets you divide.
+Then solve for the inverse derivative.
 
-The trap is the evaluation point, and it is the [same trap as in the chain rule](/2026/07/30/chain-rule-reading-the-layers.html): $$f'$$ is not evaluated at $$a$$. It is evaluated at the input that $$f$$ sends to $$a$$. Take $$f(x) = x^3 + x$$. Since $$f(1) = 2$$, we have $$f^{-1}(2) = 1$$, so
+The main difficulty is usually not the reciprocal. It is finding where $$f'$$ should be evaluated.
 
-$$\big(f^{-1}\big)'(2) = \frac{1}{f'(1)} = \frac{1}{3(1)^2 + 1} = \frac14.$$
+Suppose
 
-Nobody wrote down $$f^{-1}$$, and nobody could — the inverse of $$x^3 + x$$ has no expression in the functions of this course. The answer is still exactly one quarter.
+$$f(x)=x^3+x.$$
 
-## Confirming an answer you could not have computed
+Since
 
-Topic 3.3's suggested skill is to confirm that solutions are accurate and appropriate, which is an unusual thing to ask of a differentiation rule and a reasonable thing to ask of this one. The tool below does the confirming two ways.
+$$f(1)=2,$$
+
+we know
+
+$$f^{-1}(2)=1.$$
+
+Therefore
+
+$$\big(f^{-1}\big)'(2) = \frac{1}{f'(1)} = \frac{1}{3(1)^2+1} = \frac14.$$
+
+We never needed a formula for $$f^{-1}$$.
+
+## Matching corresponding points
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="iv-fns"></div>
@@ -185,28 +207,84 @@ Topic 3.3's suggested skill is to confirm that solutions are accurate and approp
 })();
 </script>
 
-The first confirmation is geometric and needs no algebra: the two slopes multiply to 1 at every position of the slider, on every function. The second is the row at the bottom. Where the inverse has a derivative worth memorizing, the tool evaluates that memorized formula independently and prints the gap between the two answers. Across every function and every slider position that gap never exceeds seven parts in a trillion, which is arithmetic rounding rather than disagreement.
+The visualization shows $$f$$ and its reflection across $$y=x$$.
 
-For $$x^3 + x$$ that row has nothing to say, and that is the case the rule exists for.
+A point $$(b,f(b))$$ on the original graph corresponds to
 
-## The inverse trigonometric derivatives are not a second list
+$$(f(b),b)$$
 
-The framework is explicit that the inverse trigonometric derivatives come from this rule rather than from memorization — the chain rule with the definition of an inverse, or the inverse-derivative formula itself. Both routes are named, and both are short.
+on the inverse.
 
-With $$f = \sin$$ on $$[-\tfrac{\pi}{2}, \tfrac{\pi}{2}]$$, so that $$f^{-1} = \arcsin$$ and $$f' = \cos$$,
+The tangent slopes at those two points are reciprocals wherever both derivatives exist.
 
-$$(\arcsin)'(a) = \frac{1}{\cos(\arcsin a)} = \frac{1}{\sqrt{1 - a^2}},$$
+This is useful when a problem provides a table rather than a formula.
 
-where the last step is the Pythagorean identity applied to the angle whose sine is $$a$$. With $$f = \tan$$ it is shorter still, because $$\sec^2 = 1 + \tan^2$$ and $$\tan$$ of the angle in question is $$a$$:
+If you are asked for
 
-$$(\arctan)'(a) = \frac{1}{\sec^2(\arctan a)} = \frac{1}{1 + a^2}.$$
+$$\big(f^{-1}\big)'(4),$$
 
-Two derivations, four lines, and no list. This is the same argument as [rearranging tangent and secant](/2026/07/30/derivative-rules-and-choosing.html) in Unit 2, one unit later.
+look for the row where
 
-## Provided the derivative exists
+$$f(x)=4.$$
 
-The framework attaches that clause to the rule, and it is not decoration. Take $$f(x) = x^3$$, which is one-to-one on the whole real line with inverse the cube root $$x^{1/3}$$. At $$b = 0$$, $$f'(0) = 0$$, and the reciprocal does not exist. Reading the picture instead of the formula says the same thing: the tangent to $$x^3$$ at the origin is horizontal, so its reflection is vertical, and [a vertical tangent is not a slope](/2026/07/30/where-differentiability-fails.html).
+That row gives $$f^{-1}(4)$$. The derivative $$f'$$ must be evaluated at that input.
+
+Looking for $$x=4$$ instead is the common mistake.
+
+## Inverse trigonometric derivatives
+
+The inverse trigonometric derivative formulas can be derived from the same rule.
+
+For $$f=\sin$$ on the interval where sine is one-to-one,
+
+$$(\arcsin)'(a) = \frac{1}{\cos(\arcsin a)}.$$
+
+Using the Pythagorean identity,
+
+$$\cos(\arcsin a) = \sqrt{1-a^2},$$
+
+so
+
+$$(\arcsin)'(a) = \frac{1}{\sqrt{1-a^2}}.$$
+
+For tangent,
+
+$$(\arctan)'(a) = \frac{1}{\sec^2(\arctan a)}.$$
+
+Since
+
+$$\sec^2\theta=1+\tan^2\theta,$$
+
+we get
+
+$$(\arctan)'(a) = \frac{1}{1+a^2}.$$
+
+These formulas are consequences of the inverse-function rule and [trigonometric identities](/2026/07/30/derivative-rules-and-choosing.html).
+
+## When the reciprocal does not exist
+
+Take
+
+$$f(x)=x^3.$$
+
+Its inverse is
+
+$$f^{-1}(x)=x^{1/3}.$$
+
+At the origin,
+
+$$f'(0)=0.$$
+
+So the reciprocal formula would require division by zero.
+
+The graph explains why. The tangent to $$x^3$$ at the origin is horizontal. Reflecting that tangent across $$y=x$$ produces a vertical line.
+
+The inverse therefore has a [vertical tangent](/2026/07/30/where-differentiability-fails.html) at the corresponding point, not a finite derivative.
 
 <div class="article-note" markdown="1">
-On a free-response question the information usually arrives as a table rather than a formula, and the reciprocal is the easy part. Before writing anything, find the row you actually need: if the question asks for $$\big(f^{-1}\big)'(4)$$, look down the $$f(x)$$ column for the 4, not the $$x$$ column. Everything after that is one division.
+The condition
+
+$$f'\big(f^{-1}(a)\big)\neq0$$
+
+is part of the theorem for a reason.
 </div>

@@ -2,7 +2,7 @@
 layout: post
 title: "Area between curves and average value"
 date: 2026-07-30
-description: "Both are definite integrals of a difference. Average value is a height rather than a rate, area is top minus bottom rather than the difference of two areas, and both go wrong in the same place."
+description: "Average value and area between curves both depend on setting up the correct integrand before evaluating the integral."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "9 min read"
@@ -10,39 +10,109 @@ math: true
 kind: foundations
 sequence: 27
 interactive: true
-blurb: "Two applications, one integrand: the difference of two things"
+blurb: "Average value and area between curves both depend on setting up the correct integrand before evaluating the integral"
 image: "/assets/og/area-and-average-value.png"
 ---
 
-Two of Unit 8's applications look unrelated and are the same calculation. The average value of a function is the constant that would enclose the same area; the area between two curves is the integral of their difference. In both cases the integrand is a difference, and in both cases the mistakes come from getting that difference wrong.
+Average value and area between curves are different applications of the definite integral.
 
-Both also rest on the same enduring understanding, that definite integrals let us solve problems involving [the accumulation of change](/2026/07/30/accumulation-functions.html) over an interval.
+Both depend on setting up the integrand correctly.
 
-## Average value is a height, not a rate
+For average value, the integral is divided by the width of the interval.
 
-The framework's definition is a formula:
+For area between curves, the integrand is the difference between the relevant boundaries.
 
-$$f_{\text{avg}} = \frac{1}{b-a}\int_a^b f(x)\,dx.$$
+## Average value
 
-Read it as area divided by width, which makes it the height of the rectangle on $$[a,b]$$ with the same area as the region under $$f$$. It is measured in the units of $$f$$, not in units of $$f$$ per unit of $$x$$.
+The average value of $$f$$ on $$[a,b]$$ is
 
-The framework's exam guidance names the confusion directly: some students confuse the average value and the average rate of change of a function on an interval. Those are different quantities with different units, and the relationship between them is exact and worth knowing.
+$$ f_{\text{avg}} = \frac{1}{b-a} \int_a^b f(x)\,dx. $$
 
-$$\text{average rate of change of } f = \frac{f(b)-f(a)}{b-a} = \frac{1}{b-a}\int_a^b f'(x)\,dx = \big(f'\big)_{\text{avg}}.$$
+Geometrically, this is the height of a rectangle with width $$b-a$$ and the same signed area as the integral.
 
-So the average rate of change of $$f$$ is the average value of $$f'$$ — one level down, never the average value of $$f$$ itself. On $$f(x) = x^2$$ over $$[1,3]$$ the average rate of change is 4 and the average value is $$\tfrac{13}{3}$$, and no rearrangement turns one into the other.
+Its units are the same as the units of $$f$$.
 
-That middle expression should also look familiar: $$\tfrac{f(b)-f(a)}{b-a}$$ is the quantity [the Mean Value Theorem](/2026/07/30/mean-value-and-extreme-value-theorems.html) promises the derivative attains somewhere. Average rate of change is the derivative's business; average value is the function's own.
+This is different from average rate of change:
 
-## Why it is not the midpoint of the range
+$$ \frac{f(b)-f(a)}{b-a}. $$
 
-The exam guidance goes further and asks that students understand why an average value may be less than, equal to, or greater than the midpoint of the range. All three happen on $$[0,1]$$ with functions running from 0 to 1.
+In fact,
 
-For $$f(x) = x$$ the average value is $$\tfrac12$$, and the midpoint of the range is also $$\tfrac12$$. For $$f(x) = x^2$$ the average value is $$\tfrac13$$, below the midpoint, because the function spends most of the interval near its low values. For $$f(x) = \sqrt{x}$$ it is $$\tfrac23$$, above, for the mirror-image reason.
+$$ \frac{f(b)-f(a)}{b-a} = \frac{1}{b-a} \int_a^b f'(x)\,dx. $$
 
-The midpoint of the range asks where the outputs sit. The average value asks how long the function spends near each of them, and those are not the same question.
+So the average rate of change of $$f$$ is the average value of $$f'$$, not the average value of $$f$$.
 
-## Top minus bottom
+For example, on $$[1,3]$$ with
+
+$$ f(x)=x^2, $$
+
+the average rate of change is
+
+$$ 4, $$
+
+while the average value is
+
+$$ \frac{13}{3}. $$
+
+They are different quantities.
+
+## Average value is not the midpoint of the range
+
+On $$[0,1]$$, consider three functions that all range from 0 to 1.
+
+For
+
+$$ f(x)=x, $$
+
+the average value is
+
+$$ \frac12. $$
+
+For
+
+$$ f(x)=x^2, $$
+
+the average value is
+
+$$ \frac13. $$
+
+For
+
+$$ f(x)=\sqrt{x}, $$
+
+the average value is
+
+$$ \frac23. $$
+
+The midpoint of the output range is $$1/2$$ in all three cases.
+
+The average value depends on how the function is distributed across the interval, not only on its minimum and maximum.
+
+## Area between two curves
+
+To find area between two graphs using vertical slices, integrate
+
+$$ \text{top} - \text{bottom}. $$
+
+For
+
+$$ y=x $$
+
+and
+
+$$ y=x^2 $$
+
+on $$[0,1]$$, we have
+
+$$ x\ge x^2. $$
+
+So
+
+$$ A = \int_0^1(x-x^2)\,dx = \frac16. $$
+
+If the curves cross inside the interval, the integral may need to be split.
+
+A signed integral can cancel. Geometric area cannot.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ar-fns"></div>
@@ -174,26 +244,76 @@ The midpoint of the range asks where the outputs sit. The average value asks how
 })();
 </script>
 
-The integrand for an area is always the difference of the two boundaries, taken in the order that keeps it positive. The framework attaches its notation skill to this topic — use appropriate mathematical symbols and notation — and the notation is where the point is earned: writing $$\textstyle\int_0^1 (x - x^2)\,dx$$ says which curve is on top, and writing $$\textstyle\int_0^1 x\,dx - \textstyle\int_0^1 x^2\,dx$$ says it too, but only the first survives contact with a region where they trade places.
+The visualization distinguishes [signed accumulation](/2026/07/30/accumulation-functions.html) from total area.
 
-For $$y = x$$ and $$y = x^2$$ on $$[0,1]$$ the area is $$\tfrac12 - \tfrac13 = \tfrac16$$, and both forms give it, because $$x \geq x^2$$ throughout.
+When one boundary crosses the other, the sign of their difference changes.
 
-## Functions of y, and curves that cross three times
+If the goal is geometric area, split the integral at the crossing and keep each piece positive.
 
-Two later topics complicate the setup without changing the idea.
+## Integrating with respect to $$y$$
 
-The first is orientation. The framework says areas can be calculated using functions of either $$x$$ or $$y$$, and the region bounded by $$x = y^2$$ and $$x = y+2$$ is far easier in $$y$$: the boundaries meet where $$y^2 = y+2$$, so $$y = -1$$ and $$y = 2$$, and
+Vertical slices are not always the easiest choice.
 
-$$\int_{-1}^{2}\big((y+2) - y^2\big)\,dy = \frac92.$$
+Suppose a region is bounded by
 
-In $$x$$ the same region would need splitting, because its left boundary changes character partway up. Choosing the variable is part of the setup, not a preference.
+$$ x=y^2 $$
 
-The second is curves that cross more than twice, which is a topic of its own. Take $$y = x$$ and $$y = x^3$$ on $$[-1,1]$$. They meet at $$-1$$, $$0$$, and $$1$$, and $$x^3$$ is above on the left half and below on the right. The signed integral is
+and
 
-$$\int_{-1}^{1}(x - x^3)\,dx = 0,$$
+$$ x=y+2. $$
 
-which is correct and is not the area. The area is $$\tfrac12$$, found by splitting at the interior crossing and adding the two pieces as positive quantities. A total area that comes out zero for a region you can see is the same warning as [a negative answer for a positive integrand](/2026/07/30/improper-integrals.html): the integral did what it was told, and it was told the wrong thing.
+The curves meet where
+
+$$ y^2=y+2, $$
+
+so
+
+$$ y=-1 \quad\text{and}\quad y=2. $$
+
+Using horizontal slices,
+
+$$ A = \int_{-1}^{2} \left((y+2)-y^2\right)\,dy = \frac92. $$
+
+The same region can be described using $$x$$, but the setup becomes less direct.
+
+Choosing the variable is part of the problem.
+
+## Curves that cross more than once
+
+Consider
+
+$$ y=x $$
+
+and
+
+$$ y=x^3 $$
+
+on
+
+$$ [-1,1]. $$
+
+The curves meet at
+
+$$ -1,\quad0,\quad1. $$
+
+On the left half, $$x^3$$ lies above $$x$$.
+
+On the right half, $$x$$ lies above $$x^3$$.
+
+The signed integral
+
+$$ \int_{-1}^{1}(x-x^3)\,dx = 0 $$
+
+is correct as a net signed quantity.
+
+It is not the geometric area.
+
+For area, split at $$x=0$$ and add the magnitudes of the two regions.
 
 <div class="article-note" markdown="1">
-Both halves of this article fail in the same place, which is why they belong together. An average value is the signed integral divided by the width, so a function that spends half its time negative can have an average value near zero without being near zero anywhere. An area is the *unsigned* accumulation, so it needs the crossings found first. Before integrating a difference, ask one question: am I allowed to let this cancel? For average value the answer is yes and that is the definition. For area it is no, every time.
+Before integrating a difference, ask whether cancellation is appropriate.
+
+For average value, signed accumulation is part of the definition.
+
+For geometric area, cancellation is not.
 </div>

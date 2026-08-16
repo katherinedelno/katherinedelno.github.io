@@ -2,7 +2,7 @@
 layout: post
 title: "Indeterminate forms and the algebra that resolves them"
 date: 2026-07-30
-description: "0/0 is not a value. It is a report that substitution failed, and it carries no information about the answer. Three ways to rewrite the expression, two standard limits, and the squeeze theorem for what is left."
+description: "When substitution produces 0/0, the next step is to rewrite the expression rather than treat the form as an answer."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,85 +10,171 @@ math: true
 kind: mechanics
 sequence: 3
 interactive: false
-blurb: "0/0 is a verdict on your method, not an answer"
+blurb: "When substitution produces 0/0, the next step is to rewrite the expression rather than treat the form as an answer"
 image: "/assets/og/indeterminate-forms.png"
 ---
 
-Substituting into $$\tfrac{x^2 - 9}{x - 3}$$ at $$x = 3$$ gives $$\tfrac{0}{0}$$, and the limit is 6. Substituting into $$\tfrac{x - 3}{x^2 - 9}$$ at $$x = 3$$ gives $$\tfrac{0}{0}$$, and the limit is $$\tfrac16$$. Substituting into $$\tfrac{x-3}{(x-3)^2}$$ gives $$\tfrac{0}{0}$$, and the limit does not exist.
+Substitution into
 
-Three expressions, one symbol, three different answers. That is what "indeterminate" means: the form $$\tfrac00$$ is not a number and it is not a verdict on the limit. It is a report that substitution failed, and it carries no information about what the limit actually is.
+$$\frac{x^2-9}{x-3}$$
 
-The work, therefore, is to stop substituting and start rewriting. The framework says so directly: it may be necessary to rearrange expressions into equivalent forms before evaluating limits.
+at $$x=3$$ gives $$0/0$$, but the limit is 6.
 
-## Substitution first, and when it is legal
+Substitution into
 
-Try substitution before anything else, because when it works it is finished. It works precisely when the function is [continuous at the point](/2026/07/30/continuity-three-conditions.html), and the standard families — polynomial, rational, power, exponential, logarithmic, trigonometric — are continuous everywhere in their domains. For those, substitution *is* the evaluation.
+$$\frac{x-3}{x^2-9}$$
 
-Limits also distribute over sums, differences, products, quotients, and composites, so a complicated expression built from continuous pieces can be taken apart and substituted piece by piece. The quotient rule for limits carries the obvious caveat, and it is the caveat that produces this article: it applies when the limit of the denominator is not zero.
+also gives $$0/0$$, but the limit is $$1/6$$.
 
-So the algebra below is for one situation only. Substitution returned $$\tfrac00$$, which means the numerator and denominator share a root at the point, and the shared factor is what has to come out.
+And substitution into
+
+$$\frac{x-3}{(x-3)^2}$$
+
+again gives $$0/0$$, while the two-sided limit does not exist.
+
+The form $$0/0$$ therefore does not determine the value of the limit.
+
+It is an indeterminate form. It tells you that direct substitution did not finish the problem.
+
+The next step is usually algebra.
+
+## Start with substitution
+
+Substitution should still be the first move.
+
+If the function is [continuous at the point](/2026/07/30/continuity-three-conditions.html), the limit equals the function value there. Polynomials, rational functions, power functions, exponentials, logarithms, and trigonometric functions are continuous throughout their domains.
+
+Limit laws also allow sums, products, quotients, and compositions of continuous pieces to be evaluated component by component.
+
+The important exception for quotients is a denominator approaching zero.
+
+When substitution produces $$0/0$$, both numerator and denominator vanish at the point. In many AP Calculus problems, that means there is algebraic structure to expose before trying again.
 
 ## Factor and cancel
 
-The first move whenever both parts are polynomials. Factor, cancel the common factor, then substitute into what is left.
+If both numerator and denominator are polynomials, look for a common factor.
 
-$$\lim_{x \to 3} \frac{x^2-9}{x-3} = \lim_{x \to 3} \frac{(x-3)(x+3)}{x-3} = \lim_{x \to 3} (x+3) = 6.$$
+For example,
 
-The cancellation is legal because the limit never evaluates the function at $$x = 3$$. On every $$x$$ the limit does look at, $$x - 3 \neq 0$$ and the division is ordinary arithmetic. This is the same fact that makes $$\lim$$ indifferent to the hole it leaves behind, and it is worth saying aloud once: you are not simplifying the function, you are replacing it with a different function that agrees with it everywhere the limit cares about.
+$$\lim_{x\to3}\frac{x^2-9}{x-3} = \lim_{x\to3}\frac{(x-3)(x+3)}{x-3} = \lim_{x\to3}(x+3) = 6.$$
 
-Higher degrees need the harder factorizations. A difference of cubes:
+The cancellation is valid for the limit because the limit considers values near $$x=3$$, not the value at $$x=3$$ itself.
 
-$$\lim_{x \to 2} \frac{x^3-8}{x^2-4} = \lim_{x \to 2} \frac{(x-2)(x^2+2x+4)}{(x-2)(x+2)} = \frac{4+4+4}{4} = 3.$$
+For every nearby $$x\neq3$$,
+
+$$\frac{(x-3)(x+3)}{x-3}=x+3.$$
+
+The simplified expression is a different function at $$x=3$$, but it agrees with the original function everywhere the limit is examining.
+
+Higher-degree expressions may require identities such as the difference of cubes.
+
+For example,
+
+$$\lim_{x\to2}\frac{x^3-8}{x^2-4} = \lim_{x\to2} \frac{(x-2)(x^2+2x+4)}{(x-2)(x+2)} = 3.$$
 
 ## Multiply by the conjugate
 
-When a radical is involved, factoring has nothing to grip. Multiplying by the conjugate does, because it converts a difference of square roots into a difference of squares and the radical disappears from the part that matters.
+When a radical produces $$0/0$$, multiplying by the conjugate often creates a factor that can be canceled.
 
-$$\lim_{x \to 0} \frac{\sqrt{x+4}-2}{x} = \lim_{x \to 0} \frac{\sqrt{x+4}-2}{x}\cdot\frac{\sqrt{x+4}+2}{\sqrt{x+4}+2} = \lim_{x \to 0} \frac{x}{x\left(\sqrt{x+4}+2\right)} = \frac{1}{4}.$$
+Consider
 
-The middle step is where the technique earns itself: the numerator becomes $$(x+4) - 4 = x$$, which cancels the $$x$$ downstairs. Multiply the denominator out and you have gained nothing, so leave it factored.
+$$\lim_{x\to0} \frac{\sqrt{x+4}-2}{x}.$$
 
-## Clear the compound fraction
+Multiply by
 
-A fraction inside a fraction is not indeterminate in a new way, only in an inconvenient form. Combine the inner fractions over a common denominator, then divide.
+$$\frac{\sqrt{x+4}+2}{\sqrt{x+4}+2}.$$
 
-$$\lim_{x \to 0} \frac{\tfrac{1}{x+2} - \tfrac{1}{2}}{x} = \lim_{x \to 0} \frac{\tfrac{2 - (x+2)}{2(x+2)}}{x} = \lim_{x \to 0} \frac{-x}{2x(x+2)} = -\frac{1}{4}.$$
+Then
 
-This form appears constantly once the derivative arrives, because the difference quotient of $$1/x$$ looks exactly like this. Getting fluent now pays later.
+$$\lim_{x\to0} \frac{\sqrt{x+4}-2}{x} \cdot \frac{\sqrt{x+4}+2}{\sqrt{x+4}+2} = \lim_{x\to0} \frac{x}{x(\sqrt{x+4}+2)} = \frac14.$$
 
-## The two limits you are expected to know
+The useful step is the difference of squares in the numerator.
 
-Some limits yield to none of the above, and two of them are standard enough that the framework names both:
+Do not expand the denominator unless there is a reason to. Leaving it factored keeps the cancellation visible.
 
-$$\lim_{x \to 0} \frac{\sin x}{x} = 1, \qquad \lim_{x \to 0} \frac{1 - \cos x}{x} = 0.$$
+## Clear a compound fraction
 
-A third technique the framework names alongside factoring and conjugates is using alternate forms of trigonometric functions, and it is usually a matter of rewriting everything as sine and cosine. For instance
+A fraction inside a fraction may only need ordinary algebra before the limit can be evaluated.
 
-$$\lim_{x \to 0} \frac{\tan x}{x} = \lim_{x \to 0} \frac{\sin x}{x}\cdot\frac{1}{\cos x} = 1 \cdot 1 = 1,$$
+For example,
 
-where the whole move was refusing to leave $$\tan$$ in place.
+$$\lim_{x\to0} \frac{\frac{1}{x+2}-\frac12}{x}.$$
 
-Both standard limits are $$\tfrac00$$ by substitution and neither factors. They are established by the squeeze theorem, which is the other tool listed under the same objective as algebraic rearrangement: if $$g(x) \le f(x) \le h(x)$$ near the point and $$g$$ and $$h$$ share a limit there, $$f$$ is trapped into having it too.
+Combine the terms in the numerator:
 
-The squeeze theorem also handles the oscillating cases that defeat everything else. The function $$x^2\sin\!\left(\tfrac1x\right)$$ has no limit-friendly rewriting, but $$\left\vert\sin\frac1x\right\vert \le 1$$ forces
+$$\frac{1}{x+2}-\frac12 = \frac{2-(x+2)}{2(x+2)} = \frac{-x}{2(x+2)}.$$
 
-$$-x^2 \le x^2\sin\!\left(\frac1x\right) \le x^2,$$
+So
 
-and both bounds go to 0, so the middle does as well. Note what had to be checked: the inequality has to hold near the point, and the outer limits have to be equal. Naming the theorem without confirming both is not a justification.
+$$\lim_{x\to0} \frac{-x}{2x(x+2)} = -\frac14.$$
 
-## Choosing among them
+This structure becomes common when derivatives are introduced because difference quotients often create compound fractions.
 
-Selecting the procedure is its own listed skill, which is a fair signal that it is the part worth practicing. The classification is quick:
+## Two standard trigonometric limits
 
-- Both parts polynomial, sharing a root: *factor and cancel*.
-- A square root in the numerator or denominator: *conjugate*.
-- A fraction stacked inside a fraction: *common denominator, then divide*.
-- Sine or cosine over $$x$$ near zero: *the two standard limits*.
-- Any other trigonometric function: *rewrite it as sine and cosine first*.
-- Bounded oscillation multiplied by something vanishing: *squeeze*.
+Two limits are especially important:
 
-Work the classification before the algebra. A student who starts multiplying by conjugates on a polynomial quotient has not made an arithmetic error; they have skipped the step where the expression is read.
+$$\lim_{x\to0}\frac{\sin x}{x}=1, \qquad \lim_{x\to0}\frac{1-\cos x}{x}=0.$$
+
+They also produce $$0/0$$ under substitution, but they are established from geometric arguments and the squeeze theorem rather than ordinary factoring.
+
+Other trigonometric limits can often be rewritten to use them.
+
+For example,
+
+$$\lim_{x\to0}\frac{\tan x}{x} = \lim_{x\to0} \frac{\sin x}{x} \cdot \frac{1}{\cos x} = 1.$$
+
+The important step is rewriting tangent in terms of sine and cosine.
+
+## The squeeze theorem
+
+The squeeze theorem handles limits where direct simplification is not the right tool.
+
+If
+
+$$g(x)\le f(x)\le h(x)$$
+
+near a point, and
+
+$$\lim_{x\to a}g(x) = \lim_{x\to a}h(x) = L,$$
+
+then
+
+$$\lim_{x\to a}f(x)=L.$$
+
+For example,
+
+$$x^2\sin\left(\frac1x\right)$$
+
+oscillates as $$x\to0$$, but
+
+$$\left\vert \sin\left(\frac1x\right)\right\vert \le1.$$
+
+Therefore
+
+$$-x^2 \le x^2\sin\left(\frac1x\right) \le x^2.$$
+
+Both outer expressions approach 0, so the middle expression must also approach 0.
+
+When using the theorem as a justification, state both pieces. The inequality has to hold near the point, and the two bounding functions have to approach the same limit.
+
+## Choosing the technique
+
+The algebra is usually easier once the expression has been classified.
+
+A useful first pass is:
+
+- Polynomial numerator and denominator with a shared root: factor and cancel.
+- Radical creating $$0/0$$: multiply by the conjugate.
+- Fraction inside a fraction: combine the inner fractions first.
+- Sine or cosine over $$x$$ near zero: use the standard trigonometric limits.
+- Other trigonometric functions: rewrite in terms of sine and cosine.
+- Bounded oscillation multiplied by something approaching zero: consider the squeeze theorem.
 
 <div class="article-note" markdown="1">
-A drill worth doing without solving anything: take twenty limits and, for each one, write only the substitution result and the technique it calls for. No answers. The skill being tested is classification, and separating it from the algebra is the fastest way to find out whether you have it. The tell that you do not is reaching for the same technique twice in a row without checking.
+It is worth practicing the classification separately from the computation.
+
+Take a set of limits and, before solving any of them, write only what substitution gives and which technique you would try next.
+
+That isolates the part of the problem that students often skip. The question is not only whether you can carry out the algebra. It is whether you can read the expression well enough to choose the right algebra.
 </div>

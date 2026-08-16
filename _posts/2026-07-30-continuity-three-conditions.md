@@ -2,7 +2,7 @@
 layout: post
 title: "Breaking continuity one condition at a time"
 date: 2026-07-30
-description: "The definition has three parts, and each one can be broken on its own. Break them one at a time and the standard taxonomy of discontinuities assembles itself."
+description: "Continuity has three conditions. Each type of discontinuity records which part of the definition failed."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "7 min read"
@@ -10,19 +10,31 @@ math: true
 kind: foundations
 sequence: 4
 interactive: true
-blurb: "Three conditions, three ways to fail, and the names each failure earns"
+blurb: "Continuity has three conditions. Each type of discontinuity records which part of the definition failed"
 image: "/assets/og/continuity-three-conditions.png"
 ---
 
-The framework defines continuity at a point in one sentence with three parts. A function $$f$$ is continuous at $$x = c$$ provided that $$f(c)$$ exists, that $$\lim_{x \to c} f(x)$$ exists, and that
+A function $$f$$ is continuous at $$x=c$$ when three conditions hold.
 
-$$\lim_{x \to c} f(x) = f(c).$$
+First, $$f(c)$$ exists.
 
-Three conditions, and the useful thing about them is that they fail independently. Every named discontinuity in the course is just a record of which one broke.
+Second,
 
-## Break them one at a time
+$$\lim_{x\to c}f(x)$$
 
-The buttons below break a single condition each. The checklist reports the three parts separately, and the verdict names the result.
+exists.
+
+Third,
+
+$$\lim_{x\to c}f(x)=f(c).$$
+
+These conditions are separate. A function can satisfy some while failing another.
+
+The named discontinuities in AP Calculus are easiest to understand by asking which part of this definition failed.
+
+## Break the conditions one at a time
+
+The visualization below changes what happens at $$x=2$$ while leaving the surrounding curve fixed.
 
 <div class="viz" markdown="0">
   <canvas id="ct-cv" width="700" height="290"></canvas>
@@ -172,32 +184,96 @@ The buttons below break a single condition each. The checklist reports the three
 })();
 </script>
 
-Start at "continuous" and step right. Each button changes only what happens at $$x = 2$$; the curve on either side is untouched, which is the point. The three conditions are about three different things, and a function can satisfy any two of them while failing the third.
+The checklist reports the three conditions separately.
 
-"No value" removes $$f(2)$$. The first condition fails, the other two are fine — the limit is still 4, because [a limit never consulted the point anyway](/2026/07/30/what-a-limit-claims.html).
+Start with the continuous case. The function value exists, the limit exists, and the two are equal.
 
-"Wrong value" puts $$f(2) = 1$$ while the neighborhood still points at 4. Now $$f(2)$$ exists and the limit exists, and they disagree, so the third condition is the one that breaks.
+Now choose “No value.”
 
-Those two cases share a name. The framework calls both a *removable discontinuity*, and the name is a promise: because the limit exists, you can define or redefine $$f(2)$$ to equal it and continuity is restored. Press "repair it" in either case and watch all three ticks turn.
+[The nearby graph has not changed](/2026/07/30/what-a-limit-claims.html), so the limit is still 4. But $$f(2)$$ is undefined.
 
-## When the limit itself is what fails
+The first condition fails.
 
-The last two buttons break the second condition, and they break it in the two ways a limit can fail at a point where the function is otherwise well behaved.
+Choose “Wrong value.”
 
-"Sides disagree" gives one-sided limits of 4 and 1. Both exist; they are not equal; the two-sided limit does not exist. That is a *jump discontinuity*, and repair is impossible — there is no single value you could assign $$f(2)$$ that would agree with both sides at once. The repair button is greyed out, which is the honest interface.
+Now $$f(2)=1$$, while the nearby values still approach 4.
 
-"Unbounded" uses $$1/(x-2)^2$$, which grows without bound from both directions. The framework's third category is a *discontinuity due to a vertical asymptote*, and again nothing can be assigned at $$x = 2$$ to fix it.
+The function value exists and the limit exists. They simply are not equal.
 
-Those are the three types the course names: removable, jump, and vertical asymptote. They are not a list to memorize so much as a consequence of there being three conditions and a limit having two ways to fail.
+The third condition fails.
 
-## Continuity on an interval, and what you may assume
+Both of these are removable discontinuities.
 
-A function is continuous on an interval when it is continuous at every point in that interval. That sounds like infinitely much work, and it would be, except the framework hands you a shortcut worth knowing by heart: polynomial, rational, power, exponential, logarithmic, and trigonometric functions are continuous at every point *in their domains*.
+The reason they are removable is that the limit exists. If we define or redefine the function value to equal that limit, continuity is restored.
 
-The qualifier is the whole sentence. A rational function is continuous on its domain, and its domain excludes the zeros of the denominator, so $$\tfrac{1}{x-2}$$ is continuous everywhere it is defined and there is no contradiction with the asymptote at 2. Students lose the point by reporting that a rational function is "continuous everywhere" or, in the other direction, by treating a removable hole as though it disqualified the function from being continuous anywhere.
+The repair button does exactly that.
 
-Piecewise functions are where this gets asked with a parameter attached. For a piecewise function to be continuous at a boundary, the expression on one side must equal the expression on the other side at that boundary, and both must equal the value the function takes there. That is the same three conditions, written for the case where you control the pieces: set the two expressions equal at the boundary and solve.
+## When the limit fails
+
+The last two cases break the second condition.
+
+Choose “Sides disagree.”
+
+The left-hand limit is 4 and the right-hand limit is 1.
+
+Both one-sided limits exist, but they are unequal. Therefore the two-sided limit does not exist.
+
+This is a jump discontinuity.
+
+No single value assigned to $$f(2)$$ can repair it because there is no one limit value for $$f(2)$$ to match.
+
+Now choose “Unbounded.”
+
+The example uses
+
+$$\frac{1}{(x-2)^2},$$
+
+which grows without bound from both sides of $$x=2$$.
+
+The finite two-sided limit does not exist, and the graph has a vertical asymptote.
+
+Again, assigning a value at $$x=2$$ cannot repair the discontinuity.
+
+The three named categories in the course are therefore:
+
+- removable discontinuities
+- jump discontinuities
+- discontinuities associated with vertical asymptotes
+
+They do not need to be memorized as unrelated cases. Each follows from the three-part definition of continuity.
+
+## Continuity on an interval
+
+A function is continuous on an interval if it is continuous at every point of that interval.
+
+For the standard families, you are allowed to use a useful shortcut.
+
+Polynomials, rational functions, power functions, exponentials, logarithms, and trigonometric functions are continuous throughout their domains.
+
+The phrase “throughout their domains” matters.
+
+A rational function such as
+
+$$\frac{1}{x-2}$$
+
+is continuous everywhere it is defined. The point $$x=2$$ is not in its domain.
+
+So it is incorrect to say that every rational function is continuous everywhere. It is equally incorrect to say that the presence of one discontinuity means the function is not continuous anywhere else.
+
+## Piecewise functions
+
+Piecewise functions make the three conditions especially visible.
+
+Suppose two formulas meet at $$x=c$$.
+
+For the function to be continuous there, the left-hand expression must approach the same value as the right-hand expression, and the actual function value at $$c$$ must equal that common limit.
+
+If a parameter appears in one of the pieces, the usual strategy is to evaluate the relevant expressions at the boundary, set the required values equal, and solve for the parameter.
+
+This is not a separate continuity rule. It is the same definition written in a form that matches a piecewise function.
 
 <div class="article-note" markdown="1">
-A self-test with the buttons: predict, before pressing, which of the five cases will let the repair button light up, and why. Then check. The rule you should end up with is not "removable discontinuities are repairable" — that is circular — but "the limit existing is what makes repair possible," which is a claim about the second condition and says nothing about the first or third.
+A useful self-test is to use the buttons and predict which cases allow the repair button to activate.
+
+The correct rule is not simply that “removable discontinuities can be repaired.” The deeper reason is that repair is possible exactly when the limit already exists.
 </div>

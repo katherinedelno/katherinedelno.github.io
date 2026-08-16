@@ -2,24 +2,32 @@
 layout: post
 title: "The Central Limit Theorem in simulation"
 date: 2026-07-25
-description: "Samples drawn from a heavily skewed population produce means that organize themselves into a normal curve. A simulation makes visible what the theorem claims, and what it does not."
+description: "Sample means from a skewed population become increasingly normal as sample size grows, while their spread decreases according to 1/√n."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 8
 interactive: true
-blurb: "Draw samples from a skewed population and watch the means organize"
+blurb: "Sample means from a skewed population become increasingly normal as sample size grows, while their spread decreases according to 1/√n"
 image: "/assets/og/central-limit-theorem-watched-live.png"
 ---
 
-The Central Limit Theorem is the load-bearing wall of inference. [Every confidence interval for a mean](/2026/07/25/what-95-percent-confident-means.html) and every t-test in the course leans on it. Yet the statement sounds like a riddle: take samples from almost any population, however lopsided, and the distribution of the sample means will be approximately normal, with the approximation improving as the sample size grows.
+The Central Limit Theorem explains why normal distributions appear throughout inference even when the population itself is not normal.
 
-The best way I know to believe it is to watch it happen.
+Take repeated random samples from a population and compute a mean from each sample.
+
+As the sample size grows, the distribution of those sample means becomes approximately normal under broad conditions.
+
+The center and spread also follow specific rules.
 
 ## The simulator
 
-The top panel shows the population: a strongly right-skewed distribution of individual values, something like household incomes or hospital stay lengths, with mean $$\mu = 20$$. The bottom panel starts empty. Each click draws a random sample of size $$n$$ from the population, computes the sample mean $$\bar{x}$$, and drops it into the bottom histogram.
+The upper panel shows a strongly right-skewed population with mean
+
+$$\mu=20.$$
+
+The lower panel collects sample means.
 
 <div class="viz" markdown="0">
   <canvas id="clt-pop" width="700" height="150"></canvas>
@@ -102,28 +110,88 @@ The top panel shows the population: a strongly right-skewed distribution of indi
 })();
 </script>
 
-## What the theorem actually claims
+Set $$n=1$$.
 
-Three separate statements are bundled inside the CLT, and the exam tests all three.
+Each sample mean is just one observation, so the lower distribution reproduces the skew of the population.
 
-**Center.** The sampling distribution of $$\bar{x}$$ is centered at the population mean: $$\mu_{\bar{x}} = \mu$$. Sample means do not drift high or low on average, no matter the shape of the population and no matter the sample size. In the simulator, the bell forms around the dashed line at 20 from the very first samples.
+Increase $$n$$ to 5.
 
-**Spread.** The standard deviation of the sampling distribution is
+The distribution of sample means becomes less skewed.
 
-$$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}.$$
+At $$n=30$$, it is much closer to a normal shape.
 
-Averaging tames variability, and it tames it by the square root of the sample size. That square root is why quadrupling your sample only doubles your precision, and it is the reason margin-of-error formulas all carry a $$\sqrt{n}$$ in the denominator.
+At the same time, the distribution becomes narrower.
 
-**Shape.** This is the part that deserves the name "theorem." If the population is normal, $$\bar{x}$$ is exactly normal for every $$n$$. If the population is not normal, the distribution of $$\bar{x}$$ becomes approximately normal anyway as $$n$$ grows. The course's working guideline is $$n \ge 30$$ for populations as skewed as this one, and the simulator shows the guideline being earned: at $$n = 5$$ a trace of right skew survives, and by $$n = 30$$ it is gone to the eye.
+## Center
 
-Keep the three claims separate when you write. Center and spread are exact facts that hold for every sample size. Shape is the approximation, and it is the only part that needs the large-sample condition.
+For a random sample,
 
-## The mistake the exam is designed to catch
+$$\mu_{\bar X}=\mu.$$
 
-The CLT is about the distribution of sample means. It says nothing about the individuals. Drawing a bigger sample does not make incomes, or hospital stays, or the population itself any more normal; set $$n = 1$$ and draw all day, and the bottom panel stays as skewed as the top. What becomes normal is the average, a statistic computed from many individuals at once.
+The sampling distribution of the sample mean is centered at the population mean.
 
-This is exactly the distinction the free-response section probes. A question describing a skewed population and a sample of size 40 may ask for the probability that one randomly chosen individual exceeds some value, and that question is unanswerable with a normal calculation, because the individuals are not normal. The companion question about the sample mean is answerable, by the CLT. Deciding which tool applies is the tested skill, and the sentence that earns the point names the theorem and the condition: "since $$n = 40 \ge 30$$, the sampling distribution of $$\bar{x}$$ is approximately normal by the Central Limit Theorem."
+This is true regardless of the sample size.
+
+The sample mean is an unbiased estimator of the population mean under the random-sampling setup.
+
+## Spread
+
+The standard deviation of the sampling distribution is
+
+$$\sigma_{\bar X} = \frac{\sigma}{\sqrt{n}},$$
+
+assuming the observations are independent or the sampling fraction is sufficiently small.
+
+As $$n$$ increases, sample means vary less from sample to sample.
+
+The square root matters.
+
+To cut the standard deviation in half, the sample size must be multiplied by four.
+
+That same relationship appears later in standard errors and [margins of error](/2026/07/25/what-95-percent-confident-means.html).
+
+## Shape
+
+If the population is normal, the sampling distribution of $$\bar X$$ is normal for every sample size.
+
+If the population is not normal, the Central Limit Theorem tells us that the sampling distribution becomes approximately normal as $$n$$ grows, provided the usual conditions are met.
+
+The amount of sample size needed depends on the population shape.
+
+A strongly skewed population generally requires a larger $$n$$ than a roughly symmetric one.
+
+The common $$n\ge30$$ rule is a course-level guideline, not a universal mathematical boundary.
+
+## What becomes normal
+
+The Central Limit Theorem is about a sampling distribution.
+
+It does not say that a large random sample makes the population values themselves normally distributed.
+
+The individual observations can remain strongly skewed.
+
+What becomes approximately normal is the statistic
+
+$$\bar X.$$
+
+This distinction matters when choosing a probability model.
+
+A probability question about one individual from a skewed population may not be suitable for a normal approximation.
+
+A question about the mean of a sufficiently large random sample may be.
+
+## A square-root experiment
 
 <div class="article-note" markdown="1">
-One more experiment worth running: set n = 4, draw 500, and note the spread of the bell. Then set n = 16 and draw 500 more. The bell is half as wide. The fourfold sample bought a twofold improvement, which is the square-root law seen with your own eyes, and it is the single most useful piece of intuition to carry into the margin-of-error questions.
+Compare sample sizes 4 and 16.
+
+Since
+
+$$\sqrt{16}=2\sqrt4,$$
+
+the sampling distribution at $$n=16$$ should have half the standard deviation of the one at $$n=4$$.
+
+The simulation shows that narrowing directly.
+
+The fourfold increase in sample size buys a twofold reduction in sampling variability.
 </div>

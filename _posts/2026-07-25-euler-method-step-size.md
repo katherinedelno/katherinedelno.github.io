@@ -2,26 +2,74 @@
 layout: post
 title: "Euler's method and the effect of step size"
 date: 2026-07-25
-description: "The method advances along tangent lines. This article examines what a smaller step purchases, why the path undershoots a concave-up solution, and what the exam asks of the technique."
+description: "Euler's method follows a differential equation one tangent-line step at a time. Smaller steps usually reduce the accumulated error."
 course: "AP Calculus BC"
 read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 25
 interactive: true
-blurb: "What a smaller step purchases, and why the path undershoots a concave-up solution"
+blurb: "Euler's method follows a differential equation one tangent-line step at a time. Smaller steps usually reduce the accumulated error"
 image: "/assets/og/euler-method-step-size.png"
 ---
 
-A differential equation tells you the slope of a solution curve at every point, but not the curve itself. Euler's method turns that slope information into a curve the most direct way imaginable: stand at the initial point, walk a short distance along the tangent line, look up the new slope where you land, and repeat. Each step uses the update
+A differential equation gives a slope.
 
-$$y_{\text{new}} = y + \frac{dy}{dx}\cdot \Delta x,$$
+Euler's method uses that slope to move a short distance, then recomputes the slope and moves again.
 
-where the slope $$\tfrac{dy}{dx}$$ is computed from the differential equation at the current point. The result is a broken-line path that approximates the true solution, and the quality of the approximation is controlled by one number: the step size.
+If
 
-## Try it
+$$ \frac{dy}{dx}=F(x,y), $$
 
-The differential equation below is $$\tfrac{dy}{dx} = y$$ with $$y(0) = 1$$, whose exact solution is $$y = e^x$$. The gray curve is the truth. The black path is Euler's method from $$x = 0$$ to $$x = 2$$. Slide the step size and watch the path bend toward the curve.
+then one Euler step is
+
+$$ y_{\text{new}} = y+F(x,y)\Delta x. $$
+
+The method replaces a curve with a sequence of short tangent-line approximations.
+
+## A first example
+
+Consider
+
+$$ \frac{dy}{dx}=y, \qquad y(0)=1. $$
+
+The exact solution is
+
+$$ y=e^x. $$
+
+Suppose the step size is
+
+$$ \Delta x=0.5. $$
+
+At the starting point,
+
+$$ (0,1), $$
+
+the slope is
+
+$$ y=1. $$
+
+So
+
+$$ y(0.5) \approx 1+1(0.5) = 1.5. $$
+
+Now recompute the slope at the new approximate point.
+
+The slope is approximately
+
+$$ 1.5. $$
+
+So
+
+$$ y(1) \approx 1.5+1.5(0.5) = 2.25. $$
+
+The exact value is
+
+$$ e\approx2.718. $$
+
+The approximation is low.
+
+## Step size matters
 
 <div class="viz" markdown="0">
   <canvas id="eu-cv" width="700" height="300"></canvas>
@@ -80,30 +128,92 @@ The differential equation below is $$\tfrac{dy}{dx} = y$$ with $$y(0) = 1$$, who
 })();
 </script>
 
-## The computation, by hand
+The visualization compares Euler approximations for the same differential equation using different step sizes.
 
-The exam version uses two or three steps and asks you to show the arithmetic. Approximating $$y(1)$$ for $$\tfrac{dy}{dx} = y$$, $$y(0) = 1$$, with two steps of size $$0.5$$:
+With a large step, each tangent line is followed for a relatively long distance before the slope is updated.
 
-At $$(0, 1)$$: the slope is $$y = 1$$, so $$y(0.5) \approx 1 + (1)(0.5) = 1.5$$.
+With a smaller step, the slope is recomputed more often.
 
-At $$(0.5, 1.5)$$: the slope is $$y = 1.5$$, so $$y(1) \approx 1.5 + (1.5)(0.5) = 2.25$$.
+The approximation usually improves.
 
-The true value is $$e \approx 2.718$$, so two big steps landed well short. A table with columns for the point, the slope there, and the new value keeps the bookkeeping honest, and it shows the grader every number the rubric is looking for. The most common arithmetic slip is reusing the old slope for the second step: the slope must be recomputed at each new point, because that is the entire content of the method.
+For this equation, the error is systematic. Since
 
-## Why the path undershoots here
+$$ y''=y>0, $$
 
-The exam's favorite follow-up: is the Euler approximation an overestimate or an underestimate? The answer comes from concavity. For this equation,
+the solution is concave up.
 
-$$\frac{d^2y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{dy}{dx} = y > 0,$$
+A tangent line to a concave-up curve lies below the curve locally.
 
-so the solution curve is concave up. A tangent line to a concave-up curve lies below the curve, and Euler's method walks along tangent lines, so every step starts on or below the truth and lands further below it. The approximation is an underestimate, which is exactly what the picture shows at every step size.
+Euler's method therefore produces an underestimate as it moves to the right.
 
-The justification sentence has the same three-part shape the rest of the course uses: the claim (underestimate), the reason (tangent lines lie below the curve), and the calculus fact that licenses it (the solution is concave up because $$y'' > 0$$). For a concave-down solution the conclusion flips. No memorized rule is needed, only the picture of a tangent line hugging a curve from one side.
+The sign of the error is not a universal feature of Euler's method. It depends on the concavity of the solution.
 
-## Halving the step, quartering nothing
+## Recompute every slope
 
-One more observation the slider makes visible. Euler's method is a first-order method: cutting the step size in half roughly cuts the error in half, no better. Forty steps get close to the curve, but "close" is earned linearly, one halving at a time. This is why real numerical solvers use more sophisticated updates, and why the exam keeps the step count at two or three: the method's value in BC is conceptual. It is the differential equation's slope field made into a walking path, and it is the simplest possible answer to the question of how a computer solves an equation that has no formula solution.
+A common mistake is to calculate the initial slope once and reuse it for every step.
+
+That would produce one tangent line, not Euler's method.
+
+Each new point gives a new value of
+
+$$ F(x,y), $$
+
+so the slope must be recomputed.
+
+A table is often the cleanest way to organize the process.
+
+| Step | $$x$$ | $$y$$ | slope $$F(x,y)$$ |
+|---|---|---|---|
+| 0 | 0 | 1 | 1 |
+| 1 | 0.5 | 1.5 | 1.5 |
+| 2 | 1.0 | 2.25 | 2.25 |
+
+The value in one row becomes the starting point for the next.
+
+## How quickly the error falls
+
+Euler's method is a first-order method.
+
+Over a fixed interval, halving the step size typically reduces the global error by roughly a factor of two when the solution is sufficiently smooth.
+
+This is slower than higher-order numerical methods, but Euler's method has an important advantage for learning.
+
+Its geometry is completely visible.
+
+Each step says:
+
+start at the current point, use the differential equation to find the tangent slope, and follow that tangent for a short distance.
+
+## A useful self-test
+
+Consider
+
+$$ \frac{dy}{dx}=-y, \qquad y(0)=4. $$
+
+With step size
+
+$$ \Delta x=1, $$
+
+Euler's method gives
+
+$$ y(1) \approx 4+(-4)(1) = 0. $$
+
+The exact solution is
+
+$$ y=4e^{-x}, $$
+
+so
+
+$$ y(1)\approx1.47. $$
+
+The Euler estimate is again low.
+
+Here,
+
+$$ y''=y>0, $$
+
+so the exact solution is concave up even though it is decreasing.
 
 <div class="article-note" markdown="1">
-A self-test: run Euler's method for $$\tfrac{dy}{dx} = -y$$ with $$y(0) = 4$$ and one step of size 1. The update gives $$y(1) \approx 4 + (-4)(1) = 0$$. The true value is $$4e^{-1} \approx 1.47$$. Then explain the undershoot: this solution is concave up too, since $$y'' = -y' = y > 0$$, so the tangent line again dives below the curve. If you can produce both the number and the sentence, the Euler point pair on the exam is yours.
+That is enough to explain the direction of the tangent-line error.
 </div>

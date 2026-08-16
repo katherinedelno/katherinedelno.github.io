@@ -2,31 +2,45 @@
 layout: post
 title: "Conditional probability and the base rate"
 date: 2026-07-27
-description: "A test that is 99% accurate can produce positives that are usually wrong. The distinction between two conditional probabilities, and the population picture that keeps them apart."
+description: "Sensitivity and the probability of disease given a positive test are different conditional probabilities. Prevalence determines how far apart they can be."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 6
 interactive: true
-blurb: "Why a 99% accurate test can produce positives that are usually wrong"
+blurb: "Sensitivity and the probability of disease given a positive test are different conditional probabilities. Prevalence determines how far apart they can be"
 featured: true
 image: "/assets/og/conditional-probability-and-the-base-rate.png"
 ---
 
-Here is a question that most people, including most physicians when it was put to them in studies, answer incorrectly. A disease affects 1% of a population. A screening test correctly identifies 99% of the people who have the disease, and correctly clears 95% of the people who do not. A randomly selected person tests positive. What is the probability that they actually have the disease?
+Suppose a disease affects 1% of a population.
 
-The tempting answer is 99%, or something near it. The correct answer is about 17%. A positive result from this excellent test is wrong more than four times out of five, and the reasoning that explains why is precisely the conditional probability of Unit 2, applied with more care than intuition supplies.
+A screening test detects 99% of people who have the disease and correctly clears 95% of those who do not.
 
-## Two probabilities that sound alike
+A person tests positive.
 
-The test's accuracy is a statement of the form $$P(\text{positive} \mid \text{disease})$$: among people who have the disease, how often does the test say so? The question asked of a patient is the reverse: $$P(\text{disease} \mid \text{positive})$$, among people the test flagged, how many are actually sick? These are different fractions with different denominators, and nothing in mathematics obliges them to be close. Treating them as interchangeable is called the confusion of the inverse, and it is the single most common conditional probability error, on the exam and in life.
+The probability that this person actually has the disease is about 17%, not 99%.
 
-What drives the two numbers apart is the *base rate*: the underlying prevalence of the condition. When a disease is rare, the healthy population is so much larger than the sick one that even a small false-positive rate applied to the large group produces more false alarms than the large true-positive rate produces genuine detections.
+The difference comes from conditional probability and the low prevalence of the disease.
 
-## The population, drawn
+## Two conditional probabilities
 
-The picture below shows a population of 10,000 people. Those with the condition who test positive are black; healthy people incorrectly flagged are medium gray; everyone else is faint. Adjust the three quantities that govern the situation and watch the answer move.
+Sensitivity is
+
+$$P(\text{positive}\mid\text{disease}).$$
+
+The question a patient usually wants answered is
+
+$$P(\text{disease}\mid\text{positive}).$$
+
+These probabilities reverse the condition.
+
+They have different denominators and can have very different values.
+
+Confusing them is an inverse-probability error.
+
+## Draw the population
 
 <div class="viz" markdown="0">
   <canvas id="br-cv" width="700" height="270"></canvas>
@@ -73,20 +87,90 @@ The picture below shows a population of 10,000 people. Those with the condition 
 })();
 </script>
 
-## The computation, in AP form
+The display represents 10,000 people.
 
-The exam expects this reasoning through a tree diagram or a two-way table, and the table is the sturdier tool. Out of 10,000 people at 1% prevalence, 100 have the disease and 9,900 do not. Of the 100, the test catches 99. Of the 9,900, the test wrongly flags 5%, which is 495 people. The positive group therefore contains $$99 + 495 = 594$$ people, of whom 99 are genuinely sick:
+At 1% prevalence, 100 people have the disease.
 
-$$P(\text{disease} \mid \text{positive}) = \frac{99}{594} \approx 0.167$$
+With 99% sensitivity, 99 of those people test positive.
 
-Every quantity in that fraction is a count of actual people, which is why this presentation, sometimes called natural frequencies, is so much harder to get wrong than the formula. The formula is Bayes' theorem, and the table is Bayes' theorem wearing work clothes.
+The remaining 9,900 people do not have the disease.
 
-## Where the exam tests it
+With 95% specificity, 5% of that group tests positive incorrectly:
 
-Conditional probability from a two-way table appears on nearly every AP Statistics exam, and the wording is precise: the condition follows the word "given," and the given event determines the denominator. "What proportion of positive tests come from healthy people" and "what proportion of healthy people test positive" are different cells divided by different totals. Reading the sentence slowly, deciding which group is the denominator before touching any numbers, is the whole skill.
+$$0.05(9900)=495.$$
 
-The deeper lesson reaches past the exam. Screening programs for rare conditions, security systems flagging rare threats, and algorithms detecting rare fraud all live under the same arithmetic: when the base rate is low, most alarms are false, no matter how good the alarm. A student who has internalized the picture above owns a piece of quantitative literacy that most adults lack.
+So the positive group contains
+
+$$99+495=594$$
+
+people.
+
+Only 99 actually have the disease.
+
+Therefore
+
+$$P(\text{disease}\mid\text{positive}) = \frac{99}{594} \approx0.167.$$
+
+The calculation becomes much easier to reason about when the probabilities are converted into counts.
+
+## Why prevalence matters
+
+The test is good.
+
+The disease is rare.
+
+That means the healthy population is much larger than the diseased population.
+
+A small false-positive rate applied to a very large group can therefore produce more false positives than a high sensitivity produces true positives.
+
+Raise the prevalence while keeping the test characteristics fixed.
+
+The probability that a positive result is genuine rises sharply.
+
+The test did not improve.
+
+The population changed.
+
+This underlying prevalence is the base rate.
+
+## Reading “given”
+
+For a conditional probability,
+
+$$P(A\mid B),$$
+
+the event after the vertical bar is the condition.
+
+It determines the denominator.
+
+So
+
+$$P(\text{disease}\mid\text{positive})$$
+
+asks what fraction of positive tests come from people with the disease.
+
+By contrast,
+
+$$P(\text{positive}\mid\text{disease})$$
+
+asks what fraction of diseased people receive positive tests.
+
+A two-way table is often the safest way to keep those denominators separate.
+
+## Bayes' theorem
 
 <div class="article-note" markdown="1">
-A check worth performing on the interactive: push the prevalence slider to its maximum, 10%, and the answer rises from 17% to about 69% — the test never changed. Carry the arithmetic past the slider's range and at 50% prevalence the same instrument is right about 95% of the time. This is why physicians order confirmatory tests rather than repeating the screen: the first positive raises the base rate for the second test, and the same instrument becomes far more informative the second time it is used.
+The same calculation can be written as
+
+$$P(D\mid +) = \frac{P(+\mid D)P(D)} {P(+)}.$$
+
+The denominator can be expanded as
+
+$$P(+) = P(+\mid D)P(D) + P(+\mid D^c)P(D^c).$$
+
+This is Bayes' theorem.
+
+The population-count approach and the formula are doing the same calculation.
+
+For many students, the count table is easier to interpret because each term corresponds to an actual subgroup.
 </div>

@@ -11,7 +11,9 @@ description: "Twenty-two fine-tuned transformer configurations compared on a dom
 
 <p class="pj-meta">Project lead &middot; with Jenny Xu &middot; 2025</p>
 
-<p class="pj-lede">Deciding whether a recipe is vegetarian sounds like a lookup problem and is not one. The distinguishing evidence is often a single ingredient whose status depends on wording that a keyword list will not catch, which makes it a good test of whether contextual language models earn their cost. Twenty-two configurations of BERT Base, BERT Large, and RoBERTa were fine-tuned and compared. The best reached <strong>0.869</strong> on held-out data, and the comparison produced a more useful finding than the winner did.</p>
+<p class="pj-lede">This project compared twenty-two fine-tuned configurations of BERT Base, BERT Large, and RoBERTa for classifying recipes as vegetarian or non-vegetarian from text alone.</p>
+
+<p class="pj-lede">The best held-out accuracy was <strong>0.869</strong>, produced by BERT Base rather than either larger architecture. More interestingly, validation accuracy was almost unrelated to held-out accuracy across the twenty-two runs. That result changed how I would design the comparison if I repeated it.</p>
 
 <div class="pj-stats">
   <div class="pj-stat">
@@ -20,11 +22,11 @@ description: "Twenty-two fine-tuned transformer configurations compared on a dom
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">22</div>
-    <div class="pj-stat__label">fine-tuned configurations across three pre-trained architectures</div>
+    <div class="pj-stat__label">fine-tuned configurations across three pretrained architectures</div>
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">0.86908</div>
-    <div class="pj-stat__label">best held-out accuracy, from BERT Base rather than either larger model</div>
+    <div class="pj-stat__label">best held-out accuracy, from BERT Base</div>
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">r = 0.09</div>
@@ -32,21 +34,35 @@ description: "Twenty-two fine-tuned transformer configurations compared on a dom
   </div>
 </div>
 
-<h2>Why the task is not a lookup</h2>
+<h2>Why the task is contextual</h2>
 
-<p>A vegetarian classifier built from a banned-ingredient list fails on the cases that matter. Vegetable broth and chicken stock are both broths, occupy the same syntactic position in an ingredient list, and differ by one modifier. Gelatin, anchovy in a sauce, and lard in a pastry are all decisive and all easy to miss. Meanwhile a description mentioning that a dish pairs well with roast lamb is not evidence about the dish itself. The signal is contextual, which is the condition under which a bidirectional transformer should outperform simpler methods, and the point of the exercise was to find out by how much and at what cost.</p>
+<p>A vegetarian classifier cannot be reduced reliably to a list of prohibited words.</p>
 
-<p>The input was the recipe description concatenated with its tokenised ingredient list, with missing descriptions filled as empty strings, split eighty-twenty into training and validation. Final evaluation was on a held-out set the models never saw, scored externally.</p>
+<p>Vegetable broth and chicken stock occupy similar positions in an ingredient list but imply different labels. Gelatin, anchovy in a sauce, and lard in a pastry can each decide the classification. At the same time, a recipe description that says a dish pairs well with roast lamb does not make the dish itself non-vegetarian.</p>
+
+<p>The relevant signal depends on context. That makes the problem well suited to a bidirectional language model.</p>
+
+<p>The input consisted of each recipe's description concatenated with its tokenized ingredient list. Missing descriptions were filled as empty strings. The development data were split 80/20 into training and validation sets. Final performance was measured on a separate held-out set that the models never saw during tuning.</p>
 
 <h2>Three architectures</h2>
 
-<p><strong>BERT Base</strong> has twelve transformer encoder layers, 768 hidden units, twelve attention heads, and roughly 110 million parameters. <strong>BERT Large</strong> has twenty-four layers, 1024 hidden units, sixteen heads, and about 340 million parameters, giving it substantially more capacity for long or syntactically complicated text. <strong>RoBERTa</strong> keeps BERT's architecture and changes the pre-training: dynamic masking, so that different tokens are hidden on different passes rather than a mask fixed once, which prevents the model from over-fitting to a single masking pattern. All were fine-tuned end to end with AdamW and cross-entropy loss, and all were regularised with early stopping on validation accuracy.</p>
+<p><strong>BERT Base</strong> has twelve transformer encoder layers, 768 hidden units, twelve attention heads, and about 110 million parameters.</p>
 
-<p>The larger models lost. BERT Large occupied three of the bottom eleven places, and RoBERTa, despite recording the single highest validation accuracy of any run, did not reach the top six on held-out data. The straightforward explanation is that a dataset of twenty thousand short texts does not supply enough signal to fit 340 million parameters, and that the additional capacity was spent memorising the training split. The more careful explanation is that the larger models were also tuned less thoroughly, because each run cost more, so their under-performance is confounded with the search budget they received. Both readings should be stated; only the first is flattering.</p>
+<p><strong>BERT Large</strong> increases this to twenty-four layers, 1024 hidden units, sixteen attention heads, and roughly 340 million parameters.</p>
 
-<h2>The finding worth keeping</h2>
+<p><strong>RoBERTa</strong> retains the basic transformer architecture but changes the pretraining procedure, including the use of dynamic masking.</p>
 
-<p>The twenty-two runs form a small dataset in their own right, with a validation accuracy and a held-out accuracy for each. Plotting one against the other gives the result that has stayed with me from this project.</p>
+<p>All three architectures were fine-tuned end to end with AdamW and cross-entropy loss. Early stopping was based on validation accuracy.</p>
+
+<p>The larger models did not perform best on the held-out set. BERT Large occupied three of the bottom eleven positions. RoBERTa produced the highest single validation accuracy in the study but did not place in the top six on held-out performance.</p>
+
+<p>One possible explanation is that twenty thousand short texts do not provide enough task-specific signal to make the added capacity useful. The larger models may have been more prone to overfitting.</p>
+
+<p>There is an important confounder, though. The larger architectures were also tuned less extensively because each run cost more. Their lower performance cannot be attributed cleanly to model size alone.</p>
+
+<h2>The result that mattered most</h2>
+
+<p>Each of the twenty-two runs produced both a validation accuracy and a held-out accuracy. Treating those pairs as a small dataset reveals the most useful result from the project.</p>
 
 <figure class="pj-figure" id="bert-scatter">
   <div class="pj-figure__head">
@@ -62,28 +78,43 @@ description: "Twenty-two fine-tuned transformer configurations compared on a dom
     </div>
   </div>
   <figcaption class="pj-figure__caption">
-    <p>Across the 22 runs the Pearson correlation between validation accuracy and held-out accuracy is 0.09, and the rank correlation is &minus;0.09. The relationship is not weak; it is absent. The run with the highest validation accuracy of all, a RoBERTa configuration at 0.8600, placed seventh on held-out data, and the winning run sat in the middle of the validation distribution at 0.8515. The lowest validation accuracy in the study, 0.8352, still beat three configurations with visibly better validation numbers.</p>
+    <p>The Pearson correlation between validation and held-out accuracy is 0.09. The rank correlation is &minus;0.09.</p>
+    <p>There is essentially no relationship.</p>
+    <p>The configuration with the highest validation accuracy, a RoBERTa run at 0.8600, placed seventh on the held-out set. The eventual winner had a validation accuracy of 0.8515, near the middle of the observed range. Even the lowest validation accuracy in the study, 0.8352, outperformed three runs with better validation values.</p>
   </figcaption>
 </figure>
 
-<p>The explanation is not mysterious, and it is worth spelling out because it generalises well beyond this task. Validation accuracy here was computed on a single twenty-percent split of roughly four thousand recipes. The standard error on an accuracy estimate near 0.85 from that many observations is close to 0.006, so a difference of a single percentage point between two configurations is inside the noise. The entire spread of validation accuracies across all 22 runs was 0.0248, or about four standard errors, which means most of the ordering produced by that column is measurement error rather than a real difference in model quality. Selecting a model on it is close to selecting at random among the reasonable candidates.</p>
+<p>The validation set contained roughly four thousand recipes. For an accuracy near 0.85, the standard error of a single proportion is about 0.006.</p>
+
+<p>That matters because many of the observed differences between configurations were only around one percentage point. The total spread of validation accuracies across all twenty-two runs was 0.0248.</p>
+
+<p>Most of the apparent ranking was therefore too small to separate confidently from sampling noise.</p>
 
 <div class="pj-note">
   <span class="pj-note__label">Methodological correction</span>
-  <p>The right instrument was <em>k</em>-fold cross-validation, which was not used. Five folds would have cut the standard error on each configuration's estimate by more than half and, more importantly, would have supplied a variance estimate per configuration, making it possible to say whether any two of them actually differed. The study as conducted can establish that fine-tuned BERT Base performs around 0.86 on this task. It cannot establish which of its top ten configurations is best, and it would have been wrong to claim otherwise.</p>
+  <p>I would use <em>k</em>-fold cross-validation if I repeated the study.</p>
+  <p>Five folds would reduce dependence on a single split and provide a variance estimate for each configuration. That would make it possible to distinguish meaningful model differences from ordinary sampling variation.</p>
+  <p>The study supports the conclusion that a fine-tuned BERT Base model performs around 0.86 on this task.</p>
+  <p>It does not support a precise ranking of the top several configurations.</p>
 </div>
 
 <h2>What the tuning did establish</h2>
 
-<p>Some choices produced differences large enough to survive the noise, and some were settled by evidence rather than by search.</p>
+<p>Some choices produced differences large enough to be informative despite the noisy ranking.</p>
 
-<p><strong>Sequence length</strong> was decided by measurement. Tokenising the corpus gave a maximum length of 556 tokens, past BERT's 512-token ceiling, but a mean of only 73.7 and a ninetieth percentile of 126. A limit of 128 therefore covers ninety percent of recipes untruncated at a quarter of the memory cost of 256, and the one configuration run at 256 placed eighth without justifying its expense. That is the kind of decision worth making from the data rather than from a default.</p>
+<p><strong>Sequence length</strong> was chosen from the observed token distribution. The maximum recipe length was 556 tokens, beyond BERT's 512-token ceiling. The mean was only 73.7 tokens, and the ninetieth percentile was 126.</p>
 
-<p><strong>Weight decay</strong> mattered in the expected direction and by a visible margin. The value 0.001 produced the best run; raising it to 0.02 cost roughly two points of held-out accuracy, and removing it entirely produced unstable validation curves consistent with over-fitting. <strong>Batch size</strong> settled at 64, with 128 converging faster and generalising worse, and 32 costing considerably more time for no gain. <strong>Learning rate</strong> settled at a static 1e-5; a linear scheduler with warm-up over the first ten percent of steps smoothed early training without improving the final result, and 1e-6 was too slow to converge inside the epoch budget.</p>
+<p>A maximum length of 128 therefore retained about ninety percent of recipes without truncation while using much less memory than a length of 256. The single 256-token configuration placed eighth and did not justify the added cost.</p>
 
-<h2>An incident worth recording</h2>
+<p><strong>Weight decay</strong> also produced a visible difference. A value of 0.001 appeared in the best run. Increasing it to 0.02 reduced held-out accuracy by about two percentage points, while removing weight decay produced validation curves consistent with stronger overfitting.</p>
 
-<p>The winning configuration was run a third time, with every hyperparameter identical. It trained for nine epochs rather than five and finished fifteenth of twenty-two.</p>
+<p><strong>Batch size</strong> settled at 64. A batch size of 128 converged faster but generalized worse. A batch size of 32 cost more training time without a clear gain.</p>
+
+<p>A static <strong>learning rate</strong> of 1e-5 performed best among the rates tested. A warm-up schedule smoothed early training but did not improve the final result. A rate of 1e-6 was too slow to converge within the epoch budget.</p>
+
+<h2>A useful repeat run</h2>
+
+<p>The winning configuration was run again with the same hyperparameters. This time it trained for nine epochs rather than five and finished fifteenth of twenty-two.</p>
 
 <figure class="pj-figure" id="bert-curve">
   <div class="pj-figure__head">
@@ -98,15 +129,25 @@ description: "Twenty-two fine-tuned transformer configurations compared on a dom
     </div>
   </div>
   <figcaption class="pj-figure__caption">
-    <p>Training loss falls monotonically from 0.489 to 0.226 while validation accuracy peaks at epoch three, dips at epoch four, and recovers at epoch five without exceeding its earlier maximum. Early stopping with patience two halted training here. The divergence between the two curves after epoch three is over-fitting becoming visible in real time.</p>
+    <p>In the winning run, training loss falls from 0.489 to 0.226. Validation accuracy peaks at epoch three, dips at epoch four, and recovers at epoch five without exceeding its earlier maximum. Early stopping with patience two ends training there.</p>
   </figcaption>
 </figure>
 
-<p>The two curves explain the incident. Validation accuracy is nearly flat across epochs three to five, varying by about four thousandths, which is well inside the noise established above. Whether the patience counter trips at epoch five or survives to epoch nine therefore depends on which side of that noise a particular epoch happens to land, and that in turn depends on data shuffling and the order of gradient updates. Early stopping was doing its job; it was simply being asked to make a decision on evidence too weak to support one, and it resolved the coin flip differently on a different run. The lesson is not that early stopping is unreliable. It is that a stopping rule inherits the precision of the quantity it monitors, and monitoring a noisy quantity produces a noisy rule.</p>
+<p>The repeat run makes the weakness of the stopping signal visible.</p>
 
-<h2>What would change</h2>
+<p>Validation accuracy varies by only about four thousandths across epochs three to five. That is well inside the sampling noise already described. Whether the patience counter stops at epoch five or survives several more epochs can therefore depend on small changes from data shuffling and stochastic optimization.</p>
 
-<p>Cross-validation, first and above everything else, both for selection and for the variance estimate it supplies. Beyond that, the natural extensions are lighter rather than heavier architectures, since DistilBERT and ALBERT are designed for precisely this situation of a modest dataset and a narrow domain, and ensembling across seeds, which would convert the run-to-run variability documented above from a nuisance into a resource. Finally, the gap between validation and held-out performance deserves direct investigation rather than inference: comparing the distributions of the two sets would establish whether the decorrelation is pure sampling noise, as argued here, or whether the held-out set differs systematically in ways that preprocessing could address.</p>
+<p>This does not mean early stopping failed. It means the stopping rule inherited the instability of the metric it was monitoring.</p>
+
+<h2>What I would change</h2>
+
+<p>The first change would be cross-validation for model selection.</p>
+
+<p>I would also test lighter architectures such as DistilBERT and ALBERT. The dataset is modest in size and the classification domain is narrow, so additional parameter count may not be useful.</p>
+
+<p>Ensembling across random seeds would be another natural extension. The repeated winning configuration showed that seed-level variability was large enough to matter.</p>
+
+<p>Finally, I would compare the validation and held-out data distributions directly. The weak correlation may be explained entirely by sampling noise, but a systematic difference between the two splits would produce the same pattern and should be ruled out empirically.</p>
 
 <p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
 

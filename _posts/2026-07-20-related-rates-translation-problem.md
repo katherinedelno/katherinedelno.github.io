@@ -2,7 +2,7 @@
 layout: post
 title: "A procedure for related rates"
 date: 2026-07-20
-description: "The difficulty in related rates lies in the translation rather than the calculus. This article develops a five-step routine through three worked examples, including the substitution error that undoes many solutions."
+description: "Related-rates problems are mostly translation. Name the changing quantities, relate them, differentiate with respect to time, and only then use the snapshot values."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "11 min read"
@@ -10,49 +10,87 @@ math: true
 kind: mechanics
 sequence: 14
 interactive: true
-blurb: "A five-step routine for the translation, not the calculus"
+blurb: "Related-rates problems are mostly translation. Name the changing quantities, relate them, differentiate with respect to time, and only then use the snapshot values"
 image: "/assets/og/related-rates-translation-problem.png"
 ---
 
-Related rates has a reputation it does not deserve. The calculus involved is one move, differentiating both sides with respect to time, and any student who can use the chain rule can do it. What actually goes wrong is the translation: turning a paragraph about a leaking cone or a sliding ladder into an equation worth differentiating. Treat it as a translation problem and the fog lifts.
+The calculus in a related-rates problem is usually straightforward.
 
-## The five-step routine
+The harder part is translating the situation into an equation that connects the changing quantities.
 
-1. **Draw and name.** Sketch the situation and give a letter to every quantity that changes. Anything changing gets a variable; anything permanently fixed gets a number.
-2. **Write what you know and what you want, as derivatives.** "The radius grows at 3 cm/s" becomes $$\tfrac{dr}{dt} = 3$$. "How fast is the area growing?" becomes: find $$\tfrac{dA}{dt}$$. Signs carry meaning, so a shrinking quantity has a negative rate.
-3. **Find a static equation** relating the variables: the Pythagorean theorem, similar triangles, a volume or area formula, a trig ratio. No rates yet, just geometry.
-4. **Differentiate both sides with respect to $$t$$.** Every variable is secretly a function of time, so every term picks up its own rate by the chain rule.
-5. **Now, and only now, substitute the snapshot values** and solve for the unknown rate. Then answer with units and a direction, as in "increasing at 2 square meters per minute."
+Once that equation is correct, the rest follows a stable procedure.
 
-The order of steps 4 and 5 is the entire game, which brings us to the classic mistake.
+## A five-step routine
 
-## The mistake that sinks more solutions than any other
+1. Draw the situation and name the changing quantities.
+2. Write the rates you know and the rate you want.
+3. Find an equation relating the variables.
+4. Differentiate the equation with respect to time.
+5. Substitute the values that describe the particular instant and solve.
 
-Substituting the snapshot before differentiating. If a problem says "when the radius is 5," and you write $$A = \pi(5)^2$$ before differentiating, you have frozen the radius. It is now a constant, its derivative is zero, and the problem dissolves into nonsense.
+The order matters.
 
-The rule: a value that holds only at the instant in question enters after the differentiation. Only quantities that are constant for all time, such as the height of the wall, the length of the ladder, or the cone's fixed proportions, may be substituted early.
+A value that is true only at one instant should usually be substituted after the differentiation.
 
-## Example 1: the sliding ladder
+A relationship that is true for all time may be used before differentiating.
 
-*A 13-foot ladder leans against a wall. The base slides away from the wall at 2 ft/s. How fast is the top sliding down when the base is 5 feet from the wall?*
+## The most common mistake
 
-**Name:** $$x$$ is the distance from wall to base, and $$y$$ is the height of the top. The 13 is constant for all time, since the ladder does not stretch.
+Suppose the area of a circle is
 
-**Know and want:** $$\tfrac{dx}{dt} = 2$$; find $$\tfrac{dy}{dt}$$ when $$x = 5$$.
+$$ A=\pi r^2. $$
 
-**Static equation:** $$x^2 + y^2 = 169.$$
+If a problem asks about the instant when $$r=5$$, substituting 5 before differentiating gives
 
-**Differentiate with respect to $$t$$:**
+$$ A=25\pi. $$
 
-$$2x\,\frac{dx}{dt} + 2y\,\frac{dy}{dt} = 0.$$
+Now $$r$$ is gone. The expression no longer records that the radius is changing.
 
-**Snapshot:** when $$x = 5$$, the static equation gives $$y = 12$$. Substitute everything:
+Instead, differentiate first:
 
-$$2(5)(2) + 2(12)\,\frac{dy}{dt} = 0 \quad\Longrightarrow\quad \frac{dy}{dt} = -\frac{5}{6}.$$
+$$ \frac{dA}{dt} = 2\pi r\frac{dr}{dt}. $$
 
-The top is sliding down at $$\tfrac{5}{6}$$ ft/s. The negative sign is not a blemish to erase. It answers the question "which direction," and the final sentence should say so.
+Then substitute $$r=5$$ and the relevant value of $$dr/dt$$.
 
-There is one more thing worth seeing here, because it surprises almost everyone. The base slides at a *constant* 2 ft/s, but the top does not fall at a constant rate. Drag the slider and watch.
+The snapshot value belongs after the derivative because it is true only at that instant.
+
+## Example 1: a sliding ladder
+
+A 13-foot ladder leans against a wall. Its base moves away from the wall at 2 feet per second. How fast is the top moving when the base is 5 feet from the wall?
+
+Let $$x$$ be the distance from the wall to the base and $$y$$ the height of the top.
+
+We know
+
+$$ \frac{dx}{dt}=2, $$
+
+and we want $$dy/dt$$.
+
+The ladder length is constant, so
+
+$$ x^2+y^2=169. $$
+
+Differentiate with respect to $$t$$:
+
+$$ 2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0. $$
+
+At the instant when $$x=5$$, the Pythagorean theorem gives $$y=12$$.
+
+Now substitute:
+
+$$ 2(5)(2) + 2(12)\frac{dy}{dt} = 0. $$
+
+Therefore
+
+$$ \frac{dy}{dt} = -\frac56. $$
+
+The top is moving downward at
+
+$$ \frac56 $$
+
+foot per second.
+
+The negative sign records the direction.
 
 <div class="viz" markdown="0">
   <canvas id="lad-cv" width="700" height="300"></canvas>
@@ -101,53 +139,117 @@ There is one more thing worth seeing here, because it surprises almost everyone.
 })();
 </script>
 
-## Example 2: the draining cone
+The base moves at a constant rate, but the top does not.
 
-*An inverted conical tank has radius 6 m and height 12 m. Water drains at 3 m³/min. How fast is the water level falling when the water is 4 m deep?*
+As the ladder becomes flatter, the magnitude of $$dy/dt$$ increases. The relationship between the two rates depends on the geometry at that instant.
 
-**Name:** $$h$$ is the depth of the water, $$r$$ is the radius of the water surface, and $$V$$ is the volume. Here $$r$$ and $$h$$ both change, but the tank's shape chains them together.
+This is why the position values cannot be inserted before differentiating.
 
-**Eliminate a variable before differentiating.** Similar triangles give $$\tfrac{r}{h} = \tfrac{6}{12}$$, so $$r = \tfrac{h}{2}$$ at every instant. That is a for-all-time relationship, safe to substitute early:
+## Example 2: a draining cone
 
-$$V = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi\left(\frac{h}{2}\right)^{2} h = \frac{\pi h^3}{12}.$$
+An inverted conical tank has radius 6 meters and height 12 meters. Water drains at 3 cubic meters per minute. How fast is the water level falling when the water is 4 meters deep?
 
-**Differentiate:**
+Let $$h$$ be the water depth, $$r$$ the radius of the water surface, and $$V$$ the volume.
 
-$$\frac{dV}{dt} = \frac{\pi h^2}{4}\,\frac{dh}{dt}.$$
+Both $$r$$ and $$h$$ change, but the shape of the tank gives a relationship that is true at every instant.
 
-**Snapshot:** $$\tfrac{dV}{dt} = -3$$, negative because the tank is draining, and $$h = 4$$:
+Similar triangles give
 
-$$-3 = \frac{\pi(16)}{4}\,\frac{dh}{dt} = 4\pi\,\frac{dh}{dt} \quad\Longrightarrow\quad \frac{dh}{dt} = -\frac{3}{4\pi}.$$
+$$ \frac{r}{h} = \frac{6}{12}, $$
 
-The water level is falling at $$\tfrac{3}{4\pi} \approx 0.239$$ m/min. Notice the two different substitution moments. The shape relationship $$r = h/2$$ went in before differentiating, because it is true at every instant. The value $$h = 4$$ waited until after, because it is true only at the instant in question.
+so
 
-## Example 3: the rising camera angle
+$$ r=\frac{h}{2}. $$
 
-*A camera on the ground 100 m from a launch pad tracks a rocket rising at 50 m/s. How fast is the camera's angle of elevation increasing when the rocket is 100 m up?*
+Because this relationship is always true, it can be substituted before differentiation.
 
-**Name:** $$y$$ is the rocket's height and $$\theta$$ is the angle of elevation. The 100 m ground distance never changes.
+The volume is
 
-**Static equation:** $$\tan\theta = \tfrac{y}{100}.$$
+$$ V = \frac13\pi r^2h = \frac13\pi\left(\frac h2\right)^2h = \frac{\pi h^3}{12}. $$
 
-**Differentiate:**
+Differentiate:
 
-$$\sec^2\theta\,\frac{d\theta}{dt} = \frac{1}{100}\,\frac{dy}{dt}.$$
+$$ \frac{dV}{dt} = \frac{\pi h^2}{4}\frac{dh}{dt}. $$
 
-**Snapshot:** when $$y = 100$$, the triangle is a 45-45-90, so $$\theta = \tfrac{\pi}{4}$$ and $$\sec^2\theta = 2$$:
+At the instant in question,
 
-$$2\,\frac{d\theta}{dt} = \frac{50}{100} \quad\Longrightarrow\quad \frac{d\theta}{dt} = \frac{1}{4}.$$
+$$ \frac{dV}{dt}=-3 $$
 
-The angle grows at $$\tfrac14$$ radian per second. Radians, because the derivative formulas for trig functions are only true in radians. Answering in degrees per second here is a units error, not a style choice.
+and
 
-## Reading the signs like a grader
+$$ h=4. $$
 
-A quick internal checklist before you box an answer:
+So
 
-- **Does the sign match the story?** A draining tank has negative $$dV/dt$$; a falling ladder top has negative $$dy/dt$$. If your algebra produces a positive rate for a quantity the story says is shrinking, a sign was dropped in translation.
-- **Do the units multiply out?** In $$\tfrac{dV}{dt} = \tfrac{\pi h^2}{4}\,\tfrac{dh}{dt}$$, the right side is m² times m/min, which is m³/min. If the units do not work, the equation is wrong before any numbers enter it.
-- **Did every changing variable get a rate?** Differentiating $$x^2 + y^2 = 169$$ must produce both a $$\tfrac{dx}{dt}$$ and a $$\tfrac{dy}{dt}$$. A missing rate almost always means a variable was accidentally treated as a constant, which is the too-early substitution error in disguise.
-- **Is the final sentence complete?** Value, units, direction: "the depth is decreasing at $$\tfrac{3}{4\pi}$$ meters per minute when $$h = 4$$." On the exam, [the interpretation](/2026/07/08/notation-that-costs-ap-calculus-points.html) is frequently its own point.
+$$ -3 = 4\pi\frac{dh}{dt}, $$
+
+which gives
+
+$$ \frac{dh}{dt} = -\frac{3}{4\pi}. $$
+
+The water level is falling at
+
+$$ \frac{3}{4\pi} \approx0.239 $$
+
+meter per minute.
+
+Notice the two kinds of substitution.
+
+The relationship $$r=h/2$$ is structural and holds for all time. The value $$h=4$$ is a snapshot and waits until after differentiation.
+
+## Example 3: a camera tracking a rocket
+
+A camera is 100 meters from a launch pad. A rocket rises vertically at 50 meters per second. How fast is the camera's angle of elevation increasing when the rocket is 100 meters high?
+
+Let $$y$$ be the rocket's height and $$\theta$$ the angle of elevation.
+
+The horizontal distance is constant, so
+
+$$ \tan\theta = \frac{y}{100}. $$
+
+Differentiate with respect to time:
+
+$$ \sec^2\theta\frac{d\theta}{dt} = \frac{1}{100}\frac{dy}{dt}. $$
+
+When $$y=100$$,
+
+$$ \theta=\frac{\pi}{4}, $$
+
+so
+
+$$ \sec^2\theta=2. $$
+
+Using
+
+$$ \frac{dy}{dt}=50, $$
+
+we get
+
+$$ 2\frac{d\theta}{dt} = \frac{50}{100}. $$
+
+Therefore
+
+$$ \frac{d\theta}{dt} = \frac14. $$
+
+The angle is increasing at one quarter radian per second.
+
+Radians matter here because the standard trigonometric derivative formulas assume radian measure.
+
+## A final check
+
+Before finishing a related-rates problem, check four things.
+
+- Does the sign agree with the story?
+- Do the units work?
+- Did every changing variable receive its own rate during differentiation?
+- Does [the final sentence](/2026/07/08/notation-that-costs-ap-calculus-points.html) state the value, units, and direction?
+
+If the tank is draining, $$dV/dt$$ should be negative.
+
+If a term such as $$y^2$$ was differentiated with respect to time, the result should contain $$dy/dt$$.
+
+If the units do not balance across the differentiated equation, something in the setup is wrong.
 
 <div class="article-note" markdown="1">
-A diagnostic to try: rework the cone example, but suppose the tank is also being filled at 5 m³/min while draining at 3. Only one thing changes, since $$\tfrac{dV}{dt}$$ becomes $$+2$$, and the entire routine runs identically. When a one-word change in the story changes exactly one number in your setup, the translation is working.
+The calculus is usually not the fragile part. The translation is.
 </div>

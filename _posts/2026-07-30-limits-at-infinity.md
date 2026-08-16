@@ -2,7 +2,7 @@
 layout: post
 title: "Limits at infinity and end behavior"
 date: 2026-07-30
-description: "Infinite limits and limits at infinity are nearly the same phrase and opposite ideas. One describes a vertical asymptote, the other end behavior, and the three cases for a rational function follow from a single move."
+description: "Limits at infinity describe end behavior. For rational functions, the leading terms determine what survives."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "7 min read"
@@ -10,19 +10,31 @@ math: true
 kind: mechanics
 sequence: 5
 interactive: true
-blurb: "Two phrases one word apart, describing opposite things"
+blurb: "Limits at infinity describe end behavior. For rational functions, the leading terms determine what survives"
 image: "/assets/og/limits-at-infinity.png"
 ---
 
-Two phrases in this unit are one word apart and mean opposite things.
+An infinite limit and a limit at infinity are different ideas.
 
-An *infinite limit* is a limit whose output runs off: the input goes to a finite number and the function grows without bound. That is [a vertical asymptote](/2026/07/30/continuity-three-conditions.html), and the framework counts it among the ways continuity fails. A *limit at infinity* is the reverse: the input runs off and the output settles. That is end behavior, and where the output settles on a number, it is a horizontal asymptote.
+In an infinite limit, the input approaches a finite number while the output grows without bound. This is the behavior associated with [a vertical asymptote](/2026/07/30/continuity-three-conditions.html).
 
-The framework keeps them as separate topics for that reason. Limits at infinity describe end behavior, and the whole of this article is one question: for large $$x$$, what does the function look like?
+In a limit at infinity, the input grows without bound and we ask what happens to the output.
 
-## The three cases
+That is a question about end behavior.
 
-For a rational function the answer depends only on which degree is larger. Set the two degrees below and zoom out.
+For example,
+
+$$\lim_{x\to\infty}f(x)=L$$
+
+means that $$f(x)$$ approaches $$L$$ as $$x$$ becomes arbitrarily large.
+
+If $$L$$ is finite, then $$y=L$$ is a horizontal asymptote.
+
+## Three cases for rational functions
+
+For a rational function, the end behavior can be read from the degrees of the numerator and denominator.
+
+Use the controls below to change those degrees and then zoom out.
 
 <div class="viz" markdown="0">
   <canvas id="ei-cv" width="700" height="300"></canvas>
@@ -162,36 +174,100 @@ For a rational function the answer depends only on which degree is larger. Set t
 })();
 </script>
 
-Three cases, and the degrees decide which:
+The graph extends to the selected scale so you can see the end behavior rather than only the local shape near the origin.
 
-- **Denominator degree larger.** The limit is 0, and $$y = 0$$ is the horizontal asymptote.
-- **Degrees equal.** The limit is the ratio of the leading coefficients — not of the whole expressions, and not of the constant terms.
-- **Numerator degree larger.** There is no horizontal asymptote. The quotient grows without bound, and the honest answer names the direction rather than stopping at "does not exist."
+There are three cases.
 
-Set the numerator to degree 3 and the denominator to degree 1, then zoom out, and watch the readout climb past anything the window can hold. Now set both degrees to 1, leaving $$a = 3$$ and $$b = 2$$, and the curve flattens onto $$y = 1.5$$ from below.
+- If the denominator has higher degree, the limit is 0.
+- If the degrees are equal, the limit is the ratio of the leading coefficients.
+- If the numerator has higher degree, there is no finite horizontal asymptote.
 
-## The move that produces all three
+For example, if the numerator and denominator are both degree 1 with leading coefficients 3 and 2, then
 
-There is one technique, and the three cases are what it returns. Divide numerator and denominator by the highest power of $$x$$ appearing in the *denominator*, then let every term of the form $$1/x^k$$ go to zero.
+$$\lim_{x\to\infty}f(x)=\frac32.$$
 
-For $$\tfrac{3x + 2}{2x + 5}$$, divide top and bottom by $$x$$:
+If the denominator has higher degree, the denominator eventually dominates and the quotient approaches 0.
 
-$$\frac{3x+2}{2x+5} = \frac{3 + \tfrac{2}{x}}{2 + \tfrac{5}{x}} \longrightarrow \frac{3 + 0}{2 + 0} = \frac{3}{2}.$$
+If the numerator has higher degree, the quotient does not settle to a finite number. Its end behavior depends on the leading terms and on whether $$x\to\infty$$ or $$x\to-\infty$$.
 
-The same division on $$\tfrac{3x+2}{2x^2+5x}$$ uses $$x^2$$ and sends the numerator's terms to zero while the denominator keeps its 2, giving 0. On $$\tfrac{3x^2+2x}{2x+5}$$ it leaves an $$x$$ upstairs that nothing cancels, and the expression grows.
+## Why the degree rule works
 
-Reading the degrees off is faster, and on a multiple-choice question that is what you should do. The division is what you write when a question asks you to justify, and it is the only version that survives a function that is not a quotient of polynomials.
+The degree rule is a shortcut for an algebraic argument.
+
+Consider
+
+$$\frac{3x+2}{2x+5}.$$
+
+Divide numerator and denominator by $$x$$:
+
+$$\frac{3x+2}{2x+5} = \frac{3+\frac2x}{2+\frac5x}.$$
+
+As $$x\to\infty$$,
+
+$$\frac2x\to0 \quad\text{and}\quad \frac5x\to0.$$
+
+Therefore
+
+$$\lim_{x\to\infty} \frac{3x+2}{2x+5} = \frac32.$$
+
+If the denominator instead has degree 2, dividing by $$x^2$$ sends every term in the numerator to 0 while the leading denominator coefficient remains.
+
+The limit is then 0.
+
+If the numerator has higher degree, the same division leaves a positive power of $$x$$ in the numerator. That term does not disappear, so the quotient does not approach a finite horizontal asymptote.
+
+On a multiple-choice problem, comparing degrees is usually the fastest method.
+
+If a free-response problem asks for justification, the division makes the reasoning explicit.
 
 ## Beyond rational functions
 
-Comparing relative magnitudes is its own listed skill, and outside rational functions the degree shortcut has nothing to say. Three facts carry most of it, in increasing order of growth: logarithms, then powers, then exponentials.
+The degree shortcut only applies to polynomial quotients.
 
-$$\lim_{x \to \infty} \frac{\ln x}{x} = 0, \qquad \lim_{x \to \infty} \frac{x^{100}}{e^x} = 0, \qquad \lim_{x \to \infty} \frac{e^x}{x^{100}} = \infty.$$
+For more general functions, compare their rates of growth.
 
-The exponent 100 is not a typo and not a special case: any fixed power loses to $$e^x$$ eventually. But "eventually" can be a long way off, and it is worth knowing how far. Differentiating $$100\ln x - x$$ shows that $$x^{100}/e^x$$ climbs until $$x = 100$$ exactly, where it peaks near $$3.7 \times 10^{156}$$, and it does not fall below 1 until about $$x = 647$$. A graphing window will tell you the opposite of the truth over that whole stretch, which is why the comparison is settled by a limit rather than by looking.
+A useful hierarchy is
 
-A useful sanity check when the function is not rational: ask which piece grows fastest, divide by it, and see what survives. That is the same move as before, with "highest power in the denominator" replaced by "fastest-growing term in sight."
+$$\text{logarithms} < \text{powers} < \text{exponentials}.$$
+
+For example,
+
+$$\lim_{x\to\infty}\frac{\ln x}{x}=0,$$
+
+$$\lim_{x\to\infty}\frac{x^{100}}{e^x}=0,$$
+
+and
+
+$$\lim_{x\to\infty}\frac{e^x}{x^{100}}=\infty.$$
+
+The exponent 100 does not change the long-run ordering. Any fixed power of $$x$$ is eventually dominated by $$e^x$$.
+
+The word “eventually” matters.
+
+The function
+
+$$\frac{x^{100}}{e^x}$$
+
+actually increases until $$x=100$$. At that point it is extremely large. It does not fall below 1 until much later.
+
+A graphing window over a moderate range can therefore suggest the wrong end behavior.
+
+Limits describe what happens arbitrarily far out, not what happens on the portion of the graph that happens to fit on the screen.
+
+## A useful comparison habit
+
+When the function is not rational, ask which component grows fastest.
+
+Then divide by that dominant term and see what remains.
+
+This is the same logic used for rational functions. There, the dominant term is identified through polynomial degree. In a broader expression, you compare growth rates instead.
 
 <div class="article-note" markdown="1">
-A self-test at the sliders: set both degrees to 2 with $$a = 3$$ and $$b = -6$$, and predict the horizontal asymptote before looking. Then set the numerator to degree 3 and, without changing anything else, say what happens to the answer and why the dashed line disappears. The second question is the one that separates students who read the rule from students who understand what the division does.
+A quick self-test is to set both degrees in the visualization to 2 with leading coefficients $$a=3$$ and $$b=-6$$.
+
+Predict the horizontal asymptote before looking at the graph.
+
+Then increase the numerator degree to 3 and explain why the finite horizontal asymptote disappears.
+
+The useful question is not only which rule applies. It is what survives after the expression is scaled by its dominant term.
 </div>

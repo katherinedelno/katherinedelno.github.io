@@ -2,7 +2,7 @@
 layout: post
 title: "After AP Statistics: the upper division"
 date: 2026-07-25
-description: "Probability theory, Bayesian inference, regression at scale, and randomness with memory. The discipline past the AP course, with a thousand random walks."
+description: "Probability theory, mathematical statistics, regression, Bayesian inference, stochastic processes, and computation extend the ideas introduced in AP Statistics."
 course: "AP Statistics"
 section: beyond
 read_time: "8 min read"
@@ -10,17 +10,39 @@ math: true
 kind: beyond
 sequence: 9
 interactive: true
-blurb: "Probability theory, Bayesian inference, and randomness with memory"
+blurb: "Probability theory, mathematical statistics, regression, Bayesian inference, stochastic processes, and computation extend the ideas introduced in AP Statistics"
 image: "/assets/og/beyond-ap-statistics.png"
 ---
 
-AP Statistics teaches a curated set of recipes: intervals, tests, and the discipline of checking conditions and writing conclusions in context. What it mostly cannot show, for lack of time and calculus, is where the recipes come from and how far the subject reaches. The upper division is where the kitchen doors open. Here is a preview of what is inside, written for a student who liked this course and wants to know what they would be signing up for.
+AP Statistics introduces a carefully selected part of a much larger subject.
 
-## Probability grows up first
+You learn how to design studies, describe variation, work with probability, fit a regression line, construct intervals, perform significance tests, and state conclusions in context.
 
-The first serious course past AP is usually probability theory, and its centerpiece is a pair of theorems you have already met in disguise. The Law of Large Numbers says averages settle down; [the Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html) says how they settle, in that unmistakable bell shape. In AP we simulate these; in probability theory you prove them, and the proofs explain the $$\sqrt{n}$$ that haunts every margin of error.
+Later statistics courses ask where those procedures come from and what happens when the standard formulas are no longer enough.
 
-The best mascot for the course is the *random walk*: flip a coin each second, step up on heads and down on tails. Below, several hundred walkers take 300 steps each; the histogram collects where they end up.
+Calculus and linear algebra begin to appear more heavily.
+
+So does computation.
+
+## Probability theory
+
+A first probability course gives a mathematical foundation to ideas that AP Statistics introduces through simulation and formulas.
+
+Random variables become objects to study in their own right.
+
+Expected values, variances, joint distributions, conditional distributions, and transformations are derived systematically.
+
+The Law of Large Numbers explains why averages stabilize.
+
+[The Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html) explains why normal approximations arise so often.
+
+In an upper-division probability course, these results are proved rather than only observed.
+
+## A random walk
+
+A simple random walk begins at zero.
+
+At each step, move up 1 with probability $$1/2$$ and down 1 with probability $$1/2$$.
 
 <div class="viz" markdown="0">
   <canvas id="rw-cv" width="700" height="300"></canvas>
@@ -82,28 +104,124 @@ The best mascot for the course is the *random walk*: flip a coin each second, st
 })();
 </script>
 
-## Statistics learns to argue with itself
+Each path is unpredictable.
 
-AP Statistics teaches one philosophy of inference without ever naming it: the *frequentist* view, where parameters are fixed and probability lives in the sampling process. That is why [the interpretation of a confidence interval](/2026/07/25/what-95-percent-confident-means.html) is so carefully worded, and why "there is a 95% chance the mean is in my interval" costs you the point.
+Across many walkers, the distribution of endpoints develops a recognizable shape.
 
-The upper division introduces the rival school. *Bayesian statistics* treats the parameter itself as uncertain and uses data to update belief: start with a prior distribution, observe evidence, and Bayes' rule (the same one from your conditional probability unit) produces the posterior. In the Bayesian house, "there is a 95% probability the parameter is in this interval" is a perfectly legal sentence, because the probability was defined differently from the start. Spam filters, medical diagnostics, and election forecasting are all Bayesian at heart, and the debate between the two schools is one of the liveliest ongoing arguments in science. Your AP training is the frequentist half of that conversation.
+After $$n$$ steps, the standard deviation of the endpoint is proportional to
 
-## Regression becomes a machine
+$$\sqrt n.$$
 
-AP regression fits one line through one cloud. Upper-division regression is a small universe. *Multiple regression* predicts from many variables at once and asks which ones genuinely matter, holding the others fixed. *Logistic regression* predicts probabilities of categories rather than numeric values, which is where prediction starts shading into classification. Push further down that road and you arrive, sooner than you might expect, at *machine learning*, much of which is regression wearing new clothes: penalized regressions that automatically discard useless variables, trees and forests that fit many small models and vote, and neural networks trained by rolling downhill on an error surface. A statistics major today is substantially a data science degree, and [the least-squares idea from Unit 5](/2026/07/30/least-squares-regression-influence.html) is its seed.
+That square-root scaling is related to the same probabilistic structure behind the Central Limit Theorem.
 
-The upper division also finally answers a question AP students ask constantly: where do $$t^*$$, the chi-square curve, and all those critical values come from? *Mathematical statistics* derives them, with calculus, from first principles, and proves the optimality results that explain why the AP recipes look the way they do. The conditions you memorized (random, 10%, Large Counts, normality) turn out to be the visible ends of theorems.
+Random walks are also a starting point for stochastic processes, where randomness evolves over time rather than appearing as isolated independent events.
+
+## Frequentist and Bayesian inference
+
+AP Statistics is largely frequentist.
+
+Parameters are treated as fixed.
+
+Probability describes the sampling process.
+
+That is why [a 95% confidence interval](/2026/07/25/what-95-percent-confident-means.html) is interpreted through the long-run behavior of the procedure rather than as a 95% probability that a fixed parameter lies in one finished interval.
+
+Bayesian statistics uses a different probability model.
+
+Unknown parameters are represented with probability distributions.
+
+A prior distribution is updated with observed data to produce a posterior distribution.
+
+The two frameworks answer uncertainty questions in different ways.
+
+Upper-division study makes those assumptions explicit and allows the methods to be compared rather than treating one framework as the only form of inference.
+
+## Regression becomes much larger
+
+[Simple linear regression](/2026/07/30/least-squares-regression-influence.html) is the beginning of a broad family of models.
+
+Multiple regression uses several predictors at once.
+
+Logistic regression models the probability of a categorical outcome.
+
+Generalized linear models extend the same framework to other response distributions.
+
+Mixed models handle dependence created by repeated measurements or clustered observations.
+
+Regularization methods such as ridge and lasso regression add penalties that can improve prediction and stabilize high-dimensional models.
+
+Many ideas in machine learning develop naturally from this progression.
+
+Trees, random forests, boosting, and neural networks use different model structures, but the same statistical questions remain.
+
+How well does the method generalize?
+
+What is the uncertainty?
+
+Which features are informative?
+
+What assumptions are being made?
+
+## Mathematical statistics
+
+Mathematical statistics studies the theory behind estimation and testing.
+
+Instead of taking formulas for granted, it asks why an estimator has a particular sampling distribution and what properties make one estimator preferable to another.
+
+Concepts such as bias, consistency, efficiency, sufficiency, likelihood, and asymptotic distribution become central.
+
+The $$t$$-distribution and chi-square distribution are derived rather than supplied.
+
+Critical values and standard errors become consequences of probability models.
+
+The conditions taught in introductory statistics are then seen as practical versions of deeper mathematical assumptions.
 
 ## Randomness with memory
 
-AP probability is mostly about independent events; real systems remember. *Stochastic processes* studies randomness that evolves: Markov chains, where tomorrow depends on today (the mathematics behind Google's original PageRank and the transition matrices you may have met in Precalculus Unit 4); queues, epidemics, and inventory; and Brownian motion, the continuous limit of the random walk above, which underlies the pricing of financial options. If the random-walk picture appealed to you, this is its home course.
+AP probability focuses heavily on independent events.
 
-Alongside these sits modern *computational statistics*: the bootstrap, which resamples your own data thousands of times to build a confidence interval when no formula exists, and permutation tests, which your AP course previews whenever it simulates a randomization distribution. The simulated p-value logic from the investigative-task FRQs is not a toy version of inference; it is the modern research method, and the theory courses explain when and why it works.
+Many real systems have dependence over time.
+
+Stochastic-process courses study models in which the next state depends on the current state or on the history of the process.
+
+Markov chains are one example.
+
+Queues, inventory systems, epidemic models, financial prices, and reliability processes provide others.
+
+Brownian motion is a continuous stochastic process closely related to a scaled limit of random walks.
+
+It plays an important role in probability theory and mathematical finance.
+
+## Computation changes what can be done
+
+Modern statistics uses computation alongside analytic theory.
+
+The bootstrap estimates uncertainty by repeatedly resampling the observed data.
+
+Permutation tests construct reference distributions by rearranging labels or residuals under a null hypothesis.
+
+Monte Carlo methods approximate expectations and probabilities through simulation.
+
+These approaches become especially useful when a clean formula is unavailable.
+
+The randomization logic in introductory statistics is therefore not merely pedagogical.
+
+It is part of a large class of computational methods used in modern research.
 
 ## What to bring with you
 
-Two things, and they may not be the two you expect. The first is calculus: probability theory runs on integrals (a density's area is a probability, an expected value is an integral), and the students who struggle in upper-division statistics are almost never confused by the statistics. The second is the habit AP graded you on relentlessly: conclusions in context, conditions checked, claims matched to their evidence. That discipline, not any formula, is what separates statisticians from people who run software, and you already have it.
+Two kinds of preparation matter.
+
+The first is mathematical.
+
+Calculus is needed for continuous probability distributions, likelihoods, optimization, and asymptotic theory.
+
+Linear algebra is fundamental to regression, multivariate methods, and machine learning.
+
+The second is statistical.
+
+Study design, context, assumptions, and careful interpretation remain important even when the mathematics becomes more advanced.
 
 <div class="article-note" markdown="1">
-A question to take with you: in the random-walk picture, a walker that wanders far above zero seems like it should drift back down, since heads and tails must balance out eventually. Must it? The Law of Large Numbers says the walker's average step goes to zero, yet it turns out the walk itself returns to zero infinitely often but wanders arbitrarily far in between, and the "law of averages" that gamblers believe in does not exist. Making those two sentences coexist honestly is the first great pleasure of probability theory.
+A technically sophisticated model cannot recover information the design never supplied. It also cannot turn an association into a causal effect without the assumptions needed for causal identification. That discipline carries directly from AP Statistics into the upper division.
 </div>

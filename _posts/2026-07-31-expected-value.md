@@ -2,24 +2,40 @@
 layout: post
 title: "Expected value is not a value you expect"
 date: 2026-07-31
-description: "The expected value of a fair die is 3.5, which is not a face the die has. It is a long-run average, and watching one settle explains why the binomial gets a shortcut."
+description: "Expected value is a probability-weighted long-run average. It need not be a possible outcome of a single trial."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 7
 interactive: true
-blurb: "A long-run average, and often a number no outcome can produce"
+blurb: "Expected value is a probability-weighted long-run average. It need not be a possible outcome of a single trial"
 image: "/assets/og/expected-value.png"
 ---
 
-The expected value of a fair die is 3.5, which is not a face the die has. Nothing has gone wrong. The name is misleading in a way the definition is not, and unpicking the difference is most of what the topic asks.
+The expected value of a fair six-sided die is
 
-The framework defines the quantity as a weighted sum, $$\mu_X = \textstyle\sum x_i \cdot P(x_i)$$, and then supplies the reading that makes it usable: the expected value can be interpreted as the *long-run average outcome* of the random variable. Not the likeliest outcome, not a typical outcome, not an outcome at all. An average, of a great many results, none of which need resemble it.
+$$3.5.$$
 
-## Watch one settle
+No roll can produce 3.5.
 
-Each preset below is a probability distribution. The bars are the probabilities and the vertical line is $$\mu_X$$, computed from the definition rather than from the simulation.
+That is not a problem with the definition.
+
+Expected value is a long-run average, not a prediction of the next outcome.
+
+## The definition
+
+For a discrete random variable $$X$$,
+
+$$\mu_X = E(X) = \sum x_iP(X=x_i).$$
+
+Each possible value is weighted by its probability.
+
+The result describes where the average of many independent repetitions will tend over the long run.
+
+It does not have to be one of the values the random variable can actually take.
+
+## Watch the average settle
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ev-modes"></div>
@@ -187,32 +203,113 @@ Each preset below is a probability distribution. The bars are the probabilities 
 })();
 </script>
 
-## Three of the four are unreachable
+The upper panel shows the probability distribution.
 
-The die averages 3.5. Five fair coin flips average 2.5 heads. A raffle ticket that pays 100 one time in a hundred and 10 one time in twenty is worth 1.50, and no ticket has ever been worth 1.50. In each case the dashed line lands in the gap between two bars, and the running average underneath walks toward it anyway.
+The dashed vertical line marks the theoretical expected value.
 
-Only the third preset, ten trials at a success rate of 0.3, produces an expected value that an outcome can equal — and even there, three successes is merely the likeliest of eleven possibilities, not something to be expected in any ordinary sense.
+The lower panel shows the running average of simulated outcomes.
 
-The standard deviation is the companion measurement and the framework gives it the same long-run reading: a typical deviation of the values from the mean, over the long run. The two short marks beside the dashed line are one such deviation either side. On the raffle they are far outside the picture, because a distribution that is almost always zero and occasionally 100 has a standard deviation of about 10 against a mean of 1.50 — which is the honest description of a lottery, and the reason expected value alone is a poor summary of one.
+With more trials, the running average tends to move toward the theoretical mean.
 
-## Why the binomial gets a shortcut
+For several presets, the expected value lies between possible outcomes.
 
-For most distributions, finding $$\mu_X$$ means doing the weighted sum term by term. The binomial is exempted, and the exemption is worth understanding rather than memorizing.
+The running average can still converge to that value because an average is not itself required to be an observed outcome.
 
-A binomial random variable counts successes in $$n$$ repeated independent trials, each with two outcomes and the same probability $$p$$ of success. Because the trials are identical and independent, each one contributes the same amount to the total on average, and the framework can state the result outright:
+## Examples
 
-$$\mu_X = np, \qquad \sigma_X = \sqrt{np(1-p)}.$$
+For a fair die,
 
-Check it against the tool. For ten trials at $$p = 0.3$$ the shortcut gives $$\mu = 3$$ and $$\sigma = \sqrt{2.1} \approx 1.4491$$, and the term-by-term sums over all eleven outcomes return the same two numbers. The shortcut is not an approximation.
+$$E(X) = \frac{1+2+3+4+5+6}{6} = 3.5.$$
 
-## The four conditions, and what breaks them
+For the number of heads in five fair coin flips,
 
-The shortcut is available only when the variable really is binomial, and the definition carries four requirements: a fixed number of trials, two outcomes per trial, the same probability of success on every trial, and independence between trials.
+$$E(X)=2.5.$$
 
-Drawing cards without replacement breaks the third and fourth at once, since each draw changes what is left. Counting how many trials it takes to get a first success breaks the first, because the number of trials is not fixed in advance — and that variable, once part of this course, is no longer in it, which is worth knowing if you are working from an older review book. Asking each subject a question with three possible answers breaks the second until the categories are collapsed to two.
+Again, 2.5 heads is impossible in one repetition.
 
-Justifying that a variable *is* binomial is its own learning objective, so the four conditions are a sentence to write rather than a box to tick.
+A raffle can have an expected value of \$1.50 even if no ticket pays \$1.50.
+
+The mean describes the probability distribution as a whole.
+
+It does not identify the most likely outcome.
+
+## Standard deviation matters too
+
+Expected value alone can hide substantial risk or variability.
+
+The standard deviation of a random variable describes the typical distance of outcomes from the mean over repeated trials.
+
+A lottery may have a small positive expected value but a large standard deviation because almost every outcome is near zero and a very small fraction are extremely large.
+
+Two random variables with the same expected value can therefore behave very differently.
+
+The mean describes location.
+
+The standard deviation describes spread.
+
+## The binomial shortcuts
+
+For a binomial random variable with $$n$$ trials and success probability $$p$$,
+
+$$\mu_X=np$$
+
+and
+
+$$\sigma_X = \sqrt{np(1-p)}.$$
+
+For example, if
+
+$$n=10$$
+
+and
+
+$$p=0.3,$$
+
+then
+
+$$\mu_X=3$$
+
+and
+
+$$\sigma_X = \sqrt{2.1} \approx1.449.$$
+
+These formulas are exact for a binomial distribution.
+
+They are not approximations.
+
+## When a variable is binomial
+
+A binomial random variable counts successes across a fixed number of trials.
+
+The usual conditions are:
+
+- a fixed number of trials
+- two possible outcomes on each trial
+- a constant probability of success
+- independence between trials
+
+If the number of trials continues until the first success, the variable is not binomial because the number of trials is not fixed.
+
+Drawing without replacement from a small finite population can also violate the constant-probability and independence conditions.
+
+The formulas
+
+$$np$$
+
+and
+
+$$\sqrt{np(1-p)}$$
+
+should be used only after the binomial model is justified.
+
+## Long run does not mean smooth
 
 <div class="article-note" markdown="1">
-A check worth running on the raffle: draw a hundred trials, note the running average, then draw a thousand more and note it again. The number often moves *away* from 1.50 before it comes back, because a single hundred-pound prize arriving late in a short run drags the average up by a full point. That is not the law of large numbers failing. It is the law of large numbers being a statement about the long run only, and the reason a distribution this skewed needs both of its parameters reported rather than just the first.
+A running average can move away from the expected value before moving back toward it.
+
+This is especially visible for skewed distributions with rare large outcomes.
+
+The law of large numbers is a statement about long-run behavior.
+
+It does not require the average to improve monotonically after every additional trial.
 </div>

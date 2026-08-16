@@ -43,7 +43,8 @@ permalink: /
 
   <div class="hero">
     <h1>Mathematics and statistics, taught one student at a time.</h1>
-    <p class="lede">This is a private teaching practice devoted to the careful study of mathematics and statistics. I work with a small number of students each year, in <b>AP&nbsp;Statistics</b>, <b>AP&nbsp;Calculus&nbsp;AB/BC</b>, and <b>AP&nbsp;Precalculus</b>, through the full arc of a course. I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics, and I have found that most difficulty in mathematics is specific, findable, and fixable, provided someone is paying close enough attention.</p>
+    <p class="lede">Private instruction grounded in rigorous training in mathematics and statistics, with close attention to theory, notation, and reasoning.</p>
+    <p class="lede">I work with a small number of students each year in <b>AP&nbsp;Statistics</b>, <b>AP&nbsp;Calculus&nbsp;AB/BC</b>, and <b>AP&nbsp;Precalculus</b>, usually through the full arc of a course. I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics. I have found that most difficulty in mathematics is specific. It can usually be traced to a particular idea, habit, or gap in understanding if someone is paying close enough attention.</p>
     <div class="btn-row">
       <a href="/private-instruction/" class="pg-btn">Private instruction &amp; rates</a>
       <span class="quiet">or email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a></span>
@@ -52,28 +53,30 @@ permalink: /
 
   <div class="pg-section">
     <h2>The practice</h2>
-    <p>Sessions are spent working, not watching. We solve problems together so that I can see the reasoning as it forms, in the setup, the notation, and the hesitations, and then I step away and let the student work alone, because that is the only honest measure of what has taken hold. I keep detailed notes from week to week; over a term, the instruction grows more precise as the picture of how a student thinks fills in.</p>
-    <p style="margin-top:.9rem;">The structure of sessions, the materials, and rates are set out under <a href="/private-instruction/">private instruction</a>. There is also a short page <a href="/about/">about me</a>.</p>
+    <p>Sessions are spent working, not watching. We solve problems together so I can see the reasoning as it forms in the setup, the notation, and the places where a student hesitates. Then I step back and let the student work independently. That is the clearest measure of what has actually taken hold.</p>
+    <p style="margin-top:.9rem;">I keep detailed notes from week to week. Over a term, the instruction becomes more precise as I learn how a student thinks, where difficulties tend to recur, and what still needs work.</p>
+    <p style="margin-top:.9rem;">The structure of sessions, materials, and rates are set out under <a href="/private-instruction/">private instruction</a>. There is also a short page <a href="/about/">about me</a>.</p>
   </div>
 
   <div class="pg-section">
     <h2>This August</h2>
-    <p>As the school year gets underway, I am giving two free 45-minute sessions on starting the year well: <b>AP&nbsp;Statistics on Tuesday, August&nbsp;25</b>, and <b>AP&nbsp;Calculus on Thursday, August&nbsp;27</b>, both at <b>5:30&nbsp;p.m. Pacific</b>. Those who register receive the getting-started guide for their course within a day, whether or not they attend.</p>
+    <p>As the school year begins, I am offering two free 45-minute sessions on starting the year well. The <b>AP&nbsp;Statistics session is Tuesday, August&nbsp;25</b>, and the <b>AP&nbsp;Calculus session is Thursday, August&nbsp;27</b>. Both begin at <b>5:30&nbsp;p.m. Pacific</b>.</p>
+    <p>Everyone who registers will receive the getting-started guide for the course within a day, whether or not they attend.</p>
     <div class="btn-row-reg">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register - AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register - AP Calculus, Aug 27</a>
     </div>
   </div>
 
   {% include subscribe.html
      heading="The getting-started guide for your course"
-     blurb="Before the term begins I send a short guide for each course: the habits that make the year go well, the setup of calculator and notation, how the course and exam are structured, and the early mistakes most worth avoiding. Choose a course and I'll send it. No charge, and nothing else follows."
+     blurb="Before the term begins, I send a short guide for each course. It covers the habits that matter most early on, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding. Choose a course and I'll send it. There is no charge, and nothing else follows."
      button="Send the guide"
      done="Thank you. I'll send the guide to that address shortly."
      choose="true" %}
 
   <div class="pg-close">
-    <p>Writing for students is collected under <a href="/resources/">resources</a>; my background and statistical work are under <a href="/about/">about</a>. The roster for the academic year is small, and it fills. Families considering the fall are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
+    <p>My writing for students is collected under <a href="/resources/">resources</a>, and my academic background and statistical work are under <a href="/about/">about</a>. I keep the academic-year roster small, and it does fill. Families considering fall instruction are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
   </div>
 
 </div>

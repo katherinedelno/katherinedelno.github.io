@@ -2,24 +2,56 @@
 layout: post
 title: "What the factored form tells you"
 date: 2026-07-31
-description: "Zeros, tangencies, holes, and asymptotes are four readings of one factored expression. The rule that separates a hole from an asymptote is a comparison, not a cancellation."
+description: "Factored form reveals zeros, multiplicity, holes, vertical asymptotes, and much of a function's end behavior before the graph is drawn."
 course: "AP Precalculus"
 read_time: "8 min read"
 math: true
 kind: foundations
 sequence: 2
 interactive: true
-blurb: "One expression, read four ways: zeros, tangencies, holes, and asymptotes"
+blurb: "Factored form reveals zeros, multiplicity, holes, vertical asymptotes, and much of a function's end behavior before the graph is drawn"
 image: "/assets/og/what-the-factored-form-tells-you.png"
 ---
 
-A factored expression is not a step on the way to a graph. It is the graph, written down, and almost every question Unit 1 asks is a request to read one line of it out loud.
+A factored expression contains a large amount of graphical information.
 
-The framework starts from a single equivalence: if $$a$$ is a real number, then $$(x-a)$$ is a linear factor of a polynomial exactly when $$a$$ is a zero of it. Every other reading in this article is that sentence with something attached — a repeated factor, a factor downstairs, or the largest factor of all.
+Its factors identify zeros.
 
-## Two zeros, becoming one
+Their multiplicities tell us whether the graph crosses or only touches the axis.
 
-The slider below moves one root. The other factors stay where they are.
+For rational functions, comparing multiplicities in the numerator and denominator distinguishes holes from vertical asymptotes.
+
+The leading terms describe end behavior.
+
+## Zeros and factors
+
+For a polynomial, the factor theorem says that
+
+$$ (x-a) $$
+
+is a factor exactly when
+
+$$ f(a)=0. $$
+
+So a factor of
+
+$$ (x+3) $$
+
+gives a zero at
+
+$$ x=-3. $$
+
+A factor of
+
+$$ (x-2) $$
+
+gives a zero at
+
+$$ x=2. $$
+
+The sign inside the factor is opposite the value of the zero because the factor becomes zero when the two terms cancel.
+
+## Multiplicity changes the crossing
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ff-modes"></div>
@@ -177,30 +209,107 @@ The slider below moves one root. The other factors stay where they are.
 })();
 </script>
 
-## Even multiplicity is a tangency
+The visualization lets one root move while the other factors stay fixed.
 
-Take the first expression and slide $$a$$ up to $$-1$$. Two separate crossings drift together, meet, and the graph stops crossing: it comes down to the axis, touches, and turns back. The factor $$(x+1)$$ is now repeated, and the framework says what that repetition costs. If a real zero has even multiplicity, the signs of the output values are the same on both sides of it, so the graph is tangent to the $$x$$-axis there.
+Suppose a factor appears once:
 
-Sign is the whole mechanism. A factor $$(x-a)$$ changes sign as $$x$$ passes $$a$$; a factor $$(x-a)^2$$ does not, because a square is never negative. Every other factor is far from $$a$$ and holds its sign across the crossing, so the product changes sign exactly when the repeated factor does — which is to say, only when its multiplicity is odd.
+$$ (x-a). $$
 
-Now switch to the second expression and repeat the move. Three factors of $$(x+1)$$ this time, so the sign does change and the graph does cross, but it arrives flattened, pressing itself against the axis before letting go. Odd multiplicity crosses; higher odd multiplicity crosses lazily. The framework counts these carefully because a polynomial of degree $$n$$ has exactly $$n$$ complex zeros when multiplicities are counted, and the count is only right if a repeated factor is allowed to be worth more than one.
+Its sign changes as $$x$$ passes through $$a$$.
 
-## The rule that separates a hole from an asymptote
+If the remaining factors keep their signs nearby, the entire product changes sign and the graph crosses the axis.
 
-Most treatments say a common factor cancels and leaves a hole. That is true often enough to be dangerous, and the framework does not say it. It compares multiplicities instead.
+Now suppose the factor appears twice:
 
-A vertical asymptote occurs at $$x = a$$ when the multiplicity of $$a$$ in the denominator is greater than its multiplicity in the numerator. A hole occurs when the multiplicity in the numerator is greater than or equal to the multiplicity in the denominator. One comparison, both outcomes, and no cancelling.
+$$ (x-a)^2. $$
 
-The last two expressions are built to show why the distinction is not pedantry. They are identical except for one exponent. Slide $$a$$ onto 1 in the third and the factor $$(x-1)$$ appears once above and once below, the multiplicities tie, and the asymptote collapses into a hole at $$(1, -1)$$ — a single missing point on an otherwise ordinary curve. Slide $$a$$ onto 1 in the fourth and the same $$(x-1)$$ appears once above and *twice* below. A factor cancels there too. The asymptote stays.
+A square is nonnegative on both sides of $$a$$.
 
-Anyone reasoning by cancellation gets the fourth one wrong, and the readout underneath is doing the comparison rather than looking at the picture, which is the habit worth copying.
+Its sign does not change, so the graph touches the axis and turns back.
 
-## The largest factor decides the ends
+More generally:
 
-The last reading is the coarsest. For inputs of large magnitude a polynomial is dominated by its leading term, so the end behavior of a rational function is the end behavior of the quotient of the two leading terms — a claim that ignores every factor except the biggest one.
+- odd multiplicity usually produces a crossing
+- even multiplicity produces a touch or tangency
+- larger multiplicities make the graph flatter near the zero
 
-Three outcomes follow, and the framework organises them by which polynomial dominates. When the denominator wins, the quotient tends to zero and the graph flattens onto the horizontal axis. When neither wins, the quotient is the ratio of the leading coefficients and the graph flattens onto that height. When the numerator wins, there is no horizontal asymptote at all, and the graph instead takes on the end behavior of the leftover polynomial — which, in the single case where that leftover is linear, is a slant asymptote.
+A zero of multiplicity 3 still crosses.
+
+It simply does so with more flattening than a simple zero.
+
+## Holes and vertical asymptotes
+
+For rational functions, a denominator factor does not automatically mean a vertical asymptote.
+
+The multiplicities in the numerator and denominator have to be compared.
+
+Suppose $$x=a$$ appears with multiplicity $$m$$ in the numerator and $$n$$ in the denominator.
+
+If
+
+$$ n>m, $$
+
+a denominator factor remains after simplification.
+
+The graph has a vertical asymptote at $$x=a$$.
+
+If
+
+$$ m\ge n, $$
+
+the denominator factor is fully removed.
+
+The original function is still undefined at $$x=a$$, so the graph has a hole.
+
+This distinction matters when factors repeat.
+
+For example, one factor of
+
+$$ (x-1) $$
+
+in the numerator and two in the denominator still leaves
+
+$$ \frac{1}{x-1} $$
+
+after cancellation.
+
+The graph therefore still has a vertical asymptote.
+
+The fact that something canceled is not enough to conclude that there is a hole.
+
+## End behavior
+
+For large values of $$\vert x\vert$$, a polynomial is dominated by its leading term.
+
+A rational function therefore has the same end behavior as the quotient of its leading terms.
+
+If the denominator has higher degree than the numerator,
+
+$$ f(x)\to0 $$
+
+as $$\vert x\vert \to\infty$$.
+
+If the degrees are equal, the function approaches the ratio of the leading coefficients.
+
+If the numerator has higher degree, there is no horizontal asymptote.
+
+Polynomial division can reveal a slant or higher-degree asymptote when appropriate.
+
+These conclusions come from the dominant powers, not from the smaller terms.
+
+## Read before graphing
+
+Given a factored rational function, it is worth making a short inventory before touching a calculator.
+
+Identify:
+
+- the zeros and their multiplicities
+- the excluded inputs
+- whether each excluded input produces a hole or vertical asymptote
+- the leading terms and end behavior
+
+Then sketch.
 
 <div class="article-note" markdown="1">
-A prediction to test at the slider: on the fourth expression, set $$a$$ to 1 and then ask what would have to change for the asymptote to become a hole. Not the cancelling, which already happens. The numerator would need a second factor of $$(x-1)$$, so that the multiplicities tie at two apiece. Write the resulting expression and check that its graph has a hole where an asymptote used to be. A student who can construct that example on demand has stopped reading rational functions by cancellation and started reading them by multiplicity, which is the only version that survives contact with a repeated factor.
+The graph should confirm what the algebra already predicted.
 </div>

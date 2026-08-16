@@ -2,7 +2,7 @@
 layout: post
 title: "Optimization, and the step that is not calculus"
 date: 2026-07-30
-description: "Every optimization problem has the same skeleton underneath a different story. The calculus is the short part, and the domain is where the marks are lost."
+description: "Optimization problems depend on a correct objective, constraint, and domain before the derivative is ever used."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,23 +10,32 @@ math: true
 kind: mechanics
 sequence: 19
 interactive: true
-blurb: "Setting up the function and its domain is most of the work"
+blurb: "Optimization problems depend on a correct objective, constraint, and domain before the derivative is ever used"
 image: "/assets/og/optimization.png"
 ---
 
-The framework's suggested skill for the introductory optimization topic is to identify common underlying structures in problems involving different contextual situations. That is an unusual thing to ask of a calculus topic, and it is the right thing to ask of this one. Fences, boxes, and distances are the same problem wearing different clothes.
+Optimization problems often look different because the stories are different.
 
-## The skeleton
+A fence, an open box, and a shortest-distance problem can all have the same mathematical structure.
 
-Every one of these problems has four parts, in this order.
+The derivative usually comes late.
 
-A quantity to optimize, named as a function. A constraint relating the variables, used to eliminate all but one of them. A domain for the surviving variable, forced by the situation rather than by the algebra. And only then the derivative.
+The setup comes first.
 
-The framework's statement of the topic is deliberately plain: the derivative can be used to solve optimization problems, that is, finding a minimum or maximum value of a function on a given interval. The interval is given. Working out what it is, is the third step, and it is the step that gets skipped.
+## The structure of an optimization problem
 
-This is the same translation problem [related rates](/2026/07/20/related-rates-translation-problem.html) poses, one unit later and in the other direction. There the prose hands you rates and asks for a rate; here it hands you a constraint and asks for an extreme value. Both stand or fall on getting a picture and a variable list onto paper before any calculus starts.
+Most problems require four pieces.
 
-## Three stories, one structure
+1. A quantity to optimize.
+2. A constraint relating the variables.
+3. A domain for the remaining variable.
+4. A method for locating and comparing candidate extrema.
+
+The first three steps are usually where the real decisions are made.
+
+The domain is especially important because it often comes from the context rather than from the algebra alone.
+
+## Three examples with the same structure
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="op-fns"></div>
@@ -207,32 +216,175 @@ This is the same translation problem [related rates](/2026/07/20/related-rates-t
 })();
 </script>
 
-The fence and the box are the same problem. Each has a constraint that turns two variables into one, each produces a function on a closed interval, and in each the domain comes from geometry rather than algebra.
+The visualization shows a physical or geometric setup beside the corresponding objective function.
 
-Notice where the two endpoints come from, because they come from different places. The left end is $$x = 0$$ in both, because a width and a cut cannot be negative. The right end is whatever value collapses the other dimension: for the fence, $$y = 100 - 2x$$ reaches zero at $$x = 50$$; for the box, the base side $$12 - 2x$$ reaches zero at $$x = 6$$. Neither number appears anywhere in the algebra of the objective. Both have to be read off the picture.
+The feasible domain is marked, along with critical points and endpoints.
 
-For the fence, $$2x + y = 100$$ gives $$A(x) = x(100-2x)$$ on $$[0,50]$$, with $$A'(x) = 100 - 4x$$ zero at $$x = 25$$. The candidates are $$0$$, $$25$$, and $$50$$, with areas $$0$$, $$1250$$, and $$0$$. For the box, $$V(x) = x(12-2x)^2$$ on $$[0,6]$$, and $$V'(x) = 12(x-2)(x-6)$$ is zero at $$x = 2$$ and $$x = 6$$. The candidates are $$0$$, $$2$$, and $$6$$, with volumes $$0$$, $$128$$, and $$0$$ — and $$x = 6$$ arrives twice, once as a critical point and once as an endpoint.
+### A fenced region
 
-## The Candidates Test, and when it does not apply
+Suppose three sides of a rectangle use 100 meters of fencing.
 
-The framework states it in one line: absolute extrema of a function on a closed interval can only occur at critical points or at endpoints. So on a closed interval the whole method is to list those points, evaluate, and compare. No derivative test is needed, because comparing the values settles it directly — and [the Extreme Value Theorem](/2026/07/30/mean-value-and-extreme-value-theorems.html) is what guarantees there is something to find, provided the objective is continuous on that interval.
+Let $$x$$ be the width and $$y$$ the remaining side.
 
-Both parts of the definition of a critical point matter here. A critical point is where the derivative is zero *or* [fails to exist](/2026/07/30/where-differentiability-fails.html), and objectives built from absolute values or roots can have the second kind without having the first.
+The constraint is
 
-The third problem is the one that breaks the habit. Minimizing the distance from $$(0,2)$$ to the parabola $$y = x^2$$ gives
+$$2x+y=100.$$
 
-$$D^2(x) = x^2 + (x^2-2)^2 = x^4 - 3x^2 + 4,$$
+So
 
-whose derivative $$2x(2x^2-3)$$ vanishes at $$x = 0$$ and $$x = \pm\sqrt{3/2}$$. There is no closed interval and there are no endpoints, so there is nothing to compare against. Evaluating anyway: $$D^2 = 4$$ at $$x = 0$$ and $$D^2 = \tfrac74$$ at the other two, so the minimum distance is $$\tfrac{\sqrt7}{2} \approx 1.3229$$, attained twice.
+$$y=100-2x.$$
 
-And $$x = 0$$ is a critical point that is a local *maximum* of the distance. A student who finds one critical point and stops has a defensible-looking answer of 2, which is wrong. Without endpoints to compare, the justification has to come from a derivative test, and here the second derivative $$6(2x^2-1)$$ is $$-6$$ at $$x = 0$$ and $$+12$$ at $$x = \pm\sqrt{3/2}$$, which settles all three at once.
+The area is
 
-## Answering the question that was asked
+$$A(x)=x(100-2x).$$
 
-The suggested skill for the second optimization topic is to explain the meaning of mathematical solutions in context, which mostly means noticing what was asked for.
+The physical domain is
 
-The fence question asks for the largest area, which is $$1250$$ square metres, not $$x = 25$$. The box question asks for the volume, $$128$$ cubic inches, not the cut. And the distance question asks for a distance, so the answer is $$\tfrac{\sqrt7}{2}$$, not $$\tfrac74$$ — minimizing $$D^2$$ instead of $$D$$ is a legitimate shortcut, because the square root is increasing and preserves the location of the minimum, but the shortcut has to be undone before the answer is written down.
+$$0\le x\le50.$$
+
+Differentiate:
+
+$$A'(x)=100-4x.$$
+
+The interior critical point is
+
+$$x=25.$$
+
+Evaluate the area at the candidates:
+
+$$A(0)=0,$$
+
+$$A(25)=1250,$$
+
+and
+
+$$A(50)=0.$$
+
+The maximum area is
+
+$$1250$$
+
+square meters.
+
+The question asks for the area, not only the value of $$x$$.
+
+### An open box
+
+Suppose squares of side length $$x$$ are cut from the corners of a 12-by-12 sheet and the sides are folded upward.
+
+The volume is
+
+$$V(x)=x(12-2x)^2.$$
+
+The geometry requires
+
+$$0\le x\le6.$$
+
+Differentiate:
+
+$$V'(x)=12(x-2)(x-6).$$
+
+The candidates on the closed interval are
+
+$$x=0,\quad x=2,\quad x=6.$$
+
+The corresponding volumes are
+
+$$0,\quad128,\quad0.$$
+
+So the maximum volume is
+
+$$128.$$
+
+### Distance to a curve
+
+Now minimize the distance from $$(0,2)$$ to the parabola
+
+$$y=x^2.$$
+
+The squared distance is
+
+$$D^2(x) = x^2+(x^2-2)^2 = x^4-3x^2+4.$$
+
+Because square root is increasing, minimizing $$D^2$$ also minimizes $$D$$.
+
+Differentiate:
+
+$$\frac{d}{dx}D^2(x) = 2x(2x^2-3).$$
+
+The critical points are
+
+$$x=0$$
+
+and
+
+$$x=\pm\sqrt{\frac32}.$$
+
+There is no closed bounded interval here, so there are no endpoints to check.
+
+At
+
+$$x=0,$$
+
+we get
+
+$$D^2=4.$$
+
+At
+
+$$x=\pm\sqrt{\frac32},$$
+
+we get
+
+$$D^2=\frac74.$$
+
+Therefore the minimum distance is
+
+$$D=\frac{\sqrt7}{2}.$$
+
+The square-root shortcut has to be undone in the final answer because the problem asks for a distance.
+
+## The Candidates Test
+
+[For a continuous function on a closed interval](/2026/07/30/mean-value-and-extreme-value-theorems.html), absolute extrema can occur at interior critical points or endpoints.
+
+So the standard procedure is:
+
+- find the critical points
+- include the endpoints
+- evaluate the objective at every candidate
+- compare
+
+A critical point is a point where the derivative is zero or [fails to exist](/2026/07/30/where-differentiability-fails.html).
+
+Finding one critical point is not enough.
+
+It may be a local maximum, local minimum, or neither.
+
+On an open or unbounded domain, endpoint comparison may not be available. Then a derivative test, global argument, or analysis of end behavior may be needed.
+
+## Answer the quantity that was asked for
+
+Optimization problems often ask for a quantity different from the variable used during the calculus.
+
+A problem may ask for maximum area but require solving first for a width.
+
+It may ask for volume but require finding the cut size.
+
+It may ask for distance while the simpler objective is squared distance.
+
+So the last step should return to the original question.
+
+State the requested quantity with appropriate units.
 
 <div class="article-note" markdown="1">
-The setup is worth practicing apart from the calculus. Take a page of optimization problems and, for each one, write only three lines: the quantity being optimized, the constraint, and the domain with a reason for each end of it. Do not differentiate any of them. The differentiating is the part that already works, and separating the two makes it obvious how much of the difficulty lives in the first three lines.
+A useful practice exercise is to set up several optimization problems without differentiating them.
+
+For each one, write only:
+
+- the objective
+- the constraint
+- the domain
+
+If those three lines are correct, the calculus that follows is usually routine.
 </div>

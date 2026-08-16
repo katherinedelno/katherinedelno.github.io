@@ -2,7 +2,7 @@
 layout: post
 title: "Invoking the Intermediate Value Theorem"
 date: 2026-07-30
-description: "An existence theorem promises that something happens without saying where. Check the hypotheses, state the conclusion in the theorem's own terms, and the point is earned."
+description: "The theorem guarantees that a value is reached somewhere on an interval. It does not tell you where or how many times."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "7 min read"
@@ -10,17 +10,21 @@ math: true
 kind: mechanics
 sequence: 6
 interactive: true
-blurb: "Something happens somewhere, and the theorem refuses to say where"
+blurb: "The theorem guarantees that a value is reached somewhere on an interval. It does not tell you where or how many times"
 image: "/assets/og/intermediate-value-theorem.png"
 ---
 
-The framework gathers a small family of results under one idea: existence theorems allow us to draw conclusions about a function's behavior on an interval without precisely locating that behavior. The Intermediate Value Theorem is the first of them, and that sentence is the whole shape of it. Something happens. The theorem declines to say where.
+The Intermediate Value Theorem is an existence theorem.
 
-Stated in full: if $$f$$ is continuous on the closed interval $$[a,b]$$ and $$d$$ is a number between $$f(a)$$ and $$f(b)$$, then there is at least one number $$c$$ between $$a$$ and $$b$$ with $$f(c) = d$$.
+It allows us to conclude that a continuous function reaches a particular value somewhere on an interval without locating the point where that happens.
 
-Four things to notice, and the interactive below is built to make each of them visible.
+In full, suppose $$f$$ is continuous on the closed interval $$[a,b]$$. If $$d$$ lies between $$f(a)$$ and $$f(b)$$, then there is at least one $$c\in(a,b)$$ such that
 
-## The statement, one clause at a time
+$$f(c)=d.$$
+
+The hypotheses and the conclusion are all worth reading carefully.
+
+## The statement one condition at a time
 
 <div class="viz" markdown="0">
   <canvas id="iv-cv" width="700" height="300"></canvas>
@@ -174,39 +178,86 @@ Four things to notice, and the interactive below is built to make each of them v
 })();
 </script>
 
-The two hypotheses are checked separately because they fail separately. Drag the target above 5 or below 1 and the second one goes out while the first holds: the function is still continuous, the theorem has nothing to say, and the honest report is that it does not apply rather than that no crossing exists.
+Both functions in the visualization have the same endpoint values,
 
-## "At least one" is not a hedge
+$$f(0)=1 \quad\text{and}\quad f(4)=5.$$
 
-Leave the target at 3 on the continuous function and count the marked crossings. There are three, at $$x = 2-\sqrt{3}$$, $$x = 2$$, and $$x = 2+\sqrt{3}$$, and the theorem promised one.
+The only difference is continuity.
 
-That gap is the point of an existence theorem. It is a lower bound on how much happens, obtained from almost no information — two endpoint values and continuity. It cannot be a count, because the same two endpoint values are consistent with one crossing or with a hundred.
+For the continuous function, any target $$d$$ between 1 and 5 satisfies the conditions of the theorem. At least one crossing is guaranteed.
 
-So a conclusion that says "the function equals 3 exactly once" is not what the theorem gives you, and neither is "the function equals 3 at $$x = 2$$." Both are true here. Neither follows from the IVT.
+The graph may cross the target more than once. The theorem does not count the crossings.
 
-## Continuity is not decoration
+Switch to the function with a jump and choose a target between 3 and 4.
 
-Switch to the jump and set the target to 3.5. The endpoints have not moved: $$f(0) = 1$$ and $$f(4) = 5$$, and 3.5 sits squarely between them. The second hypothesis is satisfied and the first is not, and the readout reports what that costs — no crossing anywhere on the interval.
+The endpoint condition still holds. The target lies between $$f(0)$$ and $$f(4)$$.
 
-The left piece climbs from 1 to just under 3; the right piece starts at 4 and climbs to 5. Everything in $$[3, 4)$$ is stepped straight over. The bracket is a genuine bracket and it guarantees nothing, because the guarantee was never about the endpoints alone.
+But the function is not continuous on the interval, so the theorem no longer applies.
 
-This is also why "continuous on the *closed* interval" is written the way it is. The endpoints are where $$f(a)$$ and $$f(b)$$ are read, so continuity has to reach them.
+In this example, there is also no crossing.
 
-## The sentence that earns the point
+Now move the target above 5 or below 1 while keeping the continuous function.
 
-The suggested skill attached to this topic is providing reasons or rationales for a conclusion, which is a fair warning that the writing is the assessed part. A complete invocation has four moves, in this order:
+Continuity still holds, but the target is no longer between the endpoint values. Again, the theorem does not apply.
 
-1. Name the function and assert continuity, with a reason. Polynomials are continuous everywhere; a quotient is [continuous on its domain](/2026/07/30/continuity-three-conditions.html); a function given as continuous in the stem is continuous because you were told.
-2. Evaluate at both endpoints and state the two values.
-3. Observe that the target lies between them.
-4. Conclude, in the theorem's own words, that there is at least one $$c$$ in the open interval with $$f(c) = d$$, and name the theorem.
+This does not mean the function cannot equal that target somewhere. It means the theorem gives no guarantee.
 
-Written out for the function above:
+## What “at least one” means
 
-> $$f$$ is a polynomial, so it is continuous on $$[0,4]$$. Since $$f(0) = 1$$ and $$f(4) = 5$$, and $$1 < 3 < 5$$, the Intermediate Value Theorem guarantees there is at least one $$c$$ in $$(0,4)$$ with $$f(c) = 3$$.
+Set the target to 3 on the continuous function.
 
-The two failures worth naming are skipping step 1, which is the one graders are actually checking, and overclaiming in step 4 — writing "exactly one" or naming a location. The theorem is being invoked precisely because you cannot locate anything, so a conclusion that locates something is not a conclusion the theorem supports.
+The graph crosses $$y=3$$ three times.
+
+The Intermediate Value Theorem guarantees only one or more.
+
+That is all an existence theorem can conclude from the information it uses. Continuity and two endpoint values are enough to guarantee a crossing, but not enough to determine the number or location of crossings.
+
+So the theorem does not justify either of these claims:
+
+- $$f(x)=3$$ exactly once.
+- $$f(2)=3$$.
+
+Those statements may happen to be true for a particular function. They do not follow from the theorem.
+
+## Why continuity matters
+
+Return to the function with a jump and set the target to 3.5.
+
+The endpoint values remain 1 and 5, so
+
+$$1<3.5<5.$$
+
+But the left piece approaches values below 3 while the right piece begins at 4.
+
+The graph skips the entire interval of outputs between 3 and 4.
+
+Without continuity, the endpoint bracket alone guarantees nothing.
+
+This is why the theorem requires continuity on the entire closed interval $$[a,b]$$. The conclusion depends on the function being unable to jump over intermediate values.
+
+## Writing a complete IVT justification
+
+A strong written justification has four parts.
+
+1. State that the function is [continuous on the relevant closed interval](/2026/07/30/continuity-three-conditions.html) and give a reason.
+2. Evaluate the function at both endpoints.
+3. Show that the target value lies between those endpoint values.
+4. Invoke the Intermediate Value Theorem and state the existence conclusion.
+
+For example:
+
+> “$$f$$ is a polynomial, so it is continuous on $$[0,4]$$. Since $$f(0)=1$$ and $$f(4)=5$$, and $$1<3<5$$, the Intermediate Value Theorem guarantees that there is at least one $$c\in(0,4)$$ such that $$f(c)=3$$.”
+
+Two common errors are easy to avoid.
+
+The first is skipping the continuity statement.
+
+The second is claiming more than the theorem gives. Do not say “exactly one” unless you have additional information that proves uniqueness. Do not name the location unless you obtained it by some other method.
 
 <div class="article-note" markdown="1">
-A self-test at the jump: drag the target slowly from 2 up to 5 and watch the crossing count. It reads one, then none, then one again, while the verdict never moves — the theorem has said "does not apply" for the whole drag. Account for that in one sentence. A theorem that is silent across the entire range is still telling you something true at every point of it, and saying what is the difference between having learned the statement and being able to use it.
+A useful self-test is to use the discontinuous function and drag the target from 2 to 5.
+
+The number of actual crossings changes. The theorem's verdict does not. It remains silent because one of its hypotheses is false.
+
+That distinction is the point.
 </div>

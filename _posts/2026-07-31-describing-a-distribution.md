@@ -2,7 +2,7 @@
 layout: post
 title: "Describing a distribution in the exam's own words"
 date: 2026-07-31
-description: "The mean follows an outlier and the median refuses to. Push one value across a dotplot and watch which summaries move, which hold still, and which of two outlier rules fires first."
+description: "Shape, center, variability, and unusual features should be described in context. The choice of summary statistics depends on the shape of the distribution."
 course: "AP Statistics"
 read_time: "8 min read"
 math: true
@@ -10,17 +10,23 @@ kind: foundations
 sequence: 1
 interactive: true
 featured: true
-blurb: "Push one value and watch which summaries move and which hold still"
+blurb: "Shape, center, variability, and unusual features should be described in context. The choice of summary statistics depends on the shape of the distribution"
 image: "/assets/og/describing-a-distribution.png"
 ---
 
-The mean follows an outlier and the median refuses to. That is not a curiosity about two formulas; it is the reason the course asks which summary a distribution deserves, and grades the answer.
+A statistical description should tell the reader what the distribution looks like and what its values mean.
 
-The framework's description of a distribution has four parts and one condition. Descriptions include shape, center, and variability, together with any unusual features such as outliers, gaps, or clusters — *in context*. Three of those words are quantities and the fourth is a catch-all, but the condition at the end is where most of the lost points are. A description with no units and no variable named is a description of nothing.
+For a quantitative variable, the main features are shape, center, variability, and unusual features such as outliers, gaps, or clusters.
 
-## Push one value
+The description also needs context.
 
-Eleven of the twelve values below are nailed down. The twelfth moves.
+A statement about a median of 66.5 is incomplete until the variable, units, and population are clear.
+
+## Move one observation
+
+Eleven of the twelve values below stay fixed.
+
+The twelfth moves.
 
 <div class="viz" markdown="0">
   <canvas id="dd-cv" width="700" height="286"></canvas>
@@ -164,30 +170,111 @@ Eleven of the twelve values below are nailed down. The twelfth moves.
 })();
 </script>
 
-## What resists, and what does not
+The dotplot and boxplot show the same data.
 
-Take the moving value from 80 out to 130 and read the four numbers. The mean climbs from 67.83 to 72.00 and the standard deviation more than doubles, from 9.38 to 20.17. The median reads 66.50 at both ends. So does the interquartile range, at 13.00, and so do both quartiles.
+The dashed lines mark the usual $$1.5\times\text{IQR}$$ fences.
 
-The reason is worth stating as arithmetic rather than as a slogan. The mean and the standard deviation are computed from every value, so every value has a vote proportional to its distance. The median and the quartiles are computed from *positions*, and moving the largest value further right does not change which value sits in the middle. A resistant statistic is one that a single observation cannot move far, and resistance is a structural property of how the statistic is defined.
+As the moving value travels farther from the rest of the data, compare the mean, median, standard deviation, and interquartile range.
 
-That settles the choice the exam grades. A skewed distribution or one with an outlier is summarized by the median and the interquartile range, because the alternative reports a center that no observation is near. A roughly symmetric distribution is summarized by the mean and the standard deviation, which use more of the data and are more stable from sample to sample. The framework supplies the diagnostic: in a right-skewed distribution the mean is usually larger than the median, in a left-skewed one usually smaller, and in a symmetric one the two sit close together. Comparing them is a one-line test for skew that needs no picture.
+The mean and standard deviation respond strongly.
 
-## Two rules for one word
+The median and IQR may not move at all.
 
-The framework names two methods for identifying an outlier, and they are not equivalent. One flags a value more than $$1.5 \times \text{IQR}$$ beyond a quartile. The other flags a value more than two standard deviations from the mean.
+## Resistant and nonresistant summaries
 
-Push the moving value slowly upward through the nineties and the readout under the slider changes twice. At 91 the two-deviation rule fires. The $$1.5 \times \text{IQR}$$ rule does not fire until 95. Four whole units separate two rules from the same page of the same framework.
+When the moving value changes from 80 to 130, the mean rises from 67.83 to 72.00.
 
-The disagreement has a direction, and it is the direction resistance predicts. The two-deviation rule is built from the mean and the standard deviation, both of which the suspect value has already inflated, so the threshold runs away from the value that is chasing it. The quartile rule is built from statistics the suspect value cannot move, so its fence holds still — at 94.5, unchanged for every position past 84. A rule that a candidate outlier can dilute is a weaker rule than one it cannot.
+The standard deviation rises from 9.38 to 20.17.
 
-The practical consequence is small and worth knowing: a question about outliers has to say which rule it means, and an answer has to name the rule it used.
+The median remains 66.50.
 
-## Compare, do not describe
+The IQR remains 13.00.
 
-The comparison topic is where descriptions are actually assessed, and it fails in a way that has nothing to do with statistics. Asked to compare two distributions, students describe each one in turn and stop. Two accurate paragraphs, no comparison, no credit.
+The difference comes from how the summaries are defined.
 
-A comparison needs comparative words — *higher*, *more variable*, *more strongly skewed* — attached to each of the features, and the features come from the same list as before. Center, then variability, then shape, then unusual features, each one naming both groups and both contexts. The boxplot is built for exactly this, which is why the framework says boxplots may be used to compare center, variability, outliers, and skewness. What the boxplot cannot show is the mean, which is why the marker under the box above is drawn separately, and why a bimodal distribution can hide inside a perfectly ordinary-looking box.
+The mean and standard deviation use the numerical size of every observation.
+
+An extreme value therefore has direct influence on both.
+
+The median and quartiles depend primarily on order and position.
+
+Moving the largest observation farther right does not change which observations occupy the middle positions.
+
+That makes the median and IQR resistant to extreme values.
+
+For a roughly symmetric distribution without strong outliers, the mean and standard deviation are usually appropriate summaries.
+
+For a skewed distribution or one with influential outliers, the median and IQR are often more representative.
+
+## Shape matters
+
+For a right-skewed distribution, the long right tail tends to pull the mean above the median.
+
+For a left-skewed distribution, the long left tail tends to pull the mean below the median.
+
+For a roughly symmetric distribution, the two are often close.
+
+This relationship can support a description, but it does not replace looking at the distribution itself.
+
+A distribution can also be bimodal, clustered, or otherwise unusual in ways that a single pair of summary statistics cannot show.
+
+## Two outlier rules
+
+Two common rules can identify different observations as unusual.
+
+The $$1.5\times\text{IQR}$$ rule flags observations below
+
+$$Q_1-1.5(\text{IQR})$$
+
+or above
+
+$$Q_3+1.5(\text{IQR}).$$
+
+Another rule considers observations more than two standard deviations from the mean.
+
+These rules need not agree.
+
+In the visualization, the two-standard-deviation rule begins flagging the moving value before the IQR rule does.
+
+That disagreement is not a contradiction.
+
+The rules use different centers and measures of spread.
+
+The mean and standard deviation are themselves affected by the candidate outlier, while the quartiles are much more resistant.
+
+So when a problem asks whether an observation is an outlier, state which rule is being used.
+
+## Reading a boxplot correctly
+
+A standard modified boxplot does not extend its whiskers automatically to the minimum and maximum.
+
+The whiskers stop at the most extreme observations that remain within the $$1.5\times\text{IQR}$$ fences.
+
+Observations beyond the fences are shown separately.
+
+A boxplot is useful for comparing center, spread, skew, and possible outliers.
+
+It cannot show every feature of the raw distribution.
+
+Two different datasets can have similar boxplots while having very different modality or clustering.
+
+## Comparing two distributions
+
+A comparison should actually compare.
+
+Instead of writing one paragraph about Group A and another about Group B, use comparative language.
+
+For example:
+
+“Group A has a higher median score and less variability than Group B. Group B is more strongly right-skewed and contains one high outlier.”
+
+The same four features still organize the response:
+
+- shape
+- center
+- variability
+- unusual features
 
 <div class="article-note" markdown="1">
-A self-test at the slider: put the moving value at 40 and read the boxplot rather than the numbers. The left whisker does not reach it, because a whisker stops at the most extreme value that is not an outlier and the point beyond it is drawn as its own marker. Now account for a whisker's length in one sentence that does not use the word minimum. A student who can write that sentence will never again read the ends of a boxplot as the ends of the data, which is the most common misreading of the display in the course.
+But each statement should relate the groups directly and remain in context.
 </div>

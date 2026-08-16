@@ -2,7 +2,7 @@
 layout: post
 title: "Increasing at a decreasing rate"
 date: 2026-07-31
-description: "The phrase reads like a contradiction because its two halves describe different things. A table of successive average rates settles all four cases without a graph."
+description: "Whether a function is increasing and whether its rate of change is increasing are separate questions. A table of average rates makes the distinction clear."
 course: "AP Precalculus"
 read_time: "8 min read"
 math: true
@@ -10,23 +10,44 @@ kind: foundations
 sequence: 1
 interactive: true
 featured: true
-blurb: "The second half of the phrase is about the rate, not the function"
+blurb: "Whether a function is increasing and whether its rate of change is increasing are separate questions. A table of average rates makes the distinction clear"
 image: "/assets/og/increasing-at-a-decreasing-rate.png"
 ---
 
-A quantity can be increasing and slowing down at the same time, and AP Precalculus has a phrase for it. The phrase reads like a contradiction only because its two halves are about different things: the first describes the function, and the second describes the function's rate of change.
+A function can be increasing while its rate of change is decreasing.
 
-This is the language the course adds that a previous precalculus course did not, and it is the reason the course counts as preparation for calculus. Crop yield rising but by less each year, a medicine losing efficacy faster and faster — the framework names both as understandings that inform real decisions, and both need two pieces of information rather than one.
+The phrase sounds contradictory only if those two statements are treated as the same question.
 
-## Two questions, asked separately
+They are not.
 
-The first question is whether the output values go up or down. The framework's definition is about ordering and nothing else: a function is increasing over an interval if, for all $$a$$ and $$b$$ in it, $$a < b$$ implies $$f(a) < f(b)$$.
+One describes what the function values are doing.
 
-The second question is what the *rate* is doing, and it has its own definition. The average rate of change over $$[a,b]$$ is the slope of the secant line from $$\big(a, f(a)\big)$$ to $$\big(b, f(b)\big)$$. Compute it over consecutive equal-length intervals and a second sequence of numbers appears, one that describes the first sequence's behavior. That second sequence is what the phrase's second half is about, and the framework attaches concavity to it directly: the graph is concave up on intervals where the rate of change is increasing, and concave down where it is decreasing.
+The other describes what the rates of change are doing.
 
-Two sequences, two questions, four combinations. All four are examinable and all four appear below.
+## Two questions
 
-## Read the second column
+A function is increasing on an interval when larger inputs produce larger outputs.
+
+The average rate of change over $$[a,b]$$ is
+
+$$\frac{f(b)-f(a)}{b-a}.$$
+
+If we compute average rates over consecutive equal-length intervals, we can then ask a second question.
+
+Are those rates increasing or decreasing?
+
+That gives four possible combinations:
+
+- increasing at an increasing rate
+- increasing at a decreasing rate
+- decreasing at an increasing rate
+- decreasing at a decreasing rate
+
+The first word describes the function.
+
+The second describes its rate of change.
+
+## Read the table in order
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="rc-modes"></div>
@@ -145,28 +166,83 @@ Two sequences, two questions, four combinations. All four are examinable and all
 })();
 </script>
 
-## The half that catches people
+The visualization shows four functions over the same inputs.
 
-Three of the four cases behave the way the words sound. The fourth does not.
+The table records the function values, the average rate of change on each interval, and the change in those rates.
 
-Take the last function. Its outputs fall from 11 to 2, so it is decreasing, and nobody disputes that. Its rates of change are $$-2.75$$, then $$-2.25$$, then $$-1.75$$, and so on up to $$-0.25$$. Those numbers are getting *larger*. The rate of change is increasing, and the correct phrase is *decreasing at an increasing rate* — for a curve that is visibly flattening out as it falls.
+Use the signs in order.
 
-The pull is to call it a decreasing rate, because the drop is getting gentler. That reads the size of the rate instead of the rate. The framework's definitions are about the signed quantity throughout, and its own worked example settles it: over $$[\tfrac{\pi}{2}, \pi]$$, where sine falls from 1 to 0 and falls faster as it goes, the framework says the values of sine *decrease at a decreasing rate*. Falling faster is the decreasing rate. Falling more slowly is the increasing one.
+First, inspect the average rates.
 
-So the reliable procedure is the table rather than the phrase. Sign of the third column answers the first half. Sign of the fourth column answers the second half. The compound phrase is then assembled rather than guessed, and the word *concave* can be attached at the same moment, since it is a claim about the same fourth column.
+If they are positive, the function is increasing.
 
-## Why the table is short for these four
+If they are negative, the function is decreasing.
 
-Every function above is quadratic, and the fourth column is constant in all four — always $$+0.5$$ or $$-0.5$$. That is not a property of these examples. The framework states it in general: for a quadratic, the average rates of change over consecutive equal-length intervals are given by a linear function, so those rates change at a constant rate. For a linear function the same reasoning gives rates that are constant and therefore change at a rate of zero, which is why a line is neither concave up nor concave down.
+Then inspect how those rates change.
 
-This is the numerical fingerprint of degree, and it is the reason the framework can define a polynomial's degree by successive differences: the column where the differences go constant tells you which degree you are looking at.
+If the rates become larger, the rate of change is increasing.
 
-## Where this goes next
+If they become smaller, the rate of change is decreasing.
 
-The third column is a difference quotient before it has been given that name. Shrink the interval width toward zero and the average rate of change over $$[a, b]$$ becomes the rate of change *at* a point, which the framework already describes as the limit of exactly this construction — the rate at a point can be approximated by average rates over small intervals containing it.
+That procedure is more reliable than trying to guess from the wording.
 
-Calculus renames that limit the derivative and renames the fourth column the second derivative. Nothing else changes. A student who reads these two columns fluently has met [the central idea of the next course](/2026/07/30/derivative-as-a-limit.html) twice before anyone defines it.
+## Negative rates are where the language gets difficult
+
+Suppose a function is decreasing and its average rates are
+
+$$-2.75,\quad -2.25,\quad -1.75,\quad -1.25.$$
+
+The function is still decreasing because the rates are negative.
+
+But the rates themselves are increasing because
+
+$$-2.25>-2.75.$$
+
+The function is therefore decreasing at an increasing rate.
+
+Visually, it is falling while flattening out.
+
+By contrast, if the rates become
+
+$$-0.5,\quad -1,\quad -1.5,\quad -2,$$
+
+the function is decreasing at a decreasing rate.
+
+It is falling faster because the signed rates are becoming more negative.
+
+The sign of the rate and the direction in which the rate moves have to be kept separate.
+
+## Concavity describes the same second question
+
+When rates of change are increasing, the graph is concave up.
+
+When rates of change are decreasing, the graph is concave down.
+
+So:
+
+- increasing rate of change corresponds to concave up
+- decreasing rate of change corresponds to concave down
+
+For the quadratic examples in the visualization, the changes in average rate are constant across equal-length intervals.
+
+That is a numerical feature of quadratics.
+
+A linear function has constant average rate of change, so the changes in those rates are zero.
+
+## This is already close to calculus
+
+Average rate of change is the slope of a secant line.
+
+As the interval becomes narrower, those secant slopes approach the rate of change at a point when the relevant limit exists.
+
+Calculus calls that limiting rate [the derivative](/2026/07/30/derivative-as-a-limit.html).
+
+The question of whether the rate itself is increasing or decreasing then becomes a question about the second derivative.
+
+The language changes later.
+
+The distinction does not.
 
 <div class="article-note" markdown="1">
-A self-test worth doing on paper, with the tool closed: a cup of coffee cools toward room temperature. Its temperature is decreasing, and it cools fastest at the start. Which of the four phrases applies, and is the graph concave up or concave down? Write the third and fourth columns for a few plausible temperatures before answering, because the phrase alone will pull you the wrong way. The answer is that a cooling coffee is decreasing at an increasing rate and its graph is concave up, which sounds wrong and is the whole point of keeping the table.
+A useful self-test is a cooling cup of coffee. Its temperature decreases quickly at first and then more slowly as it approaches room temperature. The function is decreasing. Its rates are negative but becoming less negative, so the rate of change is increasing. The graph is concave up.
 </div>

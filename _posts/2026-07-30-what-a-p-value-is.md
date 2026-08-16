@@ -2,26 +2,42 @@
 layout: post
 title: "What a p-value cannot tell you"
 date: 2026-07-30
-description: "A p-value is computed by assuming the null hypothesis is true, which is exactly why it cannot report the probability that the null is true. A thousand simulated studies make the correct object visible."
+description: "A p-value measures how unusual the observed result would be if the null hypothesis were true. It is not the probability that the null is true."
 course: "AP Statistics"
 read_time: "9 min read"
 math: true
 kind: foundations
 sequence: 13
 interactive: true
-blurb: "Simulate studies where nothing is happening, then find your result among them"
+blurb: "A p-value measures how unusual the observed result would be if the null hypothesis were true. It is not the probability that the null is true"
 image: "/assets/og/what-a-p-value-is.png"
 ---
 
-A p-value is computed by assuming the null hypothesis is true. Everything confusing about p-values follows from that sentence, and so does everything useful about them. Students want the number to mean "the probability that the null hypothesis is true," and it cannot mean that, because a quantity built on the assumption that $$H_0$$ holds cannot also report the chance that $$H_0$$ holds.
+A p-value is calculated under the assumption that the null hypothesis is true.
 
-Saying so does not repair the misreading. What repairs it is seeing the object the number describes: a position on a distribution of results from studies in which nothing is happening.
+It measures how unusual the observed result would be in that null world.
 
-## A thousand studies in which nothing is happening
+It does not measure the probability that the null hypothesis itself is true.
 
-A testing service claims its placement exam has a mean score of 50, with a known standard deviation of 10 points. A school gives the exam to a random sample of 25 students and gets a sample mean of 53.92. Under the claim, [the sampling distribution](/2026/07/25/central-limit-theorem-watched-live.html) of $$\bar{x}$$ is exactly normal, centered at 50, with standard deviation $$\sigma/\sqrt{n} = 10/\sqrt{25} = 2$$.
+## A null distribution
 
-The simulation view runs studies in a world where the claim is true: each draws 25 scores, computes $$\bar{x}$$, and drops a dot. The theory view replaces the dots with the curve they are piling into. Draw a few thousand studies, then switch views.
+Suppose a testing service claims that exam scores have mean
+
+$$\mu=50$$
+
+with known standard deviation 10.
+
+A school samples 25 students and obtains
+
+$$\bar x=53.92.$$
+
+Under the null hypothesis,
+
+$$H_0:\mu=50,$$
+
+[the sampling distribution](/2026/07/25/central-limit-theorem-watched-live.html) of $$\bar X$$ has mean 50 and standard deviation
+
+$$\frac{10}{\sqrt{25}}=2.$$
 
 <div class="viz" markdown="0">
   <canvas id="pv-cv" width="700" height="330"></canvas>
@@ -291,45 +307,101 @@ The simulation view runs studies in a world where the claim is true: each draws 
 })();
 </script>
 
-The dark dots are studies that came out at least as far from 50 as the observed 53.92 did, in the direction the alternative names. Their share settles near 0.0250, and the theory view shades the matching region and reports 0.0250. That number is the p-value, and the simulation is its definition acted out: among studies where the claim holds, this is how often a result this extreme turns up.
+The simulation repeatedly generates studies under $$H_0$$.
 
-Nothing in that construction consults the truth of the claim. The simulation was told to assume it.
+The p-value is the proportion of those null studies that produce a result at least as extreme as the observed one, in the direction specified by the alternative.
 
-## Only the question changes
+The theory view calculates the same probability as area under the null distribution.
 
-Set the observed mean to 53.92 and press the three alternatives in turn. The dots do not move. The curve does not move. The observed line does not move. Only the shading changes, because only the question changed.
+## The alternative determines the tail
 
-With $$H_a: \mu > 50$$, the region runs right from the observed value, and $$p = 0.0250$$. With $$H_a: \mu < 50$$, the region runs left, and $$p = 0.9750$$, which is the honest answer to a question the data answer badly: a sample mean of 53.92 is no evidence at all that $$\mu$$ is below 50.
+For
 
-With $$H_a: \mu \neq 50$$, the region is both tails, each the same distance from the center, and the p-value is their sum:
+$$H_a:\mu>50,$$
 
-$$p = 0.0250 + 0.0250 = 0.0500.$$
+results at least as extreme as
 
-The mirror line in the theory view marks 46.08, exactly as far below 50 as 53.92 is above it. Reporting one tail for a two-sided test is a standing error in this topic, and the picture is the argument against it: a two-sided alternative calls a result extreme whether it lands high or low, so both regions count.
+$$\bar x=53.92$$
 
+lie in the right tail.
 
-## What the number does not say
+The p-value is about
 
-The p-value is small when the data are surprising under the null. That is all it reports, and four consequences follow.
+$$0.025.$$
 
-It is not the probability that $$H_0$$ is true. That probability never appears anywhere in the construction; the simulation assumed $$H_0$$ and counted, and a count taken under an assumption cannot evaluate the assumption.
+For
 
-A large p-value is not evidence that $$H_0$$ is true. Set the observed mean to 50.4 and the p-value climbs above 0.4, but 50.4 is equally unsurprising under $$\mu = 50.2$$ or $$\mu = 50.5$$. A result consistent with the null is consistent with many nearby alternatives, which is why the verdict is "fail to reject" and never "accept."
+$$H_a:\mu<50,$$
 
-It is not the probability that this test has made an error. Rejecting a true null is a Type I error, and its probability is $$\alpha$$ — fixed in advance, before any data exist. The p-value is computed from the data and varies with them. Whether an error actually occurred depends on the true $$\mu$$, which the test never learns, so the two quantities are not even about the same kind of thing: one is a property of the procedure, the other a property of this sample.
+the relevant tail runs left from the observed value, producing a very large p-value.
 
-Statistical significance is not practical importance. Set the alternative to $$\mu \neq 50$$, hold the observed mean at 51, and drag the sample size to its limit. The gap from the null stays one point throughout, while the p-value falls from 0.6171 at $$n = 25$$ to 0.3173 at $$n = 100$$ to 0.0455 at $$n = 400$$, where the verdict flips to reject. The null distribution is narrowing, so a fixed gap counts as further and further out. A large enough study makes any gap significant, including gaps too small to matter. It is also why $$\alpha$$ is fixed before the data arrive: a standard of evidence chosen afterward is not one.
+For
 
-## The sentence that earns the point
+$$H_a:\mu\neq50,$$
 
-A complete conclusion links the p-value to $$\alpha$$, gives the decision, and says what the decision means about the alternative, in context:
+both tails count.
 
-> Because $$p = 0.0250 < \alpha = 0.05$$, we reject $$H_0$$. There is convincing evidence that the true mean score for students at this school is greater than 50.
+The two-sided p-value is about
 
-Three failures cost the point. Omitting the comparison to $$\alpha$$ leaves the decision unlinked to any evidence. Naming no variable and no population leaves the conclusion out of context. And writing that the evidence shows $$\mu = 50$$, rather than that it fails to show otherwise, states the one thing a significance test can never conclude.
+$$0.050.$$
 
-The population standard deviation is treated as known throughout, which keeps the sampling distribution exactly normal and lets the simulation converge to the shaded area exactly. On the exam a mean is tested with $$t$$, because $$\sigma$$ never is known; the picture is the same and only the reference curve changes.
+The data and null distribution did not change.
+
+The definition of “as extreme” changed with the alternative hypothesis.
+
+## What a p-value is not
+
+It is not
+
+$$P(H_0\text{ is true}\mid\text{data}).$$
+
+The calculation assumes $$H_0$$ in order to generate the reference distribution.
+
+It is also not the probability that the test made an error.
+
+The probability of rejecting a true null is controlled by the significance level $$\alpha$$, not by the observed p-value.
+
+A large p-value does not prove the null hypothesis.
+
+It says the observed result is not especially unusual under the null model.
+
+Many nearby alternatives may also produce unsurprising results.
+
+That is why the correct decision language is “fail to reject $$H_0$$,” not “accept $$H_0$$.”
+
+## Significance and effect size
+
+Hold the observed difference from the null fixed while increasing the sample size.
+
+The standard error decreases.
+
+The same numerical difference then sits farther into the tail of the null distribution.
+
+The p-value becomes smaller.
+
+So a very large study can detect a difference that is statistically significant but practically unimportant.
+
+A p-value should therefore be interpreted alongside the size of the observed effect and the study design.
+
+## A complete conclusion
+
+Suppose
+
+$$p=0.025<\alpha=0.05.$$
+
+A complete contextual conclusion is:
+
+> “Because $$p=0.025<0.05$$, we reject $$H_0$$. There is convincing evidence that the true mean score for students at this school is greater than 50.”
+
+The conclusion should contain:
+
+- the comparison between p-value and $$\alpha$$
+- the decision
+- a statement about the alternative hypothesis
+- the population and variable in context
 
 <div class="article-note" markdown="1">
-A check worth performing on the simulation: set the alternative to $$\mu \neq 50$$ and drag the observed mean until the p-value reads 0.0500. It stops at 53.92. Now recall that a [95% confidence interval](/2026/07/25/what-95-percent-confident-means.html) from that same sample is $$53.92 \pm 1.96(2)$$, whose lower end is 50.00 exactly. The observed mean whose two-sided test lands on 0.05 is the same one whose interval just barely excludes the null. The two procedures are one procedure, read from two directions.
+A significance test gives evidence.
+
+It does not establish the probability that a hypothesis is true.
 </div>

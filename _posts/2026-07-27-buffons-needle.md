@@ -2,36 +2,56 @@
 layout: post
 title: "Buffon's needle and the estimation of pi"
 date: 2026-07-27
-description: "Drop needles on a lined floor and count the crossings, and the number pi emerges from pure chance. An eighteenth-century problem that connects probability, geometry, and simulation."
+description: "Drop a needle across parallel lines, count the crossings, and a geometric probability produces an estimate of π."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: beyond
 sequence: 3
 interactive: true
-blurb: "Drop needles, count crossings, and pi emerges from pure chance"
+blurb: "Drop a needle across parallel lines, count the crossings, and a geometric probability produces an estimate of π"
 image: "/assets/og/buffons-needle.png"
 ---
 
-In 1733, Georges-Louis Leclerc, Comte de Buffon, posed a question about a parlor game: if a needle is dropped at random onto a floor of parallel boards, what is the probability that it comes to rest crossing one of the cracks? He published his own solution forty-four years later. The answer turned out to contain $$\pi$$, which means the game can be run in reverse. Drop many needles, count how often they cross a line, and the count estimates $$\pi$$ itself, extracted from randomness by nothing more than arithmetic.
+A geometric probability experiment can be used to estimate
 
-The result is worth knowing for its own sake, and it is also a perfect miniature of an idea at the center of modern statistics: that simulation can compute quantities which have nothing visibly random about them.
+$$\pi.$$
 
-## The setup and the answer
+Draw parallel lines a fixed distance apart.
 
-Rule a floor with parallel lines a distance $$d$$ apart, and drop a needle of length $$\ell$$, with $$\ell \le d$$, so that its position and angle are entirely random. Buffon showed that
+Drop a needle at random.
 
-$$P(\text{needle crosses a line}) = \frac{2\ell}{\pi d}$$
+Record whether the needle crosses one of the lines.
 
-The appearance of $$\pi$$ is not mystical. A dropped needle has a random angle, angles live on a circle, and averaging over all angles drags the circle's constant into the answer. The derivation is a short exercise in a college probability course, and for BC students it is a pleasant surprise: the average of $$\sin\theta$$ over all angles is computed with an integral, so the formula is calculus and probability shaking hands.
+The long-run crossing proportion is related to $$\pi$$.
 
-If the needle's length is exactly half the spacing, so $$\ell = \tfrac{d}{2}$$, the formula collapses to $$P = \tfrac{1}{\pi}$$. A needle crosses a line about 31.8% of the time, and the estimate becomes
+## The probability
 
-$$\pi \approx \frac{\text{number of drops}}{\text{number of crossings}}$$
+Let the needle length be $$\ell$$.
 
-## The experiment
+Let the distance between adjacent parallel lines be $$d$$, with
 
-The floor below uses that half-spacing needle. Drop them by the hundred and watch the estimate close in.
+$$\ell\le d.$$
+
+Under the usual random-position and random-angle assumptions,
+
+$$P(\text{crossing}) = \frac{2\ell}{\pi d}.$$
+
+If we choose
+
+$$\ell=\frac d2,$$
+
+then
+
+$$P(\text{crossing}) = \frac1\pi.$$
+
+So after many drops,
+
+$$\frac{\text{crossings}}{\text{drops}} \approx \frac1\pi.$$
+
+Rearranging gives
+
+$$\pi \approx \frac{\text{drops}}{\text{crossings}}.$$
 
 <div class="viz" markdown="0">
   <canvas id="bn-cv" width="700" height="280"></canvas>
@@ -87,12 +107,88 @@ The floor below uses that half-spacing needle. Drop them by the hundred and watc
 })();
 </script>
 
-## Why a statistics student should care
+The dark needles cross a line.
 
-The needle is the ancestor of the *Monte Carlo method*, the technique of computing a fixed, deterministic quantity by designing a random experiment whose long-run behavior encodes it. The Law of Large Numbers guarantees the convergence: the proportion of crossings must settle toward $$\tfrac{1}{\pi}$$, so the reciprocal must settle toward $$\pi$$. Every simulation in the AP course, from randomization distributions to simulated p-values, runs on exactly this engine, and the investigative-task questions that ask students to interpret a simulation are asking them to reason the way Buffon's floor does.
+The running estimate changes after every batch.
 
-The slow convergence carries its own lesson. The estimate's error shrinks in proportion to $$\tfrac{1}{\sqrt{n}}$$, which is the same $$\sqrt{n}$$ that sits in the denominator of every standard error formula in the course. A political poll of 1,000 people and a floor of 1,000 needles are bound by the same arithmetic, and neither can be made ten times more precise without one hundred times the effort.
+With a small number of drops it can wander considerably.
+
+With more drops it tends to settle closer to $$\pi$$.
+
+## Why the formula contains $$\pi$$
+
+Two random quantities determine whether a needle crosses a line.
+
+One is the distance from the needle's center to the nearest line.
+
+The other is the angle of the needle.
+
+If the angle is $$\theta$$, half of the needle's vertical reach is
+
+$$\frac{\ell}{2}\vert \sin\theta\vert .$$
+
+A crossing occurs when the center lies close enough to a line that this vertical reach can touch it.
+
+Averaging that condition over all possible positions and angles produces the factor involving $$\pi$$.
+
+The constant appears because the experiment contains a uniformly random orientation.
+
+## This is Monte Carlo estimation
+
+The experiment is an early example of what is now called a Monte Carlo method.
+
+A quantity that is difficult to compute directly is expressed as a probability.
+
+That probability is then estimated by repeated random trials.
+
+The law of large numbers explains why the empirical crossing proportion approaches the theoretical crossing probability.
+
+The simulation does not derive $$\pi$$.
+
+It estimates a probability whose exact value happens to contain $$\pi$$.
+
+## More trials help slowly
+
+Random error usually decreases at a rate proportional to
+
+$$\frac1{\sqrt n}.$$
+
+That square-root rate is important.
+
+To reduce the typical sampling error by a factor of ten, we need roughly one hundred times as many trials.
+
+A million simulated needles therefore gives a much more stable estimate than a hundred needles, but the improvement is not proportional to the increase in sample size.
+
+This is the same square-root behavior that appears in standard errors throughout statistics.
+
+## A historical caution
+
+Buffon's needle was proposed in the eighteenth century and has been physically performed many times since.
+
+One famous experiment was reported by Mario Lazzarini in 1901.
+
+He claimed an estimate of $$\pi$$ correct to six decimal places after only a few thousand needle tosses.
+
+That accuracy is implausibly good for a random experiment of that size, and later discussions have noted that the reported counts appear unusually well chosen.
+
+The episode is a useful statistical caution.
+
+Stopping rules, selective reporting, or choosing a favorable result after looking at the data can make an estimate appear much more precise than its sampling process justifies.
+
+The mechanism matters as much as the final number.
+
+## A useful comparison
+
+Suppose you run the simulation twice with the same number of drops.
+
+The estimates will not be identical.
+
+That variation is part of the experiment.
 
 <div class="article-note" markdown="1">
-A historical footnote with a caution attached: in 1901 the Italian mathematician Mario Lazzarini reported tossing a needle 3,408 times and obtaining pi to six decimal places, a result far too accurate for the number of trials. His needle-to-spacing ratio was chosen so that a particular lucky count would reproduce the famous fraction 355/113, and the trial count appears to have been chosen to stop at the right moment. The episode is now a standard example in the study of suspicious data, which makes it, fittingly, a statistics lesson twice over.
+The appropriate question is not whether one run reproduces $$\pi$$ to several decimal places.
+
+It is whether the estimator behaves as expected across repeated runs and becomes more stable as the number of trials increases.
+
+That is the statistical content of the experiment.
 </div>

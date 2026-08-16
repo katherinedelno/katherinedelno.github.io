@@ -2,7 +2,7 @@
 layout: post
 title: "The chain rule, layer by layer"
 date: 2026-07-30
-description: "The chain rule is a single line, and applying it is mechanical. The difficulty is that most functions do not arrive labeled as compositions, so the first task is seeing the layers at all."
+description: "Composite functions are differentiated one layer at a time, with each layer contributing a factor."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,38 +10,70 @@ math: true
 kind: mechanics
 sequence: 10
 interactive: true
-blurb: "Every layer contributes one factor, and the missing factor is always the inner one"
+blurb: "Composite functions are differentiated one layer at a time, with each layer contributing a factor"
 featured: true
 image: "/assets/og/chain-rule-reading-the-layers.png"
 ---
 
-The chain rule is one line long, and once an expression has been broken into layers, applying it is bookkeeping. Almost every mistake made with it happens before that point.
+The chain rule is simple once a composite function has been read correctly.
 
-The course names this directly. Topic 3.1's suggested skill is to identify an appropriate rule based on the classification of a given expression, and the framework's own parenthetical example is the chain rule for a composite function. The rule is not the skill. Classifying the expression is.
+Most mistakes happen before the differentiation begins. A student sees several operations in one expression but does not identify [which function is inside which](/2026/07/30/functions-inside-functions.html).
 
-## What the rule says
+The useful habit is to read the layers first.
 
-Suppose $$g$$ is differentiable at $$x$$ and $$h$$ is differentiable at $$g(x)$$. Then the composition $$h \circ g$$ is differentiable at $$x$$, and
+## The rule
 
-$$(h \circ g)'(x) = h'\big(g(x)\big) \cdot g'(x).$$
+Suppose $$g$$ is differentiable at $$x$$, and $$h$$ is differentiable at $$g(x)$$.
 
-Both hypotheses matter, and they are evaluated at different points: $$g$$ at $$x$$, and $$h$$ at the value $$g$$ produced. That mismatch is the whole content of the rule, and it is what the notation is trying to warn you about.
+Then
 
-In Leibniz notation, writing $$u = g(x)$$,
+$$(h\circ g)'(x) = h'(g(x))g'(x).$$
 
-$$\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx},$$
+The two derivatives are evaluated at different inputs.
 
-which is easier to remember and easier to misread, because it suggests two fractions cancelling. They are not fractions. What is true is the statement above.
+The inner derivative $$g'(x)$$ is evaluated at $$x$$.
 
-Applied once, on $$(3x+1)^5$$: the outer function is $$h(u) = u^5$$ and the inner is $$g(x) = 3x+1$$, so $$h'(u) = 5u^4$$ and $$g'(x) = 3$$. Substituting $$u = g(x)$$ into $$h'$$ and multiplying,
+The outer derivative $$h'$$ is evaluated at the value produced by the inner function, $$g(x)$$.
 
-$$\frac{d}{dx}(3x+1)^5 = 5(3x+1)^4 \cdot 3 = 15(3x+1)^4.$$
+In Leibniz notation, if
 
-Notice what would go wrong with $$5u^4$$ left as it stands: the answer would be in terms of a variable the question never mentioned. Substituting $$g(x)$$ back in is not cosmetic. It is the half of the rule that says where $$h'$$ is being evaluated.
+$$u=g(x),$$
+
+then
+
+$$\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx}.$$
+
+This notation is useful, but the symbols should not be treated as ordinary fractions. The underlying statement is the composition rule above.
+
+For example, consider
+
+$$(3x+1)^5.$$
+
+The outer function is
+
+$$h(u)=u^5.$$
+
+The inner function is
+
+$$g(x)=3x+1.$$
+
+So
+
+$$h'(u)=5u^4$$
+
+and
+
+$$g'(x)=3.$$
+
+Therefore
+
+$$\frac{d}{dx}(3x+1)^5 = 5(3x+1)^4\cdot3 = 15(3x+1)^4.$$
+
+The final answer must be written back in terms of $$x$$.
 
 ## Reading the layers
 
-The tool below lays a composite out in layers, outermost first. Each layer contributes exactly one factor, and the derivative is the product of those factors — a product of ordinary numbers, once $$x$$ is fixed.
+The visualization below lists the layers of several composite functions from outside to inside.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="cl-fns"></div>
@@ -153,24 +185,102 @@ The tool below lays a composite out in layers, outermost first. Each layer contr
 })();
 </script>
 
-Two things are worth watching as the slider moves. The factors change independently — the inner one can be small while the outer one is large, and the product is neither. And the measured slope tracks the product everywhere, including at the values of $$x$$ where the function is steep enough that a graph would be no help.
+Each layer contributes one factor to the derivative.
 
-The three-layer case is the same rule applied twice. There is no separate rule for three layers; the middle factor is what appears when the inner function of the outer function is itself a composition.
+For a two-layer composition,
 
-## Two functions that look alike
+$$h(g(x)),$$
 
-$$\sin(x^2)$$ and $$(\sin x)^2$$ are built from the same two ingredients in opposite order, and their derivatives have nothing in common:
+the factors are
 
-$$\frac{d}{dx}\sin(x^2) = 2x\cos(x^2), \qquad \frac{d}{dx}(\sin x)^2 = 2\sin x \cos x = \sin(2x).$$
+$$h'(g(x))$$
 
-At $$x = 0.8$$ the first is 1.2834 and the second is 0.9996. Switch between them in the tool and the stack rearranges: what was the outer factor becomes the inner one. Neither function is harder than the other. Reading which is which is the entire task, and it is the same reading problem as [composing functions in the first place](/2026/07/30/functions-inside-functions.html).
+and
 
-## The factor that goes missing
+$$g'(x).$$
 
-The characteristic chain rule error is writing $$\cos(x^2)$$ for the derivative of $$\sin(x^2)$$ — differentiating the outer layer and stopping. In the stack that is visible as dropping a row. At $$x = 0.8$$ the outer factor is 0.8021 and the true derivative is 1.2834, so the omission costs a factor of $$2x = 1.6$$, and at $$x = 0.05$$ it would cost a factor of $$0.1$$ in the other direction. The error does not have a characteristic size; it has a characteristic shape.
+For a three-layer composition, the chain rule is simply applied again to the inner composition. There is no separate three-layer rule.
 
-The last function in the tool is a reminder from [the previous article](/2026/07/30/derivative-rules-and-choosing.html). The chain rule handles $$(x^2)^3$$ correctly and returns $$3(x^2)^2 \cdot 2x = 6x^5$$, but the expression is $$x^6$$, and the power rule gives $$6x^5$$ in one step. A rule being applicable is not the same as it being the right one.
+The visualization also compares the chain-rule derivative with a numerically measured slope from the original function.
+
+The two values agree across the examples because the chain rule is describing the actual local rate of change, not merely a symbolic procedure.
+
+## Order matters
+
+The functions
+
+$$\sin(x^2)$$
+
+and
+
+$$(\sin x)^2$$
+
+contain the same two operations in opposite order.
+
+Their derivatives are different.
+
+For the first,
+
+$$\frac{d}{dx}\sin(x^2) = \cos(x^2)\cdot2x.$$
+
+For the second,
+
+$$\frac{d}{dx}(\sin x)^2 = 2\sin x\cos x.$$
+
+The first function squares the input and then takes sine.
+
+The second takes sine first and then squares the result.
+
+A reliable way to identify the outermost operation is to ask what you would do last if you were evaluating the function at a number.
+
+For $$\sin(x^2)$$, you square first and take sine last. So sine is the outer function.
+
+For $$(\sin x)^2$$, you take sine first and square last. So squaring is the outer function.
+
+## The missing inner factor
+
+The most common chain-rule error is to differentiate the outer layer and stop.
+
+For
+
+$$\sin(x^2),$$
+
+that produces
+
+$$\cos(x^2),$$
+
+which is missing the derivative of the inner function.
+
+The correct derivative is
+
+$$2x\cos(x^2).$$
+
+The size of the error changes with $$x$$ because the missing factor is $$2x$$.
+
+The pattern of the error is more important than its size. If the derivative of the inside never appears, one layer has been dropped.
+
+## A rule can be valid without being useful
+
+The chain rule applies to
+
+$$(x^2)^3.$$
+
+Using it gives
+
+$$3(x^2)^2\cdot2x = 6x^5.$$
+
+But the original expression is simply
+
+$$x^6.$$
+
+The power rule gives
+
+$$6x^5$$
+
+immediately.
+
+So before applying the chain rule, [simplify the expression](/2026/07/30/derivative-rules-and-choosing.html) if the composition can be collapsed cleanly.
 
 <div class="article-note" markdown="1">
-Before differentiating a composite, say out loud what the outermost operation is — the last thing you would do if you were evaluating the function at a number. For $$\sin(x^2)$$ you would square first and take the sine last, so the sine is outermost. That test costs a few seconds and settles the layer order before any writing starts, which is where the order needs to be settled.
+The best rule is not always the most sophisticated rule available. It is the one that makes the structure easiest to see and the work easiest to check.
 </div>

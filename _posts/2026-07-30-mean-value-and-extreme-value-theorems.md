@@ -2,7 +2,7 @@
 layout: post
 title: "Two existence theorems, and what they refuse to tell you"
 date: 2026-07-30
-description: "The Mean Value Theorem and the Extreme Value Theorem both promise that something exists somewhere on an interval. Neither says where, and both stop promising the moment a hypothesis fails."
+description: "The Mean Value Theorem and Extreme Value Theorem guarantee that something exists under stated hypotheses. Neither theorem tells you where it occurs."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,29 +10,71 @@ math: true
 kind: mechanics
 sequence: 18
 interactive: true
-blurb: "A guarantee that something exists, with no address attached"
+blurb: "The Mean Value Theorem and Extreme Value Theorem guarantee that something exists under stated hypotheses. Neither theorem tells you where it occurs"
 image: "/assets/og/mean-value-and-extreme-value-theorems.png"
 ---
 
-The enduring understanding these two theorems sit under says what they are for in one sentence: existence theorems let us draw conclusions about a function's behavior on an interval without precisely locating that behavior. Both of them promise something exists. Neither tells you where it is.
+The Mean Value Theorem and Extreme Value Theorem are existence theorems.
 
-That is the same bargain [the Intermediate Value Theorem](/2026/07/30/intermediate-value-theorem.html) offers, and these two are its neighbors in the framework — all three sit under FUN-1.
+Under the right hypotheses, they guarantee that something occurs somewhere on an interval.
 
-## The two statements
+They do not tell you where.
 
-The Mean Value Theorem, with the hypotheses the framework gives it: if $$f$$ is continuous over $$[a,b]$$ and differentiable over $$(a,b)$$, then there is a point in that open interval where the instantaneous rate of change equals the average rate of change over the interval. That is,
+That distinction is the main reason the hypotheses matter.
 
-$$f'(c) = \frac{f(b)-f(a)}{b-a} \quad \text{for some } c \text{ in } (a,b).$$
+## The Mean Value Theorem
 
-Note the asymmetry. Continuity is required on the closed interval because the average rate needs $$f(a)$$ and $$f(b)$$; differentiability is only required on the open one, because the guaranteed point is interior and no derivative at an endpoint is ever used.
+If $$f$$ is continuous on
 
-The Extreme Value Theorem: if $$f$$ is continuous over $$[a,b]$$, then $$f$$ has at least one minimum value and at least one maximum value on $$[a,b]$$. Continuity on the closed interval, and that is the whole hypothesis. If you are working from an older printing of the framework, check the wording — this statement was corrected for fall 2026, and the interval in the hypothesis is the closed one.
+$$[a,b]$$
 
-Two supporting definitions come with it. A critical point is a point where the first derivative equals zero or [fails to exist](/2026/07/30/where-differentiability-fails.html) — both halves, and the second half is the one that gets forgotten. All local extrema occur at critical points, but not all critical points are local extrema, which is why finding them is a search and not an answer.
+and differentiable on
 
-## Watching a guarantee disappear
+$$(a,b),$$
 
-Below, one interval and four functions on it. The first satisfies both theorems. The other three each break exactly one thing.
+then there is at least one $$c\in(a,b)$$ such that
+
+$$f'(c) = \frac{f(b)-f(a)}{b-a}.$$
+
+The right side is the average rate of change of $$f$$ over the interval.
+
+The theorem says that at some interior point, the instantaneous rate of change equals that average rate.
+
+Continuity is required on the closed interval because the endpoint values are used.
+
+Differentiability is required only on the open interval because the guaranteed point is interior.
+
+## The Extreme Value Theorem
+
+If $$f$$ is continuous on the closed interval
+
+$$[a,b],$$
+
+then $$f$$ attains an absolute maximum and an absolute minimum on that interval.
+
+If you are working from an older printing of the framework, check the wording. This statement was corrected for fall 2026, and the interval in the hypothesis is the closed one.
+
+The theorem guarantees existence.
+
+It does not say that the extrema occur at critical points.
+
+Endpoints are part of the interval and may contain the absolute extrema.
+
+A critical point is an interior point where
+
+$$f'(x)=0$$
+
+or where $$f'$$ [does not exist](/2026/07/30/where-differentiability-fails.html).
+
+Critical points are candidates, not automatic extrema.
+
+## Watching a hypothesis fail
+
+The visualization uses one interval and several functions.
+
+One function satisfies the hypotheses of both theorems.
+
+The others violate one condition at a time.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="mv-fns"></div>
@@ -185,24 +227,73 @@ Below, one interval and four functions on it. The first satisfies both theorems.
 })();
 </script>
 
-On the cubic both theorems deliver. The average rate over $$[0,3]$$ is $$\tfrac32$$, and there are two points where the derivative equals it, at $$\tfrac{3 \pm \sqrt3}{2}$$. The Mean Value Theorem promised one and there are two, which is allowed — it says *at least* one, the way the Extreme Value Theorem says *at least* one maximum.
+On a smooth cubic over $$[0,3]$$, both theorems apply.
 
-The corner is the case worth sitting with. The function is continuous on the closed interval, so the Extreme Value Theorem still applies and still finds both extrema. But it has [a corner at $$x = 1.5$$](/2026/07/30/where-differentiability-fails.html) and is therefore not differentiable there, so the Mean Value Theorem does not apply — and its conclusion genuinely fails. The average rate is 0, and the derivative is $$-1$$ or $$+1$$ and never anything else. Two theorems, one function, different hypotheses, different fates.
+The Mean Value Theorem guarantees at least one point where the tangent slope equals the secant slope between the endpoints.
 
-## What failing a hypothesis does and does not mean
+There happen to be two such points.
 
-The fourth function is the subtle one. It is the cubic everywhere on $$(0,3]$$, but its value at $$x = 0$$ has been moved to 3, so it is not continuous at the left endpoint. The Extreme Value Theorem is void, and its conclusion fails: the function's values on $$(0,3]$$ get arbitrarily close to 0 without reaching it, so there is no minimum.
+That does not contradict the theorem. “At least one” allows more than one.
 
-The Mean Value Theorem is void too. And yet its conclusion still holds — the average rate is now $$\tfrac12$$, and there are still two points where $$f'(c) = \tfrac12$$, at $$\tfrac32 \pm \tfrac{\sqrt{15}}{6}$$.
+The function also has an absolute maximum and minimum on the closed interval, as the Extreme Value Theorem guarantees.
 
-That is the thing to take away. A theorem whose hypotheses fail makes no claim; it does not make the opposite claim. Losing the guarantee is not the same as losing the conclusion, and an argument that says "the function is not differentiable, so there is no such point" is as unsupported as one that forgets to check.
+Now consider a continuous function with [a corner](/2026/07/30/where-differentiability-fails.html) inside the interval.
 
-## Where the extrema actually were
+The Extreme Value Theorem can still apply because it requires continuity only.
 
-On the cubic, the maximum on $$[0,3]$$ is 4.5 at $$x = 3$$ and the minimum is 0 at $$x = 0$$ — both at endpoints, and neither at a critical point, since $$f'(0) = f'(3) = 6$$. The interior critical points at $$x = 1$$ and $$x = 2$$ give local extrema of 2.5 and 2, and neither is global.
+The Mean Value Theorem cannot be invoked because differentiability fails at the corner.
 
-So the Extreme Value Theorem guarantees the global extrema exist, the critical points supply the interior candidates, and the endpoints have to be added by hand. Missing the endpoints is the standard way to lose this question, and the theorem is partly to blame: it says the extrema are somewhere on $$[a,b]$$, and $$[a,b]$$ includes its ends.
+Different theorems have different hypotheses.
+
+## If the hypotheses fail
+
+When a theorem's hypotheses fail, the theorem becomes silent.
+
+It does not imply that the conclusion is false.
+
+A function may fail the hypotheses of the Mean Value Theorem and still happen to have a point where the instantaneous rate equals the average rate.
+
+The theorem simply no longer guarantees it.
+
+This is an important logical distinction.
+
+From
+
+$$P\Longrightarrow Q,$$
+
+the failure of $$P$$ does not imply the failure of $$Q$$.
+
+So a correct justification should avoid statements such as:
+
+“The function is not differentiable, therefore no such point exists.”
+
+What is justified is:
+
+“The function is not differentiable on the required interval, so the Mean Value Theorem does not apply.”
+
+## Finding absolute extrema
+
+On a closed interval, a common procedure is:
+
+1. Find all interior critical points.
+2. Evaluate the function at those points.
+3. Evaluate the function at both endpoints.
+4. Compare the values.
+
+The Extreme Value Theorem guarantees that an absolute maximum and minimum exist if the function is continuous on the closed interval.
+
+The derivative helps produce interior candidates.
+
+The endpoints must be checked separately.
 
 <div class="article-note" markdown="1">
-Both topics carry the same suggested skill — provide reasons or rationales for solutions and conclusions — and for an existence theorem that means naming the hypotheses before invoking the name. The sentence that scores looks like this: since $$f$$ is continuous on $$[0,3]$$ and differentiable on $$(0,3)$$, the Mean Value Theorem guarantees a $$c$$ in $$(0,3)$$ with $$f'(c) = \tfrac32$$. Everything in it is a hypothesis, a theorem, or a conclusion, and nothing in it is a calculation.
+A complete Mean Value Theorem justification should also name the hypotheses.
+
+For example:
+
+“Since $$f$$ is continuous on $$[0,3]$$ and differentiable on $$(0,3)$$, the Mean Value Theorem guarantees some $$c\in(0,3)$$ such that
+
+$$f'(c) = \tfrac{f(3)-f(0)}{3}.$$”
+
+That sentence contains the conditions, the theorem, and the conclusion.
 </div>

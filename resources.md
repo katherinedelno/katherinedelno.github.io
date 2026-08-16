@@ -13,7 +13,8 @@ permalink: /resources/
 
   .pg-hero{margin:0 0 1rem;max-width:60ch}
   .pg-hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em;font-weight:700}
-  .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.55;margin:0}
+  .pg-hero p{font-size:1.06rem;color:var(--muted);line-height:1.55;margin:0 0 .9rem}
+  .pg-hero p:last-child{margin-bottom:0}
 
   .res-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.8rem}
   .res-filters[hidden]{display:none}
@@ -68,7 +69,7 @@ permalink: /resources/
   <div class="pg-hero">
     <p class="label">Writing</p>
     <h1>Notes on mathematics and statistics</h1>
-    <p>Occasional writing for students: the reasoning beneath the courses, the habits that produce clean work under pressure, and previews of what waits past the AP curriculum. Written for the students I teach, and open to anyone.</p>
+    <p>I write these primarily for my students, though they do not always stay within the boundaries of an AP course. Some address a recurring difficulty in notation, interpretation, or method. Others follow an idea further than the syllabus requires.</p>
   </div>
 
   <div class="res-filters" role="group" aria-label="Jump to a course section" id="rxm-filters" hidden>
@@ -215,14 +216,14 @@ permalink: /resources/
       <a class="rxm-box rxm-feat" href="{{ "/ap-calculus-readiness/" | relative_url }}">
         <p class="rxm-eyebrow"><span>AP Calculus</span><span>Interactive</span></p>
         <p class="rxm-title">Are you ready for AP Calculus?</p>
-        <p class="rxm-blurb">Sixteen questions in the algebra, functions, trigonometry, and logarithms the course assumes you already have. Scored by area, with what each gap costs once the term starts.</p>
+        <p class="rxm-blurb">Sixteen questions covering the algebra, functions, trigonometry, and logarithms that AP Calculus assumes. Results are organized by area so you can see which skills are secure and which are worth reviewing before the course begins.</p>
       </a>
     </div>
   </section>
 
   {% include subscribe.html
      heading="New writing, when there is some"
-     blurb="These pieces go out to the students I teach first. If you'd like a short note when a new one is up, leave an address. Roughly monthly, often less, and nothing else." 
+     blurb="I send new pieces to my students first. If you would like a short note when something new is published, leave an email address below. I write roughly once a month, often less." 
        course="Writing list" %}
 
 </div>

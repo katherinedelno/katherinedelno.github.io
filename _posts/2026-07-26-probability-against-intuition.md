@@ -2,28 +2,44 @@
 layout: post
 title: "Probability against intuition"
 date: 2026-07-26
-description: "Monty Hall, the birthday problem, and Simpson's paradox: three places where computed probability corrects the felt kind."
+description: "Monty Hall, the birthday problem, and Simpson's paradox all become less mysterious once the conditioning information is written explicitly."
 course: "AP Statistics"
 read_time: "9 min read"
 math: true
 kind: beyond
 sequence: 2
 interactive: true
-blurb: "Monty Hall, the birthday problem, and three places intuition is simply wrong"
+blurb: "Monty Hall, the birthday problem, and Simpson's paradox all become less mysterious once the conditioning information is written explicitly"
 image: "/assets/og/probability-against-intuition.png"
 ---
 
-Probability is the branch of mathematics most likely to start an argument at dinner. The reason is that human intuition about chance is systematically miscalibrated, and a few famous problems expose the miscalibration so cleanly that they have become classics. Each one below looks like a trick. Each one is actually a fair test of the [conditional-probability reasoning from Unit 2](/2026/07/27/conditional-probability-and-the-base-rate.html), and in each case the AP toolkit gets the right answer while intuition gets the wrong one.
+Some probability results feel wrong until the sample space is made explicit.
+
+That discomfort is useful.
+
+It usually signals that we are [conditioning on information](/2026/07/27/conditional-probability-and-the-base-rate.html) without accounting for how that information was produced.
+
+Three familiar examples show the pattern.
 
 ## The Monty Hall problem
 
-A game show host shows you three doors. Behind one is a car; behind the other two, goats. You pick a door. The host, who knows where the car is, opens one of the other two doors to reveal a goat, and offers you a choice: stay with your original door, or switch to the remaining closed one.
+There are three doors.
 
-Nearly everyone's intuition says the two closed doors are now equally likely, so switching cannot matter. When the columnist Marilyn vos Savant published the correct answer in 1990, thousands of readers, including mathematics professors, wrote in to insist she was wrong. She was not: switching wins the car two times out of three.
+One hides a prize.
 
-The clean argument runs through what you knew at the start. Your first pick is right with probability $$\tfrac13$$ and wrong with probability $$\tfrac23$$, and the host's reveal cannot change that: he can always open a goat door, whatever you picked. If your first pick was wrong, which happens $$\tfrac23$$ of the time, the host's action leaves the car behind the other closed door, and switching wins. Staying wins only when your first pick was right: $$\tfrac13$$.
+You choose a door.
 
-If the argument does not convince you, the simulator will. It plays complete games honestly: hides the car at random, lets the player pick, has the host open a goat door, then either stays or switches.
+The host, who knows where the prize is, then opens one of the other two doors and deliberately reveals a losing door.
+
+You may stay with your original choice or switch to the remaining unopened door.
+
+Switching wins with probability
+
+$$\frac23.$$
+
+Staying wins with probability
+
+$$\frac13.$$
 
 <div class="viz" markdown="0">
   <canvas id="mh-cv" width="700" height="180"></canvas>
@@ -82,37 +98,127 @@ If the argument does not convince you, the simulator will. It plays complete gam
 })();
 </script>
 
-The lesson generalizes: the host's choice carries information, because his behavior depended on where the car is. Updating correctly on information that arrived through someone's constrained choice is exactly what conditional probability is for, and exactly what intuition skips.
+The easiest explanation starts before the host opens anything.
 
-## The birthday paradox
+Your first choice is correct with probability
 
-How many people must be in a room before a shared birthday becomes more likely than not? Intuition, anchoring on 365 days, guesses somewhere near 180. The answer is 23.
+$$\frac13.$$
 
-The AP move is the complement. The probability that all $$n$$ people have different birthdays is
+It is wrong with probability
 
-$$P(\text{all different}) = \frac{365}{365}\cdot\frac{364}{365}\cdot\frac{363}{365}\cdots\frac{365-n+1}{365},$$
+$$\frac23.$$
 
-and at $$n = 23$$ this product has fallen to about $$0.493$$, so a match has probability about $$0.507$$. By $$n = 50$$ a match is a 97% favorite; by 70 it is 99.9%.
+If the first choice is correct, switching loses.
 
-Why does intuition miss so badly? Because it asks the wrong question: the chance that someone matches *your* birthday really does stay small (about 6% in a room of 23). But a match between *any* pair counts, and 23 people contain $$\binom{23}{2} = 253$$ pairs. The paradox dissolves the moment you count the pairs, which is why this problem, dressed in different clothes, appears in cryptography courses: the "birthday attack" on digital signatures is this arithmetic weaponized, and it forces real security systems to use enormously long codes.
+If the first choice is wrong, the host is forced to reveal the other losing door, so switching wins.
+
+Therefore switching wins exactly when the original choice was wrong.
+
+That happens two thirds of the time.
+
+The host's action is not an ordinary random door opening.
+
+It depends on knowledge of the prize location.
+
+That is the conditioning information that changes the problem.
+
+## The birthday problem
+
+How many people are needed before the probability of at least one shared birthday exceeds 50%?
+
+The answer is 23, under the usual simplifying assumptions of 365 equally likely birthdays and no leap day.
+
+The direct calculation is awkward.
+
+The complement is easier.
+
+First compute the probability that all birthdays are different:
+
+$$P(\text{all different}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365} \cdots \frac{343}{365}.$$
+
+Then
+
+$$P(\text{at least one match}) = 1-P(\text{all different}).$$
+
+For 23 people, this is about
+
+$$0.507.$$
+
+The result feels surprising because 23 is small relative to 365.
+
+But the number of pairs is
+
+$$\binom{23}{2}=253.$$
+
+There are 253 opportunities for a match.
+
+The number of comparisons grows much faster than the number of people.
+
+At 50 people, the probability of a shared birthday is already about 97%.
+
+At 70, it is above 99.9%.
 
 ## Simpson's paradox
 
-A treatment can be better for men, better for women, and worse for people. That sentence sounds impossible; here are numbers that do it. Two hospitals treat a disease. Hospital A takes many severe cases; Hospital B mostly mild ones.
+Suppose Treatment A has a higher success rate than Treatment B among both mild cases and severe cases.
+
+It can still have a lower success rate overall.
 
 | | Severe cases | Mild cases | All cases |
 |---|---|---|---|
-| Hospital A | 210 of 300 survive (70%) | 95 of 100 survive (95%) | 305 of 400 (76%) |
-| Hospital B | 30 of 50 survive (60%) | 300 of 350 survive (86%) | 330 of 400 (83%) |
+| Treatment A | 210 of 300 survive (70%) | 95 of 100 survive (95%) | 305 of 400 (76%) |
+| Treatment B | 30 of 50 survive (60%) | 300 of 350 survive (86%) | 330 of 400 (83%) |
 
-Hospital A wins among severe cases (70% to 60%) and wins among mild cases (95% to 86%), yet loses overall (76% to 83%). Nothing is miscounted. Hospital A's overall rate is dragged down because its caseload is mostly severe patients, whose survival is lower everywhere. The [lurking variable](/2026/07/27/simpsons-paradox.html), severity, is doing all the work, and the aggregate comparison silently lets it.
+The reversal is possible because the overall rate is a weighted average of the subgroup rates.
 
-This is the deepest of the three problems because it is not a puzzle: it happens constantly in real data. A famous case involved graduate admissions at Berkeley in 1973, where the university appeared to favor male applicants overall while most individual departments slightly favored women; the explanation was that women had applied to the most competitive departments. Every observational-study warning in AP Statistics, every "association is not causation," is preparation for recognizing this pattern, and the college subject that studies when aggregation is safe, called causal inference, is one of the liveliest research areas in statistics today.
+If Treatment A is used much more often for severe cases and Treatment B much more often for mild cases, the groups are being compared under different case mixes.
 
-## The common thread
+The aggregate rate then reflects both treatment performance and severity.
 
-All three problems yield to the same discipline: state exactly what is being conditioned on, and compute rather than feel. That discipline is the actual content of Unit 2, and these problems are why it matters beyond the exam. Probability runs medical testing, security, forecasting, and risk, and in each of those fields, the intuition these puzzles defeat is the same intuition that misprices real decisions.
+Separating the data by [the relevant third variable](/2026/07/27/simpsons-paradox.html) can reverse the apparent association.
+
+This is Simpson's paradox.
+
+The arithmetic is not contradictory.
+
+The weights changed.
+
+## The common structure
+
+Monty Hall changes because the host's action depends on hidden information.
+
+The birthday problem becomes manageable after we condition on the event that previous birthdays were all distinct.
+
+Simpson's paradox changes when we condition on a third variable that is related to both the explanatory and response variables.
+
+In each case, the important question is:
+
+What information has been conditioned on, and how was it generated?
+
+Probability statements are always relative to a sample space and a set of assumptions.
+
+If those change, the probability can change.
+
+## A final conditioning puzzle
 
 <div class="article-note" markdown="1">
-One more for the road, no answer supplied: a family has two children, and you learn at least one is a boy. What is the probability both are? Then instead: you learn at least one is a boy *born on a Tuesday*. Strangely, the extra detail changes the answer. Work out the first; look up the second only after you have a guess. It is the Monty Hall lesson again: how you learned a fact is part of the fact.
+Suppose a family has two children and at least one is a boy.
+
+Under a simple model where the four ordered sex combinations are equally likely, the possible families are
+
+$$BB,\quad BG,\quad GB.$$
+
+So the probability both are boys is
+
+$$\frac13.$$
+
+But if the information “at least one is a boy” was produced by a different reporting process, the answer can change.
+
+For example, learning that a randomly selected child from the family is a boy is a different experiment.
+
+The wording alone is not always enough.
+
+The mechanism that generated the information matters.
+
+That is the larger lesson behind many probability puzzles.
 </div>

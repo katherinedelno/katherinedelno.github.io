@@ -2,7 +2,7 @@
 layout: post
 title: "The derivative as a limit"
 date: 2026-07-30
-description: "An average rate of change needs two points, and at a single instant there is only one. Drag the second point in and watch the secant line become the tangent, with the quotient converging as it goes."
+description: "A derivative is the limit of secant slopes as the second point approaches the first."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,17 +10,25 @@ math: true
 kind: foundations
 sequence: 7
 interactive: true
-blurb: "Drag the second point in until the secant has nowhere left to go"
+blurb: "A derivative is the limit of secant slopes as the second point approaches the first"
 image: "/assets/og/derivative-as-a-limit.png"
 ---
 
-An average rate of change divides a change in one variable by a change in another, so it needs two points. At a single instant there is only one, the denominator would be zero, and the quotient is undefined. The framework states the obstacle in exactly those terms, and then states the way past it: the limit concept allows us to define instantaneous rate of change in terms of average rates of change.
+An average rate of change needs two points.
 
-That is the whole of the derivative. Not a new operation, but an old one — slope between two points — put under a limit so that the second point can be sent away without ever arriving.
+For a function $$f$$, the average rate of change from $$x=a$$ to $$x=a+h$$ is
 
-## Drag the second point in
+$$\frac{f(a+h)-f(a)}{h}.$$
 
-The anchor stays put. The second point moves, and with it the secant line through the pair. Watch the number, not just the picture.
+At $$h=0$$, the two points coincide and the denominator is zero.
+
+The derivative solves this by using a limit. We let the second point approach the first and ask whether the secant slopes approach a finite number.
+
+If they do, that number is the instantaneous rate of change.
+
+## Move the second point toward the first
+
+The anchor point stays fixed. The second point moves with $$h$$.
 
 <div class="viz" markdown="0">
   <canvas id="dv-cv" width="700" height="320"></canvas>
@@ -148,38 +156,106 @@ The anchor stays put. The second point moves, and with it the secant line throug
 })();
 </script>
 
-Start with $$x^2$$ at $$a = 1$$ and push $$h$$ down. At $$h = 1$$ the quotient reads 3; at $$h = 0.1$$ it reads 2.1; at $$0.01$$, 2.01; at $$0.001$$, 2.001. The reason is printed alongside: for this function the difference quotient is exactly $$2 + h$$. Every bit of the algebra is
+The dark line is the secant through the two points. The faint line is the tangent line corresponding to the limiting slope.
 
-$$\frac{(1+h)^2 - 1^2}{h} = \frac{2h + h^2}{h} = 2 + h,$$
+Start with $$f(x)=x^2$$ at $$a=1$$.
 
-and the cancellation of $$h$$ is legal for the same reason cancellation was legal in the [indeterminate forms](/2026/07/30/indeterminate-forms.html) work: the limit never evaluates at $$h = 0$$, so $$h \neq 0$$ on every input it inspects.
+The difference quotient is
 
-Then take $$h$$ negative. The second point crosses to the other side, the secant approaches from below instead of above, and the quotient reads 1.9, 1.99, 1.999. Both one-sided approaches land on 2, which is what makes the two-sided limit exist at all. A function whose secants converge from one side and not the other has no derivative there.
+$$\frac{(1+h)^2-1}{h}.$$
 
-## Two ways to write it, one limit
+Expanding gives
 
-The course writes the definition in two forms, and students sometimes learn them as two facts.
+$$\frac{2h+h^2}{h}=2+h$$
 
-$$f'(a) = \lim_{h \to 0}\frac{f(a+h) - f(a)}{h} = \lim_{x \to a}\frac{f(x) - f(a)}{x - a}.$$
+for $$h\neq0$$.
 
-They are the same quotient. Put $$x = a + h$$ and the second becomes the first: the numerators match, and the denominator $$x - a$$ *is* $$h$$. The readouts print both at every setting and the values never differ, because there is nothing to differ about.
+So as $$h\to0$$,
 
-What does change is which one is convenient. The $$h$$-form is easier to compute with, since $$h$$ is the thing you are sending to zero and it appears by itself. The $$x$$-form is easier to *recognize*, because exam questions hand you a limit and ask what derivative it represents, and they hand it to you in whichever form makes it least obvious.
+$$2+h\to2.$$
 
-## The notation, and what each piece of it says
+Numerically, the secant slope is 3 when $$h=1$$, 2.1 when $$h=0.1$$, 2.01 when $$h=0.01$$, and 2.001 when $$h=0.001$$.
 
-The framework asks for a derivative to be represented three ways, and the reason is that they emphasize different things.
+The slope approaches 2.
 
-$$f'(a) \qquad \left.\frac{dy}{dx}\right\vert_{x=a} \qquad y'$$
+The [cancellation of $$h$$](/2026/07/30/indeterminate-forms.html) is valid because the limit never evaluates the quotient at $$h=0$$. It only examines values arbitrarily close to zero.
 
-Prime notation names the function and is compact. Leibniz notation, $$\tfrac{dy}{dx}$$, keeps both variables visible, which matters the moment there is more than one thing changing — it is the notation that survives into related rates and the chain rule, where you need to know what is being differentiated with respect to what. Its evaluation bar is not decoration: $$\tfrac{dy}{dx}$$ is a function and $$\left.\tfrac{dy}{dx}\right\vert_{x=a}$$ is a number, and writing the first when you mean the second is the kind of thing [notation in AP Calculus](/2026/07/08/notation-that-costs-ap-calculus-points.html) is about.
+Now use negative values of $$h$$.
 
-## What the tangent line has to do with it
+The second point moves to the other side of the anchor, and the secant slopes approach 2 from that direction as well.
 
-The faint line in the picture is the tangent, and it is drawn as the destination rather than as a definition. That order matters. A tangent line is not defined first and its slope measured afterwards; the limit is computed first and *then* the line with that slope through that point is called the tangent.
+A two-sided derivative exists only when the left-hand and right-hand difference quotients approach the same finite value.
 
-This is why "the tangent touches at one point" is a description rather than a definition, and a poor one — the tangent to $$\sin x$$ at the origin crosses the curve and meets it again infinitely often. Switch to the third function and look. The line is tangent because its slope is the limit of the secant slopes, and for no other reason.
+## Two forms of the same definition
+
+The derivative is commonly written in either of these forms:
+
+$$f'(a) = \lim_{h\to0} \frac{f(a+h)-f(a)}{h},$$
+
+or
+
+$$f'(a) = \lim_{x\to a} \frac{f(x)-f(a)}{x-a}.$$
+
+These are the same limit.
+
+If $$x=a+h$$, then $$x-a=h$$, and the second quotient becomes the first.
+
+The $$h$$-form is often easier for computation because the quantity approaching zero appears directly.
+
+The $$x$$-form is useful for recognition. AP questions may present a limit and ask which derivative it represents.
+
+The main task is to recognize the structure of the difference quotient.
+
+## Derivative notation
+
+[Several notations](/2026/07/08/notation-that-costs-ap-calculus-points.html) describe the same derivative.
+
+$$f'(a), \qquad \left.\frac{dy}{dx}\right\vert _{x=a}, \qquad y'.$$
+
+Prime notation is compact and keeps the function name visible.
+
+Leibniz notation keeps the dependent and independent variables visible. That becomes especially useful in the chain rule, implicit differentiation, and related rates.
+
+The evaluation bar also matters.
+
+$$\frac{dy}{dx}$$
+
+is generally a function of $$x$$.
+
+By contrast,
+
+$$\left.\frac{dy}{dx}\right\vert _{x=a}$$
+
+is the value of that derivative at one point.
+
+## The tangent line
+
+The tangent line is determined by the derivative.
+
+Once the limiting secant slope exists, the tangent line is the line through the point whose slope equals that limit.
+
+This is more precise than saying that a tangent line “touches the curve once.”
+
+A tangent line can cross the graph. It can also meet the same curve again elsewhere.
+
+For example, the tangent to $$\sin x$$ at the origin is $$y=x$$. It crosses the sine curve rather than merely touching it from one side.
+
+The defining feature is the limiting slope of the secants.
 
 <div class="article-note" markdown="1">
-A self-test at the slider: choose $$\sin x$$ at $$a = 0$$ and read the quotient at $$h = 0.1$$, then at $$h = 0.01$$. The values are $$\sin(h)/h$$, which you have met before as a limit that resists algebra and yields to the squeeze theorem. So the derivative of $$\sin x$$ at 0 is not a new fact obtained by a new method; it is a limit you already knew, wearing the definition as a costume. Ask yourself which other derivative rules are limits you have already computed.
+Use the sine example in the visualization.
+
+At $$a=0$$, the difference quotient becomes
+
+$$\frac{\sin h}{h}.$$
+
+As $$h\to0$$,
+
+$$\frac{\sin h}{h}\to1.$$
+
+So
+
+$$\left.\frac{d}{dx}\sin x\right\vert _{x=0}=1.$$
+
+This connects the derivative directly back to a standard limit from the previous unit.
 </div>

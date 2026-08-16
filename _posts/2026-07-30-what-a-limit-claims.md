@@ -2,7 +2,7 @@
 layout: post
 title: "What a limit claims, and what it does not"
 date: 2026-07-30
-description: "A limit is a claim about the neighborhood of a point, not about the point. Narrow the window by hand and watch the outputs close in on a number the function may never actually take."
+description: "A limit describes what happens near a point, not necessarily what happens at the point itself."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "8 min read"
@@ -10,18 +10,26 @@ math: true
 kind: foundations
 sequence: 1
 interactive: true
-blurb: "Narrow the window and watch the outputs close in on a value the function skips"
+blurb: "A limit describes what happens near a point, not necessarily what happens at the point itself"
 featured: true
 image: "/assets/og/what-a-limit-claims.png"
 ---
 
-A limit says nothing about what happens at the point. It is a claim about every point nearby, and the value at the center is deliberately excluded from the question.
+A limit describes what a function does near a point. It does not, by itself, say what happens at the point.
 
-That exclusion is not a technicality to be tolerated until the real material arrives. It is the entire reason limits exist. A derivative is a limit of quotients that are undefined at the point of interest, and a definite integral is [a limit of sums](/2026/07/25/riemann-sums-watching-rectangles.html) that never equal the area. Both need a way to say "the outputs are closing in on this number" without ever asking the function to reach it.
+That distinction is fundamental to calculus. A derivative is defined through a quotient that is not evaluated at the point where the two inputs coincide. A definite integral is defined through [a limit of approximating sums](/2026/07/25/riemann-sums-watching-rectangles.html). In both cases, we need language for describing what a quantity approaches without requiring it to reach that value during the approximation.
 
 ## Narrow the window
 
-Pick a point $$a$$ and a width $$\delta$$, look at every input within $$\delta$$ of $$a$$ except $$a$$ itself, and collect the outputs. Narrowing $$\delta$$ either drives that collection down to a single number or it does not. That is the whole test.
+Choose a point $$a$$ and a width $$\delta$$. Look at every input within $$\delta$$ of $$a$$, except $$a$$ itself, and collect the corresponding outputs.
+
+Then make $$\delta$$ smaller.
+
+If those outputs become arbitrarily close to a single number $$L$$, then
+
+$$ \lim_{x\to a} f(x)=L. $$
+
+The value $$f(a)$$ is not part of this test.
 
 <div class="viz" markdown="0">
   <canvas id="lm-cv" width="700" height="330"></canvas>
@@ -176,40 +184,90 @@ Pick a point $$a$$ and a width $$\delta$$, look at every input within $$\delta$$
 })();
 </script>
 
+The shaded band shows every input within $$\delta$$ of 2, with the center removed. The bar on the right shows the range of output values over that band.
+
+For the hole, the output range collapses toward 4 as the window narrows. The value at $$x=2$$ can be 4, 1, or undefined without changing that behavior.
+
+For the jump, the output range never collapses to a single value because the two sides approach different heights.
+
+For the oscillating example, every sufficiently small window still produces outputs throughout the interval from $$-1$$ to $$1$$.
+
 Start with the hole. The function is
 
-$$f(x) = \frac{x^2 - 4}{x - 2},$$
+$$ f(x)=\frac{x^2-4}{x-2}, $$
 
-which equals $$x + 2$$ everywhere except at $$x = 2$$, where the formula reads $$0/0$$ and defines nothing. Drag $$\delta$$ down. The output bar closes steadily toward height zero around the value 4, and it does so no matter how far you push: at $$\delta = 0.01$$ the outputs span a height of 0.02, at $$\delta = 0.0001$$ a height of 0.0002. The limit is 4.
+which simplifies to $$x+2$$ for every $$x\neq2$$. At $$x=2$$, the original expression is undefined.
 
-Now set the value at $$x = 2$$ to 4, then to 1, then remove it again. The bar does not move. It cannot: the window has the center punched out, so the marker at $$x = 2$$ is not among the outputs being collected. This is what "a limit is about the neighborhood" means operationally, and it is why $$\lim_{x \to 2} f(x) = 4$$ is true for all three versions of the function even though only one of them is continuous there.
+As $$\delta$$ decreases, the nearby outputs become increasingly concentrated around 4. For example, when $$\delta=0.01$$, the outputs occupy an interval of width 0.02. When $$\delta=0.0001$$, that width is 0.0002.
 
-## The claim requires both sides to agree
+So
 
-Switch to the jump. Approaching 2 from the left the outputs head for 4; from the right they head for 1. Each side settles on its own destination, but the bar collects both, so its height sits at 3, exactly the size of the jump, however far you narrow the window.
+$$ \lim_{x\to2}f(x)=4. $$
 
-Two one-sided limits exist, and they disagree:
+Now change the value at $$x=2$$. Set it to 4, then to 1, then leave it undefined.
 
-$$\lim_{x \to 2^-} f(x) = 4, \qquad \lim_{x \to 2^+} f(x) = 1.$$
+The limit does not change.
 
-Because they disagree, $$\lim_{x \to 2} f(x)$$ does not exist. The two-sided limit exists exactly when both one-sided limits exist and are equal, and that is worth stating as a biconditional rather than a rule, since exam questions run it in both directions: sometimes you are given the two one-sided limits and asked about the limit, sometimes given continuity and asked what a parameter must be for the sides to match.
+The reason is simple. The definition of the limit excludes the point itself. The nearby behavior is identical in all three cases.
 
-## Failing without a jump
+Only one of those versions is continuous at $$x=2$$, but all three have the same limit there.
 
-Endless oscillation is the case that stops the pattern-matching. The function $$\sin\!\left(\tfrac{1}{x-2}\right)$$ has no jump, no break you could point at, and no vertical asymptote. It is perfectly finite everywhere near 2, trapped between $$-1$$ and 1.
+## Both sides have to agree
 
-It still has no limit, and the bar says why: the height stays at 2 for every $$\delta$$ you can reach. As $$x$$ closes on 2 the quantity $$1/(x-2)$$ runs off to infinity, so the sine completes infinitely many full cycles inside any window you choose. Every window, however narrow, contains inputs where the function is 1 and inputs where it is $$-1$$.
+Now switch to the jump.
 
-That is the honest content of "the outputs must close in on a single number." Not "the graph must be unbroken," and not "the function must be defined." Those are different claims, and separating them is what [continuity's three conditions](/2026/07/30/continuity-three-conditions.html) does.
+As $$x$$ approaches 2 from the left, the outputs approach 4. From the right, they approach 1.
 
-## Reading a limit off a graph
+So
 
-Everything above turns into a single reading habit: cover the center with a finger and look only at what is on either side of it.
+$$ \lim_{x\to2^-}f(x)=4, \qquad \lim_{x\to2^+}f(x)=1. $$
 
-If the two sides go to the same place, that place is the limit, whatever the graph does at the point itself — an open circle there, a filled dot at some unrelated height, or nothing at all. If they go to different places, the limit does not exist. If either side fails to settle anywhere, the limit does not exist either, and for a different reason, which is why the oscillation is worth having seen once.
+Both one-sided limits exist, but they are not equal. Therefore the two-sided limit does not exist.
 
-The value at the point is a separate question with a separate answer, and a graph can be built so that the two answers differ. Asking them one at a time is the discipline; the finger is how it is enforced.
+In general,
+
+$$ \lim_{x\to a}f(x)=L $$
+
+exists exactly when both one-sided limits exist and equal $$L$$.
+
+This matters in both directions. Sometimes you are given the one-sided limits and asked for the two-sided limit. Other times, especially in continuity problems, you are asked to choose a parameter so that the two sides agree.
+
+## A limit can fail without a jump
+
+The function
+
+$$ \sin\left(\frac{1}{x-2}\right) $$
+
+shows a different kind of failure.
+
+There is no jump and no vertical asymptote. The function stays between $$-1$$ and $$1$$ near $$x=2$$.
+
+But it still has no limit.
+
+As $$x$$ approaches 2, the quantity $$1/(x-2)$$ grows without bound in magnitude. The sine function therefore completes infinitely many oscillations inside every neighborhood of 2.
+
+No matter how small the window becomes, it still contains inputs where the output is near 1 and others where the output is near $$-1$$.
+
+The outputs never settle near one number.
+
+This is why a limit cannot be read simply as “the graph is unbroken.” [Continuity](/2026/07/30/continuity-three-conditions.html), existence of the function value, and existence of the limit are separate questions.
+
+## Reading a limit from a graph
+
+A useful habit is to ignore the point itself at first.
+
+Look at what the graph does as you approach from the left and from the right.
+
+If both sides approach the same value, that value is the limit. It does not matter whether the graph has an open circle there, a filled point somewhere else, or no defined point at all.
+
+If the two sides approach different values, the two-sided limit does not exist.
+
+If either side fails to settle to a finite value, the two-sided limit also does not exist.
+
+Only after answering the limit question should you look at the actual value of the function.
 
 <div class="article-note" markdown="1">
-A self-test at the window: set the function to the jump and predict, before dragging, what the output bar's height will do as $$\delta$$ falls from 1 to 0.001. Then check. Now do the same for the oscillation, and account for the difference in one sentence that mentions the word *cycles*. A student who can write that sentence understands limits better than one who can compute twenty of them.
+A quick self-test is to use the visualization without dragging the slider first. Choose the jump and predict what happens to the output range as $$\delta$$ falls from 1 to 0.001. Then do the same for the oscillating function.
+
+The important distinction is why the range refuses to collapse in each case.
 </div>

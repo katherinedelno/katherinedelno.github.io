@@ -2,7 +2,7 @@
 layout: post
 title: "Reading an accumulation function off the graph of its integrand"
 date: 2026-07-30
-description: "When a function is defined as an integral, every question about it is a question about the picture of the integrand. Increasing, concave, extreme, and inflected all translate, and only one thing depends on the lower limit."
+description: "If g(x) = ∫ₐˣ f(t) dt, then the graph of f tells you the slope and concavity of g, while signed area determines its values."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "9 min read"
@@ -10,36 +10,46 @@ math: true
 kind: foundations
 sequence: 21
 interactive: true
-blurb: "Every question about g is a question about the picture of f"
+blurb: "If g(x) = ∫ₐˣ f(t) dt, then the graph of f tells you the slope and concavity of g, while signed area determines its values"
 image: "/assets/og/accumulation-functions.png"
 ---
 
-A function can be defined by an integral. Given a continuous $$f$$ and a number $$a$$ in its interval, set
+A function can be defined by an integral.
+
+Let
 
 $$g(x) = \int_a^x f(t)\,dt,$$
 
-and $$g$$ is a perfectly ordinary function with a graph, a derivative, and extrema. The framework calls it an accumulation function and states plainly what makes it usable: graphical, numerical, analytical, and verbal representations of $$f$$ provide information about $$g$$.
+where $$f$$ is continuous.
 
-[Why $$g' = f$$](/2026/07/17/fundamental-theorem-from-the-ground-up.html) is the Fundamental Theorem and is argued elsewhere. This article is about the consequence: the translation from a picture of $$f$$ to the behavior of $$g$$.
+[The Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives
+
+$$g'(x)=f(x).$$
+
+Differentiating again gives
+
+$$g''(x)=f'(x).$$
+
+Those two equations turn a graph of $$f$$ into information about the behavior of $$g$$.
 
 ## The translation
 
-Two lines do all the work. The Fundamental Theorem gives $$g'(x) = f(x)$$, and differentiating again gives $$g''(x) = f'(x)$$. Everything follows by applying the usual derivative tests to those.
-
-| about $$g$$ | read from $$f$$ |
+| About $$g$$ | Read from $$f$$ |
 |---|---|
-| $$g$$ is increasing | $$f$$ is above the axis |
-| $$g$$ is decreasing | $$f$$ is below the axis |
-| $$g$$ has a local maximum | $$f$$ crosses from above to below |
-| $$g$$ has a local minimum | $$f$$ crosses from below to above |
+| $$g$$ is increasing | $$f>0$$ |
+| $$g$$ is decreasing | $$f<0$$ |
+| $$g$$ has a local maximum | $$f$$ crosses from positive to negative |
+| $$g$$ has a local minimum | $$f$$ crosses from negative to positive |
 | $$g$$ is concave up | $$f$$ is increasing |
 | $$g$$ is concave down | $$f$$ is decreasing |
-| $$g$$ has an inflection point | $$f$$ has a local extremum or a corner |
-| $$g(x) = 0$$ | the signed area from $$a$$ to $$x$$ cancels out |
+| $$g$$ changes concavity | $$f'$$ changes sign |
+| $$g(x)=0$$ | the signed area from $$a$$ to $$x$$ is zero |
 
-This is [reading the graph of a derivative](/2026/07/21/reading-the-graph-of-f-prime.html) with the labels shifted one place: $$f$$ plays for $$g$$ the role $$f'$$ plays for $$f$$. The skill is the same one and the table is the same table.
+This is the same reasoning used when [reading the graph of a derivative](/2026/07/21/reading-the-graph-of-f-prime.html).
 
-## The picture, and the lower limit
+Here $$f$$ plays the role of $$g'$$.
+
+## Reading values from geometry
 
 <div class="viz" markdown="0">
   <canvas id="ac-cv" width="700" height="360"></canvas>
@@ -186,36 +196,98 @@ This is [reading the graph of a derivative](/2026/07/21/reading-the-graph-of-f-p
 })();
 </script>
 
-The integrand crosses the axis at $$x = 0.5$$, $$3.5$$, and $$7.25$$, and those are exactly where $$g$$ turns: down to up at the first, up to down at the second, down to up again at the third. It has corners at $$x = 2$$ and $$x = 5$$, where its slope jumps from $$+2$$ to $$-2$$ and from $$-2$$ to $$+\tfrac43$$, and those are exactly where $$g$$ changes concavity.
+The top graph shows $$f$$, with the region between $$a$$ and $$x$$ shaded according to sign.
 
-Values of $$g$$ come from geometry, not from an antiderivative — the framework says as much, that a definite integral can sometimes be evaluated using areas. To get $$g(3.5)$$ with $$a = 0$$, cut the region at every axis crossing and add the pieces with their signs. From $$0$$ to $$0.5$$ the graph is a triangle below the axis with base $$0.5$$ and height $$1$$, contributing $$-\tfrac14$$. From $$0.5$$ to $$2$$ it is a triangle above the axis with base $$1.5$$ and height $$3$$, contributing $$\tfrac94$$. From $$2$$ to $$3.5$$ it is a triangle above the axis with base $$1.5$$ and height $$3$$ again, contributing another $$\tfrac94$$. Altogether
+The lower graph shows the corresponding accumulation function.
 
-$$g(3.5) = -\tfrac14 + \tfrac94 + \tfrac94 = \tfrac{17}{4},$$
+Suppose $$a=0$$.
 
-and no antiderivative of $$f$$ was ever written down. Cutting at the crossings is the part that gets skipped, and skipping it turns the first triangle from $$-\tfrac14$$ into $$+\tfrac14$$.
+To compute
 
-The signed areas of the three linear pieces are $$2$$, $$0$$, and $$-3$$. The middle one being zero is worth pausing on: $$f$$ is not zero on $$[2,5]$$ and $$g$$ is certainly not constant there, but the positive and negative parts cancel exactly, so $$g(5) = g(2)$$. A definite integral of zero says the accumulation returned to where it started, not that nothing happened.
+$$g(3.5) = \int_0^{3.5}f(t)\,dt,$$
 
-## What the lower limit does, and does not do
+add the signed areas.
 
-Move $$a$$ and the entire graph of $$g$$ slides vertically. Not one marker moves.
+In the displayed example, the first small triangle lies below the axis and contributes
 
-The reason is one line of the framework's own properties of definite integrals — the integral over adjacent intervals adds:
+$$-\frac14.$$
 
-$$\int_{a_2}^{x} f = \int_{a_2}^{a_1} f + \int_{a_1}^{x} f.$$
+The next two triangles lie above the axis and each contribute
 
-The first term on the right does not involve $$x$$. So changing the lower limit from $$a_1$$ to $$a_2$$ adds a constant to $$g$$, and a constant has no derivative, which is why $$g'$$, $$g''$$, and every feature they control are untouched.
+$$\frac94.$$
 
-One thing does change: the value. With $$a = 0$$ the maximum of $$g$$ is $$\tfrac{17}{4}$$ at $$x = 3.5$$; with $$a = 2$$ the same maximum, at the same place, is $$\tfrac94$$. And $$g(a) = 0$$ always, because the integral from a point to itself is zero — which also means the zeros of $$g$$ move when $$a$$ does, while its extrema do not.
+Therefore
 
-## Below the lower limit
+$$g(3.5) = -\frac14+\frac94+\frac94 = \frac{17}{4}.$$
 
-If $$x < a$$ the integral runs backwards, and reversing the limits reverses the sign:
+No antiderivative is needed.
 
-$$\int_a^x f = -\int_x^a f.$$
+The graph is enough.
 
-So $$g$$ is defined to the left of $$a$$ too, and the translation table still holds there without modification — $$g$$ still rises where $$f$$ is positive. It is worth checking that on the tool by putting $$a$$ to the right of $$x$$, because the sign flip feels as though it ought to reverse something, and it does not.
+A definite integral of zero also does not mean nothing happened.
+
+If positive and negative areas cancel, the accumulation can return to an earlier value even while the function changes throughout the interval.
+
+## What changing the lower limit does
+
+Changing $$a$$ shifts the entire accumulation function vertically.
+
+It does not change its derivative.
+
+To see why, compare
+
+$$g_1(x) = \int_{a_1}^{x}f(t)\,dt$$
+
+with
+
+$$g_2(x) = \int_{a_2}^{x}f(t)\,dt.$$
+
+Using additivity,
+
+$$\int_{a_2}^{x}f = \int_{a_2}^{a_1}f + \int_{a_1}^{x}f.$$
+
+The first term is constant with respect to $$x$$.
+
+So $$g_2$$ differs from $$g_1$$ by a constant.
+
+That means the location of extrema and inflection points does not change.
+
+The function values do change.
+
+Also,
+
+$$g(a)=0$$
+
+for any lower limit $$a$$, because an integral from a point to itself is zero.
+
+## What if $$x<a$$?
+
+The accumulation function is still defined when the upper limit lies to the left of the lower limit.
+
+Reversing the bounds changes the sign:
+
+$$\int_a^x f(t)\,dt = -\int_x^a f(t)\,dt.$$
+
+The derivative relationship remains
+
+$$g'(x)=f(x).$$
+
+So $$g$$ still increases wherever $$f$$ is positive and decreases wherever $$f$$ is negative, even to the left of $$a$$.
 
 <div class="article-note" markdown="1">
-On a free-response question the graph of $$f$$ is given and $$g$$ is defined in the stem, and the parts almost always run in this order: a value of $$g$$, then $$g'$$ or a statement about increase, then $$g''$$ or a statement about concavity, then a justification. Each part is one line of the table above. Write $$g' = f$$ and $$g'' = f'$$ at the top of the page before reading part (a), and the rest of the question is arithmetic on a picture.
+A reliable setup on a free-response problem is to write
+
+$$g'=f$$
+
+and
+
+$$g''=f'$$
+
+before answering anything else.
+
+Then separate two kinds of questions.
+
+Questions about values of $$g$$ use signed area.
+
+Questions about increase, decrease, extrema, and concavity use the derivative relationships.
 </div>

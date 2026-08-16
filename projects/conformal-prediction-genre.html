@@ -11,7 +11,9 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
 
 <p class="pj-meta">Project lead &middot; with Jenny Xu &middot; 2025</p>
 
-<p class="pj-lede">A classifier that returns a single best guess is easy to evaluate and hard to trust. This project pairs a fully fine-tuned DistilBERT with <strong>conformal prediction</strong> so that the model returns a <em>set</em> of genres carrying a coverage guarantee, and then asks what that guarantee costs. The answer, in this instance, is a great deal: the calibrated model captures nearly every true genre and does so by predicting far too many.</p>
+<p class="pj-lede">A multi-label classifier can be accurate on average and still give no indication of when its prediction is uncertain. This project paired a fully fine-tuned DistilBERT model with <strong>conformal prediction</strong> so that each film received a <em>set</em> of possible genres rather than a single thresholded prediction.</p>
+
+<p class="pj-lede">The goal was to obtain a formal coverage guarantee and then examine what that guarantee cost in practice. The selected model achieved 90.2% empirical coverage, but the average prediction set contained 8.62 of the 20 possible genres. The guarantee held. The sets were often too large to be very useful.</p>
 
 <div class="pj-stats">
   <div class="pj-stat">
@@ -20,7 +22,7 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">90.2%</div>
-    <div class="pj-stat__label">empirical coverage: proportion of films whose full true genre set was captured</div>
+    <div class="pj-stat__label">empirical coverage, measured as the proportion of films whose full true genre set was captured</div>
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">15</div>
@@ -28,23 +30,30 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
   </div>
   <div class="pj-stat">
     <div class="pj-stat__value">8.62</div>
-    <div class="pj-stat__label">genres in the average prediction set, out of 20: the price of the guarantee</div>
+    <div class="pj-stat__label">genres in the average prediction set, out of 20</div>
   </div>
 </div>
 
-<h2>A problem with two ways to be wrong</h2>
+<h2>A multi-label problem</h2>
 
-<p>Genre assignment is multi-label by nature. A film is not a comedy <em>or</em> a romance; it is frequently both, occasionally neither in any useful sense, and the label sets in this dataset average a little over two and a half genres per film. The distribution across the twenty available genres is also severely unbalanced: drama appears in more than a thousand of the 2,386 films, while foreign, western, and television film appear a few dozen times or fewer. A classifier trained on this will learn the common genres well and the rare ones barely at all.</p>
+<p>Genre assignment is naturally multi-label. A film can be both comedy and romance, or action and science fiction. In this dataset, films carry an average of a little more than two and a half genres.</p>
 
-<p>The task was scored on textual metadata only, the title, overview, and tagline concatenated into a single input string, with the overviews averaging about fifty-three words. Under those conditions a model will be genuinely uncertain about a large fraction of films, and the interesting question is not how to hide that uncertainty behind a threshold of 0.5 but how to report it.</p>
+<p>The class distribution is also highly imbalanced. Drama appears in more than a thousand of the 2,386 films, while foreign, western, and television film appear only a few dozen times or fewer. A classifier trained on these data will learn common genres much more reliably than rare ones.</p>
+
+<p>The model used textual metadata only. The title, overview, and tagline were concatenated into a single input. Overviews averaged about fifty-three words.</p>
 
 <div class="pj-thesis">
-  <p>Conformal prediction replaces the point prediction with a set, and attaches a guarantee: over repeated use, the set contains the truth at least a specified fraction of the time. The guarantee is distribution-free and holds in finite samples. What it does not promise is that the set will be small.</p>
+  <p>Under those conditions, uncertainty is unavoidable. A fixed probability threshold hides that uncertainty inside a binary decision. Conformal prediction instead returns a set and aims to guarantee that the true label set is contained within it at least a specified proportion of the time.</p>
+  <p>That guarantee is distribution-free and finite-sample. It does not guarantee that the resulting set will be small.</p>
 </div>
 
 <h2>The mechanism</h2>
 
-<p>The procedure needs a <em>non-conformity score</em>, a number saying how surprising an observation is under the fitted model. A calibration set held out from training is scored, a quantile of those scores is taken at the desired confidence level, and that quantile is converted into a probability threshold applied to new films. Three score functions were compared, each aggregating the model's uncertainty across a film's true genres differently:</p>
+<p>Conformal prediction requires a <em>non-conformity score</em> that measures how unusual an observation looks under the fitted model.</p>
+
+<p>A calibration set is held out from training. Its observations are scored, a quantile of those scores is selected, and the quantile is converted into a threshold for new observations.</p>
+
+<p>Three score functions were compared.</p>
 
 <div class="pj-tablewrap">
   <table class="pj-table">
@@ -56,27 +65,29 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
       <tr>
         <td>Maximum</td>
         <td style="text-align:left; font-family:var(--pj-mono)">max<sub>y&isin;T</sub> (1 &minus; p<sub>y</sub>)</td>
-        <td style="text-align:left; white-space:normal">Governed entirely by the single true genre the model is least sure of. One difficult label makes the whole film look anomalous.</td>
+        <td style="text-align:left; white-space:normal">Determined by the true genre the model is least certain about. One difficult label can make the full observation look anomalous.</td>
       </tr>
       <tr>
         <td>Sum</td>
         <td style="text-align:left; font-family:var(--pj-mono)">&sum;<sub>y&isin;T</sub> (1 &minus; p<sub>y</sub>)</td>
-        <td style="text-align:left; white-space:normal">Accumulates uncertainty over all true genres, so a film with four moderately uncertain labels scores worse than one with a single uncertain label. Scales with set size.</td>
+        <td style="text-align:left; white-space:normal">Adds uncertainty across all true genres. Its scale therefore increases with the number of genres.</td>
       </tr>
       <tr>
         <td>Average</td>
         <td style="text-align:left; font-family:var(--pj-mono)">|T|<sup>&minus;1</sup> &sum;<sub>y&isin;T</sub> (1 &minus; p<sub>y</sub>)</td>
-        <td style="text-align:left; white-space:normal">Between the two, removing the dependence on how many genres a film has.</td>
+        <td style="text-align:left; white-space:normal">Averages uncertainty across the true set and removes the direct dependence on set size.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<p>The sum-based score performed best on held-out data, which is unsurprising given that the objective rewarded capturing a film's entire label set rather than any individual label. It also has a consequence that took some experimentation to appreciate: because the score adds a term for every true genre, its scale depends on how many genres a film has, and the quantile at conventional confidence levels lands somewhere useless. At the nominal ninety percent level the procedure returns every one of the twenty genres for every film, achieving perfect coverage by refusing to exclude anything.</p>
+<p>The sum-based score performed best on held-out data. That is consistent with the objective because success required capturing the film's entire true genre set.</p>
 
-<p>The remedy was to treat the confidence level as a tuning parameter rather than a specification, and to select it against the actual objective. That is a departure from textbook conformal prediction, where &alpha; is a commitment made in advance, and it should be described as what it is: a threshold chosen empirically, which yields calibrated set sizes but forfeits the clean interpretation of &alpha; as a miscoverage rate.</p>
+<p>It also created a practical problem. Since the score adds one term for every true genre, conventional confidence levels produced very large thresholds. At the nominal 90% level, the procedure returned all twenty genres for every film. Coverage was perfect because the model excluded nothing.</p>
 
-<h2>Calibration, and the price of coverage</h2>
+<p>The final approach treated the confidence parameter as something to tune against the project objective. That is a departure from the clean textbook interpretation of conformal prediction. The chosen value is empirical rather than a pre-specified miscoverage rate, and the write-up should be read with that distinction in mind.</p>
+
+<h2>Calibration and the price of coverage</h2>
 
 <figure class="pj-figure" id="cp-live">
   <div class="pj-figure__head">
@@ -113,18 +124,33 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
   </div>
 
   <figcaption class="pj-figure__caption">
-    <p>A full conformal calibration, run in the browser: 600 calibration films are scored, the quantile is taken at the chosen &alpha;, and the resulting threshold is applied to 600 held-out films. Beneath, one film's twenty genre probabilities are shown against that threshold. The mechanism is exactly the one used in the project; the probabilities are synthetic stand-ins, drawn so that the genre marginals match the training set and the operating point at &alpha; = 0.615 reproduces the reported coverage of 0.90, mean set size near 8.6, and micro-recall near 0.96.</p>
-    <p>Pushed down toward &alpha; = 0.1 under the sum score, the prediction set swells to all twenty genres, which is the degenerate solution version V2 found: perfect coverage, no information. Under the maximum score the same &alpha; behaves quite differently, which is why the three score functions could not share a confidence level.</p>
+    <p>The browser panel runs a full conformal calibration. Six hundred calibration films are scored, the quantile is selected at the chosen &alpha;, and the resulting threshold is applied to six hundred held-out films.</p>
+    <p>One film's twenty genre probabilities are shown below the threshold. The probabilities in the browser are synthetic stand-ins. Their genre marginals match the training data, and the operating point at &alpha; = 0.615 is constructed to reproduce the reported coverage near 0.90, mean set size near 8.6, and micro-recall near 0.96.</p>
+    <p>As &alpha; moves toward 0.1 under the sum score, the prediction set expands until it contains all twenty genres. That reproduces the degenerate solution found in an earlier version of the project.</p>
+    <p>The maximum score behaves differently at the same &alpha;. This is why the score functions cannot be compared meaningfully under one shared confidence value.</p>
   </figcaption>
 </figure>
 
 <h2>The search</h2>
 
-<p>Fifteen configurations were run, varying the score function, the confidence level, the depth of fine-tuning, and the calibration scheme. Two findings emerged clearly enough to be worth stating separately from the leaderboard arithmetic.</p>
+<p>Fifteen configurations were compared across four main choices.</p>
 
-<p>The first is that <strong>fine-tuning depth dominated everything else</strong>. Freezing the transformer and training only the classification head, or freezing only the lower layers, produced scores around 0.31, in the same range as the degenerate configurations. Unfreezing DistilBERT entirely moved the score to 0.78. No adjustment to dropout, learning rate, batch size, or epochs came close to that difference. The domain language of film synopses is far enough from DistilBERT's pre-training distribution that the representations themselves had to move.</p>
+<ul>
+  <li>non-conformity score</li>
+  <li>confidence parameter</li>
+  <li>depth of fine-tuning</li>
+  <li>global versus class-conditional calibration</li>
+</ul>
 
-<p>The second is that <strong>class-conditional calibration underperformed the global scheme</strong>, which was not the expected result. Computing a separate quantile per genre should in principle handle the severe class imbalance better, allowing rare genres their own threshold. In practice the rare genres have too few calibration examples to estimate a quantile from, and four class-conditional variants landed between 0.686 and 0.707, below every properly fine-tuned global variant.</p>
+<p>Two findings were much larger than the rest.</p>
+
+<p>First, <strong>fine-tuning depth dominated the model-level choices</strong>. Training only the classification head, or freezing the lower transformer layers, produced scores around 0.31. Fully unfreezing DistilBERT moved the score to about 0.78.</p>
+
+<p>Changes to dropout, learning rate, batch size, and epoch count were much smaller. In this dataset, the pretrained representations themselves needed to adapt to the language of film descriptions.</p>
+
+<p>Second, <strong>class-conditional calibration performed worse than global calibration</strong>.</p>
+
+<p>A separate quantile for each genre seems attractive because the classes are so imbalanced. In practice, the rare genres did not provide enough calibration examples for stable quantile estimates. Four class-conditional variants scored between 0.686 and 0.707, below every properly fine-tuned global variant.</p>
 
 <figure class="pj-figure" id="cp-ladder">
   <div class="pj-figure__head">
@@ -141,13 +167,16 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
     </div>
   </div>
   <figcaption class="pj-figure__caption">
-    <p>Empirical coverage is annotated beside each bar. Note that coverage is nearly constant across the whole range, between 0.90 and 1.00, while the score varies by a factor of two and a half. Coverage was the easy part; every configuration hit its target. What separates them is the size of the sets they needed in order to hit it.</p>
+    <p>Coverage is annotated beside each bar. It stays between about 0.90 and 1.00 across the configurations even while the overall score changes by a factor of roughly two and a half.</p>
+    <p>Coverage was the easy requirement to satisfy. The meaningful difference was how large the prediction sets had to become in order to satisfy it.</p>
   </figcaption>
 </figure>
 
-<h2>What the calibrated model actually does</h2>
+<h2>What the selected model actually does</h2>
 
-<p>The best configuration, a fully fine-tuned DistilBERT with a global sum-based score at &alpha; = 0.615, was examined beyond the leaderboard metric. The diagnosis is unambiguous and worth reporting in full, because it is the substantive result of the project.</p>
+<p>The best configuration used a fully fine-tuned DistilBERT with a global sum-based score at &alpha; = 0.615.</p>
+
+<p>Its broader metrics make the tradeoff clear.</p>
 
 <div class="pj-tablewrap">
   <table class="pj-table">
@@ -158,23 +187,43 @@ description: "Fine-tuned DistilBERT paired with global conformal prediction to r
       <tr><td>Hamming loss</td><td class="num">0.3138</td><td style="text-align:left; white-space:normal">About 31% of the 20 label decisions per film are wrong</td></tr>
       <tr><td>Micro precision</td><td class="num">0.2849</td><td style="text-align:left; white-space:normal">Roughly seven in ten predicted genres are not actually present</td></tr>
       <tr><td>Micro recall</td><td class="num">0.9568</td><td style="text-align:left; white-space:normal">Almost every true genre is captured</td></tr>
-      <tr><td>Micro F<sub>1</sub></td><td class="num">0.4390</td><td style="text-align:left; white-space:normal">The imbalance between the two, in one number</td></tr>
-      <tr><td>Macro precision</td><td class="num">0.2083</td><td style="text-align:left; white-space:normal">Worse when every genre counts equally, so rare genres are over-predicted most</td></tr>
-      <tr><td>Macro recall</td><td class="num">0.8384</td><td style="text-align:left; white-space:normal">Rare genres are still mostly captured</td></tr>
+      <tr><td>Micro F<sub>1</sub></td><td class="num">0.4390</td><td style="text-align:left; white-space:normal">Summary of the precision-recall imbalance</td></tr>
+      <tr><td>Macro precision</td><td class="num">0.2083</td><td style="text-align:left; white-space:normal">Lower when each genre is weighted equally, showing heavier overprediction of rare genres</td></tr>
+      <tr><td>Macro recall</td><td class="num">0.8384</td><td style="text-align:left; white-space:normal">Most rare true genres are still captured</td></tr>
       <tr><td>Macro F<sub>1</sub></td><td class="num">0.3212</td><td style="text-align:left; white-space:normal"></td></tr>
     </tbody>
   </table>
 </div>
 
-<p>Recall near 0.96 against precision near 0.28 is not a model that is uncertain; it is a model that has been instructed to be inclusive and has complied. The coverage guarantee was met exactly as advertised, and the sum-based score met it in the cheapest available way, by widening the sets until the true labels could not fall out. Nothing about this is a failure of conformal prediction, which delivered precisely what it promises. It is a demonstration that a coverage guarantee is a weak constraint on its own, and that a useful prediction set requires a score function which penalises inclusion as well as omission.</p>
+<p>Micro-recall is near 0.96 while micro-precision is near 0.28. The model captures almost every true genre, but it does so by including many genres that are not present.</p>
+
+<p>The conformal guarantee is therefore working as intended. The problem is not that coverage failed. The problem is that coverage alone is too weak an objective for this application.</p>
+
+<p>A useful prediction set needs to penalize unnecessary inclusion as well as missed labels.</p>
 
 <h2>A negative result on calibration</h2>
 
-<p>Given the over-prediction, temperature scaling was the natural next instrument: rescale the logits before the sigmoid and the probability estimates sharpen, potentially shrinking the sets at fixed coverage. Fitting the temperature on the calibration set returned an optimal value of 1.0, which is to say no rescaling at all. The model's logits were already well calibrated with respect to the binary cross-entropy objective it was trained on, and the over-prediction is therefore not a calibration failure in the probabilistic sense. It is a property of the non-conformity score. Reporting the null result matters here, because it rules out the cheap explanation and points at the right one.</p>
+<p>Temperature scaling was tested as a possible explanation for the large prediction sets.</p>
 
-<h2>Limitations, and what would come next</h2>
+<p>If the model's logits were poorly calibrated, rescaling them before the sigmoid could sharpen the probabilities and perhaps reduce set size at the same coverage level.</p>
 
-<p>The model saw only title, overview, and tagline, ignoring budget, runtime, and the rest of the available metadata, any of which carries genre signal. The choice of &alpha; was empirical rather than principled, which is a real cost to the interpretation. And the central problem, prediction sets too large to act on, is unaddressed by anything tried here. The productive direction is a non-conformity score that is asymmetric in the way the application is: one that charges for including a genre as well as for missing one, so that the calibration procedure is optimising something closer to what a user of the labels would actually want. Cross-conformal or jackknife-style calibration would also use the training data more efficiently than a single held-out split, which matters at 2,386 films.</p>
+<p>The fitted temperature was 1.0, which means no rescaling was preferred.</p>
+
+<p>The logits were already well calibrated with respect to the binary cross-entropy objective used for training. The overprediction therefore appears to come from the non-conformity score rather than from ordinary probability miscalibration.</p>
+
+<p>That null result is useful because it rules out the simplest explanation.</p>
+
+<h2>Limitations and next steps</h2>
+
+<p>The classifier used only title, overview, and tagline. Other available metadata such as runtime and budget may contain additional genre signal.</p>
+
+<p>The choice of &alpha; was empirical rather than fixed in advance. That weakens the usual interpretation of the conformal guarantee and should be treated as a methodological limitation.</p>
+
+<p>The larger issue is the size of the prediction sets. None of the variants tested here solved it.</p>
+
+<p>The most useful next step would be a non-conformity score that places an explicit cost on unnecessary inclusion as well as on omission. The calibration objective would then be closer to what a user of the genre labels actually needs.</p>
+
+<p>Cross-conformal or jackknife-style calibration could also use the limited data more efficiently than a single held-out calibration split.</p>
 
 <p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
 

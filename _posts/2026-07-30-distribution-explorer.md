@@ -2,20 +2,20 @@
 layout: post
 title: "A distribution explorer"
 date: 2026-07-30
-description: "A reference tool for the six distributions the course uses: type the numbers from the problem, choose a region, read the probability, and see the calculator command that produces the same value."
+description: "Enter a distribution and a region, then compare the probability, cutoff, graph, and TI-84 command in one place."
 course: "AP Statistics"
 read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 9
 interactive: true
-blurb: "Type the numbers, shade the region, read the probability and the command"
+blurb: "Enter a distribution and a region, then compare the probability, cutoff, graph, and TI-84 command in one place"
 image: "/assets/og/distribution-explorer.png"
 ---
 
-Every probability question in AP Statistics has the same shape once the words are stripped away: a distribution, a region, and a number. The tool below holds all three on screen at once, for the six distributions the course uses, with the TI-84 command that produces the same number printed underneath.
+Probability questions become easier to organize when the distribution, the region, and the calculator command are kept together.
 
-It is built for working, not for reading. Type the exact values from a problem into the parameter boxes, choose which region you want, and read the answer.
+The tool below covers the main distributions used in AP Statistics.
 
 <div class="viz de-wrap" markdown="0">
   <div class="de-row de-dists" role="group" aria-label="Distribution">
@@ -621,24 +621,95 @@ It is built for working, not for reading. Type the exact values from a problem i
 })();
 </script>
 
-## What the two directions are called
+Enter the parameters from a problem, choose the region, and compare the graph with the corresponding numerical probability or cutoff.
 
-The forward direction takes a region and returns a probability: `normalcdf`, `tcdf`, `binomcdf`. The inverse direction takes a probability and returns the boundary: `invNorm`, `invT`. Students conflate them constantly, and the tell is what the question hands you. If the problem gives you a score and asks what fraction of the population is below it, that is forward. If it gives you a percentage and asks which score sits at that percentile, that is inverse.
+The TI-84 command is shown underneath.
 
-The calculator line under the readout always shows the command for whichever direction is selected, with the numbers already substituted, so the tool can be used to check a keystroke rather than only an answer.
+## Forward and inverse questions
 
-## The binomial keeps both forms on screen
+A forward probability question gives a boundary and asks for area.
 
-`binompdf` gives $$P(X = k)$$, the probability of exactly $$k$$ successes. `binomcdf` gives $$P(X \leq k)$$, the probability of at most $$k$$. Both are always displayed for the current $$k$$, because the swap between them is silent: the answer looks reasonable either way, and nothing in the arithmetic complains.
+Examples include:
 
-"At least 6" is the one worth rehearsing, since it needs both a complement and an off-by-one: $$P(X \geq 6) = 1 - P(X \leq 5)$$, which is `1 - binomcdf(n, p, 5)`. Selecting "Right of a" with $$a = 6$$ writes exactly that line.
+- $$P(X<70)$$
+- $$P(2<T<3)$$
+- the probability of at most 6 successes
 
-## Where the normal curve is standing in for something else
+Calculator commands such as `normalcdf`, `tcdf`, and `binomcdf` work in this direction.
 
-The two sampling-distribution settings draw a normal curve, but they are the only two that are drawing an approximation rather than the thing itself. The tool prints the center and spread as expressions with the numbers substituted, and says so when a condition fails.
+An inverse question gives a probability and asks for the boundary.
 
-For a sample proportion the curve stands in for a binomial, and it is trustworthy when $$np \geq 10$$ and $$n(1-p) \geq 10$$. For a sample mean the curve is exact if the population is normal, and otherwise rests on [the Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html) and the $$n \geq 30$$ guideline. Set $$n$$ below either threshold and the warning appears; it is not decoration, it is the condition an exam response has to state.
+Examples include:
+
+- the 90th percentile
+- the critical value leaving 2.5% in the upper tail
+
+Commands such as `invNorm` and `invT` work in the inverse direction.
+
+Before choosing a command, ask which of those two quantities the problem supplied.
+
+## Binomial probability
+
+For a binomial random variable,
+
+`binompdf` gives
+
+$$P(X=k),$$
+
+the probability of exactly $$k$$ successes.
+
+`binomcdf` gives
+
+$$P(X\le k).$$
+
+For “at least 6,” use the complement:
+
+$$P(X\ge6) = 1-P(X\le5).$$
+
+The off-by-one matters.
+
+The complement stops at 5 because 6 belongs in the event we want to keep.
+
+## Normal and $$t$$
+
+For a standard normal variable,
+
+$$P(-1.96<Z<1.96) \approx0.95.$$
+
+A $$t$$-distribution with small degrees of freedom has heavier tails.
+
+So the same fixed interval contains less probability.
+
+As the degrees of freedom increase, the $$t$$-distribution approaches the standard normal distribution.
+
+This is why $$t$$ critical values are larger when the sample is small.
+
+## Sampling distributions
+
+The sample-proportion and sample-mean modes use normal curves as sampling models.
+
+For a sample proportion,
+
+$$\mu_{\hat p}=p$$
+
+and
+
+$$\sigma_{\hat p} = \sqrt{\frac{p(1-p)}{n}}.$$
+
+The usual large-count condition requires expected successes and failures to be sufficiently large.
+
+For a sample mean,
+
+$$\mu_{\bar X}=\mu$$
+
+and
+
+$$\sigma_{\bar X} = \frac{\sigma}{\sqrt n}.$$
+
+Normality is exact when the population is normal and approximate for sufficiently large samples under [the Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html).
 
 <div class="article-note" markdown="1">
-A check worth performing before trusting any tool, including this one: set the normal to $$\mu = 0$$, $$\sigma = 1$$, choose "Between a and b" with $$a = -1.96$$ and $$b = 1.96$$, and confirm the readout says 0.9500. Then switch to t with $$df = 10$$ and the same bounds; the area drops to 0.9216, because the t curve carries more of its probability in the tails. Raise $$df$$ to 300 and it climbs back to 0.9491. That gap, and its closing, is the whole reason the course has two tables.
+The warnings in the tool are part of the statistical reasoning.
+
+A calculator can evaluate a probability even when the model used to justify that calculation is poor.
 </div>

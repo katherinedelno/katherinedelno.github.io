@@ -11,7 +11,9 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 
 <p class="pj-meta">Independent research · Sole author · Department of Statistics, University of Washington · 2025</p>
 
-<p class="pj-lede">A linear mixed model can be wrong in several ways at once, and the standard diagnostics are not well suited to finding out which. <strong>RandomForestSpecCheck</strong> takes a different route: it asks a random forest to predict the fitted model's residuals from the covariates, and uses a permutation test that respects the clustered design to decide whether the forest's success is real. The result is a single verdict on whether the model has left systematic structure behind, without any commitment in advance to the form that structure might take.</p>
+<p class="pj-lede">A linear mixed model can be misspecified in several ways at once. Standard diagnostics are often aimed at one particular failure or depend heavily on what an analyst thinks to check. <strong>RandomForestSpecCheck</strong> takes a broader approach. It asks a random forest to predict the fitted model's residuals from the covariates, then uses a permutation test that respects the clustered design to decide whether the predictive signal is stronger than noise.</p>
+
+<p class="pj-lede">The result is a single screening test for systematic mean structure left in the residuals. The analyst specifies the variables to examine, but not the functional form of the possible misspecification.</p>
 
 <div class="pj-stats">
   <div class="pj-stat">
@@ -34,39 +36,51 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 
 <h2>The problem with checking a mixed model</h2>
 
-<p>Linear mixed models are the standard instrument for correlated data: repeated measures on a subject, students inside classrooms, patients inside clinics. They model the correlation rather than ignoring it, and the price is that several assumptions must hold at once, covering the functional form of the fixed effects, the structure of the random effects, and the residual covariance. A failure in any one can bias estimates or, more insidiously, leave them intact while corrupting the standard errors.</p>
+<p>Linear mixed models are used for correlated data such as repeated measurements on a subject, students within classrooms, or patients within clinics. They model that correlation directly. In doing so, they introduce several assumptions about the fixed effects, random effects, and residual covariance structure.</p>
 
-<p>The conventional checks each have a characteristic blind spot. A residual plot is a judgement call, and a dense cloud of several thousand points absorbs a good deal of structure before it looks anything other than round. Information criteria compare only the models an analyst thought to fit. Formal tests are aimed at one alternative at a time. All of them return the analyst to the same difficulty: you have to guess what is wrong before you can test for it.</p>
+<p>A model can be wrong in any of these places. Some failures bias the coefficient estimates. Others leave the estimates relatively stable but distort their uncertainty.</p>
+
+<p>The usual diagnostic tools each see only part of the problem. Residual plots rely on visual judgment and can hide structure in a dense cloud of points. Information criteria compare only the models an analyst chose to fit. Formal tests usually target one alternative at a time. In each case, the analyst has to make some prior guess about what may be wrong.</p>
 
 <div class="pj-thesis">
-  <p>If a mixed model is correctly specified, its residuals carry no information about the covariates. RandomForestSpecCheck hands the residuals and the covariates to a random forest and asks it to find some anyway. A permutation test then decides whether what the forest found could plausibly have arisen from noise.</p>
+  <p>If a mixed model is correctly specified in its mean structure, its conditional residuals should not contain predictable information about the covariates. RandomForestSpecCheck uses that fact directly. It gives the residuals and selected covariates to a random forest and asks whether the forest can recover signal that the fitted model should already have explained.</p>
 </div>
 
 <h2>The method</h2>
 
-<p>Fit the mixed model, extract the conditional residuals, and regress them on the predictors an analyst suspects were mishandled &mdash; time, the cluster identifier, a covariate that entered only linearly &mdash; using a random forest. The measure of the forest's success is its out-of-bag coefficient of determination,</p>
+<p>The procedure begins by fitting the mixed model and extracting its conditional residuals. Those residuals are then regressed on the predictors the analyst wants to examine using a random forest.</p>
+
+<p>The forest is scored with its out-of-bag coefficient of determination,</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">R&sup2;<sub>oob</sub> = 1 &minus; MSE<sub>oob</sub> / var(&ecirc;<sub>ij</sub>)</p>
 
-<p>where each tree is scored only on the observations its bootstrap sample left out. That gives a nearly unbiased estimate of how well the forest generalises, which matters more here than in an ordinary prediction problem: a forest allowed to score itself on the data it was grown from would fit residual noise perfectly, and the diagnostic would flag every model ever fitted.</p>
+<p>where each tree is evaluated only on observations excluded from its own bootstrap sample. This matters because an in-sample forest can fit residual noise extremely well. Out-of-bag scoring gives a much more useful measure of whether the residual structure generalizes.</p>
 
-<p>Under correct specification the conditional expectation of a residual given any predictor is zero, so the best achievable out-of-bag R&sup2; is zero up to sampling variability. The null and alternative are</p>
+<p>Under correct mean specification,</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">H<sub>0</sub>: E[e | X] = 0&nbsp;&nbsp;&nbsp;versus&nbsp;&nbsp;&nbsp;H<sub>1</sub>: E[e | X] &ne; 0</p>
 
-<p>tested without specifying any parametric alternative: the analyst supplies the variables, not the functional form.</p>
+<p>The analyst supplies the variables in X. The random forest is left to search for the functional form.</p>
 
-<p>The statistic has no tractable sampling distribution, so the null is simulated by permutation &mdash; <em>within</em> clusters, because shuffling freely would destroy the correlation structure along with the signal. Under the null, residuals are exchangeable inside a cluster, so permuting them severs the link to the predictors while leaving the joint distribution alone. Refitting the forest <em>B</em> times gives a null under a design identical to the real one, valid in finite samples with no appeal to asymptotics and no assumption of normality.</p>
+<p>The sampling distribution of the statistic is not available in closed form, so the null is generated by permutation. Residuals are permuted <em>within</em> clusters rather than across the full dataset. This breaks the relationship between the residuals and predictors while preserving the clustered structure of the data.</p>
 
-<p>Large values indicate leftover structure, so the test is one-sided against the 97.5th percentile. Significance alone is a weak standard, though: with enough data, structure explaining a fraction of a percent of residual variance clears any percentile. The procedure therefore flags a model only when both criteria are met,</p>
+<p>The forest is refit <em>B</em> times to produce the permutation distribution.</p>
+
+<p>Large observed values indicate residual structure. The procedure flags a model only when two conditions are met,</p>
 
 <p style="text-align:center; font-family:var(--pj-mono); font-size:0.95rem; margin:1.6rem 0;">R&sup2;<sub>oob</sub> &gt; Q<sub>0.975</sub>&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;R&sup2;<sub>oob</sub> &gt; &tau;</p>
 
-<p>with &tau; = 0.05 by default, so that leftover structure must account for at least five percent of residual variance before it is worth an analyst's attention. The default is a judgement rather than a derivation, and is exposed as an argument for that reason.</p>
+<p>with &tau; = 0.05 by default.</p>
+
+<p>The percentile criterion asks whether the observed value is unusual under the permutation null. The practical threshold asks whether the remaining structure is large enough to matter. This second condition is important in large samples, where a very small effect can be statistically detectable without being substantively useful.</p>
+
+<p>The default value of &tau; is a judgment rather than a theoretical result. It is exposed as an argument for that reason.</p>
 
 <h2>The diagnostic, running</h2>
 
-<p>The panel below is a working implementation of the procedure in the browser, not an illustration of it. It simulates clustered longitudinal data with a quadratic time trend, fits the random-intercepts model that omits the quadratic term, grows a forest on the residuals, builds the permutation null within clusters, and applies the rule. Nothing is precomputed.</p>
+<p>The panel below is a working browser implementation of the procedure. It simulates clustered longitudinal data with a quadratic time trend, fits a random-intercepts model that omits the quadratic term, grows a forest on the residuals, constructs the permutation null within clusters, and applies the decision rule.</p>
+
+<p>Nothing is precomputed.</p>
 
 <figure class="pj-figure" id="rfsc-live">
   <div class="pj-figure__head">
@@ -116,14 +130,27 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
   </div>
 
   <figcaption class="pj-figure__caption">
-    <p>Data are generated as y<sub>ij</sub> = 2 + 0.5 t<sub>ij</sub> + &gamma; t<sub>ij</sub>&sup2; + b<sub>i</sub> + &epsilon;<sub>ij</sub>, and the fitted model is the random-intercepts model omitting the quadratic term. The forest and the permutation loop are reduced for the browser: 50 trees and B = 60, against 500 permutations in the published procedure.</p>
-    <p>The null sits below zero, and should: when residuals are shuffled there is nothing to predict, so a forest scored out-of-bag does worse than the sample mean. A null centred at zero would be evidence that the permutation was not working. Checked against the paper at twenty replicates per cell, the reduced version reproduces the published behaviour.</p>
+    <p>Data are generated as y<sub>ij</sub> = 2 + 0.5 t<sub>ij</sub> + &gamma; t<sub>ij</sub>&sup2; + b<sub>i</sub> + &epsilon;<sub>ij</sub>. The fitted random-intercepts model omits the quadratic term.</p>
+    <p>The browser version uses 50 trees and B = 60 permutations so it can run interactively. The full procedure used 500 permutations.</p>
+    <p>The permutation null falls below zero, as it should. Once the residuals are shuffled, there is no relationship left for the forest to predict. A forest scored out of bag can then perform worse than the sample mean. A null centered near zero would be more concerning than a negative one. In checks against the paper at twenty replicates per cell, the reduced browser version reproduces the reported behavior.</p>
   </figcaption>
 </figure>
 
 <h2>What the method detects, and what it does not</h2>
 
-<p>Four simulation studies were run, each generating data under a specific violation and fitting a model that omitted it. Three concern the mean structure: an omitted quadratic fixed effect, an omitted random slope, and unmodelled AR(1) correlation. The fourth concerns the variance: residual variance increasing with time, fitted as homoscedastic. Every cell was replicated one hundred times.</p>
+<p>Four simulation studies were run. Each generated data under a known model violation and then fit a model that omitted it.</p>
+
+<p>Three studies concern the conditional mean.</p>
+
+<ul>
+  <li>an omitted quadratic fixed effect</li>
+  <li>an omitted random slope</li>
+  <li>unmodeled AR(1) correlation</li>
+</ul>
+
+<p>The fourth concerns the variance. Residual variance increases with time while the fitted model assumes constant variance.</p>
+
+<p>Each cell was replicated one hundred times.</p>
 
 <!-- ==========================================================================
      Figure 2 (simulation results: four studies as a tabbed grid of small
@@ -165,18 +192,26 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
 </figure>
 -->
 
-<p>The three mean-structure studies behave as a diagnostic should. False positives are held between one and three percent against a nominal five, and power depends on the size of the omitted effect and the signal-to-noise ratio of the design: a strong quadratic trend is caught in eighty to one hundred percent of replicates, a weak one rarely. Omitted random slopes show the same pattern with an added dependence on cluster size. Unmodelled autocorrelation is the hardest, reaching about a quarter of replicates at &rho; = 0.6.</p>
+<p>For the three mean-structure violations, the diagnostic behaves as intended. False positives stay between one and three percent under correct specification. Power rises with the size of the omitted effect and with a stronger signal-to-noise ratio.</p>
 
-<p>The fourth study is the one worth dwelling on. Heteroscedastic residuals were essentially never flagged, in any design. This is not a failure of the implementation but a consequence of what the statistic measures: the forest predicts the residual, not its magnitude, and where the variance grows while the mean stays at zero there is no conditional mean to recover. From the point of view of the statistic the model is adequate, and the statistic says so.</p>
+<p>Large quadratic departures are detected in roughly eighty to one hundred percent of replicates. Weak departures are often missed. Omitted random slopes show a similar pattern, with additional dependence on cluster size. Unmodeled autocorrelation is the most difficult of the three and reaches only about one quarter of replicates at &rho; = 0.6.</p>
+
+<p>Heteroscedasticity is different. It is essentially never flagged.</p>
+
+<p>That result follows from the statistic itself. The forest predicts the residual, not its magnitude. If the conditional variance changes while the conditional mean remains zero, there is no mean signal for the forest to recover.</p>
 
 <div class="pj-note">
   <span class="pj-note__label">Scope</span>
-  <p>RandomForestSpecCheck is a test for unmodelled mean structure, not a general test of model adequacy. Pure variance misspecification, heavy tails, and departures from normality that leave the conditional mean at zero will not be flagged and should not be expected to be. Where those are the concern, variance functions and residual-spread diagnostics remain the right instruments, and this procedure is a complement to them rather than a replacement.</p>
+  <p>RandomForestSpecCheck is a test for unmodeled mean structure. It is not a general test of model adequacy.</p>
+  <p>Pure variance misspecification, heavy tails, and other distributional departures that leave E[e | X] = 0 are outside its target. Variance functions and residual-spread diagnostics remain necessary when those are the concern.</p>
+  <p>The method is intended to complement those tools rather than replace them.</p>
 </div>
 
-<h2>Application: the Framingham Heart Study</h2>
+<h2>Application to the Framingham Heart Study</h2>
 
-<p>The diagnostic was applied to a subset of the Framingham Heart Study: more than 2,600 cholesterol measurements at two-year intervals over ten years, with baseline age, sex, and body mass index. Five models were fitted &mdash; four specifications a careful analyst might reasonably choose between, and a fifth that omits time from the fixed effects altogether, a deliberate act of sabotage against a variable known on biological grounds to matter.</p>
+<p>The diagnostic was applied to a subset of the Framingham Heart Study containing more than 2,600 cholesterol measurements taken at two-year intervals over ten years. Baseline age, sex, and body mass index were included.</p>
+
+<p>Five models were fit. Four were plausible specifications an analyst might reasonably consider. The fifth deliberately omitted time from the fixed effects even though time is known to matter biologically.</p>
 
 <div class="pj-tablewrap">
   <table class="pj-table">
@@ -242,21 +277,35 @@ description: "RandomForestSpecCheck: a nonparametric diagnostic that fits a rand
     </div>
   </div>
   <figcaption class="pj-figure__caption">
-    <p>The four plausible specifications are indistinguishable at this scale and sit close to zero. The sabotaged model sits at 0.191, four times the practical threshold and well clear of everything else.</p>
+    <p>The four plausible models sit close to zero at this scale. The model with time omitted reaches an observed R&sup2; of 0.191, nearly four times the practical threshold.</p>
   </figcaption>
 </figure>
 
-<p>The intended result holds: the four reasonable specifications were cleared and the sabotaged model flagged, at an observed R&sup2; of 0.191 against a threshold of 0.05. Residual-versus-fitted plots for all five produce dense clouds centred at zero, and the sabotaged model's is not visibly different. The misspecification was in the mean structure, where the forest was looking and the eye was not.</p>
+<p>The intended separation is therefore clear. The four reasonable models are not flagged. The deliberately misspecified model is.</p>
 
-<p>The second reading is less comfortable. All five models, including the four that passed, have an observed R&sup2; above their own permutation 97.5th percentile; that criterion separated nothing here. What separated the sabotaged model was the practical threshold. Because permuted residuals contain no signal, the null R&sup2; is reliably negative, its upper percentile sits below zero, and almost any real fit clears it. That is what the second criterion was introduced for, and it sharpens a limitation: on data of this scale the operating characteristics are governed by &tau;, and an analyst accepting the default without thinking about the effect size it encodes would be delegating the decision to a number they had not chosen.</p>
+<p>Residual-versus-fitted plots do not make that distinction nearly as clearly. All five produce dense clouds centered around zero. The misspecification is in the mean structure, and the forest is more sensitive to that structure than the visual residual check.</p>
+
+<p>There is also a less comfortable result. All five observed R&sup2; values exceed their own permutation 97.5th percentiles. The percentile criterion alone separates nothing in this application.</p>
+
+<p>The practical threshold is what distinguishes the sabotaged model. This is important because the permutation null is reliably negative when the shuffled residuals contain no predictive signal. On a dataset of this size, almost any real structure can clear the percentile criterion. The operating behavior is therefore strongly influenced by &tau;.</p>
+
+<p>An analyst should choose that threshold with the scale of a meaningful effect in mind rather than accept the default automatically.</p>
 
 <h2>Limitations</h2>
 
-<p>The procedure detects mean structure and only mean structure. Power against subtle effects is modest and depends jointly on the number of clusters, the observations within them, and the noise level, so a null result in a small or noisy study is weak evidence of adequacy. The forest can only find structure in variables it is given. And because the permutation preserves clusters, a wholly omitted cluster-level effect will not be flagged; that failure mode is caught by simpler means, but it has to be caught by something. The method is a screening instrument, most useful as the first question asked rather than the last.</p>
+<p>The procedure detects conditional mean structure only. Power against subtle effects is modest and depends on the number of clusters, the observations within each cluster, and the noise level.</p>
+
+<p>A null result in a small or noisy study is therefore weak evidence that the model is adequate.</p>
+
+<p>The forest can only detect structure in variables it is given. A relevant omitted variable that never enters the random forest is invisible to the diagnostic.</p>
+
+<p>The within-cluster permutation also creates a specific blind spot. A wholly omitted cluster-level effect will not be flagged because the permutation preserves cluster membership. That failure is often visible through simpler diagnostics, but it still has to be checked elsewhere.</p>
+
+<p>RandomForestSpecCheck is best understood as a screening instrument. It is a useful first question about remaining mean structure, not a final verdict on the model.</p>
 
 <h2>The function</h2>
 
-<p>The procedure is packaged as a single R function over <code>ranger</code> and <code>dplyr</code>. It takes a fitted model, the data, a formula naming the predictors to search, the number of permutations, and the threshold, and prints a verdict alongside the numbers behind it.</p>
+<p>The procedure is packaged as a single R function over <code>ranger</code> and <code>dplyr</code>. It takes a fitted model, the data, a formula specifying the predictors to search, the number of permutations, and the practical threshold.</p>
 
 <pre class="pj-code">RandomForestSpecCheck(
   fitted_model = my_lmm,
@@ -280,11 +329,19 @@ threshold, indicating that the model leaves systematic
 structure in the residuals. This suggests that the model
 may be misspecified.</pre>
 
-<p>The output is deliberately verbose. A diagnostic that returns a bare logical invites an analyst to treat it as a verdict, and it is not one; it is a signal that some named variables are still doing work the model has not accounted for. The next step is to read the forest's variable-importance measures, attempt the corresponding parametric extension, and check whether the flag clears.</p>
+<p>The output is intentionally descriptive. A bare logical result would encourage the test to be treated as a verdict.</p>
+
+<p>A flag means that the named predictors still contain information about the residuals. The next step is to inspect the forest's variable-importance measures, fit a plausible parametric extension, and see whether the signal disappears.</p>
 
 <h2>Contribution</h2>
 
-<p>Permutation inference and tree ensembles are both long established, and residual analysis with machine learning has been explored for ordinary and generalised linear models. What had not been assembled was the combination in a mixed-model setting: a within-cluster permutation scheme that respects the nested design, a forest-derived statistic with an interpretable scale, a decision rule that separates significance from magnitude, and a simulation programme mapping where the procedure has power and where it does not, including an explicit negative result. The work was written for submission to <em>Computational Statistics &amp; Data Analysis</em>.</p>
+<p>Permutation inference and tree ensembles are established methods. Machine-learning approaches to residual analysis have also been explored for ordinary and generalized linear models.</p>
+
+<p>The contribution here is their combination in a mixed-model setting. The procedure uses a within-cluster permutation scheme, an out-of-bag random-forest statistic with an interpretable scale, and a two-part decision rule that separates statistical evidence from practical magnitude.</p>
+
+<p>The simulation studies also map where the method has power and where it does not. The negative result for pure variance misspecification is part of that scope rather than something to hide.</p>
+
+<p>The work was written for submission to <em>Computational Statistics &amp; Data Analysis</em>.</p>
 
 <p class="pj-back"><a href="{{ '/about/#statistical-work' | relative_url }}">&larr; All statistical work</a></p>
 

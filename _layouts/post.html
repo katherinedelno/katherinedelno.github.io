@@ -39,7 +39,8 @@ layout: default
   .article-body tr:last-child td{border-bottom:none}
 
   .article-note{margin-top:2.4rem;padding:20px 24px;background:var(--accent-soft);border-radius:12px;font-size:.95rem}
-  .article-note p{margin:0}
+  .article-note p{margin:0 0 .8rem}
+  .article-note p:last-child{margin-bottom:0}
   .article-back{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.95rem}
 
   .article-more{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--ink);max-width:70ch}
@@ -112,8 +113,9 @@ layout: default
   {%- endif -%}
 
   <aside class="article-cta">
-    <p><span class="cta-name">Katherine Delno</span> &mdash; I teach AP Statistics, AP Calculus, and AP Precalculus privately, one student at a time, through the full arc of a course. M.S. Statistics, University of Washington.</p>
-    <p>If your student is working through this material and something isn't landing, it is usually specific, and usually findable. <a href="{{ "/private-instruction/" | relative_url }}">Private instruction &amp; rates</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+    <p class="cta-name">Katherine Delno</p>
+    <p>I teach AP Statistics, AP Calculus, and AP Precalculus privately, one student at a time, through the full arc of a course. M.S. Statistics, University of Washington.</p>
+    <p>If your student is working through this material and something is not landing, it is usually specific and usually findable. <a href="{{ "/private-instruction/" | relative_url }}">Private instruction &amp; rates</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </aside>
 
   <p class="article-back"><a href="{{ "/resources/" | relative_url }}">&larr; All resources</a></p>

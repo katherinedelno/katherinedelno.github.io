@@ -2,20 +2,30 @@
 layout: post
 title: "Logarithms undo exponentials"
 date: 2026-07-30
-description: "A logarithm is an exponent: the two notations state one fact, the graphs mirror across y = x, and every log law is an exponent law read backward."
+description: "A logarithm is an exponent. Exponential and logarithmic statements describe the same relationship in opposite directions."
 course: "AP Precalculus"
 read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 5
 interactive: true
-blurb: "Slide the base and watch b^x and its logarithm mirror across y = x"
+blurb: "A logarithm is an exponent. Exponential and logarithmic statements describe the same relationship in opposite directions"
 image: "/assets/og/logarithms-undo-exponentials.png"
 ---
 
-Most difficulty with logarithms comes from treating them as a new species of object with its own arbitrary rulebook. They are not. A logarithm is an exponent — $$\log_b y$$ is the answer to one question: *b raised to what power gives y?* Hold onto that sentence and every rule in this article becomes something you can rederive in a line rather than memorize.
+A logarithm answers an exponent question.
 
-The graphs below stay locked in a mirror. Slide the exponent to move the point along $$y = b^x$$; its reflection across the line $$y = x$$ rides the logarithm's graph, because the two curves are the same relationship read in opposite directions.
+The statement
+
+$$\log_b y=a$$
+
+means exactly the same thing as
+
+$$b^a=y.$$
+
+Keeping those two forms connected makes most logarithm rules easier to understand.
+
+## The same relationship in two directions
 
 <div class="viz" markdown="0">
   <canvas id="el-cv" width="700" height="360"></canvas>
@@ -139,42 +149,184 @@ The graphs below stay locked in a mirror. Slide the exponent to move the point a
 })();
 </script>
 
-## The same fact, written twice
+The exponential and logarithmic graphs are reflections across
 
-Every logarithmic statement is an exponential statement wearing different clothes:
+$$y=x.$$
 
-$$b^a = y \quad\Longleftrightarrow\quad \log_b y = a.$$
+If
 
-So $$2^5 = 32$$ and $$\log_2 32 = 5$$ are not two facts; they are one fact. When a logarithm looks opaque, convert it. Asked for $$\log_5 125$$, do not reach for a rule — ask the question the notation asks: *5 to what power is 125?* Three. Asked to solve $$\log_x 49 = 2$$, rewrite it as $$x^2 = 49$$ and it stops being a logarithm problem at all.
+$$b^a=y,$$
 
-The graphs say the same thing geometrically. Reflecting a point across the line $$y = x$$ swaps its coordinates, and swapping coordinates is exactly what the equivalence above does: the point $$(a, y)$$ sits on the exponential precisely when $$(y, a)$$ sits on the logarithm. That is what it means for two functions to be inverses, and it is why the logarithm's graph inherits everything about the exponential's, sideways: the exponential's horizontal asymptote becomes the logarithm's vertical one, and the exponential's refusal to output negative numbers becomes the logarithm's refusal to accept them.
+then the point
 
-## The laws are exponent laws, read backward
+$$(a,y)$$
 
-Exponents turn multiplication into addition: $$b^m \cdot b^n = b^{m+n}$$. Since logarithms *are* exponents, they inherit this directly. If $$m = \log_b x$$ and $$n = \log_b y$$, then $$xy = b^m b^n = b^{m+n}$$, and reading off the exponent of the product gives
+lies on the exponential graph.
 
-$$\log_b(xy) = \log_b x + \log_b y.$$
+The reflected point
 
-The other two laws arrive the same way, each from its exponent-law parent: $$\log_b\!\left(\tfrac{x}{y}\right) = \log_b x - \log_b y$$ comes from $$b^m / b^n = b^{m-n}$$, and $$\log_b(x^k) = k \log_b x$$ comes from $$(b^m)^k = b^{mk}$$. Three laws, zero new memorization — each is a sentence about exponents you already believe.
+$$(y,a)$$
 
-The errors worth naming are the laws that do not exist. $$\log_b(x + y)$$ is not $$\log_b x + \log_b y$$ — logarithms convert *multiplication* to addition, and they do nothing tidy to sums. And $$(\log_b x)^2$$ is not $$\log_b(x^2)$$: the first squares an exponent after the fact, the second doubles it. Writing the parentheses deliberately is not pedantry; it is the whole meaning.
+lies on the logarithmic graph because
 
-## Solving equations: undo in the right order
+$$\log_b y=a.$$
 
-To solve an exponential equation, take a logarithm; to solve a logarithmic equation, exponentiate. The only technique is deciding [what to undo first](/2026/07/30/functions-inside-functions.html). Solve
+This is what it means for the two functions to be inverses.
 
-$$5 \cdot 3^t = 40.$$
+For example,
 
-Isolate the exponential before touching a logarithm: $$3^t = 8$$. Now the equation says, in exponential form, exactly what $$t = \log_3 8$$ says in logarithmic form — and the change-of-base formula turns that into something a calculator accepts: $$t = \tfrac{\ln 8}{\ln 3} \approx 1.893$$. Check it forward: $$3^{1.893} \approx 8.00$$, and $$5 \cdot 8 = 40$$.
+$$2^5=32$$
 
-The order matters. Taking a log of both sides of $$5 \cdot 3^t = 40$$ first is legal but produces $$\log 5 + t\log 3 = \log 40$$, an extra step that exists only to undo the 5 you could have divided away at the start. Isolate, then invert.
+and
 
-## The base e
+$$\log_2 32=5$$
 
-Among all possible bases, one is special enough to own a key on the calculator: $$e \approx 2.718$$, with its logarithm written $$\ln x$$. In precalculus, $$e$$ earns its place through continuous growth — compounding a rate more and more often walks the growth factor toward $$e$$, which is why continuously compounded models are written $$A(t) = A_0 e^{rt}$$. Press "set base to e" above and look at the pair of curves; nothing visually dramatic marks the spot, and that is rather the point: $$e$$ is not a strange base, just the natural one, and $$\ln$$ obeys every law in this article with no special cases.
+are two forms of the same fact.
 
-For those continuing to calculus: that course runs almost entirely on base $$e$$, and it will assume the equivalence $$b^a = y \Leftrightarrow \log_b y = a$$, the three laws, and clean parenthesizing as reflexes rather than topics. The reflexes are built here.
+When a logarithmic expression looks unfamiliar, rewriting it exponentially is often the cleanest first move.
+
+## The domain and asymptote also reverse
+
+For
+
+$$b>0,\qquad b\neq1,$$
+
+the exponential function
+
+$$b^x$$
+
+always produces positive outputs.
+
+Its range is
+
+$$(0,\infty).$$
+
+The logarithm reverses inputs and outputs, so its domain is
+
+$$(0,\infty).$$
+
+The horizontal asymptote
+
+$$y=0$$
+
+of the exponential becomes the vertical asymptote
+
+$$x=0$$
+
+of the logarithm.
+
+The geometry and the algebra say the same thing.
+
+## Logarithm laws come from exponent laws
+
+Suppose
+
+$$m=\log_b x$$
+
+and
+
+$$n=\log_b y.$$
+
+Then
+
+$$x=b^m$$
+
+and
+
+$$y=b^n.$$
+
+Since
+
+$$b^m b^n=b^{m+n},$$
+
+we get
+
+$$\log_b(xy) = \log_b x+\log_b y.$$
+
+Similarly,
+
+$$\log_b\left(\frac{x}{y}\right) = \log_b x-\log_b y,$$
+
+and
+
+$$\log_b(x^k) = k\log_b x.$$
+
+These are exponent laws translated into logarithmic form.
+
+There is no corresponding rule for sums.
+
+In general,
+
+$$\log_b(x+y) \neq \log_b x+\log_b y.$$
+
+Logarithms turn multiplication into addition.
+
+They do not turn addition into anything similarly simple.
+
+## Solving exponential equations
+
+Consider
+
+$$5\cdot3^t=40.$$
+
+First isolate the exponential:
+
+$$3^t=8.$$
+
+Now write the equivalent logarithmic statement:
+
+$$t=\log_3 8.$$
+
+Using change of base,
+
+$$t = \frac{\ln8}{\ln3} \approx1.893.$$
+
+The reverse process solves logarithmic equations.
+
+If
+
+$$\log_2 x=5,$$
+
+then
+
+$$x=2^5=32.$$
+
+The useful principle is to [isolate the invertible function first](/2026/07/30/functions-inside-functions.html), then apply its inverse.
+
+## The base $$e$$
+
+The number
+
+$$e\approx2.718$$
+
+is the standard base for continuous exponential growth.
+
+The logarithm base $$e$$ is written
+
+$$\ln x.$$
+
+It follows all the same logarithm laws.
+
+Its importance becomes greater in calculus because
+
+$$e^x$$
+
+has especially simple derivative and integral behavior.
+
+For precalculus, it is enough to treat $$e$$ as a particular exponential base and $$\ln$$ as its inverse.
 
 <div class="article-note" markdown="1">
-A self-test at the slider: push the base down toward its lower limit and watch both curves at once. The exponential flattens toward the horizontal line $$y = 1$$, and its mirror steepens toward the vertical. At $$b = 1$$ exactly, $$b^x$$ would be the constant function 1, which fails the horizontal line test and therefore has no inverse. The rule that a logarithm requires $$b \neq 1$$ is that collapse, caught one step before it happens.
+The restrictions on logarithmic bases also make sense from invertibility.
+
+At
+
+$$b=1,$$
+
+the exponential function would be
+
+$$1^x=1,$$
+
+a constant function.
+
+It is not one-to-one and therefore has no inverse function.
 </div>

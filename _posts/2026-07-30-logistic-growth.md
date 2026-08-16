@@ -2,52 +2,122 @@
 layout: post
 title: "Logistic growth, read without solving it"
 date: 2026-07-30
-description: "The framework says the logistic model can be interpreted without solving the differential equation. That is not a concession — it is the whole method, and everything the exam asks falls out of the equation itself."
+description: "The logistic differential equation reveals its equilibria, carrying capacity, fastest growth, and concavity before the equation is solved."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
 kind: foundations
 sequence: 26
 interactive: true
-blurb: "The carrying capacity and the fastest growth are both visible in the equation"
+blurb: "The logistic differential equation reveals its equilibria, carrying capacity, fastest growth, and concavity before the equation is solved"
 image: "/assets/og/logistic-growth.png"
 ---
 
-Exponential growth assumes nothing ever runs out. Logistic growth is what you write down when something does.
+A logistic differential equation has the form
 
-The framework builds the model from a sentence rather than from a formula: the rate of change of a quantity is jointly proportional to the size of the quantity and the difference between the quantity and the carrying capacity. Translated,
+$$\frac{dy}{dt} = ky(a-y),$$
 
-$$\frac{dy}{dt} = ky(a-y).$$
+with $$k>0$$.
 
-Two factors, each doing a job. The $$y$$ makes growth proportional to what is already there, which is the exponential part. The $$(a-y)$$ is the brake, and it tightens as $$y$$ approaches $$a$$.
+The equation describes growth that is initially reinforced by the size of the population and eventually limited by a carrying capacity.
 
-## From the sentence to the equation
+A surprising amount can be read directly from the differential equation without solving it.
 
-"Jointly proportional to" is the phrase carrying the structure, and it means proportional to a product, not to a sum. So the rate is $$k$$ times $$y$$ times $$(a - y)$$, and the two misreadings both come from mishandling that phrase.
+## The two factors
 
-The first is writing $$\tfrac{dy}{dt} = ky + (a-y)$$, which is proportional to nothing in particular and does not have $$y = a$$ as an equilibrium. The second is writing $$\tfrac{dy}{dt} = k(a-y)$$, dropping the size factor — that is a perfectly good model, but it is Newton's law of cooling rather than logistic growth, and its graph has no S-shape because nothing slows it down at the start.
+The factor
 
-The test for whether the equation is right is whether it has two constant solutions. Logistic growth stalls at the bottom as well as at the top, and both stalls have to be visible in the algebra.
+$$y$$
 
-## Everything without solving
+makes the growth rate proportional to the current population.
 
-The framework states, as its own piece of essential knowledge, that the logistic differential equation and initial conditions can be interpreted without solving the differential equation. That is the method, not a fallback. The exam does not ask for $$y(t)$$, and the two quantities it does ask for are both properties of the right-hand side.
+The factor
 
-**The carrying capacity.** Growth stops when $$\tfrac{dy}{dt} = 0$$, and $$ky(a-y) = 0$$ exactly when $$y = 0$$ or $$y = a$$. Those are the two constant solutions. Starting anywhere strictly between them, the rate is positive, so $$y$$ increases and cannot pass $$a$$ without the rate changing sign first. The limiting value is $$a$$, read straight off the factored form.
+$$a-y$$
 
-**Where growth is fastest.** As a function of $$y$$, the rate $$ky(a-y)$$ is a downward parabola with roots at $$0$$ and $$a$$, so it peaks halfway between them. The fastest growth happens at
+slows the growth as the population approaches $$a$$.
 
-$$y = \frac{a}{2}, \qquad \text{with rate} \quad \frac{ka^2}{4}.$$
+The equilibrium solutions occur where
 
-No calculus was needed for that, only the symmetry of a parabola. Differentiating the rate with respect to $$y$$ gives $$k(a-2y)$$, which agrees.
+$$\frac{dy}{dt}=0.$$
 
-## What that means for the shape
+So
 
-The value $$y = \tfrac{a}{2}$$ is also where the solution curve changes concavity, and the reason is the [chain rule](/2026/07/30/chain-rule-reading-the-layers.html) applied to the equation itself:
+$$y=0$$
 
-$$\frac{d^2y}{dt^2} = \frac{d}{dt}\Big[ky(a-y)\Big] = k(a-2y)\frac{dy}{dt} = k^2\,y\,(a-y)(a-2y).$$
+and
 
-For $$0 < y < a$$ the first two factors are positive, so the sign is the sign of $$a - 2y$$: concave up below half capacity, concave down above it. That is the S-shape, and it was derived without ever writing down a solution.
+$$y=a$$
+
+are equilibria.
+
+For a population starting between them,
+
+$$0<y<a,$$
+
+both factors are positive and the population increases.
+
+As $$y$$ approaches $$a$$, the factor $$a-y$$ approaches zero and the growth slows.
+
+The value $$a$$ is the carrying capacity.
+
+## Growth is fastest halfway up
+
+The growth rate can be viewed as a function of $$y$$:
+
+$$R(y) = ky(a-y) = k(ay-y^2).$$
+
+This is a downward-opening parabola.
+
+Its maximum occurs at
+
+$$y=\frac a2.$$
+
+At that point,
+
+$$R\left(\frac a2\right) = \frac{ka^2}{4}.$$
+
+So a logistic population grows fastest when it reaches half its carrying capacity.
+
+That same point is the inflection point of the solution curve.
+
+## Concavity from the equation
+
+Differentiate the differential equation with respect to time:
+
+$$y'' = k y'(a-2y).$$
+
+Substitute
+
+$$y'=ky(a-y).$$
+
+Then
+
+$$y'' = k^2y(a-y)(a-2y).$$
+
+For a solution with
+
+$$0<y<a,$$
+
+the first three factors except $$a-2y$$ are positive.
+
+So the sign of $$y''$$ is determined by
+
+$$a-2y.$$
+
+When
+
+$$y<\frac a2,$$
+
+the solution is concave up.
+
+When
+
+$$y>\frac a2,$$
+
+it is concave down.
+
+The change occurs at half the carrying capacity, exactly where the growth rate is largest.
 
 <div class="viz" markdown="0">
   <canvas id="lg-cv" width="700" height="330"></canvas>
@@ -168,22 +238,82 @@ For $$0 < y < a$$ the first two factors are positive, so the sign is the sign of
 })();
 </script>
 
-Every curve is produced by stepping the differential equation forward numerically, in the same spirit as [Euler's method](/2026/07/25/euler-method-step-size.html) but with a more accurate step. That is deliberate: nothing in the picture comes from a formula for $$y$$, because the topic does not have one.
+The visualization fixes the carrying capacity at 100 and lets the initial value and growth constant vary.
 
-Three things are worth watching. Every curve starting strictly between 0 and 100 ends at 100, and so does every curve starting above it — the approach is from below or from above, and the destination does not care. The two flat lines are genuine solutions, not artifacts. And $$k$$ changes how fast the whole thing happens without moving the carrying capacity or the half-capacity line by a single unit.
+Changing $$k$$ changes the time scale.
 
-That last point is the one to hold onto. The framework asks for the carrying capacity and for the value where the quantity is changing fastest, and neither depends on $$k$$ or on where you started.
+A larger $$k$$ makes the population move through the same stages more quickly.
 
-Reasoning about a differential equation's long-run behavior without solving it has a name in the courses that follow this one, and [it is most of what they do](/2026/07/26/beyond-bc-differential-equations.html). The logistic model is where it starts.
+It does not change the carrying capacity or the population size at which growth is fastest.
 
-## Saying it in context
+## Reading an expanded equation
 
-The suggested skill for this topic is to explain the meaning of mathematical solutions in context, which for a logistic model means three sentences and no formulas.
+A logistic equation may not be presented in factored form.
 
-Take a fish population modeled by $$\tfrac{dP}{dt} = 0.02P(100-P)$$, with $$P$$ in thousands and $$t$$ in years, starting at 10 thousand. The population approaches 100 thousand in the long run, because that is the value making the rate zero from a start below it. It is growing fastest when it reaches 50 thousand, half the carrying capacity. At that moment it is growing at $$\tfrac{ka^2}{4} = 50$$ thousand per year.
+Suppose
 
-Every one of those came from the equation. The one thing they do not tell you is *when* the population reaches 50 thousand, and that is the question the exam does not ask, because answering it needs the solution.
+$$\frac{dP}{dt} = 2P-0.02P^2.$$
+
+Factor:
+
+$$\frac{dP}{dt} = 0.02P(100-P).$$
+
+Now the structure is visible.
+
+The carrying capacity is
+
+$$100.$$
+
+The fastest growth occurs at
+
+$$P=50.$$
+
+The maximum growth rate is
+
+$$0.02(50)(50)=50.$$
+
+If $$P$$ is measured in thousands of fish and $$t$$ in years, that means the population grows fastest at 50 thousand fish, at a rate of 50 thousand fish per year.
+
+The units come from the context, not from the algebra alone.
+
+## Initial values outside the usual range
+
+Most population examples begin with
+
+$$0<y_0<a.$$
+
+The differential equation also tells us what happens outside that range.
+
+If
+
+$$y>a,$$
+
+then $$a-y<0$$, so
+
+$$y'<0.$$
+
+The solution decreases toward the carrying capacity.
+
+If
+
+$$y=0$$
+
+or
+
+$$y=a,$$
+
+the solution remains constant.
+
+These conclusions come from the sign of the differential equation itself.
 
 <div class="article-note" markdown="1">
-A quick sanity check on any logistic answer: the carrying capacity is the number in the parentheses when the equation is written as $$\tfrac{dy}{dt} = ky(a-y)$$, and half of it is where growth peaks. If the equation arrives in the expanded form $$\tfrac{dy}{dt} = 0.5y - 0.001y^2$$, factor first — that is $$0.001y(500-y)$$, so the capacity is 500 and not 0.5 or 0.001. Reading a capacity off an unfactored equation is the most common way to lose the point.
+Before solving a logistic equation, factor it and identify:
+
+- the equilibrium values
+- the carrying capacity
+- the sign of the growth rate
+- the point of fastest growth
+- the concavity change
+
+Often that is most of what the problem is asking for.
 </div>

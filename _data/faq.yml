@@ -2,27 +2,49 @@
 # This file is the single source of truth: private-instruction.md renders
 # the <details> list from it AND emits the FAQPage JSON-LD from it, so the
 # structured data can never drift from what visitors actually read.
+# Each answer is a list of paragraphs; they render as sibling <p> elements
+# and are joined with a space for the JSON-LD.
 # Answers may contain inline HTML (links); it is stripped for the JSON-LD.
 
 - q: How is this different from homework help?
-  a: Homework help is organized around tonight's assignment; my work is organized around your student. Rather than walk through whatever problem is due, I watch how they reason, find what is actually getting in the way, teach to that, and make sure they can do it without me. The aim is a student who needs less help over time, not more.
+  a:
+    - Homework help begins with the assignment. My instruction begins with the student.
+    - We may use the student's homework, but I am watching how they reason, where the work begins to break down, and whether they can complete a similar problem without help. The goal is increasing independence over time.
 - q: What if my student understands an explanation but can't do the problems alone?
-  a: This is one of the most common reasons families reach out, and it is exactly what the structure is built for. Following an explanation and producing the reasoning yourself are different skills. Every session ends with the student working independently, so we find out what actually holds without prompts and rebuild whatever doesn't.
+  a:
+    - This is common. Following an explanation and producing the reasoning independently are different skills.
+    - That is why independent work is built into every session. It shows us what the student can actually reproduce once the prompts are gone.
 - q: How do you know what my student needs to work on?
-  a: From watching them work. The setup, the notation, where they hesitate, and which errors repeat tell me whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and my notes carry that from week to week so the picture sharpens over time.
+  a:
+    - By watching them work.
+    - The setup, notation, hesitation, and recurring errors usually tell me much more than a final answer. I keep those observations in my notes so the picture becomes more precise over time.
 - q: Why do you recommend a consistent weekly schedule?
-  a: Consistency is what lets the work compound. A steady weekly rhythm keeps us ahead of the class's pacing, lets me catch small gaps before they turn into costly ones, and means each session builds on the last instead of starting over.
+  a:
+    - A regular schedule gives the work continuity. It also makes it easier to stay close to the pace of the class and address small gaps before they begin affecting later topics.
 - q: Are sessions online or in person?
-  a: Sessions are conducted live over Zoom with a digital whiteboard for step-by-step work. This lets me support students wherever they are while keeping all notes and materials organized in one shared folder.
+  a:
+    - Sessions are conducted live over Zoom using a shared digital whiteboard. Notes and materials are kept in a private shared folder so the student can return to the work afterward.
 - q: How do you align with my student's class?
-  a: I follow your student's course pacing and build each session around their current topics, assignments, and the specific errors I observe, so our work reinforces what is happening in the classroom rather than running parallel to it.
+  a:
+    - I follow the student's course pacing and plan around current topics, assignments, and the patterns I see in their work. The instruction is meant to support the course they are actually taking rather than run separately from it.
 - q: Do you teach courses beyond the three listed?
-  a: Yes. AP coursework is the center of the practice, but I also work with students in non-AP and college-level mathematics and statistics. If your course is not listed, write and we will discuss fit.
+  a:
+    - Yes. AP coursework is the center of my practice, but I also work with students in non-AP and college-level mathematics and statistics.
+    - If your course is not listed, write to me and we can discuss whether it is a good fit.
 - q: What happens before the AP exam?
-  a: In the final one to two months, sessions shift into focused exam preparation with timed practice, full free-response and multiple-choice work, and targeted review. All preparation materials are included.
+  a:
+    - During the final one to two months, sessions shift toward focused exam preparation. This includes timed practice, full free-response and multiple-choice work, and targeted review.
+    - All preparation materials are included.
 - q: What if we need to reschedule?
-  a: Occasional changes are normal and I will always try to find another time in the same week. I ask for at least 24 hours' notice; sessions cancelled inside that window, and missed sessions, are billed in full, because the hour is reserved for your student and not offered to anyone else. Every family gets one exception per term without question, and illness and emergencies are handled with common sense. The full policy is under <a href="/policies/">policies</a>.
+  a:
+    - Occasional schedule changes are normal, and I will try to find another time in the same week when possible.
+    - I ask for at least 24 hours' notice. Sessions cancelled within that window, and missed sessions, are billed in full because the time was reserved for that student. Every family receives one exception per term without question. Illness and emergencies are handled with common sense.
+    - The full policy is available under <a href="/policies/">Policies</a>.
 - q: Is the between-session support required?
-  a: No. It is an optional monthly add-on for families who want assigned practice, written feedback, and weekday support between sessions. Many students do well with the weekly session alone.
+  a:
+    - No. It is an optional monthly add-on for families who want assigned practice, written feedback, and additional support between sessions.
+    - Many students do well with the weekly session alone.
 - q: What does my student need to get started?
-  a: A quiet space, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent note-taking method.
+  a:
+    - A quiet space, stable internet, a graphing calculator if the course requires one, and a consistent way to take notes.
+    - I recommend the TI-84 Plus CE for AP Statistics, AP Calculus, and AP Precalculus.

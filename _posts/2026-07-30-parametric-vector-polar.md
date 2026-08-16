@@ -2,52 +2,122 @@
 layout: post
 title: "Parametric, vector, and polar: three systems, one calculus"
 date: 2026-07-30
-description: "Unit 9 introduces three new ways to describe a curve and no new calculus. The framework says so three times, and everything in the unit follows from dividing one derivative by another."
+description: "Parametric, vector-valued, and polar curves use familiar derivative and integral ideas with a different way of describing position."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
 kind: foundations
 sequence: 28
 interactive: true
-blurb: "Three notations, one chain rule, and one thing to watch"
+blurb: "Parametric, vector-valued, and polar curves use familiar derivative and integral ideas with a different way of describing position"
 image: "/assets/og/parametric-vector-polar.png"
 ---
 
-The last unit of BC looks like three new topics. Read its essential knowledge and the same sentence appears three times in slightly different clothes: methods for calculating derivatives of real-valued functions can be extended to parametric functions, methods for calculating derivatives of real-valued functions can be extended to functions in polar coordinates, and the concept of calculating areas in rectangular coordinates can be extended to polar coordinates.
+Parametric, vector-valued, and polar curves look like three separate topics.
 
-Three statements of the same claim. There is no new calculus in Unit 9. There is new bookkeeping, and it is worth being careful about.
+They are closely related.
 
-## Everything is parametric
+In each case, a point in the plane is described by two coordinates that depend on another variable.
 
-A parametric curve is a pair of functions $$x(t)$$ and $$y(t)$$. A vector-valued function $$\langle x(t), y(t)\rangle$$ is the same pair with different notation. And a polar curve $$r = f(\theta)$$ becomes the pair
+Once that representation is clear, the usual ideas of derivative, speed, distance, area, and arc length continue to apply.
 
-$$x = f(\theta)\cos\theta, \qquad y = f(\theta)\sin\theta,$$
+## Everything can be written parametrically
 
-which is parametric with $$\theta$$ as the parameter. So one set of rules covers all three, and the rest of this article is that set.
+A parametric curve is given by
 
-The slope of the tangent line comes from [the chain rule](/2026/07/30/chain-rule-reading-the-layers.html), and the framework states it with its hypothesis attached: $$\tfrac{dy}{dx}$$ can be determined by dividing $$\tfrac{dy}{dt}$$ by $$\tfrac{dx}{dt}$$, provided $$\tfrac{dx}{dt}$$ does not equal zero.
+$$x=x(t), \qquad y=y(t).$$
+
+A vector-valued function
+
+$$\langle x(t),y(t)\rangle$$
+
+contains the same coordinate functions in vector notation.
+
+A polar curve
+
+$$r=f(\theta)$$
+
+can be converted to
+
+$$x=f(\theta)\cos\theta, \qquad y=f(\theta)\sin\theta.$$
+
+So polar curves can also be treated parametrically, with $$\theta$$ as the parameter.
+
+## Slope and motion
+
+If
+
+$$\frac{dx}{dt}\neq0,$$
+
+then
 
 $$\frac{dy}{dx} = \frac{dy/dt}{dx/dt}.$$
 
-The velocity of a particle following the curve is the vector $$\langle x'(t), y'(t)\rangle$$, and its speed is the length of that vector:
+The velocity vector is
 
-$$\text{speed} = \sqrt{\big(x'(t)\big)^2 + \big(y'(t)\big)^2}.$$
+$$\left\langle \frac{dx}{dt}, \frac{dy}{dt} \right\rangle.$$
 
-Distance traveled is the accumulated speed, $$\textstyle\int_a^b \sqrt{(x')^2+(y')^2}\,dt$$, which is also the arc length of the curve when the particle does not retrace its path.
+Its magnitude is the speed:
 
-The framework introduces this by pointing back: as with [particle motion on a line](/2026/07/30/particle-motion.html), the work is deciding which procedure a scenario needs. The distinctions carry over unchanged and gain a dimension. Velocity is a vector and speed is its length, so speed is again the unsigned quantity. Displacement over $$[a,b]$$ is the vector $$\langle x(b)-x(a),\, y(b)-y(a)\rangle$$ and needs only the endpoints; distance traveled is the integral above and needs the whole path. A particle that returns to where it started has zero displacement and a positive distance, in the plane exactly as on the line.
+$$\text{speed} = \sqrt{ \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 }.$$
 
-## The one that catches people
+Distance traveled over $$[a,b]$$ is
 
-The second derivative is where the bookkeeping bites, and the framework's own guidance says why: $$\tfrac{dy}{dx}$$ is in terms of $$t$$, so students must be particularly careful when determining $$\tfrac{d^2y}{dx^2}$$.
+$$\int_a^b \sqrt{ \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 } \,dt.$$
 
-It is not $$\tfrac{y''(t)}{x''(t)}$$. It is the derivative of the slope with respect to $$x$$, and the slope is a function of $$t$$, so the same division has to happen again:
+This is also the arc-length formula when the path is not retraced.
 
-$$\frac{d^2y}{dx^2} = \frac{\dfrac{d}{dt}\!\left[\dfrac{dy}{dx}\right]}{\dfrac{dx}{dt}}.$$
+Displacement depends only on the endpoints:
 
-Differentiate the slope with respect to the parameter, then divide by $$\tfrac{dx}{dt}$$ one more time. On the circle $$x = 3\cos t$$, $$y = 3\sin t$$ the slope is $$-\cot t$$ and the second derivative works out to $$-\tfrac{1}{3\sin^3 t}$$, which is $$-\tfrac{9}{y^3}$$ — exactly what [implicit differentiation](/2026/07/30/implicit-differentiation.html) gives for $$x^2+y^2=9$$. Two routes, one curve, one answer.
+$$\left\langle x(b)-x(a), y(b)-y(a) \right\rangle.$$
 
-## One tool for all three
+A particle can therefore [return to its starting point with zero displacement](/2026/07/30/particle-motion.html) while traveling a positive distance.
+
+## The second derivative
+
+The second derivative requires extra care because
+
+$$\frac{dy}{dx}$$
+
+is still expressed as a function of the parameter.
+
+It is not
+
+$$\frac{y''(t)}{x''(t)}.$$
+
+Instead,
+
+$$\frac{d^2y}{dx^2} = \frac{ \dfrac{d}{dt}\left(\dfrac{dy}{dx}\right) }{ \dfrac{dx}{dt} }.$$
+
+[Differentiate the first derivative with respect to the parameter](/2026/07/30/chain-rule-reading-the-layers.html), then divide by $$dx/dt$$ again.
+
+For the circle
+
+$$x=3\cos t, \qquad y=3\sin t,$$
+
+the first derivative is
+
+$$\frac{dy}{dx} = -\cot t.$$
+
+The second derivative is
+
+$$-\frac{1}{3\sin^3t}.$$
+
+Since
+
+$$y=3\sin t,$$
+
+this can also be written as
+
+$$-\frac{9}{y^3}.$$
+
+[Implicit differentiation](/2026/07/30/implicit-differentiation.html) of
+
+$$x^2+y^2=9$$
+
+gives the same result.
+
+## One visualization, several coordinate systems
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="pv-fns"></div>
@@ -194,20 +264,94 @@ Differentiate the slope with respect to the parameter, then divide by $$\tfrac{d
 })();
 </script>
 
-Nothing in that panel is computed by a rule belonging to any one system. Every row comes from $$x(t)$$ and $$y(t)$$ and their derivatives, and the polar curves reach it by being converted first.
+The panel shows several curves, including polar curves converted to coordinate pairs before the derivatives are computed.
 
-Two things repay watching. On the circle the arrow has constant length and the speed reads 3 at every position, while on the ellipse the same-looking path has an arrow that stretches and shrinks — a reminder that a parametrization carries more information than a curve does. And on the third preset the point passes through the origin twice, at $$t = -1$$ and $$t = 1$$, with slopes $$-1$$ and $$+1$$. One point of the plane, two tangent lines, because they happen at different times.
+The arrow at the moving point is the velocity vector.
 
-## Polar area is the extension the framework promised
+Its length is the speed.
 
-The area formula for a polar region is the one genuinely new-looking result, and the framework files it under the same heading as everything else: the concept of calculating areas in rectangular coordinates can be extended to polar coordinates.
+The tangent line uses
 
-$$A = \frac12\int_{\alpha}^{\beta} \big(f(\theta)\big)^2\,d\theta.$$
+$$dy/dx.$$
 
-The $$\tfrac12 r^2$$ is the area of a circular sector of angle $$d\theta$$, so the integral is a sum of thin wedges in exactly the way an ordinary area integral is a sum of thin rectangles. For the cardioid $$r = 1+\cos\theta$$ over a full turn it gives $$\tfrac{3\pi}{2}$$, and for the three-petalled rose $$r = 2\cos 3\theta$$ over $$[0,\pi]$$ it gives $$\pi$$.
+Where
 
-Arc length behaves the same way. Substituting the conversion into $$\sqrt{(x')^2+(y')^2}$$ and simplifying leaves $$\sqrt{r^2 + (r')^2}$$, which is the polar arc length formula and is not a separate fact. The cardioid's total length is exactly 8.
+$$dx/dt=0,$$
+
+the quotient for the slope is undefined and the tangent may be vertical.
+
+The same point in the plane can also occur at more than one parameter value.
+
+If the curve passes through that point in different directions, the two visits can have different tangent lines.
+
+A parametrization therefore contains information about how a curve is traversed, not only about the geometric path.
+
+## Polar area
+
+For a polar curve
+
+$$r=f(\theta),$$
+
+the area swept from $$\alpha$$ to $$\beta$$ is
+
+$$A = \frac12 \int_{\alpha}^{\beta} \big(f(\theta)\big)^2\,d\theta.$$
+
+The factor
+
+$$\frac12r^2$$
+
+comes from the area of a thin circular sector.
+
+So the integral can be understood as a sum of narrow wedges, just as an ordinary area integral is built from narrow rectangles.
+
+For the cardioid
+
+$$r=1+\cos\theta$$
+
+over a full revolution, the area is
+
+$$\frac{3\pi}{2}.$$
+
+For the three-petalled rose
+
+$$r=2\cos3\theta$$
+
+over $$[0,\pi]$$, the area is
+
+$$\pi.$$
+
+## Polar arc length
+
+Start with the parametric arc-length formula and substitute
+
+$$x=r\cos\theta, \qquad y=r\sin\theta.$$
+
+After simplification,
+
+$$L = \int_{\alpha}^{\beta} \sqrt{ r^2+ \left(\frac{dr}{d\theta}\right)^2 } \,d\theta.$$
+
+For the cardioid
+
+$$r=1+\cos\theta,$$
+
+the total arc length is
+
+$$8.$$
+
+The formula is not disconnected from the parametric one. It follows from it.
 
 <div class="article-note" markdown="1">
-The framework's warning for this unit is about notation, and it is specific: be careful about the variable of differentiation, and pay attention to subscripts when a problem involves more than one particle. Both are bookkeeping failures rather than calculus failures, which is the theme of the whole unit. Write the parameter on every derivative — $$\tfrac{dx}{dt}$$ and not $$x'$$ — and the second-derivative mistake becomes hard to make, because $$\tfrac{d}{dt}$$ and $$\tfrac{d}{dx}$$ stop looking alike.
+The main practical issue in this unit is notation.
+
+Write the variable of differentiation explicitly when several variables are present.
+
+The difference between
+
+$$\frac{d}{dt}$$
+
+and
+
+$$\frac{d}{dx}$$
+
+is doing real mathematical work.
 </div>

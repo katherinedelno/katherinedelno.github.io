@@ -184,7 +184,8 @@ permalink: /private-instruction/
   <!-- OVERVIEW -->
   <div class="pi-section">
     <p class="label">Overview</p>
-    <p>I work privately with a small number of high school and college students, across the full arc of a mathematics or statistics course rather than the difficult night before a test. Instruction is live and one-on-one, planned around the student's actual class, its pacing, and whatever is specifically in the way. The standard throughout is the one the AP exam and good mathematics share: correct setup, precise notation, and reasoning a reader can follow. What follows is how that works in practice.</p>
+    <p>I work privately with a small number of high school and college students, usually across the full arc of a mathematics or statistics course. Instruction is live and one-on-one. Each session is planned around the student's class, its pacing, and the specific difficulties I see in their work.</p>
+    <p>I bring a rigorous mathematical and statistical background to my teaching, with particular attention to theory, notation, and reasoning. At the same time, I try to make those ideas clear and approachable for students. The standard throughout is careful work that a reader can follow.</p>
   </div>
 
   <!-- COURSES -->
@@ -200,15 +201,18 @@ permalink: /private-instruction/
     <div class="pi-courselist">
       <div class="row">
         <h3>AP Statistics</h3>
-        <p>The reasoning of uncertainty: study design, probability, and inference, together with the statistical writing the exam grades as strictly as the arithmetic. Named procedures, checked conditions, conclusions in context.</p>
+        <p>AP Statistics asks students to reason carefully about uncertainty. We work through study design, probability, sampling distributions, and inference, with close attention to the written reasoning the exam requires. Students learn to choose procedures for the right reasons, check conditions, and state conclusions clearly in context.</p>
       </div>
       <div class="row">
         <h3>AP Calculus AB &amp; BC</h3>
-        <p>Limits, derivatives, integrals, and their applications, taught with the notation and justification that free-response scoring demands. For BC, the full second half as well: series, parametric and polar curves, and the further techniques of integration.</p>
+        <div>
+          <p>Limits, derivatives, integrals, and their applications are taught alongside the notation and justification expected on free-response work. For BC, this also includes series, parametric and polar curves, and additional techniques of integration.</p>
+          <p style="margin-top:.6rem;">My aim is for the major ideas of calculus to feel connected rather than like a collection of separate procedures.</p>
+        </div>
       </div>
       <div class="row">
         <h3>AP Precalculus</h3>
-        <p>The function families, trigonometry, and analytic groundwork on which calculus stands. Taught as genuine preparation for what follows, not merely as a prerequisite to pass through.</p>
+        <p>AP Precalculus develops the function families, trigonometry, and analytic groundwork that calculus depends on. I teach it as mathematics worth understanding in its own right, while keeping the transition to calculus in view.</p>
       </div>
     </div>
   </div>
@@ -217,17 +221,18 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Free webinars</p>
     <h2>Two free sessions this August</h2>
-    <p>Whether your student's year begins in August or after Labor Day, I'm giving two free 45-minute sessions on how to start it well. Everyone who registers receives my getting-started guide for their course within a day, whether or not they attend live: the habits that make the year go well, the technical setup of calculator, notation, and how the course and exam are structured, and the early mistakes most worth avoiding.</p>
+    <p>Whether your student's year begins in August or after Labor Day, I am offering two free 45-minute sessions on how to begin the course well.</p>
+    <p>Everyone who registers receives my getting-started guide for the course within a day, whether or not they attend live. The guide covers useful early habits, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding.</p>
     <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
     <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
     <div class="pi-reg-row">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Statistics, Aug 25</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register &mdash; AP Calculus, Aug 27</a>
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register for AP Statistics, Aug 25</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register for AP Calculus, Aug 27</a>
     </div>
 
     {% include subscribe.html
        heading="Or just take the guide"
-       blurb="The guide doesn't depend on the sessions, and there is one for all three courses, AP Precalculus included. Choose a course and I'll send it, whether or not a webinar suits your schedule."
+       blurb="The guide does not depend on attending a session. There is one for each of the three courses, including AP Precalculus. Choose a course and I will send it."
        button="Send the guide"
        done="Thank you. I'll send the guide to that address shortly."
        choose="true" %}
@@ -237,83 +242,95 @@ permalink: /private-instruction/
   <div class="pi-section">
     <p class="label">Background</p>
     <h2>Who you're working with</h2>
-    <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>, with formal training in probability, statistical inference, regression, and the analytic foundations underlying calculus. My graduate training provides a rigorous theoretical foundation that carries through every session, from correct procedure selection to well-justified conclusions.</p>
-    <p>I've taught in both structured university settings and one-on-one formats. As a graduate teaching assistant for large introductory statistics courses, I led weekly discussion sections, developed instructional materials, and helped students produce clear, defensible reasoning. I also mentored through UW's Directed Reading Program, designing and teaching a one-on-one short course in statistical learning. The complete record, degrees, coursework, and teaching history, is under <a href="/about/#training">academic training</a> on the about page.</p>
+    <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. My formal training includes probability, statistical inference, regression, and the mathematical foundations underlying calculus.</p>
+    <p>That training shapes how I teach. I care about correct procedure, but also about why a method applies, what the notation means, and whether a conclusion is actually justified.</p>
+    <p>I have taught in both university and one-on-one settings. As a graduate teaching assistant for introductory statistics courses, I led weekly discussion sections, developed instructional materials, and worked with students on clear statistical reasoning. I also mentored through the University of Washington's Directed Reading Program, where I designed and taught a one-on-one short course in statistical learning.</p>
+    <p>My degrees, coursework, statistical work, and teaching history are listed under <a href="/about/#training">academic training</a> on the About page.</p>
   </div>
 
   <!-- HOW I TEACH -->
   <div class="pi-section" id="approach">
     <p class="label">How I teach</p>
     <h2>The mistake behind the mistake</h2>
-    <p>A wrong answer rarely tells the whole story. Two students can miss the same problem for completely different reasons, and the way a student sets a problem up often tells me more than the answer does. So while we work, I'm paying attention to more than whether the final number is right:</p>
+    <p>A wrong answer rarely tells me enough on its own. Two students can miss the same problem for completely different reasons. The setup often tells me more than the final answer.</p>
+    <p>While a student works, I pay attention to:</p>
     <ul class="pi-list">
-      <li><b>How the problem gets set up</b>, and whether the student chose the right procedure for the right reason.</li>
-      <li><b>Notation and justification</b>, where capable students quietly lose credit they have actually earned.</li>
-      <li><b>Where the hesitation is</b>, which usually marks the line between what is secure and what only looks secure.</li>
-      <li><b>Which errors repeat</b>, and whether a new mistake is really an old misconception resurfacing.</li>
-      <li><b>What happens once the prompts stop</b>, the truest test of whether the learning has held.</li>
+      <li><b>how the problem is set up</b> and why a procedure was chosen</li>
+      <li><b>notation and justification</b></li>
+      <li><b>where the student hesitates</b></li>
+      <li><b>which errors repeat</b></li>
+      <li><b>what happens once the prompts stop</b></li>
     </ul>
-    <p style="margin-top:1.1rem;">From that, I can tell whether a difficulty is conceptual, procedural, organizational, or a matter of confidence, and each of those calls for a different response. A missed problem isn't a verdict; it's information about what we work on next.</p>
+    <p style="margin-top:1.1rem;">Those details help me determine whether the difficulty is conceptual, procedural, organizational, or simply a matter of execution. The response should depend on the cause.</p>
+    <p>A missed problem is useful information. It tells us what to work on next.</p>
 
     <h3 style="margin:2.4rem 0 .5rem;font-size:1.08rem;">What a session looks like</h3>
-    <p>Every session is built around the student, not a fixed script. Most of our time is spent solving problems together, and the teaching is calibrated to exactly what the student needs that day. Students are welcome to send specific problems, homework, or upcoming topics at least 24 hours in advance, and I'll build the session around them.</p>
+    <p>Every session is built around the student rather than a fixed script. Most of our time is spent solving problems. Students are welcome to send homework, specific questions, or upcoming topics at least 24 hours in advance so I can include them in the session plan.</p>
     <div class="pi-steps">
       <div class="pi-step">
         <div class="num">1.</div>
         <div>
           <h4>Targeted teaching</h4>
-          <p>First I decide how much teaching the student actually needs: a few minutes of review when it is just a refresher, or a full rebuild when a topic isn't sticking. Some things need a quick correction; others need to be retaught from the ground up.</p>
+          <p>First I decide how much direct teaching is actually needed. Sometimes a student needs only a brief review. Other topics need to be rebuilt from the beginning.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">2.</div>
         <div>
           <h4>Guided problem-solving</h4>
-          <p>Where most of the learning happens. Working through problems together is how the student builds real, durable skill, and it is also where I can follow the reasoning most closely. We take on AP-style problems and the student's own questions, and I coach in real time, correcting the setup rather than just the answer and adjusting the support as the work tells me to.</p>
+          <p>Most of the session is spent working through problems together. This is where I can follow the student's reasoning closely and correct a problem at the point where it begins.</p>
+          <p style="margin-top:.5rem;">We use AP-style problems as well as questions from the student's own course. I adjust the amount of support as we work.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">3.</div>
         <div>
           <h4>Independent practice</h4>
-          <p>Then I step back. The student works a few problems alone, because the goal isn't a solution that made sense while I was talking; it's reasoning the student can produce when the help is gone. We review together afterward.</p>
+          <p>Then I step back. The student works independently so we can see what remains once the explanation and prompting are gone.</p>
+          <p style="margin-top:.5rem;">We review the work together afterward.</p>
         </div>
       </div>
       <div class="pi-step">
         <div class="num">4.</div>
         <div>
           <h4>Notes &amp; solutions</h4>
-          <p>A summary, worked problems, and solutions uploaded after each meeting, so the work is there to return to and each session builds on the last rather than starting from zero.</p>
+          <p>After each meeting, I upload a summary, worked problems, and solutions. The student has a record of the work to return to, and the next session begins with the context of the last one already in place.</p>
         </div>
       </div>
     </div>
-    <p style="margin-top:1.3rem;">I'm equally attentive to the learning environment. Many capable students lose points to uncertainty under time pressure, disorganized work, or inconsistent written communication. Sessions are calm and focused: questions are taken seriously, mistakes are handled constructively, and confidence is built alongside skill.</p>
+    <p style="margin-top:1.3rem;">I also pay attention to the conditions under which students work well. Capable students can lose points through rushed setup, disorganized work, or uncertainty under time pressure. Sessions are calm and focused. Questions are taken seriously, and mistakes are treated as part of the information we use.</p>
 
     <h3 style="margin:2.4rem 0 .5rem;font-size:1.08rem;">Each session informs the next</h3>
-    <p>Because I work with a small roster and keep detailed notes, I am not meeting your student fresh each week. I remember what caused trouble last month, notice when an old error resurfaces in a new topic, and can tell the difference between a student who is rushing and one who is genuinely confused.</p>
-    <p>Over a term, I track what is becoming secure, what still needs attention, and whether the student is growing less dependent on prompting, and I shape the pacing, explanations, and practice around what I see. That accumulating picture of how a particular student works is the part of the instruction that can't be handed off or generated on demand.</p>
+    <p>I keep detailed notes for every student. I am not meeting them fresh each week.</p>
+    <p>I know what caused difficulty several weeks earlier. I can notice when the same misconception returns in a new form. I can also distinguish between an isolated mistake and a pattern that needs more attention.</p>
+    <p>Over a term, I track what is becoming secure, what still needs work, and how much prompting a student requires. The pacing and practice become more specific as that picture develops.</p>
   </div>
 
   <!-- MATERIALS -->
   <div class="pi-section" id="materials">
     <p class="label">Materials</p>
     <h2>A full curriculum, ready before we start</h2>
-    <p>Because I've already built the course, I don't have to choose between preparation and flexibility. Every topic already has clear explanations, worked examples, and practice ready to draw on, so we spend our time on what your student actually needs instead of building from scratch each week.</p>
-    <p>The curriculum keeps us organized; the student's work decides where we spend our time. Most sessions don't move through a whole lesson; it's a resource to pull from, shaped around the gaps and recurring errors I see.</p>
-    <p style="margin-top:1.1rem;">Whatever we use is shared with the student afterward. An optional <b>problem set</b>, assigned between sessions and submitted to me for written feedback, is also available as part of the between-session support add-on.</p>
+    <p>I have built a complete curriculum for each course I teach. Every major topic has explanations, worked examples, and practice ready to use.</p>
+    <p>That preparation gives us structure without forcing every student through the same lesson. The curriculum keeps the course organized. The student's work determines where we spend our time.</p>
+    <p style="margin-top:1.1rem;">Most sessions do not move through a full prepared lesson from beginning to end. I draw from the materials based on the student's current course, questions, and recurring difficulties.</p>
+    <p>Anything we use is shared afterward.</p>
 
     <div class="pi-callout" style="margin-top:1.4rem;">
-      <p><b>Bring the problems you want to cover.</b> Alongside the prepared lesson, students are welcome to send me specific problems, homework questions, or upcoming topics at least 24 hours before a session, and I'll build them into that day's plan. Every session stays shaped around what the student needs and asks for.</p>
+      <p>Students may also send specific problems, homework questions, or upcoming topics at least 24 hours before a session so I can build them into that day's plan.</p>
     </div>
+
+    <p style="margin-top:1.4rem;">An optional between-session support plan is available for students who would benefit from additional assigned practice and written feedback.</p>
 
   </div>
 
   <!-- AP EXAM PREP -->
   <div class="pi-section">
     <p class="label">AP exam preparation</p>
-    <h2>A focused shift before the exam</h2>
-    <p>Everything in the course is built with two ends in mind from the first session: succeeding in the AP class itself, and succeeding on the AP exam in May. The notation, the justification habits, and the rubric-aligned writing we practice all year are the exam's own standards, so exam preparation is never a separate project bolted on at the end.</p>
-    <p>In the final one to two months, sessions then shift entirely to exam preparation: timed practice, full free-response and multiple-choice work, and targeted review of the content most likely to appear. The focus becomes transfer, performing accurately under timed, independent conditions, which is the real test of whether the learning holds. All exam-preparation materials are provided as part of this phase, at no cost beyond regular session time.</p>
+    <h2>A focused shift before the AP exam</h2>
+    <p>The course is taught with both the class and the AP exam in mind from the beginning. The notation, justification, and written reasoning we practice throughout the year are the same habits students need in May.</p>
+    <p>During the final one to two months, sessions shift toward focused exam preparation. We use timed practice, full free-response and multiple-choice work, and targeted review of weaker content.</p>
+    <p>At that stage, I am looking closely at whether the student can transfer what they know to unfamiliar problems and work accurately under independent, timed conditions.</p>
+    <p>All exam-preparation materials are included in regular session time.</p>
   </div>
 
   <!-- TESTIMONIALS -->
@@ -338,63 +355,68 @@ permalink: /private-instruction/
   <div class="pi-section" id="rates">
     <p class="label">Pricing</p>
     <h2>Hourly, with one rate for every course</h2>
-    <p>No packages or long-term commitment; you book the sessions you need. Sessions start at a 60-minute minimum and are booked in 30-minute increments, so we can size each meeting to the work at hand. I recommend a <b>weekly 90-minute session</b>: ninety minutes gives us enough time to teach the topic, practice it together, and leave room for an independent check.</p>
+    <p>There are no packages or long-term commitments. Sessions have a 60-minute minimum and can be booked in 30-minute increments.</p>
+    <p>For most students, I recommend a <b>weekly 90-minute session</b>. This gives us enough time to teach, work through problems together, and finish with independent practice.</p>
     <div class="pi-pricing">
       <div class="pi-price featured">
         <span class="pill">Recommended</span>
         <h3>90-minute session</h3>
         <div class="amt">$210<span> / session</span></div>
-        <p class="note">Room to teach the topic, work through it together, and finish with an independent check. This is the cadence I recommend for steady weekly progress.</p>
+        <p class="note">Recommended for regular weekly instruction. Ninety minutes gives us enough time to develop a topic carefully without rushing the independent work at the end.</p>
       </div>
       <div class="pi-price">
         <h3>60-minute session</h3>
         <div class="amt">$140<span> / session</span></div>
-        <p class="note">Best for targeted help, test review, or self-directed students who come with specific questions.</p>
+        <p class="note">A good fit for targeted questions, test review, or students who arrive with a specific set of problems to work through.</p>
       </div>
     </div>
 
-    <p style="margin-top:1.5rem;">The rate reflects the preparation around each session as much as the hour itself: planning around your student's course, the materials, the notes and solutions afterward, and the continuity carried from one week to the next.</p>
+    <p style="margin-top:1.5rem;">The rate reflects the work around each session as well as the meeting itself. This includes preparation around the student's course, the materials we use, notes and solutions afterward, and the continuity from one week to the next.</p>
     <p style="margin-top:1.1rem;font-weight:600;">Every session includes:</p>
     <ul class="pi-list">
-      <li><b>Pre-planned, instructor-led teaching</b> aligned to your student's course and pacing.</li>
-      <li><b>Session notes and full solutions</b> uploaded after each meeting for review.</li>
-      <li><b>Calculator integration</b> (TI-84 Plus CE) so students avoid avoidable test-day mistakes.</li>
-      <li><b>AP-aligned writing</b> focus on setup, justification, and interpretation.</li>
+      <li><b>teaching planned around the student's course and pacing</b></li>
+      <li><b>session notes and full solutions</b> uploaded after each meeting</li>
+      <li><b>TI-84 Plus CE instruction</b> when calculator work is relevant</li>
+      <li><b>close attention to setup, notation, justification, and interpretation</b></li>
     </ul>
 
-    <p style="margin-top:1.3rem;font-weight:600;">Optional add-on: between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
-    <p style="margin-top:.5rem;font-size:.95rem;color:var(--muted);">For families who want the learning to stay active between meetings: continuity, accountability, and a feedback loop so a misunderstanding doesn't sit untouched for a week.</p>
+    <p style="margin-top:1.3rem;font-weight:600;">Optional between-session support &nbsp;<span style="color:var(--accent);">$200/month ($50/week)</span></p>
+    <p style="margin-top:.5rem;font-size:.95rem;color:var(--muted);">This option is for students who would benefit from more structured work between meetings.</p>
+    <p style="margin-top:.5rem;font-size:.95rem;color:var(--muted);">It includes:</p>
     <ul class="pi-list">
-      <li><b>Weekly assigned problem sets</b> with written feedback on method, setup, and communication, giving the student extra accountability to keep practicing between sessions.</li>
-      <li><b>Generous between-session availability</b> on weekdays and weekends for questions and clarifications, so students never stay stuck for long and keep their momentum.</li>
-      <li><b>Additional cheat sheets and study resources</b> to keep and reference throughout the year.</li>
-      <li><b>Monthly parent check-ins</b> by email or call to review progress, strengths, and next steps.</li>
+      <li><b>weekly assigned problem sets</b> with written feedback on method, setup, and communication</li>
+      <li><b>between-session availability</b> for questions and clarification on weekdays and weekends</li>
+      <li><b>additional reference sheets and study materials</b></li>
+      <li><b>monthly parent check-ins</b> by email or phone to discuss progress and next steps</li>
     </ul>
 
-    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed after they happen, never in advance. On the first business day of each month I send one invoice covering the sessions we had the month before, payable within seven days of the invoice date. Rates are held for the full academic year for enrolled families. I accept a limited number of students each academic year; once capacity is reached, I maintain a short waitlist. Full billing, attendance, and cancellation terms are set out under <a href="/policies/">policies</a>.</p>
+    <p style="margin-top:1.6rem;font-size:.93rem;color:var(--muted);"><b>Billing.</b> Sessions are billed after they occur, never in advance. On the first business day of each month, I send one invoice for the previous month's sessions. Payment is due within seven days.</p>
+    <p style="font-size:.93rem;color:var(--muted);">Rates are held for the full academic year for enrolled families.</p>
+    <p style="font-size:.93rem;color:var(--muted);">I accept a limited number of students each academic year. Once the roster is full, I maintain a short waitlist.</p>
+    <p style="font-size:.93rem;color:var(--muted);">Full billing, attendance, and cancellation terms are available under <a href="/policies/">Policies</a>.</p>
   </div>
 
   <!-- REFERRALS -->
   <div class="pi-section" id="referrals">
     <p class="label">Referrals</p>
-    <h2>Most of my students come from families I already work with</h2>
-    <p>If you refer a family and their student enrolls, I credit one 60-minute session to your next invoice, once the new student has completed a first month of instruction. There is no limit on how many referrals you may make. If you are no longer enrolled when the credit comes due, I will send an Amazon gift card for the same amount instead.</p>
-    <p style="margin-top:1.1rem;">I ask only that referrals be genuine ones. I would rather work with three families who are a real fit than ten who are not, and a referral that isn't serves neither of us.</p>
-    <p style="margin-top:1.1rem;">Families considering the practice are welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> or <a href="https://calendly.com/katherinedelno" target="_blank" rel="noopener">book a free 15-minute introduction</a>.</p>
+    <h2>Most new students come through families I already work with</h2>
+    <p>If you refer a family and their student enrolls, I will credit one 60-minute session to your next invoice after the new student completes a first month of instruction. If you are no longer enrolled when the credit comes due, I will send an Amazon gift card for the same amount instead.</p>
+    <p style="margin-top:1.1rem;">There is no limit on referrals. I ask only that they be genuine recommendations for families you think would be a good fit for the practice.</p>
+    <p style="margin-top:1.1rem;">Families considering instruction are welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> or <a href="https://calendly.com/katherinedelno" target="_blank" rel="noopener">book a free 15-minute introduction</a>.</p>
   </div>
 
   <!-- TECHNOLOGY -->
   <div class="pi-section">
     <p class="label">How it works</p>
     <h2>Technology &amp; setup</h2>
-    <p>Sessions are built to feel like working side by side, with everything we write kept organized and easy to return to.</p>
+    <p>Sessions are designed to feel as close as possible to working side by side while keeping the student's work organized and easy to revisit.</p>
     <ul class="pi-list">
-      <li><b>Live Zoom sessions</b> with a shared digital whiteboard, where I write out each setup and every step of the reasoning by hand, just as we would on paper.</li>
-      <li><b>Real-time annotation</b> on the student's own problems and homework, so they watch the work build up rather than passively following slides.</li>
-      <li><b>Notes and full solutions</b> uploaded to a private shared folder (Dropbox) after each meeting, so nothing is lost and everything stays in one place; parents may be added on request.</li>
-      <li><b>Calculator integration</b> (TI-84 Plus CE) walked through on screen, so the student learns the exact keystrokes that prevent avoidable test-day mistakes.</li>
-      <li><b>Flexible across time zones:</b> I'm based in the Pacific time zone and regularly work with students elsewhere, and we'll find a weekly time that fits.</li>
-      <li><b>A simple student setup:</b> a quiet space, stable internet, a graphing calculator (TI-84 Plus CE recommended), and a consistent way to take notes.</li>
+      <li><b>Live Zoom sessions</b> use a shared digital whiteboard for step-by-step work.</li>
+      <li>I can annotate the student's own problems and homework in real time.</li>
+      <li><b>Notes and full solutions</b> are uploaded to a private shared Dropbox folder after each meeting. Parents may be added on request.</li>
+      <li><b>TI-84 Plus CE work</b> can be demonstrated on screen when relevant.</li>
+      <li>I am based in the Pacific time zone and work with students in other time zones.</li>
+      <li>Students need a quiet space, stable internet, a graphing calculator when required, and a consistent way to take notes.</li>
     </ul>
   </div>
 
@@ -406,7 +428,9 @@ permalink: /private-instruction/
       {%- for item in site.data.faq %}
       <details>
         <summary>{{ item.q }}</summary>
-        <p>{{ item.a }}</p>
+        {%- for para in item.a %}
+        <p>{{ para }}</p>
+        {%- endfor %}
       </details>
       {%- endfor %}
     </div>
@@ -425,7 +449,7 @@ permalink: /private-instruction/
         {
           "@type": "Question",
           "name": {{ item.q | strip_html | jsonify }},
-          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | strip_html | jsonify }} }
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | join: " " | strip_html | jsonify }} }
         }{% unless forloop.last %},{% endunless %}
         {%- endfor %}
       ]
@@ -437,15 +461,16 @@ permalink: /private-instruction/
   <div class="pi-section" id="start">
     <p class="label">Availability</p>
     <h2>Scheduling and getting started</h2>
-    <p>I'm based in the Pacific time zone and regularly work with students in other time zones; we will find a weekly slot that fits your schedule.</p>
-    <p>Weekly slots are limited and tend to fill quickly, so it is best to secure a place on the roster early. I take only a small number of students each academic year, and once the roster is full I keep a short waitlist.</p>
-    <p><b>The strongest results start at the beginning of the course.</b> The ideal time to begin is the first weeks of the term, while each topic can be built correctly the first time, before small gaps quietly compound into the ones that cost points later. Students who join mid-semester are very welcome and can make real gains; we simply spend our early sessions closing those gaps before we get ahead of new material. Reserving a spot before the term begins lets us prepare, stay ahead of your class's pacing, and settle into a steady weekly rhythm from the very first week.</p>
+    <p>I am based in the Pacific time zone and regularly work with students elsewhere. We will find a weekly time that fits your schedule when availability allows.</p>
+    <p>I keep the academic-year roster small. Weekly slots are limited, and once the roster is full I maintain a short waitlist.</p>
+    <p><b>The beginning of a course is usually the best time to start.</b> It gives us a chance to establish strong habits early and address misunderstandings before later material depends on them.</p>
+    <p>Students who begin mid-semester are also welcome. In that case, the first sessions often involve identifying and closing earlier gaps while we keep pace with new material.</p>
   </div>
 
   <!-- CTA -->
   <div class="pi-cta">
     <h2>Getting started</h2>
-    <p>Write to me with your question, or book a free 15-minute introduction. After we speak, I will suggest the arrangement that fits your student.</p>
+    <p>Write to me with your question, or book a free 15-minute introduction. After we speak, I will suggest the arrangement that makes sense for your student.</p>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <div class="pi-cta-actions">
@@ -453,16 +478,19 @@ permalink: /private-instruction/
       <a href="https://calendly.com/katherinedelno" class="pi-btn pi-btn-outline"
          onclick="Calendly.initPopupWidget({url:'https://calendly.com/katherinedelno'});return false;">Book a meet-and-greet</a>
     </div>
-    <p style="margin:1.4rem auto 0;font-size:.9rem;">Before we begin, please read the <a href="/policies/">policies</a> and the <a href="/privacy/">privacy notice</a>. I send both by email at intake and ask for a short reply confirming you have read them.</p>
+    <p style="margin:1.4rem auto 0;font-size:.9rem;">Before instruction begins, please read the <a href="/policies/">Policies</a> and <a href="/privacy/">Privacy notice</a>. I send both by email during intake and ask for a short reply confirming that you have read them.</p>
   </div>
 
   <!-- DISCLAIMER -->
   <div class="pi-fine">
     <p class="label">Academic progress &amp; no guaranteed outcomes</p>
-    <p>My goal is to help students build durable understanding, stronger problem-solving habits, and clearer written communication through structured instruction, targeted practice, and actionable feedback aligned with AP expectations.</p>
-    <p>I cannot and do not guarantee any specific grade, test score, class placement, or AP exam result. Outcomes depend on factors outside my control, including the student's consistency between sessions, completion of assigned work, attendance, classroom instruction and grading policies, assessment difficulty, and test-day conditions. By enrolling, families are purchasing instructional time and academic coaching, not a promised outcome. What I do hold myself to, and what each engagement is judged against, is set out in full under <a href="/policies/">policies</a>.</p>
+    <p>My role is to provide careful instruction, appropriate practice, and clear feedback. I cannot guarantee a particular grade, test score, class placement, or AP exam result.</p>
+    <p>Outcomes also depend on factors outside my control, including attendance, work between sessions, classroom instruction, grading policies, assessment difficulty, and test-day conditions.</p>
+    <p>Families are purchasing instructional time and academic support, not a promised outcome.</p>
+    <p>The standards I hold myself to are set out in full under <a href="/policies/">Policies</a>.</p>
     <p class="label" style="margin-top:1.4rem;">Accessibility</p>
-    <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements. If you have any difficulty accessing content on this site, or if you need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I will work with you promptly to provide the information or assistance you need.</p>
+    <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements.</p>
+    <p>If you have difficulty accessing content on this site, or need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>. I will work with you to provide the information or assistance you need.</p>
   </div>
 
 </div>

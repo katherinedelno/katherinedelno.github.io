@@ -2,28 +2,46 @@
 layout: post
 title: "Benford's law and the distribution of first digits"
 date: 2026-07-27
-description: "In a surprising range of real datasets, the leading digit 1 appears about 30% of the time. The logarithmic law behind the pattern, and its use in the detection of fraud."
+description: "In many datasets spanning several orders of magnitude, smaller leading digits occur more often than larger ones. The pattern is logarithmic rather than uniform."
 course: "AP Statistics"
 read_time: "7 min read"
 math: true
 kind: beyond
 sequence: 4
 interactive: true
-blurb: "Why the leading digit 1 appears 30% of the time, and how it catches fraud"
+blurb: "In many datasets spanning several orders of magnitude, smaller leading digits occur more often than larger ones. The pattern is logarithmic rather than uniform"
 image: "/assets/og/benfords-law.png"
 ---
 
-Collect the populations of every county in the United States, or the lengths of the world's rivers, or the line items of a corporate ledger, and tally the first digit of each number. Intuition expects the nine digits to appear roughly equally, about 11% each. What actually happens is one of the strangest reliable facts in statistics: the digit 1 leads about 30% of the time, 2 about 18%, and the frequencies fall steadily until 9, which leads barely 5% of entries.
+If the leading digit of a number could be treated as uniformly random, each digit from 1 through 9 would appear about one ninth of the time.
 
-The pattern is called Benford's law, after the physicist Frank Benford, who documented it in 1938 across twenty unrelated datasets, from atomic weights to street addresses, though the astronomer Simon Newcomb had noticed it fifty years earlier in the worn early pages of logarithm tables. The law states that the probability of leading digit $$d$$ is
+Many real datasets do not behave that way.
 
-$$P(d) = \log_{10}\!\left(1 + \frac{1}{d}\right)$$
+The leading digit 1 often appears much more frequently than 9.
 
-which gives the sequence 30.1%, 17.6%, 12.5%, 9.7%, 7.9%, 6.7%, 5.8%, 5.1%, 4.6%.
+Benford's law gives the probability
 
-## Watching datasets obey, and disobey
+$$ P(D=d) = \log_{10}\left(1+\frac1d\right), \qquad d=1,\ldots,9. $$
 
-The tally below computes first digits for several datasets. The dark bars are the observed frequencies; the small markers are Benford's predictions.
+## The distribution
+
+The probabilities are approximately:
+
+| Leading digit | Probability |
+|---|---|
+| 1 | 30.1% |
+| 2 | 17.6% |
+| 3 | 12.5% |
+| 4 | 9.7% |
+| 5 | 7.9% |
+| 6 | 6.7% |
+| 7 | 5.8% |
+| 8 | 5.1% |
+| 9 | 4.6% |
+
+So a leading 1 is expected almost one third of the time.
+
+A leading 9 appears less than 5% of the time.
 
 <div class="viz" markdown="0">
   <canvas id="bf-cv" width="700" height="280"></canvas>
@@ -113,18 +131,91 @@ The tally below computes first digits for several datasets. The dark bars are th
 })();
 </script>
 
-## Why the logarithm appears
+The bars compare the first digits in each dataset with the Benford probabilities.
 
-The cleanest explanation runs through growth. A quantity that grows by a fixed percentage, an investment, a bacterial colony, a city, spends unequal time in the territory of each leading digit. Growing from 1,000 to 2,000 requires doubling, while growing from 8,000 to 9,000 requires an increase of merely 12.5%, so the quantity lingers among the low leading digits and hurries through the high ones. On [a logarithmic scale](/2026/07/30/logarithms-undo-exponentials.html), the intervals belonging to each digit have exactly the widths that Benford's formula assigns, and any dataset that is spread smoothly across several orders of magnitude inherits those proportions.
+Some datasets follow the pattern closely.
 
-The law also has a characterization with real mathematical depth: it is the only first-digit distribution that is invariant under changes of unit. Convert river lengths from miles to kilometers, or a ledger from dollars to euros, and every entry is multiplied by a constant, yet the first-digit pattern of a Benford dataset is undisturbed. A distribution that survives every rescaling must be uniform in the logarithm, and Benford's formula is what uniform-in-the-logarithm looks like in ordinary digits.
+Others do not.
 
-## The forensic application
+## Why a logarithm appears
 
-The law's fame rests on its use in auditing. Invented numbers do not obey it. People fabricating expenses, tax figures, or trial data tend to distribute first digits far too evenly, overusing middle digits and avoiding the repetition of leading 1s that honest data exhibits. Auditors and forensic accountants therefore run first-digit tests on ledgers: compare the nine observed digit counts against Benford's expected proportions with a chi-square statistic, and accounts deserving a closer look announce themselves. That procedure is the chi-square goodness-of-fit test, which the revised AP course [no longer includes](/2026/07/15/which-chi-square-test.html) — it remains standard everywhere else, and the $$\textstyle\sum (O-E)^2/E$$ machinery is identical to the two-way-table tests that stayed. Benford analysis has appeared in tax-fraud prosecutions, in the auditing of election returns, and in the detection of manipulated scientific data.
+Consider the numbers with leading digit 1.
 
-Two cautions complete the picture, and both are good statistical sense. A Benford violation is a screen rather than a verdict: some honest datasets fail the law for structural reasons, as when a price list clusters at 4.99. And datasets confined to a narrow range, human heights, exam scores, temperatures, never obeyed the law in the first place, since they lack the multi-scale spread that generates it. Knowing when a tool applies is the tool.
+On [a logarithmic scale](/2026/07/30/logarithms-undo-exponentials.html), those numbers occupy intervals such as
+
+$$ [1,2),\quad[10,20),\quad[100,200), $$
+
+and so on.
+
+The width of each interval on a base-10 logarithmic scale is
+
+$$ \log_{10}2-\log_{10}1 = \log_{10}2. $$
+
+For leading digit $$d$$, the corresponding width is
+
+$$ \log_{10}(d+1)-\log_{10}d = \log_{10}\left(1+\frac1d\right). $$
+
+If the fractional parts of the logarithms are approximately uniform, the first digits follow Benford's law.
+
+This is why the pattern is natural for data spread across several orders of magnitude.
+
+## When Benford's law is plausible
+
+The law often appears in datasets produced by multiplicative processes or by combining measurements across a wide range of scales.
+
+Examples can include populations, financial quantities, physical measurements, and sequences that grow roughly exponentially.
+
+It is usually a poor model for:
+
+- assigned numbers such as ZIP codes or identification numbers
+- data restricted to a narrow interval
+- quantities with a built-in minimum or maximum
+- numbers generated uniformly over a short range
+
+A dataset does not become suspicious merely because it fails to follow Benford's law.
+
+The law has to be plausible for that particular data-generating process first.
+
+## Scale invariance
+
+One important property of Benford's law is scale invariance.
+
+If a Benford-distributed dataset measured in dollars is converted to euros by multiplying every value by a positive constant, the first-digit distribution remains Benford.
+
+A law for first digits that depended strongly on the choice of units would be difficult to treat as a general empirical pattern.
+
+The logarithmic form avoids that problem.
+
+## Auditing and screening
+
+Benford's law is sometimes used as a screening tool in forensic accounting and data auditing.
+
+A large departure from the expected first-digit distribution can motivate closer inspection.
+
+It is not proof of fraud.
+
+There are many legitimate reasons for a dataset not to follow Benford's law.
+
+Conversely, manipulated data can still resemble the Benford distribution.
+
+A statistical discrepancy is evidence about a model, not a verdict about intent.
+
+That distinction is especially important when a method is used outside the classroom.
+
+## A goodness-of-fit connection
+
+One way to compare observed first-digit counts with the Benford probabilities is a [chi-square goodness-of-fit statistic](/2026/07/15/which-chi-square-test.html).
+
+The expected count for digit $$d$$ is
+
+$$ nP(D=d). $$
+
+Then observed and expected counts can be compared across the nine categories.
+
+The calculation is a useful example of how a theoretical probability model can be checked against empirical frequencies.
+
+It also illustrates a broader principle.
 
 <div class="article-note" markdown="1">
-A prediction to test against the interactive: the law extends to second digits, with a flatter but still unequal distribution, and by the fourth digit the frequencies are essentially uniform. Forensic tests use the first two digits jointly for exactly this reason, giving 90 categories instead of 9 and a far sharper screen. The pattern of decreasing information as one moves rightward through the digits is itself the logarithm at work.
+Before testing fit, decide whether the model itself makes sense for the data.
 </div>

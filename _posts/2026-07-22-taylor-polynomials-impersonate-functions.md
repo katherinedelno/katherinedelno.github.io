@@ -2,42 +2,83 @@
 layout: post
 title: "Approximation by Taylor polynomials"
 date: 2026-07-22
-description: "A polynomial that matches enough derivatives becomes locally indistinguishable from the function it imitates. Where the approximation holds, where it fails, and how the error gets measured."
+description: "A Taylor polynomial matches a function and its derivatives at one point. Increasing the degree improves the local approximation, while convergence determines how far that approximation extends."
 course: "AP Calculus BC"
 read_time: "9 min read"
 math: true
 kind: foundations
 sequence: 31
 interactive: true
-blurb: "Raise the degree and watch the polynomial impersonate the function"
+blurb: "A Taylor polynomial matches a function and its derivatives at one point. Increasing the degree improves the local approximation, while convergence determines how far that approximation extends"
 featured: true
 image: "/assets/og/taylor-polynomials-impersonate-functions.png"
 ---
 
-The second half of BC rests on one idea. Polynomials are the functions we can actually compute, so we build a polynomial that behaves like the function we care about. Everything else in the unit, from Maclaurin series to error bounds to the radius of convergence, is the theory of how good that approximation is and where it holds.
+A Taylor polynomial approximates a function near a chosen center by matching its derivatives there.
 
-## The matching strategy
+The degree determines how many derivatives are matched.
 
-How do you make a polynomial behave like $$\sin x$$ near $$x = 0$$? Force it to agree with $$\sin x$$ on everything a derivative can measure at that point.
+This gives a systematic way to replace a function with a polynomial whose local behavior is easier to compute.
 
-- Agree on the value: $$p(0) = \sin 0 = 0$$.
-- Agree on the slope: $$p'(0) = \cos 0 = 1$$.
-- Agree on the concavity: $$p''(0) = -\sin 0 = 0$$.
-- Agree on the third derivative: $$p'''(0) = -\cos 0 = -1$$, and so on.
+## Matching derivatives
 
-A polynomial of degree $$n$$ has $$n+1$$ coefficients, which is enough freedom to match $$n+1$$ derivatives. Carrying out the matching produces the Taylor polynomial:
+Suppose we want a polynomial to approximate
 
-$$T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(0)}{k!}\,x^k.$$
+$$\sin x$$
 
-The $$k!$$ in the denominator has a job. Differentiating $$x^k$$ exactly $$k$$ times produces a factor of $$k!$$, so dividing by it in advance is what makes the $$k$$-th derivative of $$T_n$$ land exactly on $$f^{(k)}(0)$$. For sine, the even derivatives all vanish at 0 and the odd ones alternate between $$1$$ and $$-1$$, which gives
+near
 
-$$T_n(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$$
+$$x=0.$$
 
-The first of these, $$T_1(x) = x$$, is an old friend: it is the tangent line, and the familiar fact that $$\sin x \approx x$$ for small $$x$$ is the degree-1 case of this whole construction. Each higher degree is the same move with more derivatives matched.
+We require the polynomial to match the function value and successive derivatives at the center.
 
-## Watch the approximation improve
+For sine,
 
-The graph below shows $$\sin x$$ in light gray and its Taylor polynomial in black. Drag the slider to raise the degree.
+$$\sin0=0,$$
+
+$$\cos0=1,$$
+
+$$-\sin0=0,$$
+
+and
+
+$$-\cos0=-1.$$
+
+In general, the degree-$$n$$ Taylor polynomial for $$f$$ centered at $$c$$ is
+
+$$T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(c)}{k!} (x-c)^k.$$
+
+When the center is 0, this is called a Maclaurin polynomial.
+
+For sine,
+
+$$T_n(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots.$$
+
+The factorial has a specific role.
+
+Differentiating
+
+$$(x-c)^k$$
+
+exactly $$k$$ times produces a factor of $$k!$$.
+
+Dividing by $$k!$$ makes the $$k$$-th derivative of the polynomial match the $$k$$-th derivative of the function at the center.
+
+## The tangent line is the first case
+
+The degree-1 Taylor polynomial is
+
+$$T_1(x) = f(c)+f'(c)(x-c).$$
+
+This is the linearization of $$f$$ at $$c$$.
+
+So Taylor polynomials extend the same idea.
+
+A tangent line matches the function's value and first derivative.
+
+A quadratic Taylor polynomial also matches the second derivative.
+
+A cubic also matches the third, and so on.
 
 <div class="viz" markdown="0">
   <canvas id="tay-cv" width="700" height="300"></canvas>
@@ -95,40 +136,158 @@ The graph below shows $$\sin x$$ in light gray and its Taylor polynomial in blac
 })();
 </script>
 
-## Measuring the error
+The graph compares
 
-BC gives you two instruments for measuring the gap between $$f(x)$$ and $$T_n(x)$$, and knowing which one a problem wants is half the battle.
+$$\sin x$$
 
-**The alternating series error bound.** If, at your particular $$x$$, the series alternates with terms shrinking in size, the truncation error is at most the first term you left out. Approximate $$\sin(0.5)$$ by $$T_3 = 0.5 - \tfrac{0.5^3}{6} \approx 0.479$$; the error is at most the next term, $$\tfrac{0.5^5}{120} \approx 0.00026$$. The bound costs almost nothing to compute and is remarkably tight.
+with Taylor polynomials of increasing degree.
 
-**The Lagrange error bound.** In general,
+Near the center, each additional nonzero term extends the region where the polynomial closely follows the function.
 
-$$\left\vert f(x) - T_n(x)\right\vert \;\le\; \frac{M}{(n+1)!}\,\vert x - c\vert^{\,n+1},$$
+Far enough away, any fixed polynomial eventually separates from the bounded sine curve.
 
-where $$M$$ bounds the next derivative, $$\left\vert f^{(n+1)}\right\vert$$, between the center $$c$$ and $$x$$. It helps to read the formula as a sentence: the error is controlled by the first derivative you failed to match, scaled by how far you have moved from the center, and divided down by the factorial. The factorial is why the approximation improves so quickly. Since $$(n+1)!$$ grows faster than any power, and every derivative of sine is bounded by 1, the bound goes to zero at every single $$x$$. That is the precise sense in which $$\sin x$$ equals its series everywhere.
+Taylor approximation is local unless the corresponding infinite series converges to the function on a larger domain.
 
-## Where the approximation fails
+## The alternating-series error bound
 
-Sine is the best possible case. Now consider $$\ln(1+x)$$:
+For a Taylor series that alternates with decreasing term magnitudes at the chosen $$x$$, the alternating-series error bound is often the simplest tool.
 
-$$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots$$
+For example, approximate
 
-This series converges only for $$-1 < x \le 1$$. No matter how many terms you take, at $$x = 1.2$$ the polynomials never settle down; they oscillate more and more violently. The series has a radius of convergence of exactly 1, and the location of the wall is not an accident. The function $$\ln(1+x)$$ itself blows up at $$x = -1$$. A power series centered at 0 can only work out to the nearest point of trouble, and the damage is symmetric: the series fails at $$x = -1$$ and also beyond $$x = +1$$, even though $$\ln(1+x)$$ is perfectly well behaved at $$x = 2$$. A power series always converges on an interval centered at its anchor point, with a radius set by the distance to the nearest singularity.
+$$\sin(0.5)$$
 
-This is the reasoning behind the exam's interval-of-convergence routine. The ratio test finds the radius, which is the distance to the wall. Then each endpoint must be checked by hand, because the ratio test returns $$L = 1$$ there and has nothing to say. The endpoint checks are ordinary numeric series tests. For $$\ln(1+x)$$ the interval comes out to $$(-1, 1]$$: divergent at $$-1$$ ([harmonic series](/2026/07/23/harmonic-series-surprises-of-infinity.html)), conditionally convergent at $$1$$ (alternating harmonic series).
+using
 
-## What BC actually asks
+$$T_3(0.5) = 0.5-\frac{0.5^3}{6}.$$
 
-Nearly every Taylor free-response question is assembled from five moves, and all five come straight from the ideas above.
+The first omitted term has magnitude
 
-1. Build terms from given derivative values using $$\tfrac{f^{(k)}(c)}{k!}$$.
-2. Manipulate a known series: substitute $$-x^2$$ for $$u$$ in the series for $$e^u$$, multiply by $$x$$, or differentiate and integrate term by term. Series compose well. The series for $$e^{-x^2}$$, which matters in statistics, is one substitution away, even though the function has no elementary antiderivative.
-3. Approximate a value with the first few terms.
-4. Bound the error with the appropriate bound.
-5. Find where the series converges, meaning the radius and the interval.
+$$\frac{0.5^5}{120}.$$
 
-If you can explain why each move works in the language of matching derivatives and distance to the nearest wall, the unit stops being twelve separate formulas and becomes one idea used twelve ways.
+So the truncation error is no larger than that quantity.
+
+The bound comes from the same structure as the alternating series test.
+
+Successive partial sums trap the true value between them.
+
+## The Lagrange error bound
+
+A more general bound is
+
+$$\vert f(x)-T_n(x)\vert \le \frac{M}{(n+1)!}\vert x-c\vert ^{n+1},$$
+
+where $$M$$ is an upper bound for
+
+$$\vert f^{(n+1)}(z)\vert$$
+
+between $$c$$ and $$x$$.
+
+The formula shows three things.
+
+The error depends on the first derivative that was not matched.
+
+It grows with the distance from the center.
+
+And it is divided by a factorial that grows rapidly with the degree.
+
+For sine and cosine, every derivative has magnitude at most 1.
+
+That makes the Lagrange bound especially manageable.
+
+## A series need not converge everywhere
+
+Consider
+
+$$\ln(1+x) = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots.$$
+
+This power series converges on
+
+$$-1<x\le1.$$
+
+At
+
+$$x=1.2,$$
+
+adding more terms does not make the polynomial approximations settle toward the function.
+
+The radius of convergence is 1.
+
+For a real power series centered at $$c$$, convergence occurs on an interval centered at $$c$$.
+
+The ratio test usually determines the radius.
+
+The endpoints then have to be checked separately.
+
+For the series above, the left endpoint produces the divergent [harmonic series](/2026/07/23/harmonic-series-surprises-of-infinity.html).
+
+The right endpoint produces the convergent alternating harmonic series.
+
+So the interval is
+
+$$(-1,1].$$
+
+## Manipulating known series
+
+Once a standard Taylor series is known, other series can be constructed through substitution, multiplication, differentiation, and integration within the interval where those operations are valid.
+
+For example,
+
+$$e^u = 1+u+\frac{u^2}{2!}+\frac{u^3}{3!}+\cdots.$$
+
+Substitute
+
+$$u=-x^2$$
+
+to obtain a series for
+
+$$e^{-x^2}.$$
+
+This is useful because
+
+$$e^{-x^2}$$
+
+has no elementary antiderivative, even though its power series can be integrated term by term inside its interval of convergence.
+
+The connection is particularly relevant in probability and statistics, where the normal density contains the same exponential form.
+
+## The recurring tasks
+
+Taylor-series problems usually involve some combination of the following.
+
+- Build terms from derivative values.
+- Manipulate a known series.
+- Approximate a function value.
+- Bound the approximation error.
+- Determine the radius and interval of convergence.
+
+These are different questions about the same construction.
+
+The polynomial is built by matching derivatives at a center.
+
+The error measures how much information is lost by truncating.
+
+The interval of convergence tells us where the infinite process actually recovers the function or a related analytic expression.
+
+## A final point about the radius
 
 <div class="article-note" markdown="1">
-A puzzle to take with you: the function $$\tfrac{1}{1+x^2}$$ is smooth and finite for every real $$x$$, with no blow-up anywhere on the real line. Yet its Maclaurin series $$1 - x^2 + x^4 - \cdots$$ refuses to converge past $$\vert x\vert = 1$$. Where is the wall? Hint: try $$x = i$$. The nearest trouble is not always on the real line, a fact that helped push mathematicians toward inventing complex analysis.
+The function
+
+$$\frac{1}{1+x^2}$$
+
+is smooth for every real $$x$$.
+
+Its Maclaurin series is
+
+$$1-x^2+x^4-x^6+\cdots.$$
+
+That series has radius of convergence 1.
+
+The restriction comes from the complex singularities at
+
+$$x=\pm i.$$
+
+This lies beyond what is needed for BC, but it explains an otherwise puzzling fact.
+
+A Taylor series can stop converging even when the real-valued function itself remains perfectly well behaved.
 </div>

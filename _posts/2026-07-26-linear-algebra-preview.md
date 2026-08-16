@@ -2,7 +2,7 @@
 layout: post
 title: "A preview of linear algebra"
 date: 2026-07-26
-description: "Matrices as motions of space, determinants as areas, eigenvectors as the directions that matter. An introduction to the college course beneath nearly everything quantitative."
+description: "Linear algebra studies vectors, matrices, transformations, and systems. Its geometry underlies regression, machine learning, differential equations, and much of modern applied mathematics."
 course: "All courses"
 courses: [AP Calculus BC, AP Precalculus, AP Statistics]
 section: beyond
@@ -11,17 +11,33 @@ math: true
 kind: beyond
 sequence: 8
 interactive: true
-blurb: "Matrices as motions of space, eigenvectors as the directions that matter"
+blurb: "Linear algebra studies vectors, matrices, transformations, and systems. Its geometry underlies regression, machine learning, differential equations, and much of modern applied mathematics"
 image: "/assets/og/linear-algebra-preview.png"
 ---
 
-Ask a mathematician, a statistician, and a machine-learning engineer which college course they use most, and you will get one answer three times: linear algebra. It is the mathematics of many things at once, of data with thousands of columns, images with millions of pixels, systems with dozens of interlocking equations. Calculus studies change; linear algebra studies structure, and the modern world runs on both.
+Linear algebra studies systems of quantities at once.
 
-If you took AP Precalculus, you have already met the main character. A matrix there was a small grid that transformed points. That idea, taken seriously, is the whole course.
+Its basic objects are vectors, matrices, and linear transformations.
 
-## A matrix is a motion of space
+The subject appears throughout mathematics, statistics, engineering, physics, computer science, and machine learning because many problems can be organized around these structures.
 
-The matrix $$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$ moves every point of the plane at once: the point $$(x, y)$$ goes to $$(ax + by,\ cx + dy)$$. The best way to understand a particular matrix is to watch what it does to the whole grid. Try it.
+A matrix is more than a rectangular table of numbers.
+
+It can be understood as a rule that transforms space.
+
+## A matrix as a transformation
+
+Consider
+
+$$A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}.$$
+
+Applied to a point
+
+$$\begin{bmatrix} x\\y \end{bmatrix},$$
+
+the matrix produces
+
+$$A \begin{bmatrix} x\\y \end{bmatrix} = \begin{bmatrix} ax+by\\ cx+dy \end{bmatrix}.$$
 
 <div class="viz" markdown="0">
   <canvas id="la-cv" width="700" height="300"></canvas>
@@ -85,28 +101,144 @@ The matrix $$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$ moves every point of
 })();
 </script>
 
-## Determinants stop being formulas
+The light grid shows the original plane.
 
-In Precalculus, $$ad - bc$$ was a rule. In linear algebra it becomes a picture: the determinant is the factor by which a matrix scales area (in three dimensions, volume), and its sign records whether the transformation flips orientation. Every mysterious determinant property becomes obvious at once. Why does a zero determinant mean no inverse? Because the matrix has flattened the plane onto a line, and a flattening cannot be undone: two different points now share an image, and no function can send one output back to two inputs. Why do determinants multiply when matrices compose? Because scaling area by 2 and then by 3 scales it by 6.
+The dark grid shows the result after the matrix acts.
 
-If you have seen the polar area element $$r\,dr\,d\theta$$ or wondered why substitution in integrals carries that extra factor, this is the same idea: the factor is a determinant, tracking how a change of variables distorts area. Calculus 3 and linear algebra are the two halves of one story.
+The shaded parallelogram is the image of the unit square.
 
-## Eigenvectors: the directions a matrix cannot hide
+Try changing the diagonal entries.
 
-Here is the course's central discovery. Almost every matrix, however it churns the plane, has a few special directions that it does not turn: vectors it merely stretches. Those are its *eigenvectors*, and the stretch factors are its *eigenvalues*. They are the matrix's true personality, and finding them turns impossible problems into easy ones, because along those directions a complicated transformation acts like simple multiplication.
+Then introduce a nonzero off-diagonal entry to create a shear.
 
-Two examples show the reach. First, Google. Rank every webpage by the principle that a page is important if important pages link to it. That sounds circular, but write the link structure as a giant matrix and the circularity resolves: the ranking is the eigenvector of the web. PageRank, the algorithm that built Google, is an eigenvector computation on a matrix with billions of rows.
+The same matrix acts on every point of the plane at once.
 
-Second, your statistics course. A dataset with dozens of correlated variables is a cloud in high-dimensional space. Its covariance structure is a matrix, and that matrix's eigenvectors point along the directions where the data genuinely varies. Keeping only the biggest few, a technique called principal component analysis, compresses hundreds of variables into a handful with minimal loss, and it is a daily tool across genetics, finance, and image processing.
+That viewpoint makes many matrix rules geometric.
 
-## Least squares, revisited from above
+## The determinant as area scale
 
-There is a moment in the course when AP Statistics students feel the floor connect. [The least-squares regression line of Unit 5](/2026/07/30/least-squares-regression-influence.html) is recomputed in one line of linear algebra: the data form a matrix equation $$X\beta \approx y$$ with no exact solution, and the least-squares fit is the *projection* of $$y$$ onto the space of predictions the model can reach, the geometric shadow of the data onto the model. The normal equations, the $$r^2$$ decomposition, multiple regression with twenty predictors: all of it is one projection picture. Statistics majors take linear algebra early for exactly this reason; regression is linear algebra wearing a lab coat.
+For a two-dimensional matrix,
 
-## Where it sits in a college path
+$$\det(A)=ad-bc.$$
 
-Linear algebra typically comes right after the calculus sequence, sometimes alongside it, and it is deliberately different in flavor: more ideas and structures, fewer long computations, and, in many versions, a first serious encounter with proof. Students who liked the why questions in AP courses often find it their favorite. It is prerequisite territory for machine learning, computer graphics, quantum mechanics, economics, cryptography, and essentially all of modern statistics. If calculus is the language of change, linear algebra is the language of data, and the two together are the working vocabulary of every quantitative field.
+Geometrically, the absolute value of the determinant is the factor by which the transformation scales area.
+
+If
+
+$$\vert \det(A)\vert =2,$$
+
+the area of the unit square becomes 2.
+
+If
+
+$$\det(A)=0,$$
+
+the transformed square collapses to zero area.
+
+The plane has been flattened into a line or point.
+
+Such a transformation cannot be inverted because distinct input points are sent to the same output.
+
+The sign of the determinant records orientation.
+
+A negative determinant means the transformation reverses orientation, as a reflection does.
+
+This geometric interpretation explains why the determinant is much more than a formula for checking invertibility.
+
+## Eigenvectors and eigenvalues
+
+Some directions have a special relationship with a matrix.
+
+An eigenvector $$v$$ satisfies
+
+$$Av=\lambda v.$$
+
+The matrix may stretch, shrink, or reverse the vector, but it does not rotate it away from its line.
+
+The scalar $$\lambda$$ is the corresponding eigenvalue.
+
+Eigenvectors identify directions along which a complicated transformation becomes simple multiplication.
+
+This makes them useful for understanding repeated transformations and systems that evolve over time.
+
+## Repeated transformations
+
+Suppose the same matrix is applied again and again.
+
+Directly computing
+
+$$A^n$$
+
+can become cumbersome.
+
+If the matrix can be expressed in a basis of eigenvectors, repeated application becomes much easier because each eigenvector direction is simply multiplied by its eigenvalue at every step.
+
+This idea appears in population models, Markov chains, differential equations, numerical algorithms, and many other settings.
+
+## Least squares becomes geometry
+
+Linear regression can also be written in matrix form.
+
+With several predictors,
+
+$$X\beta\approx y.$$
+
+Usually there is no coefficient vector $$\beta$$ that makes every prediction equal the observed response exactly.
+
+Least squares chooses the vector that makes the residual vector as small as possible in squared Euclidean distance.
+
+Geometrically, the fitted response is the projection of $$y$$ onto the space of possible predictions generated by the columns of $$X$$.
+
+The familiar [least-squares line](/2026/07/30/least-squares-regression-influence.html) from introductory statistics is the simplest version of this projection problem.
+
+Multiple regression uses the same geometry in higher dimensions.
+
+## Principal components
+
+A dataset with many variables can be viewed as a cloud of points in a high-dimensional space.
+
+The covariance matrix records how those variables vary together.
+
+Its eigenvectors identify principal directions of variation.
+
+Principal component analysis uses these directions to create new coordinates that capture as much variation as possible with fewer dimensions.
+
+This is one example of how linear algebra becomes a natural language for statistics and data analysis.
+
+## Connections to calculus
+
+Linear algebra and multivariable calculus meet constantly.
+
+The derivative of a function of several variables is naturally represented by a linear map.
+
+Jacobian matrices describe local changes of coordinates.
+
+Determinants measure how those transformations scale area and volume.
+
+Systems of differential equations can be studied using eigenvalues and eigenvectors.
+
+The subjects are taught separately, but they increasingly overlap as the mathematics becomes more advanced.
+
+## What the course feels like
+
+A first linear algebra course often contains fewer long symbolic computations than calculus and more attention to structure.
+
+The early topics may include:
+
+- systems of linear equations
+- matrices and matrix operations
+- vector spaces
+- linear independence
+- bases and dimension
+- linear transformations
+- determinants
+- eigenvalues and eigenvectors
+- orthogonality and least squares
+
+Proof may also become more prominent, depending on the course.
 
 <div class="article-note" markdown="1">
-A puzzle at the sliders: find a matrix whose determinant is negative and watch what happened to the shaded square's corners; the plane has been flipped over like a page. Then try to build a rotation with a negative determinant. You cannot, and proving why not, in any number of dimensions, is a one-line argument in the course. Rotations preserve orientation; reflections reverse it; the determinant's sign knows which is which.
+The central shift is to stop treating a matrix as a collection of entries and begin treating it as an object that acts on a space.
+
+The sliders above are a good place to begin.
 </div>

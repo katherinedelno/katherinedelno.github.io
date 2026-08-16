@@ -2,7 +2,7 @@
 layout: post
 title: "After BC: differential equations"
 date: 2026-07-26
-description: "Laws of nature specify change and leave the rest to be deduced. Systems, qualitative analysis, and an epidemic to steer."
+description: "Differential equations model systems by specifying how their state changes. The college course moves from single equations to systems, phase analysis, oscillation, and numerical solutions."
 course: "AP Calculus BC"
 section: beyond
 read_time: "9 min read"
@@ -10,27 +10,61 @@ math: true
 kind: beyond
 sequence: 7
 interactive: true
-blurb: "Laws of nature specify change; systems, phase lines, and an epidemic to steer"
+blurb: "Differential equations model systems by specifying how their state changes. The college course moves from single equations to systems, phase analysis, oscillation, and numerical solutions"
 image: "/assets/og/beyond-bc-differential-equations.png"
 ---
 
-Most laws of nature do not tell you what happens. They tell you how things are changing, and leave you to work out what happens. Newton's second law relates acceleration, a second derivative, to force. Populations grow in proportion to their size. Heat flows in proportion to temperature differences. Each of these is a differential equation, and the college course by that name is where calculus stops being a subject and starts being the operating system of physics, biology, engineering, and economics.
+A differential equation specifies how an unknown quantity changes.
 
-BC gives you the two keys: separable equations solved exactly, and Euler's method when exactness is out of reach. The full course is what those keys open.
+That is often how scientific models are written.
+
+Newton's second law relates acceleration to force.
+
+Population models describe growth through a rate equation.
+
+Heat transfer depends on temperature differences.
+
+In each case, the equation gives a rule for change and the solution describes the resulting behavior.
+
+BC introduces several parts of this subject through separable equations, slope fields, logistic growth, and Euler's method.
+
+A full differential equations course develops those ideas much further.
 
 ## From one equation to a system
 
-The BC equations involve one unknown function. The world usually involves several, tangled together. The famous first example is an epidemic. Divide a population into susceptible people $$S$$, infected people $$I$$, and recovered people $$R$$, and write down how each group changes:
+The equations in BC usually involve one unknown function.
 
-$$\frac{dS}{dt} = -\beta \frac{SI}{N}, \qquad \frac{dI}{dt} = \beta \frac{SI}{N} - \gamma I, \qquad \frac{dR}{dt} = \gamma I.$$
+Many models involve several quantities changing together.
 
-Read them as sentences. New infections happen when susceptible and infected people meet, at a rate set by the transmission parameter $$\beta$$, so $$S$$ falls and $$I$$ rises by the same amount. Infected people recover at rate $$\gamma$$, draining $$I$$ into $$R$$. That is the whole model, three sentences long, and it is a direct ancestor of the models used in real public health.
+A standard example is an epidemic model.
 
-No formula solves this system exactly. But [Euler's method](/2026/07/25/euler-method-step-size.html), the humble two-step tool from BC, handles it numerically without complaint, and that is exactly what the simulation below is doing behind the scenes.
+Divide a population into susceptible people $$S$$, infected people $$I$$, and recovered people $$R$$.
+
+One version of the SIR model is
+
+$$\frac{dS}{dt} = -\beta\frac{SI}{N},$$
+
+$$\frac{dI}{dt} = \beta\frac{SI}{N}-\gamma I,$$
+
+and
+
+$$\frac{dR}{dt} = \gamma I.$$
+
+The equations describe flows between the three groups.
+
+New infections move people from $$S$$ to $$I$$.
+
+Recoveries move people from $$I$$ to $$R$$.
+
+The variables are linked, so the equations have to be analyzed as a system.
 
 ## Steer an outbreak
 
-A town of 1{,}000 people starts with 5 infected. Recovery takes about ten days ($$\gamma = 0.1$$). The slider controls the transmission rate $$\beta$$: how easily the infection spreads.
+The simulation starts with a population of 1,000 and 5 infected individuals.
+
+The recovery rate is fixed at
+
+$$\gamma=0.1.$$
 
 <div class="viz" markdown="0">
   <canvas id="sir-cv" width="700" height="300"></canvas>
@@ -84,28 +118,128 @@ A town of 1{,}000 people starts with 5 infected. Recovery takes about ten days (
 })();
 </script>
 
-## The qualitative revolution
+The curves show the susceptible, infected, and recovered populations over time.
 
-Here is the surprise at the heart of the modern course: for most differential equations, nobody solves for a formula at all, and it turns out not to matter. The important questions are qualitative. Does the system settle to an equilibrium? Oscillate forever? Blow up? You learned the first version of this thinking in BC without the name: when you argued that a logistic population levels off at carrying capacity because $$\tfrac{dP}{dt}$$ shrinks to zero, you did a qualitative analysis. Slope fields are the same idea drawn as a picture.
+The ratio
 
-The college course builds this into a toolkit called phase analysis. For a system like the epidemic, you stop plotting against time and instead plot the state itself, $$S$$ against $$I$$, watching the system trace a curve through its space of possibilities. Equilibria become points that attract or repel trajectories, oscillations become closed loops, and the entire long-run fate of a system becomes visible geometry. A pendulum, a predator-prey ecosystem, and a national economy all get analyzed with the same pictures.
+$$R_0=\frac{\beta}{\gamma}$$
 
-## Springs, and why sine appears everywhere
+describes the expected number of secondary infections produced by one infected individual in a fully susceptible population under this simplified model.
 
-The single most important equation in physics is BC-sized. A mass on a spring feels a restoring force proportional to displacement, so Newton's law reads
+When $$R_0<1$$, the infection cannot sustain initial exponential growth.
 
-$$\frac{d^2x}{dt^2} = -\omega^2 x.$$
+When $$R_0>1$$, an outbreak can grow.
 
-Ask the BC question: what function is its own second derivative, negated? Sine and cosine. The solution is $$x = A\cos(\omega t) + B\sin(\omega t)$$: oscillation is not assumed, it is forced by the equation. This is the honest answer to a question students ask in Precalculus: why do sinusoids model springs, tides, sound, and circuits? Because those systems all obey this equation, and this equation's solutions are sinusoids. The same analysis with a damping term explains why a struck guitar string rings at a definite frequency and dies away exponentially, and the whole package, called the harmonic oscillator, reappears in every physics course through quantum mechanics.
+Increasing $$\beta$$ makes the infected curve rise earlier and reach a higher peak.
 
-## Chaos: the honest limit
+The simulation is computed numerically.
 
-The course ends with one of the great discoveries of twentieth-century mathematics. Some systems, though completely deterministic, are unpredictable in practice. In the 1960s the meteorologist Edward Lorenz found that in his three-equation weather model, two starting points differing by less than a rounding error produced completely different weather within weeks. Nothing was random; the equations amplify tiny differences exponentially. This is chaos, the reason weather forecasts are honest for about ten days and dishonest beyond, and it was found not in exotic mathematics but in a small system of differential equations that a student one course past BC can read.
+No closed-form solution is required to study the system's behavior.
 
-## What to bring
+## Qualitative analysis
 
-Differential equations is the most direct sequel to BC. Separable equations, exponential and logistic models, Euler's method, slope fields, and the Taylor series all reappear as first-class citizens (series solutions are a whole chapter). If integration technique is sharp and the logistic story genuinely made sense, the course opens easily, and it pairs naturally with linear algebra, whose eigenvalues turn out to be the key that unlocks systems.
+A large part of differential equations is qualitative.
+
+Instead of asking only for an explicit formula, we ask:
+
+- Where are the equilibria?
+- Which equilibria are stable?
+- Does a solution approach a steady state?
+- Does it oscillate?
+- How does changing a parameter alter the behavior?
+
+BC already uses this kind of reasoning in logistic growth.
+
+If
+
+$$\frac{dP}{dt}=kP(K-P),$$
+
+we can identify the equilibria and long-run behavior directly from the sign of the right-hand side.
+
+A differential equations course turns that reasoning into a systematic method.
+
+## Phase lines and phase planes
+
+For one autonomous equation, a phase line shows the direction in which solutions move.
+
+For a system, the state has several coordinates.
+
+A phase plane can plot one state variable against another.
+
+The trajectory then shows how the entire system evolves without using time as an axis.
+
+Equilibria appear as fixed points.
+
+Nearby trajectories may move toward them, move away, or circulate around them.
+
+This geometric viewpoint is particularly useful for systems whose explicit solutions are difficult or unavailable.
+
+## Why sine and cosine appear in physical models
+
+Consider a mass attached to a spring.
+
+Under a simple restoring-force model,
+
+$$\frac{d^2x}{dt^2} = -\omega^2x.$$
+
+We are looking for functions whose second derivative is the negative of the original function, up to a constant factor.
+
+Sine and cosine have exactly that property.
+
+The general solution is
+
+$$x(t) = A\cos(\omega t) + B\sin(\omega t).$$
+
+The oscillation is a consequence of the differential equation.
+
+Adding a damping term produces oscillations whose amplitude decreases over time.
+
+Related equations appear in mechanics, circuits, acoustics, and many other physical systems.
+
+## Numerical methods become central
+
+Most differential equations do not have elementary closed-form solutions.
+
+That does not make them unusable.
+
+Numerical methods approximate the solution directly.
+
+[Euler's method](/2026/07/25/euler-method-step-size.html) is the simplest example.
+
+More accurate methods update the solution using additional information within each step.
+
+The SIR simulation above uses numerical integration for exactly this reason.
+
+The important question becomes whether the numerical approximation is accurate and stable enough for the problem being studied.
+
+## Sensitivity and chaos
+
+Some nonlinear systems are extremely sensitive to their initial conditions.
+
+Two solutions that begin very close together can eventually separate dramatically.
+
+This phenomenon is one feature of deterministic chaos.
+
+The Lorenz system is a classical example.
+
+Its equations are fully deterministic.
+
+The unpredictability comes from sensitivity to initial conditions rather than from random input.
+
+This is one reason long-term prediction can be difficult even when the governing equations are known.
+
+## What carries over from BC
+
+Differential equations is one of the most direct continuations of BC.
+
+Separable equations, exponential and logistic models, Euler's method, slope fields, Taylor series, and integration techniques all return.
+
+Linear algebra also becomes increasingly important because systems of differential equations can often be understood through matrices and eigenvalues.
 
 <div class="article-note" markdown="1">
-A question to take with you: in the simulator, note how many people are still susceptible at the moment the infected curve peaks. Herd immunity has a formula: the epidemic turns around exactly when the susceptible fraction falls to 1/R&#8320;. Check it against the curves — and then notice that the outbreak does not stop there. It keeps going while the infected still outnumber the recoveries, so the final susceptible count ends up lower than the threshold, by more and more as R&#8320; climbs. That overshoot is why a population can pass the herd-immunity point and still lose a large fraction of the people who were left. A threshold that important, derivable from three one-line equations, is a fair advertisement for the whole subject.
+A useful question in the epidemic simulation is to identify the moment when the infected population stops increasing. At that point,
+
+$$\frac{dI}{dt}=0.$$
+
+Using the model equation shows that the turning point occurs when the susceptible fraction reaches a threshold determined by $$R_0$$. The simulation makes that qualitative statement visible.
 </div>

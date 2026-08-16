@@ -2,7 +2,7 @@
 layout: post
 title: "An introduction to Fourier series"
 date: 2026-07-27
-description: "Any repeating signal, however jagged, can be assembled from smooth sine waves. The theorem behind sound, signal processing, and data compression, built one harmonic at a time."
+description: "A periodic function can be represented by a sum of sine and cosine waves. Adding harmonics shows how increasingly complex shapes can be built from simple frequencies."
 course: "All courses"
 courses: [AP Calculus BC, AP Precalculus]
 section: beyond
@@ -11,21 +11,27 @@ math: true
 kind: beyond
 sequence: 5
 interactive: true
-blurb: "Any repeating signal assembled from smooth sine waves, one harmonic at a time"
+blurb: "A periodic function can be represented by a sum of sine and cosine waves. Adding harmonics shows how increasingly complex shapes can be built from simple frequencies"
 image: "/assets/og/introduction-to-fourier-series.png"
 ---
 
-Here is a claim that sounds impossible. Take the most abrupt periodic signal imaginable: a square wave, which sits at $$+1$$, drops instantly to $$-1$$, and repeats forever, all corners and jumps. Joseph Fourier asserted in 1807 that this signal, and essentially any repeating signal, can be built out of nothing but smooth sine waves, provided you are allowed to stack up enough of them. The claim scandalized the leading mathematicians of his day. It also turned out to be true, and the mathematics that grew from it now sits inside every phone call, streaming song, JPEG image, and MRI scan.
+[Sine and cosine functions](/2026/07/25/unit-circle-unrolled.html) are simple.
 
-For a student finishing AP Precalculus or BC, Fourier series are the natural next chapter of two stories at once: [the sinusoid chapter](/2026/07/25/unit-circle-unrolled.html), since they promote sine waves from one function family among many to the universal alphabet of periodic behavior, and the Taylor series chapter, since they answer the same question with a different basis. Taylor asks how a function can be assembled from powers of $$x$$; Fourier asks how it can be assembled from frequencies.
+By adding enough of them at different frequencies and amplitudes, we can represent much more complicated periodic functions.
 
-## Building the square wave
+A Fourier series writes a periodic function as a sum of these harmonic components.
 
-For the square wave, the recipe turns out to use only odd multiples of the base frequency, each weighted by the reciprocal of its number:
+## Building a square wave
 
-$$f(x) = \frac{4}{\pi}\left(\sin x + \frac{\sin 3x}{3} + \frac{\sin 5x}{5} + \frac{\sin 7x}{7} + \cdots\right)$$
+A standard example is the square wave.
 
-Each added term is called a harmonic, the same word music uses, and for the same reason. Watch the assembly happen.
+One representation is
+
+$$f(x) = \frac4\pi \left( \sin x + \frac{\sin3x}{3} + \frac{\sin5x}{5} + \frac{\sin7x}{7} +\cdots \right).$$
+
+Only odd harmonics appear.
+
+Their amplitudes decrease as the reciprocal of the frequency.
 
 <div class="viz" markdown="0">
   <canvas id="fs-cv" width="700" height="300"></canvas>
@@ -85,16 +91,112 @@ Each added term is called a harmonic, the same word music uses, and for the same
 })();
 </script>
 
+The faint graph shows the target square wave.
+
+The dark graph shows the partial Fourier sum.
+
+With one term, the approximation is simply a sine wave.
+
+As more harmonics are added, the flat regions become flatter and the transitions become sharper.
+
+The approximation is being built globally from smooth waves.
+
 ## Where the coefficients come from
 
-The weights in the recipe are not guessed; they are computed, and the computation is BC-sized. The coefficient of $$\sin(nx)$$ is an integral, of the target function multiplied by $$\sin(nx)$$, taken over one period. What makes the method work is a quiet miracle called orthogonality: the average of $$\sin(mx)\sin(nx)$$ over a period is zero whenever $$m \ne n$$, so the integral acts like a tuner, isolating the strength of one frequency while every other frequency averages itself away. A student who has computed integrals of trigonometric products in Unit 6 has already handled the machinery; Fourier's contribution was recognizing what the machinery could be aimed at.
+The coefficients are determined by integrals.
 
-That tuning interpretation is the modern one. The Fourier coefficients of a signal are its frequency content, and computing them is asking the signal what pitches it contains. When an audio format stores a song, a compression algorithm discards the frequencies your ear weights least; when a noise-cancelling headphone works, it is doing a Fourier analysis in real time and subtracting what it finds.
+For a function with period $$2\pi$$, a Fourier series has the form
 
-## The two series, side by side
+$$\frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n\cos nx+b_n\sin nx \right).$$
 
-The comparison with [Taylor series](/2026/07/22/taylor-polynomials-impersonate-functions.html) is worth making precise, because it organizes both subjects. A Taylor series is local: it knows everything about the function at one point and approximates outward from it, superbly nearby and sometimes not at all far away. A Fourier series is global: it knows the function's average behavior over a whole period, converges in an averaged sense across the entire interval, and cheerfully handles the jumps and corners that no Taylor series can touch, since a function with a jump has no derivative there to match. The two are the first examples every mathematician meets of the same deep strategy, representing a complicated object as coordinates against a well-chosen family of simple ones, and that strategy, generalized, is much of applied mathematics.
+The coefficients are
+
+$$a_n = \frac1\pi \int_{-\pi}^{\pi} f(x)\cos(nx)\,dx,$$
+
+and
+
+$$b_n = \frac1\pi \int_{-\pi}^{\pi} f(x)\sin(nx)\,dx.$$
+
+These formulas work because the sine and cosine functions are orthogonal over a full period.
+
+Informally, the integral measures how much of a particular frequency is present in the function.
+
+## The Gibbs phenomenon
+
+Look near a jump in the square wave.
+
+Even after many harmonics are added, the Fourier approximation overshoots near the discontinuity.
+
+The oscillation becomes narrower as more terms are used, but the maximum overshoot does not disappear completely.
+
+This is the Gibbs phenomenon.
+
+It is a useful reminder that convergence can behave differently near discontinuities.
+
+A series can approximate a function extremely well across most of an interval while retaining a structured error near a jump.
+
+## Frequency instead of position
+
+Fourier analysis gives two ways to describe the same signal.
+
+The original function shows how the signal changes over time or position.
+
+The Fourier coefficients show how much of each frequency is present.
+
+This second representation is often called the frequency domain.
+
+For a musical note, the fundamental frequency determines the perceived pitch.
+
+Higher harmonics contribute to timbre.
+
+Two instruments can play the same note while producing very different mixtures of harmonics.
+
+The waveform looks different because the frequency content is different.
+
+## Applications
+
+The same decomposition appears in audio processing, image compression, telecommunications, signal denoising, and the analysis of differential equations.
+
+Noise can sometimes be removed by suppressing unwanted frequency components.
+
+Compression can preserve the most important components while discarding smaller ones.
+
+Differential equations involving oscillation often become easier when expressed in a basis of sine and cosine functions.
+
+The computational version of this idea is the Fourier transform.
+
+## Fourier series and Taylor series
+
+Fourier series and [Taylor series](/2026/07/22/taylor-polynomials-impersonate-functions.html) both approximate functions using simpler building blocks, but the constructions are different.
+
+A Taylor polynomial is organized around one center and matches derivatives there.
+
+Its basis functions are powers such as
+
+$$1,\quad x,\quad x^2,\quad x^3,\ldots$$
+
+A Fourier series is organized around frequency across an interval.
+
+Its basis functions are sine and cosine waves.
+
+Taylor approximation is naturally local.
+
+Fourier representation is naturally global and periodic.
+
+Both become much more systematic in later analysis courses, where the choice of basis is treated as a general mathematical idea.
+
+## A useful way to see the square wave
 
 <div class="article-note" markdown="1">
-An experiment at the slider: set it to one harmonic and imagine hearing that pure tone; this is what a tuning fork sounds like. Forty harmonics of the same base note, in these exact proportions, is what the same pitch sounds like on a clarinet, roughly: the instrument's timbre lives in the coefficients. Two instruments playing the same note agree on the fundamental frequency and disagree in their Fourier series, which is the reason you can tell them apart with your eyes closed.
+Move the harmonic slider slowly.
+
+Each new term has a higher frequency and a smaller amplitude.
+
+The low-frequency terms determine the broad shape.
+
+The high-frequency terms refine the sharp transitions.
+
+That same separation between broad structure and fine detail is central to signal processing.
+
+A complicated signal can often be understood by asking which scales or frequencies carry most of its energy.
 </div>

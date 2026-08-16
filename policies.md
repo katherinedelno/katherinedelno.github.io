@@ -46,8 +46,8 @@ description: "The terms of a private instruction engagement with Katherine Delno
   <div class="pg-hero">
     <p class="label">Policies</p>
     <h1>Policies &amp; Terms of Instruction</h1>
-    <p>These are the terms on which I work with families. They exist so that everyone begins with the same understanding of what I do, what I ask, and what happens when something does not go as planned. I would rather state all of this plainly at the outset than have any of it come as a surprise later.</p>
-    <p>Booking a session constitutes acceptance of these terms. Before instruction begins I also send each family these policies by email and ask for a short reply confirming they have read them, so that we both start from the same written understanding.</p>
+    <p>These are the terms under which I work with families. I state them here so that we begin with the same understanding of my role, what I ask of students and families, and what happens when plans change.</p>
+    <p>Booking a session constitutes acceptance of these terms. Before instruction begins, I also send the policies by email and ask for a short reply confirming that they have been read.</p>
   </div>
 
   <nav class="pol-jump" aria-label="Page sections">
@@ -67,51 +67,51 @@ description: "The terms of a private instruction engagement with Katherine Delno
   <div class="pol-section" id="scope">
     <p class="label">Scope</p>
     <h2>The scope of my role</h2>
-    <p>I am your student's instructor. Within that role I teach, prepare each session around their course, assign and review work, keep detailed notes, and tell you honestly what I observe.</p>
-    <p>There are things I do not do, and it is better to say so at the beginning than to disappoint later.</p>
+    <p>I am your student's instructor. I teach, prepare sessions around the student's course, assign and review work, keep detailed notes, and report honestly on what I observe.</p>
+    <p>There are also limits to that role.</p>
     <ul class="pol-list">
-      <li>I do not contact schools, teachers, or counselors, and I do not advocate on a student's behalf in grade disputes, placement decisions, or accommodation requests.</li>
-      <li>I do not mediate between a student and their family. If there is friction at home about grades, effort, or motivation, I will tell you what I see in our sessions and what I think would help. The conversation itself belongs to your family.</li>
-      <li>I do not provide counseling, testing, diagnosis, or accommodation recommendations. Where I think a student would benefit from support outside my scope, I will say so and suggest you speak with the school or an appropriate professional.</li>
-      <li>I do not supervise homework completion between sessions unless you have added between-session support, and even then my role is feedback, not enforcement.</li>
+      <li>I do not contact schools, teachers, or counselors or advocate in grade disputes, placement decisions, or accommodation requests.</li>
+      <li>I do not mediate between a student and their family. If I see a problem with grades, effort, or motivation, I will tell you what I observe and what I think may help. The family conversation remains yours.</li>
+      <li>I do not provide counseling, testing, diagnosis, or accommodation recommendations. If I believe a student may benefit from support outside my scope, I will suggest speaking with the school or an appropriate professional.</li>
+      <li>I do not supervise homework completion between sessions unless between-session support has been added. Even then, my role is academic feedback rather than enforcement.</li>
     </ul>
-    <p>None of this is reluctance to be helpful. It is that instruction works best when the person teaching is not also the referee.</p>
+    <p>Clear boundaries help me remain focused on the work I am engaged to do.</p>
   </div>
 
   <!-- PROGRESS -->
   <div class="pol-section" id="progress">
     <p class="label">Progress</p>
     <h2>Shared responsibility for progress</h2>
-    <p>Instruction is one input among several. What I control, I take full responsibility for: the preparation, the accuracy of the mathematics, the teaching being calibrated to the student actually in front of me, the notes and solutions afterward, and the honesty of what I report to you.</p>
-    <p>What I do not control matters just as much:</p>
+    <p>Instruction is one part of a student's progress. I take responsibility for what is within my control. That includes preparation, mathematical accuracy, instruction appropriate to the student, notes and solutions after sessions, and honest communication with families.</p>
+    <p>Other factors also matter.</p>
     <ul class="pol-list">
-      <li>whether the student attends consistently and arrives ready to work</li>
-      <li>whether the student does the assigned work between sessions</li>
-      <li>whether the student engages during the session rather than waiting to be carried through it</li>
+      <li>consistent attendance and readiness to work</li>
+      <li>completing assigned work between sessions</li>
+      <li>active participation during sessions</li>
       <li>classroom instruction, grading policies, assessment difficulty, and test-day conditions</li>
-      <li>how much time remains before an exam, particularly for students who begin late in a course</li>
+      <li>the amount of time remaining before an exam, particularly when instruction begins late in a course</li>
     </ul>
-    <p>Where these are not going well, I will tell you early and specifically, and I will say what would change them. A student who is not doing the work will not make the progress a student who is doing it makes, and no amount of instruction substitutes for that. Saying so, clearly and without softening it, is part of what you are engaging me to do.</p>
+    <p>If one of these becomes a significant obstacle, I will tell you clearly and as early as I can. Regular instruction cannot substitute for work that is not being done between meetings.</p>
 
     <h3>Academic progress and outcomes</h3>
-    <p>I do not guarantee any grade, test score, class placement, or AP exam result, and I will not agree to do so if asked. Families are engaging instructional time and academic coaching, not a promised outcome.</p>
-    <p>I hold myself instead to a standard I can actually meet: that every session is prepared, that the teaching is accurate, that the student can do work at the end of a session they could not do at the start, and that you hear the truth from me about how it is going, including when the truth is unwelcome.</p>
+    <p>I do not guarantee a particular grade, test score, class placement, or AP exam result. Families are purchasing instructional time and academic support rather than a promised outcome.</p>
+    <p>I hold myself to standards I can control. Sessions should be prepared, the mathematics should be accurate, and the instruction should be responsive to the student. I will also communicate honestly about progress, including when I think something needs to change.</p>
   </div>
 
   <!-- ATTENDANCE -->
   <div class="pol-section" id="attendance">
     <p class="label">Attendance</p>
     <h2>Attendance, cancellation, and rescheduling</h2>
-    <p>Each student holds a recurring weekly slot. It is reserved for them and not offered to anyone else, which is what the following terms are protecting.</p>
+    <p>Each student holds a recurring weekly time that is reserved for them.</p>
     <ul class="pol-list">
-      <li><b>Rescheduling</b> requires at least 24 hours' notice. Within that window I will do my best to find another time the same week.</li>
-      <li><b>Cancellations with less than 24 hours' notice</b> are billed in full, as are missed sessions.</li>
-      <li><b>Late arrival</b> does not extend the session. I stay through the scheduled end time.</li>
-      <li><b>One exception per term</b> is granted without question, for the things that genuinely come up.</li>
-      <li><b>Illness and family emergencies</b> are handled with discretion. This policy exists to protect a reserved hour, not to penalize anyone for having a life.</li>
-      <li><b>If I cancel</b>, the session is not billed and I will offer a replacement time or a credit.</li>
+      <li><b>Rescheduling</b> requires at least 24 hours' notice. When possible, I will offer another time during the same week.</li>
+      <li><b>Cancellations with less than 24 hours' notice</b> are billed in full. Missed sessions are also billed in full.</li>
+      <li><b>Late arrival</b> does not extend the scheduled end time.</li>
+      <li>Each family receives <b>one exception per term</b> without question.</li>
+      <li><b>Illness and family emergencies</b> are handled with discretion.</li>
+      <li><b>If I cancel</b>, the session is not billed. I will offer a replacement time or a credit.</li>
     </ul>
-    <p>Sustained absence, by which I mean three or more consecutive missed weeks without an arranged pause, releases the weekly slot back to the schedule. I will always write to you before that happens.</p>
+    <p>Three or more consecutive missed weeks without an arranged pause may result in the weekly slot being released. I will contact you before that happens.</p>
   </div>
 
   <!-- BILLING -->
@@ -119,11 +119,15 @@ description: "The terms of a private instruction engagement with Katherine Delno
     <p class="label">Billing</p>
     <h2>Billing and payment</h2>
     <ul class="pol-list">
-      <li>Sessions are billed after they happen, never in advance. On the first business day of each month I send one invoice covering the sessions we had the month before. Payment is due within seven days of the invoice date. September's sessions, for example, are invoiced on the first business day of October and paid seven days after that.</li>
-      <li>Accepted methods: Apple Cash, PayPal, and Zelle.</li>
-      <li>Invoices unpaid fourteen days after the due date pause instruction until the balance is settled. The weekly slot is held for two weeks from that point, after which it may be released.</li>
-      <li>Completed sessions are not refundable, nor are sessions billed under the cancellation policy above.</li>
-      <li>Between-session support is billed monthly at $200 and may be added or discontinued with fourteen days' notice, effective at the start of the next billing month. It is not prorated within a month.</li>
+      <li>Sessions are billed after they occur, never in advance.</li>
+      <li>On the first business day of each month, I send one invoice covering the previous month's sessions.</li>
+      <li>Payment is due within seven days of the invoice date.</li>
+      <li>Accepted methods are Apple Cash, PayPal, and Zelle.</li>
+      <li>If an invoice remains unpaid fourteen days after the due date, instruction pauses until the balance is settled.</li>
+      <li>The weekly slot is held for two weeks after instruction pauses. After that, it may be released.</li>
+      <li>Completed sessions are not refundable. Sessions billed under the cancellation policy are also nonrefundable.</li>
+      <li>Between-session support is billed monthly at $200. It may be added or discontinued with fourteen days' notice, effective at the start of the next billing month.</li>
+      <li>Between-session support is not prorated within a month.</li>
       <li>Rates are held for the full academic year for enrolled families. Any change takes effect the following academic year, with notice by the preceding June.</li>
     </ul>
   </div>
@@ -132,78 +136,81 @@ description: "The terms of a private instruction engagement with Katherine Delno
   <div class="pol-section" id="referrals">
     <p class="label">Referrals</p>
     <h2>Referrals</h2>
-    <p>If you refer a family and their student enrolls, I credit one 60-minute session to your next invoice, once the new student has completed a first month of instruction. There is no limit on how many referrals you may make. If you are no longer enrolled when the credit comes due, I will send an Amazon gift card for the same amount instead.</p>
-    <p>I ask only that referrals be genuine ones. I would rather work with three families who are a real fit than ten who are not.</p>
+    <p>If you refer a family and their student enrolls, I credit one 60-minute session to your next invoice after the new student completes a first month of instruction.</p>
+    <p>There is no limit on referrals. If you are no longer enrolled when the credit becomes available, I will send an Amazon gift card for the same amount.</p>
+    <p>I ask that referrals be genuine recommendations for families you believe would be a good fit for the practice.</p>
   </div>
 
   <!-- CONDUCT -->
   <div class="pol-section" id="conduct">
     <p class="label">Conduct</p>
     <h2>Conduct</h2>
-    <p>Sessions are a calm working environment. Questions are taken seriously, mistakes are treated as information, and no student is made to feel foolish for not knowing something yet. I extend that courtesy without exception and I ask for it in return, from students and from adults.</p>
-    <p>Our session time is not a venue for conflict about grades or effort. If a session becomes unproductive for reasons I cannot resolve within it, I may end it early and will bill for the scheduled time. I will always write to you afterward explaining what happened and what I suggest.</p>
+    <p>Sessions are meant to be calm working environments. Questions are taken seriously, and students are not made to feel foolish for not knowing something. I extend that courtesy to students and families and ask for the same in return.</p>
+    <p>Session time is not used to manage conflict about grades or effort. If a session becomes unproductive for reasons I cannot resolve during the meeting, I may end it early and bill for the scheduled time. I will write afterward to explain what happened and what I recommend next.</p>
   </div>
 
   <!-- MATERIALS -->
   <div class="pol-section" id="materials">
     <p class="label">Materials</p>
     <h2>Materials, recording, and intellectual property</h2>
-    <p>The curriculum, worked solutions, guides, problem sets, and session notes I provide are my own work. They are licensed to the enrolled student for personal academic use during our engagement and for their own review afterward.</p>
-    <p>They may not be redistributed, shared with other students or tutoring services, posted publicly, sold, or used to train or prompt an automated system. This is not a formality. The materials are the accumulated result of building each course, and they are part of what the rate reflects.</p>
-    <p>I do not record sessions, and I ask that students and families do not record them either, by video, audio, or screen capture. If a recording would genuinely help a particular student, write to me and we will discuss it; any recording is by written agreement in advance and for that student's personal use only. Whiteboard work, notes, and full solutions are uploaded after every session, so nothing is lost by not recording.</p>
+    <p>The curriculum, worked solutions, guides, problem sets, and session notes I provide are my own work. They are provided to the enrolled student for personal academic use during our engagement and for the student's own review afterward.</p>
+    <p>They may not be redistributed, shared with other students or tutoring services, posted publicly, sold, or used to train or prompt an automated system.</p>
+    <p>I do not record sessions and ask students and families not to record them by video, audio, or screen capture. If a recording would be useful for a particular student, contact me in advance. Any recording requires written agreement and is limited to that student's personal use.</p>
+    <p>Whiteboard work, notes, and full solutions are uploaded after each session.</p>
   </div>
 
   <!-- COMMUNICATION -->
   <div class="pol-section" id="privacy">
     <p class="label">Communication</p>
     <h2>Communication and student records</h2>
-    <p>I answer email on weekdays, usually within one business day. Families enrolled in between-session support have broader weekday and weekend availability for their student's academic questions; that is a generous arrangement, not an on-call one.</p>
-    <p>For students under 18, a parent or guardian is included on every channel I use to reach the student. Most scheduling and question-asking happens by text, because it is far easier for a student to photograph a problem than to describe it, so in practice this means a group message with your student, you, and me. You are welcome to mute it and never read a word of it. What matters is that the thread is open, and that nothing passes between me and your student that you could not see.</p>
-    <p>I hold to this even when families tell me it isn't necessary. It protects your student and it protects me, and a rule that only applies when someone asks for it isn't much of a rule. Scheduling changes and billing are confirmed with you directly. Parents may be added to the shared materials folder on request and may ask to see my session notes at any time.</p>
-    <p>What information I collect, why, who processes it, and how long I keep it is set out in full in the <a href="/privacy/">privacy notice</a>.</p>
+    <p>I answer email on weekdays, usually within one business day. Families enrolled in between-session support have broader weekday and weekend access for academic questions, though this is not an on-call service.</p>
+    <p>For students under 18, a parent or guardian is included on every communication channel I use with the student. Scheduling and questions often happen by text, so this usually means a group message that includes the student, a parent or guardian, and me.</p>
+    <p>I follow this practice for all minor students. Scheduling changes and billing are confirmed directly with the parent or guardian. Parents may also be added to the shared materials folder and may ask to review my session notes at any time.</p>
+    <p>The <a href="/privacy/">privacy notice</a> explains what information I collect, why I collect it, who processes it, and how long I retain it.</p>
   </div>
 
   <!-- ENDING -->
   <div class="pol-section" id="ending">
     <p class="label">Ending</p>
     <h2>Ending the engagement</h2>
-    <p>Either of us may end the arrangement with two weeks' written notice. Sessions already scheduled inside that window are billed as usual.</p>
-    <p>I also reserve the right to end an engagement, with notice and a final prorated invoice, in these circumstances:</p>
+    <p>Either the family or I may end the arrangement with two weeks' written notice. Sessions already scheduled during that period are billed as usual.</p>
+    <p>I may also end an engagement, with notice and a final prorated invoice, in the following circumstances.</p>
     <ul class="pol-list">
       <li>repeated missed or late-cancelled sessions</li>
       <li>invoices unpaid fourteen days after the due date</li>
-      <li>a student consistently unwilling to participate, after I have raised it with you and we have tried together to address it</li>
-      <li>conduct toward me, from a student or an adult, that is hostile, demeaning, or abusive</li>
+      <li>a student who remains unwilling to participate after the issue has been raised and we have tried to address it</li>
+      <li>conduct toward me from a student or adult that is hostile, demeaning, or abusive</li>
     </ul>
-    <p>The last of these is rare, and I state it only so that it is stated.</p>
   </div>
 
   <!-- CONCERNS -->
   <div class="pol-section" id="concerns">
     <p class="label">Concerns</p>
     <h2>Raising a concern</h2>
-    <p>If you are not satisfied with how the instruction is going, tell me. Write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> with the specifics and I will respond within two business days and propose a call.</p>
-    <p>In most cases something concrete can be adjusted: the pacing, the balance of teaching and independent practice, the assigned work, the session length, or which topics we prioritize. I would far rather change the approach than have a family quietly conclude it isn't working.</p>
-    <p>I ask that concerns come to me directly and in writing rather than through a student, and that we discuss them before either of us decides the arrangement has run its course. Most difficulties in instruction, like most difficulties in mathematics, are specific, findable, and fixable, provided someone is paying close enough attention.</p>
+    <p>If you are not satisfied with how instruction is going, please tell me. Write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> with the specifics. I will respond within two business days and propose a call.</p>
+    <p>Many concerns can be addressed by changing something concrete, such as pacing, the balance of teaching and independent work, assigned practice, session length, or the topics we prioritize.</p>
+    <p>I ask that concerns come to me directly and in writing rather than through a student. Whenever possible, I would like us to discuss the problem before either of us decides to end the arrangement.</p>
   </div>
 
   <!-- ACCESSIBILITY -->
   <div class="pol-section" id="accessibility">
     <p class="label">Accessibility</p>
     <h2>Accessibility</h2>
-    <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines (WCAG 2.1 Level AA) and make ongoing improvements. If you have any difficulty accessing content on this site, or if you need materials in an alternative format or an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a> and I will work with you promptly to provide the information or assistance you need.</p>
+    <p>I want this website and my instruction to be usable by everyone. I aim to follow recognized web accessibility guidelines, WCAG 2.1 Level AA, and make ongoing improvements.</p>
+    <p>If you have difficulty accessing content on this site, need materials in an alternative format, or need an accommodation for sessions, please email <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>. I will work with you to provide the information or assistance you need.</p>
   </div>
 
   <!-- CHANGES -->
   <div class="pol-section" id="changes">
     <p class="label">Changes</p>
     <h2>Changes to these policies</h2>
-    <p>These policies were last updated on 3 August 2026. I will give enrolled families at least fourteen days' notice by email before any change that materially affects them. Continuing instruction after that notice constitutes acceptance of the revised terms.</p>
-    <p>Questions about any of this are welcome, before you enroll or at any point afterward: <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+    <p>These policies were last updated on 3 August 2026.</p>
+    <p>I will give enrolled families at least fourteen days' notice by email before any change that materially affects them. Continuing instruction after that notice constitutes acceptance of the revised terms.</p>
+    <p>Questions are welcome before enrollment or at any point afterward. You can reach me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </div>
 
   <div class="pol-fine">
-    <p>What I collect from families and students, and what happens to it, is set out under <a href="/privacy/">privacy</a>.</p>
+    <p>What I collect from families and students, and what happens to that information, is explained under <a href="/privacy/">Privacy</a>.</p>
   </div>
 
 </div>

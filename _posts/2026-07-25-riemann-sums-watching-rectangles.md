@@ -2,7 +2,7 @@
 layout: post
 title: "Riemann sums and the definition of the integral"
 date: 2026-07-25
-description: "The definite integral is defined by rectangles. This article watches the definition converge, and explains why left and right sums bracket the true value."
+description: "A definite integral is the limit of approximating sums. Left, right, midpoint, and trapezoidal estimates differ only in how each slice is represented."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
 read_time: "6 min read"
@@ -10,19 +10,33 @@ math: true
 kind: foundations
 sequence: 20
 interactive: true
-blurb: "Watch the definition converge, and see why left and right sums bracket it"
+blurb: "A definite integral is the limit of approximating sums. Left, right, midpoint, and trapezoidal estimates differ only in how each slice is represented"
 image: "/assets/og/riemann-sums-watching-rectangles.png"
 ---
 
-Before the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives you a shortcut, the definite integral has a definition, and the definition is rectangles. To estimate the area under a curve, slice the interval into $$n$$ pieces, stand a rectangle on each piece, and add up the rectangle areas. The definite integral is what those sums approach as the slicing gets finer:
+Before the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives a convenient way to evaluate many definite integrals, the integral has a definition.
 
-$$\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{k=1}^{n} f\!\left(x_k^*\right)\Delta x.$$
+Partition an interval into smaller pieces. Approximate the contribution from each piece. Add the contributions. Then let the partition become arbitrarily fine.
 
-The formula reads better as a recipe. $$\Delta x$$ is the width of each slice. The point $$x_k^*$$ is where you measure the height of the $$k$$-th rectangle: the left edge gives a left Riemann sum, and the right edge gives a right sum. The sigma adds the areas, and the limit sends the number of rectangles to infinity.
+For a continuous function,
 
-## Try it
+$$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{k=1}^{n} f(x_k^*)\Delta x.$$
 
-The curve below is $$f(x) = x^2 + 1$$ on $$[0,3]$$, whose exact area is $$\textstyle \int_0^3 (x^2+1)\,dx = 12$$. Slide $$n$$ and watch the rectangle total approach 12.
+Here $$\Delta x$$ is the width of a subinterval and $$x_k^*$$ is the point used to choose the rectangle height.
+
+## Watching the sums converge
+
+Consider
+
+$$f(x)=x^2+1$$
+
+on
+
+$$[0,3].$$
+
+Its exact integral is
+
+$$\int_0^3(x^2+1)\,dx = 12.$$
 
 <div class="viz" markdown="0">
   <canvas id="rs-cv" width="700" height="300"></canvas>
@@ -78,30 +92,90 @@ The curve below is $$f(x) = x^2 + 1$$ on $$[0,3]$$, whose exact area is $$\texts
 })();
 </script>
 
-## Why left and right sums bracket the truth
+With a small number of rectangles, the difference between the sum and the curved region is obvious.
 
-On this interval the function is increasing, and that single fact settles the direction of every error. A left rectangle measures its height at the left edge, where an increasing function is at its smallest on the slice, so each left rectangle sits below the curve and the left sum is an underestimate. A right rectangle measures where the function is largest on the slice, so the right sum is an overestimate. The exact area is trapped between them, and as $$n$$ grows the trap tightens.
+As $$n$$ increases, the approximation improves.
 
-The exam asks for exactly this reasoning, and it wants the hypothesis stated. The sentence that earns the point is: "the left Riemann sum is an underestimate because $$f$$ is increasing on the interval." For a decreasing function the roles flip. Note carefully which fact controls which method: increasing or decreasing controls left and right sums. Concavity controls two different methods, the midpoint sum and the trapezoidal sum. Students who memorize a four-way chart mix these up under pressure; students who picture one rectangle on one slice never do.
+For this increasing function, the left sum remains below the exact value and the right sum remains above it.
 
-## Sums from tables
+At $$n=80$$, the two estimates are already close to 12.
 
-On the free-response section, Riemann sums usually arrive with a table instead of a formula, and with unequal widths:
+The limit in the definition is what happens as the number of subintervals continues without bound.
+
+## Why left and right sums behave differently
+
+On an interval where $$f$$ is increasing, the left endpoint gives the smallest function value on each subinterval.
+
+So each left rectangle lies below the curve.
+
+The left Riemann sum is therefore an underestimate.
+
+The right endpoint gives the largest value on each subinterval, so the right sum is an overestimate.
+
+If $$f$$ is decreasing, the roles reverse.
+
+This reasoning is more useful than memorizing a table.
+
+The direction of the error for left and right sums comes from whether the function is increasing or decreasing.
+
+For midpoint and trapezoidal approximations, concavity becomes relevant instead.
+
+## Riemann sums from a table
+
+A formula for the function is not required.
+
+Suppose a rate $$R(t)$$ is given by the table:
 
 | $$t$$ (hours) | 0 | 2 | 5 | 8 | 9 |
 |---|---|---|---|---|---|
 | $$R(t)$$ (liters/hour) | 40 | 46 | 58 | 52 | 48 |
 
-A left Riemann sum for $$\textstyle \int_0^9 R(t)\,dt$$ uses each subinterval's left value times its width:
+A left Riemann sum for
 
-$$40(2) + 46(3) + 58(3) + 52(1) = 444 \text{ liters}.$$
+$$\int_0^9R(t)\,dt$$
 
-Two habits keep this clean. First, the widths come from the table and are not equal, so resist any formula with a single $$\Delta x$$. Second, the units of the answer are the product of the two axis units, here liters per hour times hours. Saying what the number means, the total liters that entered over the nine hours, is typically its own scoring point.
+uses the left value on each subinterval:
 
-## The definition still matters after the shortcut
+$$40(2)+46(3)+58(3)+52(1).$$
 
-Once the Fundamental Theorem arrives, it is tempting to file rectangles away as scaffolding. The exam disagrees, for a reason worth respecting: many real functions have no antiderivative formula, and many real data sets have no formula at all, like the table above. Rectangle sums are not the primitive version of integration. They are what integration is, and the antiderivative shortcut is the special case that works when a formula happens to exist.
+This gives
+
+$$444$$
+
+liters.
+
+The widths are not equal, so each one must be read from the table.
+
+The units also matter.
+
+A rate measured in liters per hour multiplied by time in hours gives liters.
+
+So the integral represents the accumulated quantity over the interval.
+
+## Why the definition still matters
+
+Antiderivatives provide an efficient evaluation method when they are available.
+
+But many functions do not have elementary antiderivatives, and many datasets are given only numerically.
+
+The Riemann-sum idea still applies in those settings.
+
+Integration is fundamentally accumulation.
+
+The antiderivative method is a theorem that connects that accumulation to differentiation.
 
 <div class="article-note" markdown="1">
-A self-test: without computing either sum, decide whether the trapezoidal estimate of $$\textstyle \int_0^3 (x^2+1)\,dx$$ is an overestimate or an underestimate. The answer depends on concavity alone. Since $$f$$ is concave up, each trapezoid's slanted top lies above the curve, so the trapezoidal sum overestimates. If that argument feels natural, the four-way chart is yours without memorizing it.
+A useful check is to decide the direction of a trapezoidal approximation without computing it.
+
+For
+
+$$f(x)=x^2+1,$$
+
+the function is concave up.
+
+The line segment joining two points on a concave-up curve lies above the curve.
+
+So a trapezoidal sum overestimates the integral.
+
+That conclusion comes from the geometry of one subinterval. No chart is necessary.
 </div>
