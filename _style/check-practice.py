@@ -262,18 +262,40 @@ def main():
     urls = known_urls()
     targets = sys.argv[1:] or sorted(glob.glob(os.path.join(ROOT, '_practice', '*.md')))
     total = 0
+    checked = 0
+    missing = []
     for p in targets:
+        # Counted, not skipped in silence. An argument that names nothing used
+        # to be passed over quietly, so a mistyped path, or a shell that hands
+        # a trailing comment through as argv, produced a clean report over an
+        # empty set. A green run has to mean files were read.
         if not os.path.exists(p):
+            missing.append(p)
             continue
         bad = check_practice(p, base, urls)
+        checked += 1
         if bad:
             print('\n%s' % os.path.basename(p))
             for kind, detail in bad:
                 print('   %-52s %s' % (kind, detail))
             total += len(bad)
+
     print('\n%d file%s checked, %d finding%s.'
-          % (len(targets), '' if len(targets) == 1 else 's',
+          % (checked, '' if checked == 1 else 's',
              total, '' if total == 1 else 's'))
+    if missing:
+        print('\n  WARNING: %d argument%s named nothing on disk and %s skipped:'
+              % (len(missing), '' if len(missing) == 1 else 's',
+                 'was' if len(missing) == 1 else 'were'))
+        for m in missing:
+            print('    %s' % m)
+        print('  If you pasted a command with a trailing comment, zsh passed the\n'
+              '  comment through as arguments. Add `setopt interactive_comments`\n'
+              '  to ~/.zshrc, or drop the comment.')
+        return 1
+    if checked == 0:
+        print('\n  WARNING: no files were checked.')
+        return 1
     if yaml is None:
         # Said loudly and last, because a clean run that silently skipped half
         # its checks is worse than a run that fails.
