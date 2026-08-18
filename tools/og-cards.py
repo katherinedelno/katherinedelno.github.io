@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate Open Graph social cards for every post, and a default card for pages.
+Generate Open Graph social cards for every post and every practice set, and a
+default card for pages.
 
 Cards are 1200x630 PNGs written to /assets/og/<slug>.png, drawn in the site's
 own typography (Hanken Grotesk, ink #1f1f1f, the 18x2 accent rule that precedes
@@ -16,6 +17,8 @@ rewritten rather than duplicated.
 
     python3 tools/og-cards.py            # generate everything
     python3 tools/og-cards.py --no-write # cards only, leave front matter alone
+    python3 tools/og-cards.py --only practice   # just the practice sets
+    python3 tools/og-cards.py --only posts      # just the posts
 """
 
 import glob
@@ -133,6 +136,47 @@ def field(fm, key):
     return m.group(1) if m else None
 
 
+def sweep(pattern, write_fm, prefix="", eyebrow_lead=""):
+    """Draw a card for every file matching `pattern` and point its front matter
+    at the result.
+
+    `prefix` namespaces the slug so a practice set and an essay on the same
+    topic cannot collide in assets/og/ (related-rates.md and
+    2026-07-20-related-rates-translation-problem.md would otherwise be fine,
+    but limits-and-continuity.md and a future essay of the same name would
+    not). `eyebrow_lead` puts the section name in front of the course, so a
+    shared card reads "PRACTICE, AP CALCULUS AB & BC".
+    """
+    n = 0
+    for path in sorted(glob.glob(pattern)):
+        src = open(path, encoding="utf-8").read()
+        fm, body = front_matter(src)
+        if fm is None:
+            print(f"  skipped (no front matter): {os.path.basename(path)}")
+            continue
+
+        title = field(fm, "title")
+        if not title:
+            print(f"  skipped (no title): {os.path.basename(path)}")
+            continue
+
+        slug = prefix + re.sub(r"^\d{4}-\d{2}-\d{2}-", "",
+                               os.path.basename(path))[:-3]
+        rel = f"/assets/og/{slug}.png"
+        card(title, eyebrow_lead + (field(fm, "course") or ""),
+             field(fm, "blurb") or "", os.path.join(OUT, f"{slug}.png"))
+        n += 1
+
+        if write_fm:
+            if re.search(r"^image:", fm, re.M):
+                fm2 = re.sub(r'^image:.*$', f'image: "{rel}"', fm, flags=re.M)
+            else:
+                fm2 = fm.rstrip("\n") + f'\nimage: "{rel}"\n'
+            if fm2 != fm:
+                open(path, "w", encoding="utf-8").write(f"---\n{fm2}---\n{body}")
+    return n
+
+
 def main():
     write_fm = "--no-write" not in sys.argv
     os.makedirs(OUT, exist_ok=True)
@@ -147,34 +191,19 @@ def main():
     for slug, title, eyebrow, blurb in PAGES:
         card(title, eyebrow, blurb, os.path.join(OUT, f"{slug}.png"))
 
-    n = 0
-    for path in sorted(glob.glob(os.path.join(ROOT, "_posts", "*.md"))):
-        src = open(path, encoding="utf-8").read()
-        fm, body = front_matter(src)
-        if fm is None:
-            print(f"  skipped (no front matter): {os.path.basename(path)}")
-            continue
+    only = None
+    if "--only" in sys.argv:
+        only = sys.argv[sys.argv.index("--only") + 1]
 
-        title = field(fm, "title")
-        if not title:
-            print(f"  skipped (no title): {os.path.basename(path)}")
-            continue
+    n_posts = n_practice = 0
+    if only in (None, "posts"):
+        n_posts = sweep(os.path.join(ROOT, "_posts", "*.md"), write_fm)
+    if only in (None, "practice"):
+        n_practice = sweep(os.path.join(ROOT, "_practice", "*.md"), write_fm,
+                           prefix="practice-", eyebrow_lead="Practice, ")
 
-        slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", os.path.basename(path))[:-3]
-        rel = f"/assets/og/{slug}.png"
-        card(title, field(fm, "course") or "", field(fm, "blurb") or "",
-             os.path.join(OUT, f"{slug}.png"))
-        n += 1
-
-        if write_fm:
-            if re.search(r"^image:", fm, re.M):
-                fm2 = re.sub(r'^image:.*$', f'image: "{rel}"', fm, flags=re.M)
-            else:
-                fm2 = fm.rstrip("\n") + f'\nimage: "{rel}"\n'
-            if fm2 != fm:
-                open(path, "w", encoding="utf-8").write(f"---\n{fm2}---\n{body}")
-
-    print(f"wrote {n} post cards + default.png to assets/og/")
+    print(f"wrote {n_posts} post cards, {n_practice} practice cards, "
+          f"and default.png to assets/og/")
     if write_fm:
         print("front matter updated with image: paths")
 
