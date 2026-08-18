@@ -5,7 +5,7 @@ date: 2026-07-25
 description: "Functions become surfaces, derivatives become directional, and integrals extend over regions and volumes. Much of BC reappears in a higher-dimensional setting."
 course: "AP Calculus BC"
 section: beyond
-read_time: "9 min read"
+read_time: "8 min read"
 math: true
 kind: beyond
 sequence: 6
@@ -15,31 +15,11 @@ featured: true
 image: "/assets/og/beyond-ap-calculus-bc.png"
 ---
 
-AP Calculus studies functions of one variable.
-
-A function such as
-
-$$y=f(x)$$
-
-takes one input and produces one output, so its graph is a curve.
-
-Multivariable calculus begins by allowing more than one input.
-
-For example,
-
-$$z=f(x,y)$$
-
-takes a point in the plane and assigns it a height.
-
-The graph is now a surface.
-
-Many of the ideas from BC remain recognizable, but they have to account for the additional directions.
+AP Calculus studies functions of one variable. A function such as $$y=f(x)$$ takes one input and produces one output, so its graph is a curve. Multivariable calculus begins by allowing more than one input. For example, $$z=f(x,y)$$ takes a point in the plane and assigns it a height, and the graph is now a surface. Many of the ideas from BC remain recognizable, but they have to account for the additional directions.
 
 ## Functions become surfaces
 
-Consider
-
-$$f(x,y)=\sin x\cos y.$$
+Consider $$f(x,y)=\sin x\cos y$$.
 
 <div class="viz" markdown="0">
   <canvas id="s3-cv" width="700" height="330"></canvas>
@@ -93,49 +73,15 @@ $$f(x,y)=\sin x\cos y.$$
 })();
 </script>
 
-The graph rises and falls over the $$xy$$-plane.
-
-A maximum is now a peak on a surface.
-
-A minimum is a valley.
-
-There can also be saddle points, where the surface rises in one direction and falls in another.
-
-That additional geometry is the first major change.
-
-With one input, there is essentially one axis along which to ask how the function changes.
-
-With two inputs, there are infinitely many possible directions.
+The graph rises and falls over the $$xy$$-plane. A maximum is now a peak on a surface, a minimum is a valley, and there can also be saddle points, where the surface rises in one direction and falls in another. That additional geometry is the first major change. With one input, there is essentially one axis along which to ask how the function changes, but with two inputs, there are infinitely many possible directions.
 
 ## Partial derivatives
 
-Two directions are especially useful.
+Two directions are especially useful. The partial derivative $$\tfrac{\partial f}{\partial x}$$ measures the rate of change in the $$x$$-direction while $$y$$ is held fixed, and similarly $$\tfrac{\partial f}{\partial y}$$ measures change in the $$y$$-direction while $$x$$ is held fixed.
 
-The partial derivative
+The differentiation rules themselves are familiar. For $$f(x,y)=x^2y$$, treat $$y$$ as constant when differentiating with respect to $$x$$, and treat $$x$$ as constant when differentiating with respect to $$y$$, which gives
 
-$$\frac{\partial f}{\partial x}$$
-
-measures the rate of change in the $$x$$-direction while $$y$$ is held fixed.
-
-Similarly,
-
-$$\frac{\partial f}{\partial y}$$
-
-measures change in the $$y$$-direction while $$x$$ is held fixed.
-
-The differentiation rules themselves are familiar.
-
-For
-
-$$f(x,y)=x^2y,$$
-
-treat $$y$$ as constant when differentiating with respect to $$x$$:
-
-$$\frac{\partial f}{\partial x}=2xy.$$
-
-Treat $$x$$ as constant when differentiating with respect to $$y$$:
-
-$$\frac{\partial f}{\partial y}=x^2.$$
+$$\frac{\partial f}{\partial x}=2xy \qquad\text{and}\qquad \frac{\partial f}{\partial y}=x^2$$
 
 The new notation records which input is changing.
 
@@ -143,120 +89,38 @@ The new notation records which input is changing.
 
 The two partial derivatives can be collected into a vector:
 
-$$\nabla f = \left\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right\rangle.$$
+$$\nabla f = \left\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right\rangle$$
 
-This is the gradient.
+This is the gradient. At a point where the gradient is nonzero, it points in the direction of steepest increase, and its magnitude gives the rate of that steepest increase. The directional derivative in any other direction can be obtained by projecting the gradient onto that direction, and this is one reason vectors become central in the course.
 
-At a point where the gradient is nonzero, it points in the direction of steepest increase.
-
-Its magnitude gives the rate of that steepest increase.
-
-The directional derivative in any other direction can be obtained by projecting the gradient onto that direction.
-
-This is one reason vectors become central in the course.
-
-Optimization also changes.
-
-For an interior critical point of a differentiable function of two variables, both partial derivatives must be zero.
-
-Then second-derivative information is used to distinguish local maxima, minima, and saddle points.
+Optimization also changes. For an interior critical point of a differentiable function of two variables, both partial derivatives must be zero, and then second-derivative information is used to distinguish local maxima, minima, and saddle points.
 
 ## Integrals become double and triple integrals
 
-In one variable,
+In one variable, $$\textstyle\int_a^b f(x)\,dx$$ accumulates across an interval, and a double integral, $$\textstyle\iint_R f(x,y)\,dA$$, accumulates across a region in the plane. When $$f$$ represents height, the integral can compute volume under a surface. The basic [Riemann-sum](/2026/07/25/riemann-sums-watching-rectangles.html) idea is the same, so instead of dividing an interval into narrow subintervals, divide a region into small pieces and sum the contributions from each one.
 
-$$\int_a^b f(x)\,dx$$
-
-accumulates across an interval.
-
-A double integral,
-
-$$\iint_R f(x,y)\,dA,$$
-
-accumulates across a region in the plane.
-
-When $$f$$ represents height, the integral can compute volume under a surface.
-
-The basic [Riemann-sum](/2026/07/25/riemann-sums-watching-rectangles.html) idea is the same.
-
-Instead of dividing an interval into narrow subintervals, divide a region into small pieces and sum the contributions from each one.
-
-Many double integrals can be evaluated as repeated one-variable integrals.
-
-For example, integrate with respect to $$x$$ while treating $$y$$ as constant, then integrate the result with respect to $$y$$.
-
-The BC integration rules are still doing the computational work.
+Many double integrals can be evaluated as repeated one-variable integrals. For example, integrate with respect to $$x$$ while treating $$y$$ as constant, then integrate the result with respect to $$y$$. The BC integration rules are still doing the computational work.
 
 ## Coordinate systems matter more
 
-Polar coordinates become especially useful for regions with circular symmetry.
+Polar coordinates become especially useful for regions with circular symmetry. The area element is $$dA=r\,dr\,d\theta$$, and the factor $$r$$ accounts for the way polar coordinates stretch area. This change-of-variables idea extends much further in multivariable calculus through Jacobian determinants.
 
-The area element is
-
-$$dA=r\,dr\,d\theta.$$
-
-The factor $$r$$ accounts for the way polar coordinates stretch area.
-
-This change-of-variables idea extends much further in multivariable calculus through Jacobian determinants.
-
-A classical example is the Gaussian integral
-
-$$\int_{-\infty}^{\infty}e^{-x^2}\,dx.$$
-
-It has no elementary antiderivative.
-
-By squaring the integral and interpreting the result as a double integral, the problem can be converted to polar coordinates.
-
-The result is
-
-$$\sqrt{\pi}.$$
-
-The same calculation helps explain the normalization constant in the normal distribution.
+A classical example is the Gaussian integral $$\textstyle\int_{-\infty}^{\infty}e^{-x^2}\,dx$$, which has no elementary antiderivative. By squaring the integral and interpreting the result as a double integral, the problem can be converted to polar coordinates, and the result is $$\sqrt{\pi}$$. The same calculation helps explain the normalization constant in the normal distribution.
 
 ## Vector fields and line integrals
 
-A multivariable course eventually shifts from scalar functions to vector fields.
+A multivariable course eventually shifts from scalar functions to vector fields. A vector field assigns an arrow to each point in space, and examples include velocity fields, gravitational fields, and electric fields. A line integral measures accumulation along a curve through such a field, and one interpretation is physical work.
 
-A vector field assigns an arrow to each point in space.
-
-Examples include velocity fields, gravitational fields, and electric fields.
-
-A line integral measures accumulation along a curve through such a field.
-
-One interpretation is physical work.
-
-The parametric curves from BC become useful again because a path can be written as
-
-$$\mathbf r(t) = \langle x(t),y(t)\rangle.$$
-
-Arc length, velocity vectors, and parameterized motion all carry directly into this setting.
+The parametric curves from BC become useful again because a path can be written as $$\mathbf r(t) = \langle x(t),y(t)\rangle$$. Arc length, velocity vectors, and parameterized motion all carry directly into this setting.
 
 ## The Fundamental Theorem grows too
 
-Later the course develops theorems such as Green's theorem and, in higher dimensions, Stokes' theorem and the divergence theorem.
-
-These connect behavior on the boundary of a region with behavior throughout its interior.
-
-The resemblance to the [Fundamental Theorem of Calculus](/2026/07/17/fundamental-theorem-from-the-ground-up.html) is structural.
-
-In one dimension, integration of a derivative over an interval is determined by values at the endpoints.
-
-In higher dimensions, related theorems connect integrals over a region with integrals over its boundary.
+Later the course develops theorems such as Green's theorem and, in higher dimensions, Stokes' theorem and the divergence theorem. These connect behavior on the boundary of a region with behavior throughout its interior, and the resemblance to the [Fundamental Theorem of Calculus](/2026/07/17/fundamental-theorem-from-the-ground-up.html) is structural. In one dimension, integration of a derivative over an interval is determined by values at the endpoints, and in higher dimensions, related theorems connect integrals over a region with integrals over its boundary.
 
 ## What carries over from BC
 
-The most useful preparation is still ordinary calculus done cleanly.
-
-The chain rule, integration techniques, parametric curves, vectors, polar coordinates, and limits all return.
-
-The new challenge is usually geometric.
-
-There are more variables, more directions, and more coordinate systems, but the underlying operations remain recognizable.
+The most useful preparation is still ordinary calculus done cleanly. The chain rule, integration techniques, parametric curves, vectors, polar coordinates, and limits all return. The new challenge is usually geometric, and there are more variables, more directions, and more coordinate systems, but the underlying operations remain recognizable.
 
 <div class="article-note" markdown="1">
-A good preview question is to look at the surface above and ask how its height changes if you move east, north, or along a diagonal.
-
-Those are three different directional questions about the same function.
-
-That is the shift from one-variable to multivariable calculus.
+A good preview question is to look at the surface above and ask how its height changes if you move east, north, or along a diagonal. Those are three different directional questions about the same function, and that is the shift from one-variable to multivariable calculus.
 </div>

@@ -4,7 +4,7 @@ title: "Describing a distribution in the exam's own words"
 date: 2026-07-31
 description: "Shape, center, variability, and unusual features should be described in context. The choice of summary statistics depends on the shape of the distribution."
 course: "AP Statistics"
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 1
@@ -14,19 +14,11 @@ blurb: "Shape, center, variability, and unusual features should be described in 
 image: "/assets/og/describing-a-distribution.png"
 ---
 
-A statistical description should tell the reader what the distribution looks like and what its values mean.
-
-For a quantitative variable, the main features are shape, center, variability, and unusual features such as outliers, gaps, or clusters.
-
-The description also needs context.
-
-A statement about a median of 66.5 is incomplete until the variable, units, and population are clear.
+A statistical description should tell the reader what the distribution looks like and what its values mean. For a quantitative variable, the main features are shape, center, variability, and unusual features such as outliers, gaps, or clusters. The description also needs context, and a statement about a median of 66.5 is incomplete until the variable, units, and population are clear.
 
 ## Move one observation
 
-Eleven of the twelve values below stay fixed.
-
-The twelfth moves.
+Eleven of the twelve values below stay fixed, and the twelfth moves.
 
 <div class="viz" markdown="0">
   <canvas id="dd-cv" width="700" height="286"></canvas>
@@ -170,101 +162,37 @@ The twelfth moves.
 })();
 </script>
 
-The dotplot and boxplot show the same data.
-
-The dashed lines mark the usual $$1.5\times\text{IQR}$$ fences.
-
-As the moving value travels farther from the rest of the data, compare the mean, median, standard deviation, and interquartile range.
-
-The mean and standard deviation respond strongly.
-
-The median and IQR may not move at all.
+The dotplot and boxplot show the same data, and the dashed lines mark the usual $$1.5\times\text{IQR}$$ fences. As the moving value travels farther from the rest of the data, compare the mean, median, standard deviation, and interquartile range. The mean and standard deviation respond strongly, and the median and IQR may not move at all.
 
 ## Resistant and nonresistant summaries
 
-When the moving value changes from 80 to 130, the mean rises from 67.83 to 72.00.
+When the moving value changes from 80 to 130, the mean rises from 67.83 to 72.00 and the standard deviation rises from 9.38 to 20.17. The median remains 66.50 and the IQR remains 13.00.
 
-The standard deviation rises from 9.38 to 20.17.
+The difference comes from how the summaries are defined. The mean and standard deviation use the numerical size of every observation, and an extreme value therefore has direct influence on both. The median and quartiles depend primarily on order and position, and moving the largest observation farther right does not change which observations occupy the middle positions. That makes the median and IQR resistant to extreme values.
 
-The median remains 66.50.
-
-The IQR remains 13.00.
-
-The difference comes from how the summaries are defined.
-
-The mean and standard deviation use the numerical size of every observation.
-
-An extreme value therefore has direct influence on both.
-
-The median and quartiles depend primarily on order and position.
-
-Moving the largest observation farther right does not change which observations occupy the middle positions.
-
-That makes the median and IQR resistant to extreme values.
-
-For a roughly symmetric distribution without strong outliers, the mean and standard deviation are usually appropriate summaries.
-
-For a skewed distribution or one with influential outliers, the median and IQR are often more representative.
+For a roughly symmetric distribution without strong outliers, the mean and standard deviation are usually appropriate summaries. For a skewed distribution or one with influential outliers, the median and IQR are often more representative.
 
 ## Shape matters
 
-For a right-skewed distribution, the long right tail tends to pull the mean above the median.
+For a right-skewed distribution, the long right tail tends to pull the mean above the median, and for a left-skewed distribution, the long left tail tends to pull the mean below the median. For a roughly symmetric distribution, the two are often close.
 
-For a left-skewed distribution, the long left tail tends to pull the mean below the median.
-
-For a roughly symmetric distribution, the two are often close.
-
-This relationship can support a description, but it does not replace looking at the distribution itself.
-
-A distribution can also be bimodal, clustered, or otherwise unusual in ways that a single pair of summary statistics cannot show.
+This relationship can support a description, but it does not replace looking at the distribution itself. A distribution can also be bimodal, clustered, or otherwise unusual in ways that a single pair of summary statistics cannot show.
 
 ## Two outlier rules
 
-Two common rules can identify different observations as unusual.
+Two common rules can identify different observations as unusual. The $$1.5\times\text{IQR}$$ rule flags observations below $$Q_1-1.5(\text{IQR})$$ or above $$Q_3+1.5(\text{IQR})$$, and another rule considers observations more than two standard deviations from the mean. These rules need not agree, and in the visualization, the two-standard-deviation rule begins flagging the moving value before the IQR rule does.
 
-The $$1.5\times\text{IQR}$$ rule flags observations below
-
-$$Q_1-1.5(\text{IQR})$$
-
-or above
-
-$$Q_3+1.5(\text{IQR}).$$
-
-Another rule considers observations more than two standard deviations from the mean.
-
-These rules need not agree.
-
-In the visualization, the two-standard-deviation rule begins flagging the moving value before the IQR rule does.
-
-That disagreement is not a contradiction.
-
-The rules use different centers and measures of spread.
-
-The mean and standard deviation are themselves affected by the candidate outlier, while the quartiles are much more resistant.
-
-So when a problem asks whether an observation is an outlier, state which rule is being used.
+That disagreement is not a contradiction. The rules use different centers and measures of spread, and the mean and standard deviation are themselves affected by the candidate outlier, while the quartiles are much more resistant. So when a problem asks whether an observation is an outlier, state which rule is being used.
 
 ## Reading a boxplot correctly
 
-A standard modified boxplot does not extend its whiskers automatically to the minimum and maximum.
+A standard modified boxplot does not extend its whiskers automatically to the minimum and maximum. The whiskers stop at the most extreme observations that remain within the $$1.5\times\text{IQR}$$ fences, and observations beyond the fences are shown separately.
 
-The whiskers stop at the most extreme observations that remain within the $$1.5\times\text{IQR}$$ fences.
-
-Observations beyond the fences are shown separately.
-
-A boxplot is useful for comparing center, spread, skew, and possible outliers.
-
-It cannot show every feature of the raw distribution.
-
-Two different datasets can have similar boxplots while having very different modality or clustering.
+A boxplot is useful for comparing center, spread, skew, and possible outliers. It cannot show every feature of the raw distribution, and two different datasets can have similar boxplots while having very different modality or clustering.
 
 ## Comparing two distributions
 
-A comparison should actually compare.
-
-Instead of writing one paragraph about Group A and another about Group B, use comparative language.
-
-For example:
+A comparison should actually compare. Instead of writing one paragraph about Group A and another about Group B, use comparative language. For example:
 
 “Group A has a higher median score and less variability than Group B. Group B is more strongly right-skewed and contains one high outlier.”
 

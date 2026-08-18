@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "The theorem guarantees that a value is reached somewhere on an interval. It does not tell you where or how many times."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 6
@@ -14,15 +14,7 @@ blurb: "The theorem guarantees that a value is reached somewhere on an interval.
 image: "/assets/og/intermediate-value-theorem.png"
 ---
 
-The Intermediate Value Theorem is an existence theorem.
-
-It allows us to conclude that a continuous function reaches a particular value somewhere on an interval without locating the point where that happens.
-
-In full, suppose $$f$$ is continuous on the closed interval $$[a,b]$$. If $$d$$ lies between $$f(a)$$ and $$f(b)$$, then there is at least one $$c\in(a,b)$$ such that
-
-$$f(c)=d.$$
-
-The hypotheses and the conclusion are all worth reading carefully.
+The Intermediate Value Theorem is an existence theorem. It allows us to conclude that a continuous function reaches a particular value somewhere on an interval without locating the point where that happens. In full, suppose $$f$$ is continuous on the closed interval $$[a,b]$$. If $$d$$ lies between $$f(a)$$ and $$f(b)$$, then there is at least one $$c\in(a,b)$$ such that $$f(c)=d$$. The hypotheses and the conclusion are all worth reading carefully.
 
 ## The statement one condition at a time
 
@@ -178,39 +170,15 @@ The hypotheses and the conclusion are all worth reading carefully.
 })();
 </script>
 
-Both functions in the visualization have the same endpoint values,
+Both functions in the visualization have the same endpoint values, $$f(0)=1$$ and $$f(4)=5$$, and the only difference is continuity. For the continuous function, any target $$d$$ between 1 and 5 satisfies the conditions of the theorem, so at least one crossing is guaranteed. The graph may cross the target more than once, and the theorem does not count the crossings.
 
-$$f(0)=1 \quad\text{and}\quad f(4)=5.$$
+Switch to the function with a jump and choose a target between 3 and 4. The endpoint condition still holds, and the target lies between $$f(0)$$ and $$f(4)$$, but the function is not continuous on the interval, so the theorem no longer applies. In this example, there is also no crossing.
 
-The only difference is continuity.
-
-For the continuous function, any target $$d$$ between 1 and 5 satisfies the conditions of the theorem. At least one crossing is guaranteed.
-
-The graph may cross the target more than once. The theorem does not count the crossings.
-
-Switch to the function with a jump and choose a target between 3 and 4.
-
-The endpoint condition still holds. The target lies between $$f(0)$$ and $$f(4)$$.
-
-But the function is not continuous on the interval, so the theorem no longer applies.
-
-In this example, there is also no crossing.
-
-Now move the target above 5 or below 1 while keeping the continuous function.
-
-Continuity still holds, but the target is no longer between the endpoint values. Again, the theorem does not apply.
-
-This does not mean the function cannot equal that target somewhere. It means the theorem gives no guarantee.
+Now move the target above 5 or below 1 while keeping the continuous function. Continuity still holds, but the target is no longer between the endpoint values, and again the theorem does not apply. This does not mean the function cannot equal that target somewhere. It means the theorem gives no guarantee.
 
 ## What “at least one” means
 
-Set the target to 3 on the continuous function.
-
-The graph crosses $$y=3$$ three times.
-
-The Intermediate Value Theorem guarantees only one or more.
-
-That is all an existence theorem can conclude from the information it uses. Continuity and two endpoint values are enough to guarantee a crossing, but not enough to determine the number or location of crossings.
+Set the target to 3 on the continuous function. The graph crosses $$y=3$$ three times, while the Intermediate Value Theorem guarantees only one or more. That is all an existence theorem can conclude from the information it uses. Continuity and two endpoint values are enough to guarantee a crossing, but not enough to determine the number or location of crossings.
 
 So the theorem does not justify either of these claims:
 
@@ -221,17 +189,7 @@ Those statements may happen to be true for a particular function. They do not fo
 
 ## Why continuity matters
 
-Return to the function with a jump and set the target to 3.5.
-
-The endpoint values remain 1 and 5, so
-
-$$1<3.5<5.$$
-
-But the left piece approaches values below 3 while the right piece begins at 4.
-
-The graph skips the entire interval of outputs between 3 and 4.
-
-Without continuity, the endpoint bracket alone guarantees nothing.
+Return to the function with a jump and set the target to 3.5. The endpoint values remain 1 and 5, so $$1<3.5<5$$, but the left piece approaches values below 3 while the right piece begins at 4. The graph skips the entire interval of outputs between 3 and 4, and without continuity the endpoint bracket alone guarantees nothing.
 
 This is why the theorem requires continuity on the entire closed interval $$[a,b]$$. The conclusion depends on the function being unable to jump over intermediate values.
 
@@ -248,16 +206,8 @@ For example:
 
 > “$$f$$ is a polynomial, so it is continuous on $$[0,4]$$. Since $$f(0)=1$$ and $$f(4)=5$$, and $$1<3<5$$, the Intermediate Value Theorem guarantees that there is at least one $$c\in(0,4)$$ such that $$f(c)=3$$.”
 
-Two common errors are easy to avoid.
-
-The first is skipping the continuity statement.
-
-The second is claiming more than the theorem gives. Do not say “exactly one” unless you have additional information that proves uniqueness. Do not name the location unless you obtained it by some other method.
+Two common errors are easy to avoid. The first is skipping the continuity statement. The second is claiming more than the theorem gives. Do not say “exactly one” unless you have additional information that proves uniqueness. Do not name the location unless you obtained it by some other method.
 
 <div class="article-note" markdown="1">
-A useful self-test is to use the discontinuous function and drag the target from 2 to 5.
-
-The number of actual crossings changes. The theorem's verdict does not. It remains silent because one of its hypotheses is false.
-
-That distinction is the point.
+A useful self-test is to use the discontinuous function and drag the target from 2 to 5. The number of actual crossings changes. The theorem's verdict does not. It remains silent because one of its hypotheses is false. That distinction is the point.
 </div>

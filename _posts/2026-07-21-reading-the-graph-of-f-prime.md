@@ -5,7 +5,7 @@ date: 2026-07-21
 description: "A graph of f' tells you where f increases, decreases, turns, and changes concavity. The main task is keeping the two functions separate."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 17
@@ -15,13 +15,7 @@ featured: true
 image: "/assets/og/reading-the-graph-of-f-prime.png"
 ---
 
-A common AP Calculus question gives the graph of $$f'$$ and asks about $$f$$.
-
-The difficulty is mostly translation.
-
-The picture is not the graph of $$f$$. It is information about $$f$$.
-
-Two facts organize nearly everything that follows:
+A common AP Calculus question gives the graph of $$f'$$ and asks about $$f$$. The difficulty is mostly translation. The picture is not the graph of $$f$$. It is information about $$f$$. Two facts organize nearly everything that follows:
 
 - the sign of $$f'$$ tells you whether $$f$$ is increasing or decreasing
 - the slope of $$f'$$ tells you the concavity of $$f$$
@@ -39,17 +33,11 @@ Two facts organize nearly everything that follows:
 | $$f'$$ changes from decreasing to increasing, or the reverse | $$f$$ may have a point of inflection |
 | signed area between $$f'$$ and the axis | total change in $$f$$ |
 
-The height of the graph and the shape of the graph answer different questions.
-
-The height of $$f'$$ tells you the sign of the derivative.
-
-The shape of $$f'$$ tells you whether the derivative itself is increasing or decreasing.
+The height of the graph and the shape of the graph answer different questions. The height of $$f'$$ tells you the sign of the derivative, and the shape of $$f'$$ tells you whether the derivative itself is increasing or decreasing.
 
 ## A worked example
 
-Suppose the graph of $$f'$$ on $$[0,8]$$ consists of line segments through
-
-$$(0,3),\quad (2,0),\quad (4,-3),\quad (6,0),\quad (8,3).$$
+Suppose the graph of $$f'$$ on $$[0,8]$$ consists of line segments through $$(0,3),\; (2,0),\; (4,-3),\; (6,0),\; (8,3)$$.
 
 <div class="viz" markdown="0">
 <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph of f prime: piecewise linear, starting at (0,3), decreasing to (4,-3), increasing to (8,3)">
@@ -80,129 +68,35 @@ $$(0,3),\quad (2,0),\quad (4,-3),\quad (6,0),\quad (8,3).$$
 <p class="viz-caption">The graph of the <em>derivative</em>. Filled dots: where f ′ crosses zero, the candidates for extremes of f. Open dot: where f ′ itself bottoms out, which is a point of inflection of f, not a minimum of f.</p>
 </div>
 
-Where is $$f$$ increasing?
+Where is $$f$$ increasing? Wherever $$f'>0$$, so $$f$$ increases on $$(0,2)$$ and $$(6,8)$$. It does not matter that $$f'$$ is decreasing on $$(0,2)$$. The derivative is still positive there, so $$f$$ is increasing.
 
-Wherever $$f'>0$$.
+Where does $$f$$ have a relative maximum? At $$x=2$$, because $$f'$$ changes from positive to negative there. At $$x=6$$, $$f'$$ changes from negative to positive, so $$f$$ has a relative minimum.
 
-So $$f$$ increases on
-
-$$(0,2) \quad\text{and}\quad (6,8).$$
-
-It does not matter that $$f'$$ is decreasing on $$(0,2)$$. The derivative is still positive there, so $$f$$ is increasing.
-
-Where does $$f$$ have a relative maximum?
-
-At
-
-$$x=2,$$
-
-because $$f'$$ changes from positive to negative there.
-
-At
-
-$$x=6,$$
-
-$$f'$$ changes from negative to positive, so $$f$$ has a relative minimum.
-
-Where is $$f$$ concave down?
-
-Where $$f'$$ is decreasing.
-
-That occurs on
-
-$$(0,4).$$
-
-Likewise, $$f$$ is concave up on
-
-$$(4,8),$$
-
-where $$f'$$ is increasing.
-
-The point
-
-$$x=4$$
-
-is a point of inflection because the concavity changes there.
+Where is $$f$$ concave down? Where $$f'$$ is decreasing, and that occurs on $$(0,4)$$. Likewise, $$f$$ is concave up on $$(4,8)$$, where $$f'$$ is increasing. The point $$x=4$$ is a point of inflection because the concavity changes there.
 
 ## Recovering values of $$f$$
 
-If one value of $$f$$ is known, [signed area under $$f'$$](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives the rest.
+If one value of $$f$$ is known, [signed area under $$f'$$](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives the rest. Suppose $$f(0)=1$$, so that
 
-Suppose
+$$f(8) = f(0)+\int_0^8 f'(x)\,dx$$
 
-$$f(0)=1.$$
+From $$0$$ to $$2$$, the graph contributes a triangle of area $$3$$. From $$2$$ to $$6$$, the graph is below the axis and contributes $$-6$$. From $$6$$ to $$8$$, it contributes another $$3$$, so $$f(8) = 1+3-6+3 = 1$$. The function ends at the same value where it began, even though it increased, decreased, and increased again in between.
 
-Then
-
-$$f(8) = f(0)+\int_0^8 f'(x)\,dx.$$
-
-From $$0$$ to $$2$$, the graph contributes a triangle of area
-
-$$3.$$
-
-From $$2$$ to $$6$$, the graph is below the axis and contributes
-
-$$-6.$$
-
-From $$6$$ to $$8$$, it contributes another
-
-$$3.$$
-
-So
-
-$$f(8) = 1+3-6+3 = 1.$$
-
-The function ends at the same value where it began, even though it increased, decreased, and increased again in between.
-
-To find an absolute minimum, evaluate $$f$$ at the relevant candidates.
-
-Here,
-
-$$f(0)=1,$$
-
-$$f(2)=4,$$
-
-$$f(6)=-2,$$
-
-and
-
-$$f(8)=1.$$
-
-So the absolute minimum occurs at
-
-$$x=6.$$
-
-No formula for $$f$$ was needed.
+To find an absolute minimum, evaluate $$f$$ at the relevant candidates. Here, $$f(0)=1,\; f(2)=4,\; f(6)=-2,\; f(8)=1$$, so the absolute minimum occurs at $$x=6$$. No formula for $$f$$ was needed.
 
 ## Three common mistakes
 
-### Treating the picture as $$f$$
+## Treating the picture as $$f$$
 
-The lowest point on the graph of $$f'$$ is not automatically a minimum of $$f$$.
+The lowest point on the graph of $$f'$$ is not automatically a minimum of $$f$$. A minimum of $$f'$$ says something about the slope of $$f$$ and therefore about concavity, and extrema of $$f$$ are found by looking for sign changes in $$f'$$.
 
-A minimum of $$f'$$ says something about the slope of $$f$$ and therefore about concavity.
+## Assuming $$f'=0$$ is enough
 
-Extrema of $$f$$ are found by looking for sign changes in $$f'$$.
+A zero of $$f'$$ is only a critical point. For a relative maximum or minimum, the sign of $$f'$$ must change, and if $$f'$$ touches zero and remains positive on both sides, $$f$$ keeps increasing.
 
-### Assuming $$f'=0$$ is enough
+## Answering about the wrong function
 
-A zero of $$f'$$ is only a critical point.
-
-For a relative maximum or minimum, the sign of $$f'$$ must change.
-
-If $$f'$$ touches zero and remains positive on both sides, $$f$$ keeps increasing.
-
-### Answering about the wrong function
-
-It helps to label conclusions explicitly.
-
-Write
-
-“$$f$$ is increasing because $$f'>0$$”
-
-rather than simply
-
-“increasing.”
+It helps to label conclusions explicitly. Write “$$f$$ is increasing because $$f'>0$$” rather than simply “increasing.”
 
 <div class="article-note" markdown="1">
 That small habit keeps the graph and the function it describes from being confused.

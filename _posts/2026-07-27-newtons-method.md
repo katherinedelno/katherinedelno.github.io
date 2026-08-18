@@ -4,7 +4,7 @@ title: "Newton's method and its basins of attraction"
 date: 2026-07-27
 description: "Newton's method turns tangent lines into an iterative root-finding algorithm. For functions with several roots, the starting value can determine which root the method finds."
 course: "AP Calculus AB & BC"
-read_time: "6 min read"
+read_time: "7 min read"
 math: true
 kind: beyond
 sequence: 1
@@ -14,41 +14,19 @@ featured: true
 image: "/assets/og/newtons-method.png"
 ---
 
-A tangent line can do more than approximate a function near one point.
-
-It can also be used to search for a root.
-
-Newton's method begins with a guess $$x_0$$, draws the tangent line there, and uses the tangent line's $$x$$-intercept as the next guess.
-
-The process repeats.
+A tangent line can do more than approximate a function near one point. It can also be used to search for a root. Newton's method begins with a guess $$x_0$$, draws the tangent line there, and uses the tangent line's $$x$$-intercept as the next guess. The process repeats.
 
 ## From one guess to the next
 
-For a differentiable function $$f$$, the tangent line at $$x_n$$ is
+For a differentiable function $$f$$, the tangent line at $$x_n$$ is $$y = f(x_n)+f'(x_n)(x-x_n)$$. Set $$y=0$$ to find where that tangent line crosses the axis, which gives $$0 = f(x_n)+f'(x_n)(x_{n+1}-x_n)$$, and solving for the next guess gives
 
-$$y = f(x_n)+f'(x_n)(x-x_n).$$
+$$x_{n+1} = x_n-\frac{f(x_n)}{f'(x_n)}$$
 
-Set $$y=0$$ to find where that tangent line crosses the axis:
-
-$$0 = f(x_n)+f'(x_n)(x_{n+1}-x_n).$$
-
-Solving for the next guess gives
-
-$$x_{n+1} = x_n-\frac{f(x_n)}{f'(x_n)}.$$
-
-That is Newton's method.
-
-The formula is simply a tangent-line calculation repeated.
+That is Newton's method, and the formula is simply a tangent-line calculation repeated.
 
 ## Try the iteration
 
-Consider
-
-$$f(x)=x^3-x.$$
-
-Its roots are
-
-$$-1,\quad0,\quad1.$$
+Consider $$f(x)=x^3-x$$, whose roots are $$-1,\; 0,\; 1$$.
 
 <div class="viz" markdown="0">
   <canvas id="nm-cv" width="700" height="300"></canvas>
@@ -135,117 +113,35 @@ $$-1,\quad0,\quad1.$$
 })();
 </script>
 
-The visualization shows each tangent line and the next $$x$$-intercept it produces.
-
-For many starting values, the iterates settle quickly toward one of the three roots.
-
-Near a root, the convergence can be extremely fast.
-
-For a simple root $$r$$, and under the usual smoothness conditions, Newton's method has quadratic convergence once the guesses are sufficiently close.
-
-Roughly, this means the number of correct digits can double from one iteration to the next.
+The visualization shows each tangent line and the next $$x$$-intercept it produces. For many starting values, the iterates settle quickly toward one of the three roots, and near a root the convergence can be extremely fast. For a simple root $$r$$, and under the usual smoothness conditions, Newton's method has quadratic convergence once the guesses are sufficiently close, which roughly means the number of correct digits can double from one iteration to the next.
 
 ## The starting value matters
 
-With several roots, the method does not know which one you intend to find.
+With several roots, the method does not know which one you intend to find, and the starting value determines the path. The strip below the graph colors each possible starting point according to the root reached by the iteration. Large regions lead consistently to one root, and the boundaries between those regions are more complicated.
 
-The starting value determines the path.
-
-The strip below the graph colors each possible starting point according to the root reached by the iteration.
-
-Large regions lead consistently to one root.
-
-The boundaries between those regions are more complicated.
-
-Move the starting value slowly across one of those boundaries.
-
-A very small change can send the iteration to a different root.
-
-This is not numerical randomness.
-
-The algorithm is deterministic.
-
-The sensitivity comes from the geometry of the tangent lines.
+Move the starting value slowly across one of those boundaries. A very small change can send the iteration to a different root. This is not numerical randomness, because the algorithm is deterministic. The sensitivity comes from the geometry of the tangent lines.
 
 ## What happens near a horizontal tangent
 
-For
+For $$f(x)=x^3-x$$, the derivative is $$f'(x)=3x^2-1$$, and it is zero at $$x=\pm\tfrac{1}{\sqrt3}$$. Near those values, the denominator in $$x_{n+1} = x_n-\tfrac{f(x_n)}{f'(x_n)}$$ is very small, so the next Newton step can be very large. At the exact points where $$f'(x)=0$$, the formula is undefined.
 
-$$f(x)=x^3-x,$$
-
-the derivative is
-
-$$f'(x)=3x^2-1.$$
-
-It is zero at
-
-$$x=\pm\frac{1}{\sqrt3}.$$
-
-Near those values, the denominator in
-
-$$x_{n+1} = x_n-\frac{f(x_n)}{f'(x_n)}$$
-
-is very small.
-
-The next Newton step can therefore be very large.
-
-At the exact points where $$f'(x)=0$$, the formula is undefined.
-
-This explains much of the irregular behavior near the basin boundaries.
-
-A nearly horizontal tangent can cross the $$x$$-axis very far from the current point.
-
-The next guess may then land in a completely different part of the graph.
+This explains much of the irregular behavior near the basin boundaries. A nearly horizontal tangent can cross the $$x$$-axis very far from the current point, and the next guess may then land in a completely different part of the graph.
 
 ## Newton's method is not guaranteed to succeed
 
-The method can fail in several ways.
+The method can fail in several ways. The derivative can be zero, the iterates can cycle rather than converge, and a poor starting value can send the sequence away from the root of interest. For some functions, a root can have a very small basin of attraction.
 
-The derivative can be zero.
-
-The iterates can cycle rather than converge.
-
-A poor starting value can send the sequence away from the root of interest.
-
-For some functions, a root can have a very small basin of attraction.
-
-So Newton's method is powerful, but it is not a theorem that every initial guess converges.
-
-In numerical analysis, root-finding algorithms are studied partly by asking when convergence is guaranteed and how quickly it occurs.
+So Newton's method is powerful, but it is not a theorem that every initial guess converges. In numerical analysis, root-finding algorithms are studied partly by asking when convergence is guaranteed and how quickly it occurs.
 
 ## The complex plane
 
-The basin picture becomes especially interesting when Newton's method is applied to complex numbers.
+The basin picture becomes especially interesting when Newton's method is applied to complex numbers. For $$f(z)=z^3-1$$, there are three complex roots of unity, and every starting point in the complex plane can be colored according to which root Newton's method reaches. The boundaries between the three basins form a fractal, and at every scale, points leading to different roots remain interwoven near the boundary.
 
-For
-
-$$f(z)=z^3-1,$$
-
-there are three complex roots of unity.
-
-Every starting point in the complex plane can be colored according to which root Newton's method reaches.
-
-The boundaries between the three basins form a fractal.
-
-At every scale, points leading to different roots remain interwoven near the boundary.
-
-These boundaries are related to Julia sets in complex dynamics.
-
-The same one-line iteration therefore connects tangent-line approximation, numerical analysis, and dynamical systems.
-
-None of that changes the basic mechanism.
-
-At every step, the algorithm replaces the function locally with a tangent line and follows that line to the axis.
+These boundaries are related to Julia sets in complex dynamics, so the same one-line iteration connects tangent-line approximation, numerical analysis, and dynamical systems. None of that changes the basic mechanism. At every step, the algorithm replaces the function locally with a tangent line and follows that line to the axis.
 
 ## A useful way to read the method
 
-Newton's method is worth understanding even when a calculator or computer performs the iterations.
-
-It shows how local information can drive a global search.
-
-At one point, the derivative tells us only the slope of the function nearby.
-
-Repeatedly updating that local approximation can nevertheless locate a root far from the original guess.
+Newton's method is worth understanding even when a calculator or computer performs the iterations. It shows how local information can drive a global search. At one point, the derivative tells us only the slope of the function nearby, and repeatedly updating that local approximation can nevertheless locate a root far from the original guess.
 
 <div class="article-note" markdown="1">
 The method also gives a useful warning. An algorithm can be deterministic and still be highly sensitive to where it starts.

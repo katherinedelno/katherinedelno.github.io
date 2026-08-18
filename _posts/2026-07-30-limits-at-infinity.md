@@ -14,27 +14,13 @@ blurb: "Limits at infinity describe end behavior. For rational functions, the le
 image: "/assets/og/limits-at-infinity.png"
 ---
 
-An infinite limit and a limit at infinity are different ideas.
+An infinite limit and a limit at infinity are different ideas. In an infinite limit, the input approaches a finite number while the output grows without bound, which is the behavior associated with [a vertical asymptote](/2026/07/30/continuity-three-conditions.html). In a limit at infinity, the input grows without bound and we ask what happens to the output, and that is a question about end behavior.
 
-In an infinite limit, the input approaches a finite number while the output grows without bound. This is the behavior associated with [a vertical asymptote](/2026/07/30/continuity-three-conditions.html).
-
-In a limit at infinity, the input grows without bound and we ask what happens to the output.
-
-That is a question about end behavior.
-
-For example,
-
-$$\lim_{x\to\infty}f(x)=L$$
-
-means that $$f(x)$$ approaches $$L$$ as $$x$$ becomes arbitrarily large.
-
-If $$L$$ is finite, then $$y=L$$ is a horizontal asymptote.
+For example, $$\lim_{x\to\infty}f(x)=L$$ means that $$f(x)$$ approaches $$L$$ as $$x$$ becomes arbitrarily large. If $$L$$ is finite, then $$y=L$$ is a horizontal asymptote.
 
 ## Three cases for rational functions
 
-For a rational function, the end behavior can be read from the degrees of the numerator and denominator.
-
-Use the controls below to change those degrees and then zoom out.
+For a rational function, the end behavior can be read from the degrees of the numerator and denominator. Use the controls below to change those degrees and then zoom out.
 
 <div class="viz" markdown="0">
   <canvas id="ei-cv" width="700" height="300"></canvas>
@@ -174,100 +160,36 @@ Use the controls below to change those degrees and then zoom out.
 })();
 </script>
 
-The graph extends to the selected scale so you can see the end behavior rather than only the local shape near the origin.
-
-There are three cases.
+The graph extends to the selected scale so you can see the end behavior rather than only the local shape near the origin. There are three cases.
 
 - If the denominator has higher degree, the limit is 0.
 - If the degrees are equal, the limit is the ratio of the leading coefficients.
 - If the numerator has higher degree, there is no finite horizontal asymptote.
 
-For example, if the numerator and denominator are both degree 1 with leading coefficients 3 and 2, then
-
-$$\lim_{x\to\infty}f(x)=\frac32.$$
-
-If the denominator has higher degree, the denominator eventually dominates and the quotient approaches 0.
-
-If the numerator has higher degree, the quotient does not settle to a finite number. Its end behavior depends on the leading terms and on whether $$x\to\infty$$ or $$x\to-\infty$$.
+For example, if the numerator and denominator are both degree 1 with leading coefficients 3 and 2, then $$\lim_{x\to\infty}f(x)=\tfrac32$$. If the denominator has higher degree, the denominator eventually dominates and the quotient approaches 0. If the numerator has higher degree, the quotient does not settle to a finite number, and its end behavior depends on the leading terms and on whether $$x\to\infty$$ or $$x\to-\infty$$.
 
 ## Why the degree rule works
 
-The degree rule is a shortcut for an algebraic argument.
+The degree rule is a shortcut for an algebraic argument. Consider $$\tfrac{3x+2}{2x+5}$$ and divide numerator and denominator by $$x$$, which gives
 
-Consider
+$$\frac{3x+2}{2x+5} = \frac{3+\frac2x}{2+\frac5x}$$
 
-$$\frac{3x+2}{2x+5}.$$
+As $$x\to\infty$$, $$\tfrac2x\to0\;\text{and}\;\tfrac5x\to0$$, and therefore $$\lim_{x\to\infty} \tfrac{3x+2}{2x+5} = \tfrac32$$. If the denominator instead has degree 2, dividing by $$x^2$$ sends every term in the numerator to 0 while the leading denominator coefficient remains, and the limit is then 0. If the numerator has higher degree, the same division leaves a positive power of $$x$$ in the numerator. That term does not disappear, so the quotient does not approach a finite horizontal asymptote.
 
-Divide numerator and denominator by $$x$$:
-
-$$\frac{3x+2}{2x+5} = \frac{3+\frac2x}{2+\frac5x}.$$
-
-As $$x\to\infty$$,
-
-$$\frac2x\to0 \quad\text{and}\quad \frac5x\to0.$$
-
-Therefore
-
-$$\lim_{x\to\infty} \frac{3x+2}{2x+5} = \frac32.$$
-
-If the denominator instead has degree 2, dividing by $$x^2$$ sends every term in the numerator to 0 while the leading denominator coefficient remains.
-
-The limit is then 0.
-
-If the numerator has higher degree, the same division leaves a positive power of $$x$$ in the numerator. That term does not disappear, so the quotient does not approach a finite horizontal asymptote.
-
-On a multiple-choice problem, comparing degrees is usually the fastest method.
-
-If a free-response problem asks for justification, the division makes the reasoning explicit.
+On a multiple-choice problem, comparing degrees is usually the fastest method. If a free-response problem asks for justification, the division makes the reasoning explicit.
 
 ## Beyond rational functions
 
-The degree shortcut only applies to polynomial quotients.
+The degree shortcut only applies to polynomial quotients. For more general functions, compare their rates of growth, and a useful hierarchy is $$\text{logarithms} < \text{powers} < \text{exponentials}$$. For example,
 
-For more general functions, compare their rates of growth.
+$$\lim_{x\to\infty}\frac{\ln x}{x}=0, \quad \lim_{x\to\infty}\frac{x^{100}}{e^x}=0, \quad\text{and}\quad \lim_{x\to\infty}\frac{e^x}{x^{100}}=\infty$$
 
-A useful hierarchy is
-
-$$\text{logarithms} < \text{powers} < \text{exponentials}.$$
-
-For example,
-
-$$\lim_{x\to\infty}\frac{\ln x}{x}=0,$$
-
-$$\lim_{x\to\infty}\frac{x^{100}}{e^x}=0,$$
-
-and
-
-$$\lim_{x\to\infty}\frac{e^x}{x^{100}}=\infty.$$
-
-The exponent 100 does not change the long-run ordering. Any fixed power of $$x$$ is eventually dominated by $$e^x$$.
-
-The word “eventually” matters.
-
-The function
-
-$$\frac{x^{100}}{e^x}$$
-
-actually increases until $$x=100$$. At that point it is extremely large. It does not fall below 1 until much later.
-
-A graphing window over a moderate range can therefore suggest the wrong end behavior.
-
-Limits describe what happens arbitrarily far out, not what happens on the portion of the graph that happens to fit on the screen.
+The exponent 100 does not change the long-run ordering, and any fixed power of $$x$$ is eventually dominated by $$e^x$$. The word “eventually” matters. The function $$\tfrac{x^{100}}{e^x}$$ actually increases until $$x=100$$, at which point it is extremely large, and it does not fall below 1 until much later. A graphing window over a moderate range can therefore suggest the wrong end behavior, and limits describe what happens arbitrarily far out, not what happens on the portion of the graph that happens to fit on the screen.
 
 ## A useful comparison habit
 
-When the function is not rational, ask which component grows fastest.
-
-Then divide by that dominant term and see what remains.
-
-This is the same logic used for rational functions. There, the dominant term is identified through polynomial degree. In a broader expression, you compare growth rates instead.
+When the function is not rational, ask which component grows fastest, then divide by that dominant term and see what remains. This is the same logic used for rational functions. There, the dominant term is identified through polynomial degree, while in a broader expression you compare growth rates instead.
 
 <div class="article-note" markdown="1">
-A quick self-test is to set both degrees in the visualization to 2 with leading coefficients $$a=3$$ and $$b=-6$$.
-
-Predict the horizontal asymptote before looking at the graph.
-
-Then increase the numerator degree to 3 and explain why the finite horizontal asymptote disappears.
-
-The useful question is not only which rule applies. It is what survives after the expression is scaled by its dominant term.
+A quick self-test is to set both degrees in the visualization to 2 with leading coefficients $$a=3$$ and $$b=-6$$. Predict the horizontal asymptote before looking at the graph, then increase the numerator degree to 3 and explain why the finite horizontal asymptote disappears. The useful question is not only which rule applies. It is what survives after the expression is scaled by its dominant term.
 </div>

@@ -4,7 +4,7 @@ title: "Sampling and bias"
 date: 2026-07-30
 description: "A larger sample reduces sampling variability. It does not repair a biased sampling method."
 course: "AP Statistics"
-read_time: "10 min read"
+read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 4
@@ -13,19 +13,11 @@ blurb: "A larger sample reduces sampling variability. It does not repair a biase
 image: "/assets/og/sampling-and-bias.png"
 ---
 
-Increasing a sample size reduces sampling variability.
-
-It does not correct systematic bias.
-
-A biased method can therefore become more precise without becoming more accurate.
+Increasing a sample size reduces sampling variability. It does not correct systematic bias, and a biased method can therefore become more precise without becoming more accurate.
 
 ## Three ways to sample
 
-The population below contains 400 students.
-
-Their campus location is associated with their hours of sleep.
-
-The population mean is 7.10 hours.
+The population below contains 400 students, and their campus location is associated with their hours of sleep. The population mean is 7.10 hours.
 
 <div class="viz" markdown="0">
   <canvas id="sb-cv" width="700" height="392"></canvas>
@@ -213,115 +205,55 @@ The population mean is 7.10 hours.
 })();
 </script>
 
-A convenience sample selects students who are easy to reach.
+A convenience sample selects students who are easy to reach. A voluntary response sample overrepresents people who choose to respond, often because they have stronger opinions or experiences. A simple random sample gives every possible sample of the specified size an equal chance of selection.
 
-A voluntary response sample overrepresents people who choose to respond, often because they have stronger opinions or experiences.
-
-A simple random sample gives every possible sample of the specified size an equal chance of selection.
-
-In the simulation, the simple random samples center around the population mean.
-
-The convenience and voluntary-response methods systematically overrepresent students who sleep less.
-
-Their sampling distributions center below the truth.
+In the simulation, the simple random samples center around the population mean. The convenience and voluntary-response methods systematically overrepresent students who sleep less, and their sampling distributions center below the truth.
 
 ## Bias and variability are different
 
-Bias concerns the center of a sampling distribution.
+Bias concerns the center of a sampling distribution, and a method is biased when it systematically overestimates or underestimates the population parameter. Variability concerns the spread of estimates from sample to sample. Increasing $$n$$ reduces that spread, but it does not move the center of a biased sampling distribution toward the truth.
 
-A method is biased when it systematically overestimates or underestimates the population parameter.
-
-Variability concerns the spread of estimates from sample to sample.
-
-Increasing $$n$$ reduces that spread.
-
-It does not move the center of a biased sampling distribution toward the truth.
-
-In the simulation, raising the sample size makes all three distributions narrower.
-
-Only the random-sampling distribution is centered correctly.
-
-The other two become more tightly concentrated around biased values.
+In the simulation, raising the sample size makes all three distributions narrower. Only the random-sampling distribution is centered correctly, and the other two become more tightly concentrated around biased values.
 
 ## Population, sample, parameter, statistic
 
-The population is the full group we want to describe.
-
-The sample is the subset actually observed.
-
-A [parameter](/2026/07/14/writing-parameters-in-ap-statistics.html) is a numerical characteristic of the population.
-
-A statistic is calculated from the sample.
-
-Inference uses statistics to learn about parameters.
-
-The sampling method determines whether that inference can reasonably generalize to the population of interest.
+The population is the full group we want to describe, and the sample is the subset actually observed. A [parameter](/2026/07/14/writing-parameters-in-ap-statistics.html) is a numerical characteristic of the population, and a statistic is calculated from the sample. Inference uses statistics to learn about parameters, and the sampling method determines whether that inference can reasonably generalize to the population of interest.
 
 ## Four probability sampling methods
 
-### Simple random sample
+## Simple random sample
 
 Every possible sample of size $$n$$ has the same chance of being selected.
 
-### Stratified random sample
+## Stratified random sample
 
-Divide the population into nonoverlapping strata and take a random sample within each.
+Divide the population into nonoverlapping strata and take a random sample within each. Strata are usually chosen so individuals are relatively similar within each group and meaningfully different across groups, and stratification can reduce sampling variability when the grouping variable is informative.
 
-Strata are usually chosen so individuals are relatively similar within each group and meaningfully different across groups.
+## Cluster sample
 
-Stratification can reduce sampling variability when the grouping variable is informative.
+Divide the population into clusters, randomly select clusters, and sample everyone or many individuals within the selected clusters. Good clusters resemble small versions of the population, and cluster sampling is often attractive for logistical reasons.
 
-### Cluster sample
+## Systematic sample
 
-Divide the population into clusters, randomly select clusters, and sample everyone or many individuals within the selected clusters.
-
-Good clusters resemble small versions of the population.
-
-Cluster sampling is often attractive for logistical reasons.
-
-### Systematic sample
-
-Choose a random starting position, then select every $$k$$-th individual.
-
-The method still depends on having a sampling frame without a problematic periodic pattern.
+Choose a random starting position, then select every $$k$$-th individual. The method still depends on having a sampling frame without a problematic periodic pattern.
 
 ## Common sources of bias
 
-Undercoverage occurs when some parts of the population are excluded or systematically less likely to be sampled.
+Undercoverage occurs when some parts of the population are excluded or systematically less likely to be sampled. Nonresponse occurs when selected individuals do not respond and the respondents differ meaningfully from the nonrespondents. Response bias occurs when recorded answers systematically differ from the truth because of wording, interviewer effects, memory, social desirability, or other features of measurement. Voluntary response bias occurs when participation is self-selected.
 
-Nonresponse occurs when selected individuals do not respond and the respondents differ meaningfully from the nonrespondents.
-
-Response bias occurs when recorded answers systematically differ from the truth because of wording, interviewer effects, memory, social desirability, or other features of measurement.
-
-Voluntary response bias occurs when participation is self-selected.
-
-These are different mechanisms.
-
-A strong response names the one that matches the design.
+These are different mechanisms, and a strong response names the one that matches the design.
 
 ## Random selection and random assignment
 
-Random selection and random assignment solve different problems.
-
-Random selection supports generalization from the sample to the population.
-
-Random assignment supports causal comparison by balancing other variables across treatment groups, apart from chance.
-
-The conclusions depend on which forms of randomization were used.
+Random selection and random assignment solve different problems. Random selection supports generalization from the sample to the population, and random assignment supports causal comparison by balancing other variables across treatment groups, apart from chance. The conclusions depend on which forms of randomization were used.
 
 | | Random assignment | No random assignment |
 |---|---|---|
 | Random selection | Causal conclusion may be supported, with generalization to the sampled population | Association only, with generalization to the sampled population |
 | No random selection | Causal conclusion may be supported for individuals like those studied | Association only, with limited generalization |
 
-An observational study does not impose treatments.
-
-Without random assignment, [confounding](/2026/07/27/simpsons-paradox.html) remains a possible explanation for an association.
+An observational study does not impose treatments. Without random assignment, [confounding](/2026/07/27/simpsons-paradox.html) remains a possible explanation for an association.
 
 <div class="article-note" markdown="1">
-A useful final distinction is precision versus accuracy.
-
-A biased estimate can have a very small standard error.
-
-A narrow confidence interval centered on the wrong value is still wrong.
+A useful final distinction is precision versus accuracy. A biased estimate can have a very small standard error, and a narrow confidence interval centered on the wrong value is still wrong.
 </div>

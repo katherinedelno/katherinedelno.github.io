@@ -4,7 +4,7 @@ title: "Logarithms undo exponentials"
 date: 2026-07-30
 description: "A logarithm is an exponent. Exponential and logarithmic statements describe the same relationship in opposite directions."
 course: "AP Precalculus"
-read_time: "8 min read"
+read_time: "5 min read"
 math: true
 kind: mechanics
 sequence: 5
@@ -13,17 +13,7 @@ blurb: "A logarithm is an exponent. Exponential and logarithmic statements descr
 image: "/assets/og/logarithms-undo-exponentials.png"
 ---
 
-A logarithm answers an exponent question.
-
-The statement
-
-$$\log_b y=a$$
-
-means exactly the same thing as
-
-$$b^a=y.$$
-
-Keeping those two forms connected makes most logarithm rules easier to understand.
+A logarithm answers an exponent question. The statement $$\log_b y=a$$ means exactly the same thing as $$b^a=y$$, and keeping those two forms connected makes most logarithm rules easier to understand.
 
 ## The same relationship in two directions
 
@@ -149,184 +139,34 @@ Keeping those two forms connected makes most logarithm rules easier to understan
 })();
 </script>
 
-The exponential and logarithmic graphs are reflections across
+The exponential and logarithmic graphs are reflections across $$y=x$$. If $$b^a=y$$, then the point $$(a,y)$$ lies on the exponential graph, and the reflected point $$(y,a)$$ lies on the logarithmic graph because $$\log_b y=a$$. This is what it means for the two functions to be inverses.
 
-$$y=x.$$
-
-If
-
-$$b^a=y,$$
-
-then the point
-
-$$(a,y)$$
-
-lies on the exponential graph.
-
-The reflected point
-
-$$(y,a)$$
-
-lies on the logarithmic graph because
-
-$$\log_b y=a.$$
-
-This is what it means for the two functions to be inverses.
-
-For example,
-
-$$2^5=32$$
-
-and
-
-$$\log_2 32=5$$
-
-are two forms of the same fact.
-
-When a logarithmic expression looks unfamiliar, rewriting it exponentially is often the cleanest first move.
+For example, $$2^5=32$$ and $$\log_2 32=5$$ are two forms of the same fact. When a logarithmic expression looks unfamiliar, rewriting it exponentially is often the cleanest first move.
 
 ## The domain and asymptote also reverse
 
-For
-
-$$b>0,\qquad b\neq1,$$
-
-the exponential function
-
-$$b^x$$
-
-always produces positive outputs.
-
-Its range is
-
-$$(0,\infty).$$
-
-The logarithm reverses inputs and outputs, so its domain is
-
-$$(0,\infty).$$
-
-The horizontal asymptote
-
-$$y=0$$
-
-of the exponential becomes the vertical asymptote
-
-$$x=0$$
-
-of the logarithm.
-
-The geometry and the algebra say the same thing.
+For $$b>0,\; b\neq1$$, the exponential function $$b^x$$ always produces positive outputs, so its range is $$(0,\infty)$$. The logarithm reverses inputs and outputs, so its domain is $$(0,\infty)$$. The horizontal asymptote $$y=0$$ of the exponential becomes the vertical asymptote $$x=0$$ of the logarithm, and the geometry and the algebra say the same thing.
 
 ## Logarithm laws come from exponent laws
 
-Suppose
+Suppose $$m=\log_b x$$ and $$n=\log_b y$$, so that $$x=b^m$$ and $$y=b^n$$. Since $$b^m b^n=b^{m+n}$$, we get $$\log_b(xy) = \log_b x+\log_b y$$. Similarly,
 
-$$m=\log_b x$$
+$$\log_b\left(\frac{x}{y}\right) = \log_b x-\log_b y \qquad\text{and}\qquad \log_b(x^k) = k\log_b x$$
 
-and
-
-$$n=\log_b y.$$
-
-Then
-
-$$x=b^m$$
-
-and
-
-$$y=b^n.$$
-
-Since
-
-$$b^m b^n=b^{m+n},$$
-
-we get
-
-$$\log_b(xy) = \log_b x+\log_b y.$$
-
-Similarly,
-
-$$\log_b\left(\frac{x}{y}\right) = \log_b x-\log_b y,$$
-
-and
-
-$$\log_b(x^k) = k\log_b x.$$
-
-These are exponent laws translated into logarithmic form.
-
-There is no corresponding rule for sums.
-
-In general,
-
-$$\log_b(x+y) \neq \log_b x+\log_b y.$$
-
-Logarithms turn multiplication into addition.
-
-They do not turn addition into anything similarly simple.
+These are exponent laws translated into logarithmic form. There is no corresponding rule for sums, and in general $$\log_b(x+y) \neq \log_b x+\log_b y$$. Logarithms turn multiplication into addition, and they do not turn addition into anything similarly simple.
 
 ## Solving exponential equations
 
-Consider
+Consider $$5\cdot3^t=40$$. First isolate the exponential, $$3^t=8$$, and then write the equivalent logarithmic statement, $$t=\log_3 8$$. Using change of base,
 
-$$5\cdot3^t=40.$$
+$$t = \frac{\ln8}{\ln3} \approx1.893$$
 
-First isolate the exponential:
-
-$$3^t=8.$$
-
-Now write the equivalent logarithmic statement:
-
-$$t=\log_3 8.$$
-
-Using change of base,
-
-$$t = \frac{\ln8}{\ln3} \approx1.893.$$
-
-The reverse process solves logarithmic equations.
-
-If
-
-$$\log_2 x=5,$$
-
-then
-
-$$x=2^5=32.$$
-
-The useful principle is to [isolate the invertible function first](/2026/07/30/functions-inside-functions.html), then apply its inverse.
+The reverse process solves logarithmic equations. If $$\log_2 x=5$$, then $$x=2^5=32$$. The useful principle is to [isolate the invertible function first](/2026/07/30/functions-inside-functions.html), then apply its inverse.
 
 ## The base $$e$$
 
-The number
-
-$$e\approx2.718$$
-
-is the standard base for continuous exponential growth.
-
-The logarithm base $$e$$ is written
-
-$$\ln x.$$
-
-It follows all the same logarithm laws.
-
-Its importance becomes greater in calculus because
-
-$$e^x$$
-
-has especially simple derivative and integral behavior.
-
-For precalculus, it is enough to treat $$e$$ as a particular exponential base and $$\ln$$ as its inverse.
+The number $$e\approx2.718$$ is the standard base for continuous exponential growth. The logarithm base $$e$$ is written $$\ln x$$, and it follows all the same logarithm laws. Its importance becomes greater in calculus because $$e^x$$ has especially simple derivative and integral behavior. For precalculus, it is enough to treat $$e$$ as a particular exponential base and $$\ln$$ as its inverse.
 
 <div class="article-note" markdown="1">
-The restrictions on logarithmic bases also make sense from invertibility.
-
-At
-
-$$b=1,$$
-
-the exponential function would be
-
-$$1^x=1,$$
-
-a constant function.
-
-It is not one-to-one and therefore has no inverse function.
+The restrictions on logarithmic bases also make sense from invertibility. At $$b=1$$, the exponential function would be $$1^x=1$$, a constant function. It is not one-to-one and therefore has no inverse function.
 </div>

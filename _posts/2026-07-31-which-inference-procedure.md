@@ -4,7 +4,7 @@ title: "Which inference procedure?"
 date: 2026-07-31
 description: "Choose an inference procedure from the response type, the number and relationship of groups, and whether the goal is estimation or hypothesis testing."
 course: "AP Statistics"
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 16
@@ -14,25 +14,17 @@ featured: true
 image: "/assets/og/which-inference-procedure.png"
 ---
 
-Choosing an inference procedure happens before any formula is used.
+Choosing an inference procedure happens before any formula is used, and the study design usually determines the choice. A useful sequence is to identify the response type, identify the groups and their relationship, and then decide whether the goal is estimation or testing.
 
-The study design usually determines the choice.
+## Question 1, the kind of response recorded
 
-A useful sequence is to identify the response type, identify the groups and their relationship, and then decide whether the goal is estimation or testing.
-
-## Question 1: what kind of response was recorded?
-
-If each individual contributes a category, the parameter usually involves a proportion or a categorical distribution.
-
-Examples include:
+If each individual contributes a category, the parameter usually involves a proportion or a categorical distribution. Examples include:
 
 - yes or no
 - success or failure
 - preferred category
 
-If each individual contributes a numerical measurement, the parameter usually involves a mean.
-
-Examples include:
+If each individual contributes a numerical measurement, the parameter usually involves a mean. Examples include:
 
 - height
 - wait time
@@ -41,75 +33,23 @@ Examples include:
 
 This first distinction separates proportion procedures from mean procedures.
 
-## Question 2: how many groups are there?
+## Question 2, the number of groups
 
-One sample gives a one-sample procedure.
+One sample gives a one-sample procedure, two independently collected groups give a two-sample procedure, and several categorical groups summarized in a two-way table may call for chi-square. The number of columns in a dataset is not enough, and the way the observations were collected matters.
 
-Two independently collected groups give a two-sample procedure.
+## Question 3, whether numerical observations are paired
 
-Several categorical groups summarized in a two-way table may call for chi-square.
-
-The number of columns in a dataset is not enough.
-
-The way the observations were collected matters.
-
-## Question 3: are numerical observations paired?
-
-Two measurements can look like two samples while actually forming pairs.
-
-Examples include:
+Two measurements can look like two samples while actually forming pairs. Examples include:
 
 - before and after measurements on the same people
 - twins or deliberately matched subjects
 - two measurements on the same experimental unit
 
-For paired data, compute one difference for each pair.
+For paired data, compute one difference for each pair, and the analysis becomes a one-sample $$t$$-procedure on those differences. The parameter is $$\mu_d$$, [the population mean difference](/2026/07/14/writing-parameters-in-ap-statistics.html), and it is not $$\mu_1-\mu_2$$ for two independent populations.
 
-The analysis becomes a one-sample $$t$$-procedure on those differences.
+## Question 4, interval or test
 
-The parameter is
-
-$$\mu_d,$$
-
-[the population mean difference](/2026/07/14/writing-parameters-in-ap-statistics.html).
-
-It is not
-
-$$\mu_1-\mu_2$$
-
-for two independent populations.
-
-## Question 4: interval or test?
-
-A confidence interval estimates a parameter or difference.
-
-A hypothesis test evaluates evidence about a specific claim.
-
-Wording such as
-
-“estimate,”
-
-“find a plausible range,”
-
-or
-
-“by how much”
-
-usually points toward an interval.
-
-Wording such as
-
-“is there convincing evidence,”
-
-“test the claim,”
-
-or
-
-“do the data support”
-
-usually points toward a test.
-
-The purpose and the procedure family are separate decisions.
+A confidence interval estimates a parameter or difference, and a hypothesis test evaluates evidence about a specific claim. Wording such as “estimate,” “find a plausible range,” or “by how much” usually points toward an interval. Wording such as “is there convincing evidence,” “test the claim,” or “do the data support” usually points toward a test. The purpose and the procedure family are separate decisions.
 
 ## Classify the design
 
@@ -225,25 +165,11 @@ The purpose and the procedure family are separate decisions.
 })();
 </script>
 
-The drill presents scenarios without arithmetic.
-
-That is intentional.
-
-The point is to identify which feature of the design determines the method.
-
-A correct choice should be explainable in words before any calculator command is entered.
+The drill presents scenarios without arithmetic, and that is intentional. The point is to identify which feature of the design determines the method, and a correct choice should be explainable in words before any calculator command is entered.
 
 ## Two chi-square designs
 
-A two-way table can arise in two ways.
-
-One sample classified according to two categorical variables calls for a test of independence.
-
-Several separate groups compared on one categorical response call for a test of homogeneity.
-
-The tables and test statistic can be identical.
-
-[The data collection distinguishes the procedures](/2026/07/15/which-chi-square-test.html).
+A two-way table can arise in two ways. One sample classified according to two categorical variables calls for a test of independence, and several separate groups compared on one categorical response call for a test of homogeneity. The tables and test statistic can be identical. [The data collection distinguishes the procedures](/2026/07/15/which-chi-square-test.html).
 
 ## A compact map
 
@@ -257,9 +183,7 @@ The tables and test statistic can be identical.
 | One sample, two categorical variables | Chi-square test for independence |
 | Several groups, one categorical variable | Chi-square test for homogeneity |
 
-Then decide whether the question asks for an interval or a test.
-
-Chi-square appears as a test only.
+Then decide whether the question asks for an interval or a test. Chi-square appears as a test only.
 
 <div class="article-note" markdown="1">
 The fastest way to become fluent is to practice classification separately from computation.

@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Average value and area between curves both depend on setting up the correct integrand before evaluating the integral."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 27
@@ -14,105 +14,31 @@ blurb: "Average value and area between curves both depend on setting up the corr
 image: "/assets/og/area-and-average-value.png"
 ---
 
-Average value and area between curves are different applications of the definite integral.
-
-Both depend on setting up the integrand correctly.
-
-For average value, the integral is divided by the width of the interval.
-
-For area between curves, the integrand is the difference between the relevant boundaries.
+Average value and area between curves are different applications of the definite integral, and both depend on setting up the integrand correctly. For average value, the integral is divided by the width of the interval, and for area between curves, the integrand is the difference between the relevant boundaries.
 
 ## Average value
 
 The average value of $$f$$ on $$[a,b]$$ is
 
-$$ f_{\text{avg}} = \frac{1}{b-a} \int_a^b f(x)\,dx. $$
+$$f_{\text{avg}} = \frac{1}{b-a} \int_a^b f(x)\,dx$$
 
-Geometrically, this is the height of a rectangle with width $$b-a$$ and the same signed area as the integral.
+Geometrically, this is the height of a rectangle with width $$b-a$$ and the same signed area as the integral, and its units are the same as the units of $$f$$. This is different from average rate of change, $$\tfrac{f(b)-f(a)}{b-a}$$. In fact,
 
-Its units are the same as the units of $$f$$.
+$$\frac{f(b)-f(a)}{b-a} = \frac{1}{b-a} \int_a^b f'(x)\,dx$$
 
-This is different from average rate of change:
-
-$$ \frac{f(b)-f(a)}{b-a}. $$
-
-In fact,
-
-$$ \frac{f(b)-f(a)}{b-a} = \frac{1}{b-a} \int_a^b f'(x)\,dx. $$
-
-So the average rate of change of $$f$$ is the average value of $$f'$$, not the average value of $$f$$.
-
-For example, on $$[1,3]$$ with
-
-$$ f(x)=x^2, $$
-
-the average rate of change is
-
-$$ 4, $$
-
-while the average value is
-
-$$ \frac{13}{3}. $$
-
-They are different quantities.
+So the average rate of change of $$f$$ is the average value of $$f'$$, not the average value of $$f$$. For example, on $$[1,3]$$ with $$f(x)=x^2$$, the average rate of change is $$4$$ while the average value is $$\tfrac{13}{3}$$, and they are different quantities.
 
 ## Average value is not the midpoint of the range
 
-On $$[0,1]$$, consider three functions that all range from 0 to 1.
-
-For
-
-$$ f(x)=x, $$
-
-the average value is
-
-$$ \frac12. $$
-
-For
-
-$$ f(x)=x^2, $$
-
-the average value is
-
-$$ \frac13. $$
-
-For
-
-$$ f(x)=\sqrt{x}, $$
-
-the average value is
-
-$$ \frac23. $$
-
-The midpoint of the output range is $$1/2$$ in all three cases.
-
-The average value depends on how the function is distributed across the interval, not only on its minimum and maximum.
+On $$[0,1]$$, consider three functions that all range from 0 to 1. For $$f(x)=x,\; x^2,\; \sqrt{x}$$, the average values are $$\tfrac12,\; \tfrac13,\; \tfrac23$$. The midpoint of the output range is $$1/2$$ in all three cases, so the average value depends on how the function is distributed across the interval, not only on its minimum and maximum.
 
 ## Area between two curves
 
-To find area between two graphs using vertical slices, integrate
+To find area between two graphs using vertical slices, integrate $$\text{top} - \text{bottom}$$. For $$y=x$$ and $$y=x^2$$ on $$[0,1]$$, we have $$x\ge x^2$$, so
 
-$$ \text{top} - \text{bottom}. $$
+$$A = \int_0^1(x-x^2)\,dx = \frac16$$
 
-For
-
-$$ y=x $$
-
-and
-
-$$ y=x^2 $$
-
-on $$[0,1]$$, we have
-
-$$ x\ge x^2. $$
-
-So
-
-$$ A = \int_0^1(x-x^2)\,dx = \frac16. $$
-
-If the curves cross inside the interval, the integral may need to be split.
-
-A signed integral can cancel. Geometric area cannot.
+If the curves cross inside the interval, the integral may need to be split. A signed integral can cancel. Geometric area cannot.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ar-fns"></div>
@@ -244,76 +170,22 @@ A signed integral can cancel. Geometric area cannot.
 })();
 </script>
 
-The visualization distinguishes [signed accumulation](/2026/07/30/accumulation-functions.html) from total area.
-
-When one boundary crosses the other, the sign of their difference changes.
-
-If the goal is geometric area, split the integral at the crossing and keep each piece positive.
+The visualization distinguishes [signed accumulation](/2026/07/30/accumulation-functions.html) from total area. When one boundary crosses the other, the sign of their difference changes, and if the goal is geometric area, split the integral at the crossing and keep each piece positive.
 
 ## Integrating with respect to $$y$$
 
-Vertical slices are not always the easiest choice.
+Vertical slices are not always the easiest choice. Suppose a region is bounded by $$x=y^2$$ and $$x=y+2$$. The curves meet where $$y^2=y+2$$, so $$y=-1$$ and $$y=2$$. Using horizontal slices,
 
-Suppose a region is bounded by
+$$A = \int_{-1}^{2} \left((y+2)-y^2\right)\,dy = \frac92$$
 
-$$ x=y^2 $$
-
-and
-
-$$ x=y+2. $$
-
-The curves meet where
-
-$$ y^2=y+2, $$
-
-so
-
-$$ y=-1 \quad\text{and}\quad y=2. $$
-
-Using horizontal slices,
-
-$$ A = \int_{-1}^{2} \left((y+2)-y^2\right)\,dy = \frac92. $$
-
-The same region can be described using $$x$$, but the setup becomes less direct.
-
-Choosing the variable is part of the problem.
+The same region can be described using $$x$$, but the setup becomes less direct, and choosing the variable is part of the problem.
 
 ## Curves that cross more than once
 
-Consider
+Consider $$y=x$$ and $$y=x^3$$ on $$[-1,1]$$. The curves meet at $$-1,\; 0,\; 1$$. On the left half, $$x^3$$ lies above $$x$$, and on the right half, $$x$$ lies above $$x^3$$.
 
-$$ y=x $$
-
-and
-
-$$ y=x^3 $$
-
-on
-
-$$ [-1,1]. $$
-
-The curves meet at
-
-$$ -1,\quad0,\quad1. $$
-
-On the left half, $$x^3$$ lies above $$x$$.
-
-On the right half, $$x$$ lies above $$x^3$$.
-
-The signed integral
-
-$$ \int_{-1}^{1}(x-x^3)\,dx = 0 $$
-
-is correct as a net signed quantity.
-
-It is not the geometric area.
-
-For area, split at $$x=0$$ and add the magnitudes of the two regions.
+The signed integral $$\textstyle\int_{-1}^{1}(x-x^3)\,dx = 0$$ is correct as a net signed quantity, but it is not the geometric area. For area, split at $$x=0$$ and add the magnitudes of the two regions.
 
 <div class="article-note" markdown="1">
-Before integrating a difference, ask whether cancellation is appropriate.
-
-For average value, signed accumulation is part of the definition.
-
-For geometric area, cancellation is not.
+Before integrating a difference, ask whether cancellation is appropriate. For average value, signed accumulation is part of the definition, and for geometric area, cancellation is not.
 </div>

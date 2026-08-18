@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "If g(x) = ∫ₐˣ f(t) dt, then the graph of f tells you the slope and concavity of g, while signed area determines its values."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 21
@@ -14,23 +14,11 @@ blurb: "If g(x) = ∫ₐˣ f(t) dt, then the graph of f tells you the slope and 
 image: "/assets/og/accumulation-functions.png"
 ---
 
-A function can be defined by an integral.
+A function can be defined by an integral. Let
 
-Let
+$$g(x) = \int_a^x f(t)\,dt$$
 
-$$g(x) = \int_a^x f(t)\,dt,$$
-
-where $$f$$ is continuous.
-
-[The Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives
-
-$$g'(x)=f(x).$$
-
-Differentiating again gives
-
-$$g''(x)=f'(x).$$
-
-Those two equations turn a graph of $$f$$ into information about the behavior of $$g$$.
+where $$f$$ is continuous. [The Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives $$g'(x)=f(x)$$, and differentiating again gives $$g''(x)=f'(x)$$. Those two equations turn a graph of $$f$$ into information about the behavior of $$g$$.
 
 ## The translation
 
@@ -45,9 +33,7 @@ Those two equations turn a graph of $$f$$ into information about the behavior of
 | $$g$$ changes concavity | $$f'$$ changes sign |
 | $$g(x)=0$$ | the signed area from $$a$$ to $$x$$ is zero |
 
-This is the same reasoning used when [reading the graph of a derivative](/2026/07/21/reading-the-graph-of-f-prime.html).
-
-Here $$f$$ plays the role of $$g'$$.
+This is the same reasoning used when [reading the graph of a derivative](/2026/07/21/reading-the-graph-of-f-prime.html), and here $$f$$ plays the role of $$g'$$.
 
 ## Reading values from geometry
 
@@ -196,98 +182,26 @@ Here $$f$$ plays the role of $$g'$$.
 })();
 </script>
 
-The top graph shows $$f$$, with the region between $$a$$ and $$x$$ shaded according to sign.
+The top graph shows $$f$$, with the region between $$a$$ and $$x$$ shaded according to sign, and the lower graph shows the corresponding accumulation function.
 
-The lower graph shows the corresponding accumulation function.
+Suppose $$a=0$$. To compute $$g(3.5) = \textstyle\int_0^{3.5}f(t)\,dt$$, add the signed areas. In the displayed example, the first small triangle lies below the axis and contributes $$-\tfrac14$$, and the next two triangles lie above the axis and each contribute $$\tfrac94$$, so
 
-Suppose $$a=0$$.
+$$g(3.5) = -\frac14+\frac94+\frac94 = \frac{17}{4}$$
 
-To compute
-
-$$g(3.5) = \int_0^{3.5}f(t)\,dt,$$
-
-add the signed areas.
-
-In the displayed example, the first small triangle lies below the axis and contributes
-
-$$-\frac14.$$
-
-The next two triangles lie above the axis and each contribute
-
-$$\frac94.$$
-
-Therefore
-
-$$g(3.5) = -\frac14+\frac94+\frac94 = \frac{17}{4}.$$
-
-No antiderivative is needed.
-
-The graph is enough.
-
-A definite integral of zero also does not mean nothing happened.
-
-If positive and negative areas cancel, the accumulation can return to an earlier value even while the function changes throughout the interval.
+No antiderivative is needed, and the graph is enough. A definite integral of zero also does not mean nothing happened. If positive and negative areas cancel, the accumulation can return to an earlier value even while the function changes throughout the interval.
 
 ## What changing the lower limit does
 
-Changing $$a$$ shifts the entire accumulation function vertically.
+Changing $$a$$ shifts the entire accumulation function vertically, and it does not change its derivative. To see why, compare $$g_1(x) = \textstyle\int_{a_1}^{x}f(t)\,dt$$ with $$g_2(x) = \textstyle\int_{a_2}^{x}f(t)\,dt$$. Using additivity,
 
-It does not change its derivative.
+$$\int_{a_2}^{x}f = \int_{a_2}^{a_1}f + \int_{a_1}^{x}f$$
 
-To see why, compare
+The first term is constant with respect to $$x$$, so $$g_2$$ differs from $$g_1$$ by a constant. That means the location of extrema and inflection points does not change, though the function values do change. Also, $$g(a)=0$$ for any lower limit $$a$$, because an integral from a point to itself is zero.
 
-$$g_1(x) = \int_{a_1}^{x}f(t)\,dt$$
+## When $$x$$ is less than $$a$$
 
-with
-
-$$g_2(x) = \int_{a_2}^{x}f(t)\,dt.$$
-
-Using additivity,
-
-$$\int_{a_2}^{x}f = \int_{a_2}^{a_1}f + \int_{a_1}^{x}f.$$
-
-The first term is constant with respect to $$x$$.
-
-So $$g_2$$ differs from $$g_1$$ by a constant.
-
-That means the location of extrema and inflection points does not change.
-
-The function values do change.
-
-Also,
-
-$$g(a)=0$$
-
-for any lower limit $$a$$, because an integral from a point to itself is zero.
-
-## What if $$x<a$$?
-
-The accumulation function is still defined when the upper limit lies to the left of the lower limit.
-
-Reversing the bounds changes the sign:
-
-$$\int_a^x f(t)\,dt = -\int_x^a f(t)\,dt.$$
-
-The derivative relationship remains
-
-$$g'(x)=f(x).$$
-
-So $$g$$ still increases wherever $$f$$ is positive and decreases wherever $$f$$ is negative, even to the left of $$a$$.
+The accumulation function is still defined when the upper limit lies to the left of the lower limit. Reversing the bounds changes the sign, so $$\textstyle\int_a^x f(t)\,dt = -\int_x^a f(t)\,dt$$. The derivative relationship remains $$g'(x)=f(x)$$, so $$g$$ still increases wherever $$f$$ is positive and decreases wherever $$f$$ is negative, even to the left of $$a$$.
 
 <div class="article-note" markdown="1">
-A reliable setup on a free-response problem is to write
-
-$$g'=f$$
-
-and
-
-$$g''=f'$$
-
-before answering anything else.
-
-Then separate two kinds of questions.
-
-Questions about values of $$g$$ use signed area.
-
-Questions about increase, decrease, extrema, and concavity use the derivative relationships.
+A reliable setup on a free-response problem is to write $$g'=f$$ and $$g''=f'$$ before answering anything else. Then separate two kinds of questions. Questions about values of $$g$$ use signed area, and questions about increase, decrease, extrema, and concavity use the derivative relationships.
 </div>

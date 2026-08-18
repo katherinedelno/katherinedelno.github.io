@@ -4,7 +4,7 @@ title: "When an unbounded region has finite area"
 date: 2026-07-30
 description: "An improper integral is defined through a limit. An infinite interval or an unbounded integrand does not by itself determine whether the integral converges."
 course: "AP Calculus BC"
-read_time: "8 min read"
+read_time: "5 min read"
 math: true
 kind: mechanics
 sequence: 24
@@ -13,51 +13,29 @@ blurb: "An improper integral is defined through a limit. An infinite interval or
 image: "/assets/og/improper-integrals.png"
 ---
 
-A definite integral becomes improper when the interval is unbounded or the integrand becomes unbounded somewhere on the interval.
-
-In either case, the integral is [defined through a limit](/2026/07/30/what-a-limit-claims.html).
-
-The geometric region may extend infinitely far or rise without bound and still have finite area.
+A definite integral becomes improper when the interval is unbounded or the integrand becomes unbounded somewhere on the interval. In either case, the integral is [defined through a limit](/2026/07/30/what-a-limit-claims.html), and the geometric region may extend infinitely far or rise without bound and still have finite area.
 
 ## An infinite interval
 
-Consider
+Consider $$\textstyle\int_1^\infty \tfrac{1}{x^2}\,dx$$. The infinity symbol is not an endpoint at which an antiderivative can be evaluated, so instead write
 
-$$\int_1^\infty \frac{1}{x^2}\,dx.$$
+$$\begin{aligned}
+\int_1^\infty \frac{1}{x^2}\,dx &= \lim_{T\to\infty} \int_1^T \frac{1}{x^2}\,dx\\
+&= \lim_{T\to\infty} \left[-\frac1x\right]_1^T = \lim_{T\to\infty} \left(1-\frac1T\right) = 1
+\end{aligned}$$
 
-The infinity symbol is not an endpoint at which an antiderivative can be evaluated.
-
-Instead, write
-
-$$\int_1^\infty \frac{1}{x^2}\,dx = \lim_{T\to\infty} \int_1^T \frac{1}{x^2}\,dx.$$
-
-Then
-
-$$= \lim_{T\to\infty} \left[-\frac1x\right]_1^T = \lim_{T\to\infty} \left(1-\frac1T\right) = 1.$$
-
-The interval has infinite length, but the area is finite.
-
-The integral converges.
+The interval has infinite length, but the area is finite, and the integral converges.
 
 ## An unbounded integrand
 
-Now consider
+Now consider $$\textstyle\int_0^1\tfrac{1}{\sqrt{x}}\,dx$$. The interval is finite, but the integrand grows without bound as $$x\to0^+$$, so write
 
-$$\int_0^1\frac{1}{\sqrt{x}}\,dx.$$
+$$\begin{aligned}
+\int_0^1\frac{1}{\sqrt{x}}\,dx &= \lim_{s\to0^+} \int_s^1 x^{-1/2}\,dx\\
+&= \lim_{s\to0^+} \left[2\sqrt{x}\right]_s^1 = \lim_{s\to0^+} \left(2-2\sqrt{s}\right) = 2
+\end{aligned}$$
 
-The interval is finite, but the integrand grows without bound as $$x\to0^+$$.
-
-So write
-
-$$\int_0^1\frac{1}{\sqrt{x}}\,dx = \lim_{s\to0^+} \int_s^1 x^{-1/2}\,dx.$$
-
-Then
-
-$$= \lim_{s\to0^+} \left[2\sqrt{x}\right]_s^1 = \lim_{s\to0^+} \left(2-2\sqrt{s}\right) = 2.$$
-
-Again, the integral converges.
-
-The vertical asymptote does not force the area to be infinite.
+Again, the integral converges, and the vertical asymptote does not force the area to be infinite.
 
 ## The $$p$$-integral thresholds
 
@@ -173,82 +151,20 @@ The vertical asymptote does not force the area to be infinite.
 })();
 </script>
 
-Two standard families are worth knowing.
-
-For the tail integral,
-
-$$\int_1^\infty \frac{1}{x^p}\,dx,$$
-
-the integral converges exactly when
-
-$$p>1.$$
-
-When it converges,
-
-$$\int_1^\infty x^{-p}\,dx = \frac{1}{p-1}.$$
-
-For the integral near zero,
-
-$$\int_0^1\frac{1}{x^p}\,dx,$$
-
-the condition reverses.
-
-It converges exactly when
-
-$$p<1.$$
-
-When it converges,
-
-$$\int_0^1 x^{-p}\,dx = \frac{1}{1-p}.$$
-
-The boundary case
-
-$$p=1$$
-
-diverges in both settings.
-
-The same expression,
-
-$$\frac1x,$$
-
-therefore sits at the convergence threshold both near zero and at infinity.
+Two standard families are worth knowing. For the tail integral $$\textstyle\int_1^\infty \tfrac{1}{x^p}\,dx$$, the integral converges exactly when $$p>1$$, and when it converges, $$\textstyle\int_1^\infty x^{-p}\,dx = \tfrac{1}{p-1}$$. For the integral near zero, $$\textstyle\int_0^1\tfrac{1}{x^p}\,dx$$, the condition reverses, so it converges exactly when $$p<1$$, and when it converges, $$\textstyle\int_0^1 x^{-p}\,dx = \tfrac{1}{1-p}$$. The boundary case $$p=1$$ diverges in both settings, and the same expression, $$\tfrac1x$$, therefore sits at the convergence threshold both near zero and at infinity.
 
 ## A discontinuity inside the interval
 
-Suppose
+Suppose $$\textstyle\int_{-1}^{1}\tfrac{1}{x^2}\,dx$$. The integrand is unbounded at $$x=0$$, so the integral must be split there:
 
-$$\int_{-1}^{1}\frac{1}{x^2}\,dx.$$
+$$\int_{-1}^{1}\frac{1}{x^2}\,dx = \int_{-1}^{0}\frac{1}{x^2}\,dx + \int_{0}^{1}\frac{1}{x^2}\,dx$$
 
-The integrand is unbounded at $$x=0$$, so the integral must be split there:
-
-$$\int_{-1}^{1}\frac{1}{x^2}\,dx = \int_{-1}^{0}\frac{1}{x^2}\,dx + \int_{0}^{1}\frac{1}{x^2}\,dx.$$
-
-Each piece is improper and needs its own limit.
-
-Both diverge.
-
-So the original integral diverges.
-
-If we ignore the discontinuity and apply the Fundamental Theorem mechanically,
-
-$$\left[-\frac1x\right]_{-1}^{1} = -2.$$
-
-That answer is impossible as geometric area under a positive function.
-
-The problem is not the antiderivative. [The Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) was applied across a point where the hypotheses failed.
+Each piece is improper and needs its own limit. Both diverge, so the original integral diverges. If we ignore the discontinuity and apply the Fundamental Theorem mechanically, $$\left[-\tfrac1x\right]_{-1}^{1} = -2$$, and that answer is impossible as geometric area under a positive function. The problem is not the antiderivative. [The Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) was applied across a point where the hypotheses failed.
 
 ## Two habits that prevent most errors
 
-First, inspect the interval and the integrand before integrating.
-
-Look for infinite bounds, denominator zeros, logarithmic singularities, and endpoints where a root or power becomes unbounded.
-
-Second, write the limit explicitly.
-
-The limit is part of the definition of the improper integral.
+First, inspect the interval and the integrand before integrating, looking for infinite bounds, denominator zeros, logarithmic singularities, and endpoints where a root or power becomes unbounded. Second, write the limit explicitly, because the limit is part of the definition of the improper integral.
 
 <div class="article-note" markdown="1">
-If the limit is finite, the integral converges.
-
-If the limit is infinite or fails to exist, the integral diverges.
+If the limit is finite, the integral converges, and if the limit is infinite or fails to exist, the integral diverges.
 </div>

@@ -5,7 +5,7 @@ date: 2026-07-17
 description: "Build an accumulation function from area, then differentiate it. The result is the original integrand."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "10 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 22
@@ -15,33 +15,15 @@ featured: true
 image: "/assets/og/fundamental-theorem-from-the-ground-up.png"
 ---
 
-Students often meet the Fundamental Theorem of Calculus as an evaluation rule:
-
-$$\int_a^b f(x)\,dx = F(b)-F(a),$$
-
-where $$F'=f$$.
-
-That rule is important, but it is not the most revealing way to understand the theorem.
-
-The deeper statement is that accumulation and differentiation are inverse operations.
+Students often meet the Fundamental Theorem of Calculus as an evaluation rule, $$\textstyle\int_a^b f(x)\,dx = F(b)-F(a)$$, where $$F'=f$$. That rule is important, but it is not the most revealing way to understand the theorem, and the deeper statement is that accumulation and differentiation are inverse operations.
 
 ## Build a function out of area
 
 Let $$f$$ be continuous and define
 
-$$A(x) = \int_0^x f(t)\,dt.$$
+$$A(x) = \int_0^x f(t)\,dt$$
 
-The variable $$t$$ belongs inside the integral because $$x$$ is already serving as the upper limit.
-
-The function $$A$$ takes an input $$x$$ and returns the signed accumulation from 0 to $$x$$.
-
-If $$f$$ is positive, $$A$$ increases.
-
-If $$f$$ is negative, $$A$$ decreases.
-
-And
-
-$$A(0)=0.$$
+The variable $$t$$ belongs inside the integral because $$x$$ is already serving as the upper limit. The function $$A$$ takes an input $$x$$ and returns the signed accumulation from 0 to $$x$$. If $$f$$ is positive, $$A$$ increases, and if $$f$$ is negative, $$A$$ decreases. And $$A(0)=0$$.
 
 ## Watch the accumulation
 
@@ -139,148 +121,44 @@ $$A(0)=0.$$
 })();
 </script>
 
-The upper graph shows $$f$$.
+The upper graph shows $$f$$ and the lower graph shows $$A$$. As $$x$$ moves to the right, the shaded region in the upper panel records the signed area accumulated so far, and at the same time the lower graph traces the value of $$A(x)$$.
 
-The lower graph shows $$A$$.
-
-As $$x$$ moves to the right, the shaded region in the upper panel records the signed area accumulated so far.
-
-At the same time, the lower graph traces the value of $$A(x)$$.
-
-Three things are worth watching.
-
-When $$f$$ is above the axis, $$A$$ rises.
-
-When $$f$$ is below the axis, $$A$$ falls.
-
-And the slope of $$A$$ at each point matches the height of $$f$$ there.
-
-That last observation is the first part of the Fundamental Theorem.
+Three things are worth watching. When $$f$$ is above the axis, $$A$$ rises, when $$f$$ is below the axis, $$A$$ falls, and the slope of $$A$$ at each point matches the height of $$f$$ there. That last observation is the first part of the Fundamental Theorem.
 
 ## Why $$A'(x)=f(x)$$
 
-Consider a small increase from $$x$$ to $$x+h$$.
+Consider a small increase from $$x$$ to $$x+h$$. The change in accumulated area is $$A(x+h)-A(x)$$, and for small $$h$$ this additional region is [close to a rectangle](/2026/07/25/riemann-sums-watching-rectangles.html) with width $$h$$ and height $$f(x)$$, so $$A(x+h)-A(x) \approx f(x)h$$.
 
-The change in accumulated area is
+Divide by $$h$$ to get $$\tfrac{A(x+h)-A(x)}{h} \approx f(x)$$. As $$h\to0$$, continuity makes the approximation exact, therefore
 
-$$A(x+h)-A(x).$$
+$$A'(x) = f(x)$$
 
-For small $$h$$, this additional region is [close to a rectangle](/2026/07/25/riemann-sums-watching-rectangles.html) with width $$h$$ and height $$f(x)$$.
-
-So
-
-$$A(x+h)-A(x) \approx f(x)h.$$
-
-Divide by $$h$$:
-
-$$\frac{A(x+h)-A(x)}{h} \approx f(x).$$
-
-As $$h\to0$$, continuity makes the approximation exact.
-
-Therefore
-
-$$A'(x) = f(x).$$
-
-The rate at which signed area accumulates is the value of the function being accumulated.
-
-That is the central connection between integration and differentiation.
+The rate at which signed area accumulates is the value of the function being accumulated, and that is the central connection between integration and differentiation.
 
 ## The evaluation rule follows
 
-Now suppose $$F$$ is any antiderivative of $$f$$.
+Now suppose $$F$$ is any antiderivative of $$f$$. Then $$A$$ and $$F$$ have the same derivative, $$A'=F'=f$$, so they differ by a constant. Write $$F(x)=A(x)+C$$, and then $$F(b)-F(a) = A(b)-A(a)$$. But $$A(b)-A(a) = \textstyle\int_a^b f(t)\,dt$$, therefore
 
-Then $$A$$ and $$F$$ have the same derivative:
+$$\int_a^b f(x)\,dx = F(b)-F(a)$$
 
-$$A'=F'=f.$$
-
-So they differ by a constant.
-
-Write
-
-$$F(x)=A(x)+C.$$
-
-Then
-
-$$F(b)-F(a) = A(b)-A(a).$$
-
-But
-
-$$A(b)-A(a) = \int_a^b f(t)\,dt.$$
-
-Therefore
-
-$$\int_a^b f(x)\,dx = F(b)-F(a).$$
-
-The familiar evaluation rule follows from the accumulation-function statement.
-
-The constant disappears because subtraction removes it.
+The familiar evaluation rule follows from the accumulation-function statement, and the constant disappears because subtraction removes it.
 
 ## Three common forms
 
-### An accumulation function
+## An accumulation function
 
-Suppose
+Suppose $$g(x) = \textstyle\int_2^x f(t)\,dt$$. Then $$g'(x)=f(x)$$, and, where $$f$$ is differentiable, $$g''(x)=f'(x)$$. Values of $$g$$ come from signed area, and derivatives of $$g$$ come from the graph of $$f$$.
 
-$$g(x) = \int_2^x f(t)\,dt.$$
+## A variable upper limit
 
-Then
+If the upper limit is itself a function of $$x$$, use the chain rule. For example, $$\textstyle\tfrac{d}{dx}\int_0^{x^2}\cos(t)\,dt = \cos(x^2)\cdot2x$$. The Fundamental Theorem evaluates the integrand at the upper limit, and the chain rule contributes the derivative of that upper limit.
 
-$$g'(x)=f(x).$$
+## Net change
 
-And, where $$f$$ is differentiable,
-
-$$g''(x)=f'(x).$$
-
-Values of $$g$$ come from signed area.
-
-Derivatives of $$g$$ come from the graph of $$f$$.
-
-### A variable upper limit
-
-If the upper limit is itself a function of $$x$$, use the chain rule.
-
-For example,
-
-$$\frac{d}{dx} \int_0^{x^2}\cos(t)\,dt = \cos(x^2)\cdot2x.$$
-
-The Fundamental Theorem evaluates the integrand at the upper limit. The chain rule contributes the derivative of that upper limit.
-
-### Net change
-
-If $$f'$$ is a rate of change, then
-
-$$f(b) = f(a) + \int_a^b f'(t)\,dt.$$
-
-This is the net change form.
-
-A starting amount plus accumulated rate gives the final amount.
-
-If a tank begins with 30 gallons and water enters at rate $$R(t)$$, then after 6 units of time the amount is
-
-$$30+\int_0^6R(t)\,dt.$$
-
-No antiderivative formula is required if the integral is evaluated numerically.
+If $$f'$$ is a rate of change, then $$f(b) = f(a) + \textstyle\int_a^b f'(t)\,dt$$. This is the net change form, and a starting amount plus accumulated rate gives the final amount. If a tank begins with 30 gallons and water enters at rate $$R(t)$$, then after 6 units of time the amount is $$30+\textstyle\int_0^6R(t)\,dt$$. No antiderivative formula is required if the integral is evaluated numerically.
 
 ## A useful self-test
 
 <div class="article-note" markdown="1">
-Sketch any continuous function $$f$$.
-
-Then sketch
-
-$$A(x) = \int_0^x f(t)\,dt$$
-
-without finding an antiderivative.
-
-Use only the graph of $$f$$.
-
-Where $$f$$ is positive, $$A$$ should rise.
-
-Where $$f$$ is negative, $$A$$ should fall.
-
-Where $$f=0$$, $$A$$ may have an extremum.
-
-Where $$f$$ is increasing, $$A$$ should be concave up.
-
-If you can build that second graph from the first, the theorem is doing more than supplying an integration shortcut.
+Sketch any continuous function $$f$$, then sketch $$A(x) = \textstyle\int_0^x f(t)\,dt$$ without finding an antiderivative, using only the graph of $$f$$. Where $$f$$ is positive, $$A$$ should rise, and where $$f$$ is negative, $$A$$ should fall. Where $$f=0$$, $$A$$ may have an extremum, and where $$f$$ is increasing, $$A$$ should be concave up. If you can build that second graph from the first, the theorem is doing more than supplying an integration shortcut.
 </div>

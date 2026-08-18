@@ -15,23 +15,15 @@ blurb: "A periodic function can be represented by a sum of sine and cosine waves
 image: "/assets/og/introduction-to-fourier-series.png"
 ---
 
-[Sine and cosine functions](/2026/07/25/unit-circle-unrolled.html) are simple.
-
-By adding enough of them at different frequencies and amplitudes, we can represent much more complicated periodic functions.
-
-A Fourier series writes a periodic function as a sum of these harmonic components.
+[Sine and cosine functions](/2026/07/25/unit-circle-unrolled.html) are simple. By adding enough of them at different frequencies and amplitudes, we can represent much more complicated periodic functions, and a Fourier series writes a periodic function as a sum of these harmonic components.
 
 ## Building a square wave
 
-A standard example is the square wave.
+A standard example is the square wave, and one representation is
 
-One representation is
+$$f(x) = \frac4\pi \left( \sin x + \frac{\sin3x}{3} + \frac{\sin5x}{5} + \frac{\sin7x}{7} +\cdots \right)$$
 
-$$f(x) = \frac4\pi \left( \sin x + \frac{\sin3x}{3} + \frac{\sin5x}{5} + \frac{\sin7x}{7} +\cdots \right).$$
-
-Only odd harmonics appear.
-
-Their amplitudes decrease as the reciprocal of the frequency.
+Only odd harmonics appear, and their amplitudes decrease as the reciprocal of the frequency.
 
 <div class="viz" markdown="0">
   <canvas id="fs-cv" width="700" height="300"></canvas>
@@ -91,112 +83,44 @@ Their amplitudes decrease as the reciprocal of the frequency.
 })();
 </script>
 
-The faint graph shows the target square wave.
-
-The dark graph shows the partial Fourier sum.
-
-With one term, the approximation is simply a sine wave.
-
-As more harmonics are added, the flat regions become flatter and the transitions become sharper.
-
-The approximation is being built globally from smooth waves.
+The faint graph shows the target square wave, and the dark graph shows the partial Fourier sum. With one term, the approximation is simply a sine wave. As more harmonics are added, the flat regions become flatter and the transitions become sharper, and the approximation is being built globally from smooth waves.
 
 ## Where the coefficients come from
 
-The coefficients are determined by integrals.
+The coefficients are determined by integrals. For a function with period $$2\pi$$, a Fourier series has the form
 
-For a function with period $$2\pi$$, a Fourier series has the form
-
-$$\frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n\cos nx+b_n\sin nx \right).$$
+$$\frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n\cos nx+b_n\sin nx \right)$$
 
 The coefficients are
 
-$$a_n = \frac1\pi \int_{-\pi}^{\pi} f(x)\cos(nx)\,dx,$$
+$$a_n = \frac1\pi \int_{-\pi}^{\pi} f(x)\cos(nx)\,dx \qquad\text{and}\qquad b_n = \frac1\pi \int_{-\pi}^{\pi} f(x)\sin(nx)\,dx$$
 
-and
-
-$$b_n = \frac1\pi \int_{-\pi}^{\pi} f(x)\sin(nx)\,dx.$$
-
-These formulas work because the sine and cosine functions are orthogonal over a full period.
-
-Informally, the integral measures how much of a particular frequency is present in the function.
+These formulas work because the sine and cosine functions are orthogonal over a full period. Informally, the integral measures how much of a particular frequency is present in the function.
 
 ## The Gibbs phenomenon
 
-Look near a jump in the square wave.
+Look near a jump in the square wave. Even after many harmonics are added, the Fourier approximation overshoots near the discontinuity. The oscillation becomes narrower as more terms are used, but the maximum overshoot does not disappear completely, and this is the Gibbs phenomenon.
 
-Even after many harmonics are added, the Fourier approximation overshoots near the discontinuity.
-
-The oscillation becomes narrower as more terms are used, but the maximum overshoot does not disappear completely.
-
-This is the Gibbs phenomenon.
-
-It is a useful reminder that convergence can behave differently near discontinuities.
-
-A series can approximate a function extremely well across most of an interval while retaining a structured error near a jump.
+It is a useful reminder that convergence can behave differently near discontinuities. A series can approximate a function extremely well across most of an interval while retaining a structured error near a jump.
 
 ## Frequency instead of position
 
-Fourier analysis gives two ways to describe the same signal.
+Fourier analysis gives two ways to describe the same signal. The original function shows how the signal changes over time or position, and the Fourier coefficients show how much of each frequency is present. This second representation is often called the frequency domain.
 
-The original function shows how the signal changes over time or position.
-
-The Fourier coefficients show how much of each frequency is present.
-
-This second representation is often called the frequency domain.
-
-For a musical note, the fundamental frequency determines the perceived pitch.
-
-Higher harmonics contribute to timbre.
-
-Two instruments can play the same note while producing very different mixtures of harmonics.
-
-The waveform looks different because the frequency content is different.
+For a musical note, the fundamental frequency determines the perceived pitch, and higher harmonics contribute to timbre. Two instruments can play the same note while producing very different mixtures of harmonics, and the waveform looks different because the frequency content is different.
 
 ## Applications
 
-The same decomposition appears in audio processing, image compression, telecommunications, signal denoising, and the analysis of differential equations.
-
-Noise can sometimes be removed by suppressing unwanted frequency components.
-
-Compression can preserve the most important components while discarding smaller ones.
-
-Differential equations involving oscillation often become easier when expressed in a basis of sine and cosine functions.
-
-The computational version of this idea is the Fourier transform.
+The same decomposition appears in audio processing, image compression, telecommunications, signal denoising, and the analysis of differential equations. Noise can sometimes be removed by suppressing unwanted frequency components, and compression can preserve the most important components while discarding smaller ones. Differential equations involving oscillation often become easier when expressed in a basis of sine and cosine functions, and the computational version of this idea is the Fourier transform.
 
 ## Fourier series and Taylor series
 
-Fourier series and [Taylor series](/2026/07/22/taylor-polynomials-impersonate-functions.html) both approximate functions using simpler building blocks, but the constructions are different.
+Fourier series and [Taylor series](/2026/07/22/taylor-polynomials-impersonate-functions.html) both approximate functions using simpler building blocks, but the constructions are different. A Taylor polynomial is organized around one center and matches derivatives there, and its basis functions are powers such as $$1,\; x,\; x^2,\; x^3,\ldots$$ A Fourier series is organized around frequency across an interval, and its basis functions are sine and cosine waves.
 
-A Taylor polynomial is organized around one center and matches derivatives there.
-
-Its basis functions are powers such as
-
-$$1,\quad x,\quad x^2,\quad x^3,\ldots$$
-
-A Fourier series is organized around frequency across an interval.
-
-Its basis functions are sine and cosine waves.
-
-Taylor approximation is naturally local.
-
-Fourier representation is naturally global and periodic.
-
-Both become much more systematic in later analysis courses, where the choice of basis is treated as a general mathematical idea.
+Taylor approximation is naturally local, while Fourier representation is naturally global and periodic. Both become much more systematic in later analysis courses, where the choice of basis is treated as a general mathematical idea.
 
 ## A useful way to see the square wave
 
 <div class="article-note" markdown="1">
-Move the harmonic slider slowly.
-
-Each new term has a higher frequency and a smaller amplitude.
-
-The low-frequency terms determine the broad shape.
-
-The high-frequency terms refine the sharp transitions.
-
-That same separation between broad structure and fine detail is central to signal processing.
-
-A complicated signal can often be understood by asking which scales or frequencies carry most of its energy.
+Move the harmonic slider slowly. Each new term has a higher frequency and a smaller amplitude, so the low-frequency terms determine the broad shape and the high-frequency terms refine the sharp transitions. That same separation between broad structure and fine detail is central to signal processing, and a complicated signal can often be understood by asking which scales or frequencies carry most of its energy.
 </div>

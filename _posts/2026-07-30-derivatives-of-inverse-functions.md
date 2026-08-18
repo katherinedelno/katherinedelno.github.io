@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Corresponding tangent slopes of a function and its inverse are reciprocals, with the derivative evaluated at the corresponding input."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "5 min read"
 math: true
 kind: mechanics
 sequence: 12
@@ -14,49 +14,19 @@ blurb: "Corresponding tangent slopes of a function and its inverse are reciproca
 image: "/assets/og/derivatives-of-inverse-functions.png"
 ---
 
-The graph of $$f^{-1}$$ is the graph of $$f$$ reflected across the line $$y=x$$.
-
-Reflection across $$y=x$$ swaps horizontal and vertical change. At corresponding points, tangent slopes are therefore reciprocals.
-
-That geometric picture leads directly to the derivative formula.
+The graph of $$f^{-1}$$ is the graph of $$f$$ reflected across the line $$y=x$$. Reflection across $$y=x$$ swaps horizontal and vertical change, and at corresponding points, tangent slopes are therefore reciprocals. That geometric picture leads directly to the derivative formula.
 
 ## The rule and the evaluation point
 
-Suppose $$f$$ is one-to-one and differentiable, and suppose
+Suppose $$f$$ is one-to-one and differentiable, and suppose $$f'\big(f^{-1}(a)\big)\neq0$$. Then
 
-$$f'\big(f^{-1}(a)\big)\neq0.$$
+$$\big(f^{-1}\big)'(a) = \frac{1}{f'\big(f^{-1}(a)\big)}$$
 
-Then
+The formula follows from the identity $$f\big(f^{-1}(x)\big)=x$$. [Differentiate both sides](/2026/07/30/chain-rule-reading-the-layers.html) to get $$f'\big(f^{-1}(x)\big) \cdot \big(f^{-1}\big)'(x) = 1$$, then solve for the inverse derivative.
 
-$$\big(f^{-1}\big)'(a) = \frac{1}{f'\big(f^{-1}(a)\big)}.$$
+The main difficulty is usually not the reciprocal. It is finding where $$f'$$ should be evaluated. Suppose $$f(x)=x^3+x$$. Since $$f(1)=2$$, we know $$f^{-1}(2)=1$$, and therefore
 
-The formula follows from the identity
-
-$$f\big(f^{-1}(x)\big)=x.$$
-
-[Differentiate both sides](/2026/07/30/chain-rule-reading-the-layers.html):
-
-$$f'\big(f^{-1}(x)\big) \cdot \big(f^{-1}\big)'(x) = 1.$$
-
-Then solve for the inverse derivative.
-
-The main difficulty is usually not the reciprocal. It is finding where $$f'$$ should be evaluated.
-
-Suppose
-
-$$f(x)=x^3+x.$$
-
-Since
-
-$$f(1)=2,$$
-
-we know
-
-$$f^{-1}(2)=1.$$
-
-Therefore
-
-$$\big(f^{-1}\big)'(2) = \frac{1}{f'(1)} = \frac{1}{3(1)^2+1} = \frac14.$$
+$$\big(f^{-1}\big)'(2) = \frac{1}{f'(1)} = \frac{1}{3(1)^2+1} = \frac14$$
 
 We never needed a formula for $$f^{-1}$$.
 
@@ -207,84 +177,22 @@ We never needed a formula for $$f^{-1}$$.
 })();
 </script>
 
-The visualization shows $$f$$ and its reflection across $$y=x$$.
+The visualization shows $$f$$ and its reflection across $$y=x$$. A point $$(b,f(b))$$ on the original graph corresponds to $$(f(b),b)$$ on the inverse, and the tangent slopes at those two points are reciprocals wherever both derivatives exist.
 
-A point $$(b,f(b))$$ on the original graph corresponds to
-
-$$(f(b),b)$$
-
-on the inverse.
-
-The tangent slopes at those two points are reciprocals wherever both derivatives exist.
-
-This is useful when a problem provides a table rather than a formula.
-
-If you are asked for
-
-$$\big(f^{-1}\big)'(4),$$
-
-look for the row where
-
-$$f(x)=4.$$
-
-That row gives $$f^{-1}(4)$$. The derivative $$f'$$ must be evaluated at that input.
-
-Looking for $$x=4$$ instead is the common mistake.
+This is useful when a problem provides a table rather than a formula. If you are asked for $$\big(f^{-1}\big)'(4)$$, look for the row where $$f(x)=4$$. That row gives $$f^{-1}(4)$$, and the derivative $$f'$$ must be evaluated at that input. Looking for $$x=4$$ instead is the common mistake.
 
 ## Inverse trigonometric derivatives
 
-The inverse trigonometric derivative formulas can be derived from the same rule.
+The inverse trigonometric derivative formulas can be derived from the same rule. For $$f=\sin$$ on the interval where sine is one-to-one, $$(\arcsin)'(a) = \tfrac{1}{\cos(\arcsin a)}$$, and using the Pythagorean identity, $$\cos(\arcsin a) = \sqrt{1-a^2}$$, so $$(\arcsin)'(a) = \tfrac{1}{\sqrt{1-a^2}}$$.
 
-For $$f=\sin$$ on the interval where sine is one-to-one,
-
-$$(\arcsin)'(a) = \frac{1}{\cos(\arcsin a)}.$$
-
-Using the Pythagorean identity,
-
-$$\cos(\arcsin a) = \sqrt{1-a^2},$$
-
-so
-
-$$(\arcsin)'(a) = \frac{1}{\sqrt{1-a^2}}.$$
-
-For tangent,
-
-$$(\arctan)'(a) = \frac{1}{\sec^2(\arctan a)}.$$
-
-Since
-
-$$\sec^2\theta=1+\tan^2\theta,$$
-
-we get
-
-$$(\arctan)'(a) = \frac{1}{1+a^2}.$$
-
-These formulas are consequences of the inverse-function rule and [trigonometric identities](/2026/07/30/derivative-rules-and-choosing.html).
+For tangent, $$(\arctan)'(a) = \tfrac{1}{\sec^2(\arctan a)}$$, and since $$\sec^2\theta=1+\tan^2\theta$$, we get $$(\arctan)'(a) = \tfrac{1}{1+a^2}$$. These formulas are consequences of the inverse-function rule and [trigonometric identities](/2026/07/30/derivative-rules-and-choosing.html).
 
 ## When the reciprocal does not exist
 
-Take
+Take $$f(x)=x^3$$, whose inverse is $$f^{-1}(x)=x^{1/3}$$. At the origin, $$f'(0)=0$$, so the reciprocal formula would require division by zero.
 
-$$f(x)=x^3.$$
-
-Its inverse is
-
-$$f^{-1}(x)=x^{1/3}.$$
-
-At the origin,
-
-$$f'(0)=0.$$
-
-So the reciprocal formula would require division by zero.
-
-The graph explains why. The tangent to $$x^3$$ at the origin is horizontal. Reflecting that tangent across $$y=x$$ produces a vertical line.
-
-The inverse therefore has a [vertical tangent](/2026/07/30/where-differentiability-fails.html) at the corresponding point, not a finite derivative.
+The graph explains why. The tangent to $$x^3$$ at the origin is horizontal, and reflecting that tangent across $$y=x$$ produces a vertical line. The inverse therefore has a [vertical tangent](/2026/07/30/where-differentiability-fails.html) at the corresponding point, not a finite derivative.
 
 <div class="article-note" markdown="1">
-The condition
-
-$$f'\big(f^{-1}(a)\big)\neq0$$
-
-is part of the theorem for a reason.
+The condition $$f'\big(f^{-1}(a)\big)\neq0$$ is part of the theorem for a reason.
 </div>

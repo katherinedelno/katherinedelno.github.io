@@ -4,7 +4,7 @@ title: "One template for every interval"
 date: 2026-07-31
 description: "Most inference procedures in the course are built from two general forms. The procedure changes mainly through the standard error."
 course: "AP Statistics"
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 12
@@ -13,15 +13,13 @@ blurb: "Most inference procedures in the course are built from two general forms
 image: "/assets/og/one-template.png"
 ---
 
-Most of the inference formulas in AP Statistics can be organized around two structures.
+Most of the inference formulas in AP Statistics can be organized around two structures. A confidence interval has the form
 
-A confidence interval has the form
+$$\text{statistic} \pm (\text{critical value})(\text{standard error})$$
 
-$$\text{statistic} \pm (\text{critical value})(\text{standard error}).$$
+and a standardized test statistic has the form
 
-A standardized test statistic has the form
-
-$$\frac{\text{statistic}-\text{null parameter value}}{\text{standard error}}.$$
+$$\frac{\text{statistic}-\text{null parameter value}}{\text{standard error}}$$
 
 The procedure determines which statistic, critical value, and standard error belong in those slots.
 
@@ -143,108 +141,34 @@ Pick a procedure and switch between interval and test.
 })();
 </script>
 
-The overall structure stays nearly fixed.
-
-What changes most often is the standard error.
-
-For example, a one-proportion confidence interval uses
-
-$$\hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}.$$
-
-A one-sample $$t$$-interval for a mean uses
-
-$$\bar x \pm t^* \frac{s}{\sqrt n}.$$
-
-A two-sample interval changes the statistic and standard error but not the general form.
+The overall structure stays nearly fixed, and what changes most often is the standard error. For example, a one-proportion confidence interval uses $$\hat p \pm z^* \sqrt{\tfrac{\hat p(1-\hat p)}{n}}$$, and a one-sample $$t$$-interval for a mean uses $$\bar x \pm t^* \tfrac{s}{\sqrt n}$$. A two-sample interval changes the statistic and standard error but not the general form.
 
 ## Paired data fit the same template
 
-A matched-pairs problem is converted into one sample of differences.
-
-If
-
-$$d_i$$
-
-is the difference for pair $$i$$, then inference concerns
-
-$$\mu_d.$$
-
-The interval is therefore a one-sample $$t$$-interval applied to the differences:
-
-$$\bar d \pm t^* \frac{s_d}{\sqrt n}.$$
-
-There is no need for an entirely separate formula family.
-
-The design changes the variable being analyzed.
+A matched-pairs problem is converted into one sample of differences. If $$d_i$$ is the difference for pair $$i$$, then inference concerns $$\mu_d$$. The interval is therefore a one-sample $$t$$-interval applied to the differences, $$\bar d \pm t^* \tfrac{s_d}{\sqrt n}$$. There is no need for an entirely separate formula family. The design changes the variable being analyzed.
 
 ## Why means use $$t$$
 
-For a population mean, the standard deviation $$\sigma$$ is usually unknown.
-
-The standard error is estimated using
-
-$$\frac{s}{\sqrt n}.$$
-
-That substitution adds uncertainty.
-
-The $$t$$-distribution accounts for it.
-
-As the degrees of freedom increase, $$t$$ approaches the standard normal distribution.
+For a population mean, the standard deviation $$\sigma$$ is usually unknown, and the standard error is estimated using $$\tfrac{s}{\sqrt n}$$. That substitution adds uncertainty, and the $$t$$-distribution accounts for it. As the degrees of freedom increase, $$t$$ approaches the standard normal distribution.
 
 ## Why proportion intervals and tests use different standard errors
 
-A one-proportion confidence interval does not assume a population value for $$p$$.
+A one-proportion confidence interval does not assume a population value for $$p$$, so its standard error is estimated with the sample proportion, $$\sqrt{\tfrac{\hat p(1-\hat p)}{n}}$$. A hypothesis test specifies a null value $$p_0$$, and under the null, the sampling distribution is built using that hypothesized parameter, $$\sqrt{\tfrac{p_0(1-p_0)}{n}}$$.
 
-So its standard error is estimated with the sample proportion:
-
-$$\sqrt{\frac{\hat p(1-\hat p)}{n}}.$$
-
-A hypothesis test specifies a null value
-
-$$p_0.$$
-
-Under the null, the sampling distribution is built using that hypothesized parameter:
-
-$$\sqrt{\frac{p_0(1-p_0)}{n}}.$$
-
-The difference comes from the question.
-
-The interval estimates an unknown parameter.
-
-The test temporarily assumes a particular value.
+The difference comes from the question. The interval estimates an unknown parameter, and the test temporarily assumes a particular value.
 
 ## Pooling in a two-proportion test
 
-For a two-proportion interval, the two sample proportions remain separate in the standard error.
-
-A two-proportion test under
-
-$$H_0:p_1=p_2$$
-
-assumes the groups share one population proportion under the null.
-
-That allows a pooled estimate
-
-$$\hat p_c = \frac{x_1+x_2}{n_1+n_2}.$$
-
-The test standard error uses this combined value.
-
-The interval does not pool because it is estimating the difference without assuming equality.
+For a two-proportion interval, the two sample proportions remain separate in the standard error. A two-proportion test under $$H_0:p_1=p_2$$ assumes the groups share one population proportion under the null, and that allows a pooled estimate $$\hat p_c = \tfrac{x_1+x_2}{n_1+n_2}$$. The test standard error uses this combined value, and the interval does not pool because it is estimating the difference without assuming equality.
 
 ## Chi-square is different
 
 Chi-square procedures use
 
-$$\chi^2 = \sum \frac{(O-E)^2}{E}.$$
+$$\chi^2 = \sum \frac{(O-E)^2}{E}$$
 
-This is not a single standardized difference between a statistic and a parameter.
-
-It accumulates discrepancies across several cells of a table.
-
-That is why chi-square sits outside the two general templates and appears only as a test in this course.
+This is not a single standardized difference between a statistic and a parameter, and it accumulates discrepancies across several cells of a table. That is why chi-square sits outside the two general templates and appears only as a test in this course.
 
 <div class="article-note" markdown="1">
-The reference sheet is easier to use once the formulas are seen this way.
-
-Most of the work is identifying the design and choosing the matching standard error.
+The reference sheet is easier to use once the formulas are seen this way, and most of the work is identifying the design and choosing the matching standard error.
 </div>

@@ -5,7 +5,7 @@ date: 2026-07-25
 description: "A definite integral is the limit of approximating sums. Left, right, midpoint, and trapezoidal estimates differ only in how each slice is represented."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "6 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 20
@@ -14,29 +14,15 @@ blurb: "A definite integral is the limit of approximating sums. Left, right, mid
 image: "/assets/og/riemann-sums-watching-rectangles.png"
 ---
 
-Before the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives a convenient way to evaluate many definite integrals, the integral has a definition.
+Before the [Fundamental Theorem](/2026/07/17/fundamental-theorem-from-the-ground-up.html) gives a convenient way to evaluate many definite integrals, the integral has a definition. Partition an interval into smaller pieces. Approximate the contribution from each piece. Add the contributions. Then let the partition become arbitrarily fine. For a continuous function,
 
-Partition an interval into smaller pieces. Approximate the contribution from each piece. Add the contributions. Then let the partition become arbitrarily fine.
-
-For a continuous function,
-
-$$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{k=1}^{n} f(x_k^*)\Delta x.$$
+$$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{k=1}^{n} f(x_k^*)\Delta x$$
 
 Here $$\Delta x$$ is the width of a subinterval and $$x_k^*$$ is the point used to choose the rectangle height.
 
 ## Watching the sums converge
 
-Consider
-
-$$f(x)=x^2+1$$
-
-on
-
-$$[0,3].$$
-
-Its exact integral is
-
-$$\int_0^3(x^2+1)\,dx = 12.$$
+Consider $$f(x)=x^2+1$$ on $$[0,3]$$. Its exact integral is $$\textstyle\int_0^3(x^2+1)\,dx = 12$$.
 
 <div class="viz" markdown="0">
   <canvas id="rs-cv" width="700" height="300"></canvas>
@@ -92,90 +78,32 @@ $$\int_0^3(x^2+1)\,dx = 12.$$
 })();
 </script>
 
-With a small number of rectangles, the difference between the sum and the curved region is obvious.
-
-As $$n$$ increases, the approximation improves.
-
-For this increasing function, the left sum remains below the exact value and the right sum remains above it.
-
-At $$n=80$$, the two estimates are already close to 12.
+With a small number of rectangles, the difference between the sum and the curved region is obvious. As $$n$$ increases, the approximation improves, and for this increasing function the left sum remains below the exact value and the right sum remains above it. At $$n=80$$, the two estimates are already close to 12.
 
 The limit in the definition is what happens as the number of subintervals continues without bound.
 
 ## Why left and right sums behave differently
 
-On an interval where $$f$$ is increasing, the left endpoint gives the smallest function value on each subinterval.
+On an interval where $$f$$ is increasing, the left endpoint gives the smallest function value on each subinterval, so each left rectangle lies below the curve and the left Riemann sum is therefore an underestimate. The right endpoint gives the largest value on each subinterval, so the right sum is an overestimate. If $$f$$ is decreasing, the roles reverse.
 
-So each left rectangle lies below the curve.
-
-The left Riemann sum is therefore an underestimate.
-
-The right endpoint gives the largest value on each subinterval, so the right sum is an overestimate.
-
-If $$f$$ is decreasing, the roles reverse.
-
-This reasoning is more useful than memorizing a table.
-
-The direction of the error for left and right sums comes from whether the function is increasing or decreasing.
-
-For midpoint and trapezoidal approximations, concavity becomes relevant instead.
+This reasoning is more useful than memorizing a table. The direction of the error for left and right sums comes from whether the function is increasing or decreasing, and for midpoint and trapezoidal approximations, concavity becomes relevant instead.
 
 ## Riemann sums from a table
 
-A formula for the function is not required.
-
-Suppose a rate $$R(t)$$ is given by the table:
+A formula for the function is not required. Suppose a rate $$R(t)$$ is given by the table:
 
 | $$t$$ (hours) | 0 | 2 | 5 | 8 | 9 |
 |---|---|---|---|---|---|
 | $$R(t)$$ (liters/hour) | 40 | 46 | 58 | 52 | 48 |
 
-A left Riemann sum for
+A left Riemann sum for $$\textstyle\int_0^9R(t)\,dt$$ uses the left value on each subinterval, $$40(2)+46(3)+58(3)+52(1)$$, and this gives $$444$$ liters. The widths are not equal, so each one must be read from the table.
 
-$$\int_0^9R(t)\,dt$$
-
-uses the left value on each subinterval:
-
-$$40(2)+46(3)+58(3)+52(1).$$
-
-This gives
-
-$$444$$
-
-liters.
-
-The widths are not equal, so each one must be read from the table.
-
-The units also matter.
-
-A rate measured in liters per hour multiplied by time in hours gives liters.
-
-So the integral represents the accumulated quantity over the interval.
+The units also matter. A rate measured in liters per hour multiplied by time in hours gives liters, so the integral represents the accumulated quantity over the interval.
 
 ## Why the definition still matters
 
-Antiderivatives provide an efficient evaluation method when they are available.
-
-But many functions do not have elementary antiderivatives, and many datasets are given only numerically.
-
-The Riemann-sum idea still applies in those settings.
-
-Integration is fundamentally accumulation.
-
-The antiderivative method is a theorem that connects that accumulation to differentiation.
+Antiderivatives provide an efficient evaluation method when they are available. But many functions do not have elementary antiderivatives, and many datasets are given only numerically, so the Riemann-sum idea still applies in those settings. Integration is fundamentally accumulation, and the antiderivative method is a theorem that connects that accumulation to differentiation.
 
 <div class="article-note" markdown="1">
-A useful check is to decide the direction of a trapezoidal approximation without computing it.
-
-For
-
-$$f(x)=x^2+1,$$
-
-the function is concave up.
-
-The line segment joining two points on a concave-up curve lies above the curve.
-
-So a trapezoidal sum overestimates the integral.
-
-That conclusion comes from the geometry of one subinterval. No chart is necessary.
+A useful check is to decide the direction of a trapezoidal approximation without computing it. For $$f(x)=x^2+1$$, the function is concave up, and the line segment joining two points on a concave-up curve lies above the curve, so a trapezoidal sum overestimates the integral. That conclusion comes from the geometry of one subinterval. No chart is necessary.
 </div>

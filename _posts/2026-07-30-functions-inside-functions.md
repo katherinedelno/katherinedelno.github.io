@@ -4,7 +4,7 @@ title: "Functions inside functions"
 date: 2026-07-30
 description: "Composition sends the output of one function into another. Order matters, and the domain of the composite has to satisfy both functions."
 course: "AP Precalculus"
-read_time: "6 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 4
@@ -13,19 +13,7 @@ blurb: "Composition sends the output of one function into another. Order matters
 image: "/assets/og/functions-inside-functions.png"
 ---
 
-Function composition connects two functions in sequence.
-
-In
-
-$$f(g(x)),$$
-
-the input goes into $$g$$ first.
-
-The output of $$g$$ then becomes the input of $$f$$.
-
-The inside function acts first.
-
-The outside function acts last.
+Function composition connects two functions in sequence. In $$f(g(x))$$, the input goes into $$g$$ first, and the output of $$g$$ then becomes the input of $$f$$. The inside function acts first, and the outside function acts last.
 
 ## Follow the pipeline
 
@@ -189,168 +177,30 @@ The outside function acts last.
 })();
 </script>
 
-The visualization shows the intermediate value between the two functions.
-
-It also graphs the composite.
-
-If the first function produces an output that the second function cannot accept, the composite is undefined there.
-
-Swapping the order generally changes the result.
+The visualization shows the intermediate value between the two functions, and it also graphs the composite. If the first function produces an output that the second function cannot accept, the composite is undefined there. Swapping the order generally changes the result.
 
 ## Order matters
 
-Let
-
-$$g(x)=2x+1$$
-
-and
-
-$$f(x)=x^2.$$
-
-At $$x=3$$,
-
-$$g(3)=7,$$
-
-so
-
-$$f(g(3)) = f(7) = 49.$$
-
-Reverse the order.
-
-First,
-
-$$f(3)=9.$$
-
-Then
-
-$$g(f(3)) = g(9) = 19.$$
-
-Thus
-
-$$f\circ g$$
-
-and
-
-$$g\circ f$$
-
-are different functions.
-
-Composition is not commutative.
+Let $$g(x)=2x+1$$ and $$f(x)=x^2$$. At $$x=3$$, the inside function produces $$g(3)=7$$, so $$f(g(3))=f(7)=49$$. Reverse the order, and first $$f(3)=9$$, then $$g(f(3))=g(9)=19$$. Thus $$f\circ g$$ and $$g\circ f$$ are different functions, and composition is not commutative.
 
 ## Reading a composite from the outside
 
-Suppose
+Suppose $$h(x)=\sqrt{3x+1}$$. To decompose it, ask what operation happens last. The final operation is a square root, so a natural choice is $$f(u)=\sqrt{u}$$ and $$g(x)=3x+1$$, and then $$h(x)=f(g(x))$$. Giving the inside expression a temporary name often makes the structure easier to see, so write $$u=3x+1$$ and then $$h=\sqrt{u}$$.
 
-$$h(x)=\sqrt{3x+1}.$$
-
-To decompose it, ask what operation happens last.
-
-The final operation is a square root.
-
-So a natural choice is
-
-$$f(u)=\sqrt{u}$$
-
-and
-
-$$g(x)=3x+1.$$
-
-Then
-
-$$h(x)=f(g(x)).$$
-
-Giving the inside expression a temporary name often makes the structure easier to see.
-
-Write
-
-$$u=3x+1.$$
-
-Then
-
-$$h=\sqrt{u}.$$
-
-The decomposition is not always unique.
-
-For
-
-$$(x+2)^6,$$
-
-one valid decomposition is a sixth power applied to $$x+2$$.
-
-Another is a cube applied to $$(x+2)^2$$.
-
-A useful decomposition is usually the one that makes the relevant operation easiest to analyze.
+The decomposition is not always unique. For $$(x+2)^6$$, one valid decomposition is a sixth power applied to $$x+2$$, and another is a cube applied to $$(x+2)^2$$. A useful decomposition is usually the one that makes the relevant operation easiest to analyze.
 
 ## Domains pass through both functions
 
-Suppose
+Suppose $$g(x)=2x+1$$ and $$f(x)=\sqrt{x}$$, so that $$f(g(x))=\sqrt{2x+1}$$. For the composite to exist, $$x$$ must be in the domain of $$g$$, and $$g(x)$$ must lie in the domain of $$f$$. Here that means $$2x+1\ge0$$, so $$x\ge-\tfrac12$$. In general,
 
-$$g(x)=2x+1$$
-
-and
-
-$$f(x)=\sqrt{x}.$$
-
-Then
-
-$$f(g(x)) = \sqrt{2x+1}.$$
-
-For the composite to exist, $$x$$ must be in the domain of $$g$$, and $$g(x)$$ must lie in the domain of $$f$$.
-
-Here that means
-
-$$2x+1\ge0,$$
-
-so
-
-$$x\ge-\frac12.$$
-
-In general,
-
-$$x\in\operatorname{dom}(f\circ g)$$
-
-exactly when
-
-$$x\in\operatorname{dom}(g)$$
-
-and
-
-$$g(x)\in\operatorname{dom}(f).$$
+$$x\in\operatorname{dom}(f\circ g)\quad\text{exactly when}\quad x\in\operatorname{dom}(g)\ \text{and}\ g(x)\in\operatorname{dom}(f)$$
 
 Simplifying an expression can sometimes hide an original restriction, so it is worth determining the domain from the composition itself.
 
 ## Composition appears everywhere later
 
-[Graph transformations](/2026/07/25/transformations-four-dials.html) are compositions.
-
-[Exponential and logarithmic models](/2026/07/30/logarithms-undo-exponentials.html) are compositions.
-
-Inverse functions undo compositions in reverse order.
-
-In calculus, the chain rule differentiates compositions by identifying the same inner and outer layers.
-
-The notation becomes more elaborate later, but the underlying reading skill is the same.
+[Graph transformations](/2026/07/25/transformations-four-dials.html) are compositions. [Exponential and logarithmic models](/2026/07/30/logarithms-undo-exponentials.html) are compositions as well, and inverse functions undo compositions in reverse order. In calculus, the chain rule differentiates compositions by identifying the same inner and outer layers. The notation becomes more elaborate later, but the underlying reading skill is the same.
 
 <div class="article-note" markdown="1">
-A useful self-test is to compare
-
-$$(\sqrt{x})^2$$
-
-with
-
-$$\sqrt{x^2}.$$
-
-The first is defined only for
-
-$$x\ge0$$
-
-and simplifies to $$x$$ on that domain.
-
-The second is defined for every real $$x$$ and equals
-
-$$\vert x\vert .$$
-
-The operations look similar.
-
-Their order changes both the output and the domain.
+A useful self-test is to compare $$(\sqrt{x})^2$$ with $$\sqrt{x^2}$$. The first is defined only for $$x\ge0$$ and simplifies to $$x$$ on that domain, while the second is defined for every real $$x$$ and equals $$\vert x\vert$$. The operations look similar, but their order changes both the output and the domain.
 </div>

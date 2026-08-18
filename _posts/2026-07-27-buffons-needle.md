@@ -13,45 +13,15 @@ blurb: "Drop a needle across parallel lines, count the crossings, and a geometri
 image: "/assets/og/buffons-needle.png"
 ---
 
-A geometric probability experiment can be used to estimate
-
-$$\pi.$$
-
-Draw parallel lines a fixed distance apart.
-
-Drop a needle at random.
-
-Record whether the needle crosses one of the lines.
-
-The long-run crossing proportion is related to $$\pi$$.
+A geometric probability experiment can be used to estimate $$\pi$$. Draw parallel lines a fixed distance apart, drop a needle at random, and record whether the needle crosses one of the lines. The long-run crossing proportion is related to $$\pi$$.
 
 ## The probability
 
-Let the needle length be $$\ell$$.
+Let the needle length be $$\ell$$ and let the distance between adjacent parallel lines be $$d$$, with $$\ell\le d$$. Under the usual random-position and random-angle assumptions,
 
-Let the distance between adjacent parallel lines be $$d$$, with
+$$P(\text{crossing}) = \frac{2\ell}{\pi d}$$
 
-$$\ell\le d.$$
-
-Under the usual random-position and random-angle assumptions,
-
-$$P(\text{crossing}) = \frac{2\ell}{\pi d}.$$
-
-If we choose
-
-$$\ell=\frac d2,$$
-
-then
-
-$$P(\text{crossing}) = \frac1\pi.$$
-
-So after many drops,
-
-$$\frac{\text{crossings}}{\text{drops}} \approx \frac1\pi.$$
-
-Rearranging gives
-
-$$\pi \approx \frac{\text{drops}}{\text{crossings}}.$$
+If we choose $$\ell=\tfrac d2$$, then $$P(\text{crossing}) = \tfrac1\pi$$. So after many drops, $$\tfrac{\text{crossings}}{\text{drops}} \approx \tfrac1\pi$$, and rearranging gives $$\pi \approx \tfrac{\text{drops}}{\text{crossings}}$$.
 
 <div class="viz" markdown="0">
   <canvas id="bn-cv" width="700" height="280"></canvas>
@@ -107,88 +77,34 @@ $$\pi \approx \frac{\text{drops}}{\text{crossings}}.$$
 })();
 </script>
 
-The dark needles cross a line.
-
-The running estimate changes after every batch.
-
-With a small number of drops it can wander considerably.
-
-With more drops it tends to settle closer to $$\pi$$.
+The dark needles cross a line, and the running estimate changes after every batch. With a small number of drops it can wander considerably, and with more drops it tends to settle closer to $$\pi$$.
 
 ## Why the formula contains $$\pi$$
 
-Two random quantities determine whether a needle crosses a line.
+Two random quantities determine whether a needle crosses a line. One is the distance from the needle's center to the nearest line, and the other is the angle of the needle. If the angle is $$\theta$$, half of the needle's vertical reach is $$\tfrac{\ell}{2}\vert\sin\theta\vert$$, and a crossing occurs when the center lies close enough to a line that this vertical reach can touch it.
 
-One is the distance from the needle's center to the nearest line.
-
-The other is the angle of the needle.
-
-If the angle is $$\theta$$, half of the needle's vertical reach is
-
-$$\frac{\ell}{2}\vert \sin\theta\vert .$$
-
-A crossing occurs when the center lies close enough to a line that this vertical reach can touch it.
-
-Averaging that condition over all possible positions and angles produces the factor involving $$\pi$$.
-
-The constant appears because the experiment contains a uniformly random orientation.
+Averaging that condition over all possible positions and angles produces the factor involving $$\pi$$. The constant appears because the experiment contains a uniformly random orientation.
 
 ## This is Monte Carlo estimation
 
-The experiment is an early example of what is now called a Monte Carlo method.
+The experiment is an early example of what is now called a Monte Carlo method. A quantity that is difficult to compute directly is expressed as a probability, and that probability is then estimated by repeated random trials. The law of large numbers explains why the empirical crossing proportion approaches the theoretical crossing probability.
 
-A quantity that is difficult to compute directly is expressed as a probability.
-
-That probability is then estimated by repeated random trials.
-
-The law of large numbers explains why the empirical crossing proportion approaches the theoretical crossing probability.
-
-The simulation does not derive $$\pi$$.
-
-It estimates a probability whose exact value happens to contain $$\pi$$.
+The simulation does not derive $$\pi$$. It estimates a probability whose exact value happens to contain $$\pi$$.
 
 ## More trials help slowly
 
-Random error usually decreases at a rate proportional to
-
-$$\frac1{\sqrt n}.$$
-
-That square-root rate is important.
-
-To reduce the typical sampling error by a factor of ten, we need roughly one hundred times as many trials.
-
-A million simulated needles therefore gives a much more stable estimate than a hundred needles, but the improvement is not proportional to the increase in sample size.
-
-This is the same square-root behavior that appears in standard errors throughout statistics.
+Random error usually decreases at a rate proportional to $$\tfrac1{\sqrt n}$$, and that square-root rate is important. To reduce the typical sampling error by a factor of ten, we need roughly one hundred times as many trials. A million simulated needles therefore gives a much more stable estimate than a hundred needles, but the improvement is not proportional to the increase in sample size. This is the same square-root behavior that appears in standard errors throughout statistics.
 
 ## A historical caution
 
-Buffon's needle was proposed in the eighteenth century and has been physically performed many times since.
+Buffon's needle was proposed in the eighteenth century and has been physically performed many times since. One famous experiment was reported by Mario Lazzarini in 1901, and he claimed an estimate of $$\pi$$ correct to six decimal places after only a few thousand needle tosses. That accuracy is implausibly good for a random experiment of that size, and later discussions have noted that the reported counts appear unusually well chosen.
 
-One famous experiment was reported by Mario Lazzarini in 1901.
-
-He claimed an estimate of $$\pi$$ correct to six decimal places after only a few thousand needle tosses.
-
-That accuracy is implausibly good for a random experiment of that size, and later discussions have noted that the reported counts appear unusually well chosen.
-
-The episode is a useful statistical caution.
-
-Stopping rules, selective reporting, or choosing a favorable result after looking at the data can make an estimate appear much more precise than its sampling process justifies.
-
-The mechanism matters as much as the final number.
+The episode is a useful statistical caution. Stopping rules, selective reporting, or choosing a favorable result after looking at the data can make an estimate appear much more precise than its sampling process justifies, and the mechanism matters as much as the final number.
 
 ## A useful comparison
 
-Suppose you run the simulation twice with the same number of drops.
-
-The estimates will not be identical.
-
-That variation is part of the experiment.
+Suppose you run the simulation twice with the same number of drops. The estimates will not be identical, and that variation is part of the experiment.
 
 <div class="article-note" markdown="1">
-The appropriate question is not whether one run reproduces $$\pi$$ to several decimal places.
-
-It is whether the estimator behaves as expected across repeated runs and becomes more stable as the number of trials increases.
-
-That is the statistical content of the experiment.
+The appropriate question is not whether one run reproduces $$\pi$$ to several decimal places. It is whether the estimator behaves as expected across repeated runs and becomes more stable as the number of trials increases, and that is the statistical content of the experiment.
 </div>

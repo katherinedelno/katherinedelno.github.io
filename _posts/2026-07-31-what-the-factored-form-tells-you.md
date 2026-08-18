@@ -4,7 +4,7 @@ title: "What the factored form tells you"
 date: 2026-07-31
 description: "Factored form reveals zeros, multiplicity, holes, vertical asymptotes, and much of a function's end behavior before the graph is drawn."
 course: "AP Precalculus"
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 2
@@ -13,43 +13,11 @@ blurb: "Factored form reveals zeros, multiplicity, holes, vertical asymptotes, a
 image: "/assets/og/what-the-factored-form-tells-you.png"
 ---
 
-A factored expression contains a large amount of graphical information.
-
-Its factors identify zeros.
-
-Their multiplicities tell us whether the graph crosses or only touches the axis.
-
-For rational functions, comparing multiplicities in the numerator and denominator distinguishes holes from vertical asymptotes.
-
-The leading terms describe end behavior.
+A factored expression contains a large amount of graphical information. Its factors identify zeros, and their multiplicities tell us whether the graph crosses or only touches the axis. For rational functions, comparing multiplicities in the numerator and denominator distinguishes holes from vertical asymptotes, and the leading terms describe end behavior.
 
 ## Zeros and factors
 
-For a polynomial, the factor theorem says that
-
-$$ (x-a) $$
-
-is a factor exactly when
-
-$$ f(a)=0. $$
-
-So a factor of
-
-$$ (x+3) $$
-
-gives a zero at
-
-$$ x=-3. $$
-
-A factor of
-
-$$ (x-2) $$
-
-gives a zero at
-
-$$ x=2. $$
-
-The sign inside the factor is opposite the value of the zero because the factor becomes zero when the two terms cancel.
+For a polynomial, the factor theorem says that $$(x-a)$$ is a factor exactly when $$f(a)=0$$. So a factor of $$(x+3)$$ gives a zero at $$x=-3$$, and a factor of $$(x-2)$$ gives a zero at $$x=2$$. The sign inside the factor is opposite the value of the zero because the factor becomes zero when the two terms cancel.
 
 ## Multiplicity changes the crossing
 
@@ -209,23 +177,7 @@ The sign inside the factor is opposite the value of the zero because the factor 
 })();
 </script>
 
-The visualization lets one root move while the other factors stay fixed.
-
-Suppose a factor appears once:
-
-$$ (x-a). $$
-
-Its sign changes as $$x$$ passes through $$a$$.
-
-If the remaining factors keep their signs nearby, the entire product changes sign and the graph crosses the axis.
-
-Now suppose the factor appears twice:
-
-$$ (x-a)^2. $$
-
-A square is nonnegative on both sides of $$a$$.
-
-Its sign does not change, so the graph touches the axis and turns back.
+The visualization lets one root move while the other factors stay fixed. Suppose a factor appears once, $$(x-a)$$. Its sign changes as $$x$$ passes through $$a$$, and if the remaining factors keep their signs nearby, the entire product changes sign and the graph crosses the axis. Now suppose the factor appears twice, $$(x-a)^2$$. A square is nonnegative on both sides of $$a$$, so its sign does not change and the graph touches the axis and turns back.
 
 More generally:
 
@@ -233,75 +185,23 @@ More generally:
 - even multiplicity produces a touch or tangency
 - larger multiplicities make the graph flatter near the zero
 
-A zero of multiplicity 3 still crosses.
-
-It simply does so with more flattening than a simple zero.
+A zero of multiplicity 3 still crosses, and it simply does so with more flattening than a simple zero.
 
 ## Holes and vertical asymptotes
 
-For rational functions, a denominator factor does not automatically mean a vertical asymptote.
+For rational functions, a denominator factor does not automatically mean a vertical asymptote, and the multiplicities in the numerator and denominator have to be compared. Suppose $$x=a$$ appears with multiplicity $$m$$ in the numerator and $$n$$ in the denominator. If $$n>m$$, a denominator factor remains after simplification, and the graph has a vertical asymptote at $$x=a$$. If $$m\ge n$$, the denominator factor is fully removed, and the original function is still undefined at $$x=a$$, so the graph has a hole.
 
-The multiplicities in the numerator and denominator have to be compared.
-
-Suppose $$x=a$$ appears with multiplicity $$m$$ in the numerator and $$n$$ in the denominator.
-
-If
-
-$$ n>m, $$
-
-a denominator factor remains after simplification.
-
-The graph has a vertical asymptote at $$x=a$$.
-
-If
-
-$$ m\ge n, $$
-
-the denominator factor is fully removed.
-
-The original function is still undefined at $$x=a$$, so the graph has a hole.
-
-This distinction matters when factors repeat.
-
-For example, one factor of
-
-$$ (x-1) $$
-
-in the numerator and two in the denominator still leaves
-
-$$ \frac{1}{x-1} $$
-
-after cancellation.
-
-The graph therefore still has a vertical asymptote.
-
-The fact that something canceled is not enough to conclude that there is a hole.
+This distinction matters when factors repeat. For example, one factor of $$(x-1)$$ in the numerator and two in the denominator still leaves $$\tfrac{1}{x-1}$$ after cancellation. The graph therefore still has a vertical asymptote, and the fact that something canceled is not enough to conclude that there is a hole.
 
 ## End behavior
 
-For large values of $$\vert x\vert$$, a polynomial is dominated by its leading term.
+For large values of $$\vert x\vert$$, a polynomial is dominated by its leading term, so a rational function has the same end behavior as the quotient of its leading terms. If the denominator has higher degree than the numerator, $$f(x)\to0$$ as $$\vert x\vert \to\infty$$. If the degrees are equal, the function approaches the ratio of the leading coefficients, and if the numerator has higher degree, there is no horizontal asymptote.
 
-A rational function therefore has the same end behavior as the quotient of its leading terms.
-
-If the denominator has higher degree than the numerator,
-
-$$ f(x)\to0 $$
-
-as $$\vert x\vert \to\infty$$.
-
-If the degrees are equal, the function approaches the ratio of the leading coefficients.
-
-If the numerator has higher degree, there is no horizontal asymptote.
-
-Polynomial division can reveal a slant or higher-degree asymptote when appropriate.
-
-These conclusions come from the dominant powers, not from the smaller terms.
+Polynomial division can reveal a slant or higher-degree asymptote when appropriate. These conclusions come from the dominant powers, not from the smaller terms.
 
 ## Read before graphing
 
-Given a factored rational function, it is worth making a short inventory before touching a calculator.
-
-Identify:
+Given a factored rational function, it is worth making a short inventory before touching a calculator. Identify:
 
 - the zeros and their multiplicities
 - the excluded inputs

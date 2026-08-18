@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Corners, cusps, vertical tangents, and discontinuities can all prevent a two-sided derivative from existing."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 8
@@ -14,15 +14,7 @@ blurb: "Corners, cusps, vertical tangents, and discontinuities can all prevent a
 image: "/assets/og/where-differentiability-fails.png"
 ---
 
-[The derivative at a point is a limit](/2026/07/30/derivative-as-a-limit.html).
-
-So a derivative fails to exist when the corresponding limit of difference quotients fails to exist as a finite two-sided limit.
-
-That gives several familiar cases.
-
-A function may have a corner, a cusp, a vertical tangent, or a discontinuity. The graphs look different, but the underlying question is the same.
-
-What do the one-sided difference quotients do?
+[The derivative at a point is a limit](/2026/07/30/derivative-as-a-limit.html), so a derivative fails to exist when the corresponding limit of difference quotients fails to exist as a finite two-sided limit. That gives several familiar cases. A function may have a corner, a cusp, a vertical tangent, or a discontinuity, and the graphs look different, but the underlying question is the same. What do the one-sided difference quotients do?
 
 ## Four ways differentiability can fail
 
@@ -164,111 +156,41 @@ Each function in the visualization has a problem at $$x=0$$.
 })();
 </script>
 
-The two reported values are one-sided difference quotients at the same distance from the point.
+The two reported values are one-sided difference quotients at the same distance from the point. Shrink $$h$$ and compare them.
 
-Shrink $$h$$ and compare them.
+## Corner
 
-### Corner
+For $$f(x)=\vert x\vert$$, the left-hand difference quotient is $$-1$$ and the right-hand difference quotient is $$1$$. Both are finite, and they simply disagree, so the two-sided derivative does not exist. Graphically, this produces a sharp corner.
 
-For
+## Cusp
 
-$$f(x)=\vert x\vert ,$$
+For $$f(x)=x^{2/3}$$, the one-sided difference quotients grow without bound with opposite signs. One side tends toward $$-\infty$$ and the other toward $$+\infty$$. The curve narrows into a cusp, and there is no finite derivative.
 
-the left-hand difference quotient is $$-1$$ and the right-hand difference quotient is $$1$$.
+## Vertical tangent
 
-Both are finite. They simply disagree.
+For $$f(x)=x^{1/3}$$, the one-sided difference quotients both tend toward $$+\infty$$. The two sides agree in direction, but they do not approach a finite number. The graph has a vertical tangent line, and a vertical line has undefined slope, so the ordinary derivative does not exist there.
 
-So the two-sided derivative does not exist.
+## Discontinuity
 
-Graphically, this produces a sharp corner.
-
-### Cusp
-
-For
-
-$$f(x)=x^{2/3},$$
-
-the one-sided difference quotients grow without bound with opposite signs.
-
-One side tends toward $$-\infty$$ and the other toward $$+\infty$$.
-
-The curve narrows into a cusp.
-
-There is no finite derivative.
-
-### Vertical tangent
-
-For
-
-$$f(x)=x^{1/3},$$
-
-the one-sided difference quotients both tend toward $$+\infty$$.
-
-The two sides agree in direction, but they do not approach a finite number.
-
-The graph has a vertical tangent line.
-
-A vertical line has undefined slope, so the ordinary derivative does not exist there.
-
-### Discontinuity
-
-The last case fails even earlier.
-
-If the function is [not continuous at the point](/2026/07/30/continuity-three-conditions.html), it cannot be differentiable there.
-
-There is no need to continue to the difference quotient once continuity has already failed.
+The last case fails even earlier. If the function is [not continuous at the point](/2026/07/30/continuity-three-conditions.html), it cannot be differentiable there, and there is no need to continue to the difference quotient once continuity has already failed.
 
 ## Differentiability implies continuity
 
-If a function is differentiable at $$x=c$$, then it is continuous at $$x=c$$.
+If a function is differentiable at $$x=c$$, then it is continuous at $$x=c$$. The contrapositive is often the useful version: if a function is not continuous at $$c$$, then it is not differentiable at $$c$$.
 
-The contrapositive is often the useful version:
+The converse is false. A function may be continuous but not differentiable, and the corner, cusp, and vertical-tangent examples are all continuous at the point where the derivative fails. So the relationship is
 
-If a function is not continuous at $$c$$, then it is not differentiable at $$c$$.
+$$\text{differentiable at }c \Longrightarrow \text{continuous at }c$$
 
-The converse is false.
-
-A function may be continuous but not differentiable.
-
-The corner, cusp, and vertical-tangent examples are all continuous at the point where the derivative fails.
-
-So the relationship is
-
-$$\text{differentiable at }c \Longrightarrow \text{continuous at }c.$$
-
-But in general,
-
-$$\text{continuous at }c \not\Longrightarrow \text{differentiable at }c.$$
-
-It is also useful to remember that if $$c$$ is not in the domain of $$f$$, then $$c$$ cannot be in the domain of $$f'$$.
+but in general $$\text{continuous at }c \not\Longrightarrow \text{differentiable at }c$$. It is also useful to remember that if $$c$$ is not in the domain of $$f$$, then $$c$$ cannot be in the domain of $$f'$$.
 
 ## Testing a piecewise join
 
-For a piecewise function, check continuity before checking derivatives.
+For a piecewise function, check continuity before checking derivatives. Consider
 
-Consider
+$$f(x) = \begin{cases} x^2, & x\le1,\\ 2x-5, & x>1 \end{cases}$$
 
-$$f(x) = \begin{cases} x^2, & x\le1,\\ 2x-5, & x>1. \end{cases}$$
-
-The derivative of the first expression at $$x=1$$ is 2.
-
-The derivative of the second expression is also 2.
-
-The one-sided slopes match.
-
-But the function values do not.
-
-From the left,
-
-$$f(1)=1.$$
-
-From the right, the expression approaches
-
-$$2(1)-5=-3.$$
-
-The function is not continuous at $$x=1$$.
-
-Therefore it is not differentiable there, regardless of the matching derivative formulas.
+The derivative of the first expression at $$x=1$$ is 2, and the derivative of the second expression is also 2, so the one-sided slopes match. But the function values do not. From the left, $$f(1)=1$$, and from the right, the expression approaches $$2(1)-5=-3$$. The function is not continuous at $$x=1$$, so it is not differentiable there, regardless of the matching derivative formulas.
 
 The correct order is:
 
@@ -278,17 +200,5 @@ The correct order is:
 Matching slopes across a jump does not produce differentiability.
 
 <div class="article-note" markdown="1">
-A useful self-test is to compare the cusp and vertical tangent in the visualization.
-
-Both involve unbounded one-sided quotients. The difference is the sign pattern.
-
-Then ask what happens for
-
-$$-x^{2/3}$$
-
-and for
-
-$$\sqrt{\vert x\vert }.$$
-
-The classification comes from the behavior of the two one-sided difference quotients.
+A useful self-test is to compare the cusp and vertical tangent in the visualization. Both involve unbounded one-sided quotients, and the difference is the sign pattern. Then ask what happens for $$-x^{2/3}$$ and for $$\sqrt{\vert x\vert}$$. The classification comes from the behavior of the two one-sided difference quotients.
 </div>

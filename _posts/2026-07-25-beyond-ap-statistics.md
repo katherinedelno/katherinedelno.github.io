@@ -14,35 +14,15 @@ blurb: "Probability theory, mathematical statistics, regression, Bayesian infere
 image: "/assets/og/beyond-ap-statistics.png"
 ---
 
-AP Statistics introduces a carefully selected part of a much larger subject.
-
-You learn how to design studies, describe variation, work with probability, fit a regression line, construct intervals, perform significance tests, and state conclusions in context.
-
-Later statistics courses ask where those procedures come from and what happens when the standard formulas are no longer enough.
-
-Calculus and linear algebra begin to appear more heavily.
-
-So does computation.
+AP Statistics introduces a carefully selected part of a much larger subject. You learn how to design studies, describe variation, work with probability, fit a regression line, construct intervals, perform significance tests, and state conclusions in context. Later statistics courses ask where those procedures come from and what happens when the standard formulas are no longer enough. Calculus and linear algebra begin to appear more heavily, and so does computation.
 
 ## Probability theory
 
-A first probability course gives a mathematical foundation to ideas that AP Statistics introduces through simulation and formulas.
-
-Random variables become objects to study in their own right.
-
-Expected values, variances, joint distributions, conditional distributions, and transformations are derived systematically.
-
-The Law of Large Numbers explains why averages stabilize.
-
-[The Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html) explains why normal approximations arise so often.
-
-In an upper-division probability course, these results are proved rather than only observed.
+A first probability course gives a mathematical foundation to ideas that AP Statistics introduces through simulation and formulas. Random variables become objects to study in their own right, and expected values, variances, joint distributions, conditional distributions, and transformations are derived systematically. The Law of Large Numbers explains why averages stabilize. [The Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html) explains why normal approximations arise so often, and in an upper-division probability course, these results are proved rather than only observed.
 
 ## A random walk
 
-A simple random walk begins at zero.
-
-At each step, move up 1 with probability $$1/2$$ and down 1 with probability $$1/2$$.
+A simple random walk begins at zero. At each step, move up 1 with probability $$1/2$$ and down 1 with probability $$1/2$$.
 
 <div class="viz" markdown="0">
   <canvas id="rw-cv" width="700" height="300"></canvas>
@@ -104,123 +84,39 @@ At each step, move up 1 with probability $$1/2$$ and down 1 with probability $$1
 })();
 </script>
 
-Each path is unpredictable.
-
-Across many walkers, the distribution of endpoints develops a recognizable shape.
-
-After $$n$$ steps, the standard deviation of the endpoint is proportional to
-
-$$\sqrt n.$$
-
-That square-root scaling is related to the same probabilistic structure behind the Central Limit Theorem.
-
-Random walks are also a starting point for stochastic processes, where randomness evolves over time rather than appearing as isolated independent events.
+Each path is unpredictable. Across many walkers, the distribution of endpoints develops a recognizable shape, and after $$n$$ steps, the standard deviation of the endpoint is proportional to $$\sqrt n$$. That square-root scaling is related to the same probabilistic structure behind the Central Limit Theorem. Random walks are also a starting point for stochastic processes, where randomness evolves over time rather than appearing as isolated independent events.
 
 ## Frequentist and Bayesian inference
 
-AP Statistics is largely frequentist.
+AP Statistics is largely frequentist. Parameters are treated as fixed, and probability describes the sampling process. That is why [a 95% confidence interval](/2026/07/25/what-95-percent-confident-means.html) is interpreted through the long-run behavior of the procedure rather than as a 95% probability that a fixed parameter lies in one finished interval.
 
-Parameters are treated as fixed.
-
-Probability describes the sampling process.
-
-That is why [a 95% confidence interval](/2026/07/25/what-95-percent-confident-means.html) is interpreted through the long-run behavior of the procedure rather than as a 95% probability that a fixed parameter lies in one finished interval.
-
-Bayesian statistics uses a different probability model.
-
-Unknown parameters are represented with probability distributions.
-
-A prior distribution is updated with observed data to produce a posterior distribution.
-
-The two frameworks answer uncertainty questions in different ways.
-
-Upper-division study makes those assumptions explicit and allows the methods to be compared rather than treating one framework as the only form of inference.
+Bayesian statistics uses a different probability model. Unknown parameters are represented with probability distributions, and a prior distribution is updated with observed data to produce a posterior distribution. The two frameworks answer uncertainty questions in different ways, and upper-division study makes those assumptions explicit and allows the methods to be compared rather than treating one framework as the only form of inference.
 
 ## Regression becomes much larger
 
-[Simple linear regression](/2026/07/30/least-squares-regression-influence.html) is the beginning of a broad family of models.
+[Simple linear regression](/2026/07/30/least-squares-regression-influence.html) is the beginning of a broad family of models. Multiple regression uses several predictors at once, logistic regression models the probability of a categorical outcome, and generalized linear models extend the same framework to other response distributions. Mixed models handle dependence created by repeated measurements or clustered observations, and regularization methods such as ridge and lasso regression add penalties that can improve prediction and stabilize high-dimensional models.
 
-Multiple regression uses several predictors at once.
-
-Logistic regression models the probability of a categorical outcome.
-
-Generalized linear models extend the same framework to other response distributions.
-
-Mixed models handle dependence created by repeated measurements or clustered observations.
-
-Regularization methods such as ridge and lasso regression add penalties that can improve prediction and stabilize high-dimensional models.
-
-Many ideas in machine learning develop naturally from this progression.
-
-Trees, random forests, boosting, and neural networks use different model structures, but the same statistical questions remain.
-
-How well does the method generalize?
-
-What is the uncertainty?
-
-Which features are informative?
-
-What assumptions are being made?
+Many ideas in machine learning develop naturally from this progression. Trees, random forests, boosting, and neural networks use different model structures, but the same statistical questions remain. How well does the method generalize? What is the uncertainty? Which features are informative? What assumptions are being made?
 
 ## Mathematical statistics
 
-Mathematical statistics studies the theory behind estimation and testing.
-
-Instead of taking formulas for granted, it asks why an estimator has a particular sampling distribution and what properties make one estimator preferable to another.
-
-Concepts such as bias, consistency, efficiency, sufficiency, likelihood, and asymptotic distribution become central.
-
-The $$t$$-distribution and chi-square distribution are derived rather than supplied.
-
-Critical values and standard errors become consequences of probability models.
-
-The conditions taught in introductory statistics are then seen as practical versions of deeper mathematical assumptions.
+Mathematical statistics studies the theory behind estimation and testing. Instead of taking formulas for granted, it asks why an estimator has a particular sampling distribution and what properties make one estimator preferable to another. Concepts such as bias, consistency, efficiency, sufficiency, likelihood, and asymptotic distribution become central, and the $$t$$-distribution and chi-square distribution are derived rather than supplied. Critical values and standard errors become consequences of probability models, and the conditions taught in introductory statistics are then seen as practical versions of deeper mathematical assumptions.
 
 ## Randomness with memory
 
-AP probability focuses heavily on independent events.
+AP probability focuses heavily on independent events. Many real systems have dependence over time, and stochastic-process courses study models in which the next state depends on the current state or on the history of the process. Markov chains are one example, and queues, inventory systems, epidemic models, financial prices, and reliability processes provide others.
 
-Many real systems have dependence over time.
-
-Stochastic-process courses study models in which the next state depends on the current state or on the history of the process.
-
-Markov chains are one example.
-
-Queues, inventory systems, epidemic models, financial prices, and reliability processes provide others.
-
-Brownian motion is a continuous stochastic process closely related to a scaled limit of random walks.
-
-It plays an important role in probability theory and mathematical finance.
+Brownian motion is a continuous stochastic process closely related to a scaled limit of random walks, and it plays an important role in probability theory and mathematical finance.
 
 ## Computation changes what can be done
 
-Modern statistics uses computation alongside analytic theory.
+Modern statistics uses computation alongside analytic theory. The bootstrap estimates uncertainty by repeatedly resampling the observed data, permutation tests construct reference distributions by rearranging labels or residuals under a null hypothesis, and Monte Carlo methods approximate expectations and probabilities through simulation. These approaches become especially useful when a clean formula is unavailable.
 
-The bootstrap estimates uncertainty by repeatedly resampling the observed data.
-
-Permutation tests construct reference distributions by rearranging labels or residuals under a null hypothesis.
-
-Monte Carlo methods approximate expectations and probabilities through simulation.
-
-These approaches become especially useful when a clean formula is unavailable.
-
-The randomization logic in introductory statistics is therefore not merely pedagogical.
-
-It is part of a large class of computational methods used in modern research.
+The randomization logic in introductory statistics is therefore not merely pedagogical. It is part of a large class of computational methods used in modern research.
 
 ## What to bring with you
 
-Two kinds of preparation matter.
-
-The first is mathematical.
-
-Calculus is needed for continuous probability distributions, likelihoods, optimization, and asymptotic theory.
-
-Linear algebra is fundamental to regression, multivariate methods, and machine learning.
-
-The second is statistical.
-
-Study design, context, assumptions, and careful interpretation remain important even when the mathematics becomes more advanced.
+Two kinds of preparation matter. The first is mathematical. Calculus is needed for continuous probability distributions, likelihoods, optimization, and asymptotic theory, and linear algebra is fundamental to regression, multivariate methods, and machine learning. The second is statistical, and study design, context, assumptions, and careful interpretation remain important even when the mathematics becomes more advanced.
 
 <div class="article-note" markdown="1">
 A technically sophisticated model cannot recover information the design never supplied. It also cannot turn an association into a causal effect without the assumptions needed for causal identification. That discipline carries directly from AP Statistics into the upper division.

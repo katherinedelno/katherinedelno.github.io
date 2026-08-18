@@ -4,7 +4,7 @@ title: "Euler's method and the effect of step size"
 date: 2026-07-25
 description: "Euler's method follows a differential equation one tangent-line step at a time. Smaller steps usually reduce the accumulated error."
 course: "AP Calculus BC"
-read_time: "6 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 25
@@ -13,61 +13,15 @@ blurb: "Euler's method follows a differential equation one tangent-line step at 
 image: "/assets/og/euler-method-step-size.png"
 ---
 
-A differential equation gives a slope.
+A differential equation gives a slope, and Euler's method uses that slope to move a short distance, then recomputes the slope and moves again. If $$\tfrac{dy}{dx}=F(x,y)$$, then one Euler step is
 
-Euler's method uses that slope to move a short distance, then recomputes the slope and moves again.
-
-If
-
-$$ \frac{dy}{dx}=F(x,y), $$
-
-then one Euler step is
-
-$$ y_{\text{new}} = y+F(x,y)\Delta x. $$
+$$y_{\text{new}} = y+F(x,y)\Delta x$$
 
 The method replaces a curve with a sequence of short tangent-line approximations.
 
 ## A first example
 
-Consider
-
-$$ \frac{dy}{dx}=y, \qquad y(0)=1. $$
-
-The exact solution is
-
-$$ y=e^x. $$
-
-Suppose the step size is
-
-$$ \Delta x=0.5. $$
-
-At the starting point,
-
-$$ (0,1), $$
-
-the slope is
-
-$$ y=1. $$
-
-So
-
-$$ y(0.5) \approx 1+1(0.5) = 1.5. $$
-
-Now recompute the slope at the new approximate point.
-
-The slope is approximately
-
-$$ 1.5. $$
-
-So
-
-$$ y(1) \approx 1.5+1.5(0.5) = 2.25. $$
-
-The exact value is
-
-$$ e\approx2.718. $$
-
-The approximation is low.
+Consider $$\tfrac{dy}{dx}=y$$ with $$y(0)=1$$, whose exact solution is $$y=e^x$$, and suppose the step size is $$\Delta x=0.5$$. At the starting point $$(0,1)$$, the slope is $$y=1$$, so $$y(0.5) \approx 1+1(0.5) = 1.5$$. Now recompute the slope at the new approximate point, where the slope is approximately $$1.5$$, so $$y(1) \approx 1.5+1.5(0.5) = 2.25$$. The exact value is $$e\approx2.718$$, and the approximation is low.
 
 ## Step size matters
 
@@ -128,39 +82,13 @@ The approximation is low.
 })();
 </script>
 
-The visualization compares Euler approximations for the same differential equation using different step sizes.
+The visualization compares Euler approximations for the same differential equation using different step sizes. With a large step, each tangent line is followed for a relatively long distance before the slope is updated, and with a smaller step, the slope is recomputed more often. The approximation usually improves.
 
-With a large step, each tangent line is followed for a relatively long distance before the slope is updated.
-
-With a smaller step, the slope is recomputed more often.
-
-The approximation usually improves.
-
-For this equation, the error is systematic. Since
-
-$$ y''=y>0, $$
-
-the solution is concave up.
-
-A tangent line to a concave-up curve lies below the curve locally.
-
-Euler's method therefore produces an underestimate as it moves to the right.
-
-The sign of the error is not a universal feature of Euler's method. It depends on the concavity of the solution.
+For this equation, the error is systematic. Since $$y''=y>0$$, the solution is concave up, and a tangent line to a concave-up curve lies below the curve locally, so Euler's method produces an underestimate as it moves to the right. The sign of the error is not a universal feature of Euler's method, and it depends on the concavity of the solution.
 
 ## Recompute every slope
 
-A common mistake is to calculate the initial slope once and reuse it for every step.
-
-That would produce one tangent line, not Euler's method.
-
-Each new point gives a new value of
-
-$$ F(x,y), $$
-
-so the slope must be recomputed.
-
-A table is often the cleanest way to organize the process.
+A common mistake is to calculate the initial slope once and reuse it for every step, which would produce one tangent line, not Euler's method. Each new point gives a new value of $$F(x,y)$$, so the slope must be recomputed. A table is often the cleanest way to organize the process.
 
 | Step | $$x$$ | $$y$$ | slope $$F(x,y)$$ |
 |---|---|---|---|
@@ -172,47 +100,11 @@ The value in one row becomes the starting point for the next.
 
 ## How quickly the error falls
 
-Euler's method is a first-order method.
-
-Over a fixed interval, halving the step size typically reduces the global error by roughly a factor of two when the solution is sufficiently smooth.
-
-This is slower than higher-order numerical methods, but Euler's method has an important advantage for learning.
-
-Its geometry is completely visible.
-
-Each step says:
-
-start at the current point, use the differential equation to find the tangent slope, and follow that tangent for a short distance.
+Euler's method is a first-order method. Over a fixed interval, halving the step size typically reduces the global error by roughly a factor of two when the solution is sufficiently smooth. This is slower than higher-order numerical methods, but Euler's method has an important advantage for learning, because its geometry is completely visible. Each step says: start at the current point, use the differential equation to find the tangent slope, and follow that tangent for a short distance.
 
 ## A useful self-test
 
-Consider
-
-$$ \frac{dy}{dx}=-y, \qquad y(0)=4. $$
-
-With step size
-
-$$ \Delta x=1, $$
-
-Euler's method gives
-
-$$ y(1) \approx 4+(-4)(1) = 0. $$
-
-The exact solution is
-
-$$ y=4e^{-x}, $$
-
-so
-
-$$ y(1)\approx1.47. $$
-
-The Euler estimate is again low.
-
-Here,
-
-$$ y''=y>0, $$
-
-so the exact solution is concave up even though it is decreasing.
+Consider $$\tfrac{dy}{dx}=-y$$ with $$y(0)=4$$. With step size $$\Delta x=1$$, Euler's method gives $$y(1) \approx 4+(-4)(1) = 0$$, while the exact solution is $$y=4e^{-x}$$, so $$y(1)\approx1.47$$. The Euler estimate is again low. Here, $$y''=y>0$$, so the exact solution is concave up even though it is decreasing.
 
 <div class="article-note" markdown="1">
 That is enough to explain the direction of the tangent-line error.

@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "A particle speeds up when velocity and acceleration have the same sign, and slows down when their signs differ."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 13
@@ -14,41 +14,15 @@ blurb: "A particle speeds up when velocity and acceleration have the same sign, 
 image: "/assets/og/particle-motion.png"
 ---
 
-A particle moving on a line has a position $$s(t)$$.
+A particle moving on a line has a position $$s(t)$$, and velocity and acceleration come from differentiating that position:
 
-Velocity and acceleration come from differentiating that position:
+$$v(t)=s'(t), \qquad a(t)=v'(t)=s''(t)$$
 
-$$v(t)=s'(t), \qquad a(t)=v'(t)=s''(t).$$
-
-Speed is different.
-
-$$\text{speed}=\vert v(t)\vert .$$
-
-That absolute value is the reason the sign of acceleration alone cannot tell you whether a particle is speeding up or slowing down.
+Speed is different, and $$\text{speed}=\vert v(t)\vert$$. That absolute value is the reason the sign of acceleration alone cannot tell you whether a particle is speeding up or slowing down.
 
 ## Position, velocity, acceleration, and speed
 
-Velocity is signed.
-
-If
-
-$$v(t)>0,$$
-
-the particle is moving in the positive direction.
-
-If
-
-$$v(t)<0,$$
-
-it is moving in the negative direction.
-
-If
-
-$$v(t)=0,$$
-
-it is momentarily at rest.
-
-Speed removes the direction and keeps only the magnitude.
+Velocity is signed. If $$v(t)>0$$, the particle is moving in the positive direction, and if $$v(t)<0$$, it is moving in the negative direction. If $$v(t)=0$$, it is momentarily at rest, and speed removes the direction and keeps only the magnitude.
 
 Units follow the derivative structure. If position is measured in meters and time in seconds, then velocity is measured in meters per second and acceleration in meters per second squared.
 
@@ -56,26 +30,16 @@ Units follow the derivative structure. If position is measured in meters and tim
 
 Where $$v(t)\neq0$$,
 
-$$\frac{d}{dt}\vert v\vert = \frac{v}{\vert v\vert }a.$$
+$$\frac{d}{dt}\vert v\vert = \frac{v}{\vert v\vert}a$$
 
-So speed increases exactly when $$v$$ and $$a$$ have the same sign.
-
-It decreases when they have opposite signs.
-
-This gives the useful rule:
+so speed increases exactly when $$v$$ and $$a$$ have the same sign, and it decreases when they have opposite signs. This gives the useful rule:
 
 - $$v>0$$ and $$a>0$$: speeding up
 - $$v<0$$ and $$a<0$$: speeding up
 - $$v>0$$ and $$a<0$$: slowing down
 - $$v<0$$ and $$a>0$$: slowing down
 
-Negative acceleration does not mean slowing down.
-
-It means velocity is decreasing.
-
-Whether that decreases or increases speed depends on the sign of the velocity.
-
-At an instant where $$v=0$$, the particle may be changing direction. The derivative of $$\vert v\vert$$ can fail there because the absolute-value graph has [a corner when velocity crosses zero](/2026/07/30/where-differentiability-fails.html).
+Negative acceleration does not mean slowing down. It means velocity is decreasing, and whether that decreases or increases speed depends on the sign of the velocity. At an instant where $$v=0$$, the particle may be changing direction, and the derivative of $$\vert v\vert$$ can fail there because the absolute-value graph has [a corner when velocity crosses zero](/2026/07/30/where-differentiability-fails.html).
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="pm-fns"></div>
@@ -209,82 +173,20 @@ At an instant where $$v=0$$, the particle may be changing direction. The derivat
 })();
 </script>
 
-The visualization shows position, velocity, and acceleration on the same time axis, along with the particle's actual motion on a line.
-
-For the first example,
-
-$$v(t)=3(t-1)(t-3)$$
-
-and
-
-$$a(t)=6t-12.$$
-
-The relevant signs change at $$t=1$$, $$t=2$$, and $$t=3$$.
-
-Those times divide the interval into four different combinations of direction and speed behavior.
+The visualization shows position, velocity, and acceleration on the same time axis, along with the particle's actual motion on a line. For the first example, $$v(t)=3(t-1)(t-3)$$ and $$a(t)=6t-12$$. The relevant signs change at $$t=1,\; t=2,\; t=3$$, and those times divide the interval into four different combinations of direction and speed behavior.
 
 ## A falling object makes the distinction clear
 
-Suppose
+Suppose $$s(t)=30t-5t^2$$. Then $$v(t)=30-10t$$ and $$a(t)=-10$$, so the acceleration is negative for the entire motion.
 
-$$s(t)=30t-5t^2.$$
-
-Then
-
-$$v(t)=30-10t$$
-
-and
-
-$$a(t)=-10.$$
-
-The acceleration is negative for the entire motion.
-
-For the first three seconds,
-
-$$v>0 \quad\text{and}\quad a<0.$$
-
-The signs differ, so the object slows down.
-
-At $$t=3$$,
-
-$$v=0.$$
-
-After that,
-
-$$v<0 \quad\text{and}\quad a<0.$$
-
-The signs agree, so the object speeds up.
-
-The acceleration never changed. The velocity changed sign.
+For the first three seconds, $$v>0$$ and $$a<0$$, so the signs differ and the object slows down. At $$t=3$$, $$v=0$$. After that, $$v<0$$ and $$a<0$$, so the signs agree and the object speeds up. The acceleration never changed, and the velocity changed sign.
 
 ## Displacement and total distance
 
-Displacement is the net change in position:
-
-$$s(b)-s(a).$$
-
-Total distance records all motion, regardless of direction.
-
-For the first particle in the visualization, suppose
-
-$$s(0)=0,\quad s(1)=4,\quad s(3)=0,\quad s(4)=4.$$
-
-The displacement over $$[0,4]$$ is
-
-$$s(4)-s(0)=4.$$
-
-But the particle travels 4 units forward, 4 units back, and 4 units forward again.
-
-Its total distance is
-
-$$4+4+4=12.$$
+Displacement is the net change in position, $$s(b)-s(a)$$, and total distance records all motion, regardless of direction. For the first particle in the visualization, suppose $$s(0)=0,\; s(1)=4,\; s(3)=0,\; s(4)=4$$. The displacement over $$[0,4]$$ is $$s(4)-s(0)=4$$, but the particle travels 4 units forward, 4 units back, and 4 units forward again, so its total distance is $$4+4+4=12$$.
 
 To compute total distance from a position or velocity function, first find the times when the particle changes direction. Those occur where the velocity changes sign.
 
 <div class="article-note" markdown="1">
-A [sign chart](/2026/07/21/reading-the-graph-of-f-prime.html) can organize the work, but the written conclusion should state what the signs mean.
-
-For example:
-
-“The velocity and acceleration are both negative on this interval, so the speed is increasing and the particle is speeding up.”
+A [sign chart](/2026/07/21/reading-the-graph-of-f-prime.html) can organize the work, but the written conclusion should state what the signs mean. For example: “The velocity and acceleration are both negative on this interval, so the speed is increasing and the particle is speeding up.”
 </div>

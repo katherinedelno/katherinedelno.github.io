@@ -5,7 +5,7 @@ date: 2026-07-26
 description: "Differential equations model systems by specifying how their state changes. The college course moves from single equations to systems, phase analysis, oscillation, and numerical solutions."
 course: "AP Calculus BC"
 section: beyond
-read_time: "9 min read"
+read_time: "8 min read"
 math: true
 kind: beyond
 sequence: 7
@@ -14,57 +14,25 @@ blurb: "Differential equations model systems by specifying how their state chang
 image: "/assets/og/beyond-bc-differential-equations.png"
 ---
 
-A differential equation specifies how an unknown quantity changes.
+A differential equation specifies how an unknown quantity changes, and that is often how scientific models are written. Newton's second law relates acceleration to force, population models describe growth through a rate equation, and heat transfer depends on temperature differences. In each case, the equation gives a rule for change and the solution describes the resulting behavior.
 
-That is often how scientific models are written.
-
-Newton's second law relates acceleration to force.
-
-Population models describe growth through a rate equation.
-
-Heat transfer depends on temperature differences.
-
-In each case, the equation gives a rule for change and the solution describes the resulting behavior.
-
-BC introduces several parts of this subject through separable equations, slope fields, logistic growth, and Euler's method.
-
-A full differential equations course develops those ideas much further.
+BC introduces several parts of this subject through separable equations, slope fields, logistic growth, and Euler's method, and a full differential equations course develops those ideas much further.
 
 ## From one equation to a system
 
-The equations in BC usually involve one unknown function.
+The equations in BC usually involve one unknown function, but many models involve several quantities changing together. A standard example is an epidemic model. Divide a population into susceptible people $$S$$, infected people $$I$$, and recovered people $$R$$, and one version of the SIR model is
 
-Many models involve several quantities changing together.
+$$\begin{aligned}
+\frac{dS}{dt} &= -\beta\frac{SI}{N}\\
+\frac{dI}{dt} &= \beta\frac{SI}{N}-\gamma I\\
+\frac{dR}{dt} &= \gamma I
+\end{aligned}$$
 
-A standard example is an epidemic model.
-
-Divide a population into susceptible people $$S$$, infected people $$I$$, and recovered people $$R$$.
-
-One version of the SIR model is
-
-$$\frac{dS}{dt} = -\beta\frac{SI}{N},$$
-
-$$\frac{dI}{dt} = \beta\frac{SI}{N}-\gamma I,$$
-
-and
-
-$$\frac{dR}{dt} = \gamma I.$$
-
-The equations describe flows between the three groups.
-
-New infections move people from $$S$$ to $$I$$.
-
-Recoveries move people from $$I$$ to $$R$$.
-
-The variables are linked, so the equations have to be analyzed as a system.
+The equations describe flows between the three groups. New infections move people from $$S$$ to $$I$$, and recoveries move people from $$I$$ to $$R$$. The variables are linked, so the equations have to be analyzed as a system.
 
 ## Steer an outbreak
 
-The simulation starts with a population of 1,000 and 5 infected individuals.
-
-The recovery rate is fixed at
-
-$$\gamma=0.1.$$
+The simulation starts with a population of 1,000 and 5 infected individuals, and the recovery rate is fixed at $$\gamma=0.1$$.
 
 <div class="viz" markdown="0">
   <canvas id="sir-cv" width="700" height="300"></canvas>
@@ -118,29 +86,13 @@ $$\gamma=0.1.$$
 })();
 </script>
 
-The curves show the susceptible, infected, and recovered populations over time.
+The curves show the susceptible, infected, and recovered populations over time. The ratio $$R_0=\tfrac{\beta}{\gamma}$$ describes the expected number of secondary infections produced by one infected individual in a fully susceptible population under this simplified model. When $$R_0<1$$, the infection cannot sustain initial exponential growth, and when $$R_0>1$$, an outbreak can grow. Increasing $$\beta$$ makes the infected curve rise earlier and reach a higher peak.
 
-The ratio
-
-$$R_0=\frac{\beta}{\gamma}$$
-
-describes the expected number of secondary infections produced by one infected individual in a fully susceptible population under this simplified model.
-
-When $$R_0<1$$, the infection cannot sustain initial exponential growth.
-
-When $$R_0>1$$, an outbreak can grow.
-
-Increasing $$\beta$$ makes the infected curve rise earlier and reach a higher peak.
-
-The simulation is computed numerically.
-
-No closed-form solution is required to study the system's behavior.
+The simulation is computed numerically, and no closed-form solution is required to study the system's behavior.
 
 ## Qualitative analysis
 
-A large part of differential equations is qualitative.
-
-Instead of asking only for an explicit formula, we ask:
+A large part of differential equations is qualitative. Instead of asking only for an explicit formula, we ask:
 
 - Where are the equilibria?
 - Which equilibria are stable?
@@ -148,98 +100,40 @@ Instead of asking only for an explicit formula, we ask:
 - Does it oscillate?
 - How does changing a parameter alter the behavior?
 
-BC already uses this kind of reasoning in logistic growth.
-
-If
-
-$$\frac{dP}{dt}=kP(K-P),$$
-
-we can identify the equilibria and long-run behavior directly from the sign of the right-hand side.
-
-A differential equations course turns that reasoning into a systematic method.
+BC already uses this kind of reasoning in logistic growth. If $$\tfrac{dP}{dt}=kP(K-P)$$, we can identify the equilibria and long-run behavior directly from the sign of the right-hand side, and a differential equations course turns that reasoning into a systematic method.
 
 ## Phase lines and phase planes
 
-For one autonomous equation, a phase line shows the direction in which solutions move.
+For one autonomous equation, a phase line shows the direction in which solutions move. For a system, the state has several coordinates, and a phase plane can plot one state variable against another. The trajectory then shows how the entire system evolves without using time as an axis.
 
-For a system, the state has several coordinates.
-
-A phase plane can plot one state variable against another.
-
-The trajectory then shows how the entire system evolves without using time as an axis.
-
-Equilibria appear as fixed points.
-
-Nearby trajectories may move toward them, move away, or circulate around them.
-
-This geometric viewpoint is particularly useful for systems whose explicit solutions are difficult or unavailable.
+Equilibria appear as fixed points, and nearby trajectories may move toward them, move away, or circulate around them. This geometric viewpoint is particularly useful for systems whose explicit solutions are difficult or unavailable.
 
 ## Why sine and cosine appear in physical models
 
-Consider a mass attached to a spring.
+Consider a mass attached to a spring. Under a simple restoring-force model,
 
-Under a simple restoring-force model,
+$$\frac{d^2x}{dt^2} = -\omega^2x$$
 
-$$\frac{d^2x}{dt^2} = -\omega^2x.$$
+We are looking for functions whose second derivative is the negative of the original function, up to a constant factor, and sine and cosine have exactly that property. The general solution is $$x(t) = A\cos(\omega t) + B\sin(\omega t)$$, so the oscillation is a consequence of the differential equation.
 
-We are looking for functions whose second derivative is the negative of the original function, up to a constant factor.
-
-Sine and cosine have exactly that property.
-
-The general solution is
-
-$$x(t) = A\cos(\omega t) + B\sin(\omega t).$$
-
-The oscillation is a consequence of the differential equation.
-
-Adding a damping term produces oscillations whose amplitude decreases over time.
-
-Related equations appear in mechanics, circuits, acoustics, and many other physical systems.
+Adding a damping term produces oscillations whose amplitude decreases over time, and related equations appear in mechanics, circuits, acoustics, and many other physical systems.
 
 ## Numerical methods become central
 
-Most differential equations do not have elementary closed-form solutions.
+Most differential equations do not have elementary closed-form solutions, but that does not make them unusable. Numerical methods approximate the solution directly, and [Euler's method](/2026/07/25/euler-method-step-size.html) is the simplest example. More accurate methods update the solution using additional information within each step.
 
-That does not make them unusable.
-
-Numerical methods approximate the solution directly.
-
-[Euler's method](/2026/07/25/euler-method-step-size.html) is the simplest example.
-
-More accurate methods update the solution using additional information within each step.
-
-The SIR simulation above uses numerical integration for exactly this reason.
-
-The important question becomes whether the numerical approximation is accurate and stable enough for the problem being studied.
+The SIR simulation above uses numerical integration for exactly this reason. The important question becomes whether the numerical approximation is accurate and stable enough for the problem being studied.
 
 ## Sensitivity and chaos
 
-Some nonlinear systems are extremely sensitive to their initial conditions.
+Some nonlinear systems are extremely sensitive to their initial conditions, and two solutions that begin very close together can eventually separate dramatically. This phenomenon is one feature of deterministic chaos.
 
-Two solutions that begin very close together can eventually separate dramatically.
-
-This phenomenon is one feature of deterministic chaos.
-
-The Lorenz system is a classical example.
-
-Its equations are fully deterministic.
-
-The unpredictability comes from sensitivity to initial conditions rather than from random input.
-
-This is one reason long-term prediction can be difficult even when the governing equations are known.
+The Lorenz system is a classical example. Its equations are fully deterministic, and the unpredictability comes from sensitivity to initial conditions rather than from random input. This is one reason long-term prediction can be difficult even when the governing equations are known.
 
 ## What carries over from BC
 
-Differential equations is one of the most direct continuations of BC.
-
-Separable equations, exponential and logistic models, Euler's method, slope fields, Taylor series, and integration techniques all return.
-
-Linear algebra also becomes increasingly important because systems of differential equations can often be understood through matrices and eigenvalues.
+Differential equations is one of the most direct continuations of BC. Separable equations, exponential and logistic models, Euler's method, slope fields, Taylor series, and integration techniques all return. Linear algebra also becomes increasingly important because systems of differential equations can often be understood through matrices and eigenvalues.
 
 <div class="article-note" markdown="1">
-A useful question in the epidemic simulation is to identify the moment when the infected population stops increasing. At that point,
-
-$$\frac{dI}{dt}=0.$$
-
-Using the model equation shows that the turning point occurs when the susceptible fraction reaches a threshold determined by $$R_0$$. The simulation makes that qualitative statement visible.
+A useful question in the epidemic simulation is to identify the moment when the infected population stops increasing, which is the point where $$\tfrac{dI}{dt}=0$$. Using the model equation shows that the turning point occurs when the susceptible fraction reaches a threshold determined by $$R_0$$, and the simulation makes that qualitative statement visible.
 </div>

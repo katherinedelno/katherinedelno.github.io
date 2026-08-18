@@ -4,7 +4,7 @@ title: "Conditional probability and the base rate"
 date: 2026-07-27
 description: "Sensitivity and the probability of disease given a positive test are different conditional probabilities. Prevalence determines how far apart they can be."
 course: "AP Statistics"
-read_time: "7 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 6
@@ -14,31 +14,11 @@ featured: true
 image: "/assets/og/conditional-probability-and-the-base-rate.png"
 ---
 
-Suppose a disease affects 1% of a population.
-
-A screening test detects 99% of people who have the disease and correctly clears 95% of those who do not.
-
-A person tests positive.
-
-The probability that this person actually has the disease is about 17%, not 99%.
-
-The difference comes from conditional probability and the low prevalence of the disease.
+Suppose a disease affects 1% of a population, and a screening test detects 99% of people who have the disease and correctly clears 95% of those who do not. A person tests positive. The probability that this person actually has the disease is about 17%, not 99%, and the difference comes from conditional probability and the low prevalence of the disease.
 
 ## Two conditional probabilities
 
-Sensitivity is
-
-$$P(\text{positive}\mid\text{disease}).$$
-
-The question a patient usually wants answered is
-
-$$P(\text{disease}\mid\text{positive}).$$
-
-These probabilities reverse the condition.
-
-They have different denominators and can have very different values.
-
-Confusing them is an inverse-probability error.
+Sensitivity is $$P(\text{positive}\mid\text{disease})$$, and the question a patient usually wants answered is $$P(\text{disease}\mid\text{positive})$$. These probabilities reverse the condition, so they have different denominators and can have very different values. Confusing them is an inverse-probability error.
 
 ## Draw the population
 
@@ -87,90 +67,26 @@ Confusing them is an inverse-probability error.
 })();
 </script>
 
-The display represents 10,000 people.
+The display represents 10,000 people. At 1% prevalence, 100 people have the disease, and with 99% sensitivity, 99 of those people test positive. The remaining 9,900 people do not have the disease, and with 95% specificity, 5% of that group tests positive incorrectly: $$0.05(9900)=495$$.
 
-At 1% prevalence, 100 people have the disease.
-
-With 99% sensitivity, 99 of those people test positive.
-
-The remaining 9,900 people do not have the disease.
-
-With 95% specificity, 5% of that group tests positive incorrectly:
-
-$$0.05(9900)=495.$$
-
-So the positive group contains
-
-$$99+495=594$$
-
-people.
-
-Only 99 actually have the disease.
-
-Therefore
-
-$$P(\text{disease}\mid\text{positive}) = \frac{99}{594} \approx0.167.$$
-
-The calculation becomes much easier to reason about when the probabilities are converted into counts.
+So the positive group contains $$99+495=594$$ people, and only 99 actually have the disease. Therefore $$P(\text{disease}\mid\text{positive}) = \tfrac{99}{594} \approx0.167$$. The calculation becomes much easier to reason about when the probabilities are converted into counts.
 
 ## Why prevalence matters
 
-The test is good.
+The test is good and the disease is rare, which means the healthy population is much larger than the diseased population. A small false-positive rate applied to a very large group can therefore produce more false positives than a high sensitivity produces true positives.
 
-The disease is rare.
-
-That means the healthy population is much larger than the diseased population.
-
-A small false-positive rate applied to a very large group can therefore produce more false positives than a high sensitivity produces true positives.
-
-Raise the prevalence while keeping the test characteristics fixed.
-
-The probability that a positive result is genuine rises sharply.
-
-The test did not improve.
-
-The population changed.
-
-This underlying prevalence is the base rate.
+Raise the prevalence while keeping the test characteristics fixed, and the probability that a positive result is genuine rises sharply. The test did not improve. The population changed. This underlying prevalence is the base rate.
 
 ## Reading “given”
 
-For a conditional probability,
-
-$$P(A\mid B),$$
-
-the event after the vertical bar is the condition.
-
-It determines the denominator.
-
-So
-
-$$P(\text{disease}\mid\text{positive})$$
-
-asks what fraction of positive tests come from people with the disease.
-
-By contrast,
-
-$$P(\text{positive}\mid\text{disease})$$
-
-asks what fraction of diseased people receive positive tests.
-
-A two-way table is often the safest way to keep those denominators separate.
+For a conditional probability $$P(A\mid B)$$, the event after the vertical bar is the condition, and it determines the denominator. So $$P(\text{disease}\mid\text{positive})$$ asks what fraction of positive tests come from people with the disease, and by contrast $$P(\text{positive}\mid\text{disease})$$ asks what fraction of diseased people receive positive tests. A two-way table is often the safest way to keep those denominators separate.
 
 ## Bayes' theorem
 
 <div class="article-note" markdown="1">
 The same calculation can be written as
 
-$$P(D\mid +) = \frac{P(+\mid D)P(D)} {P(+)}.$$
+$$P(D\mid +) = \frac{P(+\mid D)P(D)}{P(+)}$$
 
-The denominator can be expanded as
-
-$$P(+) = P(+\mid D)P(D) + P(+\mid D^c)P(D^c).$$
-
-This is Bayes' theorem.
-
-The population-count approach and the formula are doing the same calculation.
-
-For many students, the count table is easier to interpret because each term corresponds to an actual subgroup.
+where the denominator can be expanded as $$P(+) = P(+\mid D)P(D) + P(+\mid D^c)P(D^c)$$. This is Bayes' theorem, and the population-count approach and the formula are doing the same calculation. For many students, the count table is easier to interpret because each term corresponds to an actual subgroup.
 </div>

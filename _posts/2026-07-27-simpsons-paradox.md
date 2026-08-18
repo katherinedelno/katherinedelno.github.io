@@ -4,7 +4,7 @@ title: "Simpson's paradox and the lurking variable"
 date: 2026-07-27
 description: "An overall association can reverse after data are separated into meaningful subgroups. The reversal comes from unequal weighting across those groups."
 course: "AP Statistics"
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 3
@@ -13,39 +13,13 @@ blurb: "An overall association can reverse after data are separated into meaning
 image: "/assets/og/simpsons-paradox.png"
 ---
 
-An association observed in combined data can reverse after the data are separated into relevant groups.
-
-This is Simpson's paradox.
-
-A well-known example comes from a comparison of two treatments for kidney stones.
-
-Overall, the less invasive treatment had a higher success rate.
-
-But within both small-stone and large-stone groups, open surgery had the higher success rate.
-
-The reversal came from the way patients were distributed between the treatments.
+An association observed in combined data can reverse after the data are separated into relevant groups, and this is Simpson's paradox. A well-known example comes from a comparison of two treatments for kidney stones. Overall, the less invasive treatment had a higher success rate, but within both small-stone and large-stone groups, open surgery had the higher success rate. The reversal came from the way patients were distributed between the treatments.
 
 ## The kidney-stone example
 
-Open surgery succeeded in about 93% of small-stone cases and 73% of large-stone cases.
+Open surgery succeeded in about 93% of small-stone cases and 73% of large-stone cases, and the less invasive procedure succeeded in about 87% of small-stone cases and 69% of large-stone cases. So open surgery had the higher success rate in both subgroups, yet the combined success rates favored the less invasive procedure. Why?
 
-The less invasive procedure succeeded in about 87% of small-stone cases and 69% of large-stone cases.
-
-So open surgery had the higher success rate in both subgroups.
-
-Yet the combined success rates favored the less invasive procedure.
-
-Why?
-
-The treatments did not receive the same mix of patients.
-
-Surgeons were more likely to use open surgery for difficult large stones.
-
-The less invasive treatment received more of the easier small-stone cases.
-
-An overall success rate is a weighted average of subgroup rates.
-
-Different weights can therefore reverse the comparison.
+The treatments did not receive the same mix of patients. Surgeons were more likely to use open surgery for difficult large stones, and the less invasive treatment received more of the easier small-stone cases. An overall success rate is a weighted average of subgroup rates, and different weights can therefore reverse the comparison.
 
 ## Change only the case mix
 
@@ -124,56 +98,24 @@ Different weights can therefore reverse the comparison.
 })();
 </script>
 
-The subgroup success rates remain fixed.
+The subgroup success rates remain fixed, and only the fraction of difficult cases assigned to each treatment changes. At an even case mix, the overall comparison agrees with the subgroup comparisons, and as the treatment groups become more imbalanced in stone severity, the aggregate rates can reverse.
 
-Only the fraction of difficult cases assigned to each treatment changes.
-
-At an even case mix, the overall comparison agrees with the subgroup comparisons.
-
-As the treatment groups become more imbalanced in stone severity, the aggregate rates can reverse.
-
-Nothing about the treatment-specific subgroup rates changed.
-
-Only the weights changed.
+Nothing about the treatment-specific subgroup rates changed. Only the weights changed.
 
 ## The lurking variable
 
-Stone size is related to the treatment received.
-
-It is also related to the probability of success.
-
-That makes it a confounding variable in the treatment-outcome association.
-
-The aggregate comparison mixes together the effect of treatment and the effect of severity.
-
-Stratifying by stone size compares more similar patients and exposes the reversal.
-
-This is why study design matters before any calculation is interpreted.
+Stone size is related to the treatment received, and it is also related to the probability of success. That makes it a confounding variable in the treatment-outcome association. The aggregate comparison mixes together the effect of treatment and the effect of severity, and stratifying by stone size compares more similar patients and exposes the reversal. This is why study design matters before any calculation is interpreted.
 
 ## Random assignment and confounding
 
-Random assignment is designed to break systematic relationships between treatment assignment and pre-existing characteristics.
+Random assignment is designed to break systematic relationships between treatment assignment and pre-existing characteristics. If patients are assigned to treatment at random, variables such as disease severity should be balanced between groups apart from chance variation.
 
-If patients are assigned to treatment at random, variables such as disease severity should be balanced between groups apart from chance variation.
-
-In an observational study, treatment choice may depend on prognosis, physician preference, patient characteristics, or other factors.
-
-Those variables can then confound the observed treatment-outcome relationship.
-
-An observational association can therefore be real without being causal.
+In an observational study, treatment choice may depend on prognosis, physician preference, patient characteristics, or other factors, and those variables can then confound the observed treatment-outcome relationship. An observational association can therefore be real without being causal.
 
 ## Aggregated data are not always wrong
 
-Simpson's paradox does not mean that subgroup analysis is automatically better.
-
-The relevant level of analysis depends on the causal structure.
-
-Conditioning on a variable caused by the treatment can itself introduce bias.
-
-The important question is why the groups differ and where the third variable sits in the sequence of events.
+Simpson's paradox does not mean that subgroup analysis is automatically better. The relevant level of analysis depends on the causal structure, and conditioning on a variable caused by the treatment can itself introduce bias. The important question is why the groups differ and where the third variable sits in the sequence of events.
 
 <div class="article-note" markdown="1">
-For AP Statistics, the practical lesson is simpler.
-
-Before making a causal claim, identify the study design and consider whether a lurking or confounding variable could explain the association.
+For AP Statistics, the practical lesson is simpler. Before making a causal claim, identify the study design and consider whether a lurking or confounding variable could explain the association.
 </div>

@@ -15,29 +15,13 @@ blurb: "Linear algebra studies vectors, matrices, transformations, and systems. 
 image: "/assets/og/linear-algebra-preview.png"
 ---
 
-Linear algebra studies systems of quantities at once.
-
-Its basic objects are vectors, matrices, and linear transformations.
-
-The subject appears throughout mathematics, statistics, engineering, physics, computer science, and machine learning because many problems can be organized around these structures.
-
-A matrix is more than a rectangular table of numbers.
-
-It can be understood as a rule that transforms space.
+Linear algebra studies systems of quantities at once. Its basic objects are vectors, matrices, and linear transformations, and the subject appears throughout mathematics, statistics, engineering, physics, computer science, and machine learning because many problems can be organized around these structures. A matrix is more than a rectangular table of numbers, and it can be understood as a rule that transforms space.
 
 ## A matrix as a transformation
 
-Consider
+Consider $$A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}$$. Applied to a point $$\begin{bmatrix} x\\y \end{bmatrix}$$, the matrix produces
 
-$$A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}.$$
-
-Applied to a point
-
-$$\begin{bmatrix} x\\y \end{bmatrix},$$
-
-the matrix produces
-
-$$A \begin{bmatrix} x\\y \end{bmatrix} = \begin{bmatrix} ax+by\\ cx+dy \end{bmatrix}.$$
+$$A \begin{bmatrix} x\\y \end{bmatrix} = \begin{bmatrix} ax+by\\ cx+dy \end{bmatrix}$$
 
 <div class="viz" markdown="0">
   <canvas id="la-cv" width="700" height="300"></canvas>
@@ -101,129 +85,39 @@ $$A \begin{bmatrix} x\\y \end{bmatrix} = \begin{bmatrix} ax+by\\ cx+dy \end{bmat
 })();
 </script>
 
-The light grid shows the original plane.
-
-The dark grid shows the result after the matrix acts.
-
-The shaded parallelogram is the image of the unit square.
-
-Try changing the diagonal entries.
-
-Then introduce a nonzero off-diagonal entry to create a shear.
-
-The same matrix acts on every point of the plane at once.
-
-That viewpoint makes many matrix rules geometric.
+The light grid shows the original plane, the dark grid shows the result after the matrix acts, and the shaded parallelogram is the image of the unit square. Try changing the diagonal entries, then introduce a nonzero off-diagonal entry to create a shear. The same matrix acts on every point of the plane at once, and that viewpoint makes many matrix rules geometric.
 
 ## The determinant as area scale
 
-For a two-dimensional matrix,
+For a two-dimensional matrix, $$\det(A)=ad-bc$$. Geometrically, the absolute value of the determinant is the factor by which the transformation scales area. If $$\vert \det(A)\vert =2$$, the area of the unit square becomes 2, and if $$\det(A)=0$$, the transformed square collapses to zero area and the plane has been flattened into a line or point. Such a transformation cannot be inverted because distinct input points are sent to the same output.
 
-$$\det(A)=ad-bc.$$
-
-Geometrically, the absolute value of the determinant is the factor by which the transformation scales area.
-
-If
-
-$$\vert \det(A)\vert =2,$$
-
-the area of the unit square becomes 2.
-
-If
-
-$$\det(A)=0,$$
-
-the transformed square collapses to zero area.
-
-The plane has been flattened into a line or point.
-
-Such a transformation cannot be inverted because distinct input points are sent to the same output.
-
-The sign of the determinant records orientation.
-
-A negative determinant means the transformation reverses orientation, as a reflection does.
-
-This geometric interpretation explains why the determinant is much more than a formula for checking invertibility.
+The sign of the determinant records orientation, so a negative determinant means the transformation reverses orientation, as a reflection does. This geometric interpretation explains why the determinant is much more than a formula for checking invertibility.
 
 ## Eigenvectors and eigenvalues
 
-Some directions have a special relationship with a matrix.
-
-An eigenvector $$v$$ satisfies
-
-$$Av=\lambda v.$$
-
-The matrix may stretch, shrink, or reverse the vector, but it does not rotate it away from its line.
-
-The scalar $$\lambda$$ is the corresponding eigenvalue.
-
-Eigenvectors identify directions along which a complicated transformation becomes simple multiplication.
-
-This makes them useful for understanding repeated transformations and systems that evolve over time.
+Some directions have a special relationship with a matrix. An eigenvector $$v$$ satisfies $$Av=\lambda v$$, and the matrix may stretch, shrink, or reverse the vector, but it does not rotate it away from its line. The scalar $$\lambda$$ is the corresponding eigenvalue. Eigenvectors identify directions along which a complicated transformation becomes simple multiplication, which makes them useful for understanding repeated transformations and systems that evolve over time.
 
 ## Repeated transformations
 
-Suppose the same matrix is applied again and again.
-
-Directly computing
-
-$$A^n$$
-
-can become cumbersome.
-
-If the matrix can be expressed in a basis of eigenvectors, repeated application becomes much easier because each eigenvector direction is simply multiplied by its eigenvalue at every step.
-
-This idea appears in population models, Markov chains, differential equations, numerical algorithms, and many other settings.
+Suppose the same matrix is applied again and again. Directly computing $$A^n$$ can become cumbersome, but if the matrix can be expressed in a basis of eigenvectors, repeated application becomes much easier because each eigenvector direction is simply multiplied by its eigenvalue at every step. This idea appears in population models, Markov chains, differential equations, numerical algorithms, and many other settings.
 
 ## Least squares becomes geometry
 
-Linear regression can also be written in matrix form.
+Linear regression can also be written in matrix form. With several predictors, $$X\beta\approx y$$, and usually there is no coefficient vector $$\beta$$ that makes every prediction equal the observed response exactly. Least squares chooses the vector that makes the residual vector as small as possible in squared Euclidean distance, and geometrically the fitted response is the projection of $$y$$ onto the space of possible predictions generated by the columns of $$X$$.
 
-With several predictors,
-
-$$X\beta\approx y.$$
-
-Usually there is no coefficient vector $$\beta$$ that makes every prediction equal the observed response exactly.
-
-Least squares chooses the vector that makes the residual vector as small as possible in squared Euclidean distance.
-
-Geometrically, the fitted response is the projection of $$y$$ onto the space of possible predictions generated by the columns of $$X$$.
-
-The familiar [least-squares line](/2026/07/30/least-squares-regression-influence.html) from introductory statistics is the simplest version of this projection problem.
-
-Multiple regression uses the same geometry in higher dimensions.
+The familiar [least-squares line](/2026/07/30/least-squares-regression-influence.html) from introductory statistics is the simplest version of this projection problem, and multiple regression uses the same geometry in higher dimensions.
 
 ## Principal components
 
-A dataset with many variables can be viewed as a cloud of points in a high-dimensional space.
-
-The covariance matrix records how those variables vary together.
-
-Its eigenvectors identify principal directions of variation.
-
-Principal component analysis uses these directions to create new coordinates that capture as much variation as possible with fewer dimensions.
-
-This is one example of how linear algebra becomes a natural language for statistics and data analysis.
+A dataset with many variables can be viewed as a cloud of points in a high-dimensional space. The covariance matrix records how those variables vary together, and its eigenvectors identify principal directions of variation. Principal component analysis uses these directions to create new coordinates that capture as much variation as possible with fewer dimensions. This is one example of how linear algebra becomes a natural language for statistics and data analysis.
 
 ## Connections to calculus
 
-Linear algebra and multivariable calculus meet constantly.
-
-The derivative of a function of several variables is naturally represented by a linear map.
-
-Jacobian matrices describe local changes of coordinates.
-
-Determinants measure how those transformations scale area and volume.
-
-Systems of differential equations can be studied using eigenvalues and eigenvectors.
-
-The subjects are taught separately, but they increasingly overlap as the mathematics becomes more advanced.
+Linear algebra and multivariable calculus meet constantly. The derivative of a function of several variables is naturally represented by a linear map, Jacobian matrices describe local changes of coordinates, and determinants measure how those transformations scale area and volume. Systems of differential equations can be studied using eigenvalues and eigenvectors. The subjects are taught separately, but they increasingly overlap as the mathematics becomes more advanced.
 
 ## What the course feels like
 
-A first linear algebra course often contains fewer long symbolic computations than calculus and more attention to structure.
-
-The early topics may include:
+A first linear algebra course often contains fewer long symbolic computations than calculus and more attention to structure. The early topics may include:
 
 - systems of linear equations
 - matrices and matrix operations
@@ -238,7 +132,5 @@ The early topics may include:
 Proof may also become more prominent, depending on the course.
 
 <div class="article-note" markdown="1">
-The central shift is to stop treating a matrix as a collection of entries and begin treating it as an object that acts on a space.
-
-The sliders above are a good place to begin.
+The central shift is to stop treating a matrix as a collection of entries and begin treating it as an object that acts on a space. The sliders above are a good place to begin.
 </div>

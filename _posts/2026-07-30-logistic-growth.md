@@ -4,7 +4,7 @@ title: "Logistic growth, read without solving it"
 date: 2026-07-30
 description: "The logistic differential equation reveals its equilibria, carrying capacity, fastest growth, and concavity before the equation is solved."
 course: "AP Calculus BC"
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 26
@@ -15,109 +15,30 @@ image: "/assets/og/logistic-growth.png"
 
 A logistic differential equation has the form
 
-$$\frac{dy}{dt} = ky(a-y),$$
+$$\frac{dy}{dt} = ky(a-y)$$
 
-with $$k>0$$.
-
-The equation describes growth that is initially reinforced by the size of the population and eventually limited by a carrying capacity.
-
-A surprising amount can be read directly from the differential equation without solving it.
+with $$k>0$$. The equation describes growth that is initially reinforced by the size of the population and eventually limited by a carrying capacity, and a surprising amount can be read directly from the differential equation without solving it.
 
 ## The two factors
 
-The factor
+The factor $$y$$ makes the growth rate proportional to the current population, and the factor $$a-y$$ slows the growth as the population approaches $$a$$. The equilibrium solutions occur where $$\tfrac{dy}{dt}=0$$, so $$y=0$$ and $$y=a$$ are equilibria.
 
-$$y$$
-
-makes the growth rate proportional to the current population.
-
-The factor
-
-$$a-y$$
-
-slows the growth as the population approaches $$a$$.
-
-The equilibrium solutions occur where
-
-$$\frac{dy}{dt}=0.$$
-
-So
-
-$$y=0$$
-
-and
-
-$$y=a$$
-
-are equilibria.
-
-For a population starting between them,
-
-$$0<y<a,$$
-
-both factors are positive and the population increases.
-
-As $$y$$ approaches $$a$$, the factor $$a-y$$ approaches zero and the growth slows.
-
-The value $$a$$ is the carrying capacity.
+For a population starting between them, $$0<y<a$$, both factors are positive and the population increases. As $$y$$ approaches $$a$$, the factor $$a-y$$ approaches zero and the growth slows, and the value $$a$$ is the carrying capacity.
 
 ## Growth is fastest halfway up
 
-The growth rate can be viewed as a function of $$y$$:
-
-$$R(y) = ky(a-y) = k(ay-y^2).$$
-
-This is a downward-opening parabola.
-
-Its maximum occurs at
-
-$$y=\frac a2.$$
-
-At that point,
-
-$$R\left(\frac a2\right) = \frac{ka^2}{4}.$$
-
-So a logistic population grows fastest when it reaches half its carrying capacity.
-
-That same point is the inflection point of the solution curve.
+The growth rate can be viewed as a function of $$y$$, namely $$R(y) = ky(a-y) = k(ay-y^2)$$, which is a downward-opening parabola. Its maximum occurs at $$y=\tfrac a2$$, and at that point, $$R\left(\tfrac a2\right) = \tfrac{ka^2}{4}$$. So a logistic population grows fastest when it reaches half its carrying capacity, and that same point is the inflection point of the solution curve.
 
 ## Concavity from the equation
 
-Differentiate the differential equation with respect to time:
+Differentiate the differential equation with respect to time and substitute $$y'=ky(a-y)$$:
 
-$$y'' = k y'(a-2y).$$
+$$\begin{aligned}
+y'' &= k y'(a-2y)\\
+&= k^2y(a-y)(a-2y)
+\end{aligned}$$
 
-Substitute
-
-$$y'=ky(a-y).$$
-
-Then
-
-$$y'' = k^2y(a-y)(a-2y).$$
-
-For a solution with
-
-$$0<y<a,$$
-
-the first three factors except $$a-2y$$ are positive.
-
-So the sign of $$y''$$ is determined by
-
-$$a-2y.$$
-
-When
-
-$$y<\frac a2,$$
-
-the solution is concave up.
-
-When
-
-$$y>\frac a2,$$
-
-it is concave down.
-
-The change occurs at half the carrying capacity, exactly where the growth rate is largest.
+For a solution with $$0<y<a$$, the first three factors except $$a-2y$$ are positive, so the sign of $$y''$$ is determined by $$a-2y$$. When $$y<\tfrac a2$$, the solution is concave up, and when $$y>\tfrac a2$$, it is concave down. The change occurs at half the carrying capacity, exactly where the growth rate is largest.
 
 <div class="viz" markdown="0">
   <canvas id="lg-cv" width="700" height="330"></canvas>
@@ -238,73 +159,17 @@ The change occurs at half the carrying capacity, exactly where the growth rate i
 })();
 </script>
 
-The visualization fixes the carrying capacity at 100 and lets the initial value and growth constant vary.
-
-Changing $$k$$ changes the time scale.
-
-A larger $$k$$ makes the population move through the same stages more quickly.
-
-It does not change the carrying capacity or the population size at which growth is fastest.
+The visualization fixes the carrying capacity at 100 and lets the initial value and growth constant vary. Changing $$k$$ changes the time scale, and a larger $$k$$ makes the population move through the same stages more quickly. It does not change the carrying capacity or the population size at which growth is fastest.
 
 ## Reading an expanded equation
 
-A logistic equation may not be presented in factored form.
+A logistic equation may not be presented in factored form. Suppose $$\tfrac{dP}{dt} = 2P-0.02P^2$$, which factors as $$\tfrac{dP}{dt} = 0.02P(100-P)$$, and now the structure is visible.
 
-Suppose
-
-$$\frac{dP}{dt} = 2P-0.02P^2.$$
-
-Factor:
-
-$$\frac{dP}{dt} = 0.02P(100-P).$$
-
-Now the structure is visible.
-
-The carrying capacity is
-
-$$100.$$
-
-The fastest growth occurs at
-
-$$P=50.$$
-
-The maximum growth rate is
-
-$$0.02(50)(50)=50.$$
-
-If $$P$$ is measured in thousands of fish and $$t$$ in years, that means the population grows fastest at 50 thousand fish, at a rate of 50 thousand fish per year.
-
-The units come from the context, not from the algebra alone.
+The carrying capacity is $$100$$, the fastest growth occurs at $$P=50$$, and the maximum growth rate is $$0.02(50)(50)=50$$. If $$P$$ is measured in thousands of fish and $$t$$ in years, that means the population grows fastest at 50 thousand fish, at a rate of 50 thousand fish per year. The units come from the context, not from the algebra alone.
 
 ## Initial values outside the usual range
 
-Most population examples begin with
-
-$$0<y_0<a.$$
-
-The differential equation also tells us what happens outside that range.
-
-If
-
-$$y>a,$$
-
-then $$a-y<0$$, so
-
-$$y'<0.$$
-
-The solution decreases toward the carrying capacity.
-
-If
-
-$$y=0$$
-
-or
-
-$$y=a,$$
-
-the solution remains constant.
-
-These conclusions come from the sign of the differential equation itself.
+Most population examples begin with $$0<y_0<a$$. The differential equation also tells us what happens outside that range. If $$y>a$$, then $$a-y<0$$, so $$y'<0$$ and the solution decreases toward the carrying capacity. If $$y=0$$ or $$y=a$$, the solution remains constant, and these conclusions come from the sign of the differential equation itself.
 
 <div class="article-note" markdown="1">
 Before solving a logistic equation, factor it and identify:

@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Optimization problems depend on a correct objective, constraint, and domain before the derivative is ever used."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "7 min read"
 math: true
 kind: mechanics
 sequence: 19
@@ -14,13 +14,7 @@ blurb: "Optimization problems depend on a correct objective, constraint, and dom
 image: "/assets/og/optimization.png"
 ---
 
-Optimization problems often look different because the stories are different.
-
-A fence, an open box, and a shortest-distance problem can all have the same mathematical structure.
-
-The derivative usually comes late.
-
-The setup comes first.
+Optimization problems often look different because the stories are different. A fence, an open box, and a shortest-distance problem can all have the same mathematical structure. The derivative usually comes late, and the setup comes first.
 
 ## The structure of an optimization problem
 
@@ -31,9 +25,7 @@ Most problems require four pieces.
 3. A domain for the remaining variable.
 4. A method for locating and comparing candidate extrema.
 
-The first three steps are usually where the real decisions are made.
-
-The domain is especially important because it often comes from the context rather than from the algebra alone.
+The first three steps are usually where the real decisions are made. The domain is especially important because it often comes from the context rather than from the algebra alone.
 
 ## Three examples with the same structure
 
@@ -216,171 +208,51 @@ The domain is especially important because it often comes from the context rathe
 })();
 </script>
 
-The visualization shows a physical or geometric setup beside the corresponding objective function.
+The visualization shows a physical or geometric setup beside the corresponding objective function. The feasible domain is marked, along with critical points and endpoints.
 
-The feasible domain is marked, along with critical points and endpoints.
+## A fenced region
 
-### A fenced region
+Suppose three sides of a rectangle use 100 meters of fencing. Let $$x$$ be the width and $$y$$ the remaining side, so the constraint is $$2x+y=100$$ and $$y=100-2x$$. The area is
 
-Suppose three sides of a rectangle use 100 meters of fencing.
+$$A(x)=x(100-2x)$$
 
-Let $$x$$ be the width and $$y$$ the remaining side.
+The physical domain is $$0\le x\le50$$. Differentiating gives $$A'(x)=100-4x$$, so the interior critical point is $$x=25$$. Evaluating the area at the candidates gives $$A(0)=0,\; A(25)=1250,\; A(50)=0$$, so the maximum area is $$1250$$ square meters. The question asks for the area, not only the value of $$x$$.
 
-The constraint is
+## An open box
 
-$$2x+y=100.$$
+Suppose squares of side length $$x$$ are cut from the corners of a 12-by-12 sheet and the sides are folded upward. The volume is
 
-So
+$$V(x)=x(12-2x)^2$$
 
-$$y=100-2x.$$
+The geometry requires $$0\le x\le6$$. Differentiating gives $$V'(x)=12(x-2)(x-6)$$, so the candidates on the closed interval are $$x=0,\; x=2,\; x=6$$. The corresponding volumes are $$0,\; 128,\; 0$$, so the maximum volume is $$128$$.
 
-The area is
+## Distance to a curve
 
-$$A(x)=x(100-2x).$$
+Now minimize the distance from $$(0,2)$$ to the parabola $$y=x^2$$. The squared distance is
 
-The physical domain is
+$$D^2(x) = x^2+(x^2-2)^2 = x^4-3x^2+4$$
 
-$$0\le x\le50.$$
+Because square root is increasing, minimizing $$D^2$$ also minimizes $$D$$. Differentiating gives $$\tfrac{d}{dx}D^2(x) = 2x(2x^2-3)$$, so the critical points are $$x=0$$ and $$x=\pm\sqrt{\tfrac32}$$. There is no closed bounded interval here, so there are no endpoints to check.
 
-Differentiate:
-
-$$A'(x)=100-4x.$$
-
-The interior critical point is
-
-$$x=25.$$
-
-Evaluate the area at the candidates:
-
-$$A(0)=0,$$
-
-$$A(25)=1250,$$
-
-and
-
-$$A(50)=0.$$
-
-The maximum area is
-
-$$1250$$
-
-square meters.
-
-The question asks for the area, not only the value of $$x$$.
-
-### An open box
-
-Suppose squares of side length $$x$$ are cut from the corners of a 12-by-12 sheet and the sides are folded upward.
-
-The volume is
-
-$$V(x)=x(12-2x)^2.$$
-
-The geometry requires
-
-$$0\le x\le6.$$
-
-Differentiate:
-
-$$V'(x)=12(x-2)(x-6).$$
-
-The candidates on the closed interval are
-
-$$x=0,\quad x=2,\quad x=6.$$
-
-The corresponding volumes are
-
-$$0,\quad128,\quad0.$$
-
-So the maximum volume is
-
-$$128.$$
-
-### Distance to a curve
-
-Now minimize the distance from $$(0,2)$$ to the parabola
-
-$$y=x^2.$$
-
-The squared distance is
-
-$$D^2(x) = x^2+(x^2-2)^2 = x^4-3x^2+4.$$
-
-Because square root is increasing, minimizing $$D^2$$ also minimizes $$D$$.
-
-Differentiate:
-
-$$\frac{d}{dx}D^2(x) = 2x(2x^2-3).$$
-
-The critical points are
-
-$$x=0$$
-
-and
-
-$$x=\pm\sqrt{\frac32}.$$
-
-There is no closed bounded interval here, so there are no endpoints to check.
-
-At
-
-$$x=0,$$
-
-we get
-
-$$D^2=4.$$
-
-At
-
-$$x=\pm\sqrt{\frac32},$$
-
-we get
-
-$$D^2=\frac74.$$
-
-Therefore the minimum distance is
-
-$$D=\frac{\sqrt7}{2}.$$
-
-The square-root shortcut has to be undone in the final answer because the problem asks for a distance.
+At $$x=0$$, we get $$D^2=4$$. At $$x=\pm\sqrt{\tfrac32}$$, we get $$D^2=\tfrac74$$. Therefore the minimum distance is $$D=\tfrac{\sqrt7}{2}$$, and the square-root shortcut has to be undone in the final answer because the problem asks for a distance.
 
 ## The Candidates Test
 
-[For a continuous function on a closed interval](/2026/07/30/mean-value-and-extreme-value-theorems.html), absolute extrema can occur at interior critical points or endpoints.
-
-So the standard procedure is:
+[For a continuous function on a closed interval](/2026/07/30/mean-value-and-extreme-value-theorems.html), absolute extrema can occur at interior critical points or endpoints. So the standard procedure is:
 
 - find the critical points
 - include the endpoints
 - evaluate the objective at every candidate
 - compare
 
-A critical point is a point where the derivative is zero or [fails to exist](/2026/07/30/where-differentiability-fails.html).
-
-Finding one critical point is not enough.
-
-It may be a local maximum, local minimum, or neither.
-
-On an open or unbounded domain, endpoint comparison may not be available. Then a derivative test, global argument, or analysis of end behavior may be needed.
+A critical point is a point where the derivative is zero or [fails to exist](/2026/07/30/where-differentiability-fails.html). Finding one critical point is not enough, because it may be a local maximum, local minimum, or neither. On an open or unbounded domain, endpoint comparison may not be available, and then a derivative test, global argument, or analysis of end behavior may be needed.
 
 ## Answer the quantity that was asked for
 
-Optimization problems often ask for a quantity different from the variable used during the calculus.
-
-A problem may ask for maximum area but require solving first for a width.
-
-It may ask for volume but require finding the cut size.
-
-It may ask for distance while the simpler objective is squared distance.
-
-So the last step should return to the original question.
-
-State the requested quantity with appropriate units.
+Optimization problems often ask for a quantity different from the variable used during the calculus. A problem may ask for maximum area but require solving first for a width. It may ask for volume but require finding the cut size, or it may ask for distance while the simpler objective is squared distance. So the last step should return to the original question and state the requested quantity with appropriate units.
 
 <div class="article-note" markdown="1">
-A useful practice exercise is to set up several optimization problems without differentiating them.
-
-For each one, write only:
+A useful practice exercise is to set up several optimization problems without differentiating them. For each one, write only:
 
 - the objective
 - the constraint

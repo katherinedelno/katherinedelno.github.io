@@ -4,7 +4,7 @@ title: "Integration by parts and partial fractions"
 date: 2026-07-30
 description: "Two integration techniques for expressions that do not yield directly to substitution. One reverses the product rule. The other rewrites a rational function into simpler pieces."
 course: "AP Calculus BC"
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 23
@@ -13,151 +13,41 @@ blurb: "Two integration techniques for expressions that do not yield directly to
 image: "/assets/og/parts-and-partial-fractions.png"
 ---
 
-Integration by parts and partial fractions solve different kinds of problems.
-
-Integration by parts is useful when an integrand contains a product whose structure becomes simpler after one factor is differentiated.
-
-Partial fractions is useful for rational functions that can be decomposed into simpler fractions.
-
-The first step is recognizing which structure is present.
+Integration by parts and partial fractions solve different kinds of problems. Integration by parts is useful when an integrand contains a product whose structure becomes simpler after one factor is differentiated, and partial fractions is useful for rational functions that can be decomposed into simpler fractions. The first step is recognizing which structure is present.
 
 ## Integration by parts
 
-The product rule says
+The product rule says $$\tfrac{d}{dx}(uv) = u\tfrac{dv}{dx} + v\tfrac{du}{dx}$$, so integrating both sides gives $$\textstyle uv = \int u\,dv + \int v\,du$$. Rearranging,
 
-$$\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}.$$
+$$\int u\,dv = uv-\int v\,du$$
 
-Integrating both sides gives
+This is integration by parts. The choice of $$u$$ matters, and a useful choice is one whose derivative is simpler than the original factor.
 
-$$uv = \int u\,dv + \int v\,du.$$
+Consider $$\textstyle\int xe^x\,dx$$. Choose $$u=x,\; dv=e^x\,dx$$, then $$du=dx,\; v=e^x$$, so
 
-Rearranging,
+$$\int xe^x\,dx = xe^x-\int e^x\,dx = xe^x-e^x+C$$
 
-$$\int u\,dv = uv-\int v\,du.$$
-
-This is integration by parts.
-
-The choice of $$u$$ matters. A useful choice is one whose derivative is simpler than the original factor.
-
-Consider
-
-$$\int xe^x\,dx.$$
-
-Choose
-
-$$u=x$$
-
-and
-
-$$dv=e^x\,dx.$$
-
-Then
-
-$$du=dx$$
-
-and
-
-$$v=e^x.$$
-
-So
-
-$$\int xe^x\,dx = xe^x-\int e^x\,dx = xe^x-e^x+C.$$
-
-The remaining integral is simpler than the one we started with.
-
-If instead we choose
-
-$$u=e^x$$
-
-and
-
-$$dv=x\,dx,$$
-
-the resulting integral becomes more complicated.
-
-The formula is valid either way. The useful choice is the one that improves the problem.
+The remaining integral is simpler than the one we started with. If instead we choose $$u=e^x,\; dv=x\,dx$$, the resulting integral becomes more complicated. The formula is valid either way, and the useful choice is the one that improves the problem.
 
 ## A function that looks like one factor
 
-Integration by parts can also be used when there is no visible product.
-
-For
-
-$$\int \ln x\,dx,$$
-
-write
-
-$$\ln x = (\ln x)(1).$$
-
-Choose
-
-$$u=\ln x$$
-
-and
-
-$$dv=dx.$$
-
-Then
-
-$$du=\frac1x\,dx$$
-
-and
-
-$$v=x.$$
-
-Therefore
-
-$$\int \ln x\,dx = x\ln x-\int1\,dx = x\ln x-x+C.$$
-
-The invisible factor of 1 is what makes the product-rule structure available.
+Integration by parts can also be used when there is no visible product. For $$\textstyle\int \ln x\,dx$$, write $$\ln x = (\ln x)(1)$$, choose $$u=\ln x,\; dv=dx$$, and then $$du=\tfrac1x\,dx,\; v=x$$. Therefore $$\textstyle\int \ln x\,dx = x\ln x-\int1\,dx = x\ln x-x+C$$, and the invisible factor of 1 is what makes the product-rule structure available.
 
 ## Partial fractions
 
-Partial fractions begins with a rational function.
+Partial fractions begins with a rational function. Suppose $$\tfrac{1}{x^2-1} = \tfrac{1}{(x-1)(x+1)}$$, and we seek constants $$A$$ and $$B$$ such that
 
-Suppose
+$$\frac{1}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}$$
 
-$$\frac{1}{x^2-1} = \frac{1}{(x-1)(x+1)}.$$
+Multiplying through by the denominator gives $$1 = A(x+1)+B(x-1)$$, and setting $$x=1,\; x=-1$$ in turn gives $$A=\tfrac12,\; B=-\tfrac12$$. So $$\tfrac{1}{x^2-1} = \tfrac12\tfrac{1}{x-1} - \tfrac12\tfrac{1}{x+1}$$. Now integrate term by term:
 
-We seek constants $$A$$ and $$B$$ such that
+$$\int\frac{1}{x^2-1}\,dx = \frac12\ln\vert x-1\vert - \frac12\ln\vert x+1\vert + C$$
 
-$$\frac{1}{(x-1)(x+1)} = \frac{A}{x-1} + \frac{B}{x+1}.$$
-
-Multiplying through by the denominator gives
-
-$$1 = A(x+1)+B(x-1).$$
-
-Setting $$x=1$$ gives
-
-$$A=\frac12.$$
-
-Setting $$x=-1$$ gives
-
-$$B=-\frac12.$$
-
-So
-
-$$\frac{1}{x^2-1} = \frac12\frac{1}{x-1} - \frac12\frac{1}{x+1}.$$
-
-Now integrate term by term:
-
-$$\int\frac{1}{x^2-1}\,dx = \frac12\ln\vert x-1\vert - \frac12\ln\vert x+1\vert + C.$$
-
-The original rational function did not have an obvious antiderivative. After decomposition, each term does.
-
-For the course-level problems considered here, the denominator factors into distinct linear factors. More general decompositions can involve repeated factors and irreducible quadratics, but those require additional forms.
+The original rational function did not have an obvious antiderivative. After decomposition, each term does. For the course-level problems considered here, the denominator factors into distinct linear factors, and more general decompositions can involve repeated factors and irreducible quadratics, but those require additional forms.
 
 ## Check by differentiating
 
-An [antiderivative](/2026/07/17/fundamental-theorem-from-the-ground-up.html) can be checked immediately.
-
-Differentiate
-
-$$\frac12\ln\vert x-1\vert - \frac12\ln\vert x+1\vert .$$
-
-The result is
-
-$$\frac{1}{2(x-1)} - \frac{1}{2(x+1)} = \frac{1}{x^2-1}.$$
+An [antiderivative](/2026/07/17/fundamental-theorem-from-the-ground-up.html) can be checked immediately. Differentiate $$\tfrac12\ln\vert x-1\vert - \tfrac12\ln\vert x+1\vert$$ and the result is $$\tfrac{1}{2(x-1)} - \tfrac{1}{2(x+1)} = \tfrac{1}{x^2-1}$$.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="ip-fns"></div>
@@ -292,11 +182,7 @@ $$\frac{1}{2(x-1)} - \frac{1}{2(x+1)} = \frac{1}{x^2-1}.$$
 })();
 </script>
 
-This is a useful habit after any longer integration problem.
-
-It is especially important with definite integrals because a wrong antiderivative can occasionally produce a plausible numerical answer for particular bounds.
-
-A correct final value does not repair incorrect reasoning.
+This is a useful habit after any longer integration problem. It is especially important with definite integrals because a wrong antiderivative can occasionally produce a plausible numerical answer for particular bounds, and a correct final value does not repair incorrect reasoning.
 
 ## Choosing the technique
 
@@ -307,7 +193,5 @@ A useful classification is:
 - If it is a rational function with a factorable denominator, consider partial fractions.
 
 <div class="article-note" markdown="1">
-These categories can overlap.
-
-The goal is not to identify the most advanced available technique. It is to find the rewrite that makes the integral simpler.
+These categories can overlap. The goal is not to identify the most advanced available technique, but to find the rewrite that makes the integral simpler.
 </div>

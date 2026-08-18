@@ -4,7 +4,7 @@ title: "Parametric, vector, and polar: three systems, one calculus"
 date: 2026-07-30
 description: "Parametric, vector-valued, and polar curves use familiar derivative and integral ideas with a different way of describing position."
 course: "AP Calculus BC"
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 28
@@ -13,109 +13,27 @@ blurb: "Parametric, vector-valued, and polar curves use familiar derivative and 
 image: "/assets/og/parametric-vector-polar.png"
 ---
 
-Parametric, vector-valued, and polar curves look like three separate topics.
-
-They are closely related.
-
-In each case, a point in the plane is described by two coordinates that depend on another variable.
-
-Once that representation is clear, the usual ideas of derivative, speed, distance, area, and arc length continue to apply.
+Parametric, vector-valued, and polar curves look like three separate topics, but they are closely related. In each case, a point in the plane is described by two coordinates that depend on another variable, and once that representation is clear, the usual ideas of derivative, speed, distance, area, and arc length continue to apply.
 
 ## Everything can be written parametrically
 
-A parametric curve is given by
-
-$$x=x(t), \qquad y=y(t).$$
-
-A vector-valued function
-
-$$\langle x(t),y(t)\rangle$$
-
-contains the same coordinate functions in vector notation.
-
-A polar curve
-
-$$r=f(\theta)$$
-
-can be converted to
-
-$$x=f(\theta)\cos\theta, \qquad y=f(\theta)\sin\theta.$$
-
-So polar curves can also be treated parametrically, with $$\theta$$ as the parameter.
+A parametric curve is given by $$x=x(t),\; y=y(t)$$, and a vector-valued function $$\langle x(t),y(t)\rangle$$ contains the same coordinate functions in vector notation. A polar curve $$r=f(\theta)$$ can be converted to $$x=f(\theta)\cos\theta,\; y=f(\theta)\sin\theta$$, so polar curves can also be treated parametrically, with $$\theta$$ as the parameter.
 
 ## Slope and motion
 
-If
+If $$\tfrac{dx}{dt}\neq0$$, then $$\tfrac{dy}{dx} = \tfrac{dy/dt}{dx/dt}$$. The velocity vector is $$\left\langle \tfrac{dx}{dt}, \tfrac{dy}{dt} \right\rangle$$, and its magnitude is the speed: $$\text{speed} = \sqrt{ \left(\tfrac{dx}{dt}\right)^2 + \left(\tfrac{dy}{dt}\right)^2 }$$. Distance traveled over $$[a,b]$$ is
 
-$$\frac{dx}{dt}\neq0,$$
+$$\int_a^b \sqrt{ \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 } \,dt$$
 
-then
-
-$$\frac{dy}{dx} = \frac{dy/dt}{dx/dt}.$$
-
-The velocity vector is
-
-$$\left\langle \frac{dx}{dt}, \frac{dy}{dt} \right\rangle.$$
-
-Its magnitude is the speed:
-
-$$\text{speed} = \sqrt{ \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 }.$$
-
-Distance traveled over $$[a,b]$$ is
-
-$$\int_a^b \sqrt{ \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 } \,dt.$$
-
-This is also the arc-length formula when the path is not retraced.
-
-Displacement depends only on the endpoints:
-
-$$\left\langle x(b)-x(a), y(b)-y(a) \right\rangle.$$
-
-A particle can therefore [return to its starting point with zero displacement](/2026/07/30/particle-motion.html) while traveling a positive distance.
+This is also the arc-length formula when the path is not retraced. Displacement depends only on the endpoints, $$\left\langle x(b)-x(a), y(b)-y(a) \right\rangle$$, and a particle can therefore [return to its starting point with zero displacement](/2026/07/30/particle-motion.html) while traveling a positive distance.
 
 ## The second derivative
 
-The second derivative requires extra care because
+The second derivative requires extra care because $$\tfrac{dy}{dx}$$ is still expressed as a function of the parameter. It is not $$\tfrac{y''(t)}{x''(t)}$$. Instead,
 
-$$\frac{dy}{dx}$$
+$$\frac{d^2y}{dx^2} = \frac{ \dfrac{d}{dt}\left(\dfrac{dy}{dx}\right) }{ \dfrac{dx}{dt} }$$
 
-is still expressed as a function of the parameter.
-
-It is not
-
-$$\frac{y''(t)}{x''(t)}.$$
-
-Instead,
-
-$$\frac{d^2y}{dx^2} = \frac{ \dfrac{d}{dt}\left(\dfrac{dy}{dx}\right) }{ \dfrac{dx}{dt} }.$$
-
-[Differentiate the first derivative with respect to the parameter](/2026/07/30/chain-rule-reading-the-layers.html), then divide by $$dx/dt$$ again.
-
-For the circle
-
-$$x=3\cos t, \qquad y=3\sin t,$$
-
-the first derivative is
-
-$$\frac{dy}{dx} = -\cot t.$$
-
-The second derivative is
-
-$$-\frac{1}{3\sin^3t}.$$
-
-Since
-
-$$y=3\sin t,$$
-
-this can also be written as
-
-$$-\frac{9}{y^3}.$$
-
-[Implicit differentiation](/2026/07/30/implicit-differentiation.html) of
-
-$$x^2+y^2=9$$
-
-gives the same result.
+[Differentiate the first derivative with respect to the parameter](/2026/07/30/chain-rule-reading-the-layers.html), then divide by $$dx/dt$$ again. For the circle $$x=3\cos t,\; y=3\sin t$$, the first derivative is $$\tfrac{dy}{dx} = -\cot t$$ and the second derivative is $$-\tfrac{1}{3\sin^3t}$$. Since $$y=3\sin t$$, this can also be written as $$-\tfrac{9}{y^3}$$. [Implicit differentiation](/2026/07/30/implicit-differentiation.html) of $$x^2+y^2=9$$ gives the same result.
 
 ## One visualization, several coordinate systems
 
@@ -264,94 +182,26 @@ gives the same result.
 })();
 </script>
 
-The panel shows several curves, including polar curves converted to coordinate pairs before the derivatives are computed.
+The panel shows several curves, including polar curves converted to coordinate pairs before the derivatives are computed. The arrow at the moving point is the velocity vector, whose length is the speed, and the tangent line uses $$dy/dx$$. Where $$dx/dt=0$$, the quotient for the slope is undefined and the tangent may be vertical.
 
-The arrow at the moving point is the velocity vector.
-
-Its length is the speed.
-
-The tangent line uses
-
-$$dy/dx.$$
-
-Where
-
-$$dx/dt=0,$$
-
-the quotient for the slope is undefined and the tangent may be vertical.
-
-The same point in the plane can also occur at more than one parameter value.
-
-If the curve passes through that point in different directions, the two visits can have different tangent lines.
-
-A parametrization therefore contains information about how a curve is traversed, not only about the geometric path.
+The same point in the plane can also occur at more than one parameter value. If the curve passes through that point in different directions, the two visits can have different tangent lines, and a parametrization therefore contains information about how a curve is traversed, not only about the geometric path.
 
 ## Polar area
 
-For a polar curve
+For a polar curve $$r=f(\theta)$$, the area swept from $$\alpha$$ to $$\beta$$ is
 
-$$r=f(\theta),$$
+$$A = \frac12 \int_{\alpha}^{\beta} \big(f(\theta)\big)^2\,d\theta$$
 
-the area swept from $$\alpha$$ to $$\beta$$ is
-
-$$A = \frac12 \int_{\alpha}^{\beta} \big(f(\theta)\big)^2\,d\theta.$$
-
-The factor
-
-$$\frac12r^2$$
-
-comes from the area of a thin circular sector.
-
-So the integral can be understood as a sum of narrow wedges, just as an ordinary area integral is built from narrow rectangles.
-
-For the cardioid
-
-$$r=1+\cos\theta$$
-
-over a full revolution, the area is
-
-$$\frac{3\pi}{2}.$$
-
-For the three-petalled rose
-
-$$r=2\cos3\theta$$
-
-over $$[0,\pi]$$, the area is
-
-$$\pi.$$
+The factor $$\tfrac12r^2$$ comes from the area of a thin circular sector, so the integral can be understood as a sum of narrow wedges, just as an ordinary area integral is built from narrow rectangles. For the cardioid $$r=1+\cos\theta$$ over a full revolution, the area is $$\tfrac{3\pi}{2}$$, and for the three-petalled rose $$r=2\cos3\theta$$ over $$[0,\pi]$$, the area is $$\pi$$.
 
 ## Polar arc length
 
-Start with the parametric arc-length formula and substitute
+Start with the parametric arc-length formula and substitute $$x=r\cos\theta,\; y=r\sin\theta$$, so that after simplification,
 
-$$x=r\cos\theta, \qquad y=r\sin\theta.$$
+$$L = \int_{\alpha}^{\beta} \sqrt{ r^2+ \left(\frac{dr}{d\theta}\right)^2 } \,d\theta$$
 
-After simplification,
-
-$$L = \int_{\alpha}^{\beta} \sqrt{ r^2+ \left(\frac{dr}{d\theta}\right)^2 } \,d\theta.$$
-
-For the cardioid
-
-$$r=1+\cos\theta,$$
-
-the total arc length is
-
-$$8.$$
-
-The formula is not disconnected from the parametric one. It follows from it.
+For the cardioid $$r=1+\cos\theta$$, the total arc length is $$8$$. The formula is not disconnected from the parametric one, and it follows from it.
 
 <div class="article-note" markdown="1">
-The main practical issue in this unit is notation.
-
-Write the variable of differentiation explicitly when several variables are present.
-
-The difference between
-
-$$\frac{d}{dt}$$
-
-and
-
-$$\frac{d}{dx}$$
-
-is doing real mathematical work.
+The main practical issue in this unit is notation. Write the variable of differentiation explicitly when several variables are present, because the difference between $$\tfrac{d}{dt}$$ and $$\tfrac{d}{dx}$$ is doing real mathematical work.
 </div>

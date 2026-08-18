@@ -4,7 +4,7 @@ title: "The two ways a test can be wrong"
 date: 2026-07-31
 description: "Type I error is a false rejection of the null. Type II error is a failure to detect a false null. Power is the probability of detecting the effect when it is real."
 course: "AP Statistics"
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 14
@@ -13,55 +13,15 @@ blurb: "Type I error is a false rejection of the null. Type II error is a failur
 image: "/assets/og/two-ways-a-test-can-be-wrong.png"
 ---
 
-A hypothesis test can make two kinds of error.
-
-A Type I error occurs when the null hypothesis is true and the test rejects it.
-
-A Type II error occurs when the null hypothesis is false and the test fails to reject it.
-
-The two errors arise from different parts of the testing procedure.
+A hypothesis test can make two kinds of error. A Type I error occurs when the null hypothesis is true and the test rejects it, and a Type II error occurs when the null hypothesis is false and the test fails to reject it. The two errors arise from different parts of the testing procedure.
 
 ## Type I error
 
-Suppose
-
-$$H_0:p=0.10$$
-
-and
-
-$$H_a:p>0.10.$$
-
-A Type I error means concluding that the rework rate exceeds 10% when the true rate is actually 10%.
-
-This is a false positive.
-
-The significance level
-
-$$\alpha$$
-
-is the probability of a Type I error when the null is true.
-
-It is chosen before the data are observed.
+Suppose $$H_0:p=0.10$$ and $$H_a:p>0.10$$. A Type I error means concluding that the rework rate exceeds 10% when the true rate is actually 10%. This is a false positive. The significance level $$\alpha$$ is the probability of a Type I error when the null is true, and it is chosen before the data are observed.
 
 ## Type II error and power
 
-A Type II error occurs when the true rework rate is greater than 10% but the study does not produce enough evidence to reject $$H_0$$.
-
-This is a missed detection.
-
-The probability of Type II error is often written
-
-$$\beta.$$
-
-Power is the probability that the test correctly rejects a false null.
-
-Therefore
-
-$$\text{power}=1-\beta.$$
-
-Power depends on which alternative value is actually true.
-
-There is not one universal power value for a test.
+A Type II error occurs when the true rework rate is greater than 10% but the study does not produce enough evidence to reject $$H_0$$. This is a missed detection, and its probability is often written $$\beta$$. Power is the probability that the test correctly rejects a false null, so $$\text{power}=1-\beta$$. Power depends on which alternative value is actually true, so there is not one universal power value for a test.
 
 ## One cutoff, two possible worlds
 
@@ -219,15 +179,7 @@ There is not one universal power value for a test.
 })();
 </script>
 
-The rejection cutoff is chosen so that the probability of entering the rejection region under the null equals $$\alpha$$.
-
-The lower curve represents a particular alternative value.
-
-Under that alternative, the rejection region represents correct detection.
-
-The area outside it represents Type II error.
-
-The same cutoff is evaluated under two different distributions.
+The rejection cutoff is chosen so that the probability of entering the rejection region under the null equals $$\alpha$$. The lower curve represents a particular alternative value, and under that alternative the rejection region represents correct detection while the area outside it represents Type II error. The same cutoff is evaluated under two different distributions.
 
 ## What increases power
 
@@ -238,48 +190,20 @@ Power generally increases when:
 - variability decreases
 - $$\alpha$$ increases
 
-The first three improve the ability to distinguish the null from the alternative.
-
-Changing $$\alpha$$ is different.
-
-Increasing $$\alpha$$ raises power by making rejection easier, but it also raises the Type I error rate.
-
-That is a tradeoff.
+The first three improve the ability to distinguish the null from the alternative. Changing $$\alpha$$ is different. Increasing $$\alpha$$ raises power by making rejection easier, but it also raises the Type I error rate, and that is a tradeoff.
 
 ## Sample size
 
-Increasing $$n$$ reduces the standard error.
-
-The null and alternative sampling distributions become narrower.
-
-A fixed difference between them is easier to detect.
-
-This increases power without changing the chosen significance level.
-
-That is one reason sample-size planning is done before a study begins.
+Increasing $$n$$ reduces the standard error, so the null and alternative sampling distributions become narrower and a fixed difference between them is easier to detect. This increases power without changing the chosen significance level, which is one reason sample-size planning is done before a study begins.
 
 ## Effect size
 
-A test has more power against alternatives far from the null than against alternatives very close to it.
-
-A true rework rate of 20% is easier to distinguish from 10% than a true rate of 12%.
-
-So a power statement should name the alternative effect size it refers to.
-
-Saying only that “the study has 80% power” is incomplete unless the target discrepancy is clear.
+A test has more power against alternatives far from the null than against alternatives very close to it. A true rework rate of 20% is easier to distinguish from 10% than a true rate of 12%, so a power statement should name the alternative effect size it refers to. Saying only that “the study has 80% power” is incomplete unless the target discrepancy is clear.
 
 ## Consequences matter
 
-Type I and Type II errors may have very different practical costs.
-
-In one setting, a false alarm may be more serious.
-
-In another, failing to detect a real effect may be worse.
-
-The choice of $$\alpha$$, sample size, and desired power should reflect those consequences before the data are analyzed.
+Type I and Type II errors may have very different practical costs. In one setting a false alarm may be more serious, and in another failing to detect a real effect may be worse. The choice of $$\alpha$$, sample size, and desired power should reflect those consequences before the data are analyzed.
 
 <div class="article-note" markdown="1">
-The statistical definitions are symmetric.
-
-The real-world costs often are not.
+The statistical definitions are symmetric. The real-world costs often are not.
 </div>

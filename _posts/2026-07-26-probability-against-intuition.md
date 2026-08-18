@@ -4,7 +4,7 @@ title: "Probability against intuition"
 date: 2026-07-26
 description: "Monty Hall, the birthday problem, and Simpson's paradox all become less mysterious once the conditioning information is written explicitly."
 course: "AP Statistics"
-read_time: "9 min read"
+read_time: "7 min read"
 math: true
 kind: beyond
 sequence: 2
@@ -13,33 +13,11 @@ blurb: "Monty Hall, the birthday problem, and Simpson's paradox all become less 
 image: "/assets/og/probability-against-intuition.png"
 ---
 
-Some probability results feel wrong until the sample space is made explicit.
-
-That discomfort is useful.
-
-It usually signals that we are [conditioning on information](/2026/07/27/conditional-probability-and-the-base-rate.html) without accounting for how that information was produced.
-
-Three familiar examples show the pattern.
+Some probability results feel wrong until the sample space is made explicit. That discomfort is useful, and it usually signals that we are [conditioning on information](/2026/07/27/conditional-probability-and-the-base-rate.html) without accounting for how that information was produced. Three familiar examples show the pattern.
 
 ## The Monty Hall problem
 
-There are three doors.
-
-One hides a prize.
-
-You choose a door.
-
-The host, who knows where the prize is, then opens one of the other two doors and deliberately reveals a losing door.
-
-You may stay with your original choice or switch to the remaining unopened door.
-
-Switching wins with probability
-
-$$\frac23.$$
-
-Staying wins with probability
-
-$$\frac13.$$
+There are three doors and one hides a prize. You choose a door, and the host, who knows where the prize is, then opens one of the other two doors and deliberately reveals a losing door. You may stay with your original choice or switch to the remaining unopened door. Switching wins with probability $$\tfrac23$$, and staying wins with probability $$\tfrac13$$.
 
 <div class="viz" markdown="0">
   <canvas id="mh-cv" width="700" height="180"></canvas>
@@ -98,127 +76,39 @@ $$\frac13.$$
 })();
 </script>
 
-The easiest explanation starts before the host opens anything.
+The easiest explanation starts before the host opens anything. Your first choice is correct with probability $$\tfrac13$$ and wrong with probability $$\tfrac23$$. If the first choice is correct, switching loses, and if the first choice is wrong, the host is forced to reveal the other losing door, so switching wins. Therefore switching wins exactly when the original choice was wrong, and that happens two thirds of the time.
 
-Your first choice is correct with probability
-
-$$\frac13.$$
-
-It is wrong with probability
-
-$$\frac23.$$
-
-If the first choice is correct, switching loses.
-
-If the first choice is wrong, the host is forced to reveal the other losing door, so switching wins.
-
-Therefore switching wins exactly when the original choice was wrong.
-
-That happens two thirds of the time.
-
-The host's action is not an ordinary random door opening.
-
-It depends on knowledge of the prize location.
-
-That is the conditioning information that changes the problem.
+The host's action is not an ordinary random door opening, and it depends on knowledge of the prize location. That is the conditioning information that changes the problem.
 
 ## The birthday problem
 
-How many people are needed before the probability of at least one shared birthday exceeds 50%?
+How many people are needed before the probability of at least one shared birthday exceeds 50%? The answer is 23, under the usual simplifying assumptions of 365 equally likely birthdays and no leap day. The direct calculation is awkward, and the complement is easier. First compute the probability that all birthdays are different:
 
-The answer is 23, under the usual simplifying assumptions of 365 equally likely birthdays and no leap day.
+$$P(\text{all different}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365} \cdots \frac{343}{365}$$
 
-The direct calculation is awkward.
-
-The complement is easier.
-
-First compute the probability that all birthdays are different:
-
-$$P(\text{all different}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365} \cdots \frac{343}{365}.$$
-
-Then
-
-$$P(\text{at least one match}) = 1-P(\text{all different}).$$
-
-For 23 people, this is about
-
-$$0.507.$$
-
-The result feels surprising because 23 is small relative to 365.
-
-But the number of pairs is
-
-$$\binom{23}{2}=253.$$
-
-There are 253 opportunities for a match.
-
-The number of comparisons grows much faster than the number of people.
-
-At 50 people, the probability of a shared birthday is already about 97%.
-
-At 70, it is above 99.9%.
+Then $$P(\text{at least one match}) = 1-P(\text{all different})$$, and for 23 people this is about $$0.507$$. The result feels surprising because 23 is small relative to 365, but the number of pairs is $$\binom{23}{2}=253$$. There are 253 opportunities for a match, and the number of comparisons grows much faster than the number of people. At 50 people, the probability of a shared birthday is already about 97%, and at 70, it is above 99.9%.
 
 ## Simpson's paradox
 
-Suppose Treatment A has a higher success rate than Treatment B among both mild cases and severe cases.
-
-It can still have a lower success rate overall.
+Suppose Treatment A has a higher success rate than Treatment B among both mild cases and severe cases. It can still have a lower success rate overall.
 
 | | Severe cases | Mild cases | All cases |
 |---|---|---|---|
 | Treatment A | 210 of 300 survive (70%) | 95 of 100 survive (95%) | 305 of 400 (76%) |
 | Treatment B | 30 of 50 survive (60%) | 300 of 350 survive (86%) | 330 of 400 (83%) |
 
-The reversal is possible because the overall rate is a weighted average of the subgroup rates.
-
-If Treatment A is used much more often for severe cases and Treatment B much more often for mild cases, the groups are being compared under different case mixes.
-
-The aggregate rate then reflects both treatment performance and severity.
-
-Separating the data by [the relevant third variable](/2026/07/27/simpsons-paradox.html) can reverse the apparent association.
-
-This is Simpson's paradox.
-
-The arithmetic is not contradictory.
-
-The weights changed.
+The reversal is possible because the overall rate is a weighted average of the subgroup rates. If Treatment A is used much more often for severe cases and Treatment B much more often for mild cases, the groups are being compared under different case mixes, and the aggregate rate then reflects both treatment performance and severity. Separating the data by [the relevant third variable](/2026/07/27/simpsons-paradox.html) can reverse the apparent association, and this is Simpson's paradox. The arithmetic is not contradictory, and the weights changed.
 
 ## The common structure
 
-Monty Hall changes because the host's action depends on hidden information.
+Monty Hall changes because the host's action depends on hidden information. The birthday problem becomes manageable after we condition on the event that previous birthdays were all distinct. Simpson's paradox changes when we condition on a third variable that is related to both the explanatory and response variables.
 
-The birthday problem becomes manageable after we condition on the event that previous birthdays were all distinct.
-
-Simpson's paradox changes when we condition on a third variable that is related to both the explanatory and response variables.
-
-In each case, the important question is:
-
-What information has been conditioned on, and how was it generated?
-
-Probability statements are always relative to a sample space and a set of assumptions.
-
-If those change, the probability can change.
+In each case, the important question is: what information has been conditioned on, and how was it generated? Probability statements are always relative to a sample space and a set of assumptions, and if those change, the probability can change.
 
 ## A final conditioning puzzle
 
 <div class="article-note" markdown="1">
-Suppose a family has two children and at least one is a boy.
+Suppose a family has two children and at least one is a boy. Under a simple model where the four ordered sex combinations are equally likely, the possible families are $$BB,\;BG,\;GB$$, so the probability both are boys is $$\tfrac13$$.
 
-Under a simple model where the four ordered sex combinations are equally likely, the possible families are
-
-$$BB,\quad BG,\quad GB.$$
-
-So the probability both are boys is
-
-$$\frac13.$$
-
-But if the information “at least one is a boy” was produced by a different reporting process, the answer can change.
-
-For example, learning that a randomly selected child from the family is a boy is a different experiment.
-
-The wording alone is not always enough.
-
-The mechanism that generated the information matters.
-
-That is the larger lesson behind many probability puzzles.
+But if the information “at least one is a boy” was produced by a different reporting process, the answer can change. For example, learning that a randomly selected child from the family is a boy is a different experiment. The wording alone is not always enough, and the mechanism that generated the information matters. That is the larger lesson behind many probability puzzles.
 </div>

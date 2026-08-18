@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "The Mean Value Theorem and Extreme Value Theorem guarantee that something exists under stated hypotheses. Neither theorem tells you where it occurs."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 18
@@ -14,67 +14,25 @@ blurb: "The Mean Value Theorem and Extreme Value Theorem guarantee that somethin
 image: "/assets/og/mean-value-and-extreme-value-theorems.png"
 ---
 
-The Mean Value Theorem and Extreme Value Theorem are existence theorems.
-
-Under the right hypotheses, they guarantee that something occurs somewhere on an interval.
-
-They do not tell you where.
-
-That distinction is the main reason the hypotheses matter.
+The Mean Value Theorem and Extreme Value Theorem are existence theorems. Under the right hypotheses, they guarantee that something occurs somewhere on an interval, and they do not tell you where. That distinction is the main reason the hypotheses matter.
 
 ## The Mean Value Theorem
 
-If $$f$$ is continuous on
+If $$f$$ is continuous on $$[a,b]$$ and differentiable on $$(a,b)$$, then there is at least one $$c\in(a,b)$$ such that
 
-$$[a,b]$$
+$$f'(c) = \frac{f(b)-f(a)}{b-a}$$
 
-and differentiable on
-
-$$(a,b),$$
-
-then there is at least one $$c\in(a,b)$$ such that
-
-$$f'(c) = \frac{f(b)-f(a)}{b-a}.$$
-
-The right side is the average rate of change of $$f$$ over the interval.
-
-The theorem says that at some interior point, the instantaneous rate of change equals that average rate.
-
-Continuity is required on the closed interval because the endpoint values are used.
-
-Differentiability is required only on the open interval because the guaranteed point is interior.
+The right side is the average rate of change of $$f$$ over the interval, and the theorem says that at some interior point, the instantaneous rate of change equals that average rate. Continuity is required on the closed interval because the endpoint values are used, and differentiability is required only on the open interval because the guaranteed point is interior.
 
 ## The Extreme Value Theorem
 
-If $$f$$ is continuous on the closed interval
+If $$f$$ is continuous on the closed interval $$[a,b]$$, then $$f$$ attains an absolute maximum and an absolute minimum on that interval. If you are working from an older printing of the framework, check the wording. This statement was corrected for fall 2026, and the interval in the hypothesis is the closed one.
 
-$$[a,b],$$
-
-then $$f$$ attains an absolute maximum and an absolute minimum on that interval.
-
-If you are working from an older printing of the framework, check the wording. This statement was corrected for fall 2026, and the interval in the hypothesis is the closed one.
-
-The theorem guarantees existence.
-
-It does not say that the extrema occur at critical points.
-
-Endpoints are part of the interval and may contain the absolute extrema.
-
-A critical point is an interior point where
-
-$$f'(x)=0$$
-
-or where $$f'$$ [does not exist](/2026/07/30/where-differentiability-fails.html).
-
-Critical points are candidates, not automatic extrema.
+The theorem guarantees existence, and it does not say that the extrema occur at critical points. Endpoints are part of the interval and may contain the absolute extrema. A critical point is an interior point where $$f'(x)=0$$ or where $$f'$$ [does not exist](/2026/07/30/where-differentiability-fails.html), so critical points are candidates, not automatic extrema.
 
 ## Watching a hypothesis fail
 
-The visualization uses one interval and several functions.
-
-One function satisfies the hypotheses of both theorems.
-
-The others violate one condition at a time.
+The visualization uses one interval and several functions. One function satisfies the hypotheses of both theorems, and the others violate one condition at a time.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="mv-fns"></div>
@@ -227,49 +185,15 @@ The others violate one condition at a time.
 })();
 </script>
 
-On a smooth cubic over $$[0,3]$$, both theorems apply.
+On a smooth cubic over $$[0,3]$$, both theorems apply. The Mean Value Theorem guarantees at least one point where the tangent slope equals the secant slope between the endpoints, and there happen to be two such points. That does not contradict the theorem. “At least one” allows more than one. The function also has an absolute maximum and minimum on the closed interval, as the Extreme Value Theorem guarantees.
 
-The Mean Value Theorem guarantees at least one point where the tangent slope equals the secant slope between the endpoints.
-
-There happen to be two such points.
-
-That does not contradict the theorem. “At least one” allows more than one.
-
-The function also has an absolute maximum and minimum on the closed interval, as the Extreme Value Theorem guarantees.
-
-Now consider a continuous function with [a corner](/2026/07/30/where-differentiability-fails.html) inside the interval.
-
-The Extreme Value Theorem can still apply because it requires continuity only.
-
-The Mean Value Theorem cannot be invoked because differentiability fails at the corner.
-
-Different theorems have different hypotheses.
+Now consider a continuous function with [a corner](/2026/07/30/where-differentiability-fails.html) inside the interval. The Extreme Value Theorem can still apply because it requires continuity only, and the Mean Value Theorem cannot be invoked because differentiability fails at the corner. Different theorems have different hypotheses.
 
 ## If the hypotheses fail
 
-When a theorem's hypotheses fail, the theorem becomes silent.
+When a theorem's hypotheses fail, the theorem becomes silent, and it does not imply that the conclusion is false. A function may fail the hypotheses of the Mean Value Theorem and still happen to have a point where the instantaneous rate equals the average rate, and the theorem simply no longer guarantees it.
 
-It does not imply that the conclusion is false.
-
-A function may fail the hypotheses of the Mean Value Theorem and still happen to have a point where the instantaneous rate equals the average rate.
-
-The theorem simply no longer guarantees it.
-
-This is an important logical distinction.
-
-From
-
-$$P\Longrightarrow Q,$$
-
-the failure of $$P$$ does not imply the failure of $$Q$$.
-
-So a correct justification should avoid statements such as:
-
-“The function is not differentiable, therefore no such point exists.”
-
-What is justified is:
-
-“The function is not differentiable on the required interval, so the Mean Value Theorem does not apply.”
+This is an important logical distinction, because from $$P\Longrightarrow Q$$, the failure of $$P$$ does not imply the failure of $$Q$$. So a correct justification should avoid statements such as “The function is not differentiable, therefore no such point exists.” What is justified is “The function is not differentiable on the required interval, so the Mean Value Theorem does not apply.”
 
 ## Finding absolute extrema
 
@@ -280,20 +204,8 @@ On a closed interval, a common procedure is:
 3. Evaluate the function at both endpoints.
 4. Compare the values.
 
-The Extreme Value Theorem guarantees that an absolute maximum and minimum exist if the function is continuous on the closed interval.
-
-The derivative helps produce interior candidates.
-
-The endpoints must be checked separately.
+The Extreme Value Theorem guarantees that an absolute maximum and minimum exist if the function is continuous on the closed interval. The derivative helps produce interior candidates, and the endpoints must be checked separately.
 
 <div class="article-note" markdown="1">
-A complete Mean Value Theorem justification should also name the hypotheses.
-
-For example:
-
-“Since $$f$$ is continuous on $$[0,3]$$ and differentiable on $$(0,3)$$, the Mean Value Theorem guarantees some $$c\in(0,3)$$ such that
-
-$$f'(c) = \tfrac{f(3)-f(0)}{3}.$$”
-
-That sentence contains the conditions, the theorem, and the conclusion.
+A complete Mean Value Theorem justification should also name the hypotheses. For example: “Since $$f$$ is continuous on $$[0,3]$$ and differentiable on $$(0,3)$$, the Mean Value Theorem guarantees some $$c\in(0,3)$$ such that $$f'(c)=\tfrac{f(3)-f(0)}{3}$$.” That sentence contains the conditions, the theorem, and the conclusion.
 </div>

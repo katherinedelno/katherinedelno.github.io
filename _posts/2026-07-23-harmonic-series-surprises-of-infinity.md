@@ -4,7 +4,7 @@ title: "The harmonic series and conditional convergence"
 date: 2026-07-23
 description: "Terms can approach zero while their series diverges. Alternating signs can restore convergence, and conditional convergence makes the order of terms matter."
 course: "AP Calculus BC"
-read_time: "12 min read"
+read_time: "7 min read"
 math: true
 kind: foundations
 sequence: 29
@@ -13,69 +13,25 @@ blurb: "Terms can approach zero while their series diverges. Alternating signs c
 image: "/assets/og/harmonic-series-surprises-of-infinity.png"
 ---
 
-Infinite series force a distinction between the behavior of individual terms and the behavior of their accumulated sum.
-
-The harmonic series is the standard example.
-
-Its terms approach zero, but the series diverges.
-
-Changing only the signs produces a convergent series.
-
-That difference explains several of the [convergence tests](/2026/07/24/which-convergence-test-field-guide.html) used in BC.
+Infinite series force a distinction between the behavior of individual terms and the behavior of their accumulated sum. The harmonic series is the standard example. Its terms approach zero, but the series diverges. Changing only the signs produces a convergent series, and that difference explains several of the [convergence tests](/2026/07/24/which-convergence-test-field-guide.html) used in BC.
 
 ## Terms can vanish while the sum diverges
 
 The harmonic series is
 
-$$1+\frac12+\frac13+\frac14+\frac15+\cdots.$$
+$$1+\frac12+\frac13+\frac14+\frac15+\cdots$$
 
-Its terms approach zero.
+Its terms approach zero, and the series nevertheless diverges. A classical proof groups the terms:
 
-The series nevertheless diverges.
+$$1+\frac12 + \left(\frac13+\frac14\right) + \left(\frac15+\frac16+\frac17+\frac18\right) +\cdots$$
 
-A classical proof groups the terms:
+In the first displayed group, $$\tfrac13+\tfrac14>\tfrac12$$, and in the next, $$\tfrac15+\tfrac16+\tfrac17+\tfrac18 > 4\left(\tfrac18\right) = \tfrac12$$. Each new block contains twice as many terms, and every block contributes more than $$1/2$$. With infinitely many such blocks, the partial sums grow without bound, so $$\textstyle\sum_{n=1}^{\infty}\tfrac1n$$ diverges even though $$\tfrac1n\to0$$.
 
-$$1+\frac12 + \left(\frac13+\frac14\right) + \left(\frac15+\frac16+\frac17+\frac18\right) +\cdots.$$
-
-In the first displayed group,
-
-$$\frac13+\frac14>\frac12.$$
-
-In the next,
-
-$$\frac15+\frac16+\frac17+\frac18 > 4\left(\frac18\right) = \frac12.$$
-
-Each new block contains twice as many terms, and every block contributes more than $$1/2$$.
-
-With infinitely many such blocks, the partial sums grow without bound.
-
-So
-
-$$\sum_{n=1}^{\infty}\frac1n$$
-
-diverges even though
-
-$$\frac1n\to0.$$
-
-This is why the $$n$$-th term test can prove divergence but cannot prove convergence.
-
-If the terms do not approach zero, the series diverges.
-
-If they do approach zero, more information is needed.
+This is why the $$n$$-th term test can prove divergence but cannot prove convergence. If the terms do not approach zero, the series diverges, and if they do approach zero, more information is needed.
 
 ## Divergence can be extremely slow
 
-The partial sums of the harmonic series grow roughly like
-
-$$\ln n.$$
-
-That growth is very slow.
-
-The series can appear numerically stable for a long time while continuing to diverge.
-
-This is one reason numerical evidence is not enough to establish convergence.
-
-A test has to address the infinite tail.
+The partial sums of the harmonic series grow roughly like $$\ln n$$, and that growth is very slow. The series can appear numerically stable for a long time while continuing to diverge. This is one reason numerical evidence is not enough to establish convergence. A test has to address the infinite tail.
 
 <div class="viz" markdown="0">
   <canvas id="hs-cv" width="700" height="280"></canvas>
@@ -149,99 +105,31 @@ A test has to address the infinite tail.
 })();
 </script>
 
-The upper panel shows harmonic partial sums continuing upward.
-
-The lower panel shows the alternating harmonic partial sums approaching a finite limit.
-
-The ingredients are nearly the same. The signs change the outcome.
+The upper panel shows harmonic partial sums continuing upward, and the lower panel shows the alternating harmonic partial sums approaching a finite limit. The ingredients are nearly the same. The signs change the outcome.
 
 ## Alternating signs
 
 Now consider
 
-$$1-\frac12+\frac13-\frac14+\frac15-\cdots.$$
+$$1-\frac12+\frac13-\frac14+\frac15-\cdots$$
 
-This series converges to
+This series converges to $$\ln2$$, and the alternating series test explains why. If the positive magnitudes $$b_n$$ decrease to zero, then $$\textstyle\sum(-1)^n b_n$$ converges, and the partial sums alternate above and below the limit with progressively smaller corrections.
 
-$$\ln2.$$
-
-The alternating series test explains why.
-
-If the positive magnitudes $$b_n$$ decrease to zero, then
-
-$$\sum(-1)^n b_n$$
-
-converges.
-
-The partial sums alternate above and below the limit with progressively smaller corrections.
-
-That same structure gives the alternating-series error bound.
-
-If the series satisfies the hypotheses of the test, the error after truncation is no larger than the magnitude of the first omitted term.
+That same structure gives the alternating-series error bound. If the series satisfies the hypotheses of the test, the error after truncation is no larger than the magnitude of the first omitted term.
 
 ## Conditional convergence
 
-The alternating harmonic series converges.
+The alternating harmonic series converges, but its absolute-value series is $$\textstyle\sum_{n=1}^{\infty}\tfrac1n$$, which diverges, so the alternating harmonic series converges conditionally rather than absolutely.
 
-But its absolute-value series is
+This distinction has a real consequence. A conditionally convergent series can change value when its terms are rearranged. For example, taking two positive terms and then one negative term repeatedly gives a rearrangement of the alternating harmonic series with a different sum. The positive terms by themselves diverge to $$+\infty$$, the negative terms by themselves diverge to $$-\infty$$, and a rearrangement changes the balance between those two parts.
 
-$$\sum_{n=1}^{\infty}\frac1n,$$
-
-which diverges.
-
-So the alternating harmonic series converges conditionally rather than absolutely.
-
-This distinction has a real consequence.
-
-A conditionally convergent series can change value when its terms are rearranged.
-
-For example, taking two positive terms and then one negative term repeatedly gives a rearrangement of the alternating harmonic series with a different sum.
-
-The positive terms by themselves diverge to $$+\infty$$.
-
-The negative terms by themselves diverge to $$-\infty$$.
-
-A rearrangement changes the balance between those two parts.
-
-The Riemann rearrangement theorem goes further. A conditionally convergent series can be rearranged to converge to any chosen real number, or to diverge.
-
-Absolutely convergent series do not have this behavior.
-
-If
-
-$$\sum \vert a_n\vert$$
-
-converges, rearranging
-
-$$\sum a_n$$
-
-does not change its sum.
+The Riemann rearrangement theorem goes further. A conditionally convergent series can be rearranged to converge to any chosen real number, or to diverge. Absolutely convergent series do not have this behavior, and if $$\textstyle\sum \vert a_n\vert$$ converges, rearranging $$\textstyle\sum a_n$$ does not change its sum.
 
 ## The neighboring $$p$$-series
 
-The harmonic series is the $$p=1$$ case of
+The harmonic series is the $$p=1$$ case of $$\textstyle\sum_{n=1}^{\infty}\tfrac{1}{n^p}$$. This series converges when $$p>1$$ and diverges when $$p\le1$$. For $$p=2$$, $$\textstyle\sum_{n=1}^{\infty}\tfrac{1}{n^2} = \tfrac{\pi^2}{6}$$, and the appearance of $$\pi$$ in a series involving only reciprocals of squares is the classical Basel problem. For $$p=3$$, the series also converges, but its value has no known comparably simple closed form.
 
-$$\sum_{n=1}^{\infty}\frac{1}{n^p}.$$
-
-This series converges when
-
-$$p>1$$
-
-and diverges when
-
-$$p\le1.$$
-
-For $$p=2$$,
-
-$$\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}.$$
-
-The appearance of $$\pi$$ in a series involving only reciprocals of squares is the classical Basel problem.
-
-For $$p=3$$, the series also converges, but its value has no known comparably simple closed form.
-
-The important course-level distinction is the threshold at $$p=1$$.
-
-Even a very small change above 1 changes the convergence behavior.
+The important course-level distinction is the threshold at $$p=1$$. Even a very small change above 1 changes the convergence behavior.
 
 ## What to carry into convergence problems
 
@@ -254,7 +142,5 @@ Several practical rules follow from these examples.
 - The $$p$$-series threshold at $$p=1$$ is exact.
 
 <div class="article-note" markdown="1">
-These are not unrelated rules.
-
-They describe different ways that infinite accumulation can behave.
+These are not unrelated rules. They describe different ways that infinite accumulation can behave.
 </div>

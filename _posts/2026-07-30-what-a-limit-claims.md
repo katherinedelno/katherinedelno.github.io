@@ -21,13 +21,9 @@ That distinction is fundamental to calculus. A derivative is defined through a q
 
 ## Narrow the window
 
-Choose a point $$a$$ and a width $$\delta$$. Look at every input within $$\delta$$ of $$a$$, except $$a$$ itself, and collect the corresponding outputs.
+Choose a point $$a$$ and a width $$\delta$$. Look at every input within $$\delta$$ of $$a$$, except $$a$$ itself, and collect the corresponding outputs, then make $$\delta$$ smaller. If those outputs become arbitrarily close to a single number $$L$$, then
 
-Then make $$\delta$$ smaller.
-
-If those outputs become arbitrarily close to a single number $$L$$, then
-
-$$ \lim_{x\to a} f(x)=L. $$
+$$\lim_{x\to a} f(x)=L$$
 
 The value $$f(a)$$ is not part of this test.
 
@@ -186,88 +182,36 @@ The value $$f(a)$$ is not part of this test.
 
 The shaded band shows every input within $$\delta$$ of 2, with the center removed. The bar on the right shows the range of output values over that band.
 
-For the hole, the output range collapses toward 4 as the window narrows. The value at $$x=2$$ can be 4, 1, or undefined without changing that behavior.
+For the hole, the output range collapses toward 4 as the window narrows, and the value at $$x=2$$ can be 4, 1, or undefined without changing that behavior. For the jump, the output range never collapses to a single value because the two sides approach different heights. For the oscillating example, every sufficiently small window still produces outputs throughout the interval from $$-1$$ to $$1$$.
 
-For the jump, the output range never collapses to a single value because the two sides approach different heights.
+Start with the hole. The function is $$f(x)=\tfrac{x^2-4}{x-2}$$, which simplifies to $$x+2$$ for every $$x\neq2$$, and at $$x=2$$ the original expression is undefined. As $$\delta$$ decreases, the nearby outputs become increasingly concentrated around 4. For example, when $$\delta=0.01$$, the outputs occupy an interval of width 0.02, and when $$\delta=0.0001$$, that width is 0.0002. So $$\lim_{x\to2}f(x)=4$$.
 
-For the oscillating example, every sufficiently small window still produces outputs throughout the interval from $$-1$$ to $$1$$.
+Now change the value at $$x=2$$. Set it to 4, then to 1, then leave it undefined. The limit does not change.
 
-Start with the hole. The function is
-
-$$ f(x)=\frac{x^2-4}{x-2}, $$
-
-which simplifies to $$x+2$$ for every $$x\neq2$$. At $$x=2$$, the original expression is undefined.
-
-As $$\delta$$ decreases, the nearby outputs become increasingly concentrated around 4. For example, when $$\delta=0.01$$, the outputs occupy an interval of width 0.02. When $$\delta=0.0001$$, that width is 0.0002.
-
-So
-
-$$ \lim_{x\to2}f(x)=4. $$
-
-Now change the value at $$x=2$$. Set it to 4, then to 1, then leave it undefined.
-
-The limit does not change.
-
-The reason is simple. The definition of the limit excludes the point itself. The nearby behavior is identical in all three cases.
-
-Only one of those versions is continuous at $$x=2$$, but all three have the same limit there.
+The reason is simple. The definition of the limit excludes the point itself, and the nearby behavior is identical in all three cases. Only one of those versions is continuous at $$x=2$$, but all three have the same limit there.
 
 ## Both sides have to agree
 
-Now switch to the jump.
+Now switch to the jump. As $$x$$ approaches 2 from the left, the outputs approach 4, and from the right, they approach 1, so
 
-As $$x$$ approaches 2 from the left, the outputs approach 4. From the right, they approach 1.
+$$\lim_{x\to2^-}f(x)=4, \qquad \lim_{x\to2^+}f(x)=1$$
 
-So
-
-$$ \lim_{x\to2^-}f(x)=4, \qquad \lim_{x\to2^+}f(x)=1. $$
-
-Both one-sided limits exist, but they are not equal. Therefore the two-sided limit does not exist.
-
-In general,
-
-$$ \lim_{x\to a}f(x)=L $$
-
-exists exactly when both one-sided limits exist and equal $$L$$.
-
-This matters in both directions. Sometimes you are given the one-sided limits and asked for the two-sided limit. Other times, especially in continuity problems, you are asked to choose a parameter so that the two sides agree.
+Both one-sided limits exist, but they are not equal, so the two-sided limit does not exist. In general, $$\lim_{x\to a}f(x)=L$$ exists exactly when both one-sided limits exist and equal $$L$$. This matters in both directions. Sometimes you are given the one-sided limits and asked for the two-sided limit, and other times, especially in continuity problems, you are asked to choose a parameter so that the two sides agree.
 
 ## A limit can fail without a jump
 
-The function
+The function $$\sin\left(\tfrac{1}{x-2}\right)$$ shows a different kind of failure. There is no jump and no vertical asymptote, and the function stays between $$-1$$ and $$1$$ near $$x=2$$, but it still has no limit.
 
-$$ \sin\left(\frac{1}{x-2}\right) $$
-
-shows a different kind of failure.
-
-There is no jump and no vertical asymptote. The function stays between $$-1$$ and $$1$$ near $$x=2$$.
-
-But it still has no limit.
-
-As $$x$$ approaches 2, the quantity $$1/(x-2)$$ grows without bound in magnitude. The sine function therefore completes infinitely many oscillations inside every neighborhood of 2.
-
-No matter how small the window becomes, it still contains inputs where the output is near 1 and others where the output is near $$-1$$.
-
-The outputs never settle near one number.
+As $$x$$ approaches 2, the quantity $$1/(x-2)$$ grows without bound in magnitude, so the sine function completes infinitely many oscillations inside every neighborhood of 2. No matter how small the window becomes, it still contains inputs where the output is near 1 and others where the output is near $$-1$$, and the outputs never settle near one number.
 
 This is why a limit cannot be read simply as “the graph is unbroken.” [Continuity](/2026/07/30/continuity-three-conditions.html), existence of the function value, and existence of the limit are separate questions.
 
 ## Reading a limit from a graph
 
-A useful habit is to ignore the point itself at first.
+A useful habit is to ignore the point itself at first. Look at what the graph does as you approach from the left and from the right. If both sides approach the same value, that value is the limit, and it does not matter whether the graph has an open circle there, a filled point somewhere else, or no defined point at all.
 
-Look at what the graph does as you approach from the left and from the right.
-
-If both sides approach the same value, that value is the limit. It does not matter whether the graph has an open circle there, a filled point somewhere else, or no defined point at all.
-
-If the two sides approach different values, the two-sided limit does not exist.
-
-If either side fails to settle to a finite value, the two-sided limit also does not exist.
-
-Only after answering the limit question should you look at the actual value of the function.
+If the two sides approach different values, the two-sided limit does not exist, and if either side fails to settle to a finite value, the two-sided limit also does not exist. Only after answering the limit question should you look at the actual value of the function.
 
 <div class="article-note" markdown="1">
-A quick self-test is to use the visualization without dragging the slider first. Choose the jump and predict what happens to the output range as $$\delta$$ falls from 1 to 0.001. Then do the same for the oscillating function.
-
-The important distinction is why the range refuses to collapse in each case.
+A quick self-test is to use the visualization without dragging the slider first. Choose the jump and predict what happens to the output range as $$\delta$$ falls from 1 to 0.001. Then do the same for the oscillating function. The important distinction is why the range refuses to collapse in each case.
 </div>

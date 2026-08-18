@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Continuity has three conditions. Each type of discontinuity records which part of the definition failed."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 4
@@ -14,23 +14,7 @@ blurb: "Continuity has three conditions. Each type of discontinuity records whic
 image: "/assets/og/continuity-three-conditions.png"
 ---
 
-A function $$f$$ is continuous at $$x=c$$ when three conditions hold.
-
-First, $$f(c)$$ exists.
-
-Second,
-
-$$\lim_{x\to c}f(x)$$
-
-exists.
-
-Third,
-
-$$\lim_{x\to c}f(x)=f(c).$$
-
-These conditions are separate. A function can satisfy some while failing another.
-
-The named discontinuities in AP Calculus are easiest to understand by asking which part of this definition failed.
+A function $$f$$ is continuous at $$x=c$$ when three conditions hold. First, $$f(c)$$ exists. Second, $$\lim_{x\to c}f(x)$$ exists. Third, $$\lim_{x\to c}f(x)=f(c)$$. These conditions are separate, and a function can satisfy some while failing another. The named discontinuities in AP Calculus are easiest to understand by asking which part of this definition failed.
 
 ## Break the conditions one at a time
 
@@ -184,55 +168,17 @@ The visualization below changes what happens at $$x=2$$ while leaving the surrou
 })();
 </script>
 
-The checklist reports the three conditions separately.
+The checklist reports the three conditions separately. Start with the continuous case, where the function value exists, the limit exists, and the two are equal. Now choose “No value.” [The nearby graph has not changed](/2026/07/30/what-a-limit-claims.html), so the limit is still 4, but $$f(2)$$ is undefined, and the first condition fails.
 
-Start with the continuous case. The function value exists, the limit exists, and the two are equal.
+Choose “Wrong value.” Now $$f(2)=1$$, while the nearby values still approach 4. The function value exists and the limit exists, and they simply are not equal, so the third condition fails.
 
-Now choose “No value.”
-
-[The nearby graph has not changed](/2026/07/30/what-a-limit-claims.html), so the limit is still 4. But $$f(2)$$ is undefined.
-
-The first condition fails.
-
-Choose “Wrong value.”
-
-Now $$f(2)=1$$, while the nearby values still approach 4.
-
-The function value exists and the limit exists. They simply are not equal.
-
-The third condition fails.
-
-Both of these are removable discontinuities.
-
-The reason they are removable is that the limit exists. If we define or redefine the function value to equal that limit, continuity is restored.
-
-The repair button does exactly that.
+Both of these are removable discontinuities. The reason they are removable is that the limit exists, and if we define or redefine the function value to equal that limit, continuity is restored. The repair button does exactly that.
 
 ## When the limit fails
 
-The last two cases break the second condition.
+The last two cases break the second condition. Choose “Sides disagree.” The left-hand limit is 4 and the right-hand limit is 1, so both one-sided limits exist, but they are unequal, and the two-sided limit does not exist. This is a jump discontinuity, and no single value assigned to $$f(2)$$ can repair it because there is no one limit value for $$f(2)$$ to match.
 
-Choose “Sides disagree.”
-
-The left-hand limit is 4 and the right-hand limit is 1.
-
-Both one-sided limits exist, but they are unequal. Therefore the two-sided limit does not exist.
-
-This is a jump discontinuity.
-
-No single value assigned to $$f(2)$$ can repair it because there is no one limit value for $$f(2)$$ to match.
-
-Now choose “Unbounded.”
-
-The example uses
-
-$$\frac{1}{(x-2)^2},$$
-
-which grows without bound from both sides of $$x=2$$.
-
-The finite two-sided limit does not exist, and the graph has a vertical asymptote.
-
-Again, assigning a value at $$x=2$$ cannot repair the discontinuity.
+Now choose “Unbounded.” The example uses $$\tfrac{1}{(x-2)^2}$$, which grows without bound from both sides of $$x=2$$. The finite two-sided limit does not exist, and the graph has a vertical asymptote, so again, assigning a value at $$x=2$$ cannot repair the discontinuity.
 
 The three named categories in the course are therefore:
 
@@ -244,36 +190,16 @@ They do not need to be memorized as unrelated cases. Each follows from the three
 
 ## Continuity on an interval
 
-A function is continuous on an interval if it is continuous at every point of that interval.
+A function is continuous on an interval if it is continuous at every point of that interval. For the standard families, you are allowed to use a useful shortcut, since polynomials, rational functions, power functions, exponentials, logarithms, and trigonometric functions are continuous throughout their domains.
 
-For the standard families, you are allowed to use a useful shortcut.
-
-Polynomials, rational functions, power functions, exponentials, logarithms, and trigonometric functions are continuous throughout their domains.
-
-The phrase “throughout their domains” matters.
-
-A rational function such as
-
-$$\frac{1}{x-2}$$
-
-is continuous everywhere it is defined. The point $$x=2$$ is not in its domain.
-
-So it is incorrect to say that every rational function is continuous everywhere. It is equally incorrect to say that the presence of one discontinuity means the function is not continuous anywhere else.
+The phrase “throughout their domains” matters. A rational function such as $$\tfrac{1}{x-2}$$ is continuous everywhere it is defined, and the point $$x=2$$ is not in its domain. So it is incorrect to say that every rational function is continuous everywhere, and it is equally incorrect to say that the presence of one discontinuity means the function is not continuous anywhere else.
 
 ## Piecewise functions
 
-Piecewise functions make the three conditions especially visible.
+Piecewise functions make the three conditions especially visible. Suppose two formulas meet at $$x=c$$. For the function to be continuous there, the left-hand expression must approach the same value as the right-hand expression, and the actual function value at $$c$$ must equal that common limit.
 
-Suppose two formulas meet at $$x=c$$.
-
-For the function to be continuous there, the left-hand expression must approach the same value as the right-hand expression, and the actual function value at $$c$$ must equal that common limit.
-
-If a parameter appears in one of the pieces, the usual strategy is to evaluate the relevant expressions at the boundary, set the required values equal, and solve for the parameter.
-
-This is not a separate continuity rule. It is the same definition written in a form that matches a piecewise function.
+If a parameter appears in one of the pieces, the usual strategy is to evaluate the relevant expressions at the boundary, set the required values equal, and solve for the parameter. This is not a separate continuity rule. It is the same definition written in a form that matches a piecewise function.
 
 <div class="article-note" markdown="1">
-A useful self-test is to use the buttons and predict which cases allow the repair button to activate.
-
-The correct rule is not simply that “removable discontinuities can be repaired.” The deeper reason is that repair is possible exactly when the limit already exists.
+A useful self-test is to use the buttons and predict which cases allow the repair button to activate. The correct rule is not simply that “removable discontinuities can be repaired.” The deeper reason is that repair is possible exactly when the limit already exists.
 </div>

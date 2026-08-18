@@ -4,7 +4,7 @@ title: "A distribution explorer"
 date: 2026-07-30
 description: "Enter a distribution and a region, then compare the probability, cutoff, graph, and TI-84 command in one place."
 course: "AP Statistics"
-read_time: "6 min read"
+read_time: "5 min read"
 math: true
 kind: mechanics
 sequence: 9
@@ -13,9 +13,7 @@ blurb: "Enter a distribution and a region, then compare the probability, cutoff,
 image: "/assets/og/distribution-explorer.png"
 ---
 
-Probability questions become easier to organize when the distribution, the region, and the calculator command are kept together.
-
-The tool below covers the main distributions used in AP Statistics.
+Probability questions become easier to organize when the distribution, the region, and the calculator command are kept together. The tool below covers the main distributions used in AP Statistics.
 
 <div class="viz de-wrap" markdown="0">
   <div class="de-row de-dists" role="group" aria-label="Distribution">
@@ -621,95 +619,37 @@ The tool below covers the main distributions used in AP Statistics.
 })();
 </script>
 
-Enter the parameters from a problem, choose the region, and compare the graph with the corresponding numerical probability or cutoff.
-
-The TI-84 command is shown underneath.
+Enter the parameters from a problem, choose the region, and compare the graph with the corresponding numerical probability or cutoff. The TI-84 command is shown underneath.
 
 ## Forward and inverse questions
 
-A forward probability question gives a boundary and asks for area.
-
-Examples include:
+A forward probability question gives a boundary and asks for area. Examples include:
 
 - $$P(X<70)$$
 - $$P(2<T<3)$$
 - the probability of at most 6 successes
 
-Calculator commands such as `normalcdf`, `tcdf`, and `binomcdf` work in this direction.
-
-An inverse question gives a probability and asks for the boundary.
-
-Examples include:
+Calculator commands such as `normalcdf`, `tcdf`, and `binomcdf` work in this direction. An inverse question gives a probability and asks for the boundary. Examples include:
 
 - the 90th percentile
 - the critical value leaving 2.5% in the upper tail
 
-Commands such as `invNorm` and `invT` work in the inverse direction.
-
-Before choosing a command, ask which of those two quantities the problem supplied.
+Commands such as `invNorm` and `invT` work in the inverse direction. Before choosing a command, ask which of those two quantities the problem supplied.
 
 ## Binomial probability
 
-For a binomial random variable,
-
-`binompdf` gives
-
-$$P(X=k),$$
-
-the probability of exactly $$k$$ successes.
-
-`binomcdf` gives
-
-$$P(X\le k).$$
-
-For “at least 6,” use the complement:
-
-$$P(X\ge6) = 1-P(X\le5).$$
-
-The off-by-one matters.
-
-The complement stops at 5 because 6 belongs in the event we want to keep.
+For a binomial random variable, `binompdf` gives $$P(X=k)$$, the probability of exactly $$k$$ successes, and `binomcdf` gives $$P(X\le k)$$. For “at least 6,” use the complement $$P(X\ge6) = 1-P(X\le5)$$. The off-by-one matters, and the complement stops at 5 because 6 belongs in the event we want to keep.
 
 ## Normal and $$t$$
 
-For a standard normal variable,
-
-$$P(-1.96<Z<1.96) \approx0.95.$$
-
-A $$t$$-distribution with small degrees of freedom has heavier tails.
-
-So the same fixed interval contains less probability.
-
-As the degrees of freedom increase, the $$t$$-distribution approaches the standard normal distribution.
-
-This is why $$t$$ critical values are larger when the sample is small.
+For a standard normal variable, $$P(-1.96<Z<1.96) \approx0.95$$. A $$t$$-distribution with small degrees of freedom has heavier tails, so the same fixed interval contains less probability. As the degrees of freedom increase, the $$t$$-distribution approaches the standard normal distribution, which is why $$t$$ critical values are larger when the sample is small.
 
 ## Sampling distributions
 
-The sample-proportion and sample-mean modes use normal curves as sampling models.
+The sample-proportion and sample-mean modes use normal curves as sampling models. For a sample proportion, $$\mu_{\hat p}=p$$ and $$\sigma_{\hat p} = \sqrt{\tfrac{p(1-p)}{n}}$$, and the usual large-count condition requires expected successes and failures to be sufficiently large.
 
-For a sample proportion,
-
-$$\mu_{\hat p}=p$$
-
-and
-
-$$\sigma_{\hat p} = \sqrt{\frac{p(1-p)}{n}}.$$
-
-The usual large-count condition requires expected successes and failures to be sufficiently large.
-
-For a sample mean,
-
-$$\mu_{\bar X}=\mu$$
-
-and
-
-$$\sigma_{\bar X} = \frac{\sigma}{\sqrt n}.$$
-
-Normality is exact when the population is normal and approximate for sufficiently large samples under [the Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html).
+For a sample mean, $$\mu_{\bar X}=\mu$$ and $$\sigma_{\bar X} = \tfrac{\sigma}{\sqrt n}$$. Normality is exact when the population is normal and approximate for sufficiently large samples under [the Central Limit Theorem](/2026/07/25/central-limit-theorem-watched-live.html).
 
 <div class="article-note" markdown="1">
-The warnings in the tool are part of the statistical reasoning.
-
-A calculator can evaluate a probability even when the model used to justify that calculation is poor.
+The warnings in the tool are part of the statistical reasoning. A calculator can evaluate a probability even when the model used to justify that calculation is poor.
 </div>

@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "L'Hospital's rule applies only after the quotient has been shown to have an appropriate indeterminate form."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "5 min read"
 math: true
 kind: mechanics
 sequence: 16
@@ -14,45 +14,15 @@ blurb: "L'Hospital's rule applies only after the quotient has been shown to have
 image: "/assets/og/lhospitals-rule.png"
 ---
 
-L'Hospital's rule has hypotheses.
-
-The most common mistake is to differentiate the numerator and denominator before checking whether those hypotheses are satisfied.
-
-For AP Calculus, the relevant indeterminate quotient forms are
-
-$$\frac00$$
-
-and
-
-$$\frac{\infty}{\infty}.$$
-
-The form must be established before the rule is used.
+L'Hospital's rule has hypotheses. The most common mistake is to differentiate the numerator and denominator before checking whether those hypotheses are satisfied. For AP Calculus, the relevant indeterminate quotient forms are $$\tfrac00$$ and $$\tfrac{\infty}{\infty}$$, and the form must be established before the rule is used.
 
 ## What the rule says
 
-Suppose $$f$$ and $$g$$ are differentiable near $$a$$, with $$g'(x)\neq0$$ there.
+Suppose $$f$$ and $$g$$ are differentiable near $$a$$, with $$g'(x)\neq0$$ there. If $$\tfrac{f(x)}{g(x)}$$ has the indeterminate form $$0/0$$ or $$\infty/\infty$$, and if $$\lim_{x\to a}\tfrac{f'(x)}{g'(x)}$$ exists, then
 
-If
+$$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}$$
 
-$$\frac{f(x)}{g(x)}$$
-
-has the indeterminate form $$0/0$$ or $$\infty/\infty$$, and if
-
-$$\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
-
-exists, then
-
-$$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
-
-Two notation points matter.
-
-The expression $$0/0$$ is not the value of the limit. It labels an indeterminate form.
-
-And
-
-$$\frac{f'}{g'}$$
-
-is the ratio of two derivatives. It is not the derivative of the quotient $$f/g$$.
+Two notation points matter. The expression $$0/0$$ is not the value of the limit, and it labels an indeterminate form. The expression $$\tfrac{f'}{g'}$$ is the ratio of two derivatives, and it is not the derivative of the quotient $$f/g$$.
 
 ## Check the form first
 
@@ -211,120 +181,22 @@ is the ratio of two derivatives. It is not the derivative of the quotient $$f/g$
 })();
 </script>
 
-The visualization compares
+The visualization compares $$\tfrac{f}{g}$$ with $$\tfrac{f'}{g'}$$. For limits where the rule applies, the two expressions approach the same value. For example, $$\lim_{x\to0}\tfrac{\sin x}{x}$$ has form $$0/0$$, and L'Hospital's rule gives $$\lim_{x\to0}\tfrac{\cos x}{1} = 1$$.
 
-$$\frac{f}{g}$$
-
-with
-
-$$\frac{f'}{g'}.$$
-
-For limits where the rule applies, the two expressions approach the same value.
-
-For example,
-
-$$\lim_{x\to0}\frac{\sin x}{x}$$
-
-has form $$0/0$$.
-
-L'Hospital's rule gives
-
-$$\lim_{x\to0}\frac{\cos x}{1} = 1.$$
-
-For
-
-$$\lim_{x\to0}\frac{1-\cos x}{x^2},$$
-
-the first application gives
-
-$$\lim_{x\to0}\frac{\sin x}{2x}.$$
-
-That new quotient is still $$0/0$$, so the form must be checked again before applying the rule a second time.
-
-Then
-
-$$\lim_{x\to0}\frac{\cos x}{2} = \frac12.$$
-
-Each application requires its own justification.
+For $$\lim_{x\to0}\tfrac{1-\cos x}{x^2}$$, the first application gives $$\lim_{x\to0}\tfrac{\sin x}{2x}$$. That new quotient is still $$0/0$$, so the form must be checked again before applying the rule a second time, and then $$\lim_{x\to0}\tfrac{\cos x}{2} = \tfrac12$$. Each application requires its own justification.
 
 ## When the rule does not apply
 
-Consider
+Consider $$\lim_{x\to0}\tfrac{x+1}{x^2+1}$$. Direct substitution gives $$\tfrac11=1$$, so the form is not indeterminate and there is no reason to use L'Hospital's rule. If you differentiate numerator and denominator anyway, you get $$\tfrac{1}{2x}$$, which does not approach 1. The rule did not fail, and its hypotheses were never satisfied.
 
-$$\lim_{x\to0}\frac{x+1}{x^2+1}.$$
+There is another way the method can become unhelpful. Consider $$\lim_{x\to\infty} \tfrac{x+\sin x}{x}$$, where the original quotient has form $$\tfrac{\infty}{\infty}$$. Differentiating numerator and denominator gives $$1+\cos x$$, which has no limit, and L'Hospital's rule therefore gives no conclusion.
 
-Direct substitution gives
-
-$$\frac11=1.$$
-
-The form is not indeterminate.
-
-There is no reason to use L'Hospital's rule.
-
-If you differentiate numerator and denominator anyway, you get
-
-$$\frac{1}{2x},$$
-
-which does not approach 1.
-
-The rule did not fail. Its hypotheses were never satisfied.
-
-There is another way the method can become unhelpful.
-
-Consider
-
-$$\lim_{x\to\infty} \frac{x+\sin x}{x}.$$
-
-The original quotient has form
-
-$$\frac{\infty}{\infty}.$$
-
-Differentiating numerator and denominator gives
-
-$$1+\cos x,$$
-
-which has no limit.
-
-L'Hospital's rule therefore gives no conclusion.
-
-But the original limit still exists because
-
-$$\frac{x+\sin x}{x} = 1+\frac{\sin x}{x},$$
-
-and
-
-$$\frac{\sin x}{x}\to0.$$
-
-So the original limit is 1.
-
-Failure of the derivative ratio to converge does not imply that the original limit fails.
-
-It only means this theorem does not determine it.
+But the original limit still exists because $$\tfrac{x+\sin x}{x} = 1+\tfrac{\sin x}{x}$$ and $$\tfrac{\sin x}{x}\to0$$, so the original limit is 1. Failure of the derivative ratio to converge does not imply that the original limit fails. It only means this theorem does not determine it.
 
 ## What to write
 
-A clean solution should establish the form before differentiating.
-
-For example:
-
-Since
-
-$$\lim_{x\to0}(1-\cos x)=0$$
-
-and
-
-$$\lim_{x\to0}x^2=0,$$
-
-the quotient has indeterminate form $$0/0$$, so L'Hospital's rule applies.
-
-Then differentiate.
-
-If the new quotient is still indeterminate, state that before applying the rule again.
+A clean solution should establish the form before differentiating. For example, since $$\lim_{x\to0}(1-\cos x)=0$$ and $$\lim_{x\to0}x^2=0$$, the quotient has indeterminate form $$0/0$$, so L'Hospital's rule applies. Then differentiate, and if the new quotient is still indeterminate, state that before applying the rule again.
 
 <div class="article-note" markdown="1">
-Also check whether [ordinary algebra](/2026/07/30/indeterminate-forms.html) is simpler.
-
-Factoring, rationalizing, or [dividing by the dominant power](/2026/07/30/limits-at-infinity.html) often resolves $$0/0$$ and $$\infty/\infty$$ limits without L'Hospital's rule.
-
-The theorem is useful, but it should not replace reading the expression first.
+Also check whether [ordinary algebra](/2026/07/30/indeterminate-forms.html) is simpler. Factoring, rationalizing, or [dividing by the dominant power](/2026/07/30/limits-at-infinity.html) often resolves $$0/0$$ and $$\infty/\infty$$ limits without L'Hospital's rule. The theorem is useful, but it should not replace reading the expression first.
 </div>

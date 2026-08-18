@@ -4,7 +4,7 @@ title: "The four parameters of transformation"
 date: 2026-07-25
 description: "In g(x) = a f(b(x - h)) + k, the outside parameters act on outputs and the inside parameters act on inputs. That distinction explains the direction and scale of each transformation."
 course: "AP Precalculus"
-read_time: "7 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 3
@@ -15,25 +15,13 @@ image: "/assets/og/transformations-four-dials.png"
 
 A large class of graph transformations can be written as
 
-$$g(x)=a\,f\big(b(x-h)\big)+k.$$
+$$g(x)=a\,f\big(b(x-h)\big)+k$$
 
-Each parameter has a different role.
-
-The outside parameters $$a$$ and $$k$$ act on outputs.
-
-The inside parameters $$b$$ and $$h$$ act on inputs.
-
-That distinction explains why horizontal transformations often appear to work in the opposite direction from the signs in the formula.
+Each parameter has a different role. The outside parameters $$a$$ and $$k$$ act on outputs. The inside parameters $$b$$ and $$h$$ act on inputs. That distinction explains why horizontal transformations often appear to work in the opposite direction from the signs in the formula.
 
 ## Turn the four parameters
 
-The parent function is
-
-$$f(x)=\sin x.$$
-
-The transformed function is
-
-$$g(x) = a\sin\big(b(x-h)\big)+k.$$
+The parent function is $$f(x)=\sin x$$, and the transformed function is $$g(x)=a\sin\big(b(x-h)\big)+k$$.
 
 <div class="viz" markdown="0">
   <canvas id="tf-cv" width="700" height="280"></canvas>
@@ -91,128 +79,26 @@ $$g(x) = a\sin\big(b(x-h)\big)+k.$$
 })();
 </script>
 
-Changing $$a$$ scales the output values.
-
-If
-
-$$\vert a\vert >1,$$
-
-the graph stretches vertically.
-
-If
-
-$$0<\vert a\vert <1,$$
-
-it compresses vertically.
-
-If $$a<0$$, the graph is also reflected across the $$x$$-axis.
-
-Changing $$k$$ shifts every output vertically by the same amount.
-
-Those two parameters behave directly because they act after the parent function has produced an output.
+Changing $$a$$ scales the output values. If $$\vert a\vert>1$$, the graph stretches vertically, and if $$0<\vert a\vert<1$$, it compresses vertically. If $$a<0$$, the graph is also reflected across the $$x$$-axis. Changing $$k$$ shifts every output vertically by the same amount, and those two parameters behave directly because they act after the parent function has produced an output.
 
 ## Why horizontal shifts look backward
 
-Consider
+Consider $$g(x)=f(x-3)$$. A feature of $$f$$ that occurred at input 0 now occurs where $$x-3=0$$, which means $$x=3$$, so the graph shifts right by 3. The minus sign does not mean “move left.” It tells us what new input is required to make the inside of the function equal the old input.
 
-$$g(x)=f(x-3).$$
-
-A feature of $$f$$ that occurred at input 0 now occurs where
-
-$$x-3=0.$$
-
-That means
-
-$$x=3.$$
-
-So the graph shifts right by 3.
-
-The minus sign does not mean “move left.”
-
-It tells us what new input is required to make the inside of the function equal the old input.
-
-The same reasoning explains horizontal scaling.
-
-For
-
-$$g(x)=f(2x),$$
-
-the input $$x=1$$ sends the parent function the value 2.
-
-The parent function experiences its inputs twice as quickly.
-
-Its horizontal features therefore occur in half the original distance.
-
-For sine,
-
-$$\text{period} = \frac{2\pi}{\vert b\vert }.$$
-
-A larger $$\vert b\vert$$ produces a shorter period.
+The same reasoning explains horizontal scaling. For $$g(x)=f(2x)$$, the input $$x=1$$ sends the parent function the value 2, so the parent function experiences its inputs twice as quickly. Its horizontal features therefore occur in half the original distance. For sine, $$\text{period}=\tfrac{2\pi}{\vert b\vert}$$, and a larger $$\vert b\vert$$ produces a shorter period.
 
 ## Factor the inside before reading a shift
 
-Compare
-
-$$f(2x-6)$$
-
-with
-
-$$f\big(2(x-3)\big).$$
-
-These are the same expression.
-
-The second form makes the shift visible.
-
-The horizontal shift is 3, not 6.
-
-So before reading $$h$$, factor the inside into the form
-
-$$b(x-h).$$
-
-That avoids one of the most common transformation errors.
+Compare $$f(2x-6)$$ with $$f\big(2(x-3)\big)$$. These are the same expression, and the second form makes the shift visible. The horizontal shift is 3, not 6. So before reading $$h$$, factor the inside into the form $$b(x-h)$$, which avoids one of the most common transformation errors.
 
 ## Order outside the function
 
-The outside operations also have an order.
-
-In
-
-$$-f(x)+2,$$
-
-the output of $$f$$ is first multiplied by $$-1$$, then 2 is added.
-
-So the graph is reflected across the $$x$$-axis and then shifted upward.
-
-When several transformations are combined, it is often cleaner to reason from the algebra than to memorize a verbal sequence.
+The outside operations also have an order. In $$-f(x)+2$$, the output of $$f$$ is first multiplied by $$-1$$, then 2 is added, so the graph is reflected across the $$x$$-axis and then shifted upward. When several transformations are combined, it is often cleaner to reason from the algebra than to memorize a verbal sequence.
 
 ## Sinusoidal models
 
-For
-
-$$y=a\sin\big(b(x-h)\big)+k,$$
-
-the parameters have immediate [modeling interpretations](/2026/07/25/unit-circle-unrolled.html).
-
-$$\vert a\vert$$
-
-is the amplitude.
-
-$$k$$
-
-is the midline.
-
-The period is
-
-$$\frac{2\pi}{\vert b\vert }.$$
-
-The value $$h$$ determines the horizontal shift.
-
-Those quantities often come directly from a physical setting such as a Ferris wheel, seasonal temperature, or daylight hours.
-
-The model should be built from the situation rather than by filling four remembered slots.
+For $$y=a\sin\big(b(x-h)\big)+k$$, the parameters have immediate [modeling interpretations](/2026/07/25/unit-circle-unrolled.html). Here $$\vert a\vert$$ is the amplitude, $$k$$ is the midline, the period is $$\tfrac{2\pi}{\vert b\vert}$$, and the value $$h$$ determines the horizontal shift. Those quantities often come directly from a physical setting such as a Ferris wheel, seasonal temperature, or daylight hours, and the model should be built from the situation rather than by filling four remembered slots.
 
 <div class="article-note" markdown="1">
-A useful test is to ask where a known feature of the parent graph should move.
-
-That usually determines the sign of the horizontal shift more reliably than memory.
+A useful test is to ask where a known feature of the parent graph should move. That usually determines the sign of the horizontal shift more reliably than memory.
 </div>

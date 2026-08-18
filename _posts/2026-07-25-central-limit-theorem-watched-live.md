@@ -4,7 +4,7 @@ title: "The Central Limit Theorem in simulation"
 date: 2026-07-25
 description: "Sample means from a skewed population become increasingly normal as sample size grows, while their spread decreases according to 1/√n."
 course: "AP Statistics"
-read_time: "6 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 8
@@ -13,21 +13,11 @@ blurb: "Sample means from a skewed population become increasingly normal as samp
 image: "/assets/og/central-limit-theorem-watched-live.png"
 ---
 
-The Central Limit Theorem explains why normal distributions appear throughout inference even when the population itself is not normal.
-
-Take repeated random samples from a population and compute a mean from each sample.
-
-As the sample size grows, the distribution of those sample means becomes approximately normal under broad conditions.
-
-The center and spread also follow specific rules.
+The Central Limit Theorem explains why normal distributions appear throughout inference even when the population itself is not normal. Take repeated random samples from a population and compute a mean from each sample. As the sample size grows, the distribution of those sample means becomes approximately normal under broad conditions, and the center and spread also follow specific rules.
 
 ## The simulator
 
-The upper panel shows a strongly right-skewed population with mean
-
-$$\mu=20.$$
-
-The lower panel collects sample means.
+The upper panel shows a strongly right-skewed population with mean $$\mu=20$$, and the lower panel collects sample means.
 
 <div class="viz" markdown="0">
   <canvas id="clt-pop" width="700" height="150"></canvas>
@@ -110,88 +100,28 @@ The lower panel collects sample means.
 })();
 </script>
 
-Set $$n=1$$.
-
-Each sample mean is just one observation, so the lower distribution reproduces the skew of the population.
-
-Increase $$n$$ to 5.
-
-The distribution of sample means becomes less skewed.
-
-At $$n=30$$, it is much closer to a normal shape.
-
-At the same time, the distribution becomes narrower.
+Set $$n=1$$. Each sample mean is just one observation, so the lower distribution reproduces the skew of the population. Increase $$n$$ to 5 and the distribution of sample means becomes less skewed. At $$n=30$$, it is much closer to a normal shape, and at the same time, the distribution becomes narrower.
 
 ## Center
 
-For a random sample,
-
-$$\mu_{\bar X}=\mu.$$
-
-The sampling distribution of the sample mean is centered at the population mean.
-
-This is true regardless of the sample size.
-
-The sample mean is an unbiased estimator of the population mean under the random-sampling setup.
+For a random sample, $$\mu_{\bar X}=\mu$$, so the sampling distribution of the sample mean is centered at the population mean. This is true regardless of the sample size, and the sample mean is an unbiased estimator of the population mean under the random-sampling setup.
 
 ## Spread
 
-The standard deviation of the sampling distribution is
-
-$$\sigma_{\bar X} = \frac{\sigma}{\sqrt{n}},$$
-
-assuming the observations are independent or the sampling fraction is sufficiently small.
-
-As $$n$$ increases, sample means vary less from sample to sample.
-
-The square root matters.
-
-To cut the standard deviation in half, the sample size must be multiplied by four.
-
-That same relationship appears later in standard errors and [margins of error](/2026/07/25/what-95-percent-confident-means.html).
+The standard deviation of the sampling distribution is $$\sigma_{\bar X} = \tfrac{\sigma}{\sqrt{n}}$$, assuming the observations are independent or the sampling fraction is sufficiently small. As $$n$$ increases, sample means vary less from sample to sample. The square root matters, and to cut the standard deviation in half, the sample size must be multiplied by four. That same relationship appears later in standard errors and [margins of error](/2026/07/25/what-95-percent-confident-means.html).
 
 ## Shape
 
-If the population is normal, the sampling distribution of $$\bar X$$ is normal for every sample size.
-
-If the population is not normal, the Central Limit Theorem tells us that the sampling distribution becomes approximately normal as $$n$$ grows, provided the usual conditions are met.
-
-The amount of sample size needed depends on the population shape.
-
-A strongly skewed population generally requires a larger $$n$$ than a roughly symmetric one.
-
-The common $$n\ge30$$ rule is a course-level guideline, not a universal mathematical boundary.
+If the population is normal, the sampling distribution of $$\bar X$$ is normal for every sample size. If the population is not normal, the Central Limit Theorem tells us that the sampling distribution becomes approximately normal as $$n$$ grows, provided the usual conditions are met. The amount of sample size needed depends on the population shape, and a strongly skewed population generally requires a larger $$n$$ than a roughly symmetric one. The common $$n\ge30$$ rule is a course-level guideline, not a universal mathematical boundary.
 
 ## What becomes normal
 
-The Central Limit Theorem is about a sampling distribution.
+The Central Limit Theorem is about a sampling distribution. It does not say that a large random sample makes the population values themselves normally distributed, and the individual observations can remain strongly skewed. What becomes approximately normal is the statistic $$\bar X$$.
 
-It does not say that a large random sample makes the population values themselves normally distributed.
-
-The individual observations can remain strongly skewed.
-
-What becomes approximately normal is the statistic
-
-$$\bar X.$$
-
-This distinction matters when choosing a probability model.
-
-A probability question about one individual from a skewed population may not be suitable for a normal approximation.
-
-A question about the mean of a sufficiently large random sample may be.
+This distinction matters when choosing a probability model. A probability question about one individual from a skewed population may not be suitable for a normal approximation, while a question about the mean of a sufficiently large random sample may be.
 
 ## A square-root experiment
 
 <div class="article-note" markdown="1">
-Compare sample sizes 4 and 16.
-
-Since
-
-$$\sqrt{16}=2\sqrt4,$$
-
-the sampling distribution at $$n=16$$ should have half the standard deviation of the one at $$n=4$$.
-
-The simulation shows that narrowing directly.
-
-The fourfold increase in sample size buys a twofold reduction in sampling variability.
+Compare sample sizes 4 and 16. Since $$\sqrt{16}=2\sqrt4$$, the sampling distribution at $$n=16$$ should have half the standard deviation of the one at $$n=4$$. The simulation shows that narrowing directly, and the fourfold increase in sample size buys a twofold reduction in sampling variability.
 </div>

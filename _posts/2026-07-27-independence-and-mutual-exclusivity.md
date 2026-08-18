@@ -4,7 +4,7 @@ title: "Independence and mutual exclusivity"
 date: 2026-07-27
 description: "Mutual exclusivity is about overlap. Independence is about whether learning one event changes the probability of the other."
 course: "AP Statistics"
-read_time: "6 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 5
@@ -13,53 +13,19 @@ blurb: "Mutual exclusivity is about overlap. Independence is about whether learn
 image: "/assets/og/independence-and-mutual-exclusivity.png"
 ---
 
-Independence and mutual exclusivity describe different relationships between events.
-
-Mutual exclusivity is about whether two events can happen together.
-
-Independence is about whether learning that one event occurred changes the probability of the other.
-
-For events with positive probability, mutually exclusive events cannot be independent.
+Independence and mutual exclusivity describe different relationships between events. Mutual exclusivity is about whether two events can happen together, and independence is about whether learning that one event occurred changes the probability of the other. For events with positive probability, mutually exclusive events cannot be independent.
 
 ## Mutual exclusivity
 
-Events $$A$$ and $$B$$ are mutually exclusive when
-
-$$P(A\cap B)=0.$$
-
-They have no overlap.
-
-If one occurs, the other did not.
-
-This condition simplifies the addition rule:
-
-$$P(A\cup B) = P(A)+P(B)$$
-
-when the events are mutually exclusive.
+Events $$A$$ and $$B$$ are mutually exclusive when $$P(A\cap B)=0$$. They have no overlap, and if one occurs, the other did not. This condition simplifies the addition rule: $$P(A\cup B) = P(A)+P(B)$$ when the events are mutually exclusive.
 
 ## Independence
 
-Events $$A$$ and $$B$$ are independent when
-
-$$P(A\mid B)=P(A).$$
-
-Knowing that $$B$$ occurred gives no new information about the probability of $$A$$.
-
-An equivalent condition is
-
-$$P(A\cap B) = P(A)P(B).$$
-
-Independence is therefore a numerical relationship among probabilities.
+Events $$A$$ and $$B$$ are independent when $$P(A\mid B)=P(A)$$. Knowing that $$B$$ occurred gives no new information about the probability of $$A$$, and an equivalent condition is $$P(A\cap B) = P(A)P(B)$$. Independence is therefore a numerical relationship among probabilities.
 
 ## Watch the overlap change
 
-The events below have fixed probabilities
-
-$$P(A)=0.5$$
-
-and
-
-$$P(B)=0.4.$$
+The events below have fixed probabilities $$P(A)=0.5$$ and $$P(B)=0.4$$.
 
 <div class="viz" markdown="0">
   <canvas id="ie-cv" width="700" height="250"></canvas>
@@ -105,72 +71,20 @@ $$P(B)=0.4.$$
 })();
 </script>
 
-Independence requires
+Independence requires $$P(A\cap B) = (0.5)(0.4) = 0.20$$, and at overlap 0.20, $$P(A\mid B)=P(A)=0.5$$. Move the overlap to zero, and the events are now mutually exclusive. Then $$P(A\mid B)=0$$, which is very different from $$P(A)=0.5$$.
 
-$$P(A\cap B) = (0.5)(0.4) = 0.20.$$
-
-At overlap 0.20,
-
-$$P(A\mid B)=P(A)=0.5.$$
-
-Move the overlap to zero.
-
-The events are now mutually exclusive.
-
-Then
-
-$$P(A\mid B)=0,$$
-
-which is very different from
-
-$$P(A)=0.5.$$
-
-Learning that $$B$$ happened tells us with certainty that $$A$$ did not.
-
-That is dependence, not independence.
+Learning that $$B$$ happened tells us with certainty that $$A$$ did not. That is dependence, not independence.
 
 ## An overlapping pair can be independent
 
-Draw one card from a standard deck.
+Draw one card from a standard deck, let $$A$$ be the event that the card is a heart, and let $$B$$ be the event that the card is a king. The events overlap because the king of hearts belongs to both. But $$P(A\cap B) = \tfrac1{52}$$, and $$P(A)P(B) = \tfrac{13}{52}\cdot\tfrac4{52} = \tfrac1{52}$$, so the events are independent.
 
-Let $$A$$ be the event that the card is a heart.
-
-Let $$B$$ be the event that the card is a king.
-
-The events overlap because the king of hearts belongs to both.
-
-But
-
-$$P(A\cap B) = \frac1{52},$$
-
-and
-
-$$P(A)P(B) = \frac{13}{52}\cdot\frac4{52} = \frac1{52}.$$
-
-So the events are independent.
-
-Overlap and independence are compatible.
-
-No overlap and independence are not compatible when both events have positive probability.
+Overlap and independence are compatible. No overlap and independence are not compatible when both events have positive probability.
 
 ## Two-way tables
 
-In a two-way table, independence can be checked by comparing a conditional proportion with the corresponding marginal proportion.
-
-For example, compare
-
-$$P(A\mid B)$$
-
-with
-
-$$P(A).$$
-
-Or use the multiplication condition
-
-$$P(A\cap B)=P(A)P(B).$$
+In a two-way table, independence can be checked by comparing a conditional proportion with the corresponding marginal proportion. For example, compare $$P(A\mid B)$$ with $$P(A)$$, or use the multiplication condition $$P(A\cap B)=P(A)P(B)$$.
 
 <div class="article-note" markdown="1">
-The wording of the categories does not determine independence.
-
-The probabilities do.
+The wording of the categories does not determine independence. The probabilities do.
 </div>

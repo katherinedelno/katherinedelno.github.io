@@ -4,7 +4,7 @@ title: "What a p-value cannot tell you"
 date: 2026-07-30
 description: "A p-value measures how unusual the observed result would be if the null hypothesis were true. It is not the probability that the null is true."
 course: "AP Statistics"
-read_time: "9 min read"
+read_time: "5 min read"
 math: true
 kind: foundations
 sequence: 13
@@ -13,31 +13,11 @@ blurb: "A p-value measures how unusual the observed result would be if the null 
 image: "/assets/og/what-a-p-value-is.png"
 ---
 
-A p-value is calculated under the assumption that the null hypothesis is true.
-
-It measures how unusual the observed result would be in that null world.
-
-It does not measure the probability that the null hypothesis itself is true.
+A p-value is calculated under the assumption that the null hypothesis is true. It measures how unusual the observed result would be in that null world, and it does not measure the probability that the null hypothesis itself is true.
 
 ## A null distribution
 
-Suppose a testing service claims that exam scores have mean
-
-$$\mu=50$$
-
-with known standard deviation 10.
-
-A school samples 25 students and obtains
-
-$$\bar x=53.92.$$
-
-Under the null hypothesis,
-
-$$H_0:\mu=50,$$
-
-[the sampling distribution](/2026/07/25/central-limit-theorem-watched-live.html) of $$\bar X$$ has mean 50 and standard deviation
-
-$$\frac{10}{\sqrt{25}}=2.$$
+Suppose a testing service claims that exam scores have mean $$\mu=50$$ with known standard deviation 10, and a school samples 25 students and obtains $$\bar x=53.92$$. Under the null hypothesis $$H_0:\mu=50$$, [the sampling distribution](/2026/07/25/central-limit-theorem-watched-live.html) of $$\bar X$$ has mean 50 and standard deviation $$\tfrac{10}{\sqrt{25}}=2$$.
 
 <div class="viz" markdown="0">
   <canvas id="pv-cv" width="700" height="330"></canvas>
@@ -307,89 +287,27 @@ $$\frac{10}{\sqrt{25}}=2.$$
 })();
 </script>
 
-The simulation repeatedly generates studies under $$H_0$$.
-
-The p-value is the proportion of those null studies that produce a result at least as extreme as the observed one, in the direction specified by the alternative.
-
-The theory view calculates the same probability as area under the null distribution.
+The simulation repeatedly generates studies under $$H_0$$. The p-value is the proportion of those null studies that produce a result at least as extreme as the observed one, in the direction specified by the alternative. The theory view calculates the same probability as area under the null distribution.
 
 ## The alternative determines the tail
 
-For
+For $$H_a:\mu>50$$, results at least as extreme as $$\bar x=53.92$$ lie in the right tail, and the p-value is about $$0.025$$. For $$H_a:\mu<50$$, the relevant tail runs left from the observed value, producing a very large p-value. For $$H_a:\mu\neq50$$, both tails count, and the two-sided p-value is about $$0.050$$.
 
-$$H_a:\mu>50,$$
-
-results at least as extreme as
-
-$$\bar x=53.92$$
-
-lie in the right tail.
-
-The p-value is about
-
-$$0.025.$$
-
-For
-
-$$H_a:\mu<50,$$
-
-the relevant tail runs left from the observed value, producing a very large p-value.
-
-For
-
-$$H_a:\mu\neq50,$$
-
-both tails count.
-
-The two-sided p-value is about
-
-$$0.050.$$
-
-The data and null distribution did not change.
-
-The definition of “as extreme” changed with the alternative hypothesis.
+The data and null distribution did not change. The definition of “as extreme” changed with the alternative hypothesis.
 
 ## What a p-value is not
 
-It is not
+It is not $$P(H_0\text{ is true}\mid\text{data})$$. The calculation assumes $$H_0$$ in order to generate the reference distribution. It is also not the probability that the test made an error, and the probability of rejecting a true null is controlled by the significance level $$\alpha$$, not by the observed p-value.
 
-$$P(H_0\text{ is true}\mid\text{data}).$$
-
-The calculation assumes $$H_0$$ in order to generate the reference distribution.
-
-It is also not the probability that the test made an error.
-
-The probability of rejecting a true null is controlled by the significance level $$\alpha$$, not by the observed p-value.
-
-A large p-value does not prove the null hypothesis.
-
-It says the observed result is not especially unusual under the null model.
-
-Many nearby alternatives may also produce unsurprising results.
-
-That is why the correct decision language is “fail to reject $$H_0$$,” not “accept $$H_0$$.”
+A large p-value does not prove the null hypothesis. It says the observed result is not especially unusual under the null model, and many nearby alternatives may also produce unsurprising results. That is why the correct decision language is “fail to reject $$H_0$$,” not “accept $$H_0$$.”
 
 ## Significance and effect size
 
-Hold the observed difference from the null fixed while increasing the sample size.
-
-The standard error decreases.
-
-The same numerical difference then sits farther into the tail of the null distribution.
-
-The p-value becomes smaller.
-
-So a very large study can detect a difference that is statistically significant but practically unimportant.
-
-A p-value should therefore be interpreted alongside the size of the observed effect and the study design.
+Hold the observed difference from the null fixed while increasing the sample size. The standard error decreases, the same numerical difference then sits farther into the tail of the null distribution, and the p-value becomes smaller. So a very large study can detect a difference that is statistically significant but practically unimportant, and a p-value should therefore be interpreted alongside the size of the observed effect and the study design.
 
 ## A complete conclusion
 
-Suppose
-
-$$p=0.025<\alpha=0.05.$$
-
-A complete contextual conclusion is:
+Suppose $$p=0.025<\alpha=0.05$$. A complete contextual conclusion is:
 
 > “Because $$p=0.025<0.05$$, we reject $$H_0$$. There is convincing evidence that the true mean score for students at this school is greater than 50.”
 
@@ -401,7 +319,5 @@ The conclusion should contain:
 - the population and variable in context
 
 <div class="article-note" markdown="1">
-A significance test gives evidence.
-
-It does not establish the probability that a hypothesis is true.
+A significance test gives evidence. It does not establish the probability that a hypothesis is true.
 </div>

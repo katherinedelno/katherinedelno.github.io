@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Differentiation is often easier once the expression has been classified and simplified before any rule is applied."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 9
@@ -14,57 +14,25 @@ blurb: "Differentiation is often easier once the expression has been classified 
 image: "/assets/og/derivative-rules-and-choosing.png"
 ---
 
-The basic differentiation rules are short.
+The basic differentiation rules are short. The harder skill is deciding which rule fits the expression in front of you. A product does not always need the product rule, a quotient does not always need the quotient rule, and some expressions are much easier after a small algebraic rewrite.
 
-The harder skill is deciding which rule fits the expression in front of you.
-
-A product does not always need the product rule. A quotient does not always need the quotient rule. Some expressions are much easier after a small algebraic rewrite.
-
-It is worth separating two questions.
-
-First, what rule is valid?
-
-Second, what approach is simplest?
+It is worth separating two questions. First, what rule is valid? Second, what approach is simplest?
 
 ## The core rules
 
-For a power,
+For a power, $$\tfrac{d}{dx}x^r=rx^{r-1}$$, where the expression is defined. Sums, differences, and constant multiples can be differentiated term by term. The basic trigonometric, exponential, and logarithmic derivatives include
 
-$$\frac{d}{dx}x^r=rx^{r-1},$$
+$$\frac{d}{dx}\sin x=\cos x \qquad \frac{d}{dx}\cos x=-\sin x \qquad \frac{d}{dx}e^x=e^x \qquad \frac{d}{dx}\ln x=\frac1x$$
 
-where the expression is defined.
+For products, $$(fg)'(x)=f'(x)g(x)+f(x)g'(x)$$, and for quotients, when $$g(x)\neq0$$,
 
-Sums, differences, and constant multiples can be differentiated term by term.
+$$\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}$$
 
-The basic trigonometric, exponential, and logarithmic derivatives include
-
-$$\frac{d}{dx}\sin x=\cos x,$$
-
-$$\frac{d}{dx}\cos x=-\sin x,$$
-
-$$\frac{d}{dx}e^x=e^x,$$
-
-and
-
-$$\frac{d}{dx}\ln x=\frac1x.$$
-
-For products,
-
-$$(fg)'(x)=f'(x)g(x)+f(x)g'(x).$$
-
-For quotients, when $$g(x)\neq0$$,
-
-$$\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}.$$
-
-These rules assume the relevant component functions are [differentiable at the point](/2026/07/30/where-differentiability-fails.html).
-
-If that condition fails, the rule cannot simply be applied mechanically.
+These rules assume the relevant component functions are [differentiable at the point](/2026/07/30/where-differentiability-fails.html), and if that condition fails, the rule cannot simply be applied mechanically.
 
 ## Rewrite before using a longer rule
 
-The product and quotient rules are often correct even when they are unnecessary.
-
-The drill below asks only for the first move.
+The product and quotient rules are often correct even when they are unnecessary. The drill below asks only for the first move.
 
 <div class="viz" markdown="0">
   <div class="rc-expr" id="rc-e"></div>
@@ -147,77 +115,27 @@ The drill below asks only for the first move.
 })();
 </script>
 
-Consider
+Consider $$\tfrac{x^3+2x}{x}$$. The quotient rule works, but simplifying first is much easier, since $$\tfrac{x^3+2x}{x}=x^2+2$$ for $$x\neq0$$, and then $$\tfrac{d}{dx}(x^2+2)=2x$$. Using the quotient rule produces the same derivative with more algebra and more opportunities for error.
 
-$$\frac{x^3+2x}{x}.$$
-
-The quotient rule works, but simplifying first is much easier:
-
-$$\frac{x^3+2x}{x}=x^2+2$$
-
-for $$x\neq0$$.
-
-Then
-
-$$\frac{d}{dx}(x^2+2)=2x.$$
-
-Using the quotient rule produces the same derivative with more algebra and more opportunities for error.
-
-The same idea applies to products that collapse to a single power or rational expressions that simplify before differentiation.
-
-Before choosing a rule, ask whether ordinary algebra makes the structure simpler.
+The same idea applies to products that collapse to a single power or rational expressions that simplify before differentiation. Before choosing a rule, ask whether ordinary algebra makes the structure simpler.
 
 ## Deriving the other trigonometric rules
 
-Sine and cosine are enough to derive the other standard trigonometric derivatives.
+Sine and cosine are enough to derive the other standard trigonometric derivatives. For example, $$\tan x=\tfrac{\sin x}{\cos x}$$, so using the quotient rule,
 
-For example,
+$$(\tan x)' = \frac{\cos^2x+\sin^2x}{\cos^2x} = \frac{1}{\cos^2x} = \sec^2x$$
 
-$$\tan x=\frac{\sin x}{\cos x}.$$
-
-Using the quotient rule,
-
-$$(\tan x)' = \frac{\cos^2x+\sin^2x}{\cos^2x} = \frac{1}{\cos^2x} = \sec^2x.$$
-
-Likewise,
-
-$$\sec x=\frac1{\cos x}$$
-
-can be differentiated using the quotient rule or a negative power.
-
-This is useful even if you eventually memorize the formulas. Knowing where they come from makes them easier to recover when memory fails.
+Likewise, $$\sec x=\tfrac1{\cos x}$$ can be differentiated using the quotient rule or a negative power. This is useful even if you eventually memorize the formulas, because knowing where they come from makes them easier to recover when memory fails.
 
 ## Recognizing a derivative inside a limit
 
-The same classification skill can run in reverse.
+The same classification skill can run in reverse. Consider
 
-Consider
+$$\lim_{h\to0} \frac{(2+h)^5-2^5}{h}$$
 
-$$\lim_{h\to0} \frac{(2+h)^5-2^5}{h}.$$
+Direct substitution gives [$$0/0$$](/2026/07/30/indeterminate-forms.html). You could expand $$(2+h)^5$$, cancel $$h$$, and then evaluate the limit, but the expression is already [the definition of a derivative](/2026/07/30/derivative-as-a-limit.html).
 
-Direct substitution gives [$$0/0$$](/2026/07/30/indeterminate-forms.html).
-
-You could expand $$(2+h)^5$$, cancel $$h$$, and then evaluate the limit.
-
-But the expression is already [the definition of a derivative](/2026/07/30/derivative-as-a-limit.html).
-
-If
-
-$$f(x)=x^5,$$
-
-then the limit is
-
-$$f'(2).$$
-
-Since
-
-$$f'(x)=5x^4,$$
-
-the answer is
-
-$$f'(2)=5(2)^4=80.$$
-
-Two features reveal the structure:
+If $$f(x)=x^5$$, then the limit is $$f'(2)$$, and since $$f'(x)=5x^4$$, the answer is $$f'(2)=5(2)^4=80$$. Two features reveal the structure:
 
 - the limit is taken as $$h\to0$$
 - the numerator has the form $$f(a+h)-f(a)$$
@@ -225,11 +143,5 @@ Two features reveal the structure:
 Recognizing the form is the entire problem.
 
 <div class="article-note" markdown="1">
-A useful practice exercise is to take a page of derivative problems and write only the first move beside each one.
-
-Do not differentiate yet.
-
-For each expression, decide whether you would simplify, use a basic derivative, use the product rule, use the quotient rule, or use the chain rule.
-
-That isolates the classification skill from the algebra that follows.
+A useful practice exercise is to take a page of derivative problems and write only the first move beside each one. Do not differentiate yet. For each expression, decide whether you would simplify, use a basic derivative, use the product rule, use the quotient rule, or use the chain rule. That isolates the classification skill from the algebra that follows.
 </div>

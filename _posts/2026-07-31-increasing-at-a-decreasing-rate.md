@@ -4,7 +4,7 @@ title: "Increasing at a decreasing rate"
 date: 2026-07-31
 description: "Whether a function is increasing and whether its rate of change is increasing are separate questions. A table of average rates makes the distinction clear."
 course: "AP Precalculus"
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 1
@@ -14,38 +14,22 @@ blurb: "Whether a function is increasing and whether its rate of change is incre
 image: "/assets/og/increasing-at-a-decreasing-rate.png"
 ---
 
-A function can be increasing while its rate of change is decreasing.
-
-The phrase sounds contradictory only if those two statements are treated as the same question.
-
-They are not.
-
-One describes what the function values are doing.
-
-The other describes what the rates of change are doing.
+A function can be increasing while its rate of change is decreasing. The phrase sounds contradictory only if those two statements are treated as the same question, and they are not. One describes what the function values are doing, and the other describes what the rates of change are doing.
 
 ## Two questions
 
-A function is increasing on an interval when larger inputs produce larger outputs.
+A function is increasing on an interval when larger inputs produce larger outputs. The average rate of change over $$[a,b]$$ is
 
-The average rate of change over $$[a,b]$$ is
+$$\frac{f(b)-f(a)}{b-a}$$
 
-$$\frac{f(b)-f(a)}{b-a}.$$
-
-If we compute average rates over consecutive equal-length intervals, we can then ask a second question.
-
-Are those rates increasing or decreasing?
-
-That gives four possible combinations:
+If we compute average rates over consecutive equal-length intervals, we can then ask a second question. Are those rates increasing or decreasing? That gives four possible combinations:
 
 - increasing at an increasing rate
 - increasing at a decreasing rate
 - decreasing at an increasing rate
 - decreasing at a decreasing rate
 
-The first word describes the function.
-
-The second describes its rate of change.
+The first word describes the function, and the second describes its rate of change.
 
 ## Read the table in order
 
@@ -166,82 +150,28 @@ The second describes its rate of change.
 })();
 </script>
 
-The visualization shows four functions over the same inputs.
+The visualization shows four functions over the same inputs, and the table records the function values, the average rate of change on each interval, and the change in those rates. Use the signs in order. First, inspect the average rates. If they are positive, the function is increasing, and if they are negative, the function is decreasing.
 
-The table records the function values, the average rate of change on each interval, and the change in those rates.
-
-Use the signs in order.
-
-First, inspect the average rates.
-
-If they are positive, the function is increasing.
-
-If they are negative, the function is decreasing.
-
-Then inspect how those rates change.
-
-If the rates become larger, the rate of change is increasing.
-
-If they become smaller, the rate of change is decreasing.
-
-That procedure is more reliable than trying to guess from the wording.
+Then inspect how those rates change. If the rates become larger, the rate of change is increasing, and if they become smaller, the rate of change is decreasing. That procedure is more reliable than trying to guess from the wording.
 
 ## Negative rates are where the language gets difficult
 
-Suppose a function is decreasing and its average rates are
+Suppose a function is decreasing and its average rates are $$-2.75,\; -2.25,\; -1.75,\; -1.25$$. The function is still decreasing because the rates are negative, but the rates themselves are increasing because $$-2.25>-2.75$$, so the function is decreasing at an increasing rate. Visually, it is falling while flattening out.
 
-$$-2.75,\quad -2.25,\quad -1.75,\quad -1.25.$$
-
-The function is still decreasing because the rates are negative.
-
-But the rates themselves are increasing because
-
-$$-2.25>-2.75.$$
-
-The function is therefore decreasing at an increasing rate.
-
-Visually, it is falling while flattening out.
-
-By contrast, if the rates become
-
-$$-0.5,\quad -1,\quad -1.5,\quad -2,$$
-
-the function is decreasing at a decreasing rate.
-
-It is falling faster because the signed rates are becoming more negative.
-
-The sign of the rate and the direction in which the rate moves have to be kept separate.
+By contrast, if the rates become $$-0.5,\; -1,\; -1.5,\; -2$$, the function is decreasing at a decreasing rate. It is falling faster because the signed rates are becoming more negative. The sign of the rate and the direction in which the rate moves have to be kept separate.
 
 ## Concavity describes the same second question
 
-When rates of change are increasing, the graph is concave up.
-
-When rates of change are decreasing, the graph is concave down.
-
-So:
+When rates of change are increasing, the graph is concave up, and when rates of change are decreasing, the graph is concave down. So:
 
 - increasing rate of change corresponds to concave up
 - decreasing rate of change corresponds to concave down
 
-For the quadratic examples in the visualization, the changes in average rate are constant across equal-length intervals.
-
-That is a numerical feature of quadratics.
-
-A linear function has constant average rate of change, so the changes in those rates are zero.
+For the quadratic examples in the visualization, the changes in average rate are constant across equal-length intervals, which is a numerical feature of quadratics. A linear function has constant average rate of change, so the changes in those rates are zero.
 
 ## This is already close to calculus
 
-Average rate of change is the slope of a secant line.
-
-As the interval becomes narrower, those secant slopes approach the rate of change at a point when the relevant limit exists.
-
-Calculus calls that limiting rate [the derivative](/2026/07/30/derivative-as-a-limit.html).
-
-The question of whether the rate itself is increasing or decreasing then becomes a question about the second derivative.
-
-The language changes later.
-
-The distinction does not.
+Average rate of change is the slope of a secant line. As the interval becomes narrower, those secant slopes approach the rate of change at a point when the relevant limit exists, and calculus calls that limiting rate [the derivative](/2026/07/30/derivative-as-a-limit.html). The question of whether the rate itself is increasing or decreasing then becomes a question about the second derivative. The language changes later, but the distinction does not.
 
 <div class="article-note" markdown="1">
 A useful self-test is a cooling cup of coffee. Its temperature decreases quickly at first and then more slowly as it approaches room temperature. The function is decreasing. Its rates are negative but becoming less negative, so the rate of change is increasing. The graph is concave up.

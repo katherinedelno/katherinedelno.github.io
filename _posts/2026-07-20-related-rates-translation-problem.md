@@ -5,7 +5,7 @@ date: 2026-07-20
 description: "Related-rates problems are mostly translation. Name the changing quantities, relate them, differentiate with respect to time, and only then use the snapshot values."
 course: "AP Calculus AB"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "11 min read"
+read_time: "8 min read"
 math: true
 kind: mechanics
 sequence: 14
@@ -14,11 +14,7 @@ blurb: "Related-rates problems are mostly translation. Name the changing quantit
 image: "/assets/og/related-rates-translation-problem.png"
 ---
 
-The calculus in a related-rates problem is usually straightforward.
-
-The harder part is translating the situation into an equation that connects the changing quantities.
-
-Once that equation is correct, the rest follows a stable procedure.
+The calculus in a related-rates problem is usually straightforward. The harder part is translating the situation into an equation that connects the changing quantities, and once that equation is correct, the rest follows a stable procedure.
 
 ## A five-step routine
 
@@ -28,69 +24,27 @@ Once that equation is correct, the rest follows a stable procedure.
 4. Differentiate the equation with respect to time.
 5. Substitute the values that describe the particular instant and solve.
 
-The order matters.
-
-A value that is true only at one instant should usually be substituted after the differentiation.
-
-A relationship that is true for all time may be used before differentiating.
+The order matters. A value that is true only at one instant should usually be substituted after the differentiation, and a relationship that is true for all time may be used before differentiating.
 
 ## The most common mistake
 
-Suppose the area of a circle is
-
-$$ A=\pi r^2. $$
-
-If a problem asks about the instant when $$r=5$$, substituting 5 before differentiating gives
-
-$$ A=25\pi. $$
-
-Now $$r$$ is gone. The expression no longer records that the radius is changing.
+Suppose the area of a circle is $$A=\pi r^2$$. If a problem asks about the instant when $$r=5$$, substituting 5 before differentiating gives $$A=25\pi$$. Now $$r$$ is gone, and the expression no longer records that the radius is changing.
 
 Instead, differentiate first:
 
-$$ \frac{dA}{dt} = 2\pi r\frac{dr}{dt}. $$
+$$\frac{dA}{dt} = 2\pi r\frac{dr}{dt}$$
 
-Then substitute $$r=5$$ and the relevant value of $$dr/dt$$.
-
-The snapshot value belongs after the derivative because it is true only at that instant.
+Then substitute $$r=5$$ and the relevant value of $$dr/dt$$. The snapshot value belongs after the derivative because it is true only at that instant.
 
 ## Example 1: a sliding ladder
 
 A 13-foot ladder leans against a wall. Its base moves away from the wall at 2 feet per second. How fast is the top moving when the base is 5 feet from the wall?
 
-Let $$x$$ be the distance from the wall to the base and $$y$$ the height of the top.
+Let $$x$$ be the distance from the wall to the base and $$y$$ the height of the top. We know $$\tfrac{dx}{dt}=2$$, and we want $$dy/dt$$. The ladder length is constant, so $$x^2+y^2=169$$, and differentiating with respect to $$t$$ gives
 
-We know
+$$2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0$$
 
-$$ \frac{dx}{dt}=2, $$
-
-and we want $$dy/dt$$.
-
-The ladder length is constant, so
-
-$$ x^2+y^2=169. $$
-
-Differentiate with respect to $$t$$:
-
-$$ 2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0. $$
-
-At the instant when $$x=5$$, the Pythagorean theorem gives $$y=12$$.
-
-Now substitute:
-
-$$ 2(5)(2) + 2(12)\frac{dy}{dt} = 0. $$
-
-Therefore
-
-$$ \frac{dy}{dt} = -\frac56. $$
-
-The top is moving downward at
-
-$$ \frac56 $$
-
-foot per second.
-
-The negative sign records the direction.
+At the instant when $$x=5$$, the Pythagorean theorem gives $$y=12$$. Now substitute to get $$2(5)(2) + 2(12)\tfrac{dy}{dt} = 0$$, and therefore $$\tfrac{dy}{dt} = -\tfrac56$$. The top is moving downward at $$\tfrac56$$ foot per second, and the negative sign records the direction.
 
 <div class="viz" markdown="0">
   <canvas id="lad-cv" width="700" height="300"></canvas>
@@ -139,101 +93,29 @@ The negative sign records the direction.
 })();
 </script>
 
-The base moves at a constant rate, but the top does not.
-
-As the ladder becomes flatter, the magnitude of $$dy/dt$$ increases. The relationship between the two rates depends on the geometry at that instant.
-
-This is why the position values cannot be inserted before differentiating.
+The base moves at a constant rate, but the top does not. As the ladder becomes flatter, the magnitude of $$dy/dt$$ increases, and the relationship between the two rates depends on the geometry at that instant. This is why the position values cannot be inserted before differentiating.
 
 ## Example 2: a draining cone
 
 An inverted conical tank has radius 6 meters and height 12 meters. Water drains at 3 cubic meters per minute. How fast is the water level falling when the water is 4 meters deep?
 
-Let $$h$$ be the water depth, $$r$$ the radius of the water surface, and $$V$$ the volume.
+Let $$h$$ be the water depth, $$r$$ the radius of the water surface, and $$V$$ the volume. Both $$r$$ and $$h$$ change, but the shape of the tank gives a relationship that is true at every instant, and similar triangles give $$\tfrac{r}{h} = \tfrac{6}{12}$$, so $$r=\tfrac{h}{2}$$. Because this relationship is always true, it can be substituted before differentiation, and the volume is
 
-Both $$r$$ and $$h$$ change, but the shape of the tank gives a relationship that is true at every instant.
+$$V = \frac13\pi r^2h = \frac13\pi\left(\frac h2\right)^2h = \frac{\pi h^3}{12}$$
 
-Similar triangles give
+Differentiating gives $$\tfrac{dV}{dt} = \tfrac{\pi h^2}{4}\tfrac{dh}{dt}$$, and at the instant in question, $$\tfrac{dV}{dt}=-3$$ and $$h=4$$. So $$-3 = 4\pi\tfrac{dh}{dt}$$, which gives $$\tfrac{dh}{dt} = -\tfrac{3}{4\pi}$$, and the water level is falling at $$\tfrac{3}{4\pi} \approx0.239$$ meter per minute.
 
-$$ \frac{r}{h} = \frac{6}{12}, $$
-
-so
-
-$$ r=\frac{h}{2}. $$
-
-Because this relationship is always true, it can be substituted before differentiation.
-
-The volume is
-
-$$ V = \frac13\pi r^2h = \frac13\pi\left(\frac h2\right)^2h = \frac{\pi h^3}{12}. $$
-
-Differentiate:
-
-$$ \frac{dV}{dt} = \frac{\pi h^2}{4}\frac{dh}{dt}. $$
-
-At the instant in question,
-
-$$ \frac{dV}{dt}=-3 $$
-
-and
-
-$$ h=4. $$
-
-So
-
-$$ -3 = 4\pi\frac{dh}{dt}, $$
-
-which gives
-
-$$ \frac{dh}{dt} = -\frac{3}{4\pi}. $$
-
-The water level is falling at
-
-$$ \frac{3}{4\pi} \approx0.239 $$
-
-meter per minute.
-
-Notice the two kinds of substitution.
-
-The relationship $$r=h/2$$ is structural and holds for all time. The value $$h=4$$ is a snapshot and waits until after differentiation.
+Notice the two kinds of substitution. The relationship $$r=h/2$$ is structural and holds for all time, while the value $$h=4$$ is a snapshot and waits until after differentiation.
 
 ## Example 3: a camera tracking a rocket
 
 A camera is 100 meters from a launch pad. A rocket rises vertically at 50 meters per second. How fast is the camera's angle of elevation increasing when the rocket is 100 meters high?
 
-Let $$y$$ be the rocket's height and $$\theta$$ the angle of elevation.
+Let $$y$$ be the rocket's height and $$\theta$$ the angle of elevation. The horizontal distance is constant, so $$\tan\theta = \tfrac{y}{100}$$, and differentiating with respect to time gives
 
-The horizontal distance is constant, so
+$$\sec^2\theta\frac{d\theta}{dt} = \frac{1}{100}\frac{dy}{dt}$$
 
-$$ \tan\theta = \frac{y}{100}. $$
-
-Differentiate with respect to time:
-
-$$ \sec^2\theta\frac{d\theta}{dt} = \frac{1}{100}\frac{dy}{dt}. $$
-
-When $$y=100$$,
-
-$$ \theta=\frac{\pi}{4}, $$
-
-so
-
-$$ \sec^2\theta=2. $$
-
-Using
-
-$$ \frac{dy}{dt}=50, $$
-
-we get
-
-$$ 2\frac{d\theta}{dt} = \frac{50}{100}. $$
-
-Therefore
-
-$$ \frac{d\theta}{dt} = \frac14. $$
-
-The angle is increasing at one quarter radian per second.
-
-Radians matter here because the standard trigonometric derivative formulas assume radian measure.
+When $$y=100$$, $$\theta=\tfrac{\pi}{4}$$, so $$\sec^2\theta=2$$. Using $$\tfrac{dy}{dt}=50$$, we get $$2\tfrac{d\theta}{dt} = \tfrac{50}{100}$$, and therefore $$\tfrac{d\theta}{dt} = \tfrac14$$. The angle is increasing at one quarter radian per second, and radians matter here because the standard trigonometric derivative formulas assume radian measure.
 
 ## A final check
 
@@ -244,11 +126,7 @@ Before finishing a related-rates problem, check four things.
 - Did every changing variable receive its own rate during differentiation?
 - Does [the final sentence](/2026/07/08/notation-that-costs-ap-calculus-points.html) state the value, units, and direction?
 
-If the tank is draining, $$dV/dt$$ should be negative.
-
-If a term such as $$y^2$$ was differentiated with respect to time, the result should contain $$dy/dt$$.
-
-If the units do not balance across the differentiated equation, something in the setup is wrong.
+If the tank is draining, $$dV/dt$$ should be negative. If a term such as $$y^2$$ was differentiated with respect to time, the result should contain $$dy/dt$$, and if the units do not balance across the differentiated equation, something in the setup is wrong.
 
 <div class="article-note" markdown="1">
 The calculus is usually not the fragile part. The translation is.

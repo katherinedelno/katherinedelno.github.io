@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "Implicit differentiation uses the chain rule to find slopes on relations that are not solved for y."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "8 min read"
+read_time: "6 min read"
 math: true
 kind: mechanics
 sequence: 11
@@ -14,79 +14,26 @@ blurb: "Implicit differentiation uses the chain rule to find slopes on relations
 image: "/assets/og/implicit-differentiation.png"
 ---
 
-A relation such as
-
-$$ x^2+xy+y^2=7 $$
-
-describes a curve even though it is not solved for $$y$$.
-
-We can still find its slope.
-
-Implicit differentiation works because $$y$$ is treated as a function of $$x$$. When a term involving $$y$$ is differentiated with respect to $$x$$, [the chain rule](/2026/07/30/chain-rule-reading-the-layers.html) contributes a factor of $$dy/dx$$.
+A relation such as $$x^2+xy+y^2=7$$ describes a curve even though it is not solved for $$y$$, and we can still find its slope. Implicit differentiation works because $$y$$ is treated as a function of $$x$$, and when a term involving $$y$$ is differentiated with respect to $$x$$, [the chain rule](/2026/07/30/chain-rule-reading-the-layers.html) contributes a factor of $$dy/dx$$.
 
 ## The chain rule is the method
 
-Differentiate
+Differentiate $$x^2+xy+y^2=7$$ with respect to $$x$$. The first term gives $$2x$$, the product $$xy$$ requires the product rule, $$\tfrac{d}{dx}(xy)=y+x\tfrac{dy}{dx}$$, and the last term requires the chain rule, $$\tfrac{d}{dx}(y^2)=2y\tfrac{dy}{dx}$$.
 
-$$ x^2+xy+y^2=7 $$
+So $$2x+y+x\tfrac{dy}{dx}+2y\tfrac{dy}{dx}=0$$, and collecting the derivative terms gives
 
-with respect to $$x$$.
-
-The first term gives $$2x$$.
-
-The product $$xy$$ requires the product rule:
-
-$$ \frac{d}{dx}(xy)=y+x\frac{dy}{dx}. $$
-
-The last term requires the chain rule:
-
-$$ \frac{d}{dx}(y^2)=2y\frac{dy}{dx}. $$
-
-So
-
-$$ 2x+y+x\frac{dy}{dx}+2y\frac{dy}{dx}=0. $$
-
-Collect the derivative terms:
-
-$$ \left(x+2y\right)\frac{dy}{dx}=-(2x+y). $$
-
-Therefore
-
-$$ \frac{dy}{dx} = -\frac{2x+y}{x+2y}. $$
+$$\begin{aligned}
+\left(x+2y\right)\frac{dy}{dx} &= -(2x+y)\\
+\frac{dy}{dx} &= -\frac{2x+y}{x+2y}
+\end{aligned}$$
 
 The extra $$dy/dx$$ factors are not a special rule for implicit differentiation. They are ordinary chain-rule factors.
 
 ## The slope depends on both coordinates
 
-An explicit derivative such as
+An explicit derivative such as $$f'(x)=2x$$ depends only on $$x$$, while an implicit derivative can depend on both $$x$$ and $$y$$. That matters because a vertical line may meet an implicit curve at more than one point.
 
-$$ f'(x)=2x $$
-
-depends only on $$x$$.
-
-An implicit derivative can depend on both $$x$$ and $$y$$.
-
-That matters because a vertical line may meet an implicit curve at more than one point.
-
-For the relation above, setting $$x=1$$ gives
-
-$$ y^2+y-6=0, $$
-
-so
-
-$$ y=2 \quad\text{or}\quad y=-3. $$
-
-At $$(1,2)$$,
-
-$$ \frac{dy}{dx} = -\frac{2+2}{1+4} = -\frac45. $$
-
-At $$(1,-3)$$,
-
-$$ \frac{dy}{dx} = -\frac{2-3}{1-6} = -\frac15. $$
-
-The two points have the same $$x$$-coordinate and different tangent slopes.
-
-So when an implicit problem asks for a slope, the full point usually matters.
+For the relation above, setting $$x=1$$ gives $$y^2+y-6=0$$, so $$y=2$$ or $$y=-3$$. At $$(1,2)$$, $$\tfrac{dy}{dx} = -\tfrac{2+2}{1+4} = -\tfrac45$$, and at $$(1,-3)$$, $$\tfrac{dy}{dx} = -\tfrac{2-3}{1-6} = -\tfrac15$$. The two points have the same $$x$$-coordinate and different tangent slopes, so when an implicit problem asks for a slope, the full point usually matters.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="im-curves"></div>
@@ -225,65 +172,25 @@ So when an implicit problem asks for a slope, the full point usually matters.
 })();
 </script>
 
-The visualization shows several implicit relations without solving them for $$y$$. The point moves along the curve, and the tangent line is drawn from the slope predicted by the implicit derivative.
-
-The reported slope can also be checked by parametrizing the curve and computing
-
-$$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt}. $$
-
-The two methods agree wherever the slope exists.
+The visualization shows several implicit relations without solving them for $$y$$. The point moves along the curve, and the tangent line is drawn from the slope predicted by the implicit derivative. The reported slope can also be checked by parametrizing the curve and computing $$\tfrac{dy}{dx} = \tfrac{dy/dt}{dx/dt}$$, and the two methods agree wherever the slope exists.
 
 ## When the denominator is zero
 
-For the circle
+For the circle $$x^2+y^2=25$$, implicit differentiation gives $$\tfrac{dy}{dx}=-\tfrac{x}{y}$$. At $$(5,0)$$, the denominator is zero. That does not mean the curve itself is undefined there. It means the tangent is vertical, so its slope is not a finite number, and the algebra is reporting the geometry correctly.
 
-$$ x^2+y^2=25, $$
-
-implicit differentiation gives
-
-$$ \frac{dy}{dx}=-\frac{x}{y}. $$
-
-At $$(5,0)$$, the denominator is zero.
-
-That does not mean the curve itself is undefined there. It means the tangent is vertical, so its slope is not a finite number.
-
-The algebra is reporting the geometry correctly.
-
-This is also why critical points of an implicit relation include points where the derivative is zero and points where the derivative does not exist.
-
-A zero numerator may produce a horizontal tangent.
-
-A zero denominator may produce a vertical tangent.
+This is also why critical points of an implicit relation include points where the derivative is zero and points where the derivative does not exist. A zero numerator may produce a horizontal tangent, and a zero denominator may produce a vertical tangent.
 
 ## Second derivatives stay implicit
 
-Differentiating again often leaves $$x$$, $$y$$, and $$dy/dx$$ in the expression.
+Differentiating again often leaves $$x$$, $$y$$, and $$dy/dx$$ in the expression. For the circle, $$\tfrac{dy}{dx}=-\tfrac{x}{y}$$, and differentiating using the [quotient rule](/2026/07/30/derivative-rules-and-choosing.html) gives
 
-For the circle,
+$$\frac{d^2y}{dx^2} = -\frac{y-x\frac{dy}{dx}}{y^2}$$
 
-$$ \frac{dy}{dx}=-\frac{x}{y}. $$
+Now substitute $$\tfrac{dy}{dx}=-\tfrac{x}{y}$$, so
 
-Differentiate using the [quotient rule](/2026/07/30/derivative-rules-and-choosing.html):
+$$\frac{d^2y}{dx^2} = -\frac{y+\frac{x^2}{y}}{y^2} = -\frac{x^2+y^2}{y^3}$$
 
-$$ \frac{d^2y}{dx^2} = -\frac{y-x\frac{dy}{dx}}{y^2}. $$
-
-Now substitute
-
-$$ \frac{dy}{dx}=-\frac{x}{y}. $$
-
-Then
-
-$$ \frac{d^2y}{dx^2} = -\frac{y+\frac{x^2}{y}}{y^2} = -\frac{x^2+y^2}{y^3}. $$
-
-Since the original relation gives
-
-$$ x^2+y^2=25, $$
-
-we obtain
-
-$$ \frac{d^2y}{dx^2} = -\frac{25}{y^3}. $$
-
-The original relation is often useful after the differentiation because it can simplify the result.
+Since the original relation gives $$x^2+y^2=25$$, we obtain $$\tfrac{d^2y}{dx^2} = -\tfrac{25}{y^3}$$. The original relation is often useful after the differentiation because it can simplify the result.
 
 <div class="article-note" markdown="1">
 A good final check is geometric. Substitute a point you know lies on the curve and ask whether the sign and size of the slope fit the graph.

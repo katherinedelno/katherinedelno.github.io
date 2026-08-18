@@ -4,7 +4,7 @@ title: "Expected value is not a value you expect"
 date: 2026-07-31
 description: "Expected value is a probability-weighted long-run average. It need not be a possible outcome of a single trial."
 course: "AP Statistics"
-read_time: "7 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 7
@@ -13,27 +13,15 @@ blurb: "Expected value is a probability-weighted long-run average. It need not b
 image: "/assets/og/expected-value.png"
 ---
 
-The expected value of a fair six-sided die is
-
-$$3.5.$$
-
-No roll can produce 3.5.
-
-That is not a problem with the definition.
-
-Expected value is a long-run average, not a prediction of the next outcome.
+The expected value of a fair six-sided die is $$3.5$$, and no roll can produce 3.5. That is not a problem with the definition. Expected value is a long-run average, not a prediction of the next outcome.
 
 ## The definition
 
 For a discrete random variable $$X$$,
 
-$$\mu_X = E(X) = \sum x_iP(X=x_i).$$
+$$\mu_X = E(X) = \sum x_iP(X=x_i)$$
 
-Each possible value is weighted by its probability.
-
-The result describes where the average of many independent repetitions will tend over the long run.
-
-It does not have to be one of the values the random variable can actually take.
+Each possible value is weighted by its probability, and the result describes where the average of many independent repetitions will tend over the long run. It does not have to be one of the values the random variable can actually take.
 
 ## Watch the average settle
 
@@ -203,113 +191,43 @@ It does not have to be one of the values the random variable can actually take.
 })();
 </script>
 
-The upper panel shows the probability distribution.
+The upper panel shows the probability distribution, and the dashed vertical line marks the theoretical expected value. The lower panel shows the running average of simulated outcomes, and with more trials, the running average tends to move toward the theoretical mean.
 
-The dashed vertical line marks the theoretical expected value.
-
-The lower panel shows the running average of simulated outcomes.
-
-With more trials, the running average tends to move toward the theoretical mean.
-
-For several presets, the expected value lies between possible outcomes.
-
-The running average can still converge to that value because an average is not itself required to be an observed outcome.
+For several presets, the expected value lies between possible outcomes. The running average can still converge to that value because an average is not itself required to be an observed outcome.
 
 ## Examples
 
-For a fair die,
+For a fair die, $$E(X) = \tfrac{1+2+3+4+5+6}{6} = 3.5$$, and for the number of heads in five fair coin flips, $$E(X)=2.5$$. Again, 2.5 heads is impossible in one repetition.
 
-$$E(X) = \frac{1+2+3+4+5+6}{6} = 3.5.$$
-
-For the number of heads in five fair coin flips,
-
-$$E(X)=2.5.$$
-
-Again, 2.5 heads is impossible in one repetition.
-
-A raffle can have an expected value of \$1.50 even if no ticket pays \$1.50.
-
-The mean describes the probability distribution as a whole.
-
-It does not identify the most likely outcome.
+A raffle can have an expected value of \$1.50 even if no ticket pays \$1.50. The mean describes the probability distribution as a whole, and it does not identify the most likely outcome.
 
 ## Standard deviation matters too
 
-Expected value alone can hide substantial risk or variability.
+Expected value alone can hide substantial risk or variability. The standard deviation of a random variable describes the typical distance of outcomes from the mean over repeated trials, and a lottery may have a small positive expected value but a large standard deviation because almost every outcome is near zero and a very small fraction are extremely large.
 
-The standard deviation of a random variable describes the typical distance of outcomes from the mean over repeated trials.
-
-A lottery may have a small positive expected value but a large standard deviation because almost every outcome is near zero and a very small fraction are extremely large.
-
-Two random variables with the same expected value can therefore behave very differently.
-
-The mean describes location.
-
-The standard deviation describes spread.
+Two random variables with the same expected value can therefore behave very differently. The mean describes location, and the standard deviation describes spread.
 
 ## The binomial shortcuts
 
 For a binomial random variable with $$n$$ trials and success probability $$p$$,
 
-$$\mu_X=np$$
+$$\mu_X=np \qquad\text{and}\qquad \sigma_X = \sqrt{np(1-p)}$$
 
-and
-
-$$\sigma_X = \sqrt{np(1-p)}.$$
-
-For example, if
-
-$$n=10$$
-
-and
-
-$$p=0.3,$$
-
-then
-
-$$\mu_X=3$$
-
-and
-
-$$\sigma_X = \sqrt{2.1} \approx1.449.$$
-
-These formulas are exact for a binomial distribution.
-
-They are not approximations.
+For example, if $$n=10$$ and $$p=0.3$$, then $$\mu_X=3\;\text{and}\;\sigma_X = \sqrt{2.1} \approx1.449$$. These formulas are exact for a binomial distribution, and they are not approximations.
 
 ## When a variable is binomial
 
-A binomial random variable counts successes across a fixed number of trials.
-
-The usual conditions are:
+A binomial random variable counts successes across a fixed number of trials. The usual conditions are:
 
 - a fixed number of trials
 - two possible outcomes on each trial
 - a constant probability of success
 - independence between trials
 
-If the number of trials continues until the first success, the variable is not binomial because the number of trials is not fixed.
-
-Drawing without replacement from a small finite population can also violate the constant-probability and independence conditions.
-
-The formulas
-
-$$np$$
-
-and
-
-$$\sqrt{np(1-p)}$$
-
-should be used only after the binomial model is justified.
+If the number of trials continues until the first success, the variable is not binomial because the number of trials is not fixed. Drawing without replacement from a small finite population can also violate the constant-probability and independence conditions. The formulas $$np$$ and $$\sqrt{np(1-p)}$$ should be used only after the binomial model is justified.
 
 ## Long run does not mean smooth
 
 <div class="article-note" markdown="1">
-A running average can move away from the expected value before moving back toward it.
-
-This is especially visible for skewed distributions with rare large outcomes.
-
-The law of large numbers is a statement about long-run behavior.
-
-It does not require the average to improve monotonically after every additional trial.
+A running average can move away from the expected value before moving back toward it, and this is especially visible for skewed distributions with rare large outcomes. The law of large numbers is a statement about long-run behavior, and it does not require the average to improve monotonically after every additional trial.
 </div>

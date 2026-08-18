@@ -5,7 +5,7 @@ date: 2026-07-30
 description: "A linearization uses the tangent line to approximate a nearby function value. Concavity determines whether the estimate is high or low."
 course: "AP Calculus AB & BC"
 courses: [AP Calculus AB, AP Calculus BC]
-read_time: "9 min read"
+read_time: "6 min read"
 math: true
 kind: foundations
 sequence: 15
@@ -14,63 +14,21 @@ blurb: "A linearization uses the tangent line to approximate a nearby function v
 image: "/assets/og/linearization.png"
 ---
 
-Near a point of tangency, a differentiable function and its tangent line can be very close.
-
-Linearization uses that local agreement to approximate nearby function values.
-
-The formula is simple. The more interesting question is whether the approximation is above or below the true value.
+Near a point of tangency, a differentiable function and its tangent line can be very close. Linearization uses that local agreement to approximate nearby function values. The formula is simple. The more interesting question is whether the approximation is above or below the true value.
 
 ## The linearization
 
 For a function $$f$$ differentiable at $$a$$, the linearization at $$a$$ is
 
-$$ L(x) = f(a)+f'(a)(x-a). $$
+$$L(x) = f(a)+f'(a)(x-a)$$
 
-This is [the tangent line](/2026/07/30/derivative-as-a-limit.html) written as a function.
+which is [the tangent line](/2026/07/30/derivative-as-a-limit.html) written as a function.
 
-Suppose we want to approximate
-
-$$ \sqrt{4.1}. $$
-
-Take
-
-$$ f(x)=\sqrt{x} $$
-
-and choose $$a=4$$, where both the function and derivative are easy to evaluate.
-
-Since
-
-$$ f(4)=2 $$
-
-and
-
-$$ f'(4)=\frac14, $$
-
-the linearization is
-
-$$ L(x) = 2+\frac14(x-4). $$
-
-Then
-
-$$ L(4.1) = 2.025. $$
-
-The true value is approximately
-
-$$ 2.02484567. $$
-
-The tangent-line estimate is slightly high.
+Suppose we want to approximate $$\sqrt{4.1}$$. Take $$f(x)=\sqrt{x}$$ and choose $$a=4$$, where both the function and derivative are easy to evaluate. Since $$f(4)=2$$ and $$f'(4)=\tfrac14$$, the linearization is $$L(x)=2+\tfrac14(x-4)$$. Then $$L(4.1)=2.025$$, while the true value is approximately $$2.02484567$$, so the tangent-line estimate is slightly high.
 
 ## Concavity determines the direction
 
-A tangent line to a concave-up function lies below the curve locally.
-
-A tangent line to a concave-down function lies above it locally.
-
-So [the sign of the second derivative](/2026/07/21/reading-the-graph-of-f-prime.html) can tell us whether a linear approximation is an underestimate or overestimate.
-
-But the concavity must hold across the interval between the point of tangency $$a$$ and the point being estimated.
-
-Checking $$f''(a)$$ alone is not always enough.
+A tangent line to a concave-up function lies below the curve locally, and a tangent line to a concave-down function lies above it locally. So [the sign of the second derivative](/2026/07/21/reading-the-graph-of-f-prime.html) can tell us whether a linear approximation is an underestimate or overestimate. But the concavity must hold across the interval between the point of tangency $$a$$ and the point being estimated, and checking $$f''(a)$$ alone is not always enough.
 
 <div class="viz" markdown="0">
   <div class="viz-controls" id="lz-fns"></div>
@@ -217,96 +175,24 @@ Checking $$f''(a)$$ alone is not always enough.
 })();
 </script>
 
-The visualization fixes the point of tangency and moves the point being approximated.
+The visualization fixes the point of tangency and moves the point being approximated. For $$f(x)=\sqrt{x}$$, the function is concave down throughout its domain, so its tangent line lies above the curve and the linearization is an overestimate. For $$f(x)=e^x$$, the function is concave up everywhere, and the tangent line lies below the curve, so the estimate is low.
 
-For
-
-$$ f(x)=\sqrt{x}, $$
-
-the function is concave down throughout its domain. Its tangent line therefore lies above the curve, so the linearization is an overestimate.
-
-For
-
-$$ f(x)=e^x, $$
-
-the function is concave up everywhere. The tangent line lies below the curve, so the estimate is low.
-
-Sine is more subtle.
-
-At $$a=0$$,
-
-$$ f''(0)=0. $$
-
-That value alone does not determine the direction.
-
-To the right of the origin, sine is concave down for a while, so the tangent line is above the curve.
-
-To the left, it is concave up, so the same tangent line is below.
-
-The interval matters.
+Sine is more subtle. At $$a=0$$, $$f''(0)=0$$, and that value alone does not determine the direction. To the right of the origin, sine is concave down for a while, so the tangent line is above the curve, and to the left it is concave up, so the same tangent line is below. The interval matters.
 
 ## When the guarantee changes
 
-Consider
+Consider $$f(x)=x^3$$ at $$a=-1$$. Then $$f(-1)=-1$$ and $$f'(-1)=3$$, so $$L(x)=3x+2$$. At the point of tangency, $$f''(-1)=-6$$, so the function is concave down there. Near $$a=-1$$, the tangent line lies above the curve, but
 
-$$ f(x)=x^3 $$
+$$L(x)-f(x) = 3x+2-x^3 = -(x-2)(x+1)^2$$
 
-at $$a=-1$$.
-
-Then
-
-$$ f(-1)=-1 $$
-
-and
-
-$$ f'(-1)=3, $$
-
-so
-
-$$ L(x)=3x+2. $$
-
-At the point of tangency,
-
-$$ f''(-1)=-6, $$
-
-so the function is concave down there.
-
-Near $$a=-1$$, the tangent line lies above the curve.
-
-But
-
-$$ L(x)-f(x) = 3x+2-x^3 = -(x-2)(x+1)^2. $$
-
-At $$x=2$$, the sign changes.
-
-Beyond that point, the same tangent line lies below the function.
-
-The concavity also changes at the inflection point $$x=0$$.
-
-So a justification about overestimation or underestimation should refer to the concavity on the interval between $$a$$ and the target value, not only at $$a$$.
+At $$x=2$$, the sign changes, and beyond that point the same tangent line lies below the function. The concavity also changes at the inflection point $$x=0$$, so a justification about overestimation or underestimation should refer to the concavity on the interval between $$a$$ and the target value, not only at $$a$$.
 
 ## Approximation error
 
-The farther $$x$$ moves from $$a$$, the less reliable a linear approximation usually becomes.
+The farther $$x$$ moves from $$a$$, the less reliable a linear approximation usually becomes. For $$\sqrt{x}$$ linearized at $$a=4$$, the error is very small near 4 and grows as the target moves away. The leading error behaves quadratically in the distance from the point of tangency. [The next Taylor term](/2026/07/22/taylor-polynomials-impersonate-functions.html) is $$\tfrac12f''(a)(x-a)^2$$, which helps explain why doubling the distance from $$a$$ roughly multiplies the linearization error by four when higher-order effects remain small.
 
-For $$\sqrt{x}$$ linearized at $$a=4$$, the error is very small near 4 and grows as the target moves away.
-
-The leading error behaves quadratically in the distance from the point of tangency.
-
-[The next Taylor term](/2026/07/22/taylor-polynomials-impersonate-functions.html) is
-
-$$ \frac12f''(a)(x-a)^2. $$
-
-That helps explain why doubling the distance from $$a$$ roughly multiplies the linearization error by four when higher-order effects remain small.
-
-Linearization is therefore local in a meaningful sense.
-
-A tangent line can remain on the correct side of a curve far from the point of tangency and still be a poor numerical approximation.
+Linearization is therefore local in a meaningful sense. A tangent line can remain on the correct side of a curve far from the point of tangency and still be a poor numerical approximation.
 
 <div class="article-note" markdown="1">
-Two habits are useful.
-
-Choose $$a$$ near the target where $$f(a)$$ and $$f'(a)$$ are easy to compute.
-
-Then inspect the concavity across the interval before deciding whether the estimate is high or low.
+Two habits are useful. Choose $$a$$ near the target where $$f(a)$$ and $$f'(a)$$ are easy to compute, then inspect the concavity across the interval before deciding whether the estimate is high or low.
 </div>
