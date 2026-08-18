@@ -34,6 +34,15 @@ cloudflare_analytics: ""
 # to the current Hanken Grotesk look. Nothing else needs to change.
 use_serif: false
 
+# The practice sets.
+# A collection rather than more posts, so that site.posts stays exactly what it
+# has always been and nothing on the resources page has to learn about a second
+# kind of article. Output is on, so each set gets its own permanent URL.
+collections:
+  practice:
+    output: true
+    permalink: /practice/:name/
+
 # Theme & plugins
 theme: minima
 plugins:
@@ -80,6 +89,14 @@ defaults:
       path: ""
     values:
       image: "/assets/og/default.png"
+  # Practice sets always use the practice layout and always need MathJax, so
+  # neither has to be repeated in thirty files of front matter.
+  - scope:
+      path: ""
+      type: "practice"
+    values:
+      layout: "practice"
+      math: true
 
 # Used by jekyll-seo-tag for the Person JSON-LD block.
 social:

@@ -1,0 +1,301 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  Practice-set layout.
+
+  Two things here are not obvious and should not be "simplified" away.
+
+  1. Solutions are authored as plain <div class="pr-sol" markdown="1"> blocks.
+     The toggle buttons are generated below rather than written by hand, so the
+     source of a practice page stays readable markdown and an author never has
+     to keep a button, an id, and an aria-controls attribute in sync.
+
+  2. Those blocks start on the page, positioned off-screen, and are hidden only
+     after MathJax reports it has finished. MathJax measures glyph boxes while
+     it typesets, and anything it typesets inside a display:none container comes
+     back with zero widths, so a solution revealed later would render collapsed.
+     Off-screen means laid out, which means measured correctly. With JavaScript
+     off, the <noscript> rule below returns every solution to the flow, which is
+     the right failure: the page degrades to a worked answer key rather than to
+     a set of unreachable questions.
+{%- endcomment -%}
+
+<style>
+  .site-header .site-title{display:none}
+  .page-heading,.post-header{display:none}
+  body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;--faint:#9a9a97;color:var(--ink);line-height:1.6}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .6rem}
+
+  .article-head{margin:0 0 1.6rem;padding-bottom:1.7rem;border-bottom:1px solid var(--ink)}
+  .article-head h1{font-size:2.5rem;line-height:1.1;margin:0 0 .7rem;letter-spacing:-.03em;font-weight:700}
+  .article-meta{font-size:.72rem;color:var(--muted);margin:0;text-transform:uppercase;letter-spacing:.13em;font-weight:700}
+  .article-meta .article-course{color:var(--accent)}
+
+  /* Set facts: what this page contains, before the first question. */
+  .pr-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 1.6rem}
+  .pr-fact{background:#fff;padding:14px 16px}
+  .pr-fact dt{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .3rem}
+  .pr-fact dd{margin:0;font-size:.95rem;font-weight:700;letter-spacing:-.01em}
+  .pr-fact dd .pr-fine{display:block;font-size:.75rem;font-weight:400;color:var(--muted);letter-spacing:0;margin-top:.15rem}
+
+  .pr-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 2rem;padding:14px 18px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+  .pr-bar p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.5;max-width:56ch}
+  .pr-all{font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:9px 18px;cursor:pointer;flex:0 0 auto}
+  .pr-all:hover{background:#000;border-color:#000}
+  .pr-all:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .pr-bar[hidden]{display:none}
+
+  .article-body{max-width:70ch}
+  .article-body h2{font-size:1.32rem;margin:2.6rem 0 .7rem;letter-spacing:-.01em;font-weight:700}
+  .article-body p{margin:0 0 1.05rem}
+  .article-body ul,.article-body ol{margin:0 0 1.1rem;padding-left:1.3rem}
+  .article-body li{margin:0 0 .45rem}
+  .article-body strong{font-weight:600}
+  .article-body code{background:var(--accent-soft);padding:1px 6px;border-radius:5px;font-size:.92em}
+  .article-body hr{border:none;border-top:1px solid var(--line);margin:2rem 0}
+  .article-body table{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.95rem}
+  .article-body th{text-align:left;font-weight:700;padding:9px 12px;border-bottom:2px solid var(--ink)}
+  .article-body td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .article-body tr:last-child td{border-bottom:none}
+
+  /* A question. The rule on the left is the only decoration. */
+  .pr-item{margin:0 0 2.2rem;padding:0 0 0 20px;border-left:2px solid var(--line)}
+  .pr-item:last-of-type{margin-bottom:1rem}
+  .pr-tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .55rem}
+  .pr-tag span+span::before{content:"\00B7";margin:0 .6em;color:var(--line)}
+  .pr-tag .pr-nocalc{color:var(--accent)}
+  .pr-item>p:last-child{margin-bottom:0}
+  .pr-item ol[type="A"]{list-style:upper-alpha;padding-left:1.6rem}
+
+  /* Free-response parts carry more weight than a bullet list gives them. */
+  .pr-parts{margin:0 0 1.1rem;padding-left:1.6rem}
+  .pr-parts li{margin:0 0 .55rem}
+
+  .pr-toggle{font:inherit;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:7px 15px;cursor:pointer;margin:.2rem 0 1rem;transition:border-color .12s ease,color .12s ease}
+  .pr-toggle:hover{border-color:var(--accent);color:var(--accent)}
+  .pr-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .pr-toggle[aria-expanded="true"]{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--accent)}
+
+  .pr-sol{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px 6px;margin:0 0 1rem;font-size:.95rem}
+  .pr-sol>*:last-child{margin-bottom:1rem}
+  .pr-sol h3{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:1.4rem 0 .5rem}
+  .pr-sol h3:first-child{margin-top:0}
+  .pr-sol table{margin:.9rem 0;font-size:.88rem}
+  .pr-sol th{padding:7px 10px}
+  .pr-sol td{padding:7px 10px}
+
+  /* Off-screen until MathJax has measured them. See the comment above. */
+  .pr-solwrap .pr-sol{position:absolute;left:-10000px;top:0;width:66ch}
+  .pr-solwrap.pr-ready .pr-sol{position:static;left:auto;top:auto;width:auto}
+
+  .article-note{margin-top:2.4rem;padding:20px 24px;background:var(--accent-soft);border-radius:12px;font-size:.95rem}
+  .article-note p{margin:0 0 .8rem}
+  .article-note p:last-child{margin-bottom:0}
+  .article-back{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.95rem}
+
+  .article-more{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--ink);max-width:70ch}
+  .article-more .label{margin-bottom:1rem}
+  .article-more ul{list-style:none;margin:0;padding:0}
+  .article-more li{margin:0 0 .85rem;padding:0}
+  .article-more a{display:block;text-decoration:none;color:var(--ink)}
+  .article-more a:hover .am-title,.article-more a:focus-visible .am-title{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--faint)}
+  .am-eyebrow{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600;margin:0 0 .2rem}
+  .am-title{font-size:1.02rem;font-weight:700;letter-spacing:-.01em;line-height:1.35;margin:0 0 .15rem}
+  .am-blurb{font-size:.85rem;color:var(--muted);line-height:1.5;margin:0}
+
+  .article-cta{margin-top:2.6rem;padding:24px 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;max-width:70ch}
+  .article-cta p{margin:0 0 .75rem;font-size:.95rem;line-height:1.6}
+  .article-cta p:last-child{margin-bottom:0}
+  .article-cta .cta-name{font-weight:700}
+  .article-cta a{color:var(--ink)!important;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:#9a9a97}
+  .article-cta a:hover{text-decoration-color:var(--ink)}
+
+  @media (max-width:720px){
+    .article-head h1{font-size:1.7rem}
+    .pr-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .pr-item{padding-left:14px}
+  }
+  @media (prefers-reduced-motion: reduce){.pr-toggle{transition:none}}
+
+  /* Printing gives a clean problem set. Revealed solutions print with it, which
+     is what a student who opened them was asking for. */
+  @media print{
+    .pr-bar,.pr-toggle,.article-cta,.article-more,.article-back,.site-header,.site-footer{display:none!important}
+    .pr-solwrap .pr-sol{position:static;left:auto;width:auto}
+    .pr-item{break-inside:avoid;border-left:none;padding-left:0}
+    .pr-facts{break-inside:avoid}
+    .article-body{max-width:none}
+  }
+</style>
+
+<noscript><style>
+  .pr-solwrap .pr-sol{position:static!important;left:auto!important;top:auto!important;width:auto!important}
+</style></noscript>
+
+<div class="pg">
+  <div class="article-head">
+    <p class="label">Practice</p>
+    <h1>{{ page.title }}</h1>
+    <p class="article-meta">
+      <span class="article-course">{{ page.course }}</span>
+      {%- if page.unit %} &middot; {{ page.unit }}{% endif -%}
+      {%- comment -%}
+        work_time, not read_time. These pages are worked rather than read, and
+        the number a student needs is how long the set takes at the exam's own
+        per-question budget. read_time stays in the front matter so the site's
+        existing tooling keeps working, and is shown only as a fallback.
+      {%- endcomment -%}
+      {%- if page.work_time %} &middot; {{ page.work_time }}
+      {%- elsif page.read_time %} &middot; {{ page.read_time }}{% endif -%}
+    </p>
+  </div>
+
+  {%- assign mcq_total = page.mcq_no_calc | plus: page.mcq_calc -%}
+  <dl class="pr-facts">
+    <div class="pr-fact">
+      <dt>Multiple choice</dt>
+      <dd>{{ mcq_total }}<span class="pr-fine">{{ page.mcq_no_calc }} no calculator, {{ page.mcq_calc }} calculator</span></dd>
+    </div>
+    <div class="pr-fact">
+      <dt>Free response</dt>
+      <dd>{{ page.frq_count }}<span class="pr-fine">{{ page.frq_points }} rubric points</span></dd>
+    </div>
+    <div class="pr-fact">
+      <dt>CED topics</dt>
+      <dd>{{ page.ced_topics | join: ", " }}{% if page.ced_weight %}<span class="pr-fine">{{ page.ced_weight }}</span>{% endif %}</dd>
+    </div>
+    <div class="pr-fact">
+      <dt>Exam form</dt>
+      <dd>{{ page.exam_form | default: "May 2027" }}<span class="pr-fine">current format</span></dd>
+    </div>
+  </dl>
+
+  <div class="pr-bar" id="pr-bar" hidden>
+    <p>Every solution names the specific error each wrong option is built from, and every free-response part carries its rubric points. Work the set first, then read them.</p>
+    <button type="button" class="pr-all" id="pr-all" aria-pressed="false">Reveal all solutions</button>
+  </div>
+
+  <div class="article-body pr-solwrap" id="pr-wrap">
+    {{ content }}
+  </div>
+
+  {%- comment -%}
+    Related reading: the essay this set practises, then the nearest practice sets
+    in the same course along the sequence.
+  {%- endcomment -%}
+  {%- assign essay_match = site.posts | where: "url", page.essay -%}
+  {%- assign essay = essay_match.first -%}
+  {%- assign fam = site.practice | where: "course", page.course | sort: "sequence" -%}
+  {%- assign near = "" | split: "" -%}
+  {%- for p in fam -%}
+    {%- unless p.url == page.url -%}
+      {%- if p.sequence > page.sequence -%}{%- assign near = near | push: p -%}{%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- for p in fam reversed -%}
+    {%- unless p.url == page.url -%}
+      {%- if p.sequence < page.sequence -%}{%- assign near = near | push: p -%}{%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- if essay or near.size > 0 -%}
+  <nav class="article-more" aria-label="Related reading">
+    <p class="label">Related reading</p>
+    <ul>
+      {%- if essay -%}
+      <li>
+        <a href="{{ essay.url | relative_url }}">
+          <p class="am-eyebrow">The essay behind this set</p>
+          <p class="am-title">{{ essay.title }}</p>
+          {%- if essay.blurb %}<p class="am-blurb">{{ essay.blurb }}</p>{% endif -%}
+        </a>
+      </li>
+      {%- endif -%}
+      {%- for p in near limit: 2 -%}
+      <li>
+        <a href="{{ p.url | relative_url }}">
+          <p class="am-eyebrow">Practice &middot; {{ p.course }}</p>
+          <p class="am-title">{{ p.title }}</p>
+          {%- if p.blurb %}<p class="am-blurb">{{ p.blurb }}</p>{% endif -%}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+  {%- endif -%}
+
+  <aside class="article-cta">
+    <p class="cta-name">Katherine Delno</p>
+    <p>I teach AP Statistics, AP Calculus, and AP Precalculus privately, one student at a time, through the full arc of a course. M.S. Statistics, University of Washington.</p>
+    <p>If your student is working through this material and something is not landing, it is usually specific and usually findable. <a href="{{ "/private-instruction/" | relative_url }}">Private instruction &amp; rates</a>, or write to <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+  </aside>
+
+  <p class="article-back"><a href="{{ "/practice/" | relative_url }}">&larr; All practice sets</a></p>
+</div>
+
+<script>
+(function(){
+  var wrap = document.getElementById('pr-wrap');
+  var sols = Array.prototype.slice.call(wrap.querySelectorAll('.pr-sol'));
+  if(!sols.length) return;
+
+  // Buttons are generated, not authored, so a page's markdown stays readable.
+  var buttons = sols.map(function(sol, i){
+    var id = 'pr-sol-' + (i + 1);
+    sol.id = id;
+    sol.setAttribute('role', 'region');
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'pr-toggle';
+    b.setAttribute('aria-expanded', 'false');
+    b.setAttribute('aria-controls', id);
+    b.textContent = 'Show solution';
+    sol.parentNode.insertBefore(b, sol);
+    sol.setAttribute('aria-labelledby', id + '-b');
+    b.id = id + '-b';
+    b.addEventListener('click', function(){ set(i, sol.hidden); });
+    return b;
+  });
+
+  function set(i, open){
+    sols[i].hidden = !open;
+    buttons[i].setAttribute('aria-expanded', open ? 'true' : 'false');
+    buttons[i].textContent = open ? 'Hide solution' : 'Show solution';
+  }
+
+  var bar = document.getElementById('pr-bar');
+  var all = document.getElementById('pr-all');
+  bar.hidden = false;                       // shown only when it can function
+  all.addEventListener('click', function(){
+    var opening = all.getAttribute('aria-pressed') !== 'true';
+    sols.forEach(function(_, i){ set(i, opening); });
+    all.setAttribute('aria-pressed', opening ? 'true' : 'false');
+    all.textContent = opening ? 'Hide all solutions' : 'Reveal all solutions';
+  });
+
+  // Collapse only after MathJax has measured every box. Collapsing earlier
+  // gives zero-width glyphs in anything revealed later.
+  function collapse(){
+    sols.forEach(function(s){ s.hidden = true; });
+    wrap.classList.add('pr-ready');
+  }
+  if(window.MathJax && window.MathJax.startup && window.MathJax.startup.promise){
+    window.MathJax.startup.promise.then(collapse).catch(collapse);
+  } else {
+    window.addEventListener('load', collapse);
+  }
+
+  // A solution linked directly (#pr-sol-4) opens itself.
+  function openFromHash(){
+    var m = (location.hash || '').match(/^#pr-sol-(\d+)$/);
+    if(!m) return;
+    var i = parseInt(m[1], 10) - 1;
+    if(i >= 0 && i < sols.length){ set(i, true); sols[i].scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', openFromHash);
+  setTimeout(openFromHash, 0);
+})();
+</script>
