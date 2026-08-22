@@ -1,0 +1,215 @@
+# ---------------------------------------------------------------------------
+# Feedback forms.
+#
+# Each block below describes one Google Form well enough for
+# _includes/feedback-form.html to render it on this site and post an answer
+# straight back to Google. Nothing here talks to Google's API; the page posts
+# the same fields Google's own form posts, into a hidden iframe, so the visitor
+# never leaves katherinedelno.com and the response lands in the linked sheet.
+#
+# HOW TO ADD OR CHANGE A QUESTION
+#   1. Edit the question in Google Forms first. Google owns the schema.
+#   2. Open the live form, three-dot menu, "Get pre-filled link", answer every
+#      question with a dummy value, then "Get link". The link's query string is
+#      a list of entry.NNNNNNN=value pairs, one per question, in order.
+#   3. Copy the entry id here and, for a choice question, copy each option
+#      string EXACTLY as Google spells it.
+#
+# WHY THE OPTION STRINGS MUST MATCH EXACTLY
+#   Google validates a submitted value against the option list for multiple
+#   choice, checkbox, and dropdown questions. A value that is not on the list
+#   is rejected, and because the post lands in a hidden iframe the rejection is
+#   silent. A stray capital letter or a changed "and" to "&" loses the whole
+#   response. Retype nothing; copy.
+#
+# QUESTION TYPES THIS FILE SUPPORTS
+#   text      single-line answer          (Google: short answer or paragraph)
+#   long      multi-line answer           (Google: paragraph)
+#   scale     1-5 with labelled ends      (Google: linear scale)
+#   choice    pick one                    (Google: multiple choice or dropdown)
+#   checkbox  pick any number             (Google: checkboxes)
+#   consent   single opt-in box           (Google: a checkbox with one option)
+#
+# Optional keys on any question: help (a line under the label), placeholder,
+# other: true (checkbox questions whose Google counterpart has an "Other" box).
+# ---------------------------------------------------------------------------
+
+parent:
+  form_id: "1FAIpQLSdwnmP1MJesqaYwe5GMGGxlxSzPdj3usF53_5CPiuqSNhn1Gg"
+  sections:
+    - name: "The engagement"
+      questions:
+        - entry: "entry.1951173765"
+          type: text
+          label: "What course did your student receive academic support for?"
+          placeholder: "AP Statistics"
+        - entry: "entry.345102433"
+          type: scale
+          label: "Overall, how satisfied were you with this tutoring experience?"
+          low: "Not satisfied"
+          high: "Very satisfied"
+
+    - name: "What changed"
+      questions:
+        - entry: "entry.582767920"
+          type: long
+          label: "What improvements, if any, did you notice in your student over the semester or academic year?"
+          help: "Grades, confidence, independent study habits, willingness to ask questions, anything you noticed."
+        - entry: "entry.314895205"
+          type: long
+          label: "Is there anything you wish had been different about the tutoring experience?"
+
+    - name: "Value and billing"
+      questions:
+        - entry: "entry.9062236"
+          type: choice
+          label: "How would you describe the value of the instruction relative to the price?"
+          options:
+            - "Excellent value"
+            - "Good value"
+            - "Fair value"
+            - "Somewhat expensive"
+            - "Too expensive for the value received"
+            - "Not sure / prefer not to answer"
+        - entry: "entry.952689155"
+          type: long
+          label: "Is there anything you wish had been included, changed, or offered differently at this price point?"
+        - entry: "entry.1818233563"
+          type: long
+          label: "Was there anything about the pricing, packages, or billing structure that felt unclear, surprising, or difficult?"
+
+    - name: "Looking ahead"
+      questions:
+        - entry: "entry.1974634380"
+          type: scale
+          label: "How likely are you to recommend my services to another family looking for academic support?"
+          low: "Not likely"
+          high: "Very likely"
+        - entry: "entry.1007218313"
+          type: scale
+          label: "If your student needed academic support in the future, how likely are you to work with me again?"
+          low: "Not likely"
+          high: "Very likely"
+        - entry: "entry.1200529585"
+          type: long
+          label: "Are there any specific courses you hope to see I offer in the future, either at high school level or college level?"
+        - entry: "entry.1130823663"
+          type: checkbox
+          label: "Would you be interested in any of the following formats in the future?"
+          help: "Choose as many as apply."
+          other: true
+          options:
+            - "Summer prep course"
+            - "Short-term test review"
+            - "AP exam review course"
+            - "One-time topic workshop"
+            - "As-needed homework/test support"
+            - "Study plan or independent practice materials"
+
+    - name: "Testimonial and attribution"
+      questions:
+        - entry: "entry.1033060994"
+          type: long
+          label: "Optional testimonial"
+          help: "If you feel comfortable sharing a brief testimonial, I would greatly appreciate it. As a small independent teaching practice, thoughtful parent feedback helps future families understand the quality, structure, and value of the support I provide. This is completely optional."
+        - entry: "entry.511432556"
+          type: consent
+          value: "I agree"
+          label: "I give permission for Katherine to use my testimonial in tutoring-related materials, such as a website, profile, flyer, or parent communications. Testimonials will remain anonymous."
+        - entry: "entry.218339292"
+          type: text
+          label: "Your name"
+          help: "You may include your name if you are comfortable doing so, or leave this blank if you would prefer your feedback to remain anonymous."
+          placeholder: "Optional"
+
+student:
+  form_id: "1FAIpQLSdZGDMB1vZVkhlnlSB7HkrK1I5JvOpQPEyywtj5pykGHiFGNw"
+  sections:
+    - name: "Our sessions"
+      questions:
+        - entry: "entry.434675406"
+          type: text
+          label: "What course did we work on together?"
+          placeholder: "AP Calculus BC"
+        - entry: "entry.1976041268"
+          type: scale
+          label: "Overall, how helpful were tutoring sessions for you?"
+          low: "Not helpful"
+          high: "Very helpful"
+        - entry: "entry.1968226461"
+          type: scale
+          label: "How clear were the explanations during sessions?"
+          low: "Not very clear"
+          high: "Very clear"
+        - entry: "entry.286449044"
+          type: scale
+          label: "How comfortable did you feel asking questions?"
+          low: "Not comfortable"
+          high: "Very comfortable"
+
+    - name: "What helped"
+      questions:
+        - entry: "entry.77393620"
+          type: checkbox
+          label: "What helped you the most?"
+          help: "Choose as many as apply."
+          other: true
+          options:
+            - "Step-by-step explanations"
+            - "Problem solving where the instructor solves the problem"
+            - "Problem solving where the instructor guided you through the problem"
+            - "Reviewing homework or class material"
+            - "AP exam prep"
+            - "Lesson notes shared after each session"
+            - "Extra study guides or resources (e.g., inference conditions summary, structuring an FRQ, parameter-writing guide)"
+            - "Custom problem sets with grading/feedback"
+            - "Between-session support (e.g., asking homework questions via text, clarifying a concept via text)"
+            - "Learning how to write better explanations/conclusions"
+            - "Feeling more confident"
+
+    - name: "What could be better"
+      questions:
+        - entry: "entry.153180412"
+          type: long
+          label: "Was there anything that made tutoring harder for you or less helpful than it could have been?"
+          help: "For example: pacing, explanations, practice problems, quizzes, homework, materials, or anything about our work together. Honest feedback is helpful and appreciated."
+        - entry: "entry.1061357381"
+          type: long
+          label: "Is there anything about the technology or session format that would have made sessions easier or more helpful?"
+          help: "For example: Zoom, screen sharing, digital whiteboard, typed problems and solutions, shared files, or anything else about how sessions were run."
+
+    - name: "Looking ahead"
+      questions:
+        - entry: "entry.1705371594"
+          type: choice
+          label: "If you needed help in a future class, would you want to work together again?"
+          options:
+            - "Yes"
+            - "Probably"
+            - "Maybe"
+            - "Probably not"
+            - "No"
+        - entry: "entry.810408671"
+          type: text
+          label: "If so, what courses or subjects would you like to see me offer in the future?"
+        - entry: "entry.434444949"
+          type: scale
+          label: "How likely would you be to recommend me to another student or family?"
+          low: "Not likely"
+          high: "Very likely"
+
+    - name: "Testimonial and attribution"
+      questions:
+        - entry: "entry.672535610"
+          type: long
+          label: "Optional testimonial"
+          help: "If you feel comfortable sharing a brief testimonial, I would greatly appreciate it. Student feedback helps future students and families understand what tutoring is like and what kind of support I provide. This is completely optional."
+        - entry: "entry.321060737"
+          type: consent
+          value: "I agree"
+          label: "I give permission for Katherine to use my testimonial in tutoring-related materials, such as a website, profile, flyer, or parent communications. All testimonials will remain anonymous."
+        - entry: "entry.2040610611"
+          type: text
+          label: "Your name"
+          help: "You may include your name if you are comfortable doing so, or leave this blank if you would prefer your feedback to remain anonymous."
+          placeholder: "Optional"
