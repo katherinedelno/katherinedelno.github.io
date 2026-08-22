@@ -62,7 +62,7 @@ permalink: /about/
       <p>I did not begin as a student who found mathematics easy. I struggled with it for years in school, and I remember very clearly what it feels like to sit in front of a problem and have no idea how to begin. I eventually went on to earn a degree in mathematics and a graduate degree in statistics. That experience still shapes how I teach.</p>
       <p>Difficulty is useful information. A student may feel as though they do not understand an entire topic when the actual problem began several steps earlier. I try to find that point precisely. Then we rebuild from there until the student can carry the reasoning independently.</p>
     </div>
-    <img src="/assets/img/headshot.jpeg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
+    <img src="/assets/img/headshot.jpg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
   </div>
 
   <div class="about-section" id="training">
