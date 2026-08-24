@@ -168,7 +168,7 @@ permalink: /about/
 
     <div class="pj-work">
 
-      <p class="pj-work__intro">My graduate work also included independent methodological research and applied projects in statistics and machine learning. These projects reflect the depth of statistical training behind my teaching, particularly in AP Statistics. Each project below has a full write-up.</p>
+      <p class="pj-work__intro">My graduate work also included independent methodological research and applied projects in statistics and machine learning. These projects reflect the depth of statistical training behind my teaching, particularly in AP Statistics. Each project below has a full write-up. I also take a small number of outside projects in analysis, review, and assessment work, described under <a href="/statistical-services/">statistical services</a>.</p>
 
       <!-- One grid, as on /resources/: the featured entry spans two of the
            three columns and the three applied projects follow. -->
