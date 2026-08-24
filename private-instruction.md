@@ -220,14 +220,14 @@ permalink: /private-instruction/
   <!-- WEBINARS -->
   <div class="pi-section">
     <p class="label">Free webinars</p>
-    <h2>Two free sessions this August</h2>
-    <p>Whether your student's year begins in August or after Labor Day, I am offering two free 45-minute sessions on how to begin the course well.</p>
+    <h2>Two free sessions this September</h2>
+    <p>Whether your student's year began in August or after Labor Day, I am offering two free 45-minute sessions on how to begin the course well.</p>
     <p>Everyone who registers receives my getting-started guide for the course within a day, whether or not they attend live. The guide covers useful early habits, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding.</p>
-    <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, August 25, 5:30 p.m. Pacific</p>
-    <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, August 27, 5:30 p.m. Pacific</p>
+    <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, September 22, 5:30 p.m. Pacific</p>
+    <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, September 24, 5:30 p.m. Pacific</p>
     <div class="pi-reg-row">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register for AP Statistics, Aug 25</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register for AP Calculus, Aug 27</a>
+      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register for AP Statistics, Sep 22</a>
+      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register for AP Calculus, Sep 24</a>
     </div>
 
     {% include subscribe.html
