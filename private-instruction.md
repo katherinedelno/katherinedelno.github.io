@@ -88,7 +88,7 @@ description: "One-on-one private instruction in AP Statistics, AP Calculus AB an
 
   /* Feature / tech lists */
   .pi-list { list-style:none; padding:0; margin:1rem 0 0; }
-  .pi-list li { position:relative; padding:0 0 .55rem 1.4rem; font-size:.95rem; color:var(--ink); }
+  .pi-list li { position:relative; padding:0 0 .55rem 1.4rem; color:var(--ink); }
   .pi-list li::before {
     content:""; position:absolute; left:0; top:.55em;
     width:7px; height:7px; border-radius:50%; background:var(--accent);

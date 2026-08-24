@@ -41,12 +41,12 @@ description: "Selective, project-based statistical analysis, statistical review,
   .sv-area{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;padding:26px 2px}
   .sv-area+.sv-area{border-top:1px solid var(--line)}
   .sv-area h3{margin:0;font-size:1.06rem;line-height:1.3;letter-spacing:-.01em}
-  .sv-area p{margin:0;font-size:.97rem;max-width:62ch}
+  .sv-area p{margin:0;max-width:62ch}
   .sv-area p+p{margin-top:.7rem}
   .sv-note{font-size:.9rem;color:var(--muted)}
 
   .sv-list{list-style:none;padding:0;margin:1rem 0 0;max-width:62ch}
-  .sv-list li{position:relative;padding:0 0 .5rem 1.4rem;font-size:.92rem;color:var(--ink)}
+  .sv-list li{position:relative;padding:0 0 .55rem 1.4rem;color:var(--ink)}
   .sv-list li:last-child{padding-bottom:0}
   .sv-list li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 

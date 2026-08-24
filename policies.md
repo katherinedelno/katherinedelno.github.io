@@ -32,7 +32,7 @@ description: "The terms of a private instruction engagement with Katherine Delno
   .pol-section p:last-child{margin-bottom:0}
 
   .pol-list{list-style:none;padding:0;margin:1rem 0 1.2rem}
-  .pol-list li{position:relative;padding:0 0 .6rem 1.4rem;font-size:.97rem;max-width:74ch}
+  .pol-list li{position:relative;padding:0 0 .6rem 1.4rem;max-width:74ch}
   .pol-list li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .pol-list li b{font-weight:600}
 
