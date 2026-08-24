@@ -65,7 +65,6 @@ description: "Selective, project-based statistical analysis, statistical review,
 
   /* Selected work. The statistics strip is the existing project component
      from projects.css; the rest of the section is ordinary section prose. */
-  .pg .pj-stats{margin:1.6rem 0 1.5rem}
   .sv-more{font-size:.95rem;margin-top:1.1rem}
 
   .pg-fine{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
@@ -205,28 +204,13 @@ description: "Selective, project-based statistical analysis, statistical review,
     <h2>Methodological research: RandomForestSpecCheck</h2>
     <p>The work below is graduate research rather than client work. I include it because it shows the kind of statistical problem I take on and how I approach method.</p>
 
-    <div>
-      <p style="margin-top:1.4rem;">RandomForestSpecCheck is a model diagnostic I developed as sole author in 2025, in the Department of Statistics at the University of Washington. A linear mixed model can be misspecified in several ways at once, and the standard diagnostics each look for a failure the analyst already suspects.</p>
-      <p style="margin-top:.9rem;">The procedure takes a nonparametric approach instead. A random forest is asked to predict the fitted model's conditional residuals from covariates the analyst names. It is scored out of bag, so that fitting residual noise earns it nothing. The null distribution comes from permuting residuals within clusters, which breaks the relationship between residuals and predictors while preserving the clustered design. The result is a single screening test for mean structure the model has failed to account for.</p>
-      <div class="pj-stats">
-        <div class="pj-stat">
-          <div class="pj-stat__value">5,400</div>
-          <div class="pj-stat__label">simulated datasets across 54 parameter configurations, in the first study alone</div>
-        </div>
-        <div class="pj-stat">
-          <div class="pj-stat__value">1&ndash;3%</div>
-          <div class="pj-stat__label">empirical false-positive rate at a nominal 5% level, under correct specification</div>
-        </div>
-        <div class="pj-stat">
-          <div class="pj-stat__value">80&ndash;100%</div>
-          <div class="pj-stat__label">power against large departures in mean structure, in the designs that support it</div>
-        </div>
-      </div>
-      <p>The same simulations established where the diagnostic has no power. It does not detect misspecified variance structure, and the within-cluster permutation leaves a wholly omitted cluster-level effect invisible to it. Both results are stated in the write-up as part of the method's scope rather than left out of it. The work was written for submission to a statistics methodology journal and has not been peer reviewed.</p>
-      <p class="sv-more"><a href="/projects/random-forest-spec-check/">Read the full account</a></p>
-    </div>
+    <p style="margin-top:1.4rem;">RandomForestSpecCheck is a model diagnostic I developed as sole author in 2025, in the Department of Statistics at the University of Washington. A linear mixed model can be misspecified in several ways at once, and the standard diagnostics each look for a failure the analyst already suspects. The procedure asks a random forest to predict the fitted model's conditional residuals from covariates the analyst names, scores it out of bag so that fitting residual noise earns it nothing, and generates the null distribution by permuting residuals within clusters, which preserves the clustered design. Across 5,400 simulated datasets, the false-positive rate under correct specification ran between one and three percent against a nominal five percent level.</p>
 
-    <p style="margin-top:2.2rem;">My applied work includes a doubly robust analysis of food insecurity and type 2 diabetes across three cycles of NHANES, which returned a null estimate and spent most of its length on which parts of the causal question the survey data could identify at all, and two natural language classification projects, one of them pairing a fine-tuned transformer with conformal prediction to return label sets meeting a target coverage level. All four projects have full write-ups under <a href="/about/#statistical-work">statistical work</a>.</p>
+    <p style="margin-top:.9rem;">The same simulations established where the diagnostic is not informative. It does not detect misspecified variance structure, and a wholly omitted cluster-level effect is invisible to it. Both results are stated in the write-up as part of the method's scope. The work was written for submission to a statistics methodology journal and has not been peer reviewed.</p>
+
+    <p style="margin-top:.9rem;">My applied work includes a doubly robust causal analysis of national survey data and two natural language classification projects, one of them using conformal prediction to return label sets meeting a target coverage level.</p>
+
+    <p class="sv-more"><a href="/statistical-work/">View selected statistical work &rarr;</a></p>
   </div>
 
   <!-- BACKGROUND -->
