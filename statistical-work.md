@@ -45,8 +45,8 @@ description: "Selected statistical research and quantitative projects by Katheri
   <div class="pg-hero">
     <p class="label">Research</p>
     <h1>Selected Statistical Work</h1>
-    <p>My graduate work in statistics included independent methodological research along with applied projects in causal inference, statistical learning, and uncertainty quantification. The projects below are the ones that required statistical reasoning beyond the routine application of software.</p>
-    <p>Methodological detail appears where it clarifies what a project was designed to examine, and limitations appear where they matter to reading the result.</p>
+    <p>My graduate work in statistics included independent methodological research along with applied projects in causal inference, statistical learning, and uncertainty quantification. The selections below focus on the methodological questions, assumptions, and limitations that shaped each analysis.</p>
+    <p>Technical detail is included where it clarifies what a project was designed to examine and what its results can reasonably support.</p>
   </div>
 
   <!-- PRINCIPAL PROJECT -->
@@ -121,7 +121,7 @@ description: "Selected statistical research and quantitative projects by Katheri
   </div>
 
   <div class="sw-close">
-    <p>Current project-based work is described under <a href="/statistical-services/">statistical services</a>. My academic background and teaching history are on the <a href="/about/">about page</a>.</p>
+    <p>Current project-based work is described under <a href="/statistical-services/">Statistical Services</a>. My academic background and teaching history are on the <a href="/about/">About</a> page.</p>
   </div>
 
 </div>

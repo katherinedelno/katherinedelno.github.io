@@ -60,9 +60,9 @@ description: "Katherine Delno provides private mathematics and statistics instru
   </div>
 
   <div class="pg-section">
-    <h2>Statistical work</h2>
-    <p>In addition to private instruction, I undertake selected projects in statistical analysis, quantitative research, statistical review, and mathematics and statistics assessment.</p>
-    <p style="margin-top:.9rem;">My graduate work in statistics included theoretical and applied training, statistical computing, and independent methodological research. I approach quantitative work with close attention to study design, assumptions, model behavior, and the limits of what an analysis can establish.</p>
+    <h2>Statistical services</h2>
+    <p>In addition to private instruction, I accept a small number of projects in statistical analysis, statistical review, research support, and mathematics and statistics assessment.</p>
+    <p style="margin-top:.9rem;">My graduate training included statistical theory and methodology, statistical computing, and independent methodological research. I approach this work with close attention to study design, assumptions, model behavior, and the limits of what an analysis can establish.</p>
     <p style="margin-top:1.1rem;"><a href="/statistical-services/">Statistical services &rarr;</a></p>
   </div>
 
@@ -84,7 +84,7 @@ description: "Katherine Delno provides private mathematics and statistics instru
      choose="true" %}
 
   <div class="pg-close">
-    <p>My writing for students is collected under <a href="/resources/">resources</a>, and my academic background and statistical work are under <a href="/about/">about</a>. I keep the academic-year roster small, and it does fill. Families considering fall instruction are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
+    <p>My writing for students is collected under <a href="/resources/">Resources</a>, and my academic background is under <a href="/about/">About</a>. <a href="/statistical-work/">Selected Statistical Work</a> is available separately. I keep the academic-year roster small, and it does fill. Families considering fall instruction are welcome to <a href="mailto:hi@katherinedelno.com">write</a>.</p>
   </div>
 
 </div>

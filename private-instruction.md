@@ -246,7 +246,7 @@ description: "One-on-one private instruction in AP Statistics, AP Calculus AB an
     <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. My formal training includes probability, statistical inference, regression, and the mathematical foundations underlying calculus.</p>
     <p>That training shapes how I teach. I care about correct procedure, but also about why a method applies, what the notation means, and whether a conclusion is actually justified.</p>
     <p>I have taught in both university and one-on-one settings. As a graduate teaching assistant for introductory statistics courses, I led weekly discussion sections, developed instructional materials, and worked with students on clear statistical reasoning. I also mentored through the University of Washington's Directed Reading Program, where I designed and taught a one-on-one short course in statistical learning.</p>
-    <p>My degrees, coursework, statistical work, and teaching history are listed under <a href="/about/#training">academic training</a> on the About page.</p>
+    <p>My degrees, coursework, and teaching history are listed under <a href="/about/#training">academic training</a> on the About page.</p>
   </div>
 
   <!-- HOW I TEACH -->

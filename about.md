@@ -78,7 +78,7 @@ description: "The academic training, teaching experience, and statistical resear
     <p class="label">Research</p>
     <h2>Statistical work</h2>
     <p>My graduate work included independent methodological research along with applied projects in statistical modeling, causal inference, statistical learning, and uncertainty quantification. The principal independent project, RandomForestSpecCheck, developed and evaluated a permutation-based diagnostic for detecting misspecification in linear mixed models.</p>
-    <p style="margin-top:1.2rem;"><a href="/statistical-work/">View selected statistical work &rarr;</a></p>
+    <p style="margin-top:1.2rem;"><a href="/statistical-work/">View Selected Statistical Work &rarr;</a></p>
   </div>
 
   <div class="about-section">
@@ -112,7 +112,7 @@ description: "The academic training, teaching experience, and statistical resear
   </div>
 
   <div class="about-section">
-    <p>My current work includes private mathematics and statistics instruction as well as selected statistical and quantitative projects. Details are available under <a href="/private-instruction/">private instruction</a> and <a href="/statistical-services/">statistical services</a>. I can be reached at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+    <p>My current practice centers on private mathematics and statistics instruction, and I also accept selected statistical and quantitative projects. Details are available under <a href="/private-instruction/">Private Instruction</a> and <a href="/statistical-services/">Statistical Services</a>. I can be reached at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </div>
 
   <div class="about-section">

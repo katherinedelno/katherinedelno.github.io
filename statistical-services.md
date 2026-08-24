@@ -202,7 +202,7 @@ description: "Selective, project-based statistical analysis, statistical review,
   <div class="pg-section" id="work">
     <p class="label">Selected work</p>
     <h2>Methodological research: RandomForestSpecCheck</h2>
-    <p>The work below is graduate research rather than client work. I include it because it shows the kind of statistical problem I take on and how I approach method.</p>
+    <p>The work below is graduate research rather than client work. I include it because it shows how I approach a methodological problem and evaluate the limits of a statistical procedure.</p>
 
     <p style="margin-top:1.4rem;">RandomForestSpecCheck is a model diagnostic I developed as sole author in 2025, in the Department of Statistics at the University of Washington. A linear mixed model can be misspecified in several ways at once, and the standard diagnostics each look for a failure the analyst already suspects. The procedure asks a random forest to predict the fitted model's conditional residuals from covariates the analyst names, scores it out of bag so that fitting residual noise earns it nothing, and generates the null distribution by permuting residuals within clusters, which preserves the clustered design. Across 5,400 simulated datasets, the false-positive rate under correct specification ran between one and three percent against a nominal five percent level.</p>
 
@@ -210,7 +210,7 @@ description: "Selective, project-based statistical analysis, statistical review,
 
     <p style="margin-top:.9rem;">My applied work includes a doubly robust causal analysis of national survey data and two natural language classification projects, one of them using conformal prediction to return label sets meeting a target coverage level.</p>
 
-    <p class="sv-more"><a href="/statistical-work/">View selected statistical work &rarr;</a></p>
+    <p class="sv-more"><a href="/statistical-work/">View Selected Statistical Work &rarr;</a></p>
   </div>
 
   <!-- BACKGROUND -->
@@ -219,7 +219,7 @@ description: "Selective, project-based statistical analysis, statistical review,
     <h2>Training and qualifications</h2>
     <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. My graduate work covered a full theoretical inference sequence in which estimators, tests, and intervals were derived rather than applied, along with regression for independent and correlated data, experimental design, categorical data analysis, causal inference, and statistical computing in R and Python. My undergraduate training was proof-based, through two semesters of real analysis.</p>
     <p>I have taught statistics as a graduate teaching assistant in a university mathematics and statistics department, designed and led a one-on-one directed reading course in statistical learning at the University of Washington, and taught privately since 2025. Explaining a method precisely to someone who does not already accept it is a large part of what a statistical collaborator is asked to do.</p>
-    <p>Complete coursework, research, and teaching history are on the <a href="/about/">about page</a>.</p>
+    <p>My academic background and teaching experience are summarized on the <a href="/about/">About</a> page. Fuller descriptions of my research and quantitative projects are under <a href="/statistical-work/">Selected Statistical Work</a>.</p>
   </div>
 
   <!-- SCOPE -->
