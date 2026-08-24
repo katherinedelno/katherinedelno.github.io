@@ -61,8 +61,9 @@ description: "Katherine Delno provides private mathematics and statistics instru
 
   <div class="pg-section">
     <h2>Statistical work</h2>
-    <p>Instruction is the larger part of my practice but not the whole of it. I also take a small number of projects each term in statistical analysis, statistical review, and mathematics and statistics assessment work.</p>
-    <p style="margin-top:.9rem;">My graduate training was in statistical theory, methodology, and computation, and my independent research developed a diagnostic for detecting misspecification in linear mixed models. The habits are the same ones I teach. State the assumptions, establish what the design will support, and say plainly what a result does and does not show. That work is described under <a href="/statistical-services/">statistical services</a>.</p>
+    <p>In addition to private instruction, I undertake selected projects in statistical analysis, quantitative research, statistical review, and mathematics and statistics assessment.</p>
+    <p style="margin-top:.9rem;">My graduate work in statistics included theoretical and applied training, statistical computing, and independent methodological research. I approach quantitative work with close attention to study design, assumptions, model behavior, and the limits of what an analysis can establish.</p>
+    <p style="margin-top:1.1rem;"><a href="/statistical-services/">Statistical services &rarr;</a></p>
   </div>
 
   <div class="pg-section">

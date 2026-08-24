@@ -239,8 +239,8 @@ description: "The academic training, teaching experience, and statistical resear
   </div>
 
   <div class="about-section">
-    <p>My work has two parts. I teach mathematics and statistics privately, which is set out in full under <a href="/private-instruction/">private instruction</a>, and I take a small number of projects in statistical analysis, review, and assessment, described under <a href="/statistical-services/">statistical services</a>.</p>
-    <p style="margin-top:.9rem;">Families considering instruction and anyone with a project in mind are equally welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+    <p>My current work includes private mathematics and statistics instruction as well as selected statistical and quantitative projects. Details about each are available under <a href="/private-instruction/">private instruction</a> and <a href="/statistical-services/">statistical services</a>.</p>
+    <p style="margin-top:.9rem;">I can be reached at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </div>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">
