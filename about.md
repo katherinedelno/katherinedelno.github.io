@@ -2,8 +2,9 @@
 layout: page
 title: About
 permalink: /about/
-description: "The academic training, teaching experience, and statistical research behind Katherine Delno's practice. M.S. Statistics, University of Washington, and B.S. Mathematics."
+description: "About Katherine Delno, a statistician and mathematics instructor with graduate training in statistics, university teaching experience, and an independent private practice."
 ---
+
 
 
 <style>
@@ -24,18 +25,7 @@ description: "The academic training, teaching experience, and statistical resear
   .about-section h2{font-size:1.35rem;margin:0 0 1rem;letter-spacing:-.01em}
   .about-section h3{font-size:1.08rem;margin:1.6rem 0 .1rem}
   .deg-meta{font-size:.9rem;color:var(--muted);margin:0 0 .8rem;font-weight:600;letter-spacing:.02em}
-  .about-section .meta{font-size:.9rem;color:var(--muted);margin:0 0 .8rem;font-weight:600;letter-spacing:.02em}
 
-  .pg-timeline{margin-top:1.4rem;border-left:2px solid var(--line);padding-left:26px}
-  .pg-entry{position:relative;padding-bottom:2rem}
-  .pg-entry:last-child{padding-bottom:0}
-  .pg-entry::before{content:"";position:absolute;left:-33px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px #fff}
-  .pg-entry .date{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-  .pg-entry h3{margin:.25rem 0 .1rem;font-size:1.12rem}
-  .pg-entry .org{font-size:.92rem;color:var(--muted);margin:0 0 .6rem}
-  .pg-entry p{margin:0;font-size:.95rem}
-  .pg-entry.current::before{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-  .pg-entry.current h3 .badge{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 9px;border-radius:999px;margin-left:10px;vertical-align:middle}
 
   .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:24px;z-index:9999}
   .lightbox:target{display:flex}
@@ -55,10 +45,26 @@ description: "The academic training, teaching experience, and statistical resear
     <div>
       <p class="label">About</p>
       <h1>Hi, I'm Katherine</h1>
-      <p>I teach mathematics and statistics one-on-one, primarily in AP Statistics, AP Calculus, and AP Precalculus.</p>
-      <p>I did not begin as a student who found mathematics easy. I struggled with it for years in school, and I remember very clearly what it feels like to sit in front of a problem and have no idea how to begin. I eventually went on to earn a degree in mathematics and a graduate degree in statistics. That experience still shapes how I teach.</p>
+      <p>I am a statistician and mathematics instructor. I run a small independent teaching practice and also accept selected statistical and quantitative projects.</p>
+      <p>I did not begin as a student who found mathematics easy. I struggled with it for years in school, and that experience still shapes the way I think about teaching. I remember what it is like for notation to feel arbitrary, for a method to seem like a sequence of rules, and for an explanation to move past the point where understanding actually stopped.</p>
     </div>
     <img src="/assets/img/headshot.jpg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
+  </div>
+
+  <div class="about-section">
+    <p class="label">Background</p>
+    <h2>From mathematics to statistics</h2>
+    <p>What eventually held my attention was the structure underneath those procedures, the reasons an argument works, the assumptions a method depends on, and the way one idea connects to another. That interest led me first to mathematics and later to statistics.</p>
+    <p style="margin-top:.9rem;">I earned a B.S. in Mathematics at the University of Nevada, Reno and an M.S. in Statistics at the University of Washington. Graduate study let me work more closely with statistical inference, modeling, causal questions, statistical learning, and computation, without leaving behind the mathematical structure that drew me to the subject in the first place.</p>
+  </div>
+
+  <div class="about-section">
+    <p class="label">Teaching</p>
+    <h2>A small teaching practice</h2>
+    <p>My teaching began at the University of Nevada, Reno, where I taught undergraduate statistics as a graduate teaching assistant. Later, at the University of Washington, I designed and led a one-on-one directed reading course in statistical learning through the Statistics and Probability Association. I started my independent practice in 2025 and now work closely with a small number of students in mathematics and statistics.</p>
+    <p style="margin-top:.9rem;">Working one-on-one suits the way I like to teach. Over time it becomes possible to see more than whether a student can produce a correct answer. I can pay attention to how a problem is being organized, where the reasoning becomes uncertain, which errors recur, and whether an idea remains available when the form of the problem changes.</p>
+    <p style="margin-top:.9rem;">That continuity is one reason I keep the practice deliberately small.</p>
+    <p style="margin-top:1.2rem;"><a href="/private-instruction/">More about private instruction &rarr;</a></p>
   </div>
 
   <div class="about-section" id="training">
@@ -67,48 +73,18 @@ description: "The academic training, teaching experience, and statistical resear
 
     <h3>M.S. Statistics</h3>
     <p class="deg-meta">University of Washington &middot; 2025</p>
-    <p>Graduate training in statistical inference, regression for independent and correlated data, experimental design, categorical data analysis, causal inference, biostatistics, statistical learning, and statistical computing. The core was a theoretical inference sequence in which estimators, tests, and confidence intervals were derived rather than applied, alongside applied analysis in R and Python and independent methodological research in diagnostics for linear mixed models.</p>
+    <p>Graduate training in statistical inference, regression for independent and correlated data, experimental design, categorical data analysis, causal inference, biostatistics, statistical learning, and statistical computing. The core was a theoretical inference sequence in which estimators, tests, and confidence intervals were derived rather than applied, alongside applied analysis in R and Python.</p>
 
     <h3 style="margin-top:2.2rem;">B.S. Mathematics</h3>
     <p class="deg-meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics</p>
-    <p>Proof-based training in mathematics, including the calculus sequence, linear algebra, differential equations, two semesters of real analysis, numerical methods, and mathematical modeling, together with probability, mathematical statistics, and regression. In real analysis, the ideas of calculus are rebuilt from rigorous definitions and proofs. This is the mathematical foundation for the graduate work in statistics that followed.</p>
+    <p>Proof-based training that included the calculus sequence, linear algebra, differential equations, two semesters of real analysis, numerical methods, and mathematical modeling, along with probability, mathematical statistics, and regression. In real analysis, the ideas of calculus are rebuilt from rigorous definitions and proofs. This is the mathematical foundation for the graduate work in statistics that followed.</p>
   </div>
 
   <div class="about-section" id="statistical-work">
     <p class="label">Research</p>
     <h2>Statistical work</h2>
-    <p>My graduate work included independent methodological research along with applied projects in statistical modeling, causal inference, statistical learning, and uncertainty quantification. The principal independent project, RandomForestSpecCheck, developed and evaluated a permutation-based diagnostic for detecting misspecification in linear mixed models.</p>
+    <p>My graduate work included independent methodological research and applied projects in statistical modeling, causal inference, statistical learning, and uncertainty quantification. My principal independent project, RandomForestSpecCheck, developed and evaluated a permutation-based diagnostic for misspecification in linear mixed models.</p>
     <p style="margin-top:1.2rem;"><a href="/statistical-work/">View Selected Statistical Work &rarr;</a></p>
-  </div>
-
-  <div class="about-section">
-    <p class="label">Professional</p>
-    <h2>Experience</h2>
-
-    <div class="pg-timeline">
-
-      <div class="pg-entry current">
-        <p class="date">2025 &ndash; Present</p>
-        <h3>Private Mathematics &amp; Statistics Instructor <span class="badge">Current</span></h3>
-        <p class="org">Independent Practice &middot; Remote</p>
-        <p>I run an independent private practice providing one-on-one instruction in mathematics and statistics to high school and college students. I also write the curriculum, problems, worked solutions, and supporting materials the practice runs on.</p>
-      </div>
-
-      <div class="pg-entry">
-        <p class="date">2024</p>
-        <h3>Directed Reading Program Mentor</h3>
-        <p class="org">Statistics &amp; Probability Association, University of Washington</p>
-        <p>I designed and led a one-on-one directed reading course in statistical learning covering regression, classification, resampling methods, and regularization. I wrote the course materials and led weekly discussions on the statistical foundations and interpretation of the methods studied.</p>
-      </div>
-
-      <div class="pg-entry">
-        <p class="date">2022</p>
-        <h3>Graduate Teaching Assistant</h3>
-        <p class="org">Department of Mathematics &amp; Statistics, University of Nevada, Reno</p>
-        <p>I led discussion sections for an undergraduate statistics course, developed instructional materials, and evaluated coursework with attention to statistical reasoning and interpretation.</p>
-      </div>
-
-    </div>
   </div>
 
   <div class="about-section">
