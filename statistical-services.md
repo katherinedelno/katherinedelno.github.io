@@ -63,13 +63,9 @@ description: "Selective, project-based statistical analysis, statistical review,
   .pg-cta h2{border:none;margin:0 0 .5rem;font-size:1.35rem}
   .pg-cta p{margin:0 auto 1.4rem;color:var(--muted);max-width:54ch}
 
-  /* Selected work. The kicker and the statistics strip are the existing
-     project components from projects.css; only the wrapper is new here. */
-  .sv-project{margin:1.8rem 0 0;max-width:74ch}
-  .sv-project h3{margin:0 0 .8rem;font-size:1.14rem;line-height:1.3;letter-spacing:-.015em}
-  .sv-project p{font-size:.97rem}
-  .sv-project p+p{margin-top:.9rem}
-  .pg .pj-stats{margin:1.5rem 0 1.4rem}
+  /* Selected work. The statistics strip is the existing project component
+     from projects.css; the rest of the section is ordinary section prose. */
+  .pg .pj-stats{margin:1.6rem 0 1.5rem}
   .sv-more{font-size:.95rem;margin-top:1.1rem}
 
   .pg-fine{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
@@ -206,13 +202,12 @@ description: "Selective, project-based statistical analysis, statistical review,
   <!-- SELECTED WORK -->
   <div class="pg-section" id="work">
     <p class="label">Selected work</p>
-    <h2>Statistical research</h2>
+    <h2>Methodological research: RandomForestSpecCheck</h2>
     <p>The work below is graduate research rather than client work. I include it because it shows the kind of statistical problem I take on and how I approach method.</p>
 
-    <div class="sv-project">
-      <p class="pj-feature__kicker"><span>Independent research</span><span>Sole author</span><span>2025</span></p>
-      <h3>RandomForestSpecCheck</h3>
-      <p>A linear mixed model can be misspecified in several ways at once, and the standard diagnostics each look for a failure the analyst already suspects. I developed a nonparametric alternative. A random forest is asked to predict the fitted model's conditional residuals from covariates the analyst names. It is scored out of bag, so that fitting residual noise earns it nothing. The null distribution comes from permuting residuals within clusters, which breaks the relationship between residuals and predictors while preserving the clustered design. The result is a single screening test for mean structure the model has failed to account for.</p>
+    <div>
+      <p style="margin-top:1.4rem;">RandomForestSpecCheck is a model diagnostic I developed as sole author in 2025, in the Department of Statistics at the University of Washington. A linear mixed model can be misspecified in several ways at once, and the standard diagnostics each look for a failure the analyst already suspects.</p>
+      <p style="margin-top:.9rem;">The procedure takes a nonparametric approach instead. A random forest is asked to predict the fitted model's conditional residuals from covariates the analyst names. It is scored out of bag, so that fitting residual noise earns it nothing. The null distribution comes from permuting residuals within clusters, which breaks the relationship between residuals and predictors while preserving the clustered design. The result is a single screening test for mean structure the model has failed to account for.</p>
       <div class="pj-stats">
         <div class="pj-stat">
           <div class="pj-stat__value">5,400</div>
@@ -227,7 +222,7 @@ description: "Selective, project-based statistical analysis, statistical review,
           <div class="pj-stat__label">power against large departures in mean structure, in the designs that support it</div>
         </div>
       </div>
-      <p>The same simulations established where the diagnostic has no power. It does not detect misspecified variance structure, and the within-cluster permutation leaves a wholly omitted cluster-level effect invisible to it. Both results are stated in the write-up as part of the method's scope rather than left out of it. The work was completed independently in the Department of Statistics at the University of Washington and written for submission to a statistics methodology journal. It has not been peer reviewed.</p>
+      <p>The same simulations established where the diagnostic has no power. It does not detect misspecified variance structure, and the within-cluster permutation leaves a wholly omitted cluster-level effect invisible to it. Both results are stated in the write-up as part of the method's scope rather than left out of it. The work was written for submission to a statistics methodology journal and has not been peer reviewed.</p>
       <p class="sv-more"><a href="/projects/random-forest-spec-check/">Read the full account</a></p>
     </div>
 
