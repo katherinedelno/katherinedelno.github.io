@@ -3,6 +3,8 @@ layout: page
 title: Policies
 permalink: /policies/
 description: "The terms of a private instruction engagement with Katherine Delno: scope, attendance and cancellation, billing, referrals, conduct, materials, and how concerns are raised and resolved."
+noindex: true      # kept out of search results; reached from the footer
+sitemap: false
 ---
 
 <style>

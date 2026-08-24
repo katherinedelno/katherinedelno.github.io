@@ -2,6 +2,8 @@
 layout: page
 title: Education
 permalink: /education/
+noindex: true      # superseded by the about page; no longer linked from the site
+sitemap: false
 ---
 
 <style>

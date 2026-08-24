@@ -3,6 +3,8 @@ layout: page
 title: Privacy
 permalink: /privacy/
 description: "What information Katherine Delno collects from families and students, why, who processes it, and how long it is kept."
+noindex: true      # kept out of search results; reached from the footer
+sitemap: false
 ---
 
 <style>

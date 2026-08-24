@@ -2,6 +2,8 @@
 layout: page
 title: Experience
 permalink: /experience/
+noindex: true      # superseded by the about page; no longer linked from the site
+sitemap: false
 ---
 
 <style>
