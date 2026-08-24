@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+description: "The academic training, teaching experience, and statistical research behind Katherine Delno's practice. M.S. Statistics, University of Washington, and B.S. Mathematics."
 ---
 
 <style>
@@ -168,7 +169,7 @@ permalink: /about/
 
     <div class="pj-work">
 
-      <p class="pj-work__intro">My graduate work also included independent methodological research and applied projects in statistics and machine learning. These projects reflect the depth of statistical training behind my teaching, particularly in AP Statistics. Each project below has a full write-up. I also take a small number of outside projects in analysis, review, and assessment work, described under <a href="/statistical-services/">statistical services</a>.</p>
+      <p class="pj-work__intro">My graduate work also included independent methodological research and applied projects in statistics and machine learning. These projects reflect the depth of statistical training behind my teaching, particularly in AP Statistics. Each project below has a full write-up, and the kind of project work this training supports is described under <a href="/statistical-services/">statistical services</a>.</p>
 
       <!-- One grid, as on /resources/: the featured entry spans two of the
            three columns and the three applied projects follow. -->
@@ -238,7 +239,8 @@ permalink: /about/
   </div>
 
   <div class="about-section">
-    <p>If you are curious whether I would be a good fit for your student, the <a href="/private-instruction/">private instruction page</a> has the full picture. You can also email me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
+    <p>My work has two parts. I teach mathematics and statistics privately, which is set out in full under <a href="/private-instruction/">private instruction</a>, and I take a small number of projects in statistical analysis, review, and assessment, described under <a href="/statistical-services/">statistical services</a>.</p>
+    <p style="margin-top:.9rem;">Families considering instruction and anyone with a project in mind are equally welcome to write to me at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
   </div>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">

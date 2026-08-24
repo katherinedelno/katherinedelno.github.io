@@ -2,6 +2,7 @@
 layout: default
 title: Home
 permalink: /
+description: "Katherine Delno provides private mathematics and statistics instruction, one-on-one teaching in AP Statistics, AP Calculus, and AP Precalculus. M.S. Statistics, University of Washington."
 ---
 
 <style>
@@ -56,6 +57,12 @@ permalink: /
     <p>Sessions are spent working, not watching. We solve problems together so I can see the reasoning as it forms in the setup, the notation, and the places where a student hesitates. Then I step back and let the student work independently. That is the clearest measure of what has actually taken hold.</p>
     <p style="margin-top:.9rem;">I keep detailed notes from week to week. Over a term, the instruction becomes more precise as I learn how a student thinks, where difficulties tend to recur, and what still needs work.</p>
     <p style="margin-top:.9rem;">The structure of sessions, materials, and rates are set out under <a href="/private-instruction/">private instruction</a>. There is also a short page <a href="/about/">about me</a>.</p>
+  </div>
+
+  <div class="pg-section">
+    <h2>Statistical work</h2>
+    <p>Instruction is the larger part of my practice but not the whole of it. I also take a small number of projects each term in statistical analysis, statistical review, and mathematics and statistics assessment work.</p>
+    <p style="margin-top:.9rem;">My graduate training was in statistical theory, methodology, and computation, and my independent research developed a diagnostic for detecting misspecification in linear mixed models. The habits are the same ones I teach. State the assumptions, establish what the design will support, and say plainly what a result does and does not show. That work is described under <a href="/statistical-services/">statistical services</a>.</p>
   </div>
 
   <div class="pg-section">

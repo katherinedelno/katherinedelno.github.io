@@ -2,6 +2,7 @@
 layout: page
 title: Resources
 permalink: /resources/
+description: "Notes on mathematics and statistics written for students, covering AP Calculus, AP Precalculus, and AP Statistics, along with ideas that run past the syllabus."
 ---
 
 <style>

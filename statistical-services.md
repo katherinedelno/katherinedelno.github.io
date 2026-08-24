@@ -65,6 +65,15 @@ description: "Project-based statistical analysis, methodological and statistical
   .pg-cta h2{border:none;margin:0 0 .5rem;font-size:1.35rem}
   .pg-cta p{margin:0 auto 1.4rem;color:var(--muted);max-width:54ch}
 
+  /* Selected work. The kicker and the statistics strip are the existing
+     project components from projects.css; only the wrapper is new here. */
+  .sv-project{margin:1.8rem 0 0;max-width:74ch}
+  .sv-project h3{margin:0 0 .8rem;font-size:1.14rem;line-height:1.3;letter-spacing:-.015em}
+  .sv-project p{font-size:.97rem}
+  .sv-project p+p{margin-top:.9rem}
+  .pg .pj-stats{margin:1.5rem 0 1.4rem}
+  .sv-more{font-size:.95rem;margin-top:1.1rem}
+
   .pg-fine{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
   .pg-fine p{font-size:.9rem;color:var(--muted);max-width:74ch}
   .pg-fine .label{color:var(--muted)}
@@ -89,12 +98,13 @@ description: "Project-based statistical analysis, methodological and statistical
     <h1>Statistical and Quantitative Services</h1>
     <p>I accept a small number of projects at a time in statistical analysis, methodological review, and mathematics and statistics assessment work. I am most useful on projects that turn on care: choosing a method that matches the design, stating what the analysis assumes, and writing the result so that a reader can see exactly what it does and does not establish.</p>
     <p>I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics. My graduate training was theoretical as well as applied, and my independent research was methodological. Most of my working time is spent teaching, which is a continual exercise in making quantitative reasoning legible to someone who does not yet share it. Both of those show in how I work.</p>
-    <p>This is deliberately a small practice, and I am early in my career as a consulting statistician. I would rather say so than imply otherwise. What I offer is careful work inside a defined range of methods, and a direct answer when a project falls outside it.</p>
+    <p>This is deliberately a small practice. What I offer is careful work inside a defined range of methods, an account of it that another statistician could check, and a direct answer when a project falls outside what I am trained to do.</p>
   </div>
 
   <nav class="pg-jump" aria-label="Page sections">
     <a href="#areas">Areas of work</a>
     <a href="#method">How I work</a>
+    <a href="#work">Selected work</a>
     <a href="#background">Background</a>
     <a href="#scope">Scope</a>
     <a href="#inquiries">Inquiries</a>
@@ -115,7 +125,7 @@ description: "Project-based statistical analysis, methodological and statistical
           <ul class="sv-list">
             <li>research questions translated into estimands, models, and testable hypotheses</li>
             <li>data cleaning and preparation, with the choices documented rather than buried</li>
-            <li>linear regression, generalized linear models, and models for clustered or repeated measures</li>
+            <li>regression and related modeling, chosen to match how the data were collected</li>
             <li>exploratory analysis, model checking, and diagnostics</li>
             <li>figures and tables built to carry a specific argument</li>
             <li>reproducible analysis in R, delivered as commented code that regenerates every reported number</li>
@@ -208,14 +218,46 @@ description: "Project-based statistical analysis, methodological and statistical
     </div>
   </div>
 
+  <!-- SELECTED WORK -->
+  <div class="pg-section" id="work">
+    <p class="label">Selected work</p>
+    <h2>Statistical research</h2>
+    <p>The work below is graduate research rather than client work, and it is described as such. I include it because it shows the kind of statistical problem I am able to take on, and because it is the clearest evidence available of how I approach method.</p>
+
+    <div class="sv-project">
+      <p class="pj-feature__kicker"><span>Independent research</span><span>Sole author</span><span>2025</span></p>
+      <h3>RandomForestSpecCheck</h3>
+      <p>A linear mixed model can be misspecified in several ways at once, and the standard diagnostics each look for a failure the analyst already suspects. I developed a nonparametric alternative. A random forest is asked to predict the fitted model's conditional residuals from covariates the analyst names. It is scored out of bag, so that fitting residual noise earns it nothing. The null distribution comes from permuting residuals within clusters, which breaks the relationship between residuals and predictors while preserving the clustered design. The result is a single screening test for mean structure the model has failed to account for.</p>
+      <div class="pj-stats">
+        <div class="pj-stat">
+          <div class="pj-stat__value">5,400</div>
+          <div class="pj-stat__label">simulated datasets across 54 parameter configurations, in the first study alone</div>
+        </div>
+        <div class="pj-stat">
+          <div class="pj-stat__value">1&ndash;3%</div>
+          <div class="pj-stat__label">empirical false-positive rate at a nominal 5% level, under correct specification</div>
+        </div>
+        <div class="pj-stat">
+          <div class="pj-stat__value">80&ndash;100%</div>
+          <div class="pj-stat__label">power against large departures in mean structure, in the designs that support it</div>
+        </div>
+      </div>
+      <p>The same simulations established where the diagnostic has no power. It does not detect misspecified variance structure, and the within-cluster permutation leaves a wholly omitted cluster-level effect invisible to it. Both results are stated in the write-up as part of the method's scope rather than left out of it. The work was completed independently in the Department of Statistics at the University of Washington and written for submission to a statistics methodology journal. It has not been peer reviewed.</p>
+      <p class="sv-more"><a href="/projects/random-forest-spec-check/">Read the full account</a></p>
+    </div>
+
+    <p style="margin-top:2.2rem;">My applied work includes a doubly robust analysis of food insecurity and type 2 diabetes across three cycles of NHANES, which returned a null estimate and spent most of its length on which parts of the causal question the survey data could identify at all, and two natural language classification projects, one of them pairing a fine-tuned transformer with conformal prediction to return label sets meeting a target coverage level. All four projects have full write-ups under <a href="/about/#statistical-work">statistical work</a>.</p>
+
+    <p style="margin-top:1.1rem;">What they have in common is what governs paid work as well. The method should follow from the structure of the data and the question being asked, and the assumptions and the blind spots belong in the write-up rather than in the analyst's head.</p>
+  </div>
+
   <!-- BACKGROUND -->
   <div class="pg-section" id="background">
     <p class="label">Background</p>
     <h2>Training and qualifications</h2>
     <p>I hold an <b>M.S. in Statistics from the University of Washington</b> and a <b>B.S. in Mathematics from the University of Nevada, Reno</b>. My graduate work covered a full theoretical inference sequence in which estimators, tests, and intervals were derived rather than applied, along with regression for independent and correlated data, experimental design, categorical data analysis, causal inference, and statistical computing in R and Python. My undergraduate training was proof-based, through two semesters of real analysis.</p>
-    <p>My independent research was methodological. I developed a permutation-based random forest diagnostic for detecting misspecification in linear mixed models and evaluated it across 5,400 simulated datasets. I have also worked on applied projects in causal inference and statistical learning, including a doubly robust analysis of national survey data and two natural language classification projects. Each has a full write-up under <a href="/about/#statistical-work">statistical work</a>.</p>
     <p>I have taught statistics as a graduate teaching assistant in a university mathematics and statistics department, designed and led a one-on-one directed reading course in statistical learning at the University of Washington, and taught privately since 2025. I list teaching under qualifications rather than biography, because explaining a method precisely to someone who does not already accept it is a large part of what a statistical collaborator is asked to do.</p>
-    <p>Complete coursework, research, and teaching history are on the <a href="/about/">about page</a>.</p>
+    <p>Complete coursework, research, and teaching history are on the <a href="/about/">about page</a>, which is the fuller account of the training this page draws on.</p>
   </div>
 
   <!-- SCOPE -->

@@ -2,6 +2,7 @@
 layout: page
 title: Private Instruction
 permalink: /private-instruction/
+description: "One-on-one private instruction in AP Statistics, AP Calculus AB and BC, and AP Precalculus. How sessions are structured, what each one includes, and current rates."
 ---
 
 <style>

@@ -11,7 +11,22 @@
   {%- if page.noindex -%}
   <meta name="robots" content="noindex, nofollow">
   {%- endif -%}
-  {%- seo -%}
+  {%- comment -%}
+    The title tag is written here rather than by jekyll-seo-tag, which would
+    render the home page as "Home | Katherine Delno" and waste the most
+    valuable line of metadata on the site. Everything else about seo-tag is
+    unchanged. A page may override the whole string with `seo_title`.
+  {%- endcomment -%}
+  {%- seo title=false -%}
+  {%- if page.seo_title -%}
+  <title>{{ page.seo_title | escape }}</title>
+  {%- elsif page.url == '/' -%}
+  <title>{{ site.title | escape }} | Statistics and Mathematics</title>
+  {%- elsif page.title -%}
+  <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+  {%- else -%}
+  <title>{{ site.title | escape }}</title>
+  {%- endif -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/projects.css" | relative_url }}">
   {%- feed_meta -%}
