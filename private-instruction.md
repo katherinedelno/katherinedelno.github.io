@@ -362,12 +362,12 @@ description: "One-on-one private instruction in AP Statistics, AP Calculus AB an
       <div class="pi-price featured">
         <span class="pill">Recommended</span>
         <h3>90-minute session</h3>
-        <div class="amt">$210<span> / session</span></div>
+        <div class="amt">$180<span> / session</span></div>
         <p class="note">Recommended for regular weekly instruction. Ninety minutes gives us enough time to develop a topic carefully without rushing the independent work at the end.</p>
       </div>
       <div class="pi-price">
         <h3>60-minute session</h3>
-        <div class="amt">$140<span> / session</span></div>
+        <div class="amt">$120<span> / session</span></div>
         <p class="note">A good fit for targeted questions, test review, or students who arrive with a specific set of problems to work through.</p>
       </div>
     </div>
