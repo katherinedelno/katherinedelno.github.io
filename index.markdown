@@ -20,11 +20,6 @@ description: "Katherine Delno provides private mathematics and statistics instru
   .pg-btn{display:inline-block;background:var(--accent);color:#fff !important;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600}
   .pg-btn:hover{opacity:.88}
   .btn-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-  .btn-row-reg{display:flex;gap:12px;flex-wrap:wrap;margin-top:1rem}
-  @media (max-width:560px){
-    .btn-row-reg{flex-direction:column;align-items:stretch}
-    .btn-row-reg .pg-btn{text-align:center}
-  }
   .btn-row .quiet{font-size:.97rem;color:var(--muted)}
   .btn-row .quiet a{color:var(--ink)}
 
@@ -66,19 +61,9 @@ description: "Katherine Delno provides private mathematics and statistics instru
     <p style="margin-top:1.1rem;"><a href="/statistical-services/">Statistical services &rarr;</a></p>
   </div>
 
-  <div class="pg-section">
-    <h2>This September</h2>
-    <p>Early in the school year, I am offering two free 45-minute sessions on starting the year well. The <b>AP&nbsp;Statistics session is Tuesday, September&nbsp;22</b>, and the <b>AP&nbsp;Calculus session is Thursday, September&nbsp;24</b>. Both begin at <b>5:30&nbsp;p.m. Pacific</b>.</p>
-    <p>Everyone who registers will receive the getting-started guide for the course within a day, whether or not they attend.</p>
-    <div class="btn-row-reg">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pg-btn" target="_blank" rel="noopener">Register for AP Statistics, Sep 22</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pg-btn" target="_blank" rel="noopener">Register for AP Calculus, Sep 24</a>
-    </div>
-  </div>
-
   {% include subscribe.html
      heading="The getting-started guide for your course"
-     blurb="Before the term begins, I send a short guide for each course. It covers the habits that matter most early on, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding. || Choose a course and I'll send it. There is no charge, and nothing else follows."
+     blurb="I send a short guide for each course. It covers the habits that matter most early on, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding. || Choose a course and I'll send it. There is no charge, and nothing else follows."
      button="Send the guide"
      done="Thank you. I'll send the guide to that address shortly."
      choose="true" %}

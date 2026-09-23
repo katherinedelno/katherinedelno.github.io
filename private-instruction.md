@@ -108,11 +108,6 @@ description: "One-on-one private instruction in AP Statistics, AP Calculus AB an
   .pi-btn-outline { background:transparent; color:var(--accent) !important; }
   .pi-btn-outline:hover { background:#fff; opacity:1; }
   .pi-cta-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-  .pi-reg-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:1.3rem; }
-  @media (max-width:560px){
-    .pi-reg-row { flex-direction:column; align-items:stretch; }
-    .pi-reg-row .pi-btn { text-align:center; }
-  }
 
   .pi-fine { margin-top:2.4rem; padding-top:1.6rem; border-top:1px solid var(--line); }
   .pi-fine p { font-size:.9rem; color:var(--muted); }
@@ -218,22 +213,15 @@ description: "One-on-one private instruction in AP Statistics, AP Calculus AB an
     </div>
   </div>
 
-  <!-- WEBINARS -->
+  <!-- COURSE GUIDE -->
   <div class="pi-section">
-    <p class="label">Free webinars</p>
-    <h2>Two free sessions this September</h2>
-    <p>Whether your student's year began in August or after Labor Day, I am offering two free 45-minute sessions on how to begin the course well.</p>
-    <p>Everyone who registers receives my getting-started guide for the course within a day, whether or not they attend live. The guide covers useful early habits, calculator and notation setup, the structure of the course and exam, and common mistakes worth avoiding.</p>
-    <p style="margin-top:1.5rem;"><b>AP Statistics</b> &nbsp;&middot;&nbsp; Tuesday, September 22, 5:30 p.m. Pacific</p>
-    <p style="margin-top:.45rem;"><b>AP Calculus AB &amp; BC</b> &nbsp;&middot;&nbsp; Thursday, September 24, 5:30 p.m. Pacific</p>
-    <div class="pi-reg-row">
-      <a href="https://us06web.zoom.us/meeting/register/IeqFGjh3Q7OnCN5nYqqrtw" class="pi-btn" target="_blank" rel="noopener">Register for AP Statistics, Sep 22</a>
-      <a href="https://us06web.zoom.us/meeting/register/vAjK5wd5S4edqx6cp6egKQ" class="pi-btn" target="_blank" rel="noopener">Register for AP Calculus, Sep 24</a>
-    </div>
+    <p class="label">Course guides</p>
+    <h2>A short guide for each course</h2>
+    <p>Before a course begins, and at any point during it, I can send a short guide for AP Statistics, AP Calculus, or AP Precalculus. Each one covers the habits that matter most early on, calculator and notation setup, the structure of the course and exam, and the mistakes that most often cost points.</p>
 
     {% include subscribe.html
-       heading="Or just take the guide"
-       blurb="The guide does not depend on attending a session. There is one for each of the three courses, including AP Precalculus. Choose a course and I will send it."
+       heading="Request a getting-started guide"
+       blurb="Choose a course and I will send the guide for it. There is no charge, and nothing else follows."
        button="Send the guide"
        done="Thank you. I'll send the guide to that address shortly."
        choose="true" %}
