@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Selected Statistical Work
+nav_title: Statistical Work
 permalink: /statistical-work/
 description: "Selected statistical research and quantitative projects by Katherine Delno, including methodological work in model diagnostics for linear mixed models, causal inference, statistical learning, and uncertainty quantification."
 ---

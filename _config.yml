@@ -25,6 +25,11 @@ url: https://katherinedelno.com
 baseurl: ""            # if you host under a subdirectory, put it here (e.g. "/blog")
 author: "Katherine Delno"
 
+# Biography printed in the footer of every page (_includes/footer.html).
+# Kept apart from `description` above, which remains the fallback meta
+# description for pages that do not set their own.
+footer_bio: "Katherine Delno is a statistician with an M.S. in Statistics from the University of Washington. Her academic work spans statistical inference, methodological research, causal inference, and machine learning. She maintains an independent mathematics and statistics teaching practice and accepts selected statistical and quantitative projects."
+
 # Cloudflare Web Analytics: paste the beacon token from your Cloudflare
 # dashboard between the quotes to turn on analytics site-wide. Leave empty to disable.
 cloudflare_analytics: ""
@@ -52,10 +57,13 @@ plugins:
 
 # Top‐nav links
 # (Minima will pick these up automatically if you list them here)
+# A page's nav label is its `nav_title` when it sets one, otherwise its
+# `title` (see _includes/header.html).
 header_pages:
   - index.markdown
-  - private-instruction.md
+  - statistical-work.md
   - statistical-services.md
+  - private-instruction.md
   - about.md
   - resources.md
 

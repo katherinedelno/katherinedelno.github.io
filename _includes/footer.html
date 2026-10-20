@@ -11,6 +11,8 @@
     .site-legal a:hover { color: #1f1f1f; text-decoration-color: #1f1f1f; }
     .site-legal a:focus-visible { outline: 2px solid #2b2b2b; outline-offset: 3px; color: #1f1f1f; }
     .site-legal .sep { padding: 0 .5em; color: #b9b9b9; }
+    /* minima's footer grey (#828282) falls short of 4.5:1; use the legal line's grey. */
+    .site-footer .footer-col-wrapper { color: #5c5c5c; }
   </style>
 
   <div class="wrapper">
@@ -36,7 +38,7 @@
       <div class="footer-col footer-col-2">{%- include social.html -%}</div>
 
       <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
+        <p>{{ site.footer_bio | default: site.description | escape }}</p>
       </div>
     </div>
 

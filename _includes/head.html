@@ -21,7 +21,7 @@
   {%- if page.seo_title -%}
   <title>{{ page.seo_title | escape }}</title>
   {%- elsif page.url == '/' -%}
-  <title>{{ site.title | escape }} | Statistician and Mathematics Instructor</title>
+  <title>{{ site.title | escape }} | Statistician · Research &amp; Quantitative Work</title>
   {%- elsif page.title -%}
   <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
   {%- else -%}
@@ -60,8 +60,12 @@
     }
     .pg p a:hover, .pi p a:hover, .article-body a:hover { text-decoration-color: #1f1f1f; }
 
-    /* Mobile: show nav links directly instead of hiding them behind the hamburger icon */
-    @media screen and (max-width: 600px) {
+    /* Narrow screens: show nav links directly instead of hiding them behind
+       the hamburger icon. The breakpoint sits at 680px rather than minima's
+       600px because the six-link nav no longer fits on one right-aligned row
+       below roughly 670px; between the two it would otherwise wrap inside
+       minima's tall desktop header. */
+    @media screen and (max-width: 680px) {
       .site-nav {
         position: static !important; float: none !important;
         background: transparent !important; border: none !important;
@@ -79,6 +83,11 @@
       }
       .site-header { min-height: 0; }
       .site-header .wrapper { padding-top: 4px; padding-bottom: 4px; }
+    }
+    /* The smallest phones: tighten so the six links still take two rows. */
+    @media screen and (max-width: 350px) {
+      .site-nav .trigger { column-gap: 14px; }
+      .site-nav .page-link { font-size: .84rem; }
     }
   </style>
 
