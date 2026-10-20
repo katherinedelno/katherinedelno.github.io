@@ -88,8 +88,8 @@ description: "Selective, project-based statistical analysis, statistical review,
   <div class="pg-hero">
     <p class="label">Services</p>
     <h1>Statistical and Quantitative Services</h1>
-    <p>Statistical work depends on more than selecting a procedure and producing output. The design of a study, the structure of the data, the assumptions of the model, and the question being asked all constrain what an analysis can reasonably establish.</p>
-    <p>I accept a small number of projects in statistical analysis, statistical review, and mathematics and statistics assessment work. I hold an M.S. in Statistics from the University of Washington and a B.S. in Mathematics. Most of my working time is spent teaching, which is a continual exercise in making quantitative reasoning legible to someone who does not yet share it.</p>
+    <p>Statistical work depends on more than selecting a procedure and producing output. Study design, data structure, model assumptions, and the question under investigation all constrain what an analysis can reasonably establish.</p>
+    <p>I accept selected projects in statistical analysis, methodological review, research support, and mathematics and statistics assessment. My academic background includes graduate training in statistical theory, inference, modeling, and statistical computing, alongside independent methodological research and applied quantitative work.</p>
   </div>
 
   <nav class="pg-jump" aria-label="Page sections">
@@ -254,7 +254,7 @@ description: "Selective, project-based statistical analysis, statistical review,
 
   <div class="pg-fine">
     <p class="label">Note</p>
-    <p>This page describes project work only. Private mathematics and statistics instruction, which remains the larger part of my practice, is described under <a href="/private-instruction/">private instruction</a>.</p>
+    <p>This page describes project work only. Private mathematics and statistics instruction is described under <a href="/private-instruction/">private instruction</a>.</p>
   </div>
 
 </div>

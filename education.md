@@ -63,7 +63,7 @@ sitemap: false
 
   <div class="pg-section">
     <h2>B.S. Mathematics</h2>
-    <p class="meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
+    <p class="meta">University of Nevada, Reno &middot; 2022 &middot; Specialization in Statistics &middot; Minor in Civil Engineering</p>
     <p>A mathematics degree with a specialization in statistics, built on a deeply proof-based core: the full calculus sequence, linear algebra, differential equations, real analysis, numerical methods, and proof writing, paired with statistics coursework in probability, statistical theory, regression and linear models, categorical data analysis, and statistical computing.</p>
     <p class="pg-sub">Mathematics &amp; statistics</p>
     <div class="pg-tags">

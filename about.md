@@ -1,31 +1,61 @@
 ---
 layout: page
-title: About
+title: "About Katherine Delno &#124; Statistics, Research & Teaching"
+seo_title: "About Katherine Delno | Statistics, Research & Teaching"
+nav_title: About
 permalink: /about/
-description: "About Katherine Delno, a statistician and mathematics instructor with graduate training in statistics, university teaching experience, and an independent private practice."
+description: "Learn about Katherine Delno's background in mathematics and statistics, graduate research at the University of Washington, and interests in statistical inference, machine learning, and artificial intelligence."
 ---
 
+{%- comment -%}
+  Titles. `seo_title` is the <title> tag. `title` exists for jekyll-seo-tag,
+  which uses it for og:title, twitter:title, and the JSON-LD headline; seo-tag
+  runs titles through Markdown, where a bare pipe would be read as a table and
+  dropped, hence &#124;. `nav_title` keeps the nav label as "About".
 
+  The page is written as one essay in sections, so it carries no section
+  labels. Statistical Work and Current Interests share a single rule: they are
+  separate sections that belong together.
+{%- endcomment -%}
 
 <style>
   .site-header .site-title{display:none}
   .page-heading,.post-header{display:none}
   body{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;color:var(--ink);line-height:1.65}
-  .pg p{max-width:70ch}
-  .pg h1,.pg h2,.pg h3{font-weight:700}
+  .pg{--ink:#1f1f1f;--muted:#5c5c5c;--line:#e6e6e6;--accent:#2b2b2b;--accent-soft:#f0f0f0;--card:#fbfbfb;color:var(--ink);line-height:1.7}
+  .pg p{max-width:68ch;margin:0;font-size:1.06rem}
+  .pg p+p{margin-top:1.05rem}
+  .pg h1,.pg h2,.pg h3{font-weight:700;color:var(--ink)}
   .pg b,.pg strong{font-weight:600}
-  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 .6rem}
+  .pg .label{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 1rem}
+  .pg a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
-  .about-grid{display:grid;grid-template-columns:minmax(0,1fr) 230px;column-gap:40px;align-items:center;margin:1rem 0 0}
-  .about-grid h1{font-size:2.1rem;line-height:1.12;margin:0 0 .9rem;letter-spacing:-.02em}
-  .headshot{width:230px;height:250px;border-radius:16px;object-fit:cover;border:1px solid var(--line)}
+  /* Introduction, with the portrait beside it */
+  .ab-intro{display:grid;grid-template-columns:minmax(0,1fr) 200px;column-gap:44px;align-items:center;margin:2.6rem 0 0}
+  .ab-intro h1{font-size:2.75rem;line-height:1.08;letter-spacing:-.026em;margin:0 0 1.4rem}
+  .pg .ab-lead{font-size:1.1rem}
+  .headshot{width:200px;height:218px;border-radius:14px;object-fit:cover;border:1px solid var(--line);display:block}
 
-  .about-section{margin:2.8rem 0 0;padding-top:2.2rem;border-top:1px solid var(--line)}
-  .about-section h2{font-size:1.35rem;margin:0 0 1rem;letter-spacing:-.01em}
-  .about-section h3{font-size:1.08rem;margin:1.6rem 0 .1rem}
-  .deg-meta{font-size:.9rem;color:var(--muted);margin:0 0 .8rem;font-weight:600;letter-spacing:.02em}
+  /* Sections: one rule and the same interval between each */
+  .ab-section{margin:3.4rem 0 0;padding-top:3rem;border-top:1px solid var(--line);scroll-margin-top:24px}
+  .ab-section h2{font-size:1.65rem;line-height:1.2;letter-spacing:-.018em;margin:0 0 1.2rem}
+  .ab-section.ab-first{margin-top:4.2rem;padding-top:3.4rem}
+  .ab-section.ab-near{margin-top:3.2rem;padding-top:0;border-top:none}
+  .pg .ab-more{margin-top:1.4rem;font-size:.97rem}
 
+  /* Degrees: two entries, ruled between */
+  .ab-degrees{margin-top:1.7rem}
+  .ab-degree{padding:1.7rem 0}
+  .ab-degree:first-child{padding-top:0}
+  .ab-degree:last-child{padding-bottom:0}
+  .ab-degree+.ab-degree{border-top:1px solid var(--line)}
+  .ab-degree h3{font-size:1.2rem;line-height:1.3;letter-spacing:-.01em;margin:0 0 .3rem}
+  .pg .ab-meta{font-size:.9rem;font-weight:500;color:var(--muted);letter-spacing:.01em;margin:0 0 1rem}
+
+  /* The personal close: a smaller heading and quieter text */
+  .ab-section.ab-close{margin-bottom:1.6rem}
+  .ab-close h2{font-size:1.3rem;letter-spacing:-.01em;margin-bottom:.8rem}
+  .ab-close p{color:var(--muted)}
 
   .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:24px;z-index:9999}
   .lightbox:target{display:flex}
@@ -34,68 +64,85 @@ description: "About Katherine Delno, a statistician and mathematics instructor w
   .lb-x{position:absolute;top:14px;right:16px;z-index:2;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;line-height:1;text-decoration:none}
 
   @media (max-width:700px){
-    .about-grid{grid-template-columns:1fr;row-gap:20px}
-    .about-grid h1{font-size:1.8rem}
-    .headshot{width:180px;height:196px;justify-self:start}
+    .ab-intro{grid-template-columns:1fr;row-gap:26px;margin-top:1.3rem}
+    .ab-intro h1{font-size:2.15rem;margin-bottom:1.1rem}
+    .headshot{width:170px;height:185px}
+    .pg p{font-size:1rem}
+    .pg .ab-lead{font-size:1.04rem}
+    .ab-section{margin-top:2.2rem;padding-top:2.2rem}
+    .ab-section.ab-first{margin-top:2.6rem;padding-top:2.4rem}
+    .ab-section.ab-near{margin-top:2.4rem;padding-top:0}
+    .ab-section h2{font-size:1.4rem}
+    .ab-close h2{font-size:1.2rem}
+    .ab-degree{padding:1.4rem 0}
   }
 </style>
+
 <div class="pg" markdown="0">
 
-  <div class="about-grid">
+  <section class="ab-intro" aria-labelledby="ab-title">
     <div>
-      <p class="label">About</p>
-      <h1>Hi, I'm Katherine</h1>
-      <p>I am a statistician and mathematics instructor. I run a small independent teaching practice and also accept selected statistical and quantitative projects.</p>
-      <p>I did not begin as a student who found mathematics easy. I struggled with it for years in school, and that experience still shapes the way I think about teaching. I remember what it is like for notation to feel arbitrary, for a method to seem like a sequence of rules, and for an explanation to move past the point where understanding actually stopped.</p>
+      <p class="label">Katherine Delno</p>
+      <h1 id="ab-title">About</h1>
+      <p class="ab-lead">I am a statistician with an M.S. in Statistics from the University of Washington and a B.S. in Mathematics from the University of Nevada, Reno. My academic work has ranged from mathematical statistics and statistical inference to methodological research, causal inference, and statistical learning, with extensive computational work in R and Python.</p>
+      <p>Since completing my graduate studies in 2025, I have maintained an independent mathematics and statistics teaching practice. I also accept selected statistical and quantitative projects.</p>
     </div>
-    <img src="/assets/img/headshot.jpg" alt="Katherine Delno" class="headshot" width="230" height="250" loading="lazy" decoding="async">
-  </div>
+    <img src="/assets/img/headshot.jpg" alt="Katherine Delno" class="headshot" width="200" height="218" loading="lazy" decoding="async">
+  </section>
 
-  <div class="about-section">
-    <p class="label">Background</p>
-    <h2>From mathematics to statistics</h2>
-    <p>What eventually held my attention was the structure underneath those procedures, the reasons an argument works, the assumptions a method depends on, and the way one idea connects to another. That interest led me first to mathematics and later to statistics.</p>
-    <p style="margin-top:.9rem;">I earned a B.S. in Mathematics at the University of Nevada, Reno and an M.S. in Statistics at the University of Washington. Graduate study let me work more closely with statistical inference, modeling, causal questions, statistical learning, and computation, without leaving behind the mathematical structure that drew me to the subject in the first place.</p>
-  </div>
+  <section class="ab-section ab-first" id="background" aria-labelledby="ab-background">
+    <h2 id="ab-background">From Mathematics to Statistics</h2>
+    <p>Mathematics did not come easily to me in school. For years, its notation and methods felt arbitrary, as though the task were to follow rules whose underlying reasons remained obscure.</p>
+    <p>What eventually held my attention was the structure beneath those procedures: why an argument works, which assumptions a method depends on, and how seemingly different ideas relate to one another. That interest led me first to mathematics and later to statistics.</p>
+    <p>Statistics introduced a different set of questions. What can be inferred from incomplete observations? Under what assumptions are those inferences justified? How can we distinguish a result that is statistically detectable from one that is substantively meaningful? I became particularly interested in the theoretical foundations of statistical methods and the relationship between their mathematical properties and their behavior in practice.</p>
+  </section>
 
-  <div class="about-section">
-    <p class="label">Teaching</p>
-    <h2>A small teaching practice</h2>
-    <p>My teaching began at the University of Nevada, Reno, where I taught undergraduate statistics as a graduate teaching assistant. Later, at the University of Washington, I designed and led a one-on-one directed reading course in statistical learning through the Statistics and Probability Association. I started my independent practice in 2025 and now work closely with a small number of students in mathematics and statistics.</p>
-    <p style="margin-top:.9rem;">Working one-on-one suits the way I like to teach. Over time it becomes possible to see more than whether a student can produce a correct answer. I can pay attention to how a problem is being organized, where the reasoning becomes uncertain, which errors recur, and whether an idea remains available when the form of the problem changes.</p>
-    <p style="margin-top:.9rem;">That continuity is one reason I keep the practice deliberately small.</p>
-    <p style="margin-top:1.2rem;"><a href="/private-instruction/">More about private instruction &rarr;</a></p>
-  </div>
+  <section class="ab-section" id="training" aria-labelledby="ab-training">
+    <h2 id="ab-training">Academic Training</h2>
 
-  <div class="about-section" id="training">
-    <p class="label">Education</p>
-    <h2>Academic training</h2>
+    <div class="ab-degrees">
+      <div class="ab-degree">
+        <h3>M.S. Statistics</h3>
+        <p class="ab-meta">University of Washington &middot; 2025</p>
+        <p>My graduate training included statistical inference, regression for independent and correlated data, experimental design, categorical data analysis, causal inference, biostatistics, statistical learning, and statistical computing.</p>
+        <p>The theoretical inference sequence emphasized the mathematical derivation and properties of estimators, hypothesis tests, and confidence intervals. Applied coursework and research involved substantial programming in R and Python, statistical simulation, model evaluation, and analysis of observational data.</p>
+      </div>
 
-    <h3>M.S. Statistics</h3>
-    <p class="deg-meta">University of Washington &middot; 2025</p>
-    <p>Graduate training in statistical inference, regression for independent and correlated data, experimental design, categorical data analysis, causal inference, biostatistics, statistical learning, and statistical computing. The core was a theoretical inference sequence in which estimators, tests, and confidence intervals were derived rather than applied, alongside applied analysis in R and Python.</p>
+      <div class="ab-degree">
+        <h3>B.S. Mathematics</h3>
+        <p class="ab-meta">University of Nevada, Reno &middot; 2022 &middot; Specialization in Statistics</p>
+        <p>My undergraduate studies provided a proof-based mathematical foundation, including real analysis, linear algebra, differential equations, numerical methods, mathematical modeling, probability, and mathematical statistics.</p>
+        <p>The study of real analysis was particularly formative in developing a more rigorous understanding of mathematical arguments and the assumptions on which they rest.</p>
+      </div>
+    </div>
+  </section>
 
-    <h3 style="margin-top:2.2rem;">B.S. Mathematics</h3>
-    <p class="deg-meta">University of Nevada, Reno &middot; 2021 &middot; Specialization in Statistics</p>
-    <p>Proof-based training that included the calculus sequence, linear algebra, differential equations, two semesters of real analysis, numerical methods, and mathematical modeling, along with probability, mathematical statistics, and regression. In real analysis, the ideas of calculus are rebuilt from rigorous definitions and proofs. This is the mathematical foundation for the graduate work in statistics that followed.</p>
-  </div>
+  <section class="ab-section" id="statistical-work" aria-labelledby="ab-work">
+    <h2 id="ab-work">Statistical Work</h2>
+    <p>My graduate research included independent methodological development and applied projects in causal inference, statistical learning, and uncertainty quantification.</p>
+    <p>My principal independent project, RandomForestSpecCheck, involved developing and evaluating a permutation-based diagnostic for mean-structure misspecification in linear mixed models. The work combined statistical modeling, random forests, simulation-based evaluation, and an examination of the conditions under which the proposed method was informative.</p>
+    <p>Other projects examined causal identification and estimation in observational data, as well as transformer-based classification and conformal prediction.</p>
+    <p class="ab-more"><a href="/statistical-work/">View Selected Statistical Work <span aria-hidden="true">&rarr;</span></a></p>
+  </section>
 
-  <div class="about-section" id="statistical-work">
-    <p class="label">Research</p>
-    <h2>Statistical work</h2>
-    <p>My graduate work included independent methodological research and applied projects in statistical modeling, causal inference, statistical learning, and uncertainty quantification. My principal independent project, RandomForestSpecCheck, developed and evaluated a permutation-based diagnostic for misspecification in linear mixed models.</p>
-    <p style="margin-top:1.2rem;"><a href="/statistical-work/">View Selected Statistical Work &rarr;</a></p>
-  </div>
+  <section class="ab-section ab-near" id="interests" aria-labelledby="ab-interests">
+    <h2 id="ab-interests">Current Interests</h2>
+    <p>My interests have more recently extended toward the theoretical foundations of artificial intelligence, particularly language models and their behavior. I am interested in how these systems learn representations, how their apparent reasoning can be studied and evaluated, and what their behavior can reasonably tell us about the processes underlying it.</p>
+    <p>These questions also have a philosophical dimension. I am interested in the relationship between statistical learning, knowledge, reasoning, and understanding, particularly where mathematical accounts of intelligent behavior meet questions of interpretation and explanation.</p>
+  </section>
 
-  <div class="about-section">
-    <p>My current practice centers on private mathematics and statistics instruction, and I also accept selected statistical and quantitative projects. Details are available under <a href="/private-instruction/">Private Instruction</a> and <a href="/statistical-services/">Statistical Services</a>. I can be reached at <a href="mailto:hi@katherinedelno.com">hi@katherinedelno.com</a>.</p>
-  </div>
+  <section class="ab-section" id="teaching" aria-labelledby="ab-teaching">
+    <h2 id="ab-teaching">Teaching</h2>
+    <p>I began teaching statistics at the University of Nevada, Reno, where I served as a teaching assistant for undergraduate statistics. Later, as a mentor in the Statistics &amp; Probability Directed Reading Program at the University of Washington, I designed and led an individualized course in statistical learning.</p>
+    <p>I established my independent teaching practice in 2025 and now work with a small number of students in mathematics and statistics.</p>
+    <p>Working individually with students allows me to observe how their reasoning develops: how they approach an unfamiliar problem, where uncertainty enters, and whether an idea remains understood when the form of a problem changes. My teaching emphasizes conceptual structure and mathematical justification alongside procedural proficiency.</p>
+    <p class="ab-more"><a href="/private-instruction/">More About Private Instruction <span aria-hidden="true">&rarr;</span></a></p>
+  </section>
 
-  <div class="about-section">
-    <p class="label">Personal</p>
-    <h2>Outside the classroom</h2>
-    <p>I live in Seattle. Away from the whiteboard, I am usually baking, fussing over my espresso setup, adding to a slowly growing ceramics collection, or spending time with my cat, <a href="#blue-photo">Blue</a>.</p>
-  </div>
+  <section class="ab-section ab-close" id="personal" aria-labelledby="ab-personal">
+    <h2 id="ab-personal">Outside the Classroom</h2>
+    <p>I live in Seattle. Away from mathematics and statistics, I enjoy baking, making espresso, collecting ceramics, reading, and spending time with my cat, <a href="#blue-photo">Blue</a>.</p>
+  </section>
 
   <div id="blue-photo" class="lightbox" aria-hidden="true">
     <a href="#" class="lb-close" aria-label="Close"></a>
