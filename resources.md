@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Resources
+title: Student Resources
 permalink: /resources/
 description: "Notes on mathematics and statistics written for students, covering AP Calculus, AP Precalculus, and AP Statistics, along with ideas that run past the syllabus."
 ---
@@ -68,7 +68,7 @@ description: "Notes on mathematics and statistics written for students, covering
 <div class="pg" markdown="0">
 
   <div class="pg-hero">
-    <p class="label">Writing</p>
+    <p class="label">Student Resources</p>
     <h1>Notes on mathematics and statistics</h1>
     <p>I write these primarily for my students, though they do not always stay within the boundaries of an AP course. Some address a recurring difficulty in notation, interpretation, or method. Others follow an idea further than the syllabus requires.</p>
   </div>
